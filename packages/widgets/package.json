@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/widgets",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"private": false,
 	"description": "A collection of Svelte components used Sveltin, the CLI to boost the developers productivity working on SvelteKit powered static websites.",
 	"author": "dev <dev@sveltin.io>",
