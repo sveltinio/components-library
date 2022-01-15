@@ -1,4 +1,4 @@
-import { ContentMetadata, HeadingItem, RecourceContentMaker } from '../../types';
+import { ContentMetadata, HeadingItem, ResourceContentMaker } from '../../types';
 
 const headings: Array<HeadingItem> = [
 	{
@@ -79,67 +79,61 @@ const headings: Array<HeadingItem> = [
 	}
 ];
 
-const contentItem = RecourceContentMaker.create({
-	resource: 'posts',
-	metadata: <ContentMetadata>{
-		slug: 'welcome',
-		title: 'Card Title',
-		headline:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-	}
-});
+const contentItem = ResourceContentMaker.create();
+contentItem.resource = 'posts';
+contentItem.metadata = <ContentMetadata>{
+	slug: 'welcome',
+	title: 'Card Title',
+	headline:
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+};
 
-const contentItemWithCreateDate = RecourceContentMaker.create({
-	resource: 'posts',
-	metadata: <ContentMetadata>{
-		slug: 'welcome',
-		title: 'Card Title',
-		created_at: '13-Jan-2022',
-		headline:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-	}
-});
+const contentItemWithCreateDate = ResourceContentMaker.create();
+contentItemWithCreateDate.resource = 'posts';
+contentItemWithCreateDate.metadata = <ContentMetadata>{
+	slug: 'welcome',
+	title: 'Card Title',
+	created_at: '13-Jan-2022',
+	headline:
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+};
 
-const contentItemWithCover = RecourceContentMaker.create({
-	resource: 'posts',
-	metadata: <ContentMetadata>{
-		slug: 'welcome',
-		title: 'Card Title',
-		headline:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-		cover:
-			'https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80'
-	}
-});
+const contentItemWithCover = ResourceContentMaker.create();
+contentItemWithCover.resource = 'posts';
+contentItemWithCover.metadata = <ContentMetadata>{
+	slug: 'welcome',
+	title: 'Card Title',
+	headline:
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	cover:
+		'https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80'
+};
 
-const contentItemWithCoverAndCreateDate = RecourceContentMaker.create({
-	resource: 'posts',
-	metadata: <ContentMetadata>{
-		slug: 'welcome',
-		title: 'Card Title',
-		created_at: '13-Jan-2022',
-		headline:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-		cover:
-			'https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80'
-	}
-});
+const contentItemWithCoverAndCreateDate = ResourceContentMaker.create();
+contentItemWithCoverAndCreateDate.resource = 'posts';
+contentItemWithCoverAndCreateDate.metadata = <ContentMetadata>{
+	slug: 'welcome',
+	title: 'Card Title',
+	created_at: '13-Jan-2022',
+	headline:
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	cover:
+		'https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80'
+};
 
-const next = RecourceContentMaker.create({
-	resource: 'posts',
-	metadata: <ContentMetadata>{
-		title: 'Getting Started',
-		slug: 'getting-started'
-	}
-});
+const next = ResourceContentMaker.create();
+next.resource = 'posts';
+next.metadata = <ContentMetadata>{
+	title: 'Getting Started',
+	slug: 'getting-started'
+};
 
-const previous = RecourceContentMaker.create({
-	resource: 'posts',
-	metadata: <ContentMetadata>{
-		title: 'Why',
-		slug: 'why'
-	}
-});
+const previous = ResourceContentMaker.create();
+previous.resource = 'posts';
+previous.metadata = <ContentMetadata>{
+	title: 'Why',
+	slug: 'why'
+};
 
 export {
 	contentItem,
