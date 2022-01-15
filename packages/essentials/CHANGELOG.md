@@ -1,5 +1,11 @@
 # @sveltinio/essentials
 
+## 0.1.2
+
+### Patch Changes
+
+- demox fixed
+
 ## 0.1.1
 
 ### Patch Changes
