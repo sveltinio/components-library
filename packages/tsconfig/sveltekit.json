@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Default",
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"declaration": true,
+		"module": "es2020",
+		"lib": ["es2020", "DOM"],
+		"target": "es2020",
+		"types": ["jest", "gtag.js"],
+		"importsNotUsedAsValues": "error",
+		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": ".",
+		"allowJs": true,
+		"checkJs": true,
+		"paths": {
+			"$config/*": ["<rootDir>/config"],
+			"$lib/*": ["<rootDir>/src/lib/*"]
+		}
+	},
+	"exclude": ["node_modules"],
+	"include": [
+		"<rootDir>/src/lib/**/*.d.ts",
+		"<rootDir>/src/lib/**/*.js",
+		"<rootDir>/src/lib/**/*.ts",
+		"<rootDir>/src/lib/**/*.svelte-kit",
+		"../config/jest-setup.ts"
+	]
+}

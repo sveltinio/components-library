@@ -1,0 +1,6 @@
+.svelte-kit/**
+static/**
+dist/**
+node_modules/**
+pnpm-lock.yaml
+packages/services/src/lib/components/GoogleAnalytics.svelte

@@ -1,0 +1,85 @@
+{
+	"name": "sveltin-components-library",
+	"version": "0.1.0",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"engines": {
+		"npm": ">=7.0.0",
+		"node": ">=16.0.0"
+	},
+	"scripts": {
+		"dev": "turbo run dev --parallel",
+		"test": "turbo run test --concurrency=2 --force",
+		"package": "turbo run package --force",
+		"format": "turbo run format",
+		"lint": "turbo run lint",
+		"check": "turbo run check",
+		"clean": "turbo run clean",
+		"prepare": "husky install",
+		"release": "pnpm -r publish packages  --access public",
+		"changeset:version": "changeset version && pnpm install --lockfile-only"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.19.0",
+		"@commitlint/cli": "^16.0.2",
+		"@commitlint/config-conventional": "^16.0.0",
+		"@types/gtag.js": "^0.0.8",
+		"@types/node": "^17.0.8",
+		"husky": "^7.0.4",
+		"jest": "^27.4.7",
+		"lint-staged": "^12.1.7",
+		"prettier": "^2.5.1",
+		"prettier-plugin-svelte": "^2.6.0",
+		"svelte": "^3.46.2",
+		"svelte-check": "^2.3.0",
+		"svelte-preprocess": "^4.10.1",
+		"svelte2tsx": "^0.4.14",
+		"turbo": "latest",
+		"typescript": "^4.5.4"
+	},
+	"turbo": {
+		"baseBranch": "origin/main",
+		"pipeline": {
+			"dev": {
+				"cache": false
+			},
+			"format": {},
+			"check": {},
+			"clean": {},
+			"lint": {
+				"dependsOn": [
+					"check",
+					"format"
+				]
+			},
+			"test": {
+				"dependsOn": [
+					"lint"
+				]
+			},
+			"package": {
+				"dependsOn": [
+					"clean",
+					"test",
+					"^package"
+				]
+			},
+			"release": {
+				"dependsOn": [
+					"package"
+				]
+			}
+		}
+	},
+	"lint-staged": {
+		"packages/**/*.{js, ts, svelte}": [
+			"prettier --check",
+			"eslint --fix"
+		],
+		"*.json": [
+			"prettier --write --plugin-search-dir=. ."
+		]
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"extends": "../../packages/tsconfig/sveltekit.json",
+	"compilerOptions": {
+		"types": ["gtag.js"]
+	},
+	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte", "config/data.js"],
+	"exclude": ["../../packages/tsconfig/node_modules"]
+}
