@@ -1,5 +1,11 @@
 # @sveltinio/services
 
+## 0.1.2
+
+### Patch Changes
+
+- demos fixed
+
 ## 0.1.1
 
 ### Patch Changes
