@@ -1,5 +1,11 @@
 # @sveltinio/widgets
 
+## 0.1.2
+
+### Patch Changes
+
+- fixing package version
+
 ## 0.1.1
 
 ### Patch Changes
