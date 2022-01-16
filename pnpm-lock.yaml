@@ -78,7 +78,7 @@ importers:
       typescript: ^4.5.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.230_svelte@3.46.2
+      '@sveltejs/kit': 1.0.0-next.231_svelte@3.46.2
       '@testing-library/jest-dom': 5.16.1
       '@testing-library/svelte': 3.0.3_svelte@3.46.2
       '@types/jest': 27.4.0
@@ -117,7 +117,7 @@ importers:
       typescript: ^4.5.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.230_svelte@3.46.2
+      '@sveltejs/kit': 1.0.0-next.231_svelte@3.46.2
       '@testing-library/jest-dom': 5.16.1
       '@testing-library/svelte': 3.0.3_svelte@3.46.2
       '@types/jest': 27.4.0
@@ -156,7 +156,7 @@ importers:
       typescript: ^4.5.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.230_svelte@3.46.2
+      '@sveltejs/kit': 1.0.0-next.231_svelte@3.46.2
       '@testing-library/jest-dom': 5.16.1
       '@testing-library/svelte': 3.0.3_svelte@3.46.2
       '@types/gtag.js': 0.0.8
@@ -199,7 +199,7 @@ importers:
       typescript: ^4.5.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.230_svelte@3.46.2
+      '@sveltejs/kit': 1.0.0-next.231_svelte@3.46.2
       '@testing-library/jest-dom': 5.16.1
       '@testing-library/svelte': 3.0.3_svelte@3.46.2
       '@types/jest': 27.4.0
@@ -1237,8 +1237,8 @@ packages:
       esbuild: 0.13.15
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.230_svelte@3.46.2:
-    resolution: {integrity: sha512-97i5KK7oDqgzm8rSQTqXsscTt1ajkjlamidaxtADL183NiYWi1kqkOt+mskYU+RverGUuHTNl/8yg5p5ZEZm1A==}
+  /@sveltejs/kit/1.0.0-next.231_svelte@3.46.2:
+    resolution: {integrity: sha512-utG2cfgweIIwFA1IcDDzDTa7cz+UiJX03ELG9cvpwkGIlHypzbGr0AnUzRAX60HUsBQLNhtjNCU2BUUy8IQLPw==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
