@@ -7,7 +7,13 @@
 
 <div class="card" id={`card-${item.metadata.slug}`}>
 	{#if item.metadata.cover}
-		<div class="card-header"><img src={item.metadata.cover} alt="" /></div>
+		<div class="card-header">
+			<img
+				src={`resources/${item.resource}/${item.metadata.slug}/${item.metadata.cover}`}
+				alt={`cover for ${item.metadata.title}`}
+				title={`cover for ${item.metadata.title}`}
+			/>
+		</div>
 	{/if}
 	<div class="card-content">
 		{#if item.metadata.created_at}
@@ -62,7 +68,7 @@
 		width: 100%;
 		height: auto;
 		z-index: 20;
-		padding: 2rem 1.75rem;
+		padding: 1.75rem;
 	}
 
 	.card-content h2 {
@@ -109,7 +115,7 @@
 
 	.accent {
 		font-weight: 700;
-		margin-top: 0.75rem 0 0.25rem 0;
+		margin: 0.75rem 0 0.25rem 0;
 	}
 
 	@media screen and (min-width: 1024px) {
