@@ -10,13 +10,13 @@
 	} from '../lib/index';
 </script>
 
-<svelte:head>
-	<SiteMetaTags websiteData={website} />
-	<JsonLdWebSite websiteData={website} />
-	<JsonLdWebPage websiteData={website} />
-	<JsonLdSiteNavigationElements websiteData={website} menuData={menu} />
-	<JsonLdBreadcrumbs websiteData={website} menuData={menu} />
-</svelte:head>
+<!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->
+<SiteMetaTags websiteData={website} />
+<JsonLdWebSite websiteData={website} />
+<JsonLdWebPage websiteData={website} />
+<JsonLdSiteNavigationElements websiteData={website} menuData={menu} />
+<JsonLdBreadcrumbs websiteData={website} menuData={menu} />
+<!-- END OF USAGE NOTE -->
 
 <section class="main">
 	<h1><tt>@sveltinio/seo</tt></h1>
