@@ -39,8 +39,8 @@ export interface IContentMetedata {
 export class ContentMetadata implements IContentMetedata {
 	public title: string;
 	public slug: string;
-	public headline: string;
 	public draft: boolean;
+	public headline: string;
 	public headings: Array<HeadingItem>;
 	public author?: string;
 	public created_at?: string;
@@ -53,7 +53,30 @@ export class ContentMetadataMaker {
 		return new ContentMetadata();
 	}
 
-	static createWithMandatoryValues(
+	static createWithValues(
+		title: string,
+		slug: string,
+		draft: boolean,
+		headline: string,
+		headings: Array<HeadingItem>,
+		author?: string,
+		created_at?: string,
+		updated_at?: string
+	) {
+		const item = new ContentMetadata();
+		item.title = title;
+		item.slug = slug;
+		item.draft = draft;
+		item.headline = headline;
+		item.headings = headings;
+		item.author = author;
+		item.created_at = created_at;
+		item.updated_at = updated_at;
+
+		return item;
+	}
+
+	static createWithMandatoryValuesOnly(
 		title: string,
 		slug: string,
 		draft: boolean,
