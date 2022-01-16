@@ -5,7 +5,11 @@
 	export let previous: ResourceContent;
 </script>
 
-<div class="prevnext-container" data-testid="prevnext-container">
+<div
+	class="prevnext-container"
+	data-testid="prevnext-container"
+	class:bottom-spacer={!previous.metadata.title || !next.metadata.title}
+>
 	<div class="spacer">
 		<div class="prevnext-wrapper">
 			<div>
@@ -51,6 +55,7 @@
 <style>
 	.prevnext-container {
 		max-width: 80rem;
+		margin-top: 2rem;
 		background-color: #ffffff;
 		border-top-width: 2px;
 		border-top-style: solid;
@@ -58,6 +63,10 @@
 		border-bottom-width: 1px;
 		border-bottom-style: solid;
 		border-bottom-color: #cbd5e1;
+	}
+
+	.bottom-spacer {
+		padding-bottom: 1rem;
 	}
 
 	.spacer {
@@ -88,7 +97,7 @@
 	}
 
 	.link-item p {
-		font-size: 0.75rem;
+		font-size: 1rem;
 		font-weight: 300;
 	}
 
@@ -102,10 +111,6 @@
 			padding-left: 1.5rem;
 			padding-right: 1.5rem;
 		}
-
-		.link-item p {
-			font-size: 1.25rem;
-		}
 	}
 
 	@media (min-width: 768px) {
@@ -115,6 +120,10 @@
 	}
 
 	@media (min-width: 1024px) {
+		.bottom-spacer {
+			padding-bottom: 0;
+		}
+
 		.prevnext-wrapper {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
@@ -132,10 +141,6 @@
 			padding-left: 2rem;
 			padding-right: 2rem;
 			padding-bottom: 2rem;
-		}
-
-		.link-item p {
-			font-size: 1rem;
 		}
 	}
 </style>

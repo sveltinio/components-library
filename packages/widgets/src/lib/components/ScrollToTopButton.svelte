@@ -16,6 +16,8 @@
 
 	let hidden = true;
 	export let showOnPx = 400;
+	export let iconColor = '#ffffff';
+	export let fillColor = '#4b5563';
 </script>
 
 <svelte:window on:scroll={handleOnScroll} />
@@ -26,6 +28,8 @@
 		href="#top"
 		aria-label="Back to top"
 		on:click={goTop}
+		style:color={iconColor}
+		style:background-color={fillColor}
 		class="animate-bounce"
 		class:hide={hidden}
 		class:show={!hidden}
@@ -60,20 +64,13 @@
 	}
 
 	.scroll-to-top a {
-		color: #ffffff;
-		background-color: #4b5563;
 		position: fixed;
 		bottom: 0px;
 		right: 0px;
-		padding: 0.5rem 0.5rem 0.3rem 0.5rem;
-		margin-top: 1.25rem /* 20px */;
-		margin-right: 1.25rem /* 20px */;
-		margin-bottom: 1.25rem /* 20px */;
-		margin-left: 1.25rem /* 20px */;
+		padding: 0.5rem;
+		margin: 1.25rem;
 		border-radius: 9999px;
 		transition-property: all;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-		transition-duration: 150ms;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 1000ms;
 	}

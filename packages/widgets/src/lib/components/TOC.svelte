@@ -103,7 +103,10 @@
 	.toc {
 		margin: 0;
 		overflow-y: auto;
-		padding: 0;
+		padding-top: 0;
+		padding-right: 0;
+		padding-bottom: 0.5rem;
+		padding-left: 0;
 	}
 
 	.toc-list {
@@ -131,7 +134,7 @@
 	}
 
 	.parent-node {
-		font-weight: 700;
+		font-weight: 600;
 	}
 
 	.child-node {
