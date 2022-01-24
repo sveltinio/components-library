@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.1.3
+
+### Patch Changes
+
+- SEO components refactored as well as interfaces to be more consistent
+
 ## 0.1.2
 
 ### Patch Changes
