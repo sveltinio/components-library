@@ -3,12 +3,5 @@
 	"singleQuote": true,
 	"trailingComma": "none",
 	"printWidth": 100,
-	"overrides": [
-		{
-			"files": ["*.svelte"],
-			"options": {
-				"svelteBracketNewLine": true
-			}
-		}
-	]
+	"bracketSpacing": true
 }
