@@ -1,12 +1,18 @@
 <script lang="ts">
-	import { JsonLdSiteNavigationElementMaker, MenuItem, WebSite } from '../../types';
-	export let websiteData: WebSite;
-	export let menuData: MenuItem[];
+	import {
+		JsonLdSiteNavigationElementMaker,
+		IMenuItem,
+		IWebSite,
+		JsonLdSiteNavigationElement,
+		JsonLdSiteNavigationElementListMaker
+	} from '../../types';
+	export let websiteData: IWebSite;
+	export let menuData: IMenuItem[];
 
-	let elementListAsJsonString = Array<Record<string, unknown>>();
+	let elementList = Array<JsonLdSiteNavigationElement>();
 
-	menuData.forEach(function (elem: MenuItem) {
-		const item = JsonLdSiteNavigationElementMaker.create();
+	menuData.forEach((elem: IMenuItem) => {
+		const item = JsonLdSiteNavigationElementMaker.make();
 		if (!elem.external) {
 			item.position = elem.weight;
 			item.name = elem.identifier;
@@ -16,16 +22,13 @@
 			item.name = elem.identifier;
 			item.url = elem.url;
 		}
-		elementListAsJsonString.push(item.toJsonLdObject());
+		elementList.push(item);
 	});
 
-	const schemaOrgSiteNavigationElementList = {
-		'@context': 'https://schema.org',
-		'@type': 'ItemList',
-		itemListElement: elementListAsJsonString
-	};
+	const schemaOrgSiteNavigationElementList =
+		JsonLdSiteNavigationElementListMaker.makeWithValues(elementList);
 
-	let jsonLdString = JSON.stringify(schemaOrgSiteNavigationElementList);
+	let jsonLdString = JSON.stringify(schemaOrgSiteNavigationElementList.toJsonLdObject());
 	let jsonLdScript = `
 		<script type="application/ld+json">
 			${jsonLdString}

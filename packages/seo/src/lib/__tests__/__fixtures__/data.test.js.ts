@@ -1,6 +1,7 @@
-import type { MenuItem, WebSite } from '../../types';
+import { OpenGraphType, TwitterCardType } from '../../types';
+import type { IWebPageMetadata, IMenuItem, IWebSite } from '../../types';
 
-const website: WebSite = {
+const website: IWebSite = {
 	name: 'example.com',
 	baseURL: 'https://example.com',
 	language: 'en-GB',
@@ -32,7 +33,39 @@ const website: WebSite = {
 	}
 };
 
-const menu: Array<MenuItem> = [
+const homePage: IWebPageMetadata = {
+	url: website.baseURL,
+	title: 'Home Page',
+	description: 'This is the description for the Home Page',
+	keywords: 'sveltekit, components, tests, jest',
+	opengraph: {
+		type: OpenGraphType.Website
+	},
+	twitter: {
+		type: TwitterCardType.Summary
+	}
+};
+
+const sampleArticle: IWebPageMetadata = {
+	url: website.baseURL + '/posts/' + 'getting-started',
+	title: 'Getting Started Article',
+	description: 'This is the description for the Getting Started Article',
+	author: 'Mirco Veltri',
+	keywords: 'sveltekit, components, tests, jest',
+	opengraph: {
+		type: OpenGraphType.Article,
+		article: {
+			published_at: '23-01-2022',
+			modified_at: '24-01-2022'
+		}
+	},
+	twitter: {
+		type: TwitterCardType.Large,
+		site: '@indaco'
+	}
+};
+
+const menu: Array<IMenuItem> = [
 	{
 		identifier: 'home',
 		name: 'Home',
@@ -54,4 +87,4 @@ const menu: Array<MenuItem> = [
 	}
 ];
 
-export { website, menu };
+export { website, homePage, sampleArticle, menu };

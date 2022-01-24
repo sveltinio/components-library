@@ -1,20 +1,15 @@
 <script lang="ts">
-	import type { WebSite } from '../../types';
+	import { IWebPageMetadata, JsonLdWebPage, JsonLdWebPageMaker } from '../../types';
 
-	export let websiteData: WebSite;
+	export let data: IWebPageMetadata;
+	const webpage: JsonLdWebPage = JsonLdWebPageMaker.make();
 
-	const schemaOrgWebPage = {
-		'@context': 'https://schema.org',
-		'@type': 'WebPage',
-		name: `${websiteData.name}`,
-		description: `${websiteData.seoDescription}`,
-		publisher: {
-			'@type': 'ProfilePage',
-			name: `${websiteData.webmaster.name}`
-		}
-	};
+	webpage.title = data.title;
+	webpage.description = data.description;
 
-	let jsonLdString = JSON.stringify(schemaOrgWebPage);
+	if (data.author) webpage.author = data.author;
+
+	let jsonLdString = JSON.stringify(webpage.toJsonLdObject());
 	let jsonLdScript = `
 		<script type="application/ld+json">
 			${jsonLdString}

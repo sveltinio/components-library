@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/svelte';
-import { website } from './__fixtures__/data.test.js';
+import { homePage, sampleArticle } from './__fixtures__/data.test.js';
 import { JsonLdWebPage } from '..';
 
 function getScripts(scriptType: string): string {
@@ -13,21 +13,31 @@ function getScripts(scriptType: string): string {
 	return '';
 }
 
-beforeEach(() => {
-	render(JsonLdWebPage, {
-		props: {
-			websiteData: website
-		}
-	});
-});
-
 describe('JsonLdWebPage', () => {
-	it('should have jsonld WebPage object with props', async () => {
+	it('should have jsonld WebPage object with name and description only', async () => {
+		render(JsonLdWebPage, {
+			props: {
+				data: homePage
+			}
+		});
 		const jsonLdScript = getScripts('application/ld+json');
 		const jsonLdString = JSON.parse(jsonLdScript);
 		expect(jsonLdString['@type']).toBe('WebPage');
-		expect(jsonLdString.name).toBe('example.com');
-		expect(jsonLdString.description).toBe('Sample enhanced text for SEO purpose');
-		expect(jsonLdString.publisher.name).toBe('indaco');
+		expect(jsonLdString.name).toBe(homePage.title);
+		expect(jsonLdString.description).toBe(homePage.description);
+	});
+
+	it('should have jsonld WebPage object with name and description and author', async () => {
+		render(JsonLdWebPage, {
+			props: {
+				data: sampleArticle
+			}
+		});
+		const jsonLdScript = getScripts('application/ld+json');
+		const jsonLdString = JSON.parse(jsonLdScript);
+		expect(jsonLdString['@type']).toBe('WebPage');
+		expect(jsonLdString.name).toBe(sampleArticle.title);
+		expect(jsonLdString.description).toBe(sampleArticle.description);
+		expect(jsonLdString.author).toBe(sampleArticle.author);
 	});
 });

@@ -1,38 +1,34 @@
 <script lang="ts">
 	import {
-		JsonLdBreadcrumbsListItemMaker,
-		JsonLdBreadcrumbsItemListElementMaker,
-		MenuItem,
-		WebSite
+		IMenuItem,
+		IWebSite,
+		JsonLdBreadcrumbsItem,
+		JsonLdBreadcrumbsItemMaker,
+		JsonLdBreadcrumbsListMaker
 	} from '../../types';
 
-	export let websiteData: WebSite;
-	export let menuData: Array<MenuItem>;
+	export let websiteData: IWebSite;
+	export let menuData: Array<IMenuItem>;
 
-	let itemElementListAsJsonString = Array<Record<string, unknown>>();
+	let itemElementList = Array<JsonLdBreadcrumbsItem>();
 
-	menuData.forEach(function (elem: MenuItem) {
-		const listItem = JsonLdBreadcrumbsItemListElementMaker.create();
+	menuData.forEach(function (elem: IMenuItem) {
+		const listItem = JsonLdBreadcrumbsItemMaker.make();
 		if (!elem.external) {
 			listItem.position = elem.weight;
-			listItem.item = JsonLdBreadcrumbsListItemMaker.createWithValues(
-				`${websiteData.baseURL}${elem.url}`,
-				elem.name
-			);
+			listItem.name = elem.name;
+			listItem.url = `${websiteData.baseURL}${elem.url}`;
 		} else {
 			listItem.position = elem.weight;
-			listItem.item = JsonLdBreadcrumbsListItemMaker.createWithValues(`${elem.url}`, elem.name);
+			listItem.name = elem.name;
+			listItem.url = `${elem.url}`;
 		}
-		itemElementListAsJsonString.push(listItem.toJsonLdObject());
+		itemElementList.push(listItem);
 	});
 
-	const schemaOrgBreadcrumbList = {
-		'@context': 'https://schema.org',
-		'@type': 'BreadcrumbList',
-		itemListElement: itemElementListAsJsonString
-	};
+	const schemaOrgBreadcrumbList = JsonLdBreadcrumbsListMaker.makeWithValues(itemElementList);
 
-	let jsonLdString = JSON.stringify(schemaOrgBreadcrumbList);
+	let jsonLdString = JSON.stringify(schemaOrgBreadcrumbList.toJsonLdObject());
 	let jsonLdScript = `
 		<script type="application/ld+json">
 			${jsonLdString}

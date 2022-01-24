@@ -38,8 +38,8 @@ describe('JsonLdBreadcrumbs', () => {
 		const homeElement = jsonLdString.itemListElement[0];
 		expect(homeElement['@type']).toBe('ListItem');
 		expect(homeElement.position).toBe(1);
-		expect(homeElement.item['@id']).toBe('https://example.com/');
-		expect(homeElement.item.name).toBe('Home');
+		expect(homeElement.name).toBe('Home');
+		expect(homeElement.item).toBe('https://example.com/');
 	});
 
 	it('should have about element', async () => {
@@ -49,8 +49,8 @@ describe('JsonLdBreadcrumbs', () => {
 		const aboutElement = jsonLdString.itemListElement[1];
 		expect(aboutElement['@type']).toBe('ListItem');
 		expect(aboutElement.position).toBe(2);
-		expect(aboutElement.item['@id']).toBe('https://example.com/about');
-		expect(aboutElement.item.name).toBe('About');
+		expect(aboutElement.name).toBe('About');
+		expect(aboutElement.item).toBe('https://example.com/about');
 	});
 
 	it('should have github element', async () => {
@@ -60,7 +60,7 @@ describe('JsonLdBreadcrumbs', () => {
 		const githubElement = jsonLdString.itemListElement[2];
 		expect(githubElement['@type']).toBe('ListItem');
 		expect(githubElement.position).toBe(3);
-		expect(githubElement.item['@id']).toBe('https://github.com/sveltinio');
-		expect(githubElement.item.name).toBe('GitHub');
+		expect(githubElement.name).toBe('GitHub');
+		expect(githubElement.item).toBe('https://github.com/sveltinio');
 	});
 });

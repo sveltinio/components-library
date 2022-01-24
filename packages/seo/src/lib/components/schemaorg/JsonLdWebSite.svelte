@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { WebSite } from '../../types';
+	import type { IWebSite } from '../../types';
 
-	export let websiteData: WebSite;
+	export let websiteData: IWebSite;
 
 	const sameAs = Object.values(websiteData.socials).filter((v) => v != '');
 	const schemaOrgWebSite = {

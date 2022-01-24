@@ -1,26 +1,24 @@
 <script lang="ts">
-	import { menu, website } from '../lib/__tests__/__fixtures__/data.test.js';
-
 	import {
-		SiteMetaTags,
-		JsonLdWebSite,
-		JsonLdWebPage,
 		JsonLdSiteNavigationElements,
-		JsonLdBreadcrumbs
+		JsonLdWebPage,
+		JsonLdWebSite,
+		PageMetaTags
 	} from '../lib/index';
+
+	import { homePage, website, menu } from '../lib/__tests__/__fixtures__/data.test.js';
 </script>
 
 <!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->
-<SiteMetaTags websiteData={website} />
+<PageMetaTags data={homePage} />
 <JsonLdWebSite websiteData={website} />
-<JsonLdWebPage websiteData={website} />
 <JsonLdSiteNavigationElements websiteData={website} menuData={menu} />
-<JsonLdBreadcrumbs websiteData={website} menuData={menu} />
+<JsonLdWebPage data={homePage} />
 <!-- END OF USAGE NOTE -->
 
 <section class="main">
 	<h1><tt>@sveltinio/seo</tt></h1>
-	<h2><tt>Demos</tt></h2>
+	<h2><tt>PageMetaTags - homePage</tt></h2>
 	<section class="container">
 		<h3>Inspect the head of the webpage</h3>
 	</section>

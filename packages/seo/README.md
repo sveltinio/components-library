@@ -9,7 +9,14 @@ A collection of Svelte components used Sveltin, the CLI to boost the developers 
 
 ## Components List
 
-- SiteMetatags
+### Meta
+
+- PageMetatags
+- OpenGraph
+- TwitterCard
+
+### SchemaOrg
+
 - JsonLdWebSite
 - JsonLdWebPage
 - JsonLdBreadcrumbs
