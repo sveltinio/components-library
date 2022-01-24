@@ -19,7 +19,7 @@
 	<link rel="canonical" href={data.url} />
 	<meta name="description" content={data.description} />
 	<meta name="generator" content="sveltin" />
-	{#if data.keywords != ''}
+	{#if data.keywords && data.keywords != ''}
 		<meta name="keywords" content={data.keywords} />
 	{/if}
 
