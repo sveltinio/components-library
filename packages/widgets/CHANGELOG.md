@@ -1,5 +1,11 @@
 # @sveltinio/widgets
 
+## 0.1.4
+
+### Patch Changes
+
+- support to use custom colors for PrevNextButton added
+
 ## 0.1.3
 
 ### Patch Changes
