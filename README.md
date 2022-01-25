@@ -1,26 +1,32 @@
 # Sveltin Components Library
 
-This is a monorepo containing Svelte components used by Sveltin CLI. Each repo has it's own readme with more details.
+## Creafted to be used by Sveltin CLI but definetely usable out of it
 
-## Packages
+### Intro
 
-| Package                                      | Changelog                                     |
-| -------------------------------------------- | --------------------------------------------- |
-| [@sveltinio/essentials](packages/essentials) | [Changelog](packages/essentials/CHANGELOG.md) |
-| [@sveltinio/seo](packages/seo)               | [Changelog](packages/seo/CHANGELOG.md)        |
-| [@sveltinio/services](packages/services)     | [Changelog](packages/services/CHANGELOG.md)   |
-| [@sveltinio/widgets](packages/widgets)       | [Changelog](packages/widgets/CHANGELOG.md)    |
+This repo is a "mono-repo" using [pnpm workspaces](https://pnpm.io/workspaces) for managing the packages and [Turborepo](https://turborepo.org/) as build system with pipelines.
 
-## Demos
+Each package has its own folder and README in the `/packages` directory. All package bundles are handled with the same command: `pnpm package`
+
+### Packages
+
+| Package                                      | Description                                                                                              | Changelog                                     |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| [@sveltinio/essentials](packages/essentials) | Unstyled components to handle external links or images <br/> using AVIF, WEBP                            | [Changelog](packages/essentials/CHANGELOG.md) |
+| [@sveltinio/seo](packages/seo)               | All SEO related components for metatags, json-ld etc.                                                    | [Changelog](packages/seo/CHANGELOG.md)        |
+| [@sveltinio/services](packages/services)     | Components to use GoogleFonts, GoogleAnalytics, <br/> embed YouTube videos etc.                          | [Changelog](packages/services/CHANGELOG.md)   |
+| [@sveltinio/widgets](packages/widgets)       | Styled components ready to be used for page navigation, <br/> TOC, scroll to top, collapsible lists etc. | [Changelog](packages/widgets/CHANGELOG.md)    |
+
+### Demos
 
 Run `pnpm dev`
 
-## Tests
+### Tests
 
 Some components make use of SvelteKit's modules like `$app/paths` stored on `.svelte-kit` folder generated running the Vite server.
 
 To execute the test suites, run `pnpm dev` first and then `pnpm test`
 
-## License
+### License
 
 Free and open-source software under the [MIT License](LICENSE)
