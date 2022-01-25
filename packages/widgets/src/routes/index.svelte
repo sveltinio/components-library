@@ -40,7 +40,19 @@
 
 	<section id="prev-next-buttons" class="container">
 		<h3>PrevNextButtons</h3>
+
+		<h4>Default Styles</h4>
 		<PrevNextButtons {previous} {next} />
+
+		<h4>Custom Styles</h4>
+		<PrevNextButtons
+			{previous}
+			{next}
+			borderTopColor="#008C7D"
+			borderBottomColor="#A9AD9B"
+			linkColor="#006B70"
+			linkHoverBgColor="#ECF5CE"
+		/>
 	</section>
 
 	<section id="toc" class="container">
