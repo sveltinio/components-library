@@ -10,20 +10,20 @@
 	export let linkHoverBgColor = '#f0f0f0';
 
 	let prevHoverBgColor = '';
-	function handleMousePrevOver(e) {
+	function handleMousePrevOver() {
 		prevHoverBgColor = linkHoverBgColor;
 	}
 
-	function handleMousePrevOut(e) {
+	function handleMousePrevOut() {
 		prevHoverBgColor = '';
 	}
 
 	let nextHoverBgColor = '';
-	function handleMouseNextOver(e) {
+	function handleMouseNextOver() {
 		nextHoverBgColor = linkHoverBgColor;
 	}
 
-	function handleMouseNextOut(e) {
+	function handleMouseNextOut() {
 		nextHoverBgColor = '';
 	}
 </script>
