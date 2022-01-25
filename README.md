@@ -12,10 +12,10 @@ Each package has its own folder and README in the `/packages` directory. All pac
 
 | Package                                      | Description                                                                                              | Changelog                                     |
 | -------------------------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| [@sveltinio/essentials](packages/essentials) | Unstyled components to handle external links or images <br/> using AVIF, WEBP                            | [Changelog](packages/essentials/CHANGELOG.md) |
-| [@sveltinio/seo](packages/seo)               | All SEO related components for metatags, json-ld etc.                                                    | [Changelog](packages/seo/CHANGELOG.md)        |
-| [@sveltinio/services](packages/services)     | Components to use GoogleFonts, GoogleAnalytics, <br/> embed YouTube videos etc.                          | [Changelog](packages/services/CHANGELOG.md)   |
-| [@sveltinio/widgets](packages/widgets)       | Styled components ready to be used for page navigation, <br/> TOC, scroll to top, collapsible lists etc. | [Changelog](packages/widgets/CHANGELOG.md)    |
+| [@sveltinio/essentials](packages/essentials) | Unstyled components to handle external links or images <br/> using AVIF, WEBP, embed YouTube videos ...                             | [Changelog](packages/essentials/CHANGELOG.md) |
+| [@sveltinio/seo](packages/seo)               | All SEO related components for metatags, json-ld ...                                                    | [Changelog](packages/seo/CHANGELOG.md)        |
+| [@sveltinio/services](packages/services)     | Components to use GoogleFonts, GoogleAnalytics ...                        | [Changelog](packages/services/CHANGELOG.md)   |
+| [@sveltinio/widgets](packages/widgets)       | Styled components ready to be used for page navigation, <br/> TOC, scroll to top, collapsible lists ... | [Changelog](packages/widgets/CHANGELOG.md)    |
 
 ### Demos
 
