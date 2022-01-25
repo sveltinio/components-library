@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, PrevNextButtons, TOC, ScrollToTopButton } from '../lib';
+	import { Card, PrevNextButtons, TOC, ScrollToTopButton, CollapsibleList } from '../lib';
 	import {
 		contentItem,
 		contentItemWithCreateDate,
@@ -53,6 +53,20 @@
 			linkColor="#006B70"
 			linkHoverBgColor="#ECF5CE"
 		/>
+	</section>
+
+	<section id="collapsable-list" class="container">
+		<h3>CollapsibleList</h3>
+
+		<div style="width: 50%">
+			<CollapsibleList headerText="Expand Me">
+				<ul>
+					<li>First</li>
+					<li>Second</li>
+					<li>Third</li>
+				</ul>
+			</CollapsibleList>
+		</div>
 	</section>
 
 	<section id="toc" class="container">

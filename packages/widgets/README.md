@@ -14,6 +14,7 @@ A collection of Svelte components used Sveltin, the CLI to boost the developers 
 - Card
 - PrevNextButtons
 - ScrollToTopButton
+- CollapsibleList
 
 ## Demos
 
