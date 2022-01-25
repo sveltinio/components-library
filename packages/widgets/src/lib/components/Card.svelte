@@ -22,8 +22,10 @@
 			>
 		{/if}
 		<h2>
-			<a href={`/${item.resource}/${item.metadata.slug}`} data-testid="card-title"
-				>{item.metadata.title}</a
+			<a
+				href={`/${item.resource}/${item.metadata.slug}`}
+				sveltekit:prefetch
+				data-testid="card-title">{item.metadata.title}</a
 			>
 		</h2>
 		<p style:-webkit-line-clamp={lineClamp} data-testid="card-text">
@@ -31,6 +33,7 @@
 		</p>
 		<p class="accent">
 			<a
+				sveltekit:prefetch
 				href={`/${item.resource}/${item.metadata.slug}`}
 				title="Read more link to {item.metadata.title}"
 				aria-label="Read more link to {item.metadata.title} "
