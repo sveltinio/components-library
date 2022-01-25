@@ -3,7 +3,7 @@ import { render } from '@testing-library/svelte';
 import Card from '../components/Card.svelte';
 import { contentItem } from './__fixtures__/data.test.js';
 
-describe('PrevNextButtons', () => {
+describe('Card', () => {
 	it('should be in the document', async () => {
 		const { container } = render(Card, {
 			props: {

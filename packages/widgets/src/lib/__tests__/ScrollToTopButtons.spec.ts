@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/svelte';
 import ScrollToTopButton from '../components/ScrollToTopButton.svelte';
 
-describe('PrevNextButtons', () => {
+describe('ScrollToTopButton', () => {
 	it('should be in the document', async () => {
 		const { container } = render(ScrollToTopButton, {});
 		expect(container).toBeInTheDocument();
