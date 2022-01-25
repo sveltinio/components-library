@@ -1,6 +1,6 @@
 # Sveltin Components Library
 
-## Creafted to be used by Sveltin CLI but definetely usable out of it
+## Crafted to be used by Sveltin based projects but definetely usable out of it
 
 ### Intro
 
