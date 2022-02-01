@@ -2,5 +2,4 @@
 static/**
 dist/**
 node_modules/**
-pnpm-lock.yaml
-packages/seo/src/lib/types.ts
+src/lib/types.ts
