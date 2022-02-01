@@ -1,0 +1,23 @@
+{
+	"baseBranch": "origin/main",
+	"pipeline": {
+		"dev": {
+			"cache": false
+		},
+		"format": {},
+		"check": {},
+		"clean": {},
+		"lint": {
+			"dependsOn": ["check", "format"]
+		},
+		"test": {
+			"dependsOn": ["lint"]
+		},
+		"package": {
+			"dependsOn": ["clean", "test", "^package"]
+		},
+		"release": {
+			"dependsOn": ["package"]
+		}
+	}
+}

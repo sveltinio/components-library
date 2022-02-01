@@ -2,6 +2,7 @@
 	"name": "sveltin-components-library",
 	"version": "0.1.0",
 	"private": true,
+	"packageManager": "pnpm@6.29.1",
 	"workspaces": [
 		"packages/*"
 	],
@@ -26,52 +27,18 @@
 		"@commitlint/cli": "^16.1.0",
 		"@commitlint/config-conventional": "^16.0.0",
 		"@types/gtag.js": "^0.0.8",
-		"@types/node": "^17.0.10",
+		"@types/node": "^17.0.13",
 		"husky": "^7.0.4",
 		"jest": "^27.4.7",
-		"lint-staged": "^12.3.1",
+		"lint-staged": "^12.3.2",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.6.0",
-		"svelte": "^3.46.2",
-		"svelte-check": "^2.3.0",
+		"svelte": "^3.46.3",
+		"svelte-check": "^2.4.1",
 		"svelte-preprocess": "^4.10.2",
-		"svelte2tsx": "^0.4.14",
+		"svelte2tsx": "^0.5.1",
 		"turbo": "latest",
 		"typescript": "^4.5.5"
-	},
-	"turbo": {
-		"baseBranch": "origin/main",
-		"pipeline": {
-			"dev": {
-				"cache": false
-			},
-			"format": {},
-			"check": {},
-			"clean": {},
-			"lint": {
-				"dependsOn": [
-					"check",
-					"format"
-				]
-			},
-			"test": {
-				"dependsOn": [
-					"lint"
-				]
-			},
-			"package": {
-				"dependsOn": [
-					"clean",
-					"test",
-					"^package"
-				]
-			},
-			"release": {
-				"dependsOn": [
-					"package"
-				]
-			}
-		}
 	},
 	"lint-staged": {
 		"packages/**/*.{js, ts, svelte}": [
