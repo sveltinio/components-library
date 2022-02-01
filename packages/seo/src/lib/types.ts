@@ -207,10 +207,10 @@ export class JsonLdWebPage implements ISchemaOrg {
 
 	toJsonLdObject(): Record<string, unknown> {
 		const obj = {
-			'@context': 'https://schema.org',
-			'@type': 'WebPage',
-			name: this.title,
-			description: this.description
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": this.title,
+			"description": this.description
 		};
 
 		if (this.author) {
@@ -252,11 +252,11 @@ export class JsonLdSiteNavigationElement implements ISchemaOrg {
 
 	toJsonLdObject(): Record<string, unknown> {
 		return {
-			'@type': 'SiteNavigationElement',
-			position: this.position,
-			name: this.name,
-			description: this.description,
-			url: this.url
+			"@type": "SiteNavigationElement",
+			"position": this.position,
+			"name": this.name,
+			"description": this.description,
+			"url": this.url
 		};
 	}
 }
@@ -292,9 +292,9 @@ export class JsonLdSiteNavigationElementList implements ISchemaOrg {
 		});
 
 		return {
-			'@context': 'https://schema.org',
-			'@type': 'ItemList',
-			itemListElement: elementListAsJsonString
+			"@context": "https://schema.org",
+			"@type": "ItemList",
+			"itemListElement": elementListAsJsonString
 		};
 	}
 }
@@ -324,10 +324,10 @@ export class JsonLdBreadcrumbsItem implements ISchemaOrg {
 
 	toJsonLdObject(): Record<string, unknown> {
 		return {
-			'@type': 'ListItem',
-			position: this.position,
-			name: this.name,
-			item: this.url
+			"@type": "ListItem",
+			"position": this.position,
+			"name": this.name,
+			"item": this.url
 		};
 	}
 }
@@ -363,9 +363,9 @@ export class JsonLdBreadcrumbsList implements ISchemaOrg {
 		});
 
 		return {
-			'@context': 'https://schema.org',
-			'@type': 'BreadcrumbList',
-			itemListElement: elementListAsJsonString
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": elementListAsJsonString
 		};
 	}
 }
