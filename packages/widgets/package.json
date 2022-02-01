@@ -2,7 +2,7 @@
 	"name": "@sveltinio/widgets",
 	"version": "0.1.4",
 	"private": false,
-	"description": "A collection of Svelte components used Sveltin, the CLI to boost the developers productivity working on SvelteKit powered static websites.",
+	"description": "A collection of styled Svelte components for page navigation, TOC, scroll to top, collapsible lists ...",
 	"author": "dev <dev@sveltin.io>",
 	"license": "MIT",
 	"keywords": [

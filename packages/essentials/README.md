@@ -6,7 +6,7 @@
 
 ## Description
 
-A collection of Svelte components used Sveltin, the CLI to boost the developers productivity working on SvelteKit powered static websites.
+A collection of Svelte unstyled components to handle external links or images using AVIF, WEBP, embed YouTube videos ...
 
 ## Components List
 

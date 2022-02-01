@@ -6,7 +6,7 @@
 
 ## Description
 
-A collection of Svelte components used Sveltin, the CLI to boost the developers productivity working on SvelteKit powered static websites.
+Collection of styled components ready to be used for page navigation, TOC, scroll to top, collapsible lists ...
 
 ## Components List
 

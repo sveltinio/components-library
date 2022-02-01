@@ -5,7 +5,7 @@
 
 ## Description
 
-A collection of Svelte components used Sveltin, the CLI to boost the developers productivity working on SvelteKit powered static websites.
+A collection of Svelte components SEO related for metatags, json-ld.
 
 ## Components List
 

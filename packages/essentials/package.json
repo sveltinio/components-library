@@ -2,7 +2,7 @@
 	"name": "@sveltinio/essentials",
 	"version": "0.1.2",
 	"private": false,
-	"description": "A collection of Svelte components used Sveltin, the CLI to boost the developers productivity working on SvelteKit powered static websites.",
+	"description": "A collection of Svelte unstyled components to handle external links or images using AVIF, WEBP, embed YouTube videos ...",
 	"author": "dev <dev@sveltin.io>",
 	"license": "MIT",
 	"keywords": [
