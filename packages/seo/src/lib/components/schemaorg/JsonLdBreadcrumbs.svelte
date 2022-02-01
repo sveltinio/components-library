@@ -1,41 +1,51 @@
 <script lang="ts">
 	import {
-		IMenuItem,
-		IWebSite,
 		JsonLdBreadcrumbsItem,
 		JsonLdBreadcrumbsItemMaker,
 		JsonLdBreadcrumbsListMaker
 	} from '../../types';
 
-	export let websiteData: IWebSite;
-	export let menuData: Array<IMenuItem>;
+	export let baseURL: string;
+	export let parent: string;
+	export let currentTitle: string;
 
 	let itemElementList = Array<JsonLdBreadcrumbsItem>();
 
-	menuData.forEach(function (elem: IMenuItem) {
-		const listItem = JsonLdBreadcrumbsItemMaker.make();
-		if (!elem.external) {
-			listItem.position = elem.weight;
-			listItem.name = elem.name;
-			listItem.url = `${websiteData.baseURL}${elem.url}`;
-		} else {
-			listItem.position = elem.weight;
-			listItem.name = elem.name;
-			listItem.url = `${elem.url}`;
-		}
-		itemElementList.push(listItem);
-	});
+	const homePage = JsonLdBreadcrumbsItemMaker.make();
+	homePage.position = 1;
+	homePage.name = 'Home';
+	homePage.url = baseURL;
+	itemElementList.push(homePage);
 
-	const schemaOrgBreadcrumbList = JsonLdBreadcrumbsListMaker.makeWithValues(itemElementList);
+	if (parent != '') {
+		const resourcePage = JsonLdBreadcrumbsItemMaker.make();
+		resourcePage.position = 2;
+		resourcePage.name = parent.toUpperCase();
+		resourcePage.url = `${baseURL}/${parent}`;
+		itemElementList.push(resourcePage);
 
-	let jsonLdString = JSON.stringify(schemaOrgBreadcrumbList.toJsonLdObject());
+		const currentPage = JsonLdBreadcrumbsItemMaker.make();
+		currentPage.position = 3;
+		currentPage.name = currentTitle;
+		itemElementList.push(currentPage);
+	} else {
+		const currentPage = JsonLdBreadcrumbsItemMaker.make();
+		currentPage.position = 2;
+		currentPage.name = currentTitle;
+		itemElementList.push(currentPage);
+	}
+
+	const schemaOrgBreadcrumbsList = JsonLdBreadcrumbsListMaker.makeWithValues(itemElementList);
+	let jsonLdString = JSON.stringify(schemaOrgBreadcrumbsList.toJsonLdObject());
+
 	let jsonLdScript = `
-		<script type="application/ld+json">
-			${jsonLdString}
-		${'<'}/script>
+	<script type="application/ld+json">
+		${jsonLdString}
+	${'<'}/script>
 	`;
 </script>
 
+<!-- JSONLD-Breacrumbs-->
 <svelte:head>
 	{@html jsonLdScript}
 </svelte:head>
