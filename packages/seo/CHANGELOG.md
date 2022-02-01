@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.1.4
+
+### Patch Changes
+
+- json-ld breadcrumbs fixed
+
 ## 0.1.3
 
 ### Patch Changes
