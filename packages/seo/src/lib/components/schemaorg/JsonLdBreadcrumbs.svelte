@@ -14,7 +14,7 @@
 	const homePage = JsonLdBreadcrumbsItemMaker.make();
 	homePage.position = 1;
 	homePage.name = 'Home';
-	homePage.url = baseURL;
+	homePage.url = `${baseURL}`;
 	itemElementList.push(homePage);
 
 	if (parent != '') {
