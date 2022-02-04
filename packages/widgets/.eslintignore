@@ -3,3 +3,4 @@ static/**
 dist/**
 node_modules/**
 pnpm-lock.yaml
+src/app.d.ts

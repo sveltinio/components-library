@@ -4,3 +4,4 @@ dist/**
 node_modules/**
 pnpm-lock.yaml
 src/lib/components/GoogleAnalytics.svelte
+src/app.d.ts
