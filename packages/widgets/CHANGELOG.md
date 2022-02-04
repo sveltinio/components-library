@@ -1,5 +1,12 @@
 # @sveltinio/widgets
 
+## 0.1.5
+
+### Patch Changes
+
+- chore: shadow added to the Card component
+- feat: Breadcrumbs component added
+
 ## 0.1.4
 
 ### Patch Changes
