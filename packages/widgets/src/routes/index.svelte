@@ -1,5 +1,12 @@
 <script lang="ts">
-	import { Card, PrevNextButtons, TOC, ScrollToTopButton, CollapsibleList } from '../lib';
+	import {
+		Card,
+		PrevNextButtons,
+		TOC,
+		ScrollToTopButton,
+		CollapsibleList,
+		Breadcrumbs
+	} from '../lib';
 	import {
 		contentItem,
 		contentItemWithCreateDate,
@@ -67,6 +74,12 @@
 				</ul>
 			</CollapsibleList>
 		</div>
+	</section>
+
+	<section id="breadcrumbs" class="container">
+		<h3>Breadcrumbs</h3>
+
+		<Breadcrumbs baseURL="http://example.com" parent="posts" currentTitle="Getting Started" />
 	</section>
 
 	<section id="toc" class="container">
