@@ -15,6 +15,9 @@ Collection of styled components ready to be used for page navigation, TOC, scrol
 - PrevNextButtons
 - ScrollToTopButton
 - CollapsibleList
+- Breadcrumbs
+- GitHubButton (star, follow, issue, watch)
+- GitHubForkRibbon
 
 ## Demos
 

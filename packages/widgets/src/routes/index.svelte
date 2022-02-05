@@ -5,7 +5,9 @@
 		TOC,
 		ScrollToTopButton,
 		CollapsibleList,
-		Breadcrumbs
+		Breadcrumbs,
+		GitHubButton,
+		GitHubForkRibbon
 	} from '../lib';
 	import {
 		contentItem,
@@ -93,4 +95,48 @@
 		<h4 id="toc-with-children">w/ children</h4>
 		<TOC resource="posts" slug="welcome" {headings} withChildren={true} />
 	</section>
+
+	<section id="github-buttons" class="container">
+		<h3>GitHubButton</h3>
+		<div class="row">
+			<ul class="list-inline">
+				<li>
+					<GitHubButton username="sveltinio" repo="sveltin" action="star" />
+				</li>
+				<li>
+					<GitHubButton username="sveltinio" repo="sveltin" action="follow" />
+				</li>
+				<li>
+					<GitHubButton username="sveltinio" repo="sveltin" action="issue" />
+				</li>
+				<li>
+					<GitHubButton username="sveltinio" repo="sveltin" action="watch" />
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="github-buttons" class="container">
+		<h3>GitHubForkRibbon</h3>
+
+		<GitHubForkRibbon username="sveltinio" repo="sveltin" />
+		<p>It is placed at the top of the page</p>
+	</section>
 </section>
+
+<style>
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.list-inline {
+		padding-left: 0;
+		list-style: none;
+	}
+	.list-inline > li {
+		display: inline-block;
+		padding-right: 5px;
+		padding-left: 5px;
+		margin: 0;
+	}
+</style>
