@@ -8,7 +8,7 @@
 
 	// Pass or harcode your google analytics tracking id
 	export let trackingId: string;
-	export let scriptId = 'google-analytics-script';
+	export let scriptID = 'google-analytics-script';
 	export let domain = 'https://www.googletagmanager.com';
 	export let enabled = true;
 
@@ -26,9 +26,9 @@
 			head.appendChild(link);
 
 			const script = document.createElement('script');
+			script.id = scriptID;
 			script.async = true;
 			script.src = `${domain}/gtag/js?id=${trackingId}&l=${dataLayerName}`;
-			script.setAttribute('id', scriptId);
 
 			head.appendChild(script);
 
@@ -42,7 +42,7 @@
 			return;
 		}
 		// We add the script only once even when the component rendered twice.
-		if (window.document.getElementById(scriptId)) {
+		if (window.document.getElementById(scriptID)) {
 			return;
 		}
 
@@ -57,7 +57,7 @@
 			await addGoogleAnalyticsScript();
 		} catch (err) {
 			console.error('gtag failure');
-			const s = window.document.getElementById(scriptId);
+			const s = window.document.getElementById(scriptID);
 
 			if (s) {
 				s.remove();

@@ -2,27 +2,7 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/svelte';
 import { GoogleFonts } from '..';
 import { externals } from './__fixtures__/data.test.js';
-
-function getRelLinks(): string {
-	const links = document.getElementsByTagName('link');
-	for (let i = 0; i < links.length; i += 1) {
-		if (links[i].getAttribute('rel') === 'preconnect') {
-			return links[i].getAttribute('href');
-		}
-	}
-	return '';
-}
-
-function getGoogleFontLinks(): Array<string> {
-	const links = document.getElementsByTagName('link');
-	const hrefs: Array<string> = [];
-	for (let i = 0; i < links.length; i += 1) {
-		if (links[i].getAttribute('media') === 'print') {
-			hrefs.push(links[i].getAttribute('href'));
-		}
-	}
-	return hrefs;
-}
+import { getGoogleFontLinks, getRelLinks } from './__fixtures__/utils';
 
 beforeEach(() => {
 	render(GoogleFonts, {
