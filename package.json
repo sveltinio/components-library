@@ -23,22 +23,22 @@
 		"changeset:version": "changeset version && pnpm install --lockfile-only"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.20.0",
-		"@commitlint/cli": "^16.1.0",
-		"@commitlint/config-conventional": "^16.0.0",
+		"@changesets/cli": "^2.21.1",
+		"@commitlint/cli": "^16.2.3",
+		"@commitlint/config-conventional": "^16.2.1",
 		"@types/gtag.js": "^0.0.8",
-		"@types/node": "^17.0.15",
+		"@types/node": "^17.0.22",
 		"husky": "^7.0.4",
-		"jest": "^27.5.0",
-		"lint-staged": "^12.3.3",
-		"prettier": "^2.5.1",
+		"jest": "^27.5.1",
+		"lint-staged": "^12.3.7",
+		"prettier": "^2.6.0",
 		"prettier-plugin-svelte": "^2.6.0",
 		"svelte": "^3.46.4",
-		"svelte-check": "^2.4.2",
-		"svelte-preprocess": "^4.10.2",
-		"svelte2tsx": "^0.5.2",
+		"svelte-check": "^2.4.6",
+		"svelte-preprocess": "^4.10.4",
+		"svelte2tsx": "^0.5.6",
 		"turbo": "latest",
-		"typescript": "^4.5.5"
+		"typescript": "^4.6.2"
 	},
 	"lint-staged": {
 		"packages/**/*.{js, ts, svelte}": [
