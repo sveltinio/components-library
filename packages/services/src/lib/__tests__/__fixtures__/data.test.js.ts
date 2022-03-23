@@ -16,4 +16,9 @@ const externals: ExternalServices = {
 	}
 };
 
-export { externals };
+const umamiConf: Record<string, string> = {
+	websiteID: 'd1e3da9d-5deb-4af7-93c1-e7aabc592d19',
+	srcURL: 'https://umami.sveltin.io/umami.js'
+};
+
+export { externals, umamiConf };

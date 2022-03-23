@@ -11,6 +11,7 @@ A collection of Svelte components to use GoogleFonts, GoogleAnalytics ...
 
 - GoogleFonts
 - GoogleAnalytics
+- UmamiAnalytics
 
 ## Demos
 
