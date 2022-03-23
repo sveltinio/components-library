@@ -1,5 +1,11 @@
 # @sveltinio/services
 
+## 0.2.0
+
+### Minor Changes
+
+- UmamiAnalytics component added
+
 ## 0.1.2
 
 ### Patch Changes
