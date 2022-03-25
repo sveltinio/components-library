@@ -1,6 +1,6 @@
-import '@testing-library/jest-dom';
+import { it, describe, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import Card from '../components/Card.svelte';
+import { Card } from '..';
 import { contentItem } from './__fixtures__/data.test.js';
 
 describe('Card', () => {

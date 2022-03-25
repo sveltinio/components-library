@@ -2,7 +2,7 @@
 	/**
 	 * Based on: "Add Google Analytics' gtag to a Sapper project"
 	 * Reference:
-	 * https://angelblanco.dev/articles/add-gtag-analytics-to-sapper/#google-analytics-svelte-component
+	 * https://angelblanco.dev/articles/add-gtag-analytics-to-sapper
 	 */
 	import { onMount } from 'svelte';
 
@@ -50,8 +50,8 @@
 		window.gtag = function () {
 			window.dataLayer.push(arguments);
 		};
-		gtag('js', new Date());
-		gtag('config', trackingId);
+		window.gtag('js', new Date());
+		window.gtag('config', trackingId);
 
 		try {
 			await addGoogleAnalyticsScript();
@@ -70,7 +70,7 @@
 
 	$: {
 		if (mounted && window.gtag) {
-			gtag('config', trackingId);
+			window.gtag('config', trackingId);
 		}
 	}
 </script>

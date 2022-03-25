@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
+import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import YouTube from '../components/YouTube.svelte';
+import { YouTube } from '..';
 
 describe('YouTube', () => {
 	it('should be in the document', async () => {
@@ -51,17 +52,5 @@ describe('YouTube', () => {
 			}
 		});
 		expect(getByTestId('iframe')).toHaveAccessibleDescription();
-	});
-
-	it('should have defined styles', async () => {
-		const { getByTestId } = render(YouTube, {
-			props: {
-				id: 'uQntFkK8Z54',
-				title: 'The Future of Svelte'
-			}
-		});
-		expect(getByTestId('iframe')).toHaveStyle(
-			'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;'
-		);
 	});
 });

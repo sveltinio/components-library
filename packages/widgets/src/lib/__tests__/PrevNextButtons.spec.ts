@@ -1,6 +1,5 @@
-import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/svelte';
-import PrevNextButtons from '../components/PrevNextButtons.svelte';
+import { PrevNextButtons } from '..';
 import { previous, next } from './__fixtures__/data.test.js';
 
 describe('PrevNextButtons', () => {

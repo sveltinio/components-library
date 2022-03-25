@@ -1,6 +1,6 @@
 declare global {
 	interface Window {
-		dataLayer: Array<IArguments>;
+		dataLayer: object[];
 	}
 }
 

@@ -1,6 +1,5 @@
-import '@testing-library/jest-dom';
 import { render } from '@testing-library/svelte';
-import GitHubForkRibbon from '../components/github/GitHubForkRibbon.svelte';
+import { GitHubForkRibbon } from '..';
 
 describe('GitHubForkRibbon', () => {
 	it('should be in the document', async () => {

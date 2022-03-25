@@ -1,6 +1,5 @@
-import '@testing-library/jest-dom';
 import { render } from '@testing-library/svelte';
-import GitHubButton from '../components/github/GitHubButton.svelte';
+import { GitHubButton } from '..';
 
 describe('GitHubButton', () => {
 	it('should be in the document', async () => {

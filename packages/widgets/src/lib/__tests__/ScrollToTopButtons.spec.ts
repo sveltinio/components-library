@@ -1,6 +1,5 @@
-import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/svelte';
-import ScrollToTopButton from '../components/ScrollToTopButton.svelte';
+import { ScrollToTopButton } from '..';
 
 describe('ScrollToTopButton', () => {
 	it('should be in the document', async () => {
@@ -10,7 +9,7 @@ describe('ScrollToTopButton', () => {
 
 	it('should be not visible at the begining', async () => {
 		const { getByTestId } = render(ScrollToTopButton, {});
-		window.scrollTo = jest.fn();
+		vi.fn(() => window.scrollTo);
 
 		const scrollBtn = getByTestId('scrollBtn');
 		expect(scrollBtn).toHaveClass('animate-bounce', 'hide');
@@ -18,7 +17,8 @@ describe('ScrollToTopButton', () => {
 
 	it('page should scroll to top when clicked', async () => {
 		const { getByTestId } = render(ScrollToTopButton, {});
-		window.scrollTo = jest.fn();
+		vi.fn(() => window.scrollTo);
+		window.HTMLElement.prototype.scrollIntoView = vi.fn();
 
 		const scrollBtn = getByTestId('scrollBtn');
 		await fireEvent.click(scrollBtn);

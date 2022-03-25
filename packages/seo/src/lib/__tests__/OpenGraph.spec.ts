@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom';
+import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { sampleArticle } from './__fixtures__/data.test.js';
 import { OpenGraph } from '..';

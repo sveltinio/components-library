@@ -1,7 +1,5 @@
-import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/svelte';
-import TOC from '../components/TOC.svelte';
-
+import { TOC } from '..';
 import { headings } from './__fixtures__/data.test.js';
 
 describe('TOC', () => {
