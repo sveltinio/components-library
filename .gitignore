@@ -77,9 +77,9 @@ Temporary Items
 $RECYCLE.BIN/
 
 # SvelteKit
-/build
-/.svelte-kit
-/dist
+build
+.svelte-kit
+dist
 .env
 .env.*
 !.env.example
@@ -88,4 +88,4 @@ $RECYCLE.BIN/
 .turbo
 
 # Local scripts
-/scripts
+scripts
