@@ -5,7 +5,7 @@
 
 ## Description
 
-A collection of Svelte components SEO related for metatags, json-ld.
+A collection of SEO related Svelte components for metatags, json-ld.
 
 ## Components List
 
