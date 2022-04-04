@@ -1,5 +1,11 @@
 # @sveltinio/services
 
+## 0.3.0
+
+### Minor Changes
+
+- simplified interfaces and props as object for UmamiAnalytics component
+
 ## 0.2.0
 
 ### Minor Changes

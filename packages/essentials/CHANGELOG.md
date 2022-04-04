@@ -1,5 +1,11 @@
 # @sveltinio/essentials
 
+## 0.2.0
+
+### Minor Changes
+
+- YouTube component dropped out. It is now part of the @sveltinio/media-content package
+
 ## 0.1.2
 
 ### Patch Changes
