@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ExternalLink, ModernImage, YouTube } from '../lib';
+	import { ExternalLink, ModernImage } from '../lib';
 </script>
 
 <section class="main">
@@ -36,10 +36,5 @@
 
 		<h4 id="modern-image-webp">WebP srcset</h4>
 		<ModernImage image="logo.png" altText="sveltin logo" webp={true} width="30%" />
-	</section>
-
-	<section id="youtube-video" class="container">
-		<h3>YouTube</h3>
-		<YouTube id="uQntFkK8Z54" title="The Future of Svelte" />
 	</section>
 </section>
