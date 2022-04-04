@@ -1,12 +1,12 @@
 <div align="center">
-    <h1>Sveltin Widgets Components</h1>
+    <h1>Widgets Components</h1>
     &nbsp;
     <a href="https://www.npmjs.com/package/@sveltinio/widgets" target="_blank"><img src="https://img.shields.io/npm/v/@sveltinio/widgets.svg?style=flat" alt="sveltinio/widgets NPM version badge" /></a>
 </div>
 
 ## Description
 
-Collection of styled components ready to be used for page navigation, TOC, scroll to top, collapsible lists ...
+Collection of styled and ready-to-use Svelte components for page navigation, TOC, scroll to top, collapsible lists ...
 
 ## Components List
 
