@@ -51,7 +51,7 @@ const googleFonts: Array<IGoogleFont> = [
 	}
 ];
 
-<GoogleFonts fonts={googleFonts} />;
+<GoogleFonts fonts={googleFonts} />
 ```
 
 ### GoogleAnalytics
@@ -59,7 +59,7 @@ const googleFonts: Array<IGoogleFont> = [
 ```javascript
 import { GoogleAnalytics } from '@sveltinio/services';
 
-<GoogleAnalytics propertyID="your_ga_property_id" />;
+<GoogleAnalytics propertyID="your_ga_property_id" />
 ```
 
 ### UmamiAnalytics
@@ -72,7 +72,7 @@ import { UmamiAnalytics } from '@sveltinio/services';
 <UmamiAnalytics
 	websiteID="4fb7fa4c-5b46-438d-94b3-3a8fb9bc2e8b"
 	srcURL="your-umami-app.com/umami.js"
-/>;
+/>
 ```
 
 <details>
@@ -94,7 +94,7 @@ const umamiTrackerSettings: IUmamiTrackerSettings = {
 	websiteID="4fb7fa4c-5b46-438d-94b3-3a8fb9bc2e8b"
 	srcURL="your-umami-app.com/umami.js"
 	settings={umamiTrackerSettings}
-/>;
+/>
 ```
 
 ## License
