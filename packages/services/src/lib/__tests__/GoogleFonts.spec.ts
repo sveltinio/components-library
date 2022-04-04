@@ -1,13 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { GoogleFonts } from '..';
-import { externals } from './__fixtures__/data.test.js';
-import { getGoogleFontLinks, getRelLinks } from './__fixtures__/utils';
+import { googleFonts } from './__fixtures__/data.test.js';
+import { getGoogleFontLinks, getRelLinks } from './__fixtures__/test-utils';
 
 beforeEach(() => {
 	render(GoogleFonts, {
 		props: {
-			fonts: externals.googleFonts
+			fonts: googleFonts
 		}
 	});
 });

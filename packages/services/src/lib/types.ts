@@ -4,16 +4,16 @@ declare global {
 	}
 }
 
-export interface ExternalServices {
-	googleFonts: Array<GoogleFont>;
-	googleAnalytics: GoogleAnalytics;
-}
-
-export interface GoogleFont {
+export interface IGoogleFont {
 	name: string;
 	weights: Array<number>;
 }
 
-export interface GoogleAnalytics {
-	propertyID: string;
+//Umami tracker configurations: https://umami.is/docs/tracker-config
+export interface IUmamiTrackerSettings {
+	hostURL?: string;
+	autoTrack?: boolean;
+	doNotTrack?: boolean;
+	enableCache?: boolean;
+	domains?: string;
 }

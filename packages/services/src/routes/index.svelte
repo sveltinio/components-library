@@ -1,19 +1,17 @@
 <script lang="ts">
-	import { externals, umamiConf } from '../lib/__tests__/__fixtures__/data.test.js';
-	import { GoogleFonts, GoogleAnalytics, UmamiAnalytics } from '../lib/index';
-	import type { ExternalServices } from '../lib/types.js';
-	const externalsData = externals as unknown as ExternalServices;
+	import { googleFonts, gaPropertyID } from '../lib/__tests__/__fixtures__/data.test.js';
+	import { GoogleFonts, GoogleAnalytics } from '../lib';
 </script>
 
-<!-- BEGIN OF svelte:head -->
-<svelte:head>
-	<GoogleFonts fonts={externalsData.googleFonts} />
-	<GoogleAnalytics trackingId={externalsData.googleAnalytics.propertyID} />
-</svelte:head>
-<!-- END OF svelte:head -->
-
-<UmamiAnalytics websiteID={umamiConf.websiteID} srcURL={umamiConf.srcURL} />
-
+<GoogleFonts fonts={googleFonts} />
+<GoogleAnalytics propertyID={gaPropertyID} />
+<!--
+<UmamiAnalytics
+	websiteID="your_umami_websiteID"
+	srcURL="your-umami-app.com/umami.js"
+	settings={umamiTrackerSettings}
+/>
+-->
 <section class="main">
 	<hgroup>
 		<h1><tt>@sveltinio/services</tt></h1>
@@ -21,6 +19,12 @@
 
 		<section class="container">
 			<h3>Inspect the head of the webpage</h3>
+			<h4>You should see tags for:</h4>
+			<ul>
+				<li>Google Fonts</li>
+				<li>Google Analytics</li>
+				<li>Umami Analytics</li>
+			</ul>
 		</section>
 	</hgroup>
 </section>

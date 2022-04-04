@@ -1,14 +1,25 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { umamiConf } from './__fixtures__/data.test.js';
-import { getFullScriptTagbyId, getScriptSrcById, getScriptTagById } from './__fixtures__/utils';
+import {
+	getFullScriptTagbyId,
+	getScriptSrcById,
+	getScriptTagById
+} from './__fixtures__/test-utils';
 import { UmamiAnalytics } from '..';
+import type { IUmamiTrackerSettings } from '../types';
 
 beforeEach(() => {
 	render(UmamiAnalytics, {
 		props: {
-			websiteID: umamiConf.websiteID,
-			srcURL: umamiConf.srcURL
+			websiteID: 'd1e3da9d-5deb-4af7-93c1-e7aabc592d19',
+			srcURL: 'https://umami.sveltin.io/umami.js',
+			settings: <IUmamiTrackerSettings>{
+				hostURL: '',
+				autoTrack: true,
+				doNotTrack: false,
+				enableCache: false,
+				domains: ''
+			}
 		}
 	});
 });

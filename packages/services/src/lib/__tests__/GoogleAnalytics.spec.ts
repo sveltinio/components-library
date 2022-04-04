@@ -1,13 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { externals } from './__fixtures__/data.test.js';
 import { GoogleAnalytics } from '..';
-import { getRelLinks, getScriptSrcById, getScriptTagById } from './__fixtures__/utils';
+import { getRelLinks, getScriptSrcById, getScriptTagById } from './__fixtures__/test-utils';
+import { gaPropertyID } from './__fixtures__/data.test.js';
 
 beforeEach(() => {
 	render(GoogleAnalytics, {
 		props: {
-			trackingId: externals.googleAnalytics.propertyID
+			propertyID: gaPropertyID
 		}
 	});
 });

@@ -1,21 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	// component configurations
-	export let scriptID = 'umami-analytics-script';
-	export let enabled = true;
-	// Umami tracking code configuration
+	import type { IUmamiTrackerSettings } from '../types';
+	import { isEmptyObject, isPropValueSet } from '../utils';
+
 	export let websiteID: string;
 	export let srcURL: string;
-	//Umami tracker configurations: https://umami.is/docs/tracker-config
-	export let hostURL = '';
-	export let autoTrack = true;
-	export let doNotTrack = false;
-	export let enableCache = false;
-	export let domains = ''; // comma delimited list of domain names
+	export let settings: IUmamiTrackerSettings = {};
 
-	let mounted = false;
+	let scriptID = 'umami-analytics-script';
 
-	async function addUmamiAnalyticsScript() {
+	async function addUmamiAnalyticsScript(websiteID: string, srcURL: string, scriptID: string) {
 		return new Promise((resolve, reject) => {
 			const head = document.head || document.getElementsByTagName('head')[0];
 
@@ -26,12 +20,6 @@
 			script.setAttribute('data-website-id', websiteID);
 			script.src = srcURL;
 
-			if (hostURL != '') script.setAttribute('data-host-url', hostURL);
-			if (!autoTrack) script.setAttribute('data-auto-track', 'false');
-			if (doNotTrack) script.setAttribute('data-do-not-track', 'true');
-			if (enableCache) script.setAttribute('data-cache', 'true');
-			if (domains != '') script.setAttribute('data-domains', domains);
-
 			head.appendChild(script);
 
 			script.onload = resolve;
@@ -39,13 +27,28 @@
 		});
 	}
 
+	function setScriptSettingsProps(script: HTMLElement, settings: IUmamiTrackerSettings) {
+		if (isPropValueSet(settings.hostURL)) script.setAttribute('data-host-url', settings.hostURL);
+		if (isPropValueSet(settings.autoTrack) && !settings.autoTrack)
+			script.setAttribute('data-auto-track', 'false');
+		if (isPropValueSet(settings.doNotTrack) && settings.doNotTrack)
+			script.setAttribute('data-do-not-track', 'true');
+		if (isPropValueSet(settings.enableCache) && settings.enableCache)
+			script.setAttribute('data-cache', 'true');
+		if (isPropValueSet(settings.domains)) script.setAttribute('data-domains', settings.domains);
+	}
+
 	onMount(async () => {
-		if (!enabled) return;
 		// We add the script only once even when the component rendered twice.
 		if (window.document.getElementById(scriptID)) return;
 
 		try {
-			await addUmamiAnalyticsScript();
+			addUmamiAnalyticsScript(websiteID, srcURL, scriptID);
+
+			if (!isEmptyObject<IUmamiTrackerSettings>(settings)) {
+				const umamiScript = document.getElementById(scriptID);
+				setScriptSettingsProps(umamiScript, settings);
+			}
 		} catch (err) {
 			console.error('umami failure');
 			const s = window.document.getElementById(scriptID);
@@ -54,14 +57,5 @@
 			}
 			return;
 		}
-		mounted = true;
 	});
-
-	$: {
-		if (mounted && enabled) {
-			//console.log('umami enabled');
-		} else if (!enabled) {
-			console.log('umami not enabled');
-		}
-	}
 </script>
