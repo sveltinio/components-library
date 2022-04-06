@@ -51,8 +51,7 @@ pnpm dev
 <CodePen user="mveltri" id="YzZYmoJ" />
 ```
 
-<details>
-<summary><strong>WITH CUSTOM SETTINGS</strong></summary>
+**WITH CUSTOM SETTINGS**
 
 ```html
 <script lang="ts">
@@ -72,8 +71,6 @@ pnpm dev
 <CodePen user="mveltri" id="ExWOeeo" title="Images Carousel" settings={cpSettings} />
 ```
 
-</details>
-
 ### CodeSandbox
 
 **DEFAULT SETTINGS**
@@ -86,8 +83,7 @@ pnpm dev
 <CodeSandbox id="j0y0vpz59" />
 ```
 
-<details>
-<summary><strong>WITH CUSTOM SETTINGS</strong></summary>
+**WITH CUSTOM SETTINGS**
 
 ```html
 <script lang="ts">
@@ -104,8 +100,6 @@ pnpm dev
 <CodeSandbox id="j0y0vpz59" height="{500}" settings={csbSettings} />
 ```
 
-</details>
-
 ### Facebook - Post
 
 **DEFAULT SETTINGS**
@@ -118,8 +112,7 @@ pnpm dev
 <Facebook slug="20531316728/posts/10154009990506729/" />
 ```
 
-<details>
-<summary><strong>WITH CUSTOM SETTINGS</strong></summary>
+**WITH CUSTOM SETTINGS**
 
 ```html
 <script lang="ts">
@@ -137,8 +130,6 @@ pnpm dev
 <Facebook slug="20531316728/posts/10154009990506729/" settings={fbSettings} />
 ```
 
-</details>
-
 ### Facebook - Video
 
 **DEFAULT SETTINGS**
@@ -151,8 +142,7 @@ pnpm dev
 <Facebook type="video" slug="FacebookDevelopers/videos/10152454700553553/" />
 ```
 
-<details>
-<summary><strong>WITH CUSTOM SETTINGS</strong></summary>
+**WITH CUSTOM SETTINGS**
 
 ```html
 <script lang="ts">
@@ -174,8 +164,6 @@ pnpm dev
    settings={fbSettings}
 />
 ```
-
-</details>
 
 ### SlideShare
 
@@ -203,8 +191,7 @@ pnpm dev
 <Tweet id="1494008909585125381" />
 ```
 
-<details>
-<summary><strong>WITH CUSTOM SETTINGS</strong></summary>
+**WITH CUSTOM SETTINGS**
 
 ```html
 <script lang="ts">
@@ -220,8 +207,6 @@ pnpm dev
 <Tweet id="1494008909585125381" settings={tSettings} />
 ```
 
-</details>
-
 ### Vimeo
 
 **DEFAULT SETTINGS**
@@ -234,8 +219,7 @@ pnpm dev
 <Vimeo id="692371260" user="newyorker" title="The Panola Project" />
 ```
 
-<details>
-<summary><strong>WITH CUSTOM SETTINGS</strong></summary>
+**WITH CUSTOM SETTINGS**
 
 ```html
 <script lang="ts">
@@ -259,8 +243,6 @@ pnpm dev
 />
 ```
 
-</details>
-
 ### YouTube - Single Video
 
 **DEFAULT SETTINGS**
@@ -273,8 +255,7 @@ pnpm dev
 <YouTube id="uQntFkK8Z54" title="The Future of html" />
 ```
 
-<details>
-<summary><strong>WITH CUSTOM SETTINGS</strong></summary>
+**WITH CUSTOM SETTINGS**
 
 ```html
 <script lang="ts">
@@ -290,8 +271,6 @@ pnpm dev
 
 <YouTube id="uQntFkK8Z54" title="The Future of html" settings={ytSettings} />
 ```
-
-</details>
 
 ### YouTube - Playlist
 
@@ -309,8 +288,7 @@ pnpm dev
 />
 ```
 
-<details>
-<summary><strong>WITH CUSTOM SETTINGS</strong></summary>
+**WITH CUSTOM SETTINGS**
 
 ```html
 <script lang="ts">
@@ -331,8 +309,6 @@ pnpm dev
    settings={ytSettings}
 />
 ```
-
-</details>
 
 ## License
 
