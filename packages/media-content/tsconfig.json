@@ -1,0 +1,8 @@
+{
+	"extends": "../../packages/tsconfig/sveltekit.json",
+	"compilerOptions": {
+		"types": ["vitest/globals"]
+	},
+	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"],
+	"exclude": ["../../packages/tsconfig/node_modules"]
+}

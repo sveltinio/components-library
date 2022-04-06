@@ -1,0 +1,6 @@
+.svelte-kit/**
+static/**
+dist/**
+node_modules/**
+
+*.md

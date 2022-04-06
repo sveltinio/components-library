@@ -1,0 +1,128 @@
+/* CSS RESET by https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/* END OF CSS RESET by */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #f8fafc /* slate-50 */;
+	margin: 2rem;
+}
+
+.container {
+	margin: 1.5rem 0;
+	padding: 1.5rem 2rem;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: rgb(203 213 225);
+}
+
+.main h1 {
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;
+	font-size: 36px;
+	line-height: 42px;
+	text-transform: uppercase;
+}
+
+.main h2 {
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 40px;
+	font-family: 'Orienta', sans-serif;
+}
+
+.main h3 {
+	position: relative;
+	color: #343434;
+	font-size: 22px;
+	line-height: 40px;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-family: 'Orienta', sans-serif;
+	letter-spacing: 1px;
+	font-style: italic;
+	margin: 1em 0 0.5em 0;
+}
+
+.main h4 {
+	position: relative;
+	padding: 0 0 0 20px;
+	margin: 2em 0 1em 0;
+	color: #343434;
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: normal;
+	font-family: 'Orienta', sans-serif;
+	text-transform: uppercase;
+}
+
+.main h4:after {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 5px;
+	border-radius: 2px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.main h4:after {
+	background: rgb(14 116 144);
+}
