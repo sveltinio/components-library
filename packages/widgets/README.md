@@ -19,14 +19,6 @@ Collection of styled and ready-to-use Svelte components for page navigation, TOC
 - GitHubButton (star, follow, issue, watch)
 - GitHubForkRibbon
 
-## Demos
-
-Run `pnpm dev`
-
-## Usage
-
-Refer to the [source code](https://github.com/sveltinio/sveltin-components-library/blob/main/packages/widgets/src/routes/index.svelte) for the demo app.
-
 ## Install
 
 ```bash
@@ -39,6 +31,16 @@ npm install @sveltinio/widgets
 # yarn
 yarn add @sveltinio/widgets
 ```
+
+## Demos
+
+```bash
+pnpm dev
+```
+
+## Usage
+
+Refer to the [source code](https://github.com/sveltinio/sveltin-components-library/blob/main/packages/widgets/src/routes/index.svelte) for the demo app.
 
 ## License
 

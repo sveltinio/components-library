@@ -13,14 +13,6 @@ A collection of Svelte _unstyled_ components to handle external links or images 
 - ExternalLink
 - ModernImage
 
-## Demos
-
-Run `pnpm dev`
-
-## Usage
-
-Refer to the [source code](https://github.com/sveltinio/sveltin-components-library/blob/main/packages/essentials/src/routes/index.svelte) for the demo app.
-
 ## Install
 
 ```bash
@@ -33,6 +25,16 @@ npm install @sveltinio/essentials
 # yarn
 yarn add @sveltinio/essentials
 ```
+
+## Demos
+
+```bash
+pnpm dev
+```
+
+## Usage
+
+Refer to the [source code](https://github.com/sveltinio/sveltin-components-library/blob/main/packages/essentials/src/routes/index.svelte) for the demo app.
 
 ## License
 

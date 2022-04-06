@@ -28,7 +28,9 @@ yarn add @sveltinio/services
 
 ## Demos
 
-Run `pnpm dev`
+```bash
+pnpm dev
+```
 
 ## Usage
 
@@ -36,28 +38,32 @@ Refer to the [source code](https://github.com/sveltinio/sveltin-components-libra
 
 ### GoogleFonts
 
-```javascript
-import { GoogleFonts } from '@sveltinio/services';
-import type { IGoogleFont } from '@sveltinio/services/types';
+```html
+<script lang="ts">
+	import { GoogleFonts } from '@sveltinio/services';
+	import type { IGoogleFont } from '@sveltinio/services/types';
 
-const googleFonts: Array<IGoogleFont> = [
-	{
-		name: 'IBM+Plex+Sans',
-		weights: [200, 300, 400, 500, 600, 700]
-	},
-	{
-		name: 'IBM+Plex+Mono',
-		weights: [100, 200, 300, 400]
-	}
-];
+	const googleFonts: Array<IGoogleFont> = [
+		{
+			name: 'IBM+Plex+Sans',
+			weights: [200, 300, 400, 500, 600, 700]
+		},
+		{
+			name: 'IBM+Plex+Mono',
+			weights: [100, 200, 300, 400]
+		}
+	];
+</script>
 
 <GoogleFonts fonts={googleFonts} />
 ```
 
 ### GoogleAnalytics
 
-```javascript
-import { GoogleAnalytics } from '@sveltinio/services';
+```html
+<script>
+	import { GoogleAnalytics } from '@sveltinio/services';
+</script>
 
 <GoogleAnalytics propertyID="your_ga_property_id" />
 ```
@@ -66,8 +72,10 @@ import { GoogleAnalytics } from '@sveltinio/services';
 
 **DEFAULT SETTINGS**
 
-```javascript
-import { UmamiAnalytics } from '@sveltinio/services';
+```html
+<script>
+	import { UmamiAnalytics } from '@sveltinio/services';
+</script>
 
 <UmamiAnalytics
 	websiteID="4fb7fa4c-5b46-438d-94b3-3a8fb9bc2e8b"
@@ -78,18 +86,21 @@ import { UmamiAnalytics } from '@sveltinio/services';
 <details>
 <summary><strong>WITH CUSTOM SETTINGS</strong></summary>
 
-```javascript
-import { UmamiAnalytics } from '@sveltinio/services';
-import type { IUmamiTrackerSettings } from '@sveltinio/services/types';
+```html
+<script lang="ts">
+	import { UmamiAnalytics } from '@sveltinio/services';
+	import type { IUmamiTrackerSettings } from '@sveltinio/services/types';
 
-//Umami tracker configurations: https://umami.is/docs/tracker-config
-const umamiTrackerSettings: IUmamiTrackerSettings = {
-	hostURL: '',
-	autoTrack: true,
-	doNotTrack: false,
-	enableCache: false,
-	domains: ''
-};
+	// Umami tracker configurations: https://umami.is/docs/tracker-config
+	const umamiTrackerSettings: IUmamiTrackerSettings = {
+		hostURL: '',
+		autoTrack: true,
+		doNotTrack: false,
+		enableCache: false,
+		domains: ''
+	};
+</script>
+
 <UmamiAnalytics
 	websiteID="4fb7fa4c-5b46-438d-94b3-3a8fb9bc2e8b"
 	srcURL="your-umami-app.com/umami.js"

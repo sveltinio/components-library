@@ -2,6 +2,5 @@
 static/**
 dist/**
 node_modules/**
-src/lib/types.ts
 
 *.md

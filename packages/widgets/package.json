@@ -31,8 +31,8 @@
 		"postpack": "rm -rf dist/__tests__",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
-		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .eslintignore ."
+		"format": "prettier --ignore-path .prettierignore --write --plugin-search-dir=. .",
+		"lint": "prettier --ignore-path .prettierignore --check --plugin-search-dir=. . && eslint --ignore-path .eslintignore ."
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "1.0.0-next.34",

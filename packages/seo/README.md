@@ -22,14 +22,6 @@ A collection of SEO related Svelte components for metatags, json-ld.
 - JsonLdBreadcrumbs
 - JsonLdSiteNavigationElement
 
-## Demos
-
-Run `pnpm dev`
-
-## Usage
-
-Refer to the [source code](https://github.com/sveltinio/sveltin-components-library/blob/main/packages/seo/src/routes/index.svelte) for the demo app.
-
 ## Install
 
 ```bash
@@ -42,6 +34,16 @@ npm install @sveltinio/seo
 # yarn
 yarn add @sveltinio/seo
 ```
+
+## Demos
+
+```bash
+pnpm dev
+```
+
+## Usage
+
+Refer to the [source code](https://github.com/sveltinio/sveltin-components-library/blob/main/packages/seo/src/routes/index.svelte) for the demo app.
 
 ## License
 
