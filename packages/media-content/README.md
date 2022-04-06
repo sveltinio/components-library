@@ -87,7 +87,7 @@ pnpm dev
 
 ```html
 <script lang="ts">
- import { CodeSandbox } from '@sveltinio/media';
+ import { CodeSandbox } from '@sveltinio/media-content';
  import type { ICodeSandboxSettings } from '@sveltinio/media-content/types';
 
  // https://codesandbox.io/docs/embedding#generate-an-embed-url
