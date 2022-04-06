@@ -19,7 +19,7 @@
 		"directory": "dist"
 	},
 	"scripts": {
-		"dev": "svelte-kit dev -p 3003",
+		"dev": "svelte-kit dev -p 3004",
 		"test": "vitest --run",
 		"test:watch": "vitest watch",
 		"coverage": "vitest run --coverage",
@@ -36,7 +36,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "1.0.0-next.34",
-		"@sveltejs/kit": "1.0.0-next.304",
+		"@sveltejs/kit": "1.0.0-next.307",
 		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.40",
 		"@testing-library/jest-dom": "^5.16.3",
 		"@testing-library/svelte": "^3.1.0",
