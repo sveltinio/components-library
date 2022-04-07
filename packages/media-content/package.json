@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/media-content",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"private": false,
 	"description": "A collection of Svelte components to easily embed media contents in your pages.",
 	"author": "dev <dev@sveltin.io>",
@@ -20,6 +20,7 @@
 		"twitter",
 		"tweet",
 		"codepen",
+		"stackblitz",
 		"codesandbox",
 		"vimeo",
 		"slideshare"
