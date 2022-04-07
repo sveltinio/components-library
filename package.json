@@ -23,7 +23,7 @@
 		"changeset:version": "changeset version && pnpm install --lockfile-only"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.22.0",
+		"@changesets/changelog-git": "^0.1.11",
 		"@commitlint/cli": "^16.2.3",
 		"@commitlint/config-conventional": "^16.2.1",
 		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.41",
