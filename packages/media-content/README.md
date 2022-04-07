@@ -14,6 +14,7 @@ A collection of typed Svelte components to easily embed media contents in your p
 - CodeSandbox
 - Facebook
 - SlideShare
+- StackBlitz
 - Tweet
 - Vimeo
 - YouTube
@@ -177,6 +178,35 @@ pnpm dev
    user="DataReportal"
    title="Digital 2020 Global Digital Overview (January 2020) v01"
 />
+```
+
+### StackBlitz
+
+**DEFAULT SETTINGS**
+
+```html
+<script>
+ import { StackBlitz } from '@sveltinio/media-content';
+</script>
+
+<StackBlitz id="vitejs-vite-z3ukcq" />
+```
+
+**WITH CUSTOM SETTINGS**
+
+```html
+<script>
+ import { StackBlitz } from '@sveltinio/media-content';
+ import { IStackBlitzSettings } from '@sveltinio/media-content/types';
+
+ // https://developer.stackblitz.com/docs/platform/embedding/
+ const sbSettings: IStackBlitzSettings = {
+    ctl: true,
+    devtoolsheight: 400
+ }
+</script>
+
+<StackBlitz id="vitejs-vite-z3ukcq" settings={sbSettings} />
 ```
 
 ### Twitter

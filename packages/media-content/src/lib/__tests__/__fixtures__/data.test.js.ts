@@ -3,6 +3,7 @@ import type {
 	ICodeSandboxSettings,
 	IFacebookSettings,
 	IFacebookVideoSettings,
+	IStackBlitzSettings,
 	ITweetSettings,
 	IVimeoSettings,
 	IYouTubeSettings
@@ -60,6 +61,20 @@ export const slideShareSample: Record<string, string> = {
 	id: 'exvMftSyV7yRQR',
 	title: 'Digital 2020 Global Digital Overview (January 2020) v01',
 	user: 'DataReportal'
+};
+
+// STACKBLITZ
+export const stackblitzSample: Record<string, string> = {
+	id: 'vitejs-vite-z3ukcq',
+	title: 'Sample Vite + Svelte + TypeScript project'
+};
+
+export const stackblitzSettings: IStackBlitzSettings = {
+	file: 'svelte.config.js',
+	embed: true,
+	theme: 'light',
+	ctl: true,
+	devtoolsheight: 200
 };
 
 // TWITTER
