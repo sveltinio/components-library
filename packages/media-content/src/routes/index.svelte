@@ -1,29 +1,40 @@
 <script lang="ts">
-	import { YouTube, Tweet, CodeSandbox, CodePen, Vimeo, SlideShare, Facebook } from '../lib';
+	import {
+		CodePen,
+		CodeSandbox,
+		Facebook,
+		SlideShare,
+		StackBlitz,
+		Tweet,
+		Vimeo,
+		YouTube
+	} from '../lib';
 
 	import {
-		tweetSampleOneId,
-		tweetSampleTwoId,
-		youtubeSampleOne,
-		youtubeSampleTwo,
-		youtubeSampleVideoSettings,
-		youtubeSamplePlayList,
-		youtubeSamplePlaylistSettings,
-		codeSandboxSampleID,
 		codepenSampleOne,
 		codepenSampleTwo,
-		vimeoSample,
-		slideShareSample,
+		codepenSettings,
+		codeSandboxSampleID,
+		codesandboxSettings,
 		facebookSamplePostTwo,
 		facebookSampleVideoTwo,
 		facebookSampleVideoOne,
 		facebookSamplePostOne,
-		tweetSettings,
-		vimeoSettings,
-		codesandboxSettings,
-		codepenSettings,
 		facebookPostSettings,
-		facebookVideoSettings
+		facebookVideoSettings,
+		slideShareSample,
+		stackblitzSample,
+		stackblitzSettings,
+		tweetSampleOneId,
+		tweetSampleTwoId,
+		tweetSettings,
+		vimeoSample,
+		vimeoSettings,
+		youtubeSampleOne,
+		youtubeSampleTwo,
+		youtubeSampleVideoSettings,
+		youtubeSamplePlayList,
+		youtubeSamplePlaylistSettings
 	} from '../lib/__tests__/__fixtures__/data.test.js';
 </script>
 
@@ -82,6 +93,16 @@
 			user={slideShareSample.user}
 			title={slideShareSample.title}
 		/>
+	</section>
+
+	<!-- STACKBLITZ -->
+	<section id="stackblitz-container" class="container">
+		<h3>StackBlitz</h3>
+		<h4>Default options</h4>
+		<StackBlitz id={stackblitzSample.id} />
+		<br />
+		<h4>Custom options</h4>
+		<StackBlitz id={stackblitzSample.id} settings={stackblitzSettings} />
 	</section>
 
 	<!-- TWEET -->

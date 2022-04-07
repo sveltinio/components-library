@@ -188,6 +188,39 @@ export interface IFacebookVideoSettings extends IFacebookSettings {
 	showCaptions?: boolean;
 }
 
+// https://developer.stackblitz.com/docs/platform/embedding/
+export interface IStackBlitzSettings {
+	/** The default file to have open in the editor. */
+	file?: string;
+	/** Force embed view regardless of screen size. */
+	embed?: boolean;
+	/** Hide file explorer pane in embed view. */
+	hideExplorer?: boolean;
+	/** Hide the browser navigation UI. */
+	hideNavigation?: boolean;
+	/** Require user to 'click to load' the embed. */
+	ctl?: boolean;
+	/**
+	 * Which view to open by default.
+	 *
+	 * Supported values are editor or preview.
+	 */
+	view?: string;
+	/** Hide the debugging console in the editor preview. */
+	hidedevtools?: boolean;
+	/** Set the height of the debugging console in the editor preview. */
+	devtoolsheight?: number;
+	/** The initial URL path (URI encoded) the preview should open. */
+	initialpath?: string;
+	/**
+	 * Which theme to show for the embed.
+	 *
+	 * Supported values are dark or light.
+	 * The default value is dark.
+	 */
+	theme?: string;
+}
+
 // https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference
 export interface ITweetSettings {
 	/**
