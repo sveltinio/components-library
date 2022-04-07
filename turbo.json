@@ -10,11 +10,9 @@
 		"lint": {
 			"dependsOn": ["check", "format"]
 		},
-		"test": {
-			"dependsOn": ["lint"]
-		},
+		"test": {},
 		"package": {
-			"dependsOn": ["clean", "test", "^package"]
+			"dependsOn": ["clean", "lint", "test", "^package"]
 		},
 		"release": {
 			"dependsOn": ["package"]
