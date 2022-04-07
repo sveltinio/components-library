@@ -11,8 +11,8 @@ import type {
 // CODEPEN
 export const codepenSampleOne: Record<string, string> = {
 	user: 'alipanick',
-	id: 'ExWOeeo',
-	title: 'Images Carousel'
+	id: 'bGavKeE',
+	title: 'Test Embed'
 };
 
 export const codepenSampleTwo: Record<string, string> = {
