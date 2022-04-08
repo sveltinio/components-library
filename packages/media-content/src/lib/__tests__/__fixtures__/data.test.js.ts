@@ -116,6 +116,12 @@ export const youtubeSampleVideoSettings: IYouTubeSettings = {
 	controls: true
 };
 
+export const youtubeSampleVideoSettingsWithAutoplay: IYouTubeSettings = {
+	autoplay: true,
+	color: 'white',
+	controls: true
+};
+
 export const youtubeSamplePlayList: Record<string, string> = {
 	id: 'PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO',
 	title: 'Svelte Tutorial for Beginners'

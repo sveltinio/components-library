@@ -7,6 +7,8 @@
 		toSnakeCase,
 		isPropValueSet
 	} from '../utils';
+	import IFrame from './IFrame.svelte';
+	import Thumbnail from './Thumbnail.svelte';
 
 	/** The id for the video or playlist to embed. */
 	export let id: string;
@@ -28,24 +30,23 @@
 	 */
 	export let settings: IYouTubeSettings = {};
 
-	let baseURL = '';
-	switch (type) {
-		case 'video':
-			baseURL = `https://www.youtube.com/embed/${id}`;
-			break;
-		case 'playlist':
-			baseURL = `https://www.youtube.com/embed?listType=playlist&list=${id}`;
-			break;
-		case 'user_uploads':
-			if (!isPropValueSet<string>(username)) {
-				console.error(`${username} must be defined`);
-			} else {
-				baseURL = `https://www.youtube.com/embed?listType=user_uploads&list=${username}`;
-			}
-			break;
-		default:
-			console.error(`${type} is not a valid options`);
-			break;
+	let iframeURL = '';
+	let play = false;
+	let renderedComponent: typeof IFrame | Thumbnail;
+	let props: Record<string, string>;
+
+	function makeBaseURL(contentType: string, id: string, username: string): string {
+		switch (contentType) {
+			case 'video':
+				return `https://www.youtube.com/embed/${id}`;
+			case 'playlist':
+				return `https://www.youtube.com/embed?listType=playlist&list=${id}`;
+			case 'user_uploads':
+				return `https://www.youtube.com/embed?listType=user_uploads&list=${username}`;
+			default:
+				console.error(`${type} is not a valid options`);
+				break;
+		}
 	}
 
 	function matchersCallback(key: string, value: string): string {
@@ -71,39 +72,65 @@
 		}
 	}
 
+	/** Used when settings are provided, no matter if with or without autoplay. */
+	function turnAutoplayOn() {
+		if (isPropValueSet(settings.autoplay) && !settings.autoplay) {
+			iframeURL = iframeURL.replace('autoplay=0', 'autoplay=1').concat('&mute=1');
+		} else {
+			iframeURL = iframeURL.concat('&autoplay=1&mute=1');
+		}
+	}
+
+	/** Used when no settings are provided. */
+	function setAutoplayOn() {
+		iframeURL = iframeURL.concat('?autoplay=1&mute=1');
+	}
+
+	/** Handle the play event dispatched by the Thumbnail component. */
+	function handleEvent({ detail }) {
+		const { name, value } = detail;
+		if (name === 'play-video' && value === true) {
+			play = true;
+		}
+	}
+
 	const settingsString = makeSettingsString<IYouTubeSettings>(settings, matchersCallback);
 	const paramsStrings = type === 'video' ? '?'.concat(settingsString) : '&'.concat(settingsString);
-	const iframeURL = settingsString != '' ? baseURL.concat(paramsStrings) : baseURL;
+	const baseURL = makeBaseURL(type, id, username);
+
+	iframeURL = settingsString != '' ? baseURL.concat(paramsStrings) : baseURL;
+	const frame = () => {
+		renderedComponent = IFrame;
+		props = { id: id, title: title, iframeURL: iframeURL };
+	};
+
+	const thumbnail = () => {
+		renderedComponent = Thumbnail;
+		props = { provider: 'youtube', id: id, title: title, iframeURL: iframeURL };
+	};
+
+	if (type != 'video' || settings.autoplay) {
+		frame();
+	} else {
+		thumbnail();
+	}
+
+	$: {
+		if (play) {
+			if (settingsString != '') {
+				turnAutoplayOn();
+			} else {
+				setAutoplayOn();
+			}
+			frame();
+		}
+	}
 </script>
 
-<div data-testid="wrapper" id="video-container-{id}" class="youtube-video-container">
-	<iframe
-		data-testid="iframe"
-		id="frame-{id}"
-		class="frame"
-		src={iframeURL}
-		frameborder="0"
-		allowfullscreen
-		allow-same-origin
-		{title}
+<section data-testid="content-section">
+	<svelte:component
+		this={renderedComponent}
+		on:component-event={(e) => handleEvent(e)}
+		{...props}
 	/>
-</div>
-
-<style>
-	.youtube-video-container {
-		position: relative;
-		width: 100%;
-		padding-bottom: calc(var(--aspect-ratio, 0.5625) * 100%);
-		height: 0;
-	}
-
-	.frame {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border: 0;
-		border-radius: 4px;
-	}
-</style>
+</section>
