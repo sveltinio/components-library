@@ -1,5 +1,11 @@
 # @sveltinio/media-content
 
+## 0.3.0
+
+### Minor Changes
+
+- To load pages faster, a clickable and responsible thumbnail for the video (YouTube and Vimeo) is embedded when no `autoplay` setting is provided or it is set to `false`.
+
 ## 0.2.0
 
 ### Minor Changes
