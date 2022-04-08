@@ -11,8 +11,7 @@
 		"components",
 		"modern images",
 		"webp",
-		"avif",
-		"youtube"
+		"avif"
 	],
 	"svelte": "index.js",
 	"sideEffects": false,
