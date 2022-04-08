@@ -95,7 +95,7 @@ export const vimeoSample: Record<string, string> = {
 };
 
 export const vimeoSettings: IVimeoSettings = {
-	autoplay: false,
+	autoplay: true,
 	muted: true,
 	portrait: false
 };
@@ -112,6 +112,12 @@ export const youtubeSampleTwo: Record<string, string> = {
 export const youtubeSampleVideoSettings: IYouTubeSettings = {
 	autoplay: false,
 	ccLangPref: 'it',
+	color: 'white',
+	controls: true
+};
+
+export const youtubeSampleVideoSettingsWithAutoplay: IYouTubeSettings = {
+	autoplay: true,
 	color: 'white',
 	controls: true
 };

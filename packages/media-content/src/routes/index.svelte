@@ -127,7 +127,7 @@
 		/>
 	</section>
 
-	<!-- YOUTUBE-->
+	<!-- YOUTUBE -->
 	<section id="youtube-container" class="container">
 		<h3>YouTube</h3>
 		<h4>Default settings</h4>

@@ -36,7 +36,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "1.0.0-next.34",
-		"@sveltejs/kit": "1.0.0-next.307",
+		"@sveltejs/kit": "1.0.0-next.308",
 		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.40",
 		"@testing-library/jest-dom": "^5.16.3",
 		"@testing-library/svelte": "^3.1.0",
@@ -52,7 +52,7 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.6.3",
 		"vite": "^2.9.1",
-		"vitest": "^0.8.4"
+		"vitest": "^0.9.2"
 	},
 	"repository": {
 		"type": "git",
