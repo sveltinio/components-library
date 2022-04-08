@@ -7,13 +7,7 @@
 		toSnakeCase,
 		isPropValueSet
 	} from '../utils';
-	import IFrame from './IFrame.svelte';
-	import Thumbnail from './Thumbnail.svelte';
-
-	/** The id for the video or playlist to embed. */
-	export let id: string;
-	/** The content title. */
-	export let title: string;
+	import { IFrame, Thumbnail } from '..';
 	/**
 	 * Embedded content type.
 	 *
@@ -21,6 +15,10 @@
 	 * The default value is video
 	 */
 	export let type = 'video';
+	/** The id for the video or playlist to embed. */
+	export let id: string;
+	/** The content title. */
+	export let title: string;
 	/** The user who published the content. */
 	export let username = '';
 	/**

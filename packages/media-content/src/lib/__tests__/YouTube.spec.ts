@@ -69,8 +69,8 @@ describe('YouTube video thumbnail', () => {
 		const playButton = getByTestId('play-button');
 		expect(playButton).toBeInTheDocument();
 		expect(playButton).not.toBeEmptyDOMElement();
-		const youtubeIcon = getByTestId('youtube-icon');
-		expect(playButton).toContainElement(youtubeIcon);
+		const playIcon = getByTestId('play-icon');
+		expect(playButton).toContainElement(playIcon);
 	});
 });
 

@@ -95,7 +95,7 @@ export const vimeoSample: Record<string, string> = {
 };
 
 export const vimeoSettings: IVimeoSettings = {
-	autoplay: false,
+	autoplay: true,
 	muted: true,
 	portrait: false
 };

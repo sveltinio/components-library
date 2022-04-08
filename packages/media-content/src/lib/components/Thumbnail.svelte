@@ -16,24 +16,59 @@
 		switch (providerName) {
 			case 'youtube':
 				return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+			case 'vimeo':
+				return `https://vumbnail.com/${id}.jpg`;
 			default:
 				break;
 		}
 	}
 
+	function makeResponsiveString(url: string): string {
+		let result = url.concat(' 640w, ');
+
+		const _u = url.substring(0, url.lastIndexOf('.'));
+		const breakpoints: Record<string, number> = {
+			large: 640,
+			medium: 200,
+			small: 100
+		};
+		const items = Object.entries(breakpoints);
+
+		items.forEach(([key, value], index) => {
+			result = result.concat(`${_u}_${key}.jpg ${value}w`);
+			if (index != items.length - 1) {
+				result = result.concat(', ');
+			}
+		});
+		return result;
+	}
+
 	const thumbnailURL = makeThumbnailURL(provider, id);
+	const responsiveSrcSet = makeResponsiveString(thumbnailURL);
+
 	$: altText = title != '' ? title : iframeURL;
 </script>
 
 <div id="thumbnail-wrapper-{id}" data-testid="thumbnail-wrapper" class="thumbnail-wrapper">
-	<img data-testid="thumbnail" src={thumbnailURL} alt={altText} referrerpolicy="no-referrer" />
+	{#if provider === 'vimeo'}
+		<img
+			data-testid="thumbnail"
+			srcset={responsiveSrcSet}
+			sizes="(max-width: 640px) 100vw, 640px"
+			src={thumbnailURL}
+			alt={altText}
+			referrerpolicy="no-referrer"
+		/>
+	{:else}
+		<img data-testid="thumbnail" src={thumbnailURL} alt={altText} referrerpolicy="no-referrer" />
+	{/if}
 
 	<button on:click={play} data-testid="play-button">
 		<!-- https://commons.wikimedia.org/wiki/File:YouTube_play_buttom_dark_icon_(2013-2017).svg -->
 		<svg
 			version="1.1"
-			id="YouTube_Icon"
-			data-testid="youtube-icon"
+			id="play-icon"
+			data-testid="play-icon"
 			xmlns="http://www.w3.org/2000/svg"
 			xmlns:xlink="http://www.w3.org/1999/xlink"
 			x="0px"

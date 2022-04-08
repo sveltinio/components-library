@@ -10,9 +10,8 @@
 		id="frame-{id}"
 		class="frame"
 		src={iframeURL}
-		frameborder="0"
-		allow="autoplay; fullscreen"
-		allow-same-origin
+		allow="layout-animations 'none'; unoptimized-images 'none'; oversized-images 'none'; sync-script 'none'; sync-xhr 'none'; unsized-media 'none'; autoplay; fullscreen; picture-in-picture"
+		referrerpolicy="same-origin"
 		{title}
 	/>
 </div>

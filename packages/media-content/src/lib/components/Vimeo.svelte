@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { IVimeoSettings } from '../types';
+	import { IFrame, Thumbnail } from '..';
 	import {
 		makeSettingsString,
 		getHexValue,
 		isScriptLoaded,
 		isValidHex,
-		isValidValue
+		isValidValue,
+		isPropValueSet
 	} from '../utils';
 
 	/** The id for the video to embed. */
@@ -24,16 +26,31 @@
 	 */
 	export let settings: IVimeoSettings = {};
 
-	const scriptID = 'vimeo-lib-script';
-	const scriptSRC = 'https://player.vimeo.com/api/player.js';
-	const baseURL = `https://player.vimeo.com/video/${id}`;
-	const validQualityValues = ['240p', '360p', '540p', '720p', '1080p', '2k', '4k', 'auto'];
+	let iframeURL = '';
+	let play = false;
+	let renderedComponent: typeof IFrame | Thumbnail;
+	let props: Record<string, string>;
+	/** Used when settings are provided, no matter if with or without autoplay. */
+	function turnAutoplayOn() {
+		if (isPropValueSet(settings.autoplay) && !settings.autoplay) {
+			iframeURL = iframeURL.replace('autoplay=0', 'autoplay=1').concat('&mute=1');
+		} else {
+			iframeURL = iframeURL.concat('&autoplay=1&mute=1');
+		}
+	}
 
-	const settingsString = makeSettingsString<IVimeoSettings>(settings, matchersCallback);
-	const iframeURL = settingsString != '' ? baseURL.concat(`?${settingsString}`) : baseURL;
+	/** Used when no settings are provided. */
+	function setAutoplayOn() {
+		iframeURL = iframeURL.concat('?autoplay=1&mute=1');
+	}
 
-	$: videoLink = `https://vimeo.com/${id}`;
-	$: vimeoUserPage = `https://vimeo.com/${user}`;
+	/** Handle the play event dispatched by the Thumbnail component. */
+	function handleEvent({ detail }) {
+		const { name, value } = detail;
+		if (name === 'play-video' && value === true) {
+			play = true;
+		}
+	}
 
 	function matchersCallback(key: string, value: string): string {
 		switch (typeof value) {
@@ -67,6 +84,24 @@
 		});
 	}
 
+	const scriptID = 'vimeo-lib-script';
+	const scriptSRC = 'https://player.vimeo.com/api/player.js';
+	const baseURL = `https://player.vimeo.com/video/${id}`;
+	const validQualityValues = ['240p', '360p', '540p', '720p', '1080p', '2k', '4k', 'auto'];
+
+	const settingsString = makeSettingsString<IVimeoSettings>(settings, matchersCallback);
+	iframeURL = settingsString != '' ? baseURL.concat(`?${settingsString}`) : baseURL;
+
+	const frame = () => {
+		renderedComponent = IFrame;
+		props = { id: id, title: title, iframeURL: iframeURL };
+	};
+
+	const thumbnail = () => {
+		renderedComponent = Thumbnail;
+		props = { provider: 'vimeo', id: id, title: title, iframeURL: iframeURL };
+	};
+
 	onMount(async () => {
 		try {
 			if (!isScriptLoaded(scriptSRC)) {
@@ -76,27 +111,42 @@
 			return;
 		}
 	});
+
+	if (settings.autoplay) {
+		frame();
+	} else {
+		thumbnail();
+	}
+
+	$: videoLink = `https://vimeo.com/${id}`;
+	$: vimeoUserPage = `https://vimeo.com/${user}`;
+	$: {
+		if (play) {
+			if (settingsString != '') {
+				turnAutoplayOn();
+			} else {
+				setAutoplayOn();
+			}
+			frame();
+		}
+	}
 </script>
 
-<div data-testid="wrapper" id="video-container-{id}" class="vimeo-video-container">
-	<iframe
-		data-testid="iframe"
-		title={title != '' ? title : videoLink}
-		src={iframeURL}
-		style="position:absolute; top:0; left:0; width:100%; height:100%;"
-		frameborder="0"
-		allow="autoplay; fullscreen; picture-in-picture"
-		allowfullscreen
+<section data-testid="content-section">
+	<svelte:component
+		this={renderedComponent}
+		on:component-event={(e) => handleEvent(e)}
+		{...props}
 	/>
-</div>
+</section>
 <p>
 	{#if title != ''}
-		<a href={videoLink}>{title}</a> from
+		<a href={videoLink} target="_blank" rel="external noopener noreferrer">{title}</a> from
 	{/if}
 	{#if user != ''}
-		<a href={vimeoUserPage}>{user}</a>
+		<a href={vimeoUserPage} target="_blank" rel="external noopener noreferrer">{user}</a>
 	{/if}
-	on <a href="https://vimeo.com">Vimeo</a>.
+	on <a href="https://vimeo.com" target="_blank" rel="external noopener noreferrer">Vimeo</a>.
 </p>
 
 {#if description != ''}
@@ -104,10 +154,3 @@
 		&ldquo;{description}
 	</p>
 {/if}
-
-<style>
-	.vimeo-video-container {
-		padding: 56.49% 0 0 0;
-		position: relative;
-	}
-</style>
