@@ -1,4 +1,4 @@
-# Sveltin Components Library
+# Components Library
 
 ## Crafted to be used by Sveltin based projects but definetely usable out of it
 
@@ -23,9 +23,9 @@ Each package has its own folder and README in the `/packages` directory. All pac
 Clone the repos and install all the dependencies:
 
 ```bash
-git clone https://github.com/sveltinio/sveltin-components-library.git
+git clone https://github.com/sveltinio/components-library.git
 
-cd sveltin-components-library
+cd components-library
 
 pnpm install
 ```
