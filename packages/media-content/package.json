@@ -2,7 +2,7 @@
 	"name": "@sveltinio/media-content",
 	"version": "0.3.0",
 	"private": false,
-	"description": "A collection of Svelte components to easily embed media contents in your pages.",
+	"description": "A collection of typed Svelte components to easily embed media contents in your pages.",
 	"author": "dev <dev@sveltin.io>",
 	"license": "MIT",
 	"keywords": [
@@ -68,10 +68,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sveltinio/sveltin-components-library"
+		"url": "https://github.com/sveltinio/components-library"
 	},
 	"bugs": {
-		"url": "https://github.com/sveltinio/sveltin-components-library/issues"
+		"url": "https://github.com/sveltinio/components-library/issues"
 	},
 	"type": "module"
 }

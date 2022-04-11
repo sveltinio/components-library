@@ -324,7 +324,7 @@ The `Tweet` component exposes the following properties:
 
 Easily embed Vimeo content in your pages. The `Vimeo` component supports all the customization settings available [here](https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Player-parameters-overview) through the `settings` property.
 
-To load your pages faster, a clickable and responsibe thumbnail for the video is embedded (when no `autoplay` setting is provided or it is set to `false`). Upon clicking, it loads the iframe and play the video.
+To load your pages faster, a clickable and responsive thumbnail for the video is embedded (when no `autoplay` setting is provided or it is set to `false`). Upon clicking, it loads the iframe and play the video.
 
 #### Properties
 
@@ -376,7 +376,7 @@ The `Vimeo` component exposes the following properties:
 
 Easily embed YouTube content (videos and playlist) in your pages. The `YouTube` component supports all the customization settings available [here](https://developers.google.com/youtube/player_parameters) through the `settings` property.
 
-To load your pages faster, a clickable and responsibe thumbnail for the video is embedded (when no `autoplay` setting is provided or it is set to `false`). Upon clicking, it loads the iframe and play the video.
+To load your pages faster, a clickable and responsive thumbnail for the video is embedded (when no `autoplay` setting is provided or it is set to `false`). Upon clicking, it loads the iframe and play the video.
 
 #### Properties
 
