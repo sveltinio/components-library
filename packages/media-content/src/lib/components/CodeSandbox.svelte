@@ -25,21 +25,18 @@
 	const baseURL = `https://codesandbox.io/embed/${id}`;
 	const settingString = makeSettingsString<ICodeSandboxSettings>(settings, matchersCallback);
 	const iframeURL = settingString != '' ? baseURL.concat(`?${settingString}`) : baseURL;
-
-	$: wrapperID = `codesandbox-container-${id}`;
-	$: title = `codeSandbox-${id}`;
 </script>
 
 <div
 	data-testid="wrapper"
-	id={wrapperID}
+	id="codesandbox-container-${id}"
 	class={$$props.class}
 	style:height={`${height}px`}
 	style:position="relative"
 	style:width="100%"
 	style={$$props.style}
 >
-	<iframe data-testid="iframe" class="frame" {title} src={iframeURL} />
+	<iframe data-testid="iframe" class="frame" title="codeSandbox-${id}" src={iframeURL} />
 </div>
 
 <style>
