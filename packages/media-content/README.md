@@ -62,7 +62,7 @@ The `CodePen` component exposes the following properties:
  import { CodePen } from '@sveltinio/media-content';
 </script>
 
-<CodePen user="mveltri" id="YzZYmoJ" />
+<CodePen user="alipanick" id="YzZYmoJ" />
 ```
 
 **WITH CUSTOM SETTINGS**
@@ -82,7 +82,7 @@ The `CodePen` component exposes the following properties:
  };
 </script>
 
-<CodePen user="mveltri" id="ExWOeeo" title="Images Carousel" settings={cpSettings} />
+<CodePen user="alipanick" id="ExWOeeo" title="Images Carousel" settings={cpSettings} />
 ```
 
 ### CodeSandbox
