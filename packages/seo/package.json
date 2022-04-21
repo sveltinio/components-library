@@ -59,10 +59,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sveltinio/sveltin-components-library"
+		"url": "https://github.com/sveltinio/components-library"
 	},
 	"bugs": {
-		"url": "https://github.com/sveltinio/sveltin-components-library/issues"
+		"url": "https://github.com/sveltinio/components-library/issues"
 	},
 	"type": "module"
 }
