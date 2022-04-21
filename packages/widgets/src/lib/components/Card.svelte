@@ -9,7 +9,7 @@
 	{#if item.metadata.cover}
 		<div class="card-header">
 			<img
-				src={`resources/${item.resource}/${item.metadata.slug}/${item.metadata.cover}`}
+				src={`/resources/${item.resource}/${item.metadata.slug}/${item.metadata.cover}`}
 				alt={`cover for ${item.metadata.title}`}
 				title={`cover for ${item.metadata.title}`}
 			/>
