@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/widgets",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"private": false,
 	"description": "A collection of styled Svelte components for page navigation, TOC, scroll to top, collapsible lists ...",
 	"author": "dev <dev@sveltin.io>",
