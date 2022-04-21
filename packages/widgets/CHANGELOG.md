@@ -1,5 +1,11 @@
 # @sveltinio/widgets
 
+## 0.1.6
+
+### Patch Changes
+
+- fix: path to the static folder for the Card component to properly display images and usage of content specific assets
+
 ## 0.1.5
 
 ### Patch Changes
