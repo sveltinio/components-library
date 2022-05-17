@@ -1,8 +1,8 @@
 {
-	"name": "sveltin-components-library",
-	"version": "0.1.0",
+	"name": "components-library",
+	"version": "0.2.0",
 	"private": true,
-	"packageManager": "pnpm@6.32.4",
+	"packageManager": "pnpm@7.1.0",
 	"workspaces": [
 		"packages/*"
 	],
