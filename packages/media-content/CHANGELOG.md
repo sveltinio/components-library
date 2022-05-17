@@ -1,5 +1,11 @@
 # @sveltinio/media-content
 
+## 0.3.2
+
+### Patch Changes
+
+- unused dependency removed (@types/jest)
+
 ## 0.3.1
 
 ### Patch Changes
