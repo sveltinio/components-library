@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/services",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"private": false,
 	"description": "A collection of Svelte components to use GoogleFonts, GoogleAnalytics ...",
 	"author": "dev <dev@sveltin.io>",

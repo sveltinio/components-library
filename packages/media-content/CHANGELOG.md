@@ -1,5 +1,11 @@
 # @sveltinio/media-content
 
+## 0.3.1
+
+### Patch Changes
+
+- Bump version to update the github repo link on npm
+
 ## 0.3.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @sveltinio/widgets
 
+## 0.1.7
+
+### Patch Changes
+
+- Bump version to update the github repo link on npm
+
 ## 0.1.6
 
 ### Patch Changes
