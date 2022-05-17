@@ -4,9 +4,9 @@
 	"compilerOptions": {
 		"moduleResolution": "node",
 		"declaration": true,
-		"module": "es2020",
-		"lib": ["es2020", "DOM"],
-		"target": "es2020",
+		"module": "esnext",
+		"lib": ["esnext", "DOM"],
+		"target": "esnext",
 		"types": ["jest", "gtag.js"],
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,
@@ -23,12 +23,11 @@
 			"$lib/*": ["<rootDir>/src/lib/*"]
 		}
 	},
-	"exclude": ["node_modules"],
 	"include": [
 		"<rootDir>/src/lib/**/*.d.ts",
 		"<rootDir>/src/lib/**/*.js",
 		"<rootDir>/src/lib/**/*.ts",
 		"<rootDir>/src/lib/**/*.svelte-kit",
-		"../config/jest-setup.ts"
+		"../config/vitest-setup.ts"
 	]
 }

@@ -3,6 +3,5 @@
 	"compilerOptions": {
 		"types": ["@types/gtag.js", "vitest/globals"]
 	},
-	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte", "config/data.js"],
-	"exclude": ["../../packages/tsconfig/node_modules"]
+	"include": ["../../packages/config/node_modules/jest-dom"]
 }

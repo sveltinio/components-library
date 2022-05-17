@@ -10,7 +10,7 @@ export const vitestConf = <UserConfig>{
 	],
 	test: {
 		globals: true,
-		reporter: 'dot',
+		reporters: ['dot'],
 		silent: true,
 		environment: 'jsdom',
 		setupFiles: ['../config/vitest-setup.ts']

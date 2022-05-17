@@ -21,10 +21,10 @@ const config = {
 		vite: {
 			test: {
 				globals: true,
-				reporter: 'dot',
+				reporters: ['dot'],
 				silent: true,
 				environment: 'jsdom',
-				setupFiles: ['../config/vitest-setup.ts']
+				setupFiles: ['../config/vitest-setup.ts', '../config/vitest-preset.ts']
 			}
 		}
 	}
