@@ -3,5 +3,5 @@
 	"compilerOptions": {
 		"types": ["@types/gtag.js", "vitest/globals"]
 	},
-	"include": ["../../packages/config/node_modules/jest-dom"]
+	"include": ["../../packages/config/node_modules/js-dom"]
 }

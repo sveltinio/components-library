@@ -3,5 +3,5 @@
 	"compilerOptions": {
 		"types": ["vitest/globals"]
 	},
-	"include": ["../../packages/config/node_modules/jest-dom"]
+	"include": ["../../packages/config/node_modules/js-dom"]
 }
