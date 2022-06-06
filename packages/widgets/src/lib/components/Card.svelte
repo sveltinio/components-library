@@ -109,7 +109,7 @@
 
 	.card-content p {
 		color: #475569;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		line-height: 1.75rem;
 		margin-bottom: 0.25rem;
 		-webkit-box-orient: vertical;
@@ -124,7 +124,7 @@
 
 	@media screen and (min-width: 1024px) {
 		.card-content h2 {
-			font-size: 1.875rem;
+			font-size: 1.5rem;
 			line-height: 2.25rem;
 		}
 	}
