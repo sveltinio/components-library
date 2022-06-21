@@ -1,12 +1,7 @@
 <script lang="ts">
-	import {
-		JsonLdSiteNavigationElements,
-		JsonLdWebPage,
-		JsonLdWebSite,
-		PageMetaTags
-	} from '../lib/index';
+	import { JsonLdSiteNavigationElements, JsonLdWebPage, JsonLdWebSite, PageMetaTags } from '$lib';
 
-	import { homePage, website, menu } from '../lib/__tests__/__fixtures__/data.test.js';
+	import { homePage, website, menu } from '$lib/__tests__/__fixtures__/data.test.js';
 </script>
 
 <!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->
@@ -18,7 +13,6 @@
 
 <section class="main">
 	<h1><tt>@sveltinio/seo</tt></h1>
-	<h2><tt>PageMetaTags - homePage</tt></h2>
 	<section class="container">
 		<h3>Inspect the head of the webpage</h3>
 	</section>

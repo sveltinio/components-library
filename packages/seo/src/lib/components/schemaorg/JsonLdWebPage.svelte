@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { IWebPageMetadata, JsonLdWebPage, JsonLdWebPageMaker } from '../../types';
+	import { JsonLdWebPage, JsonLdWebPageMaker } from '../../types';
+	import type { IWebPageMetadata } from '../../types';
 
 	export let data: IWebPageMetadata;
 	const webpage: JsonLdWebPage = JsonLdWebPageMaker.make();

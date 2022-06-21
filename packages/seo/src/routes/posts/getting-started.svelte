@@ -1,8 +1,8 @@
 <script lang="ts">
-	import JsonLdBreadcrumbs from '../../lib/components/schemaorg/JsonLdBreadcrumbs.svelte';
-	import { JsonLdWebPage, PageMetaTags } from '../../lib/index';
+	import JsonLdBreadcrumbs from '$lib/components/schemaorg/JsonLdBreadcrumbs.svelte';
+	import { JsonLdWebPage, PageMetaTags } from '$lib';
 
-	import { website, sampleArticle } from '../../lib/__tests__/__fixtures__/data.test.js';
+	import { website, sampleArticle } from '$lib/__tests__/__fixtures__/data.test.js';
 </script>
 
 <!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->

@@ -17,7 +17,7 @@
 	homePage.url = `${baseURL}`;
 	itemElementList.push(homePage);
 
-	if (parent != '') {
+	if (parent != undefined && parent != '') {
 		const resourcePage = JsonLdBreadcrumbsItemMaker.make();
 		resourcePage.position = 2;
 		resourcePage.name = parent.toUpperCase();

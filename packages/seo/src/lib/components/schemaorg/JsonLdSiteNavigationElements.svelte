@@ -1,11 +1,11 @@
 <script lang="ts">
+	import type { IMenuItem, IWebSite } from '../../types';
 	import {
 		JsonLdSiteNavigationElementMaker,
-		IMenuItem,
-		IWebSite,
 		JsonLdSiteNavigationElement,
 		JsonLdSiteNavigationElementListMaker
 	} from '../../types';
+
 	export let websiteData: IWebSite;
 	export let menuData: IMenuItem[];
 
