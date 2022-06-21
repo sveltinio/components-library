@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { IGoogleFont } from '../types';
+	import type { IGoogleFont } from '../../types';
 
 	function listenerFunction(this: HTMLElement, ev: Event) {
 		ev.preventDefault();

@@ -1,5 +1,4 @@
-import GoogleFonts from './components/GoogleFonts.svelte';
-import GoogleAnalytics from './components/GoogleAnalytics.svelte';
-import UmamiAnalytics from './components/UmamiAnalytics.svelte';
+import { GoogleFonts, GoogleAnalytics } from './components/google';
+import { UmamiAnalytics } from './components/umami';
 
 export { GoogleFonts, GoogleAnalytics, UmamiAnalytics };
