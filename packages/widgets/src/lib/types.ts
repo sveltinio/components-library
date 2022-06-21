@@ -122,3 +122,12 @@ export class HeadingItemMaker {
 		return item;
 	}
 }
+
+export interface IDropdownItem {
+	identifier: string;
+	name: string;
+	url: string;
+	weight: number;
+	external?: boolean;
+	children?: Array<IDropdownItem>;
+}

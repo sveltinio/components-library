@@ -1,12 +1,10 @@
 /** Widgets  */
-import TOC from './components/TOC.svelte';
-import Card from './components/Card.svelte';
-import PrevNextButtons from './components/PrevNextButtons.svelte';
-import ScrollToTopButton from './components/ScrollToTopButton.svelte';
-import CollapsibleList from './components/CollapsibleList.svelte';
-import Breadcrumbs from './components/Breadcrumbs.svelte';
-import GitHubButton from './components/github/GitHubButton.svelte';
-import GitHubForkRibbon from './components/github/GitHubForkRibbon.svelte';
+import { TOC } from './components/toc';
+import { Card } from './components/card';
+import { PrevNextButtons, ScrollToTopButton } from './components/buttons';
+import { CollapsibleList } from './components/list';
+import { Breadcrumbs } from './components/breadcrumbs/';
+import { GitHubButton, GitHubForkRibbon } from './components/github';
 
 export {
 	Card,

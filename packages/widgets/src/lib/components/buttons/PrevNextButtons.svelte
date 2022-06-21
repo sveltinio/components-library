@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ResourceContent } from '../types';
+	import type { ResourceContent } from '../../types';
 
 	export let next: ResourceContent;
 	export let previous: ResourceContent;
