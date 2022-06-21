@@ -9,18 +9,18 @@
 	],
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.4",
-		"@types/jest": "^28.1.1",
-		"@typescript-eslint/eslint-plugin": "^5.27.0",
-		"@typescript-eslint/parser": "^5.27.0",
-		"eslint": "^8.17.0",
+		"@types/jest": "^28.1.2",
+		"@typescript-eslint/eslint-plugin": "^5.29.0",
+		"@typescript-eslint/parser": "^5.29.0",
+		"eslint": "^8.18.0",
 		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-svelte3": "^3.4.1",
-		"jest": "^28.1.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"jest": "^28.1.1",
 		"jsdom": "^19.0.0",
 		"svelte": "3.48.0",
 		"tslib": "^2.4.0",
-		"typescript": "^4.7.3",
-		"vite": "latest",
-		"vitest": "latest"
+		"typescript": "^4.7.4",
+		"vite": "2.9.12",
+		"vitest": "0.15.1"
 	}
 }

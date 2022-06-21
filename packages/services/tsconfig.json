@@ -1,7 +1,6 @@
 {
-	"extends": "../../packages/tsconfig/sveltekit.json",
+	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
 		"types": ["@types/gtag.js", "vitest/globals"]
-	},
-	"include": ["../../packages/config/node_modules/js-dom"]
+	}
 }
