@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { ICodeSandboxSettings } from '../types';
-	import { isCommaSepareted, makeSettingsString, toCommaSepareted } from '../utils';
+	import type { ICodeSandboxSettings } from '../../types';
+	import { isCommaSepareted, makeSettingsString, toCommaSepareted } from '../../utils';
 
 	/** The id for the sandbox to embed. */
 	export let id: string;

@@ -1,13 +1,13 @@
-import CodePen from './components/CodePen.svelte';
-import CodeSandbox from './components/CodeSandbox.svelte';
-import Facebook from './components/Facebook.svelte';
-import IFrame from './components/IFrame.svelte';
-import SlideShare from './components/SlideShare.svelte';
-import StackBlitz from './components/StackBlitz.svelte';
-import Thumbnail from './components/Thumbnail.svelte';
-import Tweet from './components/Tweet.svelte';
-import Vimeo from './components/Vimeo.svelte';
-import YouTube from './components/YouTube.svelte';
+import { CodePen } from './components/codepen';
+import { CodeSandbox } from './components/codesandbox';
+import { Facebook } from './components/facebook';
+
+import { SlideShare } from './components/slideshare';
+import { StackBlitz } from './components/stackblitz';
+import { IFrame, Thumbnail } from './components/basic';
+import { Tweet } from './components/tweet';
+import { Vimeo } from './components/vimeo';
+import { YouTube } from './components/youtube';
 
 export {
 	CodePen,

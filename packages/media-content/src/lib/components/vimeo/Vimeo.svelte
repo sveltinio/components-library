@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { IVimeoSettings } from '../types';
-	import { IFrame, Thumbnail } from '..';
+	import type { IVimeoSettings } from '../../types';
+	import { IFrame, Thumbnail } from '../..';
 	import {
 		makeSettingsString,
 		getHexValue,
@@ -9,7 +9,7 @@
 		isValidHex,
 		isValidValue,
 		isPropValueSet
-	} from '../utils';
+	} from '../../utils';
 
 	/** The id for the video to embed. */
 	export let id: string;
