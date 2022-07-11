@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.1.7
+
+### Patch Changes
+
+- fixed an issue where the `type` attribute for script tag was dropped out during packaging"
+
 ## 0.1.6
 
 ### Patch Changes
