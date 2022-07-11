@@ -10,5 +10,6 @@
 		"sourceMap": true,
 		"strict": true,
 		"types": ["vitest/globals"]
-	}
+	},
+	"exclude": ["src/lib/__tests__"]
 }
