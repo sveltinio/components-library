@@ -208,20 +208,19 @@ export class JsonLdWebPage implements ISchemaOrg {
 	toJsonLdObject(): Record<string, unknown> {
 		let resObj = undefined;
 		const obj = {
-			"@context": "https://schema.org",
-			"@type": "WebPage",
-			"name": this.title,
-			"description": this.description
+			'@context': 'https://schema.org',
+			'@type': 'WebPage',
+			name: this.title,
+			description: this.description
 		};
-
 
 		if (this.author) {
 			const obj2 = {
-				'author': this.author
-			}
-			resObj = {...obj, ...obj2}
+				author: this.author
+			};
+			resObj = { ...obj, ...obj2 };
 		} else {
-			resObj = obj
+			resObj = obj;
 		}
 
 		return resObj;
@@ -259,11 +258,11 @@ export class JsonLdSiteNavigationElement implements ISchemaOrg {
 
 	toJsonLdObject(): Record<string, unknown> {
 		return {
-			"@type": "SiteNavigationElement",
-			"position": this.position,
-			"name": this.name,
-			"description": this.description,
-			"url": this.url
+			'@type': 'SiteNavigationElement',
+			position: this.position,
+			name: this.name,
+			description: this.description,
+			url: this.url
 		};
 	}
 }
@@ -299,9 +298,9 @@ export class JsonLdSiteNavigationElementList implements ISchemaOrg {
 		});
 
 		return {
-			"@context": "https://schema.org",
-			"@type": "ItemList",
-			"itemListElement": elementListAsJsonString
+			'@context': 'https://schema.org',
+			'@type': 'ItemList',
+			itemListElement: elementListAsJsonString
 		};
 	}
 }
@@ -331,10 +330,10 @@ export class JsonLdBreadcrumbsItem implements ISchemaOrg {
 
 	toJsonLdObject(): Record<string, unknown> {
 		return {
-			"@type": "ListItem",
-			"position": this.position,
-			"name": this.name,
-			"item": this.url
+			'@type': 'ListItem',
+			position: this.position,
+			name: this.name,
+			item: this.url
 		};
 	}
 }
@@ -370,9 +369,9 @@ export class JsonLdBreadcrumbsList implements ISchemaOrg {
 		});
 
 		return {
-			"@context": "https://schema.org",
-			"@type": "BreadcrumbList",
-			"itemListElement": elementListAsJsonString
+			'@context': 'https://schema.org',
+			'@type': 'BreadcrumbList',
+			itemListElement: elementListAsJsonString
 		};
 	}
 }
