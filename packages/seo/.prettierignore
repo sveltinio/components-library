@@ -1,7 +1,18 @@
-.svelte-kit/**
-static/**
-dist/**
-node_modules/**
-src/lib/types.ts
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+/static
+/dist
 
 *.md
+
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
