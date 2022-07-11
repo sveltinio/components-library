@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, cleanup } from '@testing-library/svelte';
-import { homePage, sampleArticle } from './__fixtures__/data.test.js';
+import { homePage } from './__fixtures__/data.test.js';
 import { JsonLdWebPage } from '..';
 
 function getScripts(scriptType: string, testID: string): string {
