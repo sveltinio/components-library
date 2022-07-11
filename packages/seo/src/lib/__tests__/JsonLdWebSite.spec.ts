@@ -7,22 +7,19 @@ function getScripts(scriptType: string): string {
 	const scripts = document.getElementsByTagName('script');
 	for (let i = 0; i < scripts.length; i += 1) {
 		if (scripts[i].getAttribute('type') === scriptType) {
-			return scripts[i].innerHTML;
+			return scripts[i].innerText;
 		}
 	}
 	return '';
 }
 
-beforeEach(() => {
-	render(JsonLdWebSite, {
-		props: {
-			websiteData: website
-		}
-	});
-});
-
 describe('JsonLdWebSite', () => {
 	it('should have jsonld WebSite object with props', async () => {
+		render(JsonLdWebSite, {
+			props: {
+				websiteData: website
+			}
+		});
 		const jsonLdScript = getScripts('application/ld+json');
 		const jsonLdString = JSON.parse(jsonLdScript);
 		expect(jsonLdString['@type']).toBe('WebSite');

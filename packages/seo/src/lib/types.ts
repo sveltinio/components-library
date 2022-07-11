@@ -201,11 +201,12 @@ interface ISchemaOrg {
  *  * JsonLdWebPage
  */
 export class JsonLdWebPage implements ISchemaOrg {
-	public title: string;
-	public description: string;
+	public title!: string;
+	public description!: string;
 	public author?: string;
 
 	toJsonLdObject(): Record<string, unknown> {
+		let resObj = undefined;
 		const obj = {
 			"@context": "https://schema.org",
 			"@type": "WebPage",
@@ -213,11 +214,17 @@ export class JsonLdWebPage implements ISchemaOrg {
 			"description": this.description
 		};
 
+
 		if (this.author) {
-			obj['author'] = this.author;
+			const obj2 = {
+				'author': this.author
+			}
+			resObj = {...obj, ...obj2}
+		} else {
+			resObj = obj
 		}
 
-		return obj;
+		return resObj;
 	}
 }
 
@@ -245,10 +252,10 @@ export class JsonLdWebPageMaker {
  */
 
 export class JsonLdSiteNavigationElement implements ISchemaOrg {
-	public position: number;
-	public name: string;
-	public description: string;
-	public url: string;
+	public position!: number;
+	public name!: string;
+	public description!: string;
+	public url!: string;
 
 	toJsonLdObject(): Record<string, unknown> {
 		return {
@@ -283,7 +290,7 @@ export class JsonLdSiteNavigationElementMaker {
  * * JsonLdSiteNavigationElementList
  */
 export class JsonLdSiteNavigationElementList implements ISchemaOrg {
-	public items: Array<JsonLdSiteNavigationElement>;
+	public items!: Array<JsonLdSiteNavigationElement>;
 
 	toJsonLdObject(): Record<string, unknown> {
 		const elementListAsJsonString = Array<Record<string, unknown>>();
@@ -318,9 +325,9 @@ export class JsonLdSiteNavigationElementListMaker {
  * * JsonLdBreadcrumbsItem
  */
 export class JsonLdBreadcrumbsItem implements ISchemaOrg {
-	public position: number;
-	public name: string;
-	public url: string;
+	public position!: number;
+	public name!: string;
+	public url!: string;
 
 	toJsonLdObject(): Record<string, unknown> {
 		return {
@@ -354,7 +361,7 @@ export class JsonLdBreadcrumbsItemMaker {
  * * JsonLdBreadcrumbsList
  */
 export class JsonLdBreadcrumbsList implements ISchemaOrg {
-	public items: Array<JsonLdBreadcrumbsItem>;
+	public items!: Array<JsonLdBreadcrumbsItem>;
 
 	toJsonLdObject(): Record<string, unknown> {
 		const elementListAsJsonString = Array<Record<string, unknown>>();

@@ -7,7 +7,7 @@ function getScripts(scriptType: string): string {
 	const scripts = document.getElementsByTagName('script');
 	for (let i = 0; i < scripts.length; i += 1) {
 		if (scripts[i].getAttribute('type') === scriptType) {
-			return scripts[i].innerHTML;
+			return scripts[i].innerText;
 		}
 	}
 	return '';

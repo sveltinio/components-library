@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import type { IMenuItem, IWebSite } from '../../types';
 	import {
 		JsonLdSiteNavigationElementMaker,
@@ -29,13 +30,13 @@
 		JsonLdSiteNavigationElementListMaker.makeWithValues(elementList);
 
 	let jsonLdString = JSON.stringify(schemaOrgSiteNavigationElementList.toJsonLdObject());
-	let jsonLdScript = `
-		<script type="application/ld+json">
-			${jsonLdString}
-		${'<'}/script>
-	`;
-</script>
 
-<svelte:head>
-	{@html jsonLdScript}
-</svelte:head>
+	onMount(() => {
+		const head = document.head || document.getElementsByTagName('head')[0];
+		const script = document.createElement('script');
+		script.type = 'application/ld+json';
+		script.innerText = jsonLdString;
+		script.setAttribute('data-testid', 'jsonld-sitenavigationelement');
+		head.appendChild(script);
+	});
+</script>

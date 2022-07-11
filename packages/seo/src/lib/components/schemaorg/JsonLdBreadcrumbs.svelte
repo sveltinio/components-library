@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import {
 		JsonLdBreadcrumbsItem,
 		JsonLdBreadcrumbsItemMaker,
@@ -38,14 +40,12 @@
 	const schemaOrgBreadcrumbsList = JsonLdBreadcrumbsListMaker.makeWithValues(itemElementList);
 	let jsonLdString = JSON.stringify(schemaOrgBreadcrumbsList.toJsonLdObject());
 
-	let jsonLdScript = `
-	<script type="application/ld+json">
-		${jsonLdString}
-	${'<'}/script>
-	`;
+	onMount(() => {
+		const head = document.head || document.getElementsByTagName('head')[0];
+		const script = document.createElement('script');
+		script.type = 'application/ld+json';
+		script.innerText = jsonLdString;
+		script.setAttribute('data-testid', 'jsonld-breadcrumbs');
+		head.appendChild(script);
+	});
 </script>
-
-<!-- JSONLD-Breacrumbs-->
-<svelte:head>
-	{@html jsonLdScript}
-</svelte:head>
