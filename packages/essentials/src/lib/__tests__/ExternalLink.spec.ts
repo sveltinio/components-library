@@ -7,7 +7,7 @@ describe('ExternalLink', () => {
 		const { container } = render(ExternalLink, {
 			props: {
 				id: 'sveltin-site-link',
-				name: 'sveltin',
+				label: 'sveltin',
 				url: 'https://sveltin.io'
 			}
 		});
@@ -18,7 +18,7 @@ describe('ExternalLink', () => {
 		const { getByTestId } = render(ExternalLink, {
 			props: {
 				id: 'sveltin-site-link',
-				name: 'sveltin',
+				label: 'sveltin',
 				url: 'https://sveltin.io'
 			}
 		});
@@ -31,7 +31,7 @@ describe('ExternalLink', () => {
 		const { getByTestId } = render(ExternalLink, {
 			props: {
 				id: 'sveltin-site-link',
-				name: 'sveltin',
+				label: 'sveltin',
 				url: 'https://sveltin.io'
 			}
 		});
@@ -44,7 +44,7 @@ describe('ExternalLink', () => {
 		const { getByTestId } = render(ExternalLink, {
 			props: {
 				id: 'sveltin-site-link',
-				name: 'sveltin',
+				label: 'sveltin',
 				url: 'https://sveltin.io'
 			}
 		});
@@ -57,7 +57,7 @@ describe('ExternalLink', () => {
 		const { getByTestId } = render(ExternalLink, {
 			props: {
 				id: 'sveltin-site-link',
-				name: 'sveltin',
+				label: 'sveltin',
 				url: 'https://sveltin.io'
 			}
 		});
