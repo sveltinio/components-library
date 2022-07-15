@@ -56,7 +56,7 @@ html {
 }
 
 body {
-	background-color: #f8fafc /* slate-50 */;
+	background-color: white;
 	margin: 2rem;
 }
 
@@ -125,4 +125,18 @@ body {
 
 .main h4:after {
 	background: rgb(14 116 144);
+}
+
+.buttons-container {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.buttons-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-end;
+	max-width: 48rem;
+	margin: 2rem auto;
 }
