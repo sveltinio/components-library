@@ -17,15 +17,6 @@ const config = {
 				return mm.isMatch(filepath, ['!__tests__/**/*']);
 			},
 			files: mm.matcher('!__tests__/**/*')
-		},
-		vite: {
-			test: {
-				globals: true,
-				reporters: ['dot'],
-				silent: true,
-				environment: 'jsdom',
-				setupFiles: ['../config/vitest-setup.ts', '../config/vitest-preset.ts']
-			}
 		}
 	}
 };
