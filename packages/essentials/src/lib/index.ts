@@ -1,5 +1,24 @@
 /** HTML blocks elements */
-import ExternalLink from './components/ExternalLink.svelte';
-import ModernImage from './components/ModernImage.svelte';
+import { Button } from './components/button';
+import { ExternalLink } from './components/link';
+import { Picture } from './components/picture';
+import {
+	Dropdown,
+	DropdownButton,
+	DropdownMenu,
+	DropdownItem,
+	ArrowDownIcon,
+	ArrowUpIcon
+} from './components/dropdown';
 
-export { ExternalLink, ModernImage };
+export {
+	Button,
+	ExternalLink,
+	Picture,
+	Dropdown,
+	DropdownButton,
+	DropdownMenu,
+	DropdownItem,
+	ArrowDownIcon,
+	ArrowUpIcon
+};
