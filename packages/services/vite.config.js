@@ -4,7 +4,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 const config = {
 	clearScreen: false,
 	server: {
-		port: 3002
+		port: 3003
 	},
 	plugins: [sveltekit()]
 };

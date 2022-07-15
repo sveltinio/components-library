@@ -4,7 +4,14 @@ import { sveltekit } from '@sveltejs/kit/vite';
 const config = {
 	clearScreen: false,
 	server: {
-		port: 3002
+		port: 3003
+	},
+	test: {
+		globals: true,
+		reporters: ['dot'],
+		silent: true,
+		environment: 'jsdom',
+		setupFiles: ['../config/vitest-setup.ts']
 	},
 	plugins: [sveltekit()]
 };
