@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
-	export let image: string;
+	export let src: string;
 	export let altText: string;
 	export let webp = false;
 	export let avif = false;
@@ -14,16 +14,16 @@
 
 <picture data-testid="picture-id">
 	{#if avif}
-		<source data-testid="avif" type="image/avif" srcset="{assets}/avif/{filename(image)}.avif" />
+		<source data-testid="avif" type="image/avif" srcset="{assets}/avif/{filename(src)}.avif" />
 	{/if}
 
 	{#if webp}
-		<source data-testid="webp" type="image/webp" srcset="{assets}/webp/{filename(image)}.webp" />
+		<source data-testid="webp" type="image/webp" srcset="{assets}/webp/{filename(src)}.webp" />
 	{/if}
 
 	<img
 		data-testid="imgtag"
-		src="{assets}/{image}"
+		src="{assets}/{src}"
 		loading="lazy"
 		decoding="async"
 		alt={altText}

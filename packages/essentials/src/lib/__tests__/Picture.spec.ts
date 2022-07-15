@@ -1,16 +1,16 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { ModernImage } from '..';
+import { Picture } from '..';
 
 /** *******************************************************************************
  *                                      PLAIN
  * ********************************************************************************/
-describe('ModernImage', () => {
+describe('Picture', () => {
 	it('should be in the document', async () => {
-		const { container } = render(ModernImage, {
+		const { container } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo',
 				webp: true,
 				avif: true
@@ -20,9 +20,9 @@ describe('ModernImage', () => {
 	});
 
 	it('should have a const named filename', async () => {
-		const { component } = render(ModernImage, {
+		const { component } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo'
 			}
 		});
@@ -30,9 +30,9 @@ describe('ModernImage', () => {
 	});
 
 	it('should have filename logo', async () => {
-		const { component } = render(ModernImage, {
+		const { component } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo'
 			}
 		});
@@ -40,9 +40,9 @@ describe('ModernImage', () => {
 	});
 
 	it('should have src to logo.png', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo'
 			}
 		});
@@ -50,9 +50,9 @@ describe('ModernImage', () => {
 	});
 
 	it('should not contain both avif and webp', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo'
 			}
 		});
@@ -65,9 +65,9 @@ describe('ModernImage', () => {
 	});
 
 	it('should have width & height', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo'
 			}
 		});
@@ -77,9 +77,9 @@ describe('ModernImage', () => {
 	});
 
 	it('should be lazy and async', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo'
 			}
 		});
@@ -89,9 +89,9 @@ describe('ModernImage', () => {
 	});
 
 	it('should have rounded-lg class', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo',
 				class: 'object-cover rounded-lg'
 			}
@@ -100,9 +100,9 @@ describe('ModernImage', () => {
 	});
 
 	it('should have an accessible name (alt)', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo'
 			}
 		});
@@ -114,11 +114,11 @@ describe('ModernImage', () => {
 /** *******************************************************************************
  *                                       AVIF
  * ********************************************************************************/
-describe('[AVIF] ModernImage', () => {
+describe('[AVIF] Picture', () => {
 	it('should contain avif', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo',
 				avif: true
 			}
@@ -127,9 +127,9 @@ describe('[AVIF] ModernImage', () => {
 	});
 
 	it('should have type as image/avif', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo',
 				webp: true,
 				avif: true
@@ -139,9 +139,9 @@ describe('[AVIF] ModernImage', () => {
 	});
 
 	it('should not contain webp', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo',
 				avif: true
 			}
@@ -155,11 +155,11 @@ describe('[AVIF] ModernImage', () => {
 /** *******************************************************************************
  *                                       WEBP
  * ********************************************************************************/
-describe('[WEBP] ModernImage', () => {
+describe('[WEBP] Picture', () => {
 	it('should contain webp', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo',
 				webp: true
 			}
@@ -168,9 +168,9 @@ describe('[WEBP] ModernImage', () => {
 	});
 
 	it('should have type as image/webp', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo',
 				webp: true
 			}
@@ -179,9 +179,9 @@ describe('[WEBP] ModernImage', () => {
 	});
 
 	it('should not contain avif', async () => {
-		const { getByTestId } = render(ModernImage, {
+		const { getByTestId } = render(Picture, {
 			props: {
-				image: 'logo.png',
+				src: 'logo.png',
 				altText: 'sveltin-logo',
 				webp: true
 			}
