@@ -84,7 +84,9 @@
 			}
 			if (!isEmptyObject<IFacebookSettings | IFacebookVideoSettings>(settings)) {
 				const targetElem = document.getElementById(`facebook-${type}-${identifier}`);
-				setOptionsProps(targetElem, settings);
+				if (targetElem) {
+					setOptionsProps(targetElem, settings);
+				}
 			}
 		} catch (err) {
 			return;
