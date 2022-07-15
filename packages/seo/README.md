@@ -9,18 +9,18 @@ A collection of SEO related Svelte components for metatags, json-ld.
 
 ## Components List
 
-### Meta
+### [Meta](#meta)
 
-- PageMetatags
-- OpenGraph
-- TwitterCard
+- [PageMetatags](#pagemetags)
+- [OpenGraph](#opengraph)
+- [TwitterCard](#twittercard)
 
-### SchemaOrg
+### [SchemaOrg](#schemaorg)
 
-- JsonLdWebSite
-- JsonLdWebPage
-- JsonLdBreadcrumbs
-- JsonLdSiteNavigationElement
+- [JsonLdWebSite](#jsonldwebsite)
+- [JsonLdWebPage](#jsonldwebpage)
+- [JsonLdBreadcrumbs](#jsonldbreadcrumbs)
+- [JsonLdSiteNavigationElement](#jsonldsitenavigationelement)
 
 ## Install
 
@@ -43,7 +43,96 @@ pnpm dev
 
 ## Usage
 
-Refer to the [source code](https://github.com/sveltinio/sveltin-components-library/blob/main/packages/seo/src/routes/index.svelte) for the demo app.
+### PageMetags
+
+#### Properties
+
+The `PageMetatags` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### OpenGraph
+
+#### Properties
+
+The `OpenGraph` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### TwitterCard
+
+#### Properties
+
+The `TwitterCard` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### JsonLdWebSite
+
+#### Properties
+
+The `JsonLdWebSite` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### JsonLdWebPage
+
+#### Properties
+
+The `JsonLdWebPage` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### JsonLdBreadcrumbs
+
+#### Properties
+
+The `JsonLdBreadcrumbs` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### JsonLdSiteNavigationElement
+
+#### Properties
+
+The `JsonLdSiteNavigationElement` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
 
 ## License
 
