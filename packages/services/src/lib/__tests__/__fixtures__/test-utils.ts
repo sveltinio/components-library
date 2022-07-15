@@ -5,7 +5,7 @@ export const getFullScriptTagbyId = (scriptId: string): HTMLScriptElement => {
 			return scripts[i];
 		}
 	}
-	return undefined;
+	return new HTMLScriptElement();
 };
 
 export const getScriptTagById = (scriptId: string): boolean => {
@@ -18,7 +18,7 @@ export const getScriptTagById = (scriptId: string): boolean => {
 	return false;
 };
 
-export const getScriptSrcById = (scriptId: string): string => {
+export const getScriptSrcById = (scriptId: string): string | null => {
 	const scripts = document.getElementsByTagName('script');
 	for (let i = 0; i < scripts.length; i += 1) {
 		if (scripts[i].getAttribute('id') === scriptId) {
@@ -28,7 +28,7 @@ export const getScriptSrcById = (scriptId: string): string => {
 	return '';
 };
 
-export const getRelLinks = (): string => {
+export const getRelLinks = (): string | null => {
 	const links = document.getElementsByTagName('link');
 	for (let i = 0; i < links.length; i += 1) {
 		if (links[i].getAttribute('rel') === 'preconnect') {
@@ -43,7 +43,7 @@ export const getGoogleFontLinks = (): Array<string> => {
 	const hrefs: Array<string> = [];
 	for (let i = 0; i < links.length; i += 1) {
 		if (links[i].getAttribute('media') === 'print') {
-			hrefs.push(links[i].getAttribute('href'));
+			hrefs.push(links[i].getAttribute('href') || '');
 		}
 	}
 	return hrefs;
