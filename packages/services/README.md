@@ -9,9 +9,9 @@ A collection of Svelte components to use GoogleFonts, GoogleAnalytics ...
 
 ## Components List
 
-- GoogleFonts
-- GoogleAnalytics
-- UmamiAnalytics
+- [GoogleFonts](#googlefonts)
+- [GoogleAnalytics](#googleanalytics)
+- [UmamiAnalytics](#umamianalytics)
 
 ## Install
 
@@ -34,7 +34,44 @@ pnpm dev
 
 ## Usage
 
-Refer to the [source code](https://github.com/sveltinio/sveltin-components-library/blob/main/packages/services/src/routes/index.svelte) for the demo app.
+### GoogleFonts
+
+#### Properties
+
+The `GoogleFonts` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### GoogleAnalytics
+
+#### Properties
+
+The `Google Analytics` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### UmamiAnalytics
+
+#### Properties
+
+The `UmamiAnalytics` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
 
 ### GoogleFonts
 
