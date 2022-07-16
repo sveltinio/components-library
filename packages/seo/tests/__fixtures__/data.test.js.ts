@@ -1,5 +1,5 @@
-import { OpenGraphType, TwitterCardType } from '../../types';
-import type { IWebPageMetadata, IMenuItem, IWebSite } from '../../types';
+import { OpenGraphType, TwitterCardType } from '../../src/lib/types';
+import type { IWebPageMetadata, IMenuItem, IWebSite } from '../../src/lib/types';
 
 const website: IWebSite = {
 	name: 'example.com',

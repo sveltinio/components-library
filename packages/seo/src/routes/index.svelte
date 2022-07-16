@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { JsonLdSiteNavigationElements, JsonLdWebPage, JsonLdWebSite, PageMetaTags } from '$lib';
 
-	import { homePage, website, menu } from '$lib/__tests__/__fixtures__/data.test.js';
+	import { homePage, website, menu } from '../../tests/__fixtures__/data.test.js';
 </script>
 
 <!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->

@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { homePage, sampleArticle } from './__fixtures__/data.test.js';
-import { PageMetaTags } from '..';
+import { PageMetaTags } from '../src/lib';
 
 function getTitle() {
 	const titles = document.getElementsByTagName('title');
@@ -84,14 +84,14 @@ describe('PageMetaTags - Article', () => {
 		expect(getMeta('og:title')).toBe(sampleArticle.title);
 		expect(getMeta('og:description')).toBe(sampleArticle.description);
 		expect(getMeta('article:author')).toBe(sampleArticle.author);
-		expect(getMeta('article:published_at')).toBe(sampleArticle.opengraph.article.published_at);
-		expect(getMeta('article:modified_at')).toBe(sampleArticle.opengraph.article.modified_at);
+		expect(getMeta('article:published_at')).toBe(sampleArticle.opengraph?.article?.published_at);
+		expect(getMeta('article:modified_at')).toBe(sampleArticle.opengraph?.article?.modified_at);
 		expect(getMeta('article:tag')).toBe('sveltekit');
 	});
 
 	it('should have meta for TwitterCard', async () => {
 		expect(getMeta('twitter:card')).toBe('summary_large_image');
-		expect(getMeta('twitter:site')).toBe(sampleArticle.twitter.site);
+		expect(getMeta('twitter:site')).toBe(sampleArticle.twitter?.site);
 		expect(getMeta('twitter:title')).toBe(sampleArticle.title);
 		expect(getMeta('twitter:description')).toBe(sampleArticle.description);
 	});
