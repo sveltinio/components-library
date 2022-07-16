@@ -29,7 +29,7 @@
 		"@commitlint/config-conventional": "latest",
 		"@sveltejs/vite-plugin-svelte": "^1.0.1",
 		"@types/gtag.js": "^0.0.10",
-		"@types/node": "^18.0.4",
+		"@types/node": "^18.0.5",
 		"husky": "latest",
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
