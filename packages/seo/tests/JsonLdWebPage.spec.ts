@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import { homePage } from './__fixtures__/data.test.js';
-import { JsonLdWebPage } from '..';
+import { JsonLdWebPage } from '../src/lib';
 
 function getScripts(scriptType: string, testID: string): string {
 	const scripts = document.getElementsByTagName('script');
@@ -15,8 +15,6 @@ function getScripts(scriptType: string, testID: string): string {
 	}
 	return '';
 }
-
-afterEach(() => cleanup());
 
 describe('JsonLdWebPage', () => {
 	it('should have jsonld WebPage object with name and description only', async () => {

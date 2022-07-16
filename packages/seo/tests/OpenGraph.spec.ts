@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { sampleArticle } from './__fixtures__/data.test.js';
-import { OpenGraph } from '..';
+import { OpenGraph } from '../src/lib';
 
 function getMeta(metaName: string) {
 	const metas = document.getElementsByTagName('meta');
@@ -32,8 +32,9 @@ describe('OpenGraph - Article', () => {
 		expect(getMeta('og:title')).toBe(sampleArticle.title);
 		expect(getMeta('og:description')).toBe(sampleArticle.description);
 		expect(getMeta('article:author')).toBe(sampleArticle.author);
-		expect(getMeta('article:published_at')).toBe(sampleArticle.opengraph.article.published_at);
-		expect(getMeta('article:modified_at')).toBe(sampleArticle.opengraph.article.modified_at);
+
+		expect(getMeta('article:published_at')).toBe(sampleArticle.opengraph?.article?.published_at);
+		expect(getMeta('article:modified_at')).toBe(sampleArticle.opengraph?.article?.modified_at);
 		expect(getMeta('article:tag')).toBe('sveltekit');
 	});
 });

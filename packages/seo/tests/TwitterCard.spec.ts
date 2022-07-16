@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { sampleArticle } from './__fixtures__/data.test.js';
-import { TwitterCard } from '..';
+import { TwitterCard } from '../src/lib';
 
 function getMeta(metaName: string) {
 	const metas = document.getElementsByTagName('meta');
@@ -28,7 +28,7 @@ beforeEach(() => {
 describe('TwitterCard ', () => {
 	it('should have meta props to HTML markup', async () => {
 		expect(getMeta('twitter:card')).toBe('summary_large_image');
-		expect(getMeta('twitter:site')).toBe(sampleArticle.twitter.site);
+		expect(getMeta('twitter:site')).toBe(sampleArticle.twitter?.site);
 		expect(getMeta('twitter:title')).toBe(sampleArticle.title);
 		expect(getMeta('twitter:description')).toBe(sampleArticle.description);
 	});

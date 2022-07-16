@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { menu, website } from './__fixtures__/data.test.js';
-import { JsonLdSiteNavigationElements } from '..';
+import { JsonLdSiteNavigationElements } from '../src/lib';
 
 function getScripts(scriptType: string): string {
 	const scripts = document.getElementsByTagName('script');

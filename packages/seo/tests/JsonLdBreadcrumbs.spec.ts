@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { website } from './__fixtures__/data.test.js';
-import { JsonLdBreadcrumbs } from '..';
+import { JsonLdBreadcrumbs } from '../src/lib';
 
 function getScripts(scriptType: string): string {
 	const scripts = document.getElementsByTagName('script');
