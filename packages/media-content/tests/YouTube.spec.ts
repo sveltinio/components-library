@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { fireEvent, queryByTestId, render } from '@testing-library/svelte';
-import { YouTube } from '..';
+import { YouTube } from '../src/lib';
 import {
 	youtubeLoopSingleSample,
 	youtubeSampleOne,
@@ -45,7 +45,9 @@ describe('YouTube video thumbnail', () => {
 			}
 		});
 		const thumbnail = getByTestId('thumbnail');
-		expect(thumbnail['src']).toBe('https://i.ytimg.com/vi/uQntFkK8Z54/maxresdefault.jpg');
+		expect(thumbnail.getAttribute('src')).toBe(
+			'https://i.ytimg.com/vi/uQntFkK8Z54/maxresdefault.jpg'
+		);
 	});
 
 	it('should have an accessible name (alt prop defined)', async () => {
@@ -105,7 +107,7 @@ describe('YouTube click play button on thumbnail when settings are provided', ()
 		const playButton = getByTestId('play-button');
 		await fireEvent.click(playButton);
 		const iframeWrapper = getByTestId('iframe');
-		expect(iframeWrapper['src']).toBe(
+		expect(iframeWrapper.getAttribute('src')).toBe(
 			'https://www.youtube.com/embed/uQntFkK8Z54?autoplay=1&mute=1'
 		);
 	});
@@ -124,7 +126,7 @@ describe('YouTube click play button on thumbnail when no settings are provided',
 		const playButton = getByTestId('play-button');
 		await fireEvent.click(playButton);
 		const iframeWrapper = getByTestId('iframe');
-		expect(iframeWrapper['src']).toBe(
+		expect(iframeWrapper.getAttribute('src')).toBe(
 			'https://www.youtube.com/embed/uQntFkK8Z54?autoplay=1&cc_lang_pref=it&color=white&controls=1&mute=1'
 		);
 	});
@@ -143,7 +145,7 @@ describe('YouTube click play button on thumbnail when no settings are provided',
 		const playButton = getByTestId('play-button');
 		await fireEvent.click(playButton);
 		const iframeWrapper = getByTestId('iframe');
-		expect(iframeWrapper['src']).toBe(
+		expect(iframeWrapper.getAttribute('src')).toBe(
 			'https://www.youtube.com/embed/uQntFkK8Z54?controls=1&autoplay=1&mute=1'
 		);
 	});
@@ -170,7 +172,7 @@ describe('YouTube video with autoplay', () => {
 			}
 		});
 		const iframe = getByTestId('iframe');
-		expect(iframe['src']).toBeDefined();
+		expect(iframe.getAttribute('src')).toBeDefined();
 	});
 
 	it('should have a valid url to YouTube video', async () => {
@@ -183,7 +185,7 @@ describe('YouTube video with autoplay', () => {
 		});
 		const iframe = getByTestId('iframe');
 		console.log(iframe);
-		expect(iframe['src']).toBe(
+		expect(iframe.getAttribute('src')).toBe(
 			'https://www.youtube.com/embed/uQntFkK8Z54?autoplay=1&color=white&controls=1'
 		);
 	});
@@ -210,7 +212,7 @@ describe('YouTube - options', () => {
 			}
 		});
 		const iframe = getByTestId('iframe');
-		expect(iframe['src']).toBe(
+		expect(iframe.getAttribute('src')).toBe(
 			'https://www.youtube.com/embed/uQntFkK8Z54?autoplay=1&color=white&controls=1'
 		);
 	});
@@ -226,7 +228,7 @@ describe('YouTube - loop a single video', () => {
 			}
 		});
 		const iframe = getByTestId('iframe');
-		expect(iframe['src']).toBe(
+		expect(iframe.getAttribute('src')).toBe(
 			'https://www.youtube.com/embed/uQntFkK8Z54?autoplay=1&color=white&playlist=uQntFkK8Z54&loop=1'
 		);
 	});
@@ -242,7 +244,7 @@ describe('YouTube - playlist', () => {
 			}
 		});
 		const iframe = getByTestId('iframe');
-		expect(iframe['src']).toBe(
+		expect(iframe.getAttribute('src')).toBe(
 			'https://www.youtube.com/embed?listType=playlist&list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO'
 		);
 	});
@@ -257,7 +259,7 @@ describe('YouTube - playlist', () => {
 			}
 		});
 		const iframe = getByTestId('iframe');
-		expect(iframe['src']).toBe(
+		expect(iframe.getAttribute('src')).toBe(
 			'https://www.youtube.com/embed?listType=playlist&list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO&autoplay=0&cc_lang_pref=it&color=white&controls=1'
 		);
 	});

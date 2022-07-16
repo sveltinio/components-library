@@ -35,7 +35,7 @@
 		youtubeSampleVideoSettings,
 		youtubeSamplePlayList,
 		youtubeSamplePlaylistSettings
-	} from '../lib/__tests__/__fixtures__/data.test.js';
+	} from '../../tests/__fixtures__/data.test.js';
 </script>
 
 <section class="main">
@@ -47,7 +47,11 @@
 	<section id="codepen-container" class="container">
 		<h3>Codepen</h3>
 		<h4>Default options</h4>
-		<CodePen user={codepenSampleOne.user} id={codepenSampleOne.id} title={codepenSampleOne.title} />
+		<CodePen
+			user={codepenSampleOne.user}
+			id={codepenSampleOne.id}
+			title={codepenSampleOne.title}
+		/>
 		<br />
 		<h4>Custom options</h4>
 		<CodePen user={codepenSampleTwo.user} id={codepenSampleTwo.id} settings={codepenSettings} />

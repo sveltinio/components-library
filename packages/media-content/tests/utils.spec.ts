@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
-import type { IVimeoSettings, ICodeSandboxSettings, ICodePenSettings } from '../types';
+import type { IVimeoSettings, ICodeSandboxSettings, ICodePenSettings } from '../src/lib/types';
 import {
 	isEmptyObject,
 	isValidValue,
@@ -16,7 +16,7 @@ import {
 	isValidURL,
 	toID,
 	removeFirstOccurrence
-} from '../utils';
+} from '../src/lib/utils';
 import { getFullScriptTagById } from './__fixtures__/test-utils';
 
 describe('isEmptyObject ', () => {

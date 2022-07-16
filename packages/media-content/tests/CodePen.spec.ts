@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { CodePen } from '..';
+import { CodePen } from '../src/lib';
 import { codepenSettings, codepenSampleOne } from './__fixtures__/data.test.js';
 import {
 	getFullScriptTagById,

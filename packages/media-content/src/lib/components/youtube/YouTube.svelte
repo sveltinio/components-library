@@ -30,7 +30,7 @@
 
 	let iframeURL = '';
 	let play = false;
-	let renderedComponent: typeof IFrame | Thumbnail;
+	let renderedComponent: typeof IFrame | typeof Thumbnail;
 	let props: Record<string, string>;
 
 	function makeBaseURL(contentType: string, id: string, username: string): string {
@@ -43,7 +43,7 @@
 				return `https://www.youtube.com/embed?listType=user_uploads&list=${username}`;
 			default:
 				console.error(`${type} is not a valid options`);
-				break;
+				return '';
 		}
 	}
 
@@ -85,15 +85,16 @@
 	}
 
 	/** Handle the play event dispatched by the Thumbnail component. */
-	function handleEvent({ detail }) {
-		const { name, value } = detail;
+	function handleEvent(e: { detail: { name: any; value: any } }) {
+		const { name, value } = e.detail;
 		if (name === 'play-video' && value === true) {
 			play = true;
 		}
 	}
 
 	const settingsString = makeSettingsString<IYouTubeSettings>(settings, matchersCallback);
-	const paramsStrings = type === 'video' ? '?'.concat(settingsString) : '&'.concat(settingsString);
+	const paramsStrings =
+		type === 'video' ? '?'.concat(settingsString) : '&'.concat(settingsString);
 	const baseURL = makeBaseURL(type, id, username);
 
 	iframeURL = settingsString != '' ? baseURL.concat(paramsStrings) : baseURL;

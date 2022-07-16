@@ -85,7 +85,7 @@
 			}
 			if (!isEmptyObject<ICodePenSettings>(settings)) {
 				const targetElem = document.getElementById(`codepen-${user}-${id}`);
-				setOptionsProps(targetElem, settings);
+				if (targetElem) setOptionsProps(targetElem, settings);
 			}
 		} catch (err) {
 			const s = window.document.getElementById(scriptID);

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { queryByTestId, render } from '@testing-library/svelte';
-import { SlideShare } from '..';
+import { SlideShare } from '../src/lib';
 import { slideShareSample } from './__fixtures__/data.test.js';
 
 describe('SlideShare', () => {

@@ -62,23 +62,17 @@ export function getHexValue(color: string): string {
 }
 
 export function toSnakeCase(text: string): string {
-	return (
-		text &&
-		text
-			.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-			.map((x) => x.toLowerCase())
-			.join('_')
-	);
+	const res = text.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g);
+	if (res) return res.map((x) => x.toLowerCase()).join('_');
+
+	return text;
 }
 
 export function toKebabCase(text: string): string {
-	return (
-		text &&
-		text
-			.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-			.map((x) => x.toLowerCase())
-			.join('-')
-	);
+	const res = text.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g);
+	if (res) return res.map((x) => x.toLowerCase()).join('-');
+
+	return text;
 }
 
 export function makeSettingsString<Type>(

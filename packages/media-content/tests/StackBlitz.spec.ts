@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { StackBlitz } from '..';
+import { StackBlitz } from '../src/lib/';
 import { stackblitzSample, stackblitzSettings } from './__fixtures__/data.test.js';
 
 describe('StackBlitz', () => {

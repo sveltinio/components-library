@@ -28,7 +28,7 @@
 
 	let iframeURL = '';
 	let play = false;
-	let renderedComponent: typeof IFrame | Thumbnail;
+	let renderedComponent: typeof IFrame | typeof Thumbnail;
 	let props: Record<string, string>;
 	/** Used when settings are provided, no matter if with or without autoplay. */
 	function turnAutoplayOn() {
@@ -45,8 +45,8 @@
 	}
 
 	/** Handle the play event dispatched by the Thumbnail component. */
-	function handleEvent({ detail }) {
-		const { name, value } = detail;
+	function handleEvent(e: { detail: { name: any; value: any } }) {
+		const { name, value } = e.detail;
 		if (name === 'play-video' && value === true) {
 			play = true;
 		}
