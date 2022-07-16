@@ -13,7 +13,8 @@ const config = {
 		environment: 'jsdom',
 		setupFiles: ['../config/vitest-setup.ts']
 	},
-	plugins: [sveltekit()]
+	plugins: [sveltekit()],
+	ssr: { noExternal: ['@indaco/svelte-iconoir/**'] }
 };
 
 export default config;
