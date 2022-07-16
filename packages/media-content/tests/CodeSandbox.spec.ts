@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { CodeSandbox } from '..';
+import { CodeSandbox } from '../src/lib';
 import { codeSandboxSampleID } from './__fixtures__/data.test.js';
 
 describe('CodeSandbox', () => {

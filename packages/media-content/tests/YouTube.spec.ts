@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { fireEvent, queryByTestId, render } from '@testing-library/svelte';
-import { YouTube } from '..';
+import { YouTube } from '../src/lib';
 import {
 	youtubeLoopSingleSample,
 	youtubeSampleOne,

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { fireEvent, queryByTestId, render } from '@testing-library/svelte';
-import { Vimeo } from '..';
+import { Vimeo } from '../src/lib';
 import { vimeoSettings, vimeoSample } from './__fixtures__/data.test.js.js';
 import {
 	getFullScriptTagById,

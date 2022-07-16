@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { queryByTestId, render } from '@testing-library/svelte';
-import { Facebook } from '..';
+import { Facebook } from '../src/lib';
 import {
 	facebookPostSettings,
 	facebookSamplePostOne,

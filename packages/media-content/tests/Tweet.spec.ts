@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { Tweet } from '..';
+import { Tweet } from '../src/lib';
 
 import {
 	getFullScriptTagById,
