@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { GoogleAnalytics } from '..';
+import { GoogleAnalytics } from '../src/lib';
 import { getRelLinks, getScriptSrcById, getScriptTagById } from './__fixtures__/test-utils';
 import { gaPropertyID } from './__fixtures__/data.test.js';
 

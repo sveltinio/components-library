@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
-import { isEmptyObject, isPropValueSet } from '../utils';
+import { isEmptyObject, isPropValueSet } from '../src/lib/utils';
 
 describe('isEmptyObject ', () => {
 	it('should be an empty object', async () => {
