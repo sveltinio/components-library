@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { navItems } from '$lib/__tests__/__fixtures__/data.test.js';
+	import { navItems } from 'tests/__fixtures__/data.test.js.js';
 	import { MailIcon, PlusIcon } from '@indaco/svelte-iconoir';
 	import {
 		Button,

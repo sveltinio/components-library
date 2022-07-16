@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { Picture } from '..';
+import { Picture } from '../src/lib/';
 
 /** *******************************************************************************
  *                                      PLAIN

@@ -16,23 +16,6 @@
 	export let prefetch = false;
 	export let external = false;
 
-	/*
-	let styles = {
-		color: 'rgb(255 255 255)',
-		'border-color': '',
-		'bg-color': '',
-		'bg-color-hover': '',
-		'outlined-bg-hover': '',
-		'ring-color': '',
-		'ring-width': '2px',
-		'ring-offset': '2px',
-		'ring-style': 'solid'
-	};
-
-	$: cssVarStyles = Object.entries(styles)
-		.map(([k, v]) => `--${k}:${v}`)
-		.join(';');
-*/
 	const dispatch = createEventDispatcher();
 	const clickDispatcher = (e: MouseEvent) => {
 		dispatch('click', { eventDetails: e });

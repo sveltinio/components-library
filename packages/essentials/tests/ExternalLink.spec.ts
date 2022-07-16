@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { ExternalLink } from '..';
+import { ExternalLink } from '../src/lib/';
 
 describe('ExternalLink', () => {
 	it('should be in the document', async () => {

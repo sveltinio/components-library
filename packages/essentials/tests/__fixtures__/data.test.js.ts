@@ -1,4 +1,4 @@
-import type { DropdownData } from '$lib/components/dropdown/types';
+import type { DropdownData } from '../../src/lib/components/dropdown/types';
 export const menu = [
 	{
 		identifier: 'home',

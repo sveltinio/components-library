@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeAll, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { Button } from '$lib';
+import { Button } from '../src/lib';
 
 describe('Button', () => {
 	beforeAll(() => {
