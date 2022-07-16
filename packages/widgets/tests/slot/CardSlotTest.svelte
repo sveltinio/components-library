@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CardContent, CardTitle, CardButton } from '../../components/card';
+	import { CardContent, CardTitle, CardButton } from '../../src/lib';
 
 	import type { SvelteComponent } from 'svelte';
 

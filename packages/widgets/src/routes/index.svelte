@@ -22,7 +22,7 @@
 		previous,
 		next,
 		headings
-	} from '../lib/__tests__/__fixtures__/data.test.js';
+	} from '../../tests/__fixtures__/data.test.js';
 </script>
 
 <section class="main">

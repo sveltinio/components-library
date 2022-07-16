@@ -1,6 +1,6 @@
 import { it, describe, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { Card } from '..';
+import { Card } from '../src/lib';
 import { contentItem } from './__fixtures__/data.test.js';
 import { CardSlotTest } from './slot';
 

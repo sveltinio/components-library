@@ -1,5 +1,6 @@
+import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { GitHubForkRibbon } from '..';
+import { GitHubForkRibbon } from '../src/lib';
 
 describe('GitHubForkRibbon', () => {
 	it('should be in the document', async () => {
