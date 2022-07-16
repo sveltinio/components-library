@@ -85,7 +85,7 @@ const handleButtonClick = (event) => { alert('button clicked on:' + event.detail
 <button type="success"><MailIcon slot="leftIcon" /> Button Text</button>
 <button type="success"><MailIcon slot="rightIcon" /> Button Text</button>
 <button type="primary" size="lg" circular>
-	<PlusIcon />
+ <PlusIcon />
 </button>
 <button href="https://sveltin.io" />
 <button type="secondary" href="/posts/welcome" prefetch />
@@ -113,16 +113,16 @@ The `Button` component allows you to pass the following styles as props:
 import { Button } from '@sveltinio/essentials';
 
 <button
-	label="Custom Success"
-	type="success"
-	rounded
-	withFocus
-	--color="rgb(54 83 20)"
-	--border-color="rgb(236 252 203)"
-	--bg-color="rgb(132 204 22)"
-	--bg-hover="rgb(163 230 53)"
-	--ring-color="rgb(190 242 100)"
-	--ring-style="dashed"
+ label="Custom Success"
+ type="success"
+ rounded
+ withFocus
+ --color="rgb(54 83 20)"
+ --border-color="rgb(236 252 203)"
+ --bg-color="rgb(132 204 22)"
+ --bg-hover="rgb(163 230 53)"
+ --ring-color="rgb(190 242 100)"
+ --ring-style="dashed"
 />
 ```
 
@@ -157,7 +157,7 @@ import { ExternalLink } from '@sveltinio/essentials';
 <ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io" class="..." style="..." />
 
 <ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io">
-	<picture image="logo.png" altText="sveltin logo" width="30%" />
+ <picture image="logo.png" altText="sveltin logo" width="30%" />
 </ExternalLink>
 ```
 
@@ -217,12 +217,12 @@ The `DropdownItem` renders the dropdown item as `<a>` or `<button>` tags.
 import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@sveltinio/essentials';
 
 <Dropdown>
-	<DropdownButton label="Menu" />
-	<DropdownMenu>
-		<DropdownItem id="1" label="Item 1" href="/item-1" />
-		<DropdownItem id="2" label="Item 2" href="/item-2" />
-		<DropdownItem id="3" label="Item 3" href="/item-3" />
-	</DropdownMenu>
+ <DropdownButton label="Menu" />
+ <DropdownMenu>
+  <DropdownItem id="1" label="Item 1" href="/item-1" />
+  <DropdownItem id="2" label="Item 2" href="/item-2" />
+  <DropdownItem id="3" label="Item 3" href="/item-3" />
+ </DropdownMenu>
 </Dropdown>
 ```
 
@@ -230,21 +230,21 @@ import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@sveltinio
 
 ```html
 import {
-	Dropdown,
-	DropdownButton,
-	DropdownItem,
-	DropdownMenu
+ Dropdown,
+ DropdownButton,
+ DropdownItem,
+ DropdownMenu
 } from '@sveltinio/essentials';
 
 const hello = (event) => { alert('clicked on:' + event.detail); };
 
 <Dropdown>
-	<DropdownButton label="Menu" />
-	<DropdownMenu>
-		<DropdownItem id="1" label="Item 1" on:click="{hello}" />
-		<DropdownItem id="2" label="Item 2" on:click="{hello}" />
-		<DropdownItem id="3" label="Item 3" on:click="{hello}" />
-	</DropdownMenu>
+ <DropdownButton label="Menu" />
+ <DropdownMenu>
+  <DropdownItem id="1" label="Item 1" on:click="{hello}" />
+  <DropdownItem id="2" label="Item 2" on:click="{hello}" />
+  <DropdownItem id="3" label="Item 3" on:click="{hello}" />
+ </DropdownMenu>
 </Dropdown>
 ```
 
