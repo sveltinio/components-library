@@ -1,12 +1,12 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
 import {
 	getFullScriptTagbyId,
 	getScriptSrcById,
 	getScriptTagById
 } from './__fixtures__/test-utils';
-import { UmamiAnalytics } from '..';
-import type { IUmamiTrackerSettings } from '../types';
+import { UmamiAnalytics } from '../src/lib';
+import type { IUmamiTrackerSettings } from '../src/lib/types';
 
 beforeEach(() => {
 	render(UmamiAnalytics, {

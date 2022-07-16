@@ -28,14 +28,16 @@
 	}
 
 	function setScriptSettingsProps(script: HTMLElement, settings: IUmamiTrackerSettings) {
-		if (isPropValueSet(settings.hostURL)) script.setAttribute('data-host-url', settings.hostURL);
+		if (isPropValueSet(settings.hostURL))
+			script.setAttribute('data-host-url', settings.hostURL || '');
 		if (isPropValueSet(settings.autoTrack) && !settings.autoTrack)
 			script.setAttribute('data-auto-track', 'false');
 		if (isPropValueSet(settings.doNotTrack) && settings.doNotTrack)
 			script.setAttribute('data-do-not-track', 'true');
 		if (isPropValueSet(settings.enableCache) && settings.enableCache)
 			script.setAttribute('data-cache', 'true');
-		if (isPropValueSet(settings.domains)) script.setAttribute('data-domains', settings.domains);
+		if (isPropValueSet(settings.domains))
+			script.setAttribute('data-domains', settings.domains || '');
 	}
 
 	onMount(async () => {
@@ -47,7 +49,7 @@
 
 			if (!isEmptyObject<IUmamiTrackerSettings>(settings)) {
 				const umamiScript = document.getElementById(scriptID);
-				setScriptSettingsProps(umamiScript, settings);
+				if (umamiScript) setScriptSettingsProps(umamiScript, settings);
 			}
 		} catch (err) {
 			console.error('umami failure');

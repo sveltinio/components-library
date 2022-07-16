@@ -1,4 +1,4 @@
-import type { IGoogleFont, IUmamiTrackerSettings } from '../../types';
+import type { IGoogleFont, IUmamiTrackerSettings } from '../../src/lib/types';
 
 export const googleFonts: Array<IGoogleFont> = [
 	{
