@@ -119,8 +119,11 @@
 						stroke-linejoin="round"
 					/>
 				</svg>
-				<span class="text" style:color={textColor} aria-current="page" data-testid="currentPage"
-					>{toTitle(currentTitle)}</span
+				<span
+					class="text"
+					style:color={textColor}
+					aria-current="page"
+					data-testid="currentPage">{toTitle(currentTitle)}</span
 				>
 			</div>
 		</li>

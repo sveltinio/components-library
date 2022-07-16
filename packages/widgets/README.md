@@ -10,14 +10,14 @@ Collection of styled and ready-to-use Svelte components for page navigation, TOC
 
 ## Components List
 
-- TOC (Table of Contents)
-- Card
-- PrevNextButtons
-- ScrollToTopButton
-- CollapsibleList
-- Breadcrumbs
-- GitHubButton (star, follow, issue, watch)
-- GitHubForkRibbon
+- [Card](#card)
+- [TOC](#toc) (Table of Contents)
+- [PrevNextButtons](#prevnextbuttons)
+- [ScrollToTopButton](#scrolltotopbutton)
+- [CollapsibleList](#collasiblelist)
+- [Breadcrumbs](#breadcrumbs)
+- [GitHubButton](#githubbutton) (star, follow, issue, watch)
+- [GitHubForkRibbon](#githubforkribbon)
 
 ## Install
 
@@ -40,7 +40,109 @@ pnpm dev
 
 ## Usage
 
-Refer to the [source code](https://github.com/sveltinio/sveltin-components-library/blob/main/packages/widgets/src/routes/index.svelte) for the demo app.
+### Card
+
+#### Properties
+
+The `Card` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### TOC
+
+#### Properties
+
+The `TOC` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### PrevNextButtons
+
+#### Properties
+
+The `PrevNextButtons` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### ScrollToTopButton
+
+#### Properties
+
+The `ScrollToTopButton` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### CollasibleList
+
+#### Properties
+
+The `CollapsibleList` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### Breadcrumbs
+
+#### Properties
+
+The `Breadcrumbs` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### GitHubButton
+
+#### Properties
+
+The `GitHubButton` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
+
+### GitHubForkRibbon
+
+#### Properties
+
+The `GitHubForkRibbon` component exposes the following properties:
+
+| Property | Type | Required | Default | Description |
+| :------- | :--: | :------: | :-----: | :---------- |
+
+```html
+
+```
 
 ## License
 

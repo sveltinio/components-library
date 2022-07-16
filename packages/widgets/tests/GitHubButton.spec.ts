@@ -1,5 +1,6 @@
+import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { GitHubButton } from '..';
+import { GitHubButton } from '../src/lib';
 
 describe('GitHubButton', () => {
 	it('should be in the document', async () => {

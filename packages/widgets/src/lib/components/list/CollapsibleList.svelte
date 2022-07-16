@@ -1,5 +1,5 @@
-<script>
-	export let headerText;
+<script lang="ts">
+	export let headerText: string;
 	export let textColor = '#000000';
 	export let bgColor = '#f8fafc';
 	export let bgColorHover = '#f1f5f9';

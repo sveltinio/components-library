@@ -2,7 +2,7 @@ import 'vitest';
 // import { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers';
 
 declare global {
-	namespace Vi {
+	export namespace Vi {
 		interface Assertion {
 			toBeInTheDocument(): void;
 			toHaveAttribute(attr: string, txt?: string): void;

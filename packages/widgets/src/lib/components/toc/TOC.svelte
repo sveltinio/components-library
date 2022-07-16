@@ -11,12 +11,17 @@
 
 	function handleAnchorClick(event: MouseEvent) {
 		const link = event.currentTarget as HTMLInputElement;
-		const anchorId = new URL(link['href']).hash.replace('#', '');
+		const linkHref = link.getAttribute('href');
+
+		let anchorId = '';
+		if (linkHref) anchorId = new URL(linkHref).hash.replace('#', '');
 		const anchor = document.getElementById(anchorId);
-		window.scrollTo({
-			top: anchor.offsetTop,
-			behavior: 'smooth'
-		});
+		if (anchor) {
+			window.scrollTo({
+				top: anchor.offsetTop,
+				behavior: 'smooth'
+			});
+		}
 	}
 </script>
 
@@ -58,7 +63,8 @@
 												class="toc-link"
 												href={`/${resource}/${slug}#${child.id}`}
 												on:click={handleAnchorClick}
-												data-testid={`toc_child_link_${child.id}`}># {child.title}</a
+												data-testid={`toc_child_link_${child.id}`}
+												># {child.title}</a
 											>
 										</li>
 									{/each}

@@ -1,6 +1,12 @@
 <script lang="ts">
+	import CardMetadata from '$lib/components/card/CardMetadata.svelte';
+	import ResponsiveCard from '$lib/components/responsive-card/ResponsiveCard.svelte';
 	import {
 		Card,
+		CardTitle,
+		CardCover,
+		CardContent,
+		CardButton,
 		PrevNextButtons,
 		TOC,
 		ScrollToTopButton,
@@ -11,13 +17,12 @@
 	} from '../lib';
 	import {
 		contentItem,
-		contentItemWithCreateDate,
 		contentItemWithCover,
 		contentItemWithCoverAndCreateDate,
 		previous,
 		next,
 		headings
-	} from '../lib/__tests__/__fixtures__/data.test.js';
+	} from '../../tests/__fixtures__/data.test.js';
 </script>
 
 <section class="main">
@@ -31,20 +36,62 @@
 		<p>Scroll down, it will appear</p>
 	</section>
 
+	<section id="responsive-card" class="container">
+		<h3>Resposive Card</h3>
+		<ResponsiveCard />
+	</section>
+
 	<section id="card" class="container">
 		<h3>Card</h3>
 
 		<h4 id="card-wo-cover-create-date)">plain</h4>
-		<Card item={contentItem} />
+		<Card resource={contentItem.resource} slug={contentItem.metadata.slug}>
+			<CardTitle>{contentItem.metadata.title}</CardTitle>
+			<CardContent>{contentItem.metadata.headline}</CardContent>
+			<CardButton label="Read More »" type="secondary" fullWidth />
+		</Card>
 
-		<h4 id="card-without-cover-with-create-date">w/ create date, w/o cover</h4>
-		<Card item={contentItemWithCreateDate} />
+		<!--	<h4 id="card-without-cover-with-create-date">w/ create date, w/o cover</h4>
+		<Card item={contentItemWithCreateDate} /> -->
 
 		<h4 id="card-with-cover-without-create-date">w/ cover, w/o create date</h4>
-		<Card item={contentItemWithCover} />
+		<Card resource={contentItemWithCover.resource} slug={contentItemWithCover.metadata.slug}>
+			<CardCover
+				altText={contentItemWithCover.metadata.title}
+				src={contentItemWithCover.metadata.cover || ''}
+			/>
+			<CardTitle>
+				{contentItemWithCover.metadata.title}</CardTitle
+			>
+
+			<CardContent>{contentItemWithCover.metadata.headline}</CardContent>
+			<CardButton label="Read More »" type="secondary" fullWidth />
+		</Card>
 
 		<h4 id="card-without-cover-and-create-date">w/ cover & created_at</h4>
-		<Card item={contentItemWithCoverAndCreateDate} />
+		<Card
+			resource={contentItemWithCoverAndCreateDate.resource}
+			slug={contentItemWithCover.metadata.slug}
+		>
+			{#if contentItemWithCoverAndCreateDate.metadata.cover}
+				<CardCover
+					altText={contentItemWithCoverAndCreateDate.metadata.title}
+					src={contentItemWithCoverAndCreateDate.metadata.cover}
+				/>
+			{/if}
+
+			{#if contentItemWithCoverAndCreateDate.metadata.created_at}
+				<CardMetadata
+					date={contentItemWithCoverAndCreateDate.metadata.created_at}
+					withCover={false}
+				/>
+			{/if}
+			<CardTitle>
+				{contentItemWithCoverAndCreateDate.metadata.title}</CardTitle
+			>
+			<CardContent>{contentItemWithCoverAndCreateDate.metadata.headline}</CardContent>
+			<CardButton label="Read More »" fullWidth outlined />
+		</Card>
 	</section>
 
 	<section id="prev-next-buttons" class="container">

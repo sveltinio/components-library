@@ -1,6 +1,6 @@
 import { it, describe, expect } from 'vitest';
 import { render, fireEvent } from '@testing-library/svelte';
-import { CollapsibleList } from '..';
+import { CollapsibleList } from '../src/lib';
 
 describe('CollapsibleList', () => {
 	it('should be in the document', async () => {

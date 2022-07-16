@@ -5,8 +5,8 @@ interface IResourceContent {
 }
 
 export class ResourceContent implements IResourceContent {
-	public resource: string;
-	public metadata: ContentMetadata;
+	public resource!: string;
+	public metadata!: ContentMetadata;
 	public html?: string;
 }
 
@@ -37,11 +37,11 @@ export interface IContentMetedata {
 }
 
 export class ContentMetadata implements IContentMetedata {
-	public title: string;
-	public slug: string;
-	public draft: boolean;
-	public headline: string;
-	public headings: Array<HeadingItem>;
+	public title!: string;
+	public slug!: string;
+	public draft!: boolean;
+	public headline!: string;
+	public headings!: Array<HeadingItem>;
 	public author?: string;
 	public created_at?: string;
 	public updated_at?: string;
@@ -102,9 +102,9 @@ export interface IHeadingItem {
 }
 
 export class HeadingItem implements IHeadingItem {
-	public id: string;
-	public title: string;
-	public depth: number;
+	public id!: string;
+	public title!: string;
+	public depth!: number;
 	public children?: Array<HeadingItem>;
 }
 
