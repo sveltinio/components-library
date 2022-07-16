@@ -73,9 +73,10 @@ The `Button` component exposes the following properties:
 #### Examples
 
 ```html
-import { Button } from '@sveltinio/essentials' import { MailIcon, PlusIcon } from
-'@indaco/svelte-iconoir'; const handleButtonClick = (event) => { alert('button clicked on:' +
-event.detail); };
+import { Button } from '@sveltinio/essentials'
+import { MailIcon, PlusIcon } from '@indaco/svelte-iconoir';
+
+const handleButtonClick = (event) => { alert('button clicked on:' + event.detail); };
 
 <button type="primary" on:click="{handleButtonClick}" />
 <button label="Click Me" type="secondary" border="dashed" />
@@ -92,17 +93,21 @@ event.detail); };
 
 #### Theming
 
-You can override the default styles for each button and define your own theme passing the following css variables to the component:
+To simplify custom styles on the component we used the built-in solution for component theming using [style props](https://svelte.dev/docs#template-syntax-component-directives---style-props).
 
-- `--color`
-- `--border-color`
-- `--bg-color`
-- `--bg-color-hover`
-- `--outlined-bg-hover`
-- `--ring-color`
-- `--ring-width`
-- `--ring-offset`
-- `--ring-style`
+The `Button` component allows you to pass the following styles as props:
+
+| CSS Variable        |          Default |
+| :------------------ | ---------------: |
+| `color`             | rgb(255 255 255) |
+| `bg-color`          | rgb(228 228 231) |
+| `bg-color-hover`    | rgb(244 244 245) |
+| `border-color`      | rgb(228 228 231) |
+| `outlined-bg-hover` | rgb(244 244 245) |
+| `ring-color`        | rgb(212 212 216) |
+| `ring-width`        |              2px |
+| `ring-offset`       |              2px |
+| `ring-style`        |            solid |
 
 ```html
 import { Button } from '@sveltinio/essentials';
@@ -224,8 +229,14 @@ import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@sveltinio
 ##### **WITH ITEMS AS BUTTONS**
 
 ```html
-import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@sveltinio/essentials'; const
-hello = (event) => { alert('clicked on:' + event.detail); };
+import {
+	Dropdown,
+	DropdownButton,
+	DropdownItem,
+	DropdownMenu
+} from '@sveltinio/essentials';
+
+const hello = (event) => { alert('clicked on:' + event.detail); };
 
 <Dropdown>
 	<DropdownButton label="Menu" />
