@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { Dropdown } from '../src/lib';
-import { menu } from './__fixtures__/data.test.js.js';
+import { menu } from '../src/data/sample.js';
 
 describe('Dropdown', () => {
 	beforeAll(() => {

@@ -2,8 +2,8 @@ import 'vitest';
 // import { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers';
 
 declare global {
-	export namespace Vi {
-		interface Assertion {
+	namespace Vi {
+		export interface Assertion {
 			toBeInTheDocument(): void;
 			toHaveAttribute(attr: string, txt?: string): void;
 			toHaveAccessibleName(txt?: string): void;
