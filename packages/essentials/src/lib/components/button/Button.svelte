@@ -39,7 +39,8 @@
 		data-testid="btn"
 		class="btn btn-{size} btn-border-{border} {outlinedClass} {focusClass} {fullSizeClass}"
 		class:btn-rounded={rounded}
-		class:btn-circular={circular}><slot>{label}</slot></a
+		class:btn-circular={circular}
+		{...$$restProps}><slot>{label}</slot></a
 	>
 {:else}
 	<button
@@ -48,6 +49,7 @@
 		class="btn btn-{size} btn-border-{border} {outlinedClass} {focusClass} {fullSizeClass}"
 		class:btn-rounded={rounded}
 		class:btn-circular={circular}
+		{...$$restProps}
 		on:click={clickDispatcher}
 	>
 		{#if $$slots.leftIcon}
