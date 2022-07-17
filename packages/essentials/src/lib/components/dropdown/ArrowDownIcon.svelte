@@ -29,7 +29,7 @@
 	}
 
 	.icon {
-		--_color: var(--color, rgb(14 116 144 / 1));
+		--_color: var(--color, rgb(14 116 144));
 		margin-right: -0.25rem /* -4px */;
 		margin-left: 0.5rem /* 8px */;
 		height: 1.25rem /* 20px */;
