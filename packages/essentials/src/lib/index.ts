@@ -1,6 +1,6 @@
 /** HTML blocks elements */
 import { Button } from './components/button';
-import { ExternalLink } from './components/link';
+import { ExternalLink, ExternalLinkIcon } from './components/link';
 import { Picture } from './components/picture';
 import {
 	Dropdown,
@@ -14,6 +14,7 @@ import {
 export {
 	Button,
 	ExternalLink,
+	ExternalLinkIcon,
 	Picture,
 	Dropdown,
 	DropdownButton,

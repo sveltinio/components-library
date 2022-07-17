@@ -143,25 +143,50 @@ The `ExternalLink` component exposes the following properties:
 | :--------- | :-----: | :------: | :------- | :------------------------------------------------------------------ |
 | id         | string  |    no    | empty    | The link identifier                                                 |
 | label      | string  |   yes    |          | The text to display                                                 |
+| underline  | boolean |    no    | false    | Underlined label text                                               |
 | url        | string  |   yes    |          | The URL of the page the link goes to                                |
 | altText    | string  |    no    | as label | Alternate text                                                      |
 | target     | string  |    no    | \_blank  | Specifies where to open the linked document                         |
 | noOpenener | boolean |    no    | true     | Go to the linked resource without granting the new browsing context |
 | noReferrer | boolean |    no    | true     | Prevent passing the referrer information to the target website      |
+| icon       | boolean |    no    | true     | Shows an icon next right to the label                               |
 
 </details>
 
 #### Examples
 
 ```html
-import { ExternalLink } from '@sveltinio/essentials';
+import { ExternalLink, Picture } from '@sveltinio/essentials';
+import DummyIcon from './DummyIcon.svelte';
 
-<ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io" class="..." style="..." />
+<ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io" />
 
-<ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io">
- <picture image="logo.png" altText="sveltin logo" width="30%" />
+<ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io" icon={false}>
+   <Picture image="logo.png" altText="sveltin logo" width="30%" />
+</ExternalLink>
+
+<ExternalLink id="sveltin-link" label="sveltin.io" url="https://sveltin.io" style>
+   <DummyIcon slot="icon" />
 </ExternalLink>
 ```
+
+#### Theming
+
+To simplify custom styles on the component we used the built-in solution for component theming using [style props](https://svelte.dev/docs#template-syntax-component-directives---style-props).
+
+##### ExternalLink
+
+| CSS Variable        | Default            | |
+| :------------------ | :----------------- | :----------------------------------------------------------: |
+| `color`             | `rgb(30 41 59)`    | ![#1E293B](https://via.placeholder.com/15/1E293B/1E293B.png) |
+
+##### ExternalLinkIcon
+
+| CSS Variable | Default            | |
+| :----------- | :----------------- | :----------------------------------------------------------: |
+| `color`      | `rgb(148 163 184)` | ![#94A3B8](https://via.placeholder.com/15/94A3B8/94A3B8.png) |
+| `width`      | `1.2rem`           |  |
+| `color`      | `1.2rem`           |  |
 
 ### Dropdown
 

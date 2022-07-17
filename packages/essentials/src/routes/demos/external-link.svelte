@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ExternalLink, Picture } from '$lib';
+	import DummyIcon from './_dummyIcon.svelte';
 </script>
 
 <section class="main">
@@ -9,7 +10,7 @@
 
 	<div id="external-link" class="container">
 		<h3 id="external-link-with-slot">with slot</h3>
-		<ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io"
+		<ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io" icon={false}
 			><Picture
 				src="logo.png"
 				altText="sveltin logo"
@@ -23,5 +24,12 @@
 	<div id="external-link-slot" class="container">
 		<h3 id="external-link-with-slot-fallback">with slot fallback</h3>
 		<ExternalLink id="sveltin-link" label="sveltin.io" url="https://sveltin.io" />
+	</div>
+
+	<div id="external-custom-icon" class="container">
+		<h3 id="external-link-with-slot-fallback">with custom icon</h3>
+		<ExternalLink id="sveltin-link" label="sveltin.io" url="https://sveltin.io" style>
+			<DummyIcon slot="icon" />
+		</ExternalLink>
 	</div>
 </section>
