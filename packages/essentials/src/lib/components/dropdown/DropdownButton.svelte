@@ -40,9 +40,9 @@
 
 <style>
 	button {
-		--_text-color: var(--text-color, rgb(51 65 85)); /*slate-700*/
-		--_border-color: var(--border-color, rgb(203 213 225)); /*slate-300*/
-		--_bg-color: var(--bg-color, rgb(241 245 249)); /*slate-100*/
+		--_color: var(--color, rgb(51 65 85)); /* slate-700*/
+		--_border-color: var(--border-color, rgb(203 213 225)); /* slate-300*/
+		--_bg-color: var(--bg-color, rgb(241 245 249)); /* slate-100*/
 
 		font-size: 1rem /* 16px */;
 		line-height: 1.5rem /* 24px */;
@@ -55,7 +55,7 @@
 		padding-top: 0.5rem /* 8px */;
 		padding-bottom: 0.5rem /* 8px */;
 		font-weight: 400;
-		color: var(--_text-color);
+		color: var(--_color);
 		border-radius: 0.25rem; /* 4px */
 		border-color: var(--_border-color);
 		border-style: solid;

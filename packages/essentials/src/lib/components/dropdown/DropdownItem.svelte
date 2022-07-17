@@ -45,13 +45,13 @@
 
 	a,
 	button {
-		--_text-color: var(--text-color, rgb(51 65 85 / 1));
+		--_color: var(--color, rgb(51 65 85));
 		--_font-weight: var(--font-weight, 400);
-		--_font-size: var(--font-size, 16px);
+		--_font-size: var(--font-size, 1rem);
 
 		display: flex;
 		flex-direction: column;
-		color: var(--_text-color);
+		color: var(--_color);
 		font-weight: var(--_font-weight);
 		font-size: var(--_font-size);
 		padding-top: 0.5rem /* 8px */;
@@ -62,7 +62,7 @@
 
 	a:hover,
 	button:hover {
-		--_background-color-hover: var(--background-color-hover, rgb(241 245 249 / 1));
-		background-color: var(--_background-color-hover);
+		--_bg-color-hover: var(--bg-color-hover, rgb(241 245 249));
+		background-color: var(--_bg-color-hover);
 	}
 </style>
