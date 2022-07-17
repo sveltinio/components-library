@@ -97,17 +97,19 @@ To simplify custom styles on the component we used the built-in solution for com
 
 The `Button` component allows you to pass the following styles as props:
 
-| CSS Variable        |          Default |
-| :------------------ | ---------------: |
-| `color`             | rgb(255 255 255) |
-| `bg-color`          | rgb(228 228 231) |
-| `bg-color-hover`    | rgb(244 244 245) |
-| `border-color`      | rgb(228 228 231) |
-| `outlined-bg-hover` | rgb(244 244 245) |
-| `ring-color`        | rgb(212 212 216) |
-| `ring-width`        |              2px |
-| `ring-offset`       |              2px |
-| `ring-style`        |            solid |
+| CSS Variable        | Default            | Default (HEX) | |
+| :------------------ | ------------------:| ------------: | :----------------------------------------------------------: |
+| `color`             | `rgb(255 255 255)` | `#FFFFFF`     | ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/FFFFFF.png) |
+| `bg-color`          | `rgb(228 228 231)` | `#E4E4E4`     | ![#E4E4E4](https://via.placeholder.com/15/E4E4E4/E4E4E4.png) |
+| `bg-color-hover`    | `rgb(244 244 245)` | `#F4F4F5`     | ![#F4F4F5](https://via.placeholder.com/15/F4F4F5/F4F4F5.png) |
+| `border-color`      | `rgb(228 228 231)` | `#E4E4E7`     | ![#E4E4E7](https://via.placeholder.com/15/E4E4E7/E4E4E7.png) |
+| `outlined-bg-hover` | `rgb(244 244 245)` | `#F4F4F5`     | ![#F4F4F5](https://via.placeholder.com/15/F4F4F5/F4F4F5.png) |
+| `ring-color`        | `rgb(212 212 216)` | `#D4D4D8`     | ![#D4D4D8](https://via.placeholder.com/15/D4D4D8/D4D4D8.png) |
+| `ring-width`        |              `2px` |               |                                                              |
+| `ring-offset`       |              `2px` |               |                                                              |
+| `ring-style`        |            `solid` |               |                                                              |
+
+##### Example
 
 ```html
 import { Button } from '@sveltinio/essentials';
@@ -165,47 +167,49 @@ import { ExternalLink } from '@sveltinio/essentials';
 
 `Dropdown` menus are built using a combination of the `Dropdown`, `DropdownButton`, `DropdownMenu`, and `DropdownItem` components.
 
-#### Dropdown
+#### Properties
+
+##### Dropdown
 
 The `Dropdown` component is the main wrapper component.
 
 <details>
-  <summary><strong>Properties</strong></summary>
+  <summary><strong>Expand</strong></summary>
 
-| Property |  Type   | Required | Default | Description         |
-| :------- | :-----: | :------: | :-----: | :------------------ |
-| isOpen   | boolean |    no    |         | show/hide the items |
-
-</details>
-
-#### DropdownButton
-
-The `DropdownButton` component renders the toggle button.
-
-<details>
-  <summary><strong>Properties</strong></summary>
-
-| Property |  Type  | Required | Default | Description |
-| :------- | :----: | :------: | :-----: | :---------- |
-| label    | string |   yes    |         | Button text |
+| Property | Type     | Required | Default  | Description         |
+| :------- | :------: | :------: | :------: |:------------------- |
+| isOpen   | boolean  | no       |          | show/hide the items |
 
 </details>
 
-#### DropdownItem
+##### DropdownButton
 
-The `DropdownItem` renders the dropdown item as `<a>` or `<button>` tags.
+The `DropdownButton` component exposes the following properties:
 
 <details>
-  <summary><strong>Properties</strong></summary>
+  <summary><strong>Expand</strong></summary>
 
-| Property |  Type   | Required | Default | Description                                 |
-| :------- | :-----: | :------: | :-----: | :------------------------------------------ |
-| id       | string  |   yes    |         | Item identifier                             |
-| label    | string  |   yes    |         | Item text                                   |
-| mode     | string  |    no    | button  | Render as button or link                    |
-| href     | string  |    no    |  null   | The URL of the page the link goes to        |
-| prefetch | boolean |    no    |   yes   | Add sveltekit:prefetch                      |
-| target   | string  |    no    | \_self  | Specifies where to open the linked document |
+| Property | Type    | Required | Default  | Description |
+| :------- | :-----: | :------: | :------: |:----------- |
+| label    | string  | yes      |          | Button text |
+
+</details>
+
+##### DropdownItem
+
+The `DropdownItem` component exposes the following properties:
+
+<details>
+  <summary><strong>Expand</strong></summary>
+
+| Property | Type    | Required | Default  | Description                                 |
+| :------- | :-----: | :------: | :------: |:------------------------------------------- |
+| id       | string  | yes      |          | Item identifier                             |
+| label    | string  | yes      |          | Item text                                   |
+| mode     | string  | no       | button   | Render as button or link                    |
+| href     | string  | no       | null     | The URL of the page the link goes to        |
+| prefetch | boolean | no       | yes      | Add sveltekit:prefetch                      |
+| target   | string  | no       | _self    | Specifies where to open the linked document |
 
 </details>
 
@@ -247,6 +251,40 @@ const hello = (event) => { alert('clicked on:' + event.detail); };
  </DropdownMenu>
 </Dropdown>
 ```
+
+#### Theming
+
+To simplify custom styles on the component we used the built-in solution for component theming using [style props](https://svelte.dev/docs#template-syntax-component-directives---style-props).
+
+##### DropdownButton
+
+| CSS Variable        | Default            | |
+| :------------------ | :----------------- | :----------------------------------------------------------: |
+| `color`             | `rgb(51 65 85)`    | ![#334155](https://via.placeholder.com/15/334155/334155.png) |
+| `bg-color`          | `rgb(241 245 249)` | ![#F1F5F9](https://via.placeholder.com/15/F1F5F9/F1F5F9.png) |
+| `bg-color-hover`    | `rgb(226 232 240)` | ![#E2E8F0](https://via.placeholder.com/15/E2E8F0/E2E8F0.png) |
+| `border-color`      | `rgb(203 213 225)` | ![#CBD5E1](https://via.placeholder.com/15/CBD5E1/CBD5E1.png) |
+
+##### ArrowDownIcon & ArrowUpIcon
+
+| CSS Variable | Default           | |
+| :----------- | :---------------- | :----------------------------------------------------------: |
+| `color`      | `rgb(14 116 144)` | ![#0E7490](https://via.placeholder.com/15/0E7490/0E7490.png) |
+
+##### DropdownMenu
+
+| CSS Variable | Default            | |
+| :----------- | :----------------- | :----------------------------------------------------------: |
+| `bg-color`   | `rgb(255 255 255)` | ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/FFFFFF.png) |
+
+##### DropdownItem
+
+| CSS Variable     | Default            | |
+| :--------------- | :----------------- | :-----------------------------------------------------------: |
+| `color`          | `rgb(51 65 85)`    | ![#334155](https://via.placeholder.com/15/334155/334155.png)  |
+| `bg-color-hover` | `rgb(241 245 249)` | ![#F1F5F9](https://via.placeholder.com/15/F1F5F9/F1F5F9.png)  |
+| `font-size`      | `1rem`             |                                                               |
+| `font-weight`    | `400`              |                                                               |
 
 ### Picture
 
