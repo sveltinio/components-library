@@ -11,7 +11,6 @@ describe('Picture', () => {
 		const { container } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo',
 				webp: true,
 				avif: true
 			}
@@ -22,8 +21,7 @@ describe('Picture', () => {
 	it('should have a const named filename', async () => {
 		const { component } = render(Picture, {
 			props: {
-				src: 'logo.png',
-				altText: 'sveltin-logo'
+				src: 'logo.png'
 			}
 		});
 		expect(component.filename).toBeDefined();
@@ -32,8 +30,7 @@ describe('Picture', () => {
 	it('should have filename logo', async () => {
 		const { component } = render(Picture, {
 			props: {
-				src: 'logo.png',
-				altText: 'sveltin-logo'
+				src: 'logo.png'
 			}
 		});
 		expect(component.filename('logo.png')).toBe('logo');
@@ -43,17 +40,17 @@ describe('Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo'
+				alt: 'sveltin-logo'
 			}
 		});
 		expect(getByTestId('imgtag')).toHaveAttribute('src', '/logo.png');
+		expect(getByTestId('imgtag')).toHaveAttribute('alt', 'sveltin-logo');
 	});
 
 	it('should not contain both avif and webp', async () => {
 		const { getByTestId } = render(Picture, {
 			props: {
-				src: 'logo.png',
-				altText: 'sveltin-logo'
+				src: 'logo.png'
 			}
 		});
 		expect(getByTestId('picture-id')).not.toContainHTML(
@@ -68,19 +65,21 @@ describe('Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo'
+				alt: 'sveltin-logo',
+				width: '500',
+				height: '500'
 			}
 		});
 		const img = getByTestId('imgtag');
-		expect(img).toHaveAttribute('width', '100%');
-		expect(img).toHaveAttribute('height', '100%');
+		expect(img).toHaveAttribute('width', '500');
+		expect(img).toHaveAttribute('height', '500');
 	});
 
 	it('should be lazy and async', async () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo'
+				alt: 'sveltin-logo'
 			}
 		});
 		const img = getByTestId('imgtag');
@@ -92,7 +91,7 @@ describe('Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo',
+				alt: 'sveltin-logo',
 				class: 'object-cover rounded-lg'
 			}
 		});
@@ -103,7 +102,7 @@ describe('Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo'
+				alt: 'sveltin-logo'
 			}
 		});
 		expect(getByTestId('imgtag')).toHaveAccessibleName();
@@ -119,7 +118,7 @@ describe('[AVIF] Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo',
+				alt: 'sveltin-logo',
 				avif: true
 			}
 		});
@@ -130,7 +129,7 @@ describe('[AVIF] Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo',
+				alt: 'sveltin-logo',
 				webp: true,
 				avif: true
 			}
@@ -142,7 +141,7 @@ describe('[AVIF] Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo',
+				alt: 'sveltin-logo',
 				avif: true
 			}
 		});
@@ -160,7 +159,7 @@ describe('[WEBP] Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo',
+				alt: 'sveltin-logo',
 				webp: true
 			}
 		});
@@ -171,7 +170,7 @@ describe('[WEBP] Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo',
+				alt: 'sveltin-logo',
 				webp: true
 			}
 		});
@@ -182,7 +181,7 @@ describe('[WEBP] Picture', () => {
 		const { getByTestId } = render(Picture, {
 			props: {
 				src: 'logo.png',
-				altText: 'sveltin-logo',
+				alt: 'sveltin-logo',
 				webp: true
 			}
 		});

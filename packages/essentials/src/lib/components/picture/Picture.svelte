@@ -1,37 +1,42 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
 	export let src: string;
-	export let altText: string;
+	export let alt = '';
 	export let webp = false;
 	export let avif = false;
-	export let width = '100%';
-	export let height = '100%';
 
-	export const filename = (pathToFile: string) => {
+	export const filename = (pathToFile: string): string => {
 		return pathToFile.split('.').slice(0, -1).join('.');
 	};
+
+	$: _altText = alt != '' ? alt : filename(src).concat(' image');
 </script>
 
 <picture data-testid="picture-id">
 	{#if avif}
-		<source data-testid="avif" type="image/avif" srcset="{assets}/avif/{filename(src)}.avif" />
+		<source srcset="{assets}/avif/{filename(src)}.avif" type="image/avif" data-testid="avif" />
 	{/if}
 
 	{#if webp}
-		<source data-testid="webp" type="image/webp" srcset="{assets}/webp/{filename(src)}.webp" />
+		<source srcset="{assets}/webp/{filename(src)}.webp" type="image/webp" data-testid="webp" />
 	{/if}
 
 	<img
-		data-testid="imgtag"
 		src="{assets}/{src}"
+		alt={_altText}
+		title={_altText}
 		loading="lazy"
 		decoding="async"
-		alt={altText}
-		title={altText}
-		aria-label={altText}
-		class={$$props.class}
-		style={$$props.style}
-		{width}
-		{height}
+		aria-label={_altText}
+		data-testid="imgtag"
+		{...$$restProps}
 	/>
 </picture>
+
+<style>
+	img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: attr(width) / attr(height);
+	}
+</style>
