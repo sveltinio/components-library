@@ -11,7 +11,7 @@ A collection of essentials Svelte _unstyled_ components.
 ## Components List
 
 - [Button](#button)
-- [ExternalLink](#externallink)
+- [Link](#link)
 - [Dropdown](#dropdown)
 - [Picture](#picture)
 
@@ -47,29 +47,6 @@ The `Button` component can be used for both `button` and link `a` by adding the 
 - **focus**: with or without the focus ring
 - **icons**: render an Icon either on the left side or the right side. Wrap the Icon with the Button component, then add the slot='leftIcon' or slot='rightIcon' prop to your Icon.
 
-<details>
-  <summary><strong>Properties</strong></summary>
-
-The `Button` component exposes the following properties:
-
-| Property      |  Type   | Required |   Default   | Description                                                     |
-| :------------ | :-----: | :------: | :---------: | :-------------------------------------------------------------- |
-| label         | string  |    no    | Button Text | Set the label for the button                                    |
-| altText       | string  |    no    |             | Set the alt text property                                       |
-| type          | string  |    no    |   default   | Button type (primary, secondary, error, success, ...)           |
-| size          | string  |    no    |    base     | Set the button size (xs, sm, base, md or lg)                    |
-| border        | string  |    no    |    solid    | Set the border style (solid, dashaed, dotted, ...)              |
-| outlined      | boolean |    no    |    false    | White background button with the border                         |
-| rounded       | boolean |    no    |    false    | Rounded button                                                  |
-| circular      | boolean |    no    |    false    | Full circular button                                            |
-| fullSize      | boolean |    no    |    false    | Will take the full width of the container                       |
-| withFocusRing | boolean |    no    |    false    | If true, a ring will be displayed when the button has the focus |
-| href          | string  |    no    |             | The URL of the page the link goes to                            |
-| prefetch      | boolean |    no    |    false    | Enable sveltekit:prefetch for the link                          |
-| external      | boolean |    no    |    false    | If true, opens the linked document in a new window or tab       |
-
-</details>
-
 #### Examples
 
 ```html
@@ -85,11 +62,33 @@ const handleButtonClick = (event) => { alert('button clicked on:' + event.detail
 <button type="success"><MailIcon slot="leftIcon" /> Button Text</button>
 <button type="success"><MailIcon slot="rightIcon" /> Button Text</button>
 <button type="primary" size="lg" circular>
- <PlusIcon />
+   <PlusIcon />
 </button>
 <button href="https://sveltin.io" />
 <button type="secondary" href="/posts/welcome" prefetch />
 ```
+
+#### Properties
+
+The `Button` component exposes a set of properties but it does not prevent you to pass any additional props.
+
+The following are the ones exposed by the component
+
+| Property      |  Type   | Required |   Default   | Description                                                     |
+| :------------ | :-----: | :------: | :---------: | :-------------------------------------------------------------- |
+| label         | string  |    no    | Button Text | Set the label for the button                                    |
+| alt           | string  |    no    |             | Set the alt text property                                       |
+| type          | string  |    no    |   default   | Button type (primary, secondary, error, success, ...)           |
+| size          | string  |    no    |    base     | Set the button size (xs, sm, base, md or lg)                    |
+| border        | string  |    no    |    solid    | Set the border style (solid, dashaed, dotted, ...)              |
+| outlined      | boolean |    no    |    false    | White background button with the border                         |
+| rounded       | boolean |    no    |    false    | Rounded button                                                  |
+| circular      | boolean |    no    |    false    | Full circular button                                            |
+| fullSize      | boolean |    no    |    false    | Will take the full width of the container                       |
+| withFocusRing | boolean |    no    |    false    | If true, a ring will be displayed when the button has the focus |
+| href          | string  |    no    |             | The URL of the page the link goes to                            |
+| prefetch      | boolean |    no    |    false    | Enable sveltekit:prefetch for the link                          |
+| external      | boolean |    no    |    false    | If true, opens the linked document in a new window or tab       |
 
 #### Theming
 
@@ -128,53 +127,49 @@ import { Button } from '@sveltinio/essentials';
 />
 ```
 
-### ExternalLink
+### Link
 
-The `ExternalLink` component defines a hyperlink used to link an external page. It accepts and render any children using the **Svelte slot**.
-
-Any class or style can be passed to it.
-
-<details>
-  <summary><strong>Properties</strong></summary>
-
-The `ExternalLink` component exposes the following properties:
-
-| Property   |  Type   | Required | Default  | Description                                                         |
-| :--------- | :-----: | :------: | :------- | :------------------------------------------------------------------ |
-| id         | string  |    no    | empty    | The link identifier                                                 |
-| label      | string  |   yes    |          | The text to display                                                 |
-| underline  | boolean |    no    | false    | Underlined label text                                               |
-| url        | string  |   yes    |          | The URL of the page the link goes to                                |
-| altText    | string  |    no    | as label | Alternate text                                                      |
-| target     | string  |    no    | \_blank  | Specifies where to open the linked document                         |
-| noOpenener | boolean |    no    | true     | Go to the linked resource without granting the new browsing context |
-| noReferrer | boolean |    no    | true     | Prevent passing the referrer information to the target website      |
-| icon       | boolean |    no    | true     | Shows an icon next right to the label                               |
-
-</details>
+The `Link` component defines a hyperlink used to link an internal or external resource. It accepts and render any child component using the **Svelte slot**.
 
 #### Examples
 
 ```html
-import { ExternalLink, Picture } from '@sveltinio/essentials';
+import { Link, Picture } from '@sveltinio/essentials';
 import DummyIcon from './DummyIcon.svelte';
 
-<ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io" />
+<Link label="sveltin" url="https://sveltin.io" />
 
-<ExternalLink id="sveltin-link" label="sveltin" url="https://sveltin.io" icon={false}>
-   <Picture image="logo.png" altText="sveltin logo" width="30%" />
-</ExternalLink>
+<Link id="sveltin-logo-link" label="sveltin" url="https://sveltin.io" icon={false}>
+   <Picture image="logo.png" alt="sveltin logo" width="30%" />
+</Link>
 
-<ExternalLink id="sveltin-link" label="sveltin.io" url="https://sveltin.io" style>
+<Link label="sveltin.io" url="https://sveltin.io" style>
    <DummyIcon slot="icon" />
-</ExternalLink>
+</Link>
 ```
+
+#### Properties
+
+The `Link` component exposes a set of properties but it does not prevent you to pass any additional props.
+
+The following are the ones exposed by the component:
+
+| Property   |  Type   | Required | Default  | Description                                                         |
+| :--------- | :-----: | :------: | :------- | :------------------------------------------------------------------ |
+| label      | string  |   yes    |          | The text to display                                                 |
+| url        | string  |   yes    |          | The URL of the page the link goes to                                |
+| underline  | boolean |    no    | false    | Underlined label text                                               |
+| alt        | string  |    no    | as label | The text description of the link                                    |
+| external   | boolean |    no    | false    | If external, an icon will be apped next to the right of the label   |
+| noOpenener | boolean |    no    | true     | Go to the linked resource without granting the new browsing context |
+| noReferrer | boolean |    no    | true     | Prevent passing the referrer information to the target website      |
+| icon       | boolean |    no    | true     | Shows an icon next right to the label                               |
 
 #### Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style props](https://svelte.dev/docs#template-syntax-component-directives---style-props).
 
-##### ExternalLink
+##### Link
 
 | CSS Variable        | Default            | |
 | :------------------ | :----------------- | :----------------------------------------------------------: |
@@ -191,52 +186,6 @@ To simplify custom styles on the component we used the built-in solution for com
 ### Dropdown
 
 `Dropdown` menus are built using a combination of the `Dropdown`, `DropdownButton`, `DropdownMenu`, and `DropdownItem` components.
-
-#### Properties
-
-##### Dropdown
-
-The `Dropdown` component is the main wrapper component.
-
-<details>
-  <summary><strong>Expand</strong></summary>
-
-| Property | Type     | Required | Default  | Description         |
-| :------- | :------: | :------: | :------: |:------------------- |
-| isOpen   | boolean  | no       |          | show/hide the items |
-
-</details>
-
-##### DropdownButton
-
-The `DropdownButton` component exposes the following properties:
-
-<details>
-  <summary><strong>Expand</strong></summary>
-
-| Property | Type    | Required | Default  | Description |
-| :------- | :-----: | :------: | :------: |:----------- |
-| label    | string  | yes      |          | Button text |
-
-</details>
-
-##### DropdownItem
-
-The `DropdownItem` component exposes the following properties:
-
-<details>
-  <summary><strong>Expand</strong></summary>
-
-| Property | Type    | Required | Default  | Description                                 |
-| :------- | :-----: | :------: | :------: |:------------------------------------------- |
-| id       | string  | yes      |          | Item identifier                             |
-| label    | string  | yes      |          | Item text                                   |
-| mode     | string  | no       | button   | Render as button or link                    |
-| href     | string  | no       | null     | The URL of the page the link goes to        |
-| prefetch | boolean | no       | yes      | Add sveltekit:prefetch                      |
-| target   | string  | no       | _self    | Specifies where to open the linked document |
-
-</details>
 
 #### Examples
 
@@ -277,6 +226,41 @@ const hello = (event) => { alert('clicked on:' + event.detail); };
 </Dropdown>
 ```
 
+#### Properties
+
+The Dropdown components set exposes a set of properties but it does not prevent you to pass any additional props.
+
+The following are the ones exposed by the component
+
+##### Dropdown
+
+The `Dropdown` component is the main wrapper component.
+
+| Property | Type     | Required | Default  | Description         |
+| :------- | :------: | :------: | :------: |:------------------- |
+| isOpen   | boolean  | no       |          | show/hide the items |
+
+##### DropdownButton
+
+The `DropdownButton` component exposes the following properties:
+
+| Property | Type    | Required | Default  | Description |
+| :------- | :-----: | :------: | :------: |:----------- |
+| label    | string  | yes      |          | Button text |
+
+##### DropdownItem
+
+The `DropdownItem` component exposes the following properties:
+
+| Property | Type    | Required | Default  | Description                                 |
+| :------- | :-----: | :------: | :------: |:------------------------------------------- |
+| id       | string  | yes      |          | Item identifier                             |
+| label    | string  | yes      |          | Item text                                   |
+| mode     | string  | no       | button   | Render as button or link                    |
+| href     | string  | no       | null     | The URL of the page the link goes to        |
+| prefetch | boolean | no       | yes      | Add sveltekit:prefetch                      |
+| target   | string  | no       | _self    | Specifies where to open the linked document |
+
 #### Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style props](https://svelte.dev/docs#template-syntax-component-directives---style-props).
@@ -313,21 +297,9 @@ To simplify custom styles on the component we used the built-in solution for com
 
 ### Picture
 
-<details>
-  <summary><strong>Properties</strong></summary>
+The `Picture` component allows you to easily insert a [`picture` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) within the HTML document to use alternative image formats like AVIF or WEBP.
 
-The `Picture` component exposes the following properties:
-
-| Property |  Type   | Required | Default | Description        |
-| :------- | :-----: | :------: | :-----: | :----------------- |
-| src      | string  |   yes    |         | Put some text here |
-| altText  | string  |   yes    |         | Put some text here |
-| webp     | boolean |    no    |  false  | Put some text here |
-| avif     | boolean |    no    |  false  | Put some text here |
-| width    | string  |    no    |  100%   |                    |
-| height   | string  |    no    |  100%   |                    |
-
-</details>
+**Note:** WEBP and AVIF versions must be located at _the same path_ of your original one.
 
 #### Examples
 
@@ -336,7 +308,7 @@ The `Picture` component exposes the following properties:
 ```html
 import { Picture } from '@sveltinio/sveltin;
 
-<picture src="logo.png" altText="your logo" width="30%" />
+<Picture src="logo.png" alt="your logo" width="300" webp avif />
 ```
 
 ##### **DEFAULT AND AVIF ONLY**
@@ -344,7 +316,7 @@ import { Picture } from '@sveltinio/sveltin;
 ```html
 import { Picture } from '@sveltinio/sveltin;
 
-<picture src="logo.png" avif altText="your logo" width="30%" />
+<Picture src="logo.png" alt="your logo" width="300" avif />
 ```
 
 ##### **DEFAULT AND WEBP ONLY**
@@ -352,8 +324,21 @@ import { Picture } from '@sveltinio/sveltin;
 ```html
 import { Picture } from '@sveltinio/sveltin;
 
-<picture src="logo.png" webp altText="your logo" width="30%" />
+<Picture src="logo.png" alt="your logo" width="300" webp />
 ```
+
+#### Properties
+
+The `Picture` component exposes a set of properties but it does not prevent you to pass any additional props.
+
+The following are the ones exposed by the component:
+
+| Property |  Type   | Required | Default          | Description                                       |
+| :------- | :-----: | :------: | :--------------: | :------------------------------------------------ |
+| src      | string  |   yes    |                  | The path to the image you want to embed           |
+| alt      | string  |    no    | as src filename  | The text description of the image                 |
+| webp     | boolean |    no    |  false           | if true, will load the webp version for the image |
+| avif     | boolean |    no    |  false           | if true, will load the avif version for the image |
 
 ## License
 
