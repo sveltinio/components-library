@@ -5,7 +5,7 @@
 
 	<ul>
 		<a href="/demos/button"><li>Button</li></a>
-		<a href="/demos/external-link"><li>ExternalLink</li></a>
+		<a href="/demos/link"><li>Link</li></a>
 		<a href="/demos/dropdown"><li>Dropdown</li></a>
 		<a href="/demos/picture"><li>Picture</li></a>
 	</ul>

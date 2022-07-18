@@ -1,27 +1,25 @@
 <script lang="ts">
 	import { ExternalLinkIcon } from './';
 
-	export let id = '';
 	export let label: string;
-	export let underline = false;
 	export let url: string;
-	export let altText = '';
-	export let target = '_blank';
+	export let underline = false;
+	export let alt = '';
+	export let external = false;
 	export let noOpener = true;
 	export let noReferrer = true;
-	export let icon = true;
 
 	let relOptions = ['external'];
 	if (noOpener) relOptions.push('noopener');
 	if (noReferrer) relOptions.push('noreferrer');
 
-	$: _idText = id != '' ? id : label;
-	$: _altText = altText != '' ? altText : label;
+	$: _altText = alt != '' ? alt : label;
+	$: target = external ? '_blank' : '_self';
+	$: icon = external ? true : false;
 </script>
 
 <a
-	id={_idText}
-	data-testid="ext-link"
+	data-testid="link"
 	rel={relOptions.join(' ')}
 	{target}
 	href={url}
