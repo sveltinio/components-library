@@ -14,6 +14,7 @@ A collection of essentials Svelte _unstyled_ components.
 - [Link](#link)
 - [Dropdown](#dropdown)
 - [Picture](#picture)
+- [Tabs](#tabs)
 
 ## Install
 
@@ -38,7 +39,7 @@ pnpm dev
 
 ### Button
 
-The `Button` component can be used for both `button` and link `a` by adding the _href_ prop. The `Button` component supports different variants, sizes, shapes and others:
+The `Button` component can be used for both `button` and link `a` by adding the _href_ prop. It supports different variants, sizes, shapes and others:
 
 - **types**: `default`, `primary`, `secondary`, `info`, `error`, `success`, `warning`, `light` and `dark`
 - **sizes**: `xs`, `sm`, `base` (default), `md`, `lg` and `full`
@@ -50,10 +51,12 @@ The `Button` component can be used for both `button` and link `a` by adding the 
 #### Examples
 
 ```html
-import { Button } from '@sveltinio/essentials'
-import { MailIcon, PlusIcon } from '@indaco/svelte-iconoir';
+<script>
+   import { Button } from '@sveltinio/essentials'
+   import { MailIcon, PlusIcon } from '@indaco/svelte-iconoir';
 
-const handleButtonClick = (event) => { alert('button clicked on:' + event.detail); };
+   const handleButtonClick = (event) => { alert('button clicked on:' + event.detail); };
+<script>
 
 <button type="primary" on:click="{handleButtonClick}" />
 <button label="Click Me" type="secondary" border="dashed" />
@@ -111,7 +114,9 @@ The `Button` component allows you to pass the following styles as props:
 ##### Example
 
 ```html
-import { Button } from '@sveltinio/essentials';
+<script>
+   import { Button } from '@sveltinio/essentials';
+</script>
 
 <button
  label="Custom Success"
@@ -134,8 +139,10 @@ The `Link` component defines a hyperlink used to link an internal or external re
 #### Examples
 
 ```html
-import { Link, Picture } from '@sveltinio/essentials';
-import DummyIcon from './DummyIcon.svelte';
+<script>
+   import { Link, Picture } from '@sveltinio/essentials';
+   import DummyIcon from './DummyIcon.svelte';
+</script>
 
 <Link label="sveltin" url="https://sveltin.io" />
 
@@ -192,7 +199,14 @@ To simplify custom styles on the component we used the built-in solution for com
 ##### **WITH ITEMS AS LINKS**
 
 ```html
-import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@sveltinio/essentials';
+<script>
+   import {
+      Dropdown,
+      DropdownButton,
+      DropdownItem,
+      DropdownMenu
+   } from '@sveltinio/essentials';
+<script>
 
 <Dropdown>
  <DropdownButton label="Menu" />
@@ -207,14 +221,16 @@ import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@sveltinio
 ##### **WITH ITEMS AS BUTTONS**
 
 ```html
-import {
- Dropdown,
- DropdownButton,
- DropdownItem,
- DropdownMenu
-} from '@sveltinio/essentials';
+<script>
+   import {
+      Dropdown,
+      DropdownButton,
+      DropdownItem,
+      DropdownMenu
+   } from '@sveltinio/essentials';
 
-const hello = (event) => { alert('clicked on:' + event.detail); };
+   const hello = (event) => { alert('clicked on:' + event.detail); };
+</script>
 
 <Dropdown>
  <DropdownButton label="Menu" />
@@ -306,7 +322,10 @@ The `Picture` component allows you to easily insert a [`picture` element](https:
 ##### **DEFAULT WITH AVIF AND WEBP**
 
 ```html
-import { Picture } from '@sveltinio/sveltin;
+<script>
+   import { Picture } from '@sveltinio/sveltin';
+</script>
+
 
 <Picture src="logo.png" alt="your logo" width="300" webp avif />
 ```
@@ -314,7 +333,9 @@ import { Picture } from '@sveltinio/sveltin;
 ##### **DEFAULT AND AVIF ONLY**
 
 ```html
-import { Picture } from '@sveltinio/sveltin;
+<script>
+   import { Picture } from '@sveltinio/sveltin';
+</script>
 
 <Picture src="logo.png" alt="your logo" width="300" avif />
 ```
@@ -322,7 +343,9 @@ import { Picture } from '@sveltinio/sveltin;
 ##### **DEFAULT AND WEBP ONLY**
 
 ```html
-import { Picture } from '@sveltinio/sveltin;
+<script>
+   import { Picture } from '@sveltinio/sveltin';
+</script>
 
 <Picture src="logo.png" alt="your logo" width="300" webp />
 ```
@@ -339,6 +362,71 @@ The following are the ones exposed by the component:
 | alt      | string  |    no    | as src filename  | The text description of the image                 |
 | webp     | boolean |    no    |  false           | if true, will load the webp version for the image |
 | avif     | boolean |    no    |  false           | if true, will load the avif version for the image |
+
+### Tabs
+
+The `Tabs` component is used to easisy includes tabs within the page. It supports different variants and sizes:
+
+- **types**: `default`, `bordered`
+- **sizes**: `xs`, `sm`, `base` (default), `md`, `lg` and `full`
+
+#### Examples
+
+```html
+<script>
+   import { Tabs, Tab } '@sveltinio/sveltin';
+   import DummyIcon from './_dummyIcon.svelte';
+</script>
+
+<Tabs>
+   <Tab id="1" title="Tab 1">Sample content for <strong>Tab 1</strong></Tab>
+   <Tab id="2" title="Tab 2">Sample content for <strong>Tab 2</strong></Tab>
+   <Tab id="3" title="Tab 3">Sample content for <strong>Tab 3</strong></Tab>
+</Tabs>
+
+<Tabs activeTab="3" type="bordered">
+   <Tab id="3" title="Tab 3" icon={DummyIcon}>Sample content for <strong>Tab 3</strong></Tab>
+   <Tab id="4" title="Tab 4" icon={DummyIcon}>Sample content for <strong>Tab 4</strong></Tab>
+   <Tab id="5" title="Tab 5" icon={DummyIcon}>Sample content for <strong>Tab 5</strong></Tab>
+</Tabs>
+
+```
+
+#### Properties
+
+##### Tabs
+
+| Property  |  Type   | Required | Default | Description                                     |
+| :-------- | :-----: | :------: | :-------: | :-------------------------------------------- |
+| activeTab | string  |    no    | 1       | The tab to be active (selected) at the startup  |
+| type      | string  |    no    | default | Default or bordered)                            |
+| size      | string  |    no    | base    | Set the tab title size (xs, sm, base, md or lg) |
+
+##### Tab
+
+| Property |  Type   | Required | Default          | Description                                              |
+| :------- | :-----: | :------: | :--------------: | :--------------------------------------------------------|
+| id       | string  | yes      |                  | An unique identifier for the tab                         |
+| title    | string  | yes      |                  | The title for the tab                                    |
+| icon     | any     | no       |                  | The icon placed on the left of the tab title for the tab |
+
+#### Theming
+
+To simplify custom styles on the component we used the built-in solution for component theming using [style props](https://svelte.dev/docs#template-syntax-component-directives---style-props).
+
+| CSS Variable             | Default            | |
+| :----------------------- | :----------------- | :----------------------------------------------------------: |
+| `tabs-list-border-width` | `1px`              |                                                              |
+| `tabs-list-border-style` | `solid`            |                                                              |
+| `tabs-list-border-color` | `rgb(226 232 240)` | ![#e2e8f0](https://via.placeholder.com/15/e2e8f0/e2e8f0.png) |
+| `tab-border-width`       | `2px`              |                                                              |
+| `tab-border-style`       | `solid`            |                                                              |
+| `tab-border-color`       | `rgb(241 245 249)` | ![#f1f5f9](https://via.placeholder.com/15/f1f5f9/f1f5f9.png) |
+| `tab-border-color-hover` | `rgb(148 163 184)` | ![#94a3b8](https://via.placeholder.com/15/94a3b8/94a3b8.png) |
+| `tab-bg-color-hover`     | `rgb(248 250 252)` | ![#f8fafc](https://via.placeholder.com/15/f8fafc/f8fafc.png) |
+| `content-border-width`   | `1px`              |                                                              |
+| `content-border-style`   | `solid`            |                                                              |
+| `content-border-color`   | `rgb(226 232 240)` | ![#e2e8f0](https://via.placeholder.com/15/e2e8f0/e2e8f0.png) |
 
 ## License
 

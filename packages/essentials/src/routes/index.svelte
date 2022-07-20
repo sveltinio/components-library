@@ -8,6 +8,7 @@
 		<a href="/demos/link"><li>Link</li></a>
 		<a href="/demos/dropdown"><li>Dropdown</li></a>
 		<a href="/demos/picture"><li>Picture</li></a>
+		<a href="/demos/tabs"><li>Tabs</li></a>
 	</ul>
 </section>
 

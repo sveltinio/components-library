@@ -10,7 +10,7 @@ import {
 	ArrowDownIcon,
 	ArrowUpIcon
 } from './components/dropdown';
-
+import { Tabs, Tab } from './components/tabs';
 export {
 	Button,
 	Link,
@@ -21,5 +21,7 @@ export {
 	DropdownMenu,
 	DropdownItem,
 	ArrowDownIcon,
-	ArrowUpIcon
+	ArrowUpIcon,
+	Tabs,
+	Tab
 };
