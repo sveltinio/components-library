@@ -11,5 +11,5 @@
 		"strict": true,
 		"types": ["@types/gtag.js", "vitest/globals"]
 	},
-	"exclude": ["src/lib/__tests__"]
+	"exclude": ["tests"]
 }

@@ -116,9 +116,6 @@
 		flex-wrap: wrap;
 	}
 
-	.tabs-list-default {
-	}
-
 	.tabs-list-bordered {
 		--_tabs-list-border-width: var(--tabs-list-border-width, 1px);
 		--_tabs-list-border-style: var(--tabs-list-border-style, solid);

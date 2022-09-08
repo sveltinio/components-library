@@ -41,7 +41,7 @@
 	 * https://developers.facebook.com/docs/plugins/embedded-posts
 	 * https://developers.facebook.com/docs/plugins/embedded-videos
 	 */
-	export let settings: IFacebookSettings | IFacebookVideoSettings = {};
+	export let settings: IFacebookSettings = {};
 
 	let scriptLoaded = false;
 	const _id = isValidURL(id) ? toID(id) : id;

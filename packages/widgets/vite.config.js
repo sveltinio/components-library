@@ -17,7 +17,14 @@ const config = {
 			$tests: path.resolve('tests')
 		}
 	},
-	plugins: [sveltekit()]
+	plugins: [sveltekit()],
+	test: {
+		globals: true,
+		reporters: ['dot'],
+		silent: true,
+		environment: 'jsdom',
+		setupFiles: ['../config/vitest-setup.ts']
+	}
 };
 
 export default config;

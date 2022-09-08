@@ -1,7 +1,6 @@
 import type { DropdownData } from '$lib/components/dropdown/types';
 import type { ListItem } from '$lib/components/list/types';
-import CloudUploadIcon from '@indaco/svelte-iconoir/icons/CloudUploadIcon.svelte';
-import BellIcon from '@indaco/svelte-iconoir/icons/BellIcon.svelte';
+import { CloudUploadIcon, BellIcon } from '@indaco/svelte-iconoir';
 
 export const menu = [
 	{

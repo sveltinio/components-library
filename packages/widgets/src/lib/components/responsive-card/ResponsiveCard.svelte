@@ -5,7 +5,7 @@
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, voluptate. Odit deserunt
 			suscipit dolorem adipisci iste.
 		</p>
-		<a href="#">Read the article</a>
+		<a href="/">Read the article</a>
 	</div>
 	<img
 		class="sm:order-none sm:ml-4 sm:mt-0"

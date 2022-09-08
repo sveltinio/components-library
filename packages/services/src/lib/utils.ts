@@ -1,4 +1,6 @@
-export function isEmptyObject<Type extends object>(obj: Type): boolean {
+import type { IUmamiTrackerSettings } from './types';
+
+export function isEmptyObject<Type extends IUmamiTrackerSettings>(obj: Type): boolean {
 	return Object.keys(obj).length === 0;
 }
 

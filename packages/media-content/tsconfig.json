@@ -11,5 +11,5 @@
 		"strict": false,
 		"types": ["vitest/globals"]
 	},
-	"exclude": ["src/lib/__tests__"]
+	"exclude": ["tests"]
 }
