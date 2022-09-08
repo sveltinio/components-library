@@ -11,7 +11,13 @@
 	<div id="external-link" class="container">
 		<h3 id="external-link-with-slot">with slot</h3>
 		<Link label="sveltin" url="https://sveltin.io" icon={false}
-			><Picture src="logo.png" altText="sveltin logo" webp={true} avif={true} width="30%" /></Link
+			><Picture
+				src="logo.png"
+				altText="sveltin logo"
+				webp={true}
+				avif={true}
+				width="30%"
+			/></Link
 		>
 	</div>
 
