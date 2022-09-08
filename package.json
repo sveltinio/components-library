@@ -44,6 +44,9 @@
 		"vitest": "latest"
 	},
 	"lint-staged": {
+		"!(packages/vitest-config-custom/**/*)*.js": [
+			"prettier --check"
+		],
 		"packages/**/*.{js, ts, svelte}": [
 			"prettier --check",
 			"eslint --fix"

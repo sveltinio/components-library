@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { describe, it, expect, beforeAll, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { Dropdown } from '../src/lib';

@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { homePage, sampleArticle } from './__fixtures__/data.test.js';

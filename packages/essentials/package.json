@@ -44,6 +44,7 @@
 		"@typescript-eslint/parser": "^5.36.2",
 		"c8": "^7.12.0",
 		"eslint": "^8.23.0",
+		"eslint-config-custom": "workspace:*",
 		"jsdom": "^20.0.0",
 		"micromatch": "^4.0.5",
 		"rimraf": "^3.0.2",

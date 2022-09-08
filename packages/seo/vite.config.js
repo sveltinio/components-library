@@ -22,8 +22,8 @@ const config = {
 		globals: true,
 		reporters: ['dot'],
 		silent: true,
-		environment: 'jsdom',
-		setupFiles: ['../config/vitest-setup.ts']
+		environment: 'jsdom'
+		//setupFiles: ['../vitest-config-custom/vitest-setup.js']
 	}
 };
 

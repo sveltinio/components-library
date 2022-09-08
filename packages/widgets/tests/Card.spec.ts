@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { it, describe, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { Card } from '../src/lib';
