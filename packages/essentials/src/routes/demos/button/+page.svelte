@@ -159,13 +159,15 @@
 					type="success"
 					rounded
 					withFocusRing
-					--color="rgb(54 83 20)"
-					--border-color="rgb(236 252 203)"
-					--bg-color="rgb(132 204 22)"
-					--bg-color-hover="rgb(163 230 53)"
-					--ring-color="rgb(190 242 100)"
-					--ring-width="3px"
-					--ring-style="dashed"
+					styles={{
+						color: 'rgb(54 83 20)',
+						'border-color': 'rgb(236 252 203)',
+						'bg-color': 'rgb(132 204 22)',
+						'bg-color-hover': 'rgb(163 230 53)',
+						'ring-color': 'rgb(190 242 100)',
+						'ring-width': '3px',
+						'ring-style': 'dashed'
+					}}
 				/>
 
 				<Button
@@ -173,10 +175,12 @@
 					type="success"
 					outlined
 					rounded
-					--color="rgb(77 124 15)"
-					--border-color="rgb(217 249 157)"
-					--bg-color-hover="rgb(101 163 13)"
-					--outlined-bg-hover="rgb(236 252 203)"
+					styles={{
+						color: 'rgb(77 124 15)',
+						'border-color': 'rgb(217 249 157)',
+						'bg-color-hover': 'rgb(101 163 13)',
+						'outlined-bg-hover': 'rgb(236 252 203)'
+					}}
 				/>
 			</div>
 		</div>

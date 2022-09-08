@@ -51,6 +51,7 @@
 
 		display: flex;
 		flex-direction: column;
+		cursor: pointer;
 		color: var(--_color);
 		font-weight: var(--_font-weight);
 		font-size: var(--_font-size);
@@ -62,7 +63,7 @@
 
 	a:hover,
 	button:hover {
-		--_bg-color-hover: var(--bg-color-hover, rgb(241 245 249));
+		--_bg-color-hover: var(--bg-color-hover, rgb(241 245 249)); /*slate-100*/
 		background-color: var(--_bg-color-hover);
 	}
 </style>

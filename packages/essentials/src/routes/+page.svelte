@@ -5,8 +5,10 @@
 
 	<ul>
 		<a href="/demos/button"><li>Button</li></a>
-		<a href="/demos/link"><li>Link</li></a>
+		<a href="/demos/color"><li>ColorViewer</li></a>
 		<a href="/demos/dropdown"><li>Dropdown</li></a>
+		<a href="/demos/link"><li>Link</li></a>
+		<a href="/demos/list"><li>List</li></a>
 		<a href="/demos/picture"><li>Picture</li></a>
 		<a href="/demos/tabs"><li>Tabs</li></a>
 	</ul>

@@ -48,8 +48,6 @@
 	}
 
 	.dropdown-container {
-		padding-top: 0.25rem /* 4px */;
-		padding-bottom: 0.25rem /* 4px */;
 		box-shadow: 0 0 0 0px #ffffff, 0 0 0 1px rgb(226 232 240);
 	}
 </style>

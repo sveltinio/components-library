@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import { stylesObjToCSSVars } from '$lib/utils';
 
 	export let label = 'Button Text';
 	export let altText = '';
@@ -15,7 +16,9 @@
 	export let href = '';
 	export let prefetch = false;
 	export let external = false;
+	export let styles = {};
 
+	const cssStyles = stylesObjToCSSVars(styles);
 	const dispatch = createEventDispatcher();
 	const clickDispatcher = (e: MouseEvent) => {
 		dispatch('click', { eventDetails: e });
@@ -40,6 +43,7 @@
 		class="btn btn-{size} btn-border-{border} {outlinedClass} {focusClass} {fullSizeClass}"
 		class:btn-rounded={rounded}
 		class:btn-circular={circular}
+		style={cssStyles}
 		{...$$restProps}><slot>{label}</slot></a
 	>
 {:else}
@@ -49,6 +53,7 @@
 		class="btn btn-{size} btn-border-{border} {outlinedClass} {focusClass} {fullSizeClass}"
 		class:btn-rounded={rounded}
 		class:btn-circular={circular}
+		style={cssStyles}
 		{...$$restProps}
 		on:click={clickDispatcher}
 	>

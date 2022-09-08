@@ -2,9 +2,8 @@
 	import { getContext, onDestroy } from 'svelte';
 	import { get } from 'svelte/store';
 
-	import ArrowDownIcon from './ArrowDownIcon.svelte';
-	import ArrowUpIcon from './ArrowUpIcon.svelte';
 	import type { DropdownContext } from './types';
+	import { ArrowDownIcon, ArrowUpIcon } from '../icons';
 
 	/**
 	 * Set the dropdown label
@@ -23,9 +22,6 @@
 		isOpen = get(ctx.value);
 	};
 
-	$: toggleArrowUp = isOpen ? 'show' : 'hide';
-	$: toggleArrowDown = isOpen ? 'hide' : 'show';
-
 	onDestroy(() => {
 		unsubscribe();
 	});
@@ -34,19 +30,33 @@
 <button type="button" aria-expanded={isOpen} aria-haspopup="true" on:click={toggleDropdown}
 	>{label}
 
-	<ArrowDownIcon bind:toggleArrowDown />
-	<ArrowUpIcon bind:toggleArrowUp />
+	<span class:show={!isOpen} class:hide={isOpen}>
+		<ArrowDownIcon />
+	</span>
+
+	<span class:show={isOpen} class:hide={!isOpen}>
+		<ArrowUpIcon />
+	</span>
 </button>
 
 <style>
+	.show {
+		display: block;
+	}
+
+	.hide {
+		display: none;
+	}
+
 	button {
 		--_color: var(--color, rgb(51 65 85)); /* slate-700*/
 		--_border-color: var(--border-color, rgb(203 213 225)); /* slate-300*/
-		--_bg-color: var(--bg-color, rgb(241 245 249)); /* slate-100*/
+		--_bg-color: var(--bg-color, rgb(248 250 252)); /* slate-50*/
 
 		font-size: 1rem /* 16px */;
 		line-height: 1.5rem /* 24px */;
 		font-weight: 500;
+		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -64,7 +74,7 @@
 	}
 
 	button:hover {
-		--_bg-color-hover: var(--bg-color-hover, rgb(226 232 240)); /*slate-200*/
+		--_bg-color-hover: var(--bg-color-hover, rgb(241 245 249)); /*slate-100*/
 		background-color: var(--_bg-color-hover);
 	}
 

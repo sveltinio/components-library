@@ -1,4 +1,8 @@
 import type { DropdownData } from '$lib/components/dropdown/types';
+import type { ListItem } from '$lib/components/list/types';
+import CloudUploadIcon from '@indaco/svelte-iconoir/icons/CloudUploadIcon.svelte';
+import BellIcon from '@indaco/svelte-iconoir/icons/BellIcon.svelte';
+
 export const menu = [
 	{
 		identifier: 'home',
@@ -79,4 +83,9 @@ export const navItems: Array<DropdownData> = [
 		url: '/how-to',
 		weight: 3
 	}
+];
+
+export const contentForToggleList: Array<ListItem> = [
+	{ label: 'First', url: '#first', icon: CloudUploadIcon },
+	{ label: 'Second', url: '#second', icon: BellIcon }
 ];

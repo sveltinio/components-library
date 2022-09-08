@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { navItems } from '../../../src/data/sample.js';
+	import { navItems } from '../../../../src/data/sample.js';
 	import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '$lib';
 
 	const handleDropdownButton = (event: { detail: string }) => {
@@ -36,11 +36,7 @@
 				{#each navItems as item}
 					{#if item.children}
 						{#each item.children as child}
-							<DropdownItem
-								id={child.weight}
-								label={child.name}
-								on:click={handleDropdownButton}
-							/>
+							<DropdownItem id={child.weight} label={child.name} on:click={handleDropdownButton} />
 						{/each}
 					{/if}
 				{/each}

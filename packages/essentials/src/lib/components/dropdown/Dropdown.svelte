@@ -1,9 +1,13 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
+	import { stylesObjToCSSVars } from '$lib/utils.js';
 	import type { DropdownContext } from './types.js';
 
 	export let isOpen = false;
+	export let styles = {};
+
+	const cssStyles = stylesObjToCSSVars(styles);
 	const initialState = writable(isOpen);
 
 	const ctx: DropdownContext = {
@@ -34,6 +38,7 @@
 </script>
 
 <div
+	style={cssStyles}
 	use:clickOutside={() => {
 		ctx.setValue(false);
 		isOpen = false;

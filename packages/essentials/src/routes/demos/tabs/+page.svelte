@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Tabs, Tab } from '$lib';
-	import DummyIcon from './_dummyIcon.svelte';
+	import DummyIcon from '../_dummyIcon.svelte';
 </script>
 
 <Tabs>

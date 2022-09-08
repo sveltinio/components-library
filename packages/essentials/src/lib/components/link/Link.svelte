@@ -45,7 +45,6 @@
 		color: var(--_color);
 		text-decoration: none;
 	}
-
 	.underline {
 		text-decoration: underline;
 	}

@@ -1,15 +1,18 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
+	import { stylesObjToCSSVars } from '$lib/utils';
 	import type { TabItem, TabsContext } from './types';
 
 	export let activeTab = '1';
 	export let type = 'default';
 	export let size = 'base';
+	export let styles = {};
 
 	let activeTabStore = writable(activeTab);
 	let titles: Array<TabItem> = [];
 
+	const cssStyles = stylesObjToCSSVars(styles);
 	const ctx: TabsContext = {
 		activeTab: activeTabStore,
 		setActiveTab: (_value) => activeTabStore.set(_value),
@@ -35,34 +38,36 @@
 	};
 </script>
 
-<ul class="tabs-list tabs-list-{type}" {...$$restProps} data-testid="tabs-titles-list">
-	{#each titles as item}
-		<li
-			class="tab tab-{type} {activeClassName(item.id)}"
-			on:click={() => {
-				ctx.setActiveTab(item.id);
-				activeTab = item.id;
-			}}
-			data-testid="tab-{item.id}"
-		>
-			<div class="inner">
-				{#if item.icon}
-					<svelte:component this={item.icon} />
-				{/if}
-				<span
-					class="label-{size}"
-					class:ml-2={item.icon != undefined}
-					data-testid="label-{item.id}"
-				>
-					{item.title}
-				</span>
-			</div>
-		</li>
-	{/each}
-</ul>
+<div style={cssStyles}>
+	<ul class="tabs-list tabs-list-{type}" data-testid="tabs-titles-list">
+		{#each titles as item}
+			<li
+				class="tab tab-{type} {activeClassName(item.id)}"
+				on:click={() => {
+					ctx.setActiveTab(item.id);
+					activeTab = item.id;
+				}}
+				data-testid="tab-{item.id}"
+			>
+				<div class="inner">
+					{#if item.icon}
+						<svelte:component this={item.icon} />
+					{/if}
+					<span
+						class="label-{size}"
+						class:ml-2={item.icon != undefined}
+						data-testid="label-{item.id}"
+					>
+						{item.title}
+					</span>
+				</div>
+			</li>
+		{/each}
+	</ul>
 
-<div class="tab-content tab-content-{type}" data-testid="tab-content">
-	<slot setActiveTab={ctx.setActiveTab} />
+	<div class="tab-content tab-content-{type}" data-testid="tab-content">
+		<slot setActiveTab={ctx.setActiveTab} />
+	</div>
 </div>
 
 <style>

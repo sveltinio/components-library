@@ -7,17 +7,16 @@ const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: preprocess(),
-
 	kit: {
-		adapter: adapter(),
-		package: {
-			dir: 'dist',
-			emitTypes: true,
-			exports: (filepath) => {
-				return mm.isMatch(filepath, ['!__tests__/**/*']);
-			},
-			files: mm.matcher('!__tests__/**/*')
-		}
+		adapter: adapter()
+	},
+	package: {
+		dir: 'dist',
+		emitTypes: true,
+		exports: (filepath) => {
+			return mm.isMatch(filepath, ['!__tests__/**/*']);
+		},
+		files: mm.matcher('!__tests__/**/*')
 	}
 };
 
