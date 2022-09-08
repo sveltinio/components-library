@@ -1,4 +1,4 @@
-export function isEmptyObject<Type>(obj: Type): boolean {
+export function isEmptyObject<Type extends object>(obj: Type): boolean {
 	return Object.keys(obj).length === 0;
 }
 
