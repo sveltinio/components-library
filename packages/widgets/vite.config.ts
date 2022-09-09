@@ -1,11 +1,16 @@
 import path from 'path';
 import { sveltekit } from '@sveltejs/kit/vite';
+import type { UserConfig } from 'vite';
 
-/** @type {import('vite').UserConfig} */
-const config = {
+const config: UserConfig = {
 	clearScreen: false,
 	server: {
-		port: 3001
+		port: 3004,
+		fs: {
+			// Allow serving files from one level up to the project root
+			// Alternatevaly set server.fs.strict to false
+			allow: ['..']
+		}
 	},
 	resolve: {
 		alias: {
@@ -18,7 +23,6 @@ const config = {
 		reporters: ['dot'],
 		silent: true,
 		environment: 'jsdom'
-		//setupFiles: ['../vitest-config-custom/vitest-setup.js']
 	}
 };
 
