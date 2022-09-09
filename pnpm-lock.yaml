@@ -50,15 +50,15 @@ importers:
       eslint-config-prettier: ^8.5.0
       eslint-config-turbo: latest
       eslint-plugin-svelte3: ^4.0.0
-      svelte: 3.48.0
+      svelte: ^3.50.0
       typescript: ^4.8.2
     dependencies:
       eslint: 8.23.0
       eslint-config-prettier: 8.5.0_eslint@8.23.0
       eslint-config-turbo: 0.0.3_eslint@8.23.0
-      eslint-plugin-svelte3: 4.0.0_3txqrbsvzxutswnfh3aq3jdm3a
+      eslint-plugin-svelte3: 4.0.0_sc4laremvjv7grvyfrqmp3xv5q
     devDependencies:
-      svelte: 3.48.0
+      svelte: 3.50.0
       typescript: 4.8.2
 
   packages/essentials:
@@ -2647,14 +2647,14 @@ packages:
       eslint-plugin-turbo: 0.0.3_eslint@8.23.0
     dev: false
 
-  /eslint-plugin-svelte3/4.0.0_3txqrbsvzxutswnfh3aq3jdm3a:
+  /eslint-plugin-svelte3/4.0.0_sc4laremvjv7grvyfrqmp3xv5q:
     resolution: {integrity: sha512-OIx9lgaNzD02+MDFNLw0GEUbuovNcglg+wnd/UY0fbZmlQSz7GlQiQ1f+yX0XvC07XPcDOnFcichqI3xCwp71g==}
     peerDependencies:
       eslint: '>=8.0.0'
       svelte: ^3.2.0
     dependencies:
       eslint: 8.23.0
-      svelte: 3.48.0
+      svelte: 3.50.0
     dev: false
 
   /eslint-plugin-turbo/0.0.3_eslint@8.23.0:
@@ -5000,14 +5000,9 @@ packages:
       typescript: 4.8.2
     dev: true
 
-  /svelte/3.48.0:
-    resolution: {integrity: sha512-fN2YRm/bGumvjUpu6yI3BpvZnpIm9I6A7HR4oUNYd7ggYyIwSA/BX7DJ+UXXffLp6XNcUijyLvttbPVCYa/3xQ==}
-    engines: {node: '>= 8'}
-
   /svelte/3.50.0:
     resolution: {integrity: sha512-zXeOUDS7+85i+RxLN+0iB6PMbGH7OhEgjETcD1fD8ZrhuhNFxYxYEHU41xuhkHIulJavcu3PKbPyuCrBxdxskQ==}
     engines: {node: '>= 8'}
-    dev: true
 
   /svelte2tsx/0.5.16_25vz5gl6ox2pgh3uo5abz3kk6y:
     resolution: {integrity: sha512-MwgpeRHfzP8T7NkFNT1JPhe9pCF4Dml2oSdjL2zNqvSprjA2BFgQuCNUg4R5qSz7AxVDJsiL/2hciCtVbXAT3A==}
