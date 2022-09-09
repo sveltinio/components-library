@@ -23,7 +23,7 @@
 
 <style>
 	.icon {
-		--_color: var(--color, rgb(51 65 85)); /* slate-700 */
+		--_color: var(--color, rgb(51, 65, 85)); /* slate-700 */
 		margin-right: -0.25rem /* -4px */;
 		margin-left: 0.5rem /* 8px */;
 		height: 1.25rem /* 20px */;

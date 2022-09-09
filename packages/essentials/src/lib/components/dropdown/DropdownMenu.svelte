@@ -48,6 +48,6 @@
 	}
 
 	.dropdown-container {
-		box-shadow: 0 0 0 0px #ffffff, 0 0 0 1px rgb(226 232 240);
+		box-shadow: 0 0 0 0px #ffffff, 0 0 0 1px rgb(226, 232, 240);
 	}
 </style>

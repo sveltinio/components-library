@@ -100,8 +100,8 @@
 		line-height: 1.5rem;
 	}
 	.list-btn {
-		--_title-color: var(--title-color, rgb(15 23 42)); /* slate-900 */
-		--_title-bg-color: var(--title-bg-color, rgb(255 255 255)); /* white */
+		--_title-color: var(--title-color, rgb(15, 23, 42)); /* slate-900 */
+		--_title-bg-color: var(--title-bg-color, rgb(255, 255, 255)); /* white */
 		color: var(--_title-color);
 		width: 100%;
 		display: flex;
@@ -114,8 +114,8 @@
 		border: 0;
 	}
 	.list-btn:hover {
-		--_title-color-hover: var(--title-color-hover, rgb(15 23 42)); /* slate-900 */
-		--_title-bg-color-hover: var(--title-bg-color-hover, rgb(248 250 252)); /* slate-50 */
+		--_title-color-hover: var(--title-color-hover, rgb(15, 23, 42)); /* slate-900 */
+		--_title-bg-color-hover: var(--title-bg-color-hover, rgb(248, 250, 252)); /* slate-50 */
 		color: var(--_title-color-hover);
 		background-color: var(--_title-bg-color-hover);
 	}
@@ -125,10 +125,10 @@
 		margin-left: -0.5rem;
 	}
 	.item {
-		--_item-color: var(--item-color, rgb(51 65 85)); /* slate-700 */
+		--_item-color: var(--item-color, rgb(51, 65, 85)); /* slate-700 */
 		--_item-border-width: var(--item-border-width, 1px);
 		--_item-border-style: var(--item-border-style, solid);
-		--_item-border-color: var(--item-border-color, rgb(241 245 249)); /* slate-100 */
+		--_item-border-color: var(--item-border-color, rgb(241, 245, 249)); /* slate-100 */
 		display: block;
 		color: var(--_item-color);
 		margin-left: -1px;
@@ -141,10 +141,10 @@
 		padding-left: 1rem; /* 16px */
 	}
 	.item:hover {
-		--_item-color-hover: var(--item-color-hover, rgb(15 23 42)); /* slate-900 */
+		--_item-color-hover: var(--item-color-hover, rgb(15, , 23, 42)); /* slate-900 */
 		--_item-border-color-hover: var(
 			--item-border-color-hover,
-			rgb(148 163 184)
+			rgb(148, 163, 184)
 		); /* slate-400 */
 		color: var(--_item-color-hover);
 		border-left-color: var(--_item-border-color-hover);
@@ -155,8 +155,8 @@
 		justify-content: flex-start;
 	}
 	.active {
-		--_active-color: var(--active-color, rgb(15 23 42)); /* slate-900 */
-		--_active-border-color: var(--active-border-color, rgb(15 23 42)); /* slate-900 */
+		--_active-color: var(--active-color, rgb(15, 23, 42)); /* slate-900 */
+		--_active-border-color: var(--active-border-color, rgb(15, 23, 42)); /* slate-900 */
 		color: var(--_active-color);
 		border-left-color: var(--_active-border-color);
 	}

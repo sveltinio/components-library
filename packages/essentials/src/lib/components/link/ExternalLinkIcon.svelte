@@ -24,7 +24,7 @@
 
 <style>
 	.icon {
-		--_color: var(--color, rgb(148 163 184)); /** slate-400 */
+		--_color: var(--color, rgb(148, 163, 184)); /** slate-400 */
 		--_width: var(--width, 1.2rem);
 		--_height: var(--height, 1.2rem);
 

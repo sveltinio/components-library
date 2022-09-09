@@ -41,7 +41,7 @@
 
 <style>
 	a {
-		--_color: var(--color, rgb(30 41 59)); /** slate-800 */
+		--_color: var(--color, rgb(30, 41, 59)); /** slate-800 */
 		color: var(--_color);
 		text-decoration: none;
 	}

@@ -49,9 +49,9 @@
 	}
 
 	button {
-		--_color: var(--color, rgb(51 65 85)); /* slate-700*/
-		--_border-color: var(--border-color, rgb(203 213 225)); /* slate-300*/
-		--_bg-color: var(--bg-color, rgb(248 250 252)); /* slate-50*/
+		--_color: var(--color, rgb(51, 65, 85)); /* slate-700*/
+		--_border-color: var(--border-color, rgb(203, 213, 225)); /* slate-300*/
+		--_bg-color: var(--bg-color, rgb(248, 250, 252)); /* slate-50*/
 
 		font-size: 1rem /* 16px */;
 		line-height: 1.5rem /* 24px */;
@@ -74,7 +74,7 @@
 	}
 
 	button:hover {
-		--_bg-color-hover: var(--bg-color-hover, rgb(241 245 249)); /*slate-100*/
+		--_bg-color-hover: var(--bg-color-hover, rgb(241, 245, 249)); /*slate-100*/
 		background-color: var(--_bg-color-hover);
 	}
 

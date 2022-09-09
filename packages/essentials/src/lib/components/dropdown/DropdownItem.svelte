@@ -45,7 +45,7 @@
 
 	a,
 	button {
-		--_color: var(--color, rgb(51 65 85));
+		--_color: var(--color, rgb(51, 65, 85));
 		--_font-weight: var(--font-weight, 400);
 		--_font-size: var(--font-size, 1rem);
 
@@ -63,7 +63,7 @@
 
 	a:hover,
 	button:hover {
-		--_bg-color-hover: var(--bg-color-hover, rgb(241 245 249)); /*slate-100*/
+		--_bg-color-hover: var(--bg-color-hover, rgb(241, 245, 249)); /*slate-100*/
 		background-color: var(--_bg-color-hover);
 	}
 </style>

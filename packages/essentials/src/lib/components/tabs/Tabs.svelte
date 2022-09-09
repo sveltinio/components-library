@@ -76,12 +76,10 @@
 	}
 	.icon {
 		padding: 1rem;
-		border: 1px solid red;
+		border: 1px solid rgb(71, 85, 105); /* slate-600 */
 	}
 
-	/****************/
 	/** Label Sizes */
-	/****************/
 	.label-xs {
 		font-size: 0.75rem;
 		line-height: 1rem;
@@ -119,7 +117,10 @@
 	.tabs-list-bordered {
 		--_tabs-list-border-width: var(--tabs-list-border-width, 1px);
 		--_tabs-list-border-style: var(--tabs-list-border-style, solid);
-		--_tabs-list-border-color: var(--tabs-list-border-color, rgb(226 232 240)); /* slate-200 */
+		--_tabs-list-border-color: var(
+			--tabs-list-border-color,
+			rgb(226, 232, 240)
+		); /* slate-200 */
 		border-bottom-width: var(--_tabs-list-border-width);
 		border-bottom-style: var(--_tabs-list-border-style);
 		border-bottom-color: var(--_tabs-list-border-color);
@@ -140,15 +141,13 @@
 		padding: 0.5rem 1rem;
 	}
 
-	/*********************/
 	/** Types (variants) */
-	/*********************/
 
 	/* Default */
 	.tab-default {
 		--_tab-border-width: var(--tab-border-width, 2px);
 		--_tab-border-style: var(--tab-border-style, solid);
-		--_tab-border-color: var(--tab-border-color, rgb(241 245 249)); /* slate-100 */
+		--_tab-border-color: var(--tab-border-color, rgb(241, 245, 249)); /* slate-100 */
 		border-bottom-width: var(--_tab-border-width);
 		border-bottom-style: var(--_tab-border-style);
 		border-bottom-color: var(--_tab-border-color);
@@ -158,7 +157,10 @@
 	}
 
 	.tab-default:hover {
-		--_tab-border-color-hover: var(--tab-border-color-hover, rgb(148 163 184)); /* slate-400 */
+		--_tab-border-color-hover: var(
+			--tab-border-color-hover,
+			rgb(148, 163, 184)
+		); /* slate-400 */
 		border-bottom-color: var(--_tab-border-color-hover);
 	}
 
@@ -170,13 +172,11 @@
 	}
 
 	.tab-bordered:hover {
-		--_tab-bg-color-hover: var(--tab-bg-color-hover, rgb(248 250 252)); /* slate-50 */
+		--_tab-bg-color-hover: var(--tab-bg-color-hover, rgb(248, 250, 252)); /* slate-50 */
 		background-color: var(--_tab-bg-color-hover);
 	}
 
-	/***********/
 	/** Tab Content Types (Variants) */
-	/***********/
 	.tab-content {
 		margin-bottom: 10px;
 		padding: 40px;
@@ -185,7 +185,7 @@
 	.tab-content-bordered {
 		--_content-border-width: var(--content-border-width, 1px);
 		--_content-border-style: var(--content-border-style, solid);
-		--_content-border-color: var(--content-border-color, rgb(226 232 240)); /* slate-200 */
+		--_content-border-color: var(--content-border-color, rgb(226, 232, 240)); /* slate-200 */
 
 		border-width: var(--_content-border-width);
 		border-style: var(--_content-border-style);
@@ -194,11 +194,9 @@
 		border-top: 0;
 	}
 
-	/************/
 	/** ACTIVE **/
-	/************/
 	.active-default {
-		--_border-color-active: var(--border-color-active, rgb(71 85 105)); /* slate-600 */
+		--_border-color-active: var(--border-color-active, rgb(71, 85, 105)); /* slate-600 */
 		border-bottom: 2px solid var(--_border-color-active);
 		border-top: 0;
 		border-left: 0;
@@ -206,7 +204,7 @@
 	}
 
 	.active-bordered {
-		--_border-color-active: var(--border-color-active, rgb(226 232 240)); /* slate-200 */
+		--_border-color-active: var(--border-color-active, rgb(226, 232, 240)); /* slate-200 */
 		border-color: var(--_border-color-active) var(--_border-color-active) #fff;
 	}
 
