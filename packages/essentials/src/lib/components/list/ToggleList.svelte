@@ -41,7 +41,7 @@
 	<ul class="items-list" class:hide={!isOpen} data-testid="items-list">
 		{#each items as item, i}
 			<li data-testid="list-item-{i}">
-				<a class="inline-flex item" href={item.url} data-testid="item-link-{i}">
+				<a class="item inline-flex" href={item.url} data-testid="item-link-{i}">
 					{#if item.icon}
 						<div class="mr-2">
 							<svelte:component this={item.icon} size="20px" />
