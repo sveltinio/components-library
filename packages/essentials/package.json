@@ -2,6 +2,7 @@
 	"name": "@sveltinio/essentials",
 	"version": "0.2.1",
 	"private": false,
+	"type": "module",
 	"description": "A collection of Svelte unstyled components to handle external links or images using AVIF, WEBP, embed YouTube videos ...",
 	"author": "dev <dev@sveltin.io>",
 	"license": "MIT",
@@ -26,7 +27,7 @@
 		"coverage": "svelte-kit sync && vitest run --coverage",
 		"build": "vite build",
 		"preview": "vite preview",
-		"package": "npm run clean && svelte-kit package",
+		"package": "npm run clean && svelte-kit sync && svelte-package",
 		"clean": "rm -rf dist",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -64,7 +65,6 @@
 	"bugs": {
 		"url": "https://github.com/sveltinio/components-library/issues"
 	},
-	"type": "module",
 	"dependencies": {
 		"@indaco/svelte-iconoir": "^2.5.1"
 	}

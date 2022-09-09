@@ -2,6 +2,7 @@
 	"name": "@sveltinio/seo",
 	"version": "0.1.7",
 	"private": false,
+	"type": "module",
 	"description": "A collection of SEO related Svelte components for metatags, json-ld.",
 	"author": "dev <dev@sveltin.io>",
 	"license": "MIT",
@@ -28,9 +29,8 @@
 		"precommit": "echo 'sveltin.seo",
 		"build": "vite build",
 		"preview": "vite preview",
-		"package": "npm run clean && svelte-kit package && npm run postpack",
+		"package": "npm run clean && svelte-kit sync && svelte-package",
 		"clean": "rimraf dist",
-		"postpack": "rimraf dist/__tests__",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --ignore-path .gitignore  --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
@@ -66,6 +66,5 @@
 	},
 	"bugs": {
 		"url": "https://github.com/sveltinio/components-library/issues"
-	},
-	"type": "module"
+	}
 }
