@@ -1,0 +1,69 @@
+---
+title: Vimeo
+author: sveltin
+slug: vimeo
+headline: Easily embed Vimeo content in your pages.
+created_at: 29-Jun-2022
+updated_at: 29-Jun-2022
+cover:
+draft: false
+---
+
+# {title}
+
+Easily embed Vimeo content in your pages. The `Vimeo` component supports all the customization settings available [here](https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Player-parameters-overview) through the `settings` property.
+
+To load your pages faster, a clickable and responsive thumbnail for the video is embedded (when no `autoplay` setting is provided or it is set to `false`). Upon clicking, it loads the iframe and play the video.
+
+## :page_facing_up: Properties
+
+The `Vimeo` component exposes the following properties:
+
+<details>
+  <summary><strong>Expand</strong></summary>
+
+| Property        | Type               | Required | Default  | Description                                                                                                                   |
+| :-------------- | :----------------: | :------: | :------: |:----------------------------------------------------------------------------------------------------------------------------- |
+| id              | String             |    Yes   |          | The id for the content to be embed.                                                                                           |
+| user            | String             |    No    |   empty  | The user who published the content. If provided, the text with a link to Vimeo just below the video player will be displayed. |
+| title           | String             |    No    |   empty  | The content title. If provided, the text with a link to Vimeo just below the video player will be displayed.                  |
+| description     | String             |    No    |   empty  | The content description. If provided, the text just below the video player will be displayed.                                 |
+| settings        | IVimeoSettings     |    No    |   empty  | To control how the video is embedded, looks and behaves.                                                                      |
+
+</details>
+
+## :wave: Examples
+
+### DEFAULT SETTINGS
+
+```html
+<script>
+ import { Vimeo } from '@sveltinio/media-content';
+</script>
+
+<Vimeo id="692371260" user="newyorker" title="The Panola Project" />
+```
+
+### WITH CUSTOM SETTINGS
+
+```html
+<script lang="ts">
+ import { Vimeo } from '@sveltinio/media-content';
+ import type { IVimeoSettings } from '@sveltinio/media-content/types';
+
+ // https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Player-parameters-overview
+ const vSettings: IVimeoSettings = {
+    autoplay: false,
+    muted: true,
+    portrait: false
+ };
+</script>
+
+<Vimeo
+   id="692371260"
+   user="newyorker"
+   title="The Panola Project"
+   description="Some text here"
+   settings={vSettings}
+/>
+```

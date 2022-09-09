@@ -1,0 +1,62 @@
+---
+title: Stackblitz
+author: YOUR_NAME
+slug: stackblitz
+headline: Easily embed StackBlitz project in your pages.
+created_at: 29-Jun-2022
+updated_at: 29-Jun-2022
+cover:
+draft: false
+---
+
+# {title}
+
+Easily embed StackBlitz project in your pages. The `StackBlitz` component supports all the customization settings available [here](https://developer.stackblitz.com/docs/platform/embedding/) through the `settings` property.
+
+#### :warning: Important Note
+
+> StackBlitz only support embedding WebContainer projects in Chromium-based browsers. Read more [here](https://developer.stackblitz.com/docs/platform/browser-support/#embedding).
+
+## :page_facing_up: Properties
+
+The `StackBlitz` component exposes the following properties:
+
+<details>
+  <summary><strong>Expand</strong></summary>
+
+| Property | Type                 | Required | Default  | Description                                                |
+| :------- | :------------------: | :------: | :------: |:---------------------------------------------------------- |
+| id       | String               |    Yes   |          | The id for the project to embed.                           |
+| title    | String               |    No    |   empty  | The project title.                                         |
+| settings | IStackBlitzSettings  |    No    |   empty  | To control how the project is embedded, looks and behaves. |
+
+</details>
+
+## :wave: Examples
+
+### DEFAULT SETTINGS
+
+```html
+<script>
+ import { StackBlitz } from '@sveltinio/media-content';
+</script>
+
+<StackBlitz id="vitejs-vite-z3ukcq" />
+```
+
+### WITH CUSTOM SETTINGS
+
+```html
+<script>
+ import { StackBlitz } from '@sveltinio/media-content';
+ import { IStackBlitzSettings } from '@sveltinio/media-content/types';
+
+ // https://developer.stackblitz.com/docs/platform/embedding/
+ const sbSettings: IStackBlitzSettings = {
+    ctl: true,
+    devtoolsheight: 400
+ }
+</script>
+
+<StackBlitz id="vitejs-vite-z3ukcq" settings={sbSettings} />
+```

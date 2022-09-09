@@ -1,0 +1,20 @@
+<script lang="ts">
+	import '../app.css';
+	import { website } from '$config/website.js';
+	//import { googleFonts } from '$config/externals.js';
+	import { menu } from '$config/menu.js';
+	import orderBy from 'lodash-es/orderBy.js';
+	//import { GoogleFonts } from '@sveltinio/services';
+
+	const sortedMenu = orderBy(menu, 'weight');
+</script>
+
+<!--
+<JsonLdWebSite websiteData={website} />
+<JsonLdSiteNavigationElements websiteData={website} menuData={sortedMenu} />
+
+ <GoogleFonts fonts={googleFonts} /> -->
+
+<main>
+	<slot />
+</main>

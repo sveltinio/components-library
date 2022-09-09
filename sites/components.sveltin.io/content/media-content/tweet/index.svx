@@ -1,0 +1,56 @@
+---
+title: Tweet
+author: sveltin
+slug: tweet
+headline: Easily embed tweets in your pages.
+created_at: 29-Jun-2022
+updated_at: 29-Jun-2022
+cover:
+draft: false
+---
+
+# {title}
+
+Easily embed tweets in your pages. The `Tweet` component supports all the customization settings available [here](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference) through the `settings` property.
+
+## :page_facing_up: Properties
+
+The `Tweet` component exposes the following properties:
+
+<details>
+  <summary><strong>Expand</strong></summary>
+
+| Property | Type            | Required | Default  | Description                                              |
+| :------- | :-------------: | :------: | :------: |:-------------------------------------------------------- |
+| id       | String          |    Yes   |          | The id for the tweet to embed.                           |
+| settings | ITweetSettings  |    No    |   empty  | To control how the tweet is embedded, looks and behaves. |
+
+</details>
+
+## :wave: Examples
+
+### DEFAULT SETTINGS
+
+```html
+<script>
+ import { Tweet } from '@sveltinio/media-content';
+</script>
+
+<Tweet id="1494008909585125381" />
+```
+
+### WITH CUSTOM SETTINGS
+
+```html
+<script lang="ts">
+ import { Tweet } from '@sveltinio/media-content';
+ import type { ITweetSettings } from '@sveltinio/media-content/types';
+
+ // https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference
+ const tSettings: ITweetSettings = {
+    theme: 'dark'
+ };
+</script>
+
+<Tweet id="1494008909585125381" settings={tSettings} />
+```

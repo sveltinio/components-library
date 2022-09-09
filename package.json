@@ -4,7 +4,8 @@
 	"private": true,
 	"packageManager": "pnpm@7.11.0",
 	"workspaces": [
-		"packages/*"
+		"packages/*",
+		"sites/*"
 	],
 	"engines": {
 		"npm": ">=7.0.0",

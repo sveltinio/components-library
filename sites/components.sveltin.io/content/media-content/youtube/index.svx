@@ -1,0 +1,100 @@
+---
+title: YouTube
+author: sveltin
+slug: youtube
+headline: Easily embed YouTube content (videos and playlist) in your pages.
+created_at: 29-Jun-2022
+updated_at: 29-Jun-2022
+cover:
+draft: false
+---
+
+# {title}
+
+Easily embed YouTube content (videos and playlist) in your pages. The `YouTube` component supports all the customization settings available [here](https://developers.google.com/youtube/player_parameters) through the `settings` property.
+
+To load your pages faster, a clickable and responsive thumbnail for the video is embedded (when no `autoplay` setting is provided or it is set to `false`). Upon clicking, it loads the iframe and play the video.
+
+## :page_facing_up: Properties
+
+The `YouTube` component exposes the following properties:
+
+<details>
+  <summary><strong>Expand</strong></summary>
+
+| Property        | Type               | Required | Default  | Description                                                                        |
+| :-------------- | :----------------: | :------: | :------: |:---------------------------------------------------------------------------------- |
+| type            | String             |    No    |  video   | Embedded content type. Supported values are `video`, `playlist` or `user_uploads`. |
+| id              | String             |    Yes   |          | The id for the video or playlist to embed.                                         |
+| title           | String             |    Yes   |          | The content title.                                                                 |
+| username        | String             |    No    |  empty   | The user who published the content.                                                |
+| settings        | IYouTubeSettings   |    No    |  empty   | To control how the video is embedded and how it looks and behaves.                 |
+
+</details>
+
+## :wave: Examples - Single Video
+
+### DEFAULT SETTINGS
+
+```html
+<script>
+ import { YouTube } from '@sveltinio/media-content';
+</script>
+
+<YouTube id="uQntFkK8Z54" title="The Future of html" />
+```
+
+### WITH CUSTOM SETTINGS
+
+```html
+<script lang="ts">
+ import { YouTube } from '@sveltinio/media-content';
+ import type { IYouTubeSettings } from '@sveltinio/media-content/types';
+
+ // https://developers.google.com/youtube/player_parameters
+ const ytSettings: IYouTubeSettings = {
+    autoplay: true,
+    fs: true
+ };
+</script>
+
+<YouTube id="uQntFkK8Z54" title="The Future of html" settings={ytSettings} />
+```
+
+## :wave: Examples - Playlist
+
+### DEFAULT SETTINGS
+
+```html
+<script>
+ import { YouTube } from '@sveltinio/media-content';
+</script>
+
+<YouTube
+   type="playlist"
+   id="PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO"
+   title="html Tutorial for Beginners"
+/>
+```
+
+### WITH CUSTOM SETTINGS
+
+```html
+<script lang="ts">
+ import { YouTube } from '@sveltinio/media-content';
+ import type { IYouTubeSettings } from '@sveltinio/media-content/types';
+
+ // https://developers.google.com/youtube/player_parameters const
+ const ytSettings: IYouTubeSettings = {
+    autoplay: true,
+    fs: true
+ };
+</script>
+
+<YouTube
+   type="playlist"
+   id="PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO"
+   title="html Tutorial for Beginners"
+   settings={ytSettings}
+/>
+```
