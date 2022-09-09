@@ -34,22 +34,13 @@
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
-		"svelte": "^3.50.0",
+		"svelte": "^3.50.1",
 		"svelte-check": "^2.9.0",
 		"svelte-preprocess": "^4.10.7",
 		"svelte2tsx": "^0.5.16",
 		"turbo": "latest",
-		"typescript": "^4.8.2",
+		"typescript": "^4.8.3",
 		"vite": "^3.1.0",
 		"vitest": "latest"
-	},
-	"lint-staged": {
-		"packages/**/*.{js, ts, svelte}": [
-			"prettier --check",
-			"eslint --fix"
-		],
-		"*.json": [
-			"prettier --write --plugin-search-dir=. ."
-		]
 	}
 }
