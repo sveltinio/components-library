@@ -5,7 +5,7 @@ import type { UserConfig } from 'vite';
 const config: UserConfig = {
 	clearScreen: false,
 	server: {
-		port: 3003,
+		port: 3001,
 		fs: {
 			// Allow serving files from one level up to the project root
 			// Alternatevaly set server.fs.strict to false

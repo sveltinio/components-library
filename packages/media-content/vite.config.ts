@@ -5,7 +5,7 @@ import type { UserConfig } from 'vite';
 const config: UserConfig = {
 	clearScreen: false,
 	server: {
-		port: 3001
+		port: 3002
 	},
 	resolve: {
 		alias: {
