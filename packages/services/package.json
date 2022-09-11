@@ -15,7 +15,8 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sveltinio/components-library"
+		"url": "https://github.com/sveltinio/components-library",
+		"directory": "packages/services"
 	},
 	"bugs": {
 		"url": "https://github.com/sveltinio/components-library/issues"
