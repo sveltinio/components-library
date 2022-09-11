@@ -2,8 +2,8 @@ import '@testing-library/jest-dom';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { GoogleFonts } from '../src/lib';
-import { googleFonts } from './__fixtures__/data.test.js';
-import { getGoogleFontLinks, getRelLinks } from './__fixtures__/test-utils';
+import { googleFonts } from '../src/data/sample.js';
+import { getGoogleFontLinks, getRelLinks } from './test-utils.js';
 
 beforeEach(() => {
 	render(GoogleFonts, {

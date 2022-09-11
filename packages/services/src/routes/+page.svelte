@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { googleFonts, gaPropertyID } from '../../tests/__fixtures__/data.test.js.js';
-	import { GoogleFonts, GoogleAnalytics } from '../lib';
+	import { googleFonts, gaPropertyID } from '../data/sample.js';
+	import { GoogleFonts, GoogleAnalytics } from '$lib/index.js';
 </script>
 
 <GoogleFonts fonts={googleFonts} />

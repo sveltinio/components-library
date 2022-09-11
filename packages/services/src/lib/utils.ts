@@ -1,4 +1,4 @@
-import type { IUmamiTrackerSettings } from './types';
+import type { IUmamiTrackerSettings } from './types.js';
 
 export function isEmptyObject<Type extends IUmamiTrackerSettings>(obj: Type): boolean {
 	return Object.keys(obj).length === 0;

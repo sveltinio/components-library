@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { IUmamiTrackerSettings } from '../../types';
-	import { isEmptyObject, isPropValueSet } from '../../utils';
+	import type { IUmamiTrackerSettings } from '../../types.js';
+	import { isEmptyObject, isPropValueSet } from '../../utils.js';
 
 	export let websiteID: string;
 	export let srcURL: string;

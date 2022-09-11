@@ -2,8 +2,8 @@ import '@testing-library/jest-dom';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { GoogleAnalytics } from '../src/lib';
-import { getRelLinks, getScriptSrcById, getScriptTagById } from './__fixtures__/test-utils';
-import { gaPropertyID } from './__fixtures__/data.test.js';
+import { getRelLinks, getScriptSrcById, getScriptTagById } from './test-utils.js';
+import { gaPropertyID } from '../src/data/sample.js';
 
 beforeEach(() => {
 	render(GoogleAnalytics, {
