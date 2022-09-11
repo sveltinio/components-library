@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { CodeSandbox } from '../src/lib';
-import { codeSandboxSampleID } from './__fixtures__/data.test.js';
+import { CodeSandbox } from '../src/lib/index.js';
+import { codeSandboxSampleID } from '../src/data/sample.js';
 
 describe('CodeSandbox', () => {
 	it('should be in the document', async () => {

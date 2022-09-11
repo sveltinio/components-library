@@ -1,13 +1,9 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { CodePen } from '../src/lib';
-import { codepenSettings, codepenSampleOne } from './__fixtures__/data.test.js';
-import {
-	getFullScriptTagById,
-	getScriptSrcById,
-	getScriptTagById
-} from './__fixtures__/test-utils';
+import { CodePen } from '../src/lib/index.js';
+import { codepenSettings, codepenSampleOne } from '../src/data/sample.js';
+import { getFullScriptTagById, getScriptSrcById, getScriptTagById } from './test-utils.js';
 
 describe('CodePen Container', () => {
 	it('should be in the document', async () => {

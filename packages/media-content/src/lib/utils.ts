@@ -1,4 +1,4 @@
-import type { callBackTwoParameters } from './types';
+import type { callBackTwoParameters } from './types.js';
 
 export function isValidValue<Type>(value: Type, collection: Array<Type>): boolean {
 	return collection.includes(value);

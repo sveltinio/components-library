@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { StackBlitz } from '../src/lib/';
-import { stackblitzSample, stackblitzSettings } from './__fixtures__/data.test.js';
+import { StackBlitz } from '../src/lib/index.js';
+import { stackblitzSample, stackblitzSettings } from '../src/data/sample.js';
 
 describe('StackBlitz', () => {
 	it('should be in the document', async () => {

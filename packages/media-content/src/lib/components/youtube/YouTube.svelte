@@ -1,13 +1,13 @@
 <script lang="ts">
-	import type { IYouTubeSettings } from '../../types';
+	import type { IYouTubeSettings } from '../../types.js';
 	import {
 		isCommaSepareted,
 		toCommaSepareted,
 		makeSettingsString,
 		toSnakeCase,
 		isPropValueSet
-	} from '../../utils';
-	import { IFrame, Thumbnail } from '../..';
+	} from '../../utils.js';
+	import { IFrame, Thumbnail } from '../basic/index.js';
 	/**
 	 * Embedded content type.
 	 *

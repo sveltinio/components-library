@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { ITweetSettings } from '../../types';
+	import type { ITweetSettings } from '../../types.js';
 
 	/** The id for the tweet to embed. */
 	export let id: string;

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { ICodePenSettings } from '../../types';
+	import type { ICodePenSettings } from '../../types.js';
 	import {
 		toKebabCase,
 		isValidValue,
@@ -8,7 +8,7 @@
 		isValidHex,
 		isPropValueSet,
 		isScriptLoaded
-	} from '../../utils';
+	} from '../../utils.js';
 
 	/** The user who created the pen. */
 	export let user: string;

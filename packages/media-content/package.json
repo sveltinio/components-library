@@ -26,30 +26,16 @@
 		"vimeo",
 		"slideshare"
 	],
-	"main": "index.js",
-	"types": "types.js",
-	"svelte": "index.js",
-	"sideEffects": false,
-	"publishConfig": {
-		"directory": "dist"
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sveltinio/components-library"
 	},
-	"scripts": {
-		"dev": "svelte-kit sync && vite dev",
-		"test": "svelte-kit sync && vitest run",
-		"test:watch": "svelte-kit sync && vitest watch --reporter=default",
-		"coverage": "svelte-kit sync && vitest run --coverage",
-		"build": "vite build",
-		"preview": "vite preview",
-		"package": "npm run clean && svelte-kit sync && svelte-package",
-		"clean": "rimraf dist",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --ignore-path .gitignore  --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+	"bugs": {
+		"url": "https://github.com/sveltinio/components-library/issues"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "1.0.0-next.71",
-		"@sveltejs/kit": "1.0.0-next.477",
+		"@sveltejs/adapter-auto": "1.0.0-next.72",
+		"@sveltejs/kit": "1.0.0-next.480",
 		"@sveltejs/package": "1.0.0-next.3",
 		"@sveltejs/vite-plugin-svelte": "^1.0.5",
 		"@testing-library/jest-dom": "^5.16.5",
@@ -59,7 +45,7 @@
 		"@typescript-eslint/parser": "^5.36.2",
 		"c8": "^7.12.0",
 		"eslint": "^8.23.0",
-		"eslint-config-custom": "workspace:*",
+		"eslint-config-custom": "workspace:0.0.0",
 		"jsdom": "latest",
 		"micromatch": "^4.0.5",
 		"rimraf": "^3.0.2",
@@ -72,11 +58,24 @@
 		"vite": "^3.1.0",
 		"vitest": "latest"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/sveltinio/components-library"
+	"scripts": {
+		"build": "npm run clean && svelte-kit sync && svelte-package",
+		"clean": "rimraf dist",
+		"test": "svelte-kit sync && vitest run",
+		"test:watch": "svelte-kit sync && vitest watch --reporter=default",
+		"coverage": "svelte-kit sync && vitest run --coverage",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --ignore-path .gitignore  --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
-	"bugs": {
-		"url": "https://github.com/sveltinio/components-library/issues"
+	"types": "index.d.ts",
+	"svelte": "index.js",
+	"sideEffects": false,
+	"publishConfig": {
+		"directory": "dist"
+	},
+	"exports": {
+		"./dist": "./index.js"
 	}
 }

@@ -1,13 +1,9 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { Tweet } from '../src/lib';
+import { Tweet } from '../src/lib/index.js';
 
-import {
-	getFullScriptTagById,
-	getScriptSrcById,
-	getScriptTagById
-} from './__fixtures__/test-utils';
+import { getFullScriptTagById, getScriptSrcById, getScriptTagById } from './test-utils.js';
 
 beforeEach(() => {
 	render(Tweet, {

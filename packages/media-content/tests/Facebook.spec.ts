@@ -1,18 +1,14 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { queryByTestId, render } from '@testing-library/svelte';
-import { Facebook } from '../src/lib';
+import { Facebook } from '../src/lib/index.js';
 import {
 	facebookPostSettings,
 	facebookSamplePostOne,
 	facebookSampleVideoOne,
 	facebookVideoSettings
-} from './__fixtures__/data.test.js';
-import {
-	getFullScriptTagById,
-	getScriptSrcById,
-	getScriptTagById
-} from './__fixtures__/test-utils';
+} from '../src/data/sample.js';
+import { getFullScriptTagById, getScriptSrcById, getScriptTagById } from './test-utils.js';
 
 describe('Facebook Container', () => {
 	it('should be in the document', async () => {

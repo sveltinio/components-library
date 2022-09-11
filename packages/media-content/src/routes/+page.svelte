@@ -8,7 +8,7 @@
 		Tweet,
 		Vimeo,
 		YouTube
-	} from '../lib';
+	} from '$lib/index.js';
 
 	import {
 		codepenSampleOne,
@@ -35,7 +35,7 @@
 		youtubeSampleVideoSettings,
 		youtubeSamplePlayList,
 		youtubeSamplePlaylistSettings
-	} from '../../tests/__fixtures__/data.test.js';
+	} from '../data/sample.js';
 </script>
 
 <section class="main">

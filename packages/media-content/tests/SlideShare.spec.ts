@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { queryByTestId, render } from '@testing-library/svelte';
-import { SlideShare } from '../src/lib';
-import { slideShareSample } from './__fixtures__/data.test.js';
+import { SlideShare } from '../src/lib/index.js';
+import { slideShareSample } from '../src/data/sample.js';
 
 describe('SlideShare', () => {
 	it('should be in the document', async () => {

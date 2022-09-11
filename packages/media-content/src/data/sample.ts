@@ -7,7 +7,7 @@ import type {
 	ITweetSettings,
 	IVimeoSettings,
 	IYouTubeSettings
-} from '../../src/lib/types';
+} from '$lib/types.js';
 
 // CODEPEN
 export const codepenSampleOne: Record<string, string> = {

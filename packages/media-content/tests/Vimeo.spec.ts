@@ -1,13 +1,9 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { fireEvent, queryByTestId, render } from '@testing-library/svelte';
-import { Vimeo } from '../src/lib';
-import { vimeoSettings, vimeoSample } from './__fixtures__/data.test.js.js';
-import {
-	getFullScriptTagById,
-	getScriptSrcById,
-	getScriptTagById
-} from './__fixtures__/test-utils';
+import { Vimeo } from '../src/lib/index.js';
+import { vimeoSettings, vimeoSample } from '../src/data/sample.js';
+import { getFullScriptTagById, getScriptSrcById, getScriptTagById } from './test-utils.js';
 
 describe('Vimeo Container', () => {
 	it('should be in the document', async () => {

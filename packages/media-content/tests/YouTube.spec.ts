@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { fireEvent, queryByTestId, render } from '@testing-library/svelte';
-import { YouTube } from '../src/lib';
+import { YouTube } from '../src/lib/index.js';
 import {
 	youtubeLoopSingleSample,
 	youtubeSampleOne,
@@ -9,7 +9,7 @@ import {
 	youtubeSampleVideoSettings,
 	youtubeSamplePlayList,
 	youtubeSamplePlaylistSettings
-} from './__fixtures__/data.test.js';
+} from '../src/data/sample.js';
 
 describe('YouTube', () => {
 	it('should be in the document', async () => {

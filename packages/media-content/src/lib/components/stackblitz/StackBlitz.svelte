@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { IStackBlitzSettings } from '../../types';
-	import { makeSettingsString, toKebabCase } from '../../utils';
+	import type { IStackBlitzSettings } from '../../types.js';
+	import { makeSettingsString, toKebabCase } from '../../utils.js';
 
 	/** The id for the project to embed. */
 	export let id: string;

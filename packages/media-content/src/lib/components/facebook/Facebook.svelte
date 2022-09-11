@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { IFacebookSettings, IFacebookVideoSettings } from '../../types';
+	import type { IFacebookSettings, IFacebookVideoSettings } from '../../types.js';
 	import {
 		toKebabCase,
 		isEmptyObject,
@@ -8,7 +8,7 @@
 		isScriptLoaded,
 		toID,
 		isValidURL
-	} from '../../utils';
+	} from '../../utils.js';
 
 	/**
 	 * Embedded content type.
