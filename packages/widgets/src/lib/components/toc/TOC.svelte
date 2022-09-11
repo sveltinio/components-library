@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { HeadingItem } from '../../types';
+	import type { HeadingItem } from '../../types.js';
 
 	export let resource: string;
 	export let slug: string;

@@ -1,4 +1,4 @@
-import { ContentMetadata, HeadingItem, ResourceContentMaker } from '../../src/lib/types';
+import { ContentMetadata, HeadingItem, ResourceContentMaker } from '$lib/types.js';
 
 const headings: Array<HeadingItem> = [
 	{

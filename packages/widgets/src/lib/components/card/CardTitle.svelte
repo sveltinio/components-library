@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
-	import type { CardContext } from './types';
+	import type { CardContext } from './types.js';
 
 	const ctx: CardContext = getContext('SveltinCard');
 

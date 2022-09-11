@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import Button from '../buttons/Button.svelte';
-	import type { CardContext } from './types';
+	import type { CardContext } from './types.js';
 
 	const ctx: CardContext = getContext('SveltinCard');
 

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { GitHubForkRibbon } from '../src/lib';
+import { GitHubForkRibbon } from '../src/lib/index.js';
 
 describe('GitHubForkRibbon', () => {
 	it('should be in the document', async () => {

@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { it, describe, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { Card } from '../src/lib';
-import { CardSlotTest } from './slot';
+import { Card } from '../src/lib/index.js';
+import { CardSlotTest } from './slot/index.js';
 
 describe('Card', () => {
 	it('should be in the document', async () => {

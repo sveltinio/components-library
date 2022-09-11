@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { it, describe, expect } from 'vitest';
 import { render, fireEvent } from '@testing-library/svelte';
-import { CollapsibleList } from '../src/lib';
+import { CollapsibleList } from '../src/lib/index.js';
 
 describe('CollapsibleList', () => {
 	it('should be in the document', async () => {

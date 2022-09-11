@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect, vi } from 'vitest';
 import { render, fireEvent } from '@testing-library/svelte';
-import { ScrollToTopButton } from '../src/lib';
+import { ScrollToTopButton } from '../src/lib/index.js';
 
 describe('ScrollToTopButton', () => {
 	it('should be in the document', async () => {

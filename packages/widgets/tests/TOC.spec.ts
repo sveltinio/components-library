@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render, fireEvent } from '@testing-library/svelte';
-import { TOC } from '../src/lib';
-import { headings } from './__fixtures__/data.test.js';
+import { TOC } from '../src/lib/index.js';
+import { headings } from '../src/data/sample.js';
 
 describe('TOC', () => {
 	it('should be in the document', async () => {

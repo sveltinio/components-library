@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
-import { Breadcrumbs } from '../src/lib';
+import { Breadcrumbs } from '../src/lib/index.js';
 
 describe('Breadcrumbs', () => {
 	it('should be in the document', async () => {

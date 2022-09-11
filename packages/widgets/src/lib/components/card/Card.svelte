@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
-	import type { CardContext } from './types';
+	import type { CardContext } from './types.js';
 	export let resource: string;
 	export let slug: string;
 

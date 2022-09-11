@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
-import { PrevNextButtons } from '../src/lib';
-import { previous, next } from './__fixtures__/data.test.js';
+import { PrevNextButtons } from '../src/lib/index.js';
+import { previous, next } from '../src/data/sample.js';
 
 describe('PrevNextButtons', () => {
 	it('should be in the document', async () => {

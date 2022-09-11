@@ -14,7 +14,7 @@
 		Breadcrumbs,
 		GitHubButton,
 		GitHubForkRibbon
-	} from '../lib';
+	} from '$lib/index.js';
 	import {
 		contentItem,
 		contentItemWithCover,
@@ -22,7 +22,7 @@
 		previous,
 		next,
 		headings
-	} from '../../tests/__fixtures__/data.test.js';
+	} from '../data/sample.js';
 </script>
 
 <section class="main">
