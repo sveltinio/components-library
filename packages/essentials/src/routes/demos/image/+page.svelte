@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Image } from '$lib';
+	import { Image } from '$lib/index.js';
 </script>
 
 <section class="main">

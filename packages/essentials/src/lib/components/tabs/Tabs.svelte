@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { stylesObjToCSSVars } from '$lib/utils';
-	import type { TabItem, TabsContext } from './types';
+	import { stylesObjToCSSVars } from '$lib/utils.js';
+	import type { TabItem, TabsContext } from './types.js';
 
 	export let activeTab = '1';
 	export let type = 'default';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tabs, Tab } from '$lib';
+	import { Tabs, Tab } from '$lib/index.js';
 	import DummyIcon from '../_dummyIcon.svelte';
 </script>
 

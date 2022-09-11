@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { ToggleList } from '../src/lib/';
-import { contentForToggleList } from '../src/data/sample.js';
+import { contentForToggleList } from '../src/data/sample';
 import { ToggleListSlotTest } from './slot';
 
 describe('Link', () => {

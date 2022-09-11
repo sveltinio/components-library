@@ -2,8 +2,8 @@
 	import { getContext, onDestroy } from 'svelte';
 	import { get } from 'svelte/store';
 
-	import type { DropdownContext } from './types';
-	import { ArrowDownIcon, ArrowUpIcon } from '../icons';
+	import type { DropdownContext } from './types.js';
+	import { ArrowDownIcon, ArrowUpIcon } from '../icons/index.js';
 
 	/**
 	 * Set the dropdown label

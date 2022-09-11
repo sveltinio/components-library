@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext, onDestroy } from 'svelte';
-	import type { TabsContext } from './types';
+	import type { TabsContext } from './types.js';
 
 	export let id: string;
 	export let title: string;

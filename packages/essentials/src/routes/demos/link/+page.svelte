@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Link, Picture } from '$lib';
+	import { Link, Image } from '$lib/index.js';
 	import DummyIcon from '../_dummyIcon.svelte';
 </script>
 
@@ -11,7 +11,7 @@
 	<div id="external-link" class="container">
 		<h3 id="external-link-with-slot">with slot</h3>
 		<Link label="sveltin" url="https://sveltin.io" icon={false}
-			><Picture
+			><Image
 				src="logo.png"
 				altText="sveltin logo"
 				webp={true}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ColorViewer } from '$lib';
+	import { ColorViewer } from '$lib/index.js';
 </script>
 
 <section class="main">

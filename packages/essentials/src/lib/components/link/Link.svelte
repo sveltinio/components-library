@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ExternalLinkIcon } from './';
+	import { ExternalLinkIcon } from './index.js';
 
 	export let label: string;
 	export let url: string;

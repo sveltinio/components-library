@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { navItems } from '../../../../src/data/sample.js';
-	import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '$lib';
+	import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '$lib/index.js';
 
 	const handleDropdownButton = (event: { detail: string }) => {
 		alert('dropdown clicked on:' + event.detail);

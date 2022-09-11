@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { MailIcon, PlusIcon } from '@indaco/svelte-iconoir';
-	import { Button } from '$lib';
+	import { Button } from '$lib/index.js';
 </script>
 
 <section class="main">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ToggleList } from '$lib';
+	import { ToggleList } from '$lib/index.js';
 	//Icons
 	import {
 		LongArrowDownRightIcon,

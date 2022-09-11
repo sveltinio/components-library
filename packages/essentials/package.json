@@ -15,30 +15,20 @@
 		"webp",
 		"avif"
 	],
-	"main": "index.js",
-	"types": "types.js",
-	"svelte": "index.js",
-	"sideEffects": false,
-	"publishConfig": {
-		"directory": "dist"
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sveltinio/components-library",
+		"directory": "packages/essentials"
 	},
-	"scripts": {
-		"dev": "svelte-kit sync && vite dev",
-		"test": "svelte-kit sync && vitest run",
-		"test:watch": "svelte-kit sync && vitest watch",
-		"coverage": "svelte-kit sync && vitest run --coverage",
-		"build": "vite build",
-		"preview": "vite preview",
-		"package": "npm run clean && svelte-kit sync && svelte-package",
-		"clean": "rm -rf dist",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
-		"format": "prettier --write --plugin-search-dir=. ."
+	"bugs": {
+		"url": "https://github.com/sveltinio/components-library/issues"
+	},
+	"dependencies": {
+		"@indaco/svelte-iconoir": "^2.5.1"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "1.0.0-next.71",
-		"@sveltejs/kit": "1.0.0-next.477",
+		"@sveltejs/adapter-auto": "1.0.0-next.72",
+		"@sveltejs/kit": "1.0.0-next.480",
 		"@sveltejs/package": "1.0.0-next.3",
 		"@sveltejs/vite-plugin-svelte": "^1.0.5",
 		"@testing-library/jest-dom": "^5.16.5",
@@ -47,7 +37,7 @@
 		"@typescript-eslint/parser": "^5.36.2",
 		"c8": "^7.12.0",
 		"eslint": "^8.23.0",
-		"eslint-config-custom": "workspace:*",
+		"eslint-config-custom": "workspace:0.0.0",
 		"jsdom": "^20.0.0",
 		"micromatch": "^4.0.5",
 		"rimraf": "^3.0.2",
@@ -60,14 +50,24 @@
 		"vite": "^3.1.0",
 		"vitest": "latest"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/sveltinio/components-library"
+	"scripts": {
+		"build": "npm run clean && svelte-kit sync && svelte-package",
+		"clean": "rimraf dist",
+		"test": "svelte-kit sync && vitest run",
+		"test:watch": "svelte-kit sync && vitest watch",
+		"coverage": "svelte-kit sync && vitest run --coverage",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"format": "prettier --write --plugin-search-dir=. ."
 	},
-	"bugs": {
-		"url": "https://github.com/sveltinio/components-library/issues"
+	"types": "index.d.ts",
+	"svelte": "index.js",
+	"sideEffects": false,
+	"publishConfig": {
+		"directory": "dist"
 	},
-	"dependencies": {
-		"@indaco/svelte-iconoir": "^2.5.1"
+	"exports": {
+		"./dist": "./index.js"
 	}
 }

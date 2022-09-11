@@ -216,9 +216,9 @@ To simplify custom styles on the component we used the built-in solution for com
 <Dropdown>
  <DropdownButton label="Menu" />
  <DropdownMenu>
-  <DropdownItem id="1" label="Item 1" href="/item-1" />
-  <DropdownItem id="2" label="Item 2" href="/item-2" />
-  <DropdownItem id="3" label="Item 3" href="/item-3" />
+  <DropdownItem id="1" label="Item 1" href="#" />
+  <DropdownItem id="2" label="Item 2" href="#" />
+  <DropdownItem id="3" label="Item 3" href="#" />
  </DropdownMenu>
 </Dropdown>
 ```
