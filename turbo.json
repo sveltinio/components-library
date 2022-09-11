@@ -8,14 +8,17 @@
 		"check": {},
 		"clean": {},
 		"lint": {
-			"dependsOn": ["check", "format"]
+			"dependsOn": ["format"]
 		},
 		"test": {},
-		"package": {
-			"dependsOn": ["clean", "lint", "test", "^package"]
+		"build": {
+			"dependsOn": ["clean", "lint", "test", "^build"]
+		},
+		"components.sveltin.io#build": {
+			"dependsOn": ["^build", "$VITE_SVELTEKIT_VERSION", "$VITE_BUILD_TIME"]
 		},
 		"release": {
-			"dependsOn": ["package"]
+			"dependsOn": ["build"]
 		}
 	}
 }
