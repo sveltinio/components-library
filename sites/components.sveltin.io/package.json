@@ -23,7 +23,7 @@
 	"devDependencies": {
 		"@indaco/svelte-iconoir": "^2.5.1",
 		"@sveltejs/adapter-static": "1.0.0-next.42",
-		"@sveltejs/kit": "1.0.0-next.477",
+		"@sveltejs/kit": "1.0.0-next.480",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/line-clamp": "^0.4.2",
 		"@tailwindcss/typography": "^0.5.7",
