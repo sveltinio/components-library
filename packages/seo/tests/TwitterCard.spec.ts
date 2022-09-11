@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { sampleArticle } from './__fixtures__/data.test.js';
-import { TwitterCard } from '../src/lib';
+import { sampleArticle } from '../src/data/sample.js';
+import { TwitterCard } from '../src/lib/index.js';
 
 function getMeta(metaName: string) {
 	const metas = document.getElementsByTagName('meta');

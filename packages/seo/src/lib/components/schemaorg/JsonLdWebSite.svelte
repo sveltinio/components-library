@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { IWebSite } from '../../types';
+	import type { IWebSite } from '../../types.js';
 
 	export let websiteData: IWebSite;
 

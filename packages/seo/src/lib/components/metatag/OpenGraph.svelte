@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { IWebPageMetadata } from '../../types';
+	import type { IWebPageMetadata } from '../../types.js';
 
 	export let data: IWebPageMetadata;
 

@@ -5,7 +5,7 @@
 		JsonLdBreadcrumbsItem,
 		JsonLdBreadcrumbsItemMaker,
 		JsonLdBreadcrumbsListMaker
-	} from '../../types';
+	} from '../../types.js';
 
 	export let baseURL: string;
 	export let parent: string;

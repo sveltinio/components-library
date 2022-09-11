@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { homePage, sampleArticle } from './__fixtures__/data.test.js';
-import { PageMetaTags } from '../src/lib';
+import { homePage, sampleArticle } from '../src/data/sample.js';
+import { PageMetaTags } from '../src/lib/index.js';
 
 function getTitle() {
 	const titles = document.getElementsByTagName('title');

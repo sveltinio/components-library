@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { IWebPageMetadata } from '../../types';
-	import { TwitterCardType } from '../../types';
+	import type { IWebPageMetadata } from '../../types.js';
+	import { TwitterCardType } from '../../types.js';
 
 	export let data: IWebPageMetadata;
 

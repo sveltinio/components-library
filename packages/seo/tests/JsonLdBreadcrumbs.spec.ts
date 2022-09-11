@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { website } from './__fixtures__/data.test.js';
-import { JsonLdBreadcrumbs } from '../src/lib';
+import { website } from '../src/data/sample.js';
+import { JsonLdBreadcrumbs } from '../src/lib/index.js';
 
 function getScripts(scriptType: string): string {
 	const scripts = document.getElementsByTagName('script');

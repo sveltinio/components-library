@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { JsonLdWebPage, JsonLdWebPageMaker } from '../../types';
-	import type { IWebPageMetadata } from '../../types';
+	import { JsonLdWebPage, JsonLdWebPageMaker } from '../../types.js';
+	import type { IWebPageMetadata } from '../../types.js';
 	import { onMount } from 'svelte';
 
 	export let data: IWebPageMetadata;

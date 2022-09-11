@@ -4,8 +4,8 @@ import {
 	JsonLdWebPage,
 	JsonLdBreadcrumbs,
 	JsonLdSiteNavigationElements
-} from './components/schemaorg';
-import { PageMetaTags, OpenGraph, TwitterCard } from './components/metatag';
+} from './components/schemaorg/index.js';
+import { PageMetaTags, OpenGraph, TwitterCard } from './components/metatag/index.js';
 
 export {
 	JsonLdWebSite,

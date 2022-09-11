@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { IMenuItem, IWebSite } from '../../types';
+	import type { IMenuItem, IWebSite } from '../../types.js';
 	import {
 		JsonLdSiteNavigationElementMaker,
 		JsonLdSiteNavigationElement,
 		JsonLdSiteNavigationElementListMaker
-	} from '../../types';
+	} from '../../types.js';
 
 	export let websiteData: IWebSite;
 	export let menuData: IMenuItem[];
