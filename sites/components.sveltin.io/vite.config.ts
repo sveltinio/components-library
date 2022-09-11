@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import { readFileSync } from 'fs';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { fileURLToPath } from 'url';
+import examples from 'mdsvexamples/vite';
 
 const file = fileURLToPath(new URL('package.json', import.meta.url));
 const json = readFileSync(file, 'utf8');
@@ -31,7 +32,7 @@ const config = defineConfig({
 			$themes: path.resolve('themes')
 		}
 	},
-	plugins: [sveltekit()]
+	plugins: [sveltekit(), examples]
 });
 
 export default config;

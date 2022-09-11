@@ -6,7 +6,7 @@
 		"dev": "svelte-kit sync && vite dev",
 		"clean": "rimraf build",
 		"clean:all": "rimraf .svelte-kit node_modules build",
-		"build": "npm run clean && vite build",
+		"build": "npm run clean && svelte-kit sync && vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -14,11 +14,11 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"dependencies": {
-		"@sveltinio/essentials": "workspace:0.2.1",
-		"@sveltinio/media-content": "workspace:0.3.2",
-		"@sveltinio/seo": "workspace:0.1.7",
-		"@sveltinio/services": "workspace:0.3.1",
-		"@sveltinio/widgets": "workspace:0.1.7"
+		"@sveltinio/essentials": "workspace:../../packages/essentials/dist",
+		"@sveltinio/media-content": "workspace:../../packages/media-content/dist",
+		"@sveltinio/seo": "workspace:../../packages/seo/dist",
+		"@sveltinio/services": "workspace:../../packages/services/dist",
+		"@sveltinio/widgets": "workspace:../../packages/widgets/dist"
 	},
 	"devDependencies": {
 		"@indaco/svelte-iconoir": "^2.5.1",
@@ -41,6 +41,7 @@
 		"mdast-util-to-string": "^3.1.0",
 		"mdsvex": "^0.10.6",
 		"mdsvex-relative-images": "^1.0.2",
+		"mdsvexamples": "^0.3.1",
 		"postcss": "^8.4.16",
 		"postcss-import": "^15.0.0",
 		"postcss-load-config": "^4.0.1",
@@ -53,7 +54,6 @@
 		"remark-emoji": "^3.0.2",
 		"remark-external-links": "9.0.1",
 		"remark-preview": "^1.0.2",
-		"remark-reading-time": "1.0.1",
 		"remark-slug": "^7.0.1",
 		"rimraf": "^3.0.2",
 		"svelte": "^3.50.1",

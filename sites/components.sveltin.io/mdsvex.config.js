@@ -5,9 +5,9 @@ import preview, { textFormatter, htmlFormatter } from 'remark-preview';
 import emoji from 'remark-emoji';
 import remarkSlug from 'remark-slug';
 import remarkExternalLinks from 'remark-external-links';
-import readingTime from 'remark-reading-time';
 import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import examples from 'mdsvexamples';
 import headings from './src/lib/utils/headings.js';
 
 const mdsvexConfig = defineConfig({
@@ -19,7 +19,7 @@ const mdsvexConfig = defineConfig({
 		remarkSlug,
 		headings,
 		emoji,
-		readingTime(),
+		examples,
 		relativeImages,
 		// external links open in a new tab
 		[remarkExternalLinks, { target: '_blank', rel: 'noopener' }],
