@@ -1,9 +1,8 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import type { Sveltin } from 'src/sveltin';
 	import { website } from '$config/website.js';
 	import PrevNextButtons from '$themes/site_theme/partials/PrevNextButtons.svelte';
-	import { JsonLdWebPage, PageMetaTags, JsonLdBreadcrumbs } from '@sveltinio/seo/dist';
+	import { JsonLdWebPage, PageMetaTags, JsonLdBreadcrumbs } from '@sveltinio/seo';
 	import { CamelToKebabCase, getCoverImagePath, getSlugPageUrl } from '$lib/utils/strings.js';
 	import Content from '$themes/site_theme/components/_Content.svelte';
 

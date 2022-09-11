@@ -2,8 +2,8 @@
 	import { website } from '$config/website.js';
 	import { getFavicon } from '$lib/utils/strings.js';
 	import Hero from '$themes/site_theme/partials/Hero.svelte';
-	import { PageMetaTags } from '@sveltinio/seo/dist';
-	import { JsonLdWebPage } from '@sveltinio/seo/dist';
+	import { PageMetaTags } from '@sveltinio/seo';
+	import { JsonLdWebPage } from '@sveltinio/seo';
 
 	$: homePage = {
 		url: website.baseURL,

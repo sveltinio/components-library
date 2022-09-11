@@ -1,5 +1,5 @@
 <script>
-	import { GoogleFonts, UmamiAnalytics } from '@sveltinio/services/dist';
+	import { GoogleFonts, UmamiAnalytics } from '@sveltinio/services';
 	import DesktopSidebar from '$themes/site_theme/partials/DesktopSidebar.svelte';
 	import MobileSidebar from '$themes/site_theme/partials/MobileSidebar.svelte';
 

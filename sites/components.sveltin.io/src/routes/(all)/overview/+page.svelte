@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { website } from '$config/website.js';
 	import { menu } from '$config/menu.js';
-	import type { IWebPageMetadata } from '@sveltinio/seo/dist/types';
-	import { PageMetaTags, JsonLdWebPage, JsonLdBreadcrumbs } from '@sveltinio/seo/dist';
+	import type { IWebPageMetadata } from '@sveltinio/seo/types';
+	import { PageMetaTags, JsonLdWebPage, JsonLdBreadcrumbs } from '@sveltinio/seo';
 	import { getFavicon, getPageUrl } from '$lib/utils/strings.js';
 
 	const overviewPage: IWebPageMetadata = {

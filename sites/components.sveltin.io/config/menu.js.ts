@@ -1,4 +1,4 @@
-import type { IMenuItem } from '@sveltinio/seo/dist/types';
+import type { IMenuItem } from '@sveltinio/seo/types';
 const menu: Array<IMenuItem> = [
 	{
 		identifier: 'home',
@@ -41,9 +41,9 @@ const menu: Array<IMenuItem> = [
 				weight: 3
 			},
 			{
-				identifier: 'picture',
-				name: 'Picture',
-				url: '/essentials/picture',
+				identifier: 'image',
+				name: 'Image',
+				url: '/essentials/image',
 				external: false,
 				weight: 4
 			},

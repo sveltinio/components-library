@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { website } from '$config/website.js';
 	import Content from '$themes/site_theme/components/_Content.svelte';
-	import { PageMetaTags, JsonLdWebPage, JsonLdBreadcrumbs } from '@sveltinio/seo/dist';
+	import { PageMetaTags, JsonLdWebPage, JsonLdBreadcrumbs } from '@sveltinio/seo';
 	import { ToTitle, getFavicon, getPageUrl } from '$lib/utils/strings.js';
 	import sortBy from 'lodash-es/sortBy';
 

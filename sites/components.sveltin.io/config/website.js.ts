@@ -1,4 +1,4 @@
-import type { IWebSite } from '@sveltinio/seo/dist/types';
+import type { IWebSite } from '@sveltinio/seo/types';
 
 const website: IWebSite = {
 	name: 'components.sveltin.io',

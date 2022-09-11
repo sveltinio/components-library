@@ -17,13 +17,15 @@ The **ToggleList** component is used to easisy includes tabs within the page. It
 
 ## :wave: Examples
 
-
+### DEFAULT
 
 ```svelte example
 <script>
-    import {ToggleList} from '$lib/components/list';
+    import {ToggleList} from '@sveltinio/essentials';
+    // sample icons
     import CloudUploadIcon from '@indaco/svelte-iconoir/icons/CloudUploadIcon.svelte';
-	import BellIcon from '@indaco/svelte-iconoir/icons/BellIcon.svelte';
+    import BellIcon from '@indaco/svelte-iconoir/icons/BellIcon.svelte';
+    // sample data
     const contentForToggleList = [
       { label: 'First', url: '#first', icon: CloudUploadIcon },
       { label: 'Second', url: '#second', icon: BellIcon }
@@ -33,10 +35,12 @@ The **ToggleList** component is used to easisy includes tabs within the page. It
 <ToggleList title="My Toggle List" items={contentForToggleList} />
 ```
 
-```html
+### CUSTOM ICONS
+
+```svelte example hideScript
 <script>
    import { ToggleList } from '@sveltinio/essentials';
-   // Sample Icons
+   // sample icons
    import LongArrowDownRightIcon from '@indaco/svelte-iconoir/icons/LongArrowDownRightIcon.svelte';
    import LongArrowRightUpIcon from '@indaco/svelte-iconoir/icons/LongArrowRightUpIcon.svelte';
    import CloudUploadIcon from '@indaco/svelte-iconoir/icons/CloudUploadIcon.svelte';
@@ -48,17 +52,11 @@ The **ToggleList** component is used to easisy includes tabs within the page. It
    ];
 </script>
 
-<h3>Default</h3>
-<ToggleList title="My Toggle List" items={contentForToggleList} />
-
-<h3>Custom Icons</h3>
 <ToggleList title="My Toggle List 2" items={contentForToggleList}>
    <LongArrowDownRightIcon slot="whenClosedIcon" />
    <LongArrowRightUpIcon slot="whenOpenIcon" />
 </ToggleList>
 
-<h3>No Icons for the Title</h3>
-<ToggleList title="My Toggle List 3" items={contentForToggleList} noIcons />
 ```
 
 ## :page_facing_up: Properties
@@ -87,7 +85,7 @@ To simplify custom styles on the component, behind the scenes we used the built-
 Below is the CSS variables list you can use to apply your own styles to the component.
 
 <script>
-    import { ColorViewer } from '@sveltinio/essentials/dist';
+    import { ColorViewer } from '@sveltinio/essentials';
 </script>
 
 | CSS Variable            | Default          | Preview                          |
@@ -112,11 +110,11 @@ Create an object with the CSS variable name as `key` and the new value as `value
 
 ```html
 <script>
-   import { ToggleList } from '$lib';
+   import { ToggleList } from '@sveltinio/essentials';
    // sample data
    const contentForToggleList = [
-      { label: 'First', url: '#first', icon: CloudUploadIcon },
-      { label: 'Second', url: '#second', icon: BellIcon }
+      { label: 'First', url: '#first' },
+      { label: 'Second', url: '#second' }
    ];
 
    const myOwnStyles = {
@@ -132,5 +130,5 @@ Create an object with the CSS variable name as `key` and the new value as `value
    };
 </script>
 
-<ToggleList title="My Own Styles List" items={contentForToggleList} styles={myownStyles} />
+<ToggleList title="My Own Styles List" items={contentForToggleList} styles={myOwnStyles} />
 ```
