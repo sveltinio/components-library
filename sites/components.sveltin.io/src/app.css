@@ -48,5 +48,12 @@
 }
 
 .markdown-body {
-	@apply prose-base mx-auto p-11;
+	@apply prose prose-slate mx-auto max-w-none p-11 prose-headings:scroll-mt-28 prose-h1:border-b prose-h1:border-b-slate-300 prose-h1:pb-2 prose-h1:text-slate-900 prose-p:text-slate-800 prose-pre:bg-slate-900 prose-pre:text-base prose-pre:shadow-lg prose-table:max-w-3xl prose-img:my-0 prose-lead:text-slate-500  lg:prose-headings:scroll-mt-[8.5rem];
+}
+
+.markdown-body :where(ul):not(:where([class~='not-prose'] *)) {
+	list-style-type: none;
+	margin-top: 1.25em;
+	margin-bottom: 0;
+	padding-left: 1.625em;
 }
