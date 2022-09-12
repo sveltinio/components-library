@@ -104,11 +104,11 @@ Below is the CSS variables list you can use to apply your own styles to the comp
 | active-color            | rgb(15 23 42)    | <ColorViewer value ="#0F172A" /> |
 | active-border-color     | rgb(15 23 42)    | <ColorViewer value ="#0F172A" /> |
 
-##### Define your own styles
+##### Example
 
 Create an object with the CSS variable name as `key` and the new value as `value` and pass it to the `styles` prop on the component.
 
-```html
+```svelte example
 <script>
    import { ToggleList } from '@sveltinio/essentials';
    // sample data

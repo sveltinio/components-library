@@ -18,9 +18,9 @@ The **Tabs** component is used to easily includes tabs within the page. It suppo
 
 ## :wave: Examples
 
-```html
+```svelte example hideScript
 <script>
-   import { Tabs, Tab } '@sveltinio/sveltin';
+   import { Tabs, Tab } from '@sveltinio/essentials';
 </script>
 
 <Tabs>
@@ -28,11 +28,19 @@ The **Tabs** component is used to easily includes tabs within the page. It suppo
    <Tab id="2" title="Tab 2">Sample content for <strong>Tab 2</strong></Tab>
    <Tab id="3" title="Tab 3">Sample content for <strong>Tab 3</strong></Tab>
 </Tabs>
+```
 
-<Tabs activeTab="4" type="bordered" size="lg">
-   <Tab id="3" title="Tab 3">Sample content for <strong>Tab 3</strong></Tab>
-   <Tab id="4" title="Tab 4">Sample content for <strong>Tab 4</strong></Tab>
-   <Tab id="5" title="Tab 5">Sample content for <strong>Tab 5</strong></Tab>
+### Bordered
+
+```svelte example hideScript
+<script>
+   import { Tabs, Tab } from '@sveltinio/essentials';
+</script>
+
+<Tabs activeTab="1" type="bordered" size="lg">
+   <Tab id="1" title="Tab 3">Sample content for <strong>Tab 1</strong></Tab>
+   <Tab id="2" title="Tab 4">Sample content for <strong>Tab 2</strong></Tab>
+   <Tab id="3" title="Tab 5">Sample content for <strong>Tab 3</strong></Tab>
 </Tabs>
 ```
 

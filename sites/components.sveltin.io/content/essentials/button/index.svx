@@ -22,17 +22,14 @@ The **Button** component can be used for both `<button>` and link `<a>` by addin
 
 ## :wave: Examples
 
-```html
+```svelte example hideScript
 <script>
    import { Button } from '@sveltinio/essentials'
    import { MailIcon, PlusIcon } from '@indaco/svelte-iconoir';
 
-   const handleButtonClick = (event) => { alert('button clicked on:' + event.detail); };
-<script>
+   const handleButtonClick = (event) => { alert('button clicked on:' + event.detail); }
+</script>
 
-const handleButtonClick = (event) => {
-  alert('button clicked on:' + event.detail);
-};
 
 <Button type="primary" on:click={handleButtonClick} />
 <Button label="Click Me" type="secondary" border="dashed" />
@@ -98,7 +95,7 @@ The **Button** component allows you to pass the following styles as props:
 
 ### :wave: Example
 
-```html
+```svelte example
 <script>
    import { Button } from '@sveltinio/essentials';
 </script>

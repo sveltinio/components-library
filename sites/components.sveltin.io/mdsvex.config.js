@@ -19,7 +19,14 @@ const mdsvexConfig = defineConfig({
 		remarkSlug,
 		headings,
 		emoji,
-		examples,
+		[
+			examples,
+			{
+				defaults: {
+					Wrapper: '/src/lib/components/_ComponentPreview.svelte'
+				}
+			}
+		],
 		relativeImages,
 		// external links open in a new tab
 		[remarkExternalLinks, { target: '_blank', rel: 'noopener' }],
