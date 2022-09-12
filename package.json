@@ -12,9 +12,12 @@
 		"node": ">=16.0.0"
 	},
 	"scripts": {
-		"dev": "turbo run dev --parallel",
+		"dev": "turbo run dev",
+		"demo": "turbo run demo",
 		"test": "turbo run test --concurrency=2 --force",
-		"package": "turbo run package --force",
+		"build": "pnpm clean && pnpm build:packages && pnpm build:sites",
+		"build:packages": "turbo run build --filter='@sveltinio/*' --concurrency=2 --force",
+		"build:sites": "turbo run build --filter='components.sveltin.io'",
 		"format": "turbo run format",
 		"lint": "turbo run lint",
 		"check": "turbo run check",
@@ -30,7 +33,7 @@
 		"@commitlint/config-conventional": "latest",
 		"@sveltejs/vite-plugin-svelte": "^1.0.5",
 		"@types/gtag.js": "^0.0.10",
-		"@types/node": "^18.7.16",
+		"@types/node": "^18.7.17",
 		"husky": "latest",
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",

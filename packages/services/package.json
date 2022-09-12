@@ -29,10 +29,10 @@
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/svelte": "^3.2.1",
 		"@types/gtag.js": "^0.0.8",
-		"@typescript-eslint/eslint-plugin": "^5.36.2",
-		"@typescript-eslint/parser": "^5.36.2",
+		"@typescript-eslint/eslint-plugin": "^5.37.0",
+		"@typescript-eslint/parser": "^5.37.0",
 		"c8": "^7.12.0",
-		"eslint": "^8.23.0",
+		"eslint": "^8.23.1",
 		"eslint-config-custom": "workspace:0.0.0",
 		"jsdom": "latest",
 		"micromatch": "^4.0.5",
@@ -47,7 +47,8 @@
 		"vitest": "latest"
 	},
 	"scripts": {
-		"build": "npm run clean && svelte-kit sync && svelte-package",
+		"demo": "svelte-kit sync && pnpm dev",
+		"build": "pnpm clean && svelte-kit sync && svelte-package",
 		"clean": "rimraf dist",
 		"test": "svelte-kit sync && vitest run",
 		"test:watch": "svelte-kit sync && vitest watch",

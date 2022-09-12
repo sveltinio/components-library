@@ -4,6 +4,9 @@
 		"dev": {
 			"cache": false
 		},
+		"demo": {
+			"cache": false
+		},
 		"format": {},
 		"check": {},
 		"clean": {},
