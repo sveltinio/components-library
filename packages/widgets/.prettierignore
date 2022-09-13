@@ -10,6 +10,7 @@ node_modules
 /dist
 
 *.md
+*.hbs
 
 
 # Ignore files for PNPM, NPM and YARN

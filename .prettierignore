@@ -6,3 +6,4 @@ pnpm-lock.yaml
 packages/seo/src/lib/types.ts
 
 *.md
+*.hbs

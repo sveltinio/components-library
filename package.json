@@ -23,6 +23,7 @@
 		"check": "turbo run check",
 		"clean": "turbo run clean",
 		"prepare": "husky install",
+		"plop": "plop",
 		"release": "pnpm -r publish packages  --access public",
 		"changeset:version": "changeset version && pnpm install --lockfile-only"
 	},
@@ -36,6 +37,7 @@
 		"@types/node": "^18.7.17",
 		"husky": "latest",
 		"lint-staged": "^13.0.3",
+		"plop": "^3.1.0",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
 		"svelte": "^3.50.1",
