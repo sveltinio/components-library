@@ -24,7 +24,7 @@
 		}
 	};
 
-	const orderedByName = sortBy(items, 'metadata.title');
+	$: sortedByName = sortBy(items, 'metadata.title');
 	$: pathname = $page.url.pathname.replace(/^(.)|(.)$/g, '');
 </script>
 
@@ -36,9 +36,9 @@
 	currentTitle={servicesIndexPage.title}
 />
 <Content title={ToTitle(resourceName)}>
-	{#if orderedByName.length != 0}
+	{#if sortedByName.length != 0}
 		<ul>
-			{#each orderedByName as item}
+			{#each sortedByName as item}
 				<li><a href="/{resourceName}/{item.metadata.slug}">{item.metadata.title}</a></li>
 			{/each}
 		</ul>
@@ -46,7 +46,7 @@
 		<h2 class="message warning">
 			Nothing to show here! Create some content first and reload the page:
 			<span
-				><pre><code class="text-default">sveltin new content {resourceName}/getting-started</code
+				><pre><code class="text-default">sveltin new content {pathname}/getting-started</code
 					></pre></span
 			>
 		</h2>

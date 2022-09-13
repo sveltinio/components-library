@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData } from '../../../../../.svelte-kit/types/src/routes/(pakages)/advanced/[slug]/$types';
 	import { website } from '$config/website.js';
 	import PrevNextButtons from '$themes/site_theme/partials/PrevNextButtons.svelte';
 	import { JsonLdWebPage, PageMetaTags, JsonLdBreadcrumbs } from '@sveltinio/seo';

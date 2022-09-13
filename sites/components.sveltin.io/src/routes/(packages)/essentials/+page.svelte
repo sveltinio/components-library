@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData } from '../../../../.svelte-kit/types/src/routes/(packages)/advanced/$types';
 	import { page } from '$app/stores';
 	import { website } from '$config/website.js';
 	import Content from '$themes/site_theme/components/_Content.svelte';
@@ -10,7 +10,7 @@
 	export let data: PageData;
 	$: ({ resourceName, items } = data);
 
-	$: mediaContentIndexPage = {
+	$: essentialsIndexPage = {
 		url: getPageUrl(resourceName, website),
 		title: website.name,
 		description: 'Here you can find the list of all available essentials.',
@@ -24,21 +24,21 @@
 		}
 	};
 
-	const orderedByName = sortBy(items, 'metadata.title');
+	$: sortedByName = sortBy(items, 'metadata.title');
 	$: pathname = $page.url.pathname.replace(/^(.)|(.)$/g, '');
 </script>
 
-<PageMetaTags data={mediaContentIndexPage} />
-<JsonLdWebPage data={mediaContentIndexPage} />
+<PageMetaTags data={essentialsIndexPage} />
+<JsonLdWebPage data={essentialsIndexPage} />
 <JsonLdBreadcrumbs
 	baseURL={website.baseURL}
 	parent={resourceName}
-	currentTitle={mediaContentIndexPage.title}
+	currentTitle={essentialsIndexPage.title}
 />
 <Content title={ToTitle(resourceName)}>
-	{#if orderedByName.length != 0}
+	{#if sortedByName.length != 0}
 		<ul>
-			{#each orderedByName as item}
+			{#each sortedByName as item}
 				<li><a href="/{resourceName}/{item.metadata.slug}">{item.metadata.title}</a></li>
 			{/each}
 		</ul>
@@ -46,7 +46,7 @@
 		<h2 class="message warning">
 			Nothing to show here! Create some content first and reload the page:
 			<span
-				><pre><code class="text-default">sveltin new content {resourceName}/getting-started</code
+				><pre><code class="text-default">sveltin new content {pathname}/getting-started</code
 					></pre></span
 			>
 		</h2>
