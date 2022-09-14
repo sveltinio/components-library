@@ -27,39 +27,46 @@ const menu: Array<IMenuItem> = [
 				weight: 1
 			},
 			{
+				identifier: 'button-group',
+				name: 'ButtonGroup',
+				url: '/essentials/button-group',
+				external: false,
+				weight: 2
+			},
+			{
 				identifier: 'dropdown',
 				name: 'Dropdown',
 				url: '/essentials/dropdown',
 				external: false,
-				weight: 2
+				weight: 3
 			},
 			{
 				identifier: 'link',
 				name: 'Link',
 				url: '/essentials/link',
 				external: false,
-				weight: 3
+				weight: 4
 			},
 			{
 				identifier: 'image',
 				name: 'Image',
 				url: '/essentials/image',
 				external: false,
-				weight: 4
+				weight: 5
 			},
 			{
 				identifier: 'tabs',
 				name: 'Tabs',
 				url: '/essentials/tabs',
 				external: false,
-				weight: 5
+				weight: 6
 			},
 			{
 				identifier: 'list',
 				name: 'ToggleList',
 				url: '/essentials/list',
 				external: false,
-				weight: 6
+				weight: 7
 			}
 		]
 	},
