@@ -2,7 +2,8 @@
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import type { TabItem, TabsContext } from './types.js';
-	import { CodeIcon, EyeEmptyIcon } from '@indaco/svelte-iconoir';
+	import CodeIcon from '@indaco/svelte-iconoir/icons/CodeIcon.svelte';
+	import EyeEmptyIcon from '@indaco/svelte-iconoir/icons/EyeEmptyIcon.svelte';
 
 	export let activeTab = '1';
 	export let type = 'bordered';

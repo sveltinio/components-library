@@ -19,7 +19,7 @@
 		"@sveltinio/widgets": "workspace:../../packages/widgets/dist"
 	},
 	"devDependencies": {
-		"@indaco/svelte-iconoir": "^2.6.0",
+		"@indaco/svelte-iconoir": "^2.6.1",
 		"@sveltejs/adapter-static": "1.0.0-next.43",
 		"@sveltejs/kit": "1.0.0-next.481",
 		"@tailwindcss/aspect-ratio": "^0.4.2",

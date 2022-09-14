@@ -25,7 +25,8 @@ The **Button** component can be used for both `<button>` and link `<a>` by addin
 ```svelte example hideScript
 <script>
    import { Button } from '@sveltinio/essentials'
-   import { MailIcon, PlusIcon } from '@indaco/svelte-iconoir';
+   import MailIcon from '@indaco/svelte-iconoir/icons/MailIcon.svelte';
+   import PlusIcon from '@indaco/svelte-iconoir/icons/PlusIcon.svelte';
 
    const handleButtonClick = (event) => { alert('button clicked on:' + event.detail); }
 </script>
@@ -45,7 +46,7 @@ The **Button** component can be used for both `<button>` and link `<a>` by addin
   <PlusIcon />
 </Button>
 <Button href="https://sveltin.io" />
-<Button type="secondary" href="/posts/welcome" prefetch />
+<Button type="secondary" href="#" prefetch />
 ```
 
 ## :page_facing_up: Properties
@@ -67,7 +68,7 @@ The following are the ones exposed by the component:
 | fullSize      | boolean           | no       | false       | Will take the full width of the container                       |
 | withFocusRing | boolean           | no       | false       | If true, a ring will be displayed when the button has the focus |
 | href          | string            | no       |             | The URL of the page the link goes to                            |
-| prefetch      | boolean           | no       | false       | Enable sveltekit:prefetch for the link                          |
+| prefetch      | boolean           | no       | false       | Enable data-sveltekit-prefetch for the link                          |
 | external      | boolean           | no       | false       | If true, opens the linked document in a new window or tab       |
 
 ## :rainbow: Theming
