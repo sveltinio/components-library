@@ -11,11 +11,12 @@ A collection of essentials Svelte _unstyled_ components.
 ## Components List
 
 - [Button](#button)
+- [ButtonGroup](#buttongroup)
 - [Link](#link)
 - [Dropdown](#dropdown)
-- [Picture](#picture)
+- [Image](#image)
 - [Tabs](#tabs)
-- [ToggleList](#toggle-list)
+- [ToggleList](#togglelist)
 
 ## Install
 
@@ -57,7 +58,7 @@ The `Button` component can be used for both `button` and link `a` by adding the 
    import { MailIcon, PlusIcon } from '@indaco/svelte-iconoir';
 
    const handleButtonClick = (event) => { alert('button clicked on:' + event.detail); };
-<script>
+</script>
 
 <button type="primary" on:click="{handleButtonClick}" />
 <button label="Click Me" type="secondary" border="dashed" />
@@ -69,8 +70,11 @@ The `Button` component can be used for both `button` and link `a` by adding the 
    <PlusIcon />
 </button>
 <button href="https://sveltin.io" />
-<button type="secondary" href="/posts/welcome" prefetch />
+<button type="secondary" href="#" prefetch />
 ```
+
+<details>
+  <summary>See more</summary>
 
 #### Properties
 
@@ -91,7 +95,7 @@ The following are the ones exposed by the component
 | fullSize      | boolean |    no    |    false    | Will take the full width of the container                       |
 | withFocusRing | boolean |    no    |    false    | If true, a ring will be displayed when the button has the focus |
 | href          | string  |    no    |             | The URL of the page the link goes to                            |
-| prefetch      | boolean |    no    |    false    | Enable sveltekit:prefetch for the link                          |
+| prefetch      | boolean |    no    |    false    | Enable data-sveltekit-prefetch for the link                          |
 | external      | boolean |    no    |    false    | If true, opens the linked document in a new window or tab       |
 
 #### Theming
@@ -137,6 +141,10 @@ The `Button` component allows you to pass the following styles as props:
 />
 ```
 
+</details>
+
+### ButtonGroup
+
 ### Link
 
 The `Link` component defines a hyperlink used to link an internal or external resource. It accepts and render any child component using the **Svelte slot**.
@@ -145,20 +153,23 @@ The `Link` component defines a hyperlink used to link an internal or external re
 
 ```html
 <script>
-   import { Link, Picture } from '@sveltinio/essentials';
+   import { Link, Image } from '@sveltinio/essentials';
    import DummyIcon from './DummyIcon.svelte';
 </script>
 
 <Link label="sveltin" url="https://sveltin.io" />
 
 <Link id="sveltin-logo-link" label="sveltin" url="https://sveltin.io" icon={false}>
-   <Picture image="logo.png" alt="sveltin logo" width="30%" />
+   <Image image="logo.png" alt="sveltin logo" width="30%" />
 </Link>
 
 <Link label="sveltin.io" url="https://sveltin.io" style>
    <DummyIcon slot="icon" />
 </Link>
 ```
+
+<details>
+  <summary>See more</summary>
 
 #### Properties
 
@@ -195,6 +206,8 @@ To simplify custom styles on the component we used the built-in solution for com
 | `width`      | `1.2rem`           |  |
 | `color`      | `1.2rem`           |  |
 
+</details>
+
 ### Dropdown
 
 `Dropdown` menus are built using a combination of the `Dropdown`, `DropdownButton`, `DropdownMenu`, and `DropdownItem` components.
@@ -222,6 +235,9 @@ To simplify custom styles on the component we used the built-in solution for com
  </DropdownMenu>
 </Dropdown>
 ```
+
+<details>
+  <summary>See more</summary>
 
 ##### **WITH ITEMS AS BUTTONS**
 
@@ -279,7 +295,7 @@ The `DropdownItem` component exposes the following properties:
 | label    | string  | yes      |          | Item text                                   |
 | mode     | string  | no       | button   | Render as button or link                    |
 | href     | string  | no       | null     | The URL of the page the link goes to        |
-| prefetch | boolean | no       | yes      | Add sveltekit:prefetch                      |
+| prefetch | boolean | no       | yes      | Enable data-sveltekit-prefetch              |
 | target   | string  | no       | _self    | Specifies where to open the linked document |
 
 #### Theming
@@ -316,9 +332,11 @@ To simplify custom styles on the component we used the built-in solution for com
 | `font-size`      | `1rem`             |                                                               |
 | `font-weight`    | `400`              |                                                               |
 
-### Picture
+</details>
 
-The `Picture` component allows you to easily insert a [`picture` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) within the HTML document to use alternative image formats like AVIF or WEBP.
+### Image
+
+The `Image` component allows you to easily insert a [`picture` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) within the HTML document to use alternative image formats like AVIF or WEBP.
 
 **Note:** WEBP and AVIF versions must be located at _the same path_ of your original one.
 
@@ -328,36 +346,38 @@ The `Picture` component allows you to easily insert a [`picture` element](https:
 
 ```html
 <script>
-   import { Picture } from '@sveltinio/sveltin';
+   import { Image } from '@sveltinio/essentials';
 </script>
 
-
-<Picture src="logo.png" alt="your logo" width="300" webp avif />
+<Image src="logo.png" alt="your logo" width="300" webp avif />
 ```
+
+<details>
+  <summary>See more</summary>
 
 ##### **DEFAULT AND AVIF ONLY**
 
 ```html
 <script>
-   import { Picture } from '@sveltinio/sveltin';
+   import { Image } from '@sveltinio/essentials';
 </script>
 
-<Picture src="logo.png" alt="your logo" width="300" avif />
+<Image src="logo.png" alt="your logo" width="300" avif />
 ```
 
 ##### **DEFAULT AND WEBP ONLY**
 
 ```html
 <script>
-   import { Picture } from '@sveltinio/sveltin';
+   import { Image } from '@sveltinio/essentials';
 </script>
 
-<Picture src="logo.png" alt="your logo" width="300" webp />
+<Image src="logo.png" alt="your logo" width="300" webp />
 ```
 
 #### Properties
 
-The `Picture` component exposes a set of properties but it does not prevent you to pass any additional props.
+The `Image` component exposes a set of properties but it does not prevent you to pass any additional props.
 
 The following are the ones exposed by the component:
 
@@ -367,6 +387,8 @@ The following are the ones exposed by the component:
 | alt      | string  |    no    | as src filename  | The text description of the image                 |
 | webp     | boolean |    no    |  false           | if true, will load the webp version for the image |
 | avif     | boolean |    no    |  false           | if true, will load the avif version for the image |
+
+</details>
 
 ### Tabs
 
@@ -379,7 +401,7 @@ The `Tabs` component is used to easily includes tabs within the page. It support
 
 ```html
 <script>
-   import { Tabs, Tab } '@sveltinio/sveltin';
+   import { Tabs, Tab } '@sveltinio/essentials';
    import DummyIcon from './_dummyIcon.svelte';
 </script>
 
@@ -396,6 +418,9 @@ The `Tabs` component is used to easily includes tabs within the page. It support
 </Tabs>
 
 ```
+
+<details>
+  <summary>See more</summary>
 
 #### Properties
 
@@ -433,6 +458,8 @@ To simplify custom styles on the component we used the built-in solution for com
 | `content-border-style`   | `solid`            |                                                              |
 | `content-border-color`   | `rgb(226 232 240)` | ![#e2e8f0](https://via.placeholder.com/15/e2e8f0/e2e8f0.png) |
 
+</details>
+
 ### ToggleList
 
 The **ToggleList** component is used to includes a toggle list within the page. It supports different sizes for the title text:
@@ -468,6 +495,9 @@ The **ToggleList** component is used to includes a toggle list within the page. 
 <h3>No Icons for the Title</h3>
 <ToggleList title="My Toggle List 3" items={contentForToggleList} noIcons />
 ```
+
+<details>
+  <summary>See more</summary>
 
 #### Properties
 
@@ -539,6 +569,8 @@ Create an object with the CSS variable name as `key` and the new value as `value
 
 <ToggleList title="My Own Styles List" items={contentForToggleList} styles={myownStyles} />
 ```
+
+</details>
 
 ## License
 

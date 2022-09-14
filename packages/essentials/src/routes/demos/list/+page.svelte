@@ -1,12 +1,10 @@
 <script lang="ts">
 	import { ToggleList } from '$lib/index.js';
 	//Icons
-	import {
-		LongArrowDownRightIcon,
-		LongArrowRightUpIcon,
-		CloudUploadIcon,
-		BellIcon
-	} from '@indaco/svelte-iconoir';
+	import LongArrowDownRightIcon from '@indaco/svelte-iconoir/icons/LongArrowDownRightIcon.svelte';
+	import LongArrowRightUpIcon from '@indaco/svelte-iconoir/icons/LongArrowRightUpIcon.svelte';
+	import CloudUploadIcon from '@indaco/svelte-iconoir/icons/CloudUploadIcon.svelte';
+	import BellIcon from '@indaco/svelte-iconoir/icons/BellIcon.svelte';
 	// sample data
 	const contentForToggleList = [
 		{ label: 'First', url: '#first', icon: CloudUploadIcon },
