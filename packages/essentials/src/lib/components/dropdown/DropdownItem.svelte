@@ -6,7 +6,6 @@
 	export let href = '';
 	export let prefetch = true;
 	export let target = '_self';
-	export let mode = 'button';
 
 	const dispatch = createEventDispatcher();
 
@@ -17,7 +16,7 @@
 
 {#if href != ''}
 	{#if prefetch}
-		<a {href} {target} sveltekit:prefetch role="menuitem" class="dropdown-item">
+		<a {href} {target} data-sveltekit-prefetch role="menuitem" class="dropdown-item">
 			{label}
 		</a>
 	{:else}
@@ -26,7 +25,7 @@
 		</a>
 	{/if}
 {:else}
-	<button type={mode} role="menuitem" on:click={btnClick} class="dropdown-item">
+	<button type="button" role="menuitem" on:click={btnClick} class="dropdown-item">
 		{label}
 	</button>
 {/if}

@@ -36,7 +36,7 @@
 	<a
 		{href}
 		title={_altText}
-		sveltekit:prefetch={prefetch ? true : null}
+		data-sveltekit-prefetch={prefetch ? true : null}
 		target={external ? '_blank' : '_self'}
 		aria-label={_altText}
 		data-testid="btn"

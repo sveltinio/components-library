@@ -137,7 +137,7 @@ describe('Button', () => {
 		});
 
 		expect(getByTestId('btn')).toHaveAttribute('href', '/posts/welcome');
-		expect(getByTestId('btn')).toHaveAttribute('sveltekit:prefetch');
+		expect(getByTestId('btn')).toHaveAttribute('data-sveltekit-prefetch');
 	});
 
 	it('should be a button link to target _blank', async () => {
