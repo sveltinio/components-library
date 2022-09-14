@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from '../../../../.svelte-kit/types/src/routes/(packages)/advanced/$types';
+	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import { website } from '$config/website.js';
 	import Content from '$themes/site_theme/components/_Content.svelte';

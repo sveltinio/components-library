@@ -1,5 +1,4 @@
 <script>
-	import { GoogleFonts, UmamiAnalytics } from '@sveltinio/services';
 	import DesktopSidebar from '$themes/site_theme/partials/DesktopSidebar.svelte';
 	import MobileSidebar from '$themes/site_theme/partials/MobileSidebar.svelte';
 
@@ -11,16 +10,11 @@
 	}
 </script>
 
-<!--
-<UmamiAnalytics
-	websiteID="4042a9d4-e9e3-470a-9578-03c8a1014914"
-	srcURL="https://umami.sveltin.io/umami.js"
-/>
--->
-
 <svelte:window on:keyup={handleEscape} />
 
 <MobileSidebar bind:navIsOpen />
 <DesktopSidebar />
 
-<slot />
+<main class="mx-auto max-w-7xl  bg-white md:pl-64">
+	<slot />
+</main>
