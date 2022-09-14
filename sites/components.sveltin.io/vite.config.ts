@@ -32,7 +32,8 @@ const config = defineConfig({
 			$themes: path.resolve('themes')
 		}
 	},
-	plugins: [sveltekit(), examples]
+	plugins: [sveltekit(), examples],
+	ssr: { noExternal: ['@indaco/svelte-iconoir/**'] }
 });
 
 export default config;
