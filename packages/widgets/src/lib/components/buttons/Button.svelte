@@ -27,7 +27,7 @@
 	<a
 		{href}
 		title={_altText}
-		sveltekit:prefetch={prefetch ? true : null}
+		data-sveltekit-prefetch={prefetch ? true : null}
 		aria-label={_altText}
 		class="btn btn-{shape} btn-{size} {outlinedClass} {fullWidthClass}"
 		class:btn-rounded={rounded}>{label}</a

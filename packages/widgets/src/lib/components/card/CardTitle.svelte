@@ -9,7 +9,7 @@
 </script>
 
 <h2>
-	<a href={`/${resource}/${slug}`} sveltekit:prefetch data-testid="card-title"><slot /></a>
+	<a href={`/${resource}/${slug}`} data-sveltekit-prefetch data-testid="card-title"><slot /></a>
 </h2>
 
 <style>
