@@ -17,31 +17,25 @@ The `Image` component allows you to easily insert a [`picture` element](https://
 
 ## :wave: Examples
 
-### DEFAULT WITH AVIF AND WEBP
-
-```html
+```svelte example name="basic and avif and webp" hideScript
 <script>
-   import { Image } from '@sveltinio/sveltin';
+   import { Image } from '@sveltinio/essentials';
 </script>
 
 <Image src="logo.png" alt="your logo" width="300" webp avif/>
 ```
 
-### DEFAULT AND AVIF ONLY
-
-```html
+```svelte example name="basic with avif only" hideScript
 <script>
-   import { Image } from '@sveltinio/sveltin';
+   import { Image } from '@sveltinio/essentials';
 </script>
 
 <Image src="logo.png" alt="your logo" width="300" avif />
 ```
 
-### DEFAULT AND WEBP ONLY
-
-```html
+``````svelte example name="basic with webp only" hideScript
 <script>
-   import { Image } from '@sveltinio/sveltin';
+   import { Image } from '@sveltinio/essentials';
 </script>
 
 <Image src="logo.png" alt="your logo" width="300" webp />

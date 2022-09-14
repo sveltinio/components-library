@@ -10,3 +10,15 @@ draft: false
 ---
 
 # {title}
+
+```svelte example name="basic" hideScript
+<script>
+   import { ButtonGroup, ButtonGroupItem } from '@sveltinio/essentials'
+</script>
+
+<ButtonGroup>
+   <ButtonGroupItem id="1">Button 1</ButtonGroupItem>
+   <ButtonGroupItem id="2">Button 2</ButtonGroupItem>
+   <ButtonGroupItem id="3">Button 3</ButtonGroupItem>
+</ButtonGroup>
+```

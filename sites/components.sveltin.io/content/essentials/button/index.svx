@@ -22,7 +22,7 @@ The **Button** component can be used for both `<button>` and link `<a>` by addin
 
 ## :wave: Examples
 
-```svelte example hideScript
+```svelte example name="basic" hideScript
 <script>
    import { Button } from '@sveltinio/essentials'
    import MailIcon from '@indaco/svelte-iconoir/icons/MailIcon.svelte';
@@ -94,9 +94,9 @@ The **Button** component allows you to pass the following styles as props:
 | ring-style        |            solid   |                                  |
 
 
-### :wave: Example
+### Example
 
-```svelte example
+```svelte example name="custom styles"
 <script>
    import { Button } from '@sveltinio/essentials';
 </script>

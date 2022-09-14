@@ -1,14 +1,13 @@
 import type { Writable } from 'svelte/store';
 
-export type TabItem = {
+export type ButtonGroupItemType = {
 	id: string;
-	title: string;
 	icon: any;
 };
 
-export interface TabsContext {
-	activeTab: Writable<string>;
-	setActiveTab: (value: string) => void;
-	registerTab(id: string, title: string, icon: any): void;
-	unregisterTab(id: string): void;
+export interface ButtonGroupContext {
+	activeButton: Writable<string>;
+	setActiveButton: (value: string) => void;
+	registerButton(id: string, icon: any): void;
+	unregisterButton(id: string): void;
 }

@@ -15,9 +15,7 @@ draft: false
 
 ## :wave: Examples
 
-### WITH ITEMS AS LINKS
-
-```svelte example hideScript
+```svelte example name="basic" hideScript
 <script>
    import {
       Dropdown,
@@ -37,9 +35,7 @@ draft: false
 </Dropdown>
 ```
 
-### WITH ITEMS AS BUTTONS
-
-```svelte example hideScript
+```svelte example name="items as links" hideScript
 <script>
    import {
       Dropdown,

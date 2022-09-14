@@ -4,7 +4,7 @@ author: sveltin
 slug: tabs
 headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eget elit vel semper. Cras.
 created_at: 17-Jul-2022
-updated_at: 19-Jul-2022
+updated_at: 15-Sep-2022
 cover:
 draft: false
 ---
@@ -18,7 +18,7 @@ The **Tabs** component is used to easily includes tabs within the page. It suppo
 
 ## :wave: Examples
 
-```svelte example hideScript
+```svelte example name="basic" hideScript
 <script>
    import { Tabs, Tab } from '@sveltinio/essentials';
 </script>
@@ -30,9 +30,7 @@ The **Tabs** component is used to easily includes tabs within the page. It suppo
 </Tabs>
 ```
 
-### Bordered
-
-```svelte example hideScript
+```svelte example name="bordered" hideScript
 <script>
    import { Tabs, Tab } from '@sveltinio/essentials';
 </script>

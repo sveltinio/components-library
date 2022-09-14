@@ -4,7 +4,7 @@ author: sveltin
 slug: list
 headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor eget elit vel semper. Cras.
 created_at: 20-Jul-2022
-updated_at: 20-Jul-2022
+updated_at: 15-Sep-2022
 cover:
 draft: false
 ---
@@ -17,9 +17,7 @@ The **ToggleList** component is used to easisy includes tabs within the page. It
 
 ## :wave: Examples
 
-### DEFAULT
-
-```svelte example
+```svelte example name="basic"
 <script>
     import {ToggleList} from '@sveltinio/essentials';
     // sample icons
@@ -35,9 +33,7 @@ The **ToggleList** component is used to easisy includes tabs within the page. It
 <ToggleList title="My Toggle List" items={contentForToggleList} />
 ```
 
-### CUSTOM ICONS
-
-```svelte example hideScript
+```svelte example name="custom icons" hideScript
 <script>
    import { ToggleList } from '@sveltinio/essentials';
    // sample icons
@@ -104,11 +100,11 @@ Below is the CSS variables list you can use to apply your own styles to the comp
 | active-color            | rgb(15 23 42)    | <ColorViewer value ="#0F172A" /> |
 | active-border-color     | rgb(15 23 42)    | <ColorViewer value ="#0F172A" /> |
 
-##### Example
+### :wave: Example
 
 Create an object with the CSS variable name as `key` and the new value as `value` and pass it to the `styles` prop on the component.
 
-```svelte example
+```svelte example name="custom styles"
 <script>
    import { ToggleList } from '@sveltinio/essentials';
    // sample data

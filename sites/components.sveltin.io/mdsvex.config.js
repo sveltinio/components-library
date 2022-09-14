@@ -23,7 +23,7 @@ const mdsvexConfig = defineConfig({
 			examples,
 			{
 				defaults: {
-					Wrapper: '/src/lib/components/_ComponentPreview.svelte'
+					Wrapper: '/src/lib/components/_ButtonGroupPreview.svelte'
 				}
 			}
 		],

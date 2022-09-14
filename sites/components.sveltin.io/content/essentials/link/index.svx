@@ -15,20 +15,21 @@ The `Link` component defines a hyperlink used to link an internal or external re
 
 ## :wave: Examples
 
-```html
+```svelte example name="basic" hideScript
 <script>
-   import { Link, Picture } from '@sveltinio/essentials';
-   import DummyIcon from './DummyIcon.svelte';
+   import { Link } from '@sveltinio/essentials';
 </script>
 
 <Link label="sveltin" url="https://sveltin.io" />
+```
+
+```svelte example name="using slot" hideScript
+<script>
+   import { Link, Image } from '@sveltinio/essentials';
+</script>
 
 <Link id="sveltin-logo-link" label="sveltin" url="https://sveltin.io" icon={false}>
-   <Picture image="logo.png" alt="sveltin logo" width="30%" />
-</Link>
-
-<Link label="sveltin.io" url="https://sveltin.io" style>
-   <DummyIcon slot="icon" />
+   <Image image="logo.png" alt="sveltin logo" width="30%" />
 </Link>
 ```
 
