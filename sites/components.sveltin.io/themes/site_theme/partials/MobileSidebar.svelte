@@ -5,13 +5,14 @@
 
 	import { menu } from '$config/menu.js';
 
-	import HomeIcon from '@indaco/svelte-iconoir/icons/HomeIcon.svelte';
-	import XrayViewIcon from '@indaco/svelte-iconoir/icons/XrayViewIcon.svelte';
-	import MediaImageFolderIcon from '@indaco/svelte-iconoir/icons/MediaImageFolderIcon.svelte';
-	import ViewGridIcon from '@indaco/svelte-iconoir/icons/ViewGridIcon.svelte';
-	import OpenBookIcon from '@indaco/svelte-iconoir/icons/OpenBookIcon.svelte';
-	import CodeIcon from '@indaco/svelte-iconoir/icons/CodeIcon.svelte';
-	import InternetIcon from '@indaco/svelte-iconoir/icons/InternetIcon.svelte';
+	import { HomeIcon } from '@indaco/svelte-iconoir/icons/HomeIcon';
+	import { XrayViewIcon } from '@indaco/svelte-iconoir/icons/XrayViewIcon';
+	import { MediaImageFolderIcon } from '@indaco/svelte-iconoir/icons/MediaImageFolderIcon';
+	import { ViewGridIcon } from '@indaco/svelte-iconoir/icons/ViewGridIcon';
+	import { OpenBookIcon } from '@indaco/svelte-iconoir/icons/OpenBookIcon';
+	import { CodeIcon } from '@indaco/svelte-iconoir/icons/CodeIcon';
+	import { InternetIcon } from '@indaco/svelte-iconoir/icons/InternetIcon';
+
 	import OpenMobileSidebarMenuBtn from '../components/_OpenMobileSidebarMenuBtn.svelte';
 	import CloseMobileSidebarMenuBtn from '../components/_CloseMobileSidebarMenuBtn.svelte';
 	import LogoLink from '../components/_LogoLink.svelte';

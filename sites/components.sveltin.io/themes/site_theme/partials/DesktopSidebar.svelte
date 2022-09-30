@@ -4,13 +4,13 @@
 	import CollapsibleList from '../components/_CollapsibleList.svelte';
 	import LogoLink from '../components/_LogoLink.svelte';
 	// Iconoir
-	import HomeIcon from '@indaco/svelte-iconoir/icons/HomeIcon.svelte';
-	import XrayViewIcon from '@indaco/svelte-iconoir/icons/XrayViewIcon.svelte';
-	import MediaImageFolderIcon from '@indaco/svelte-iconoir/icons/MediaImageFolderIcon.svelte';
-	import ViewGridIcon from '@indaco/svelte-iconoir/icons/ViewGridIcon.svelte';
-	import OpenBookIcon from '@indaco/svelte-iconoir/icons/OpenBookIcon.svelte';
-	import CodeIcon from '@indaco/svelte-iconoir/icons/CodeIcon.svelte';
-	import InternetIcon from '@indaco/svelte-iconoir/icons/InternetIcon.svelte';
+	import { HomeIcon } from '@indaco/svelte-iconoir/icons/HomeIcon';
+	import { XrayViewIcon } from '@indaco/svelte-iconoir/icons/XrayViewIcon';
+	import { MediaImageFolderIcon } from '@indaco/svelte-iconoir/icons/MediaImageFolderIcon';
+	import { ViewGridIcon } from '@indaco/svelte-iconoir/icons/ViewGridIcon';
+	import { OpenBookIcon } from '@indaco/svelte-iconoir/icons/OpenBookIcon';
+	import { CodeIcon } from '@indaco/svelte-iconoir/icons/CodeIcon';
+	import { InternetIcon } from '@indaco/svelte-iconoir/icons/InternetIcon';
 
 	const leftSideIconsMap = new Map([
 		['home', HomeIcon],

@@ -2,8 +2,8 @@
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import type { ButtonGroupItemType, ButtonGroupContext } from './types.js';
-	import CodeIcon from '@indaco/svelte-iconoir/icons/CodeIcon.svelte';
-	import EyeEmptyIcon from '@indaco/svelte-iconoir/icons/EyeEmptyIcon.svelte';
+	import { CodeIcon } from '@indaco/svelte-iconoir/icons/CodeIcon';
+	import { EyeEmptyIcon } from '@indaco/svelte-iconoir/icons/EyeEmptyIcon';
 
 	export let activeButton = '1';
 	// the source of the example, if you want it

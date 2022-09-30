@@ -18,7 +18,6 @@ const config: UserConfig = {
 		}
 	},
 	plugins: [sveltekit()],
-	ssr: { noExternal: ['@indaco/svelte-iconoir/**'] },
 	test: {
 		globals: true,
 		reporters: ['dot'],

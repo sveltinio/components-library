@@ -18,7 +18,8 @@
 			"dependsOn": ["clean", "lint", "test", "^build"]
 		},
 		"components.sveltin.io#build": {
-			"dependsOn": ["^build", "$VITE_SVELTEKIT_VERSION", "$VITE_BUILD_TIME"]
+			"dependsOn": ["^build"],
+			"env": ["VITE_SVELTEKIT_VERSION", "VITE_BUILD_TIME"]
 		},
 		"release": {
 			"dependsOn": ["build"]

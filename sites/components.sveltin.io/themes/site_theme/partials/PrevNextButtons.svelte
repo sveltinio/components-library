@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ResourceContent } from '@sveltinio/widgets/dist/types';
+	import type { ResourceContent } from '@sveltinio/widgets/types';
 
 	export let next: ResourceContent;
 	export let previous: ResourceContent;
@@ -9,11 +9,11 @@
 </script>
 
 <dl
-	class="prevnext-container"
 	data-testid="prevnext-container"
 	class:bottom-spacer={!previous.metadata.title || !next.metadata.title}
 	class:border-t={withBorderTop}
 	class:border-b={withBorderBottom}
+	class="prevnext-container {$$props.class}"
 >
 	<div>
 		{#if previous.metadata.title}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { opacityTransition } from '$lib/shared/transitions';
-	import CancelIcon from '@indaco/svelte-iconoir/icons/CancelIcon.svelte';
+	import { CancelIcon } from '@indaco/svelte-iconoir/icons/CancelIcon';
 
 	export let navIsOpen: boolean;
 	export let handleNavMenu = () => {};
