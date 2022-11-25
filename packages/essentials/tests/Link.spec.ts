@@ -9,7 +9,8 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io'
+				url: 'https://sveltin.io',
+				alt: 'sveltin-site-link'
 			}
 		});
 		expect(container).toBeInTheDocument();
@@ -20,7 +21,8 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io'
+				url: 'https://sveltin.io',
+				alt: 'sveltin-site-link'
 			}
 		});
 
@@ -33,7 +35,8 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io'
+				url: 'https://sveltin.io',
+				alt: 'sveltin-site-link'
 			}
 		});
 
@@ -46,7 +49,8 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io'
+				url: 'https://sveltin.io',
+				alt: 'sveltin-site-link'
 			}
 		});
 
@@ -59,7 +63,8 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io'
+				url: 'https://sveltin.io',
+				alt: 'sveltin-site-link'
 			}
 		});
 
@@ -73,6 +78,7 @@ describe('Link', () => {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
 				url: 'https://sveltin.io',
+				alt: 'sveltin-site-link',
 				external: true
 			}
 		});
@@ -87,6 +93,7 @@ describe('Link', () => {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
 				url: 'https://sveltin.io',
+				alt: 'sveltin-site-link',
 				external: true
 			}
 		});

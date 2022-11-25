@@ -1,8 +1,7 @@
-<div {...$$restProps}>
+<span {...$$restProps}>
 	<svg
-		class="icon"
-		width="24"
-		height="24"
+		width="20"
+		height="20"
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		fill="none"
@@ -20,18 +19,10 @@
 			stroke-linecap="round"
 		/>
 	</svg>
-</div>
+</span>
 
 <style>
-	.icon {
-		--_color: var(--color, rgb(148, 163, 184)); /** slate-400 */
-		--_width: var(--width, 1.2rem);
-		--_height: var(--height, 1.2rem);
-
-		color: var(--_color);
-		width: var(--_width);
-		height: var(--_height);
-		margin-right: -0.25rem /* -4px */;
-		margin-left: 0.5rem /* 8px */;
+	span {
+		margin-left: 3px;
 	}
 </style>

@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Link, Image } from '$lib/index.js';
+	import { Link } from '$lib/index.js';
 	import DummyIcon from '../_dummyIcon.svelte';
+	import { base } from '$app/paths';
 </script>
 
 <section class="main">
@@ -8,27 +9,30 @@
 
 	<h2><tt>Link</tt></h2>
 
+	<div id="internal-link" class="container">
+		<h3 id="external-link-with-slot">Internal Link</h3>
+		<Link url={base} alt="link to the homepage">Home</Link>
+	</div>
+
 	<div id="external-link" class="container">
-		<h3 id="external-link-with-slot">with slot</h3>
-		<Link label="sveltin" url="https://sveltin.io" icon={false}
-			><Image
-				src="logo.png"
-				altText="sveltin logo"
-				webp={true}
-				avif={true}
-				width="30%"
-			/></Link
-		>
+		<h3 id="external-link-with-slot">External Link</h3>
+		<Link external url="https://sveltin.io" alt="link to sveltin homepage">sveltin</Link>
 	</div>
 
 	<div id="external-link-slot" class="container">
-		<h3 id="external-link-with-slot-fallback">with slot fallback</h3>
-		<Link label="sveltin.io" url="https://sveltin.io" />
+		<h3 id="external-link-with-slot-fallback">External w/ label text w/o icon</h3>
+		<Link
+			external
+			icon={false}
+			label="sveltin.io"
+			url="https://sveltin.io"
+			alt="link to sveltin homepage"
+		/>
 	</div>
 
 	<div id="external-custom-icon" class="container">
-		<h3 id="external-link-with-slot-fallback">with custom icon</h3>
-		<Link label="sveltin.io" url="https://sveltin.io" style>
+		<h3 id="external-link-with-slot-fallback">external with custom icon</h3>
+		<Link external url="https://sveltin.io" alt="link to sveltin homepage">
 			<DummyIcon slot="icon" />
 		</Link>
 	</div>

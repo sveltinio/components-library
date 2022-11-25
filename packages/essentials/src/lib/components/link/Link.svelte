@@ -1,21 +1,28 @@
 <script lang="ts">
+	import './styles.css';
 	import { ExternalLinkIcon } from './index.js';
+	import { stylesObjToCSSVars } from '$lib/utils';
 
-	export let label: string;
+	export let label = '';
 	export let url: string;
 	export let underline = false;
-	export let alt = '';
+	export let alt: string;
+	export let title = '';
 	export let external = false;
+	export let icon = true;
 	export let noOpener = true;
 	export let noReferrer = true;
+	export let styles = {};
+
+	const cssStyles = stylesObjToCSSVars(styles);
 
 	let relOptions = ['external'];
 	if (noOpener) relOptions.push('noopener');
 	if (noReferrer) relOptions.push('noreferrer');
 
-	$: _altText = alt != '' ? alt : label;
 	$: target = external ? '_blank' : '_self';
-	$: icon = external ? true : false;
+	$: _titleText = title == '' ? alt : title;
+	$: externalIcon = external && icon ? true : false;
 </script>
 
 <a
@@ -23,34 +30,23 @@
 	rel={relOptions.join(' ')}
 	{target}
 	href={url}
-	alt={_altText}
-	title={_altText}
-	aria-label={_altText}
+	{alt}
+	title={_titleText}
+	aria-label={alt}
 	class="link-container"
 	class:underline
+	style={cssStyles}
 	{...$$restProps}
 >
-	<slot>{label}</slot>
+	{#if label != ''}
+		{label}
+	{:else}
+		<slot />
+	{/if}
 
-	{#if icon}
+	{#if externalIcon}
 		<slot name="icon">
 			<ExternalLinkIcon />
 		</slot>
 	{/if}
 </a>
-
-<style>
-	a {
-		--_color: var(--color, rgb(30, 41, 59)); /** slate-800 */
-		color: var(--_color);
-		text-decoration: none;
-	}
-	.underline {
-		text-decoration: underline;
-	}
-	.link-container {
-		display: inline-flex;
-		align-items: center;
-		align-content: flex-start;
-	}
-</style>
