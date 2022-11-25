@@ -10,7 +10,6 @@
 		<a href="/demos/dropdown"><li>Dropdown</li></a>
 		<a href="/demos/link"><li>Link</li></a>
 		<a href="/demos/list"><li>List</li></a>
-		<a href="/demos/Image"><li>Image</li></a>
 		<a href="/demos/tabs"><li>Tabs</li></a>
 	</ul>
 </section>

@@ -15,9 +15,6 @@ export { ColorViewer };
 import { Link, ExternalLinkIcon } from './components/link/index.js';
 export { ExternalLinkIcon, Link };
 
-import { Image } from './components/image/index.js';
-export { Image };
-
 import {
 	Dropdown,
 	DropdownButton,
