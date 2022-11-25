@@ -23,7 +23,8 @@ const config: UserConfig = {
 		reporters: ['dot'],
 		silent: true,
 		environment: 'jsdom'
-	}
+	},
+	ssr: { noExternal: ['@indaco/svelte-iconoir/**'] }
 };
 
 export default config;
