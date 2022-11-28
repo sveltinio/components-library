@@ -1,6 +1,6 @@
 # Components Library
 
-## Crafted to be used by Sveltin based projects but definetely usable out of it
+## Crafted to be used by Sveltin based projects but definetely usable out of them
 
 ### Intro
 
@@ -10,15 +10,15 @@ Each package has its own folder and README in the `/packages` directory. All pac
 
 ### Packages
 
-| Package                                            |                                  Version                                   | Changelog                                        |
-| -------------------------------------------------- | :------------------------------------------------------------------------: | ------------------------------------------------ |
-| [@sveltinio/essentials](packages/essentials)       |    [![essentials]](https://www.npmjs.com/package/@sveltinio/essentials)    | [Changelog](packages/essentials/CHANGELOG.md)    |
-| [@sveltinio/media-content](packages/media-content) | [![media-content]](https://www.npmjs.com/package/@sveltinio/media-content) | [Changelog](packages/media-content/CHANGELOG.md) |
-| [@sveltinio/seo](packages/seo)                     |           [![seo]](https://www.npmjs.com/package/@sveltinio/seo)           | [Changelog](packages/seo/CHANGELOG.md)           |
-| [@sveltinio/services](packages/services)           |      [![services]](https://www.npmjs.com/package/@sveltinio/services)      | [Changelog](packages/services/CHANGELOG.md)      |
-| [@sveltinio/widgets](packages/widgets)             |       [![widgets]](https://www.npmjs.com/package/@sveltinio/widgets)       | [Changelog](packages/widgets/CHANGELOG.md)       |
+| Package                                                      |                                  Version                                   | Changelog                                        |
+| ------------------------------------------------------------ | :------------------------------------------------------------------------: | ------------------------------------------------ |
+| [@sveltinio/essentials](packages/essentials/README.md)       |    [![essentials]](https://www.npmjs.com/package/@sveltinio/essentials)    | [Changelog](packages/essentials/CHANGELOG.md)    |
+| [@sveltinio/media-content](packages/media-content/README.md) | [![media-content]](https://www.npmjs.com/package/@sveltinio/media-content) | [Changelog](packages/media-content/CHANGELOG.md) |
+| [@sveltinio/seo](packages/seo/README.md)                     |           [![seo]](https://www.npmjs.com/package/@sveltinio/seo)           | [Changelog](packages/seo/CHANGELOG.md)           |
+| [@sveltinio/services](packages/services/README.md)           |      [![services]](https://www.npmjs.com/package/@sveltinio/services)      | [Changelog](packages/services/CHANGELOG.md)      |
+| [@sveltinio/widgets](packages//README.mdwidgets)             |       [![widgets]](https://www.npmjs.com/package/@sveltinio/widgets)       | [Changelog](packages/widgets/CHANGELOG.md)       |
 
-## Demos & Tests
+## Demos
 
 Clone the repos and install all the dependencies:
 
@@ -33,7 +33,19 @@ pnpm install
 Run the demos:
 
 ```bash
-pnpm dev
+pnpm demo # or pnpm turbo run dev
+```
+
+## Develop & Build
+
+Clone the repos and install all the dependencies:
+
+```bash
+git clone https://github.com/sveltinio/components-library.git
+
+cd components-library
+
+pnpm install
 ```
 
 Run the tests:
@@ -42,7 +54,25 @@ Run the tests:
 pnpm test
 ```
 
-### License
+### Create new component
+
+```bash
+pnpm plop
+```
+
+### Build Packages
+
+```bash
+pnpm build:packages
+```
+
+### Build the website
+
+```bash
+pnpm build:sites
+```
+
+## License
 
 Free and open-source software under the [MIT License](LICENSE)
 
