@@ -82,7 +82,7 @@ The `DropdownItem` component exposes the following properties:
 | label    | string  | yes      |          | Item text                                   |
 | mode     | string  | no       | button   | Render as button or link                    |
 | href     | string  | no       | null     | The URL of the page the link goes to        |
-| prefetch | boolean | no       | yes      | Enable data-sveltekit-prefetch              |
+| prefetch | boolean | no       | yes      | Enable `data-sveltekit-preload-data`        |
 | target   | string  | no       | _self    | Specifies where to open the linked document |
 
 ## Theming

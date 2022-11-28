@@ -37,7 +37,7 @@
 	<a
 		{href}
 		title={_altText}
-		data-sveltekit-prefetch={prefetch ? '' : 'off'}
+		data-sveltekit-preload-data={prefetch ? 'hover' : ''}
 		target={external ? '_blank' : '_self'}
 		aria-label={_altText}
 		data-testid="btn"

@@ -35,6 +35,7 @@ The following are the ones exposed by the component:
 | underline  | boolean |    no    | false    | Underlined label text                                               |
 | alt        | string  |    yes   |          | The text description of the link                                    |
 | external   | boolean |    no    | false    | If external, an icon will be apped next to the right of the label   |
+| prefetch   | boolean | no       | yes      | Enable `data-sveltekit-preload-data` when not an externali link     |
 | icon       | boolean |    no    | true     | Shows an icon next right to the label when external id true         |
 | noOpenener | boolean |    no    | true     | Go to the linked resource without granting the new browsing context |
 | noReferrer | boolean |    no    | true     | Prevent passing the referrer information to the target website      |

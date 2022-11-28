@@ -17,15 +17,9 @@
 
 <span class="dropdown-item">
 	{#if href != ''}
-		{#if prefetch}
-			<a {href} {target} data-sveltekit-prefetch role="menuitem">
-				{label}
-			</a>
-		{:else}
-			<a {href} {target} role="menuitem">
-				{label}
-			</a>
-		{/if}
+		<a {href} {target} data-sveltekit-preload-data={prefetch ? 'hover' : ''} role="menuitem">
+			{label}
+		</a>
 	{:else}
 		<button type="button" role="menuitem" on:click={btnClick}>
 			{label}

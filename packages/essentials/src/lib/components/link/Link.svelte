@@ -9,6 +9,7 @@
 	export let alt: string;
 	export let title = '';
 	export let external = false;
+	export let prefetch = false;
 	export let icon = true;
 	export let noOpener = true;
 	export let noReferrer = true;
@@ -20,7 +21,7 @@
 	if (noOpener) relOptions.push('noopener');
 	if (noReferrer) relOptions.push('noreferrer');
 
-	let prefetch = external ? 'off' : '';
+	let prefetchValue = prefetch && !external ? 'hover' : '';
 	let target = external ? '_blank' : '_self';
 	let _titleText = title == '' ? alt : title;
 	let externalIcon = external && icon ? true : false;
@@ -32,7 +33,7 @@
 	href={url}
 	{alt}
 	title={_titleText}
-	data-sveltekit-prefetch={prefetch}
+	data-sveltekit-preload-data={prefetchValue}
 	aria-label={alt}
 	class="link-container"
 	class:underline
