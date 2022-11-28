@@ -20,22 +20,24 @@
 	if (noOpener) relOptions.push('noopener');
 	if (noReferrer) relOptions.push('noreferrer');
 
-	$: target = external ? '_blank' : '_self';
-	$: _titleText = title == '' ? alt : title;
-	$: externalIcon = external && icon ? true : false;
+	let prefetch = external ? 'off' : '';
+	let target = external ? '_blank' : '_self';
+	let _titleText = title == '' ? alt : title;
+	let externalIcon = external && icon ? true : false;
 </script>
 
 <a
-	data-testid="link"
 	rel={relOptions.join(' ')}
 	{target}
 	href={url}
 	{alt}
 	title={_titleText}
+	data-sveltekit-prefetch={prefetch}
 	aria-label={alt}
 	class="link-container"
 	class:underline
 	style={cssStyles}
+	data-testid="link"
 	{...$$restProps}
 >
 	{#if label != ''}

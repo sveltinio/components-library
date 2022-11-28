@@ -47,7 +47,7 @@ To simplify custom styles on the component we used the built-in solution for com
 ### Link
 
 | CSS Variable            | Default            | |
-| :---------------------- | :----------------- | :----------------------------------------------------------: |
+| :---------------------- | -----------------: | :----------------------------------------------------------: |
 | `color`                 | `rgb(30 41 59)`    | ![#1E293B](https://via.placeholder.com/15/1E293B/1E293B.png) |
 | `text-decoration`       |       none         | |
 | `color-hover`           | `rgb(30, 41, 59)`  | ![#1E293B](https://via.placeholder.com/15/1E293B/1E293B.png) |

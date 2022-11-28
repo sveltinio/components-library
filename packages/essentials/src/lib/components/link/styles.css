@@ -1,19 +1,23 @@
-a {
-	--_color: var(--color, rgb(30, 41, 59)); /** slate-800 */
+.link-container {
+	--_color: var(--color, rgb(30, 41, 59)); /* slate-800 */
 	--_text-decoration: var(--text-decoration, none);
+	--_color-hover: var(--color-hover, rgb(30, 41, 59)); /* slate-800 */
+	--_text-decoration-hover: var(--text-decoration-hover, none);
+}
+
+a {
 	color: var(--_color);
 	text-decoration: var(--_text-decoration);
 }
 
 a:hover {
-	--_color-hover: var(--color-hover, rgb(30, 41, 59)); /** slate-800 */
-	--_text-decoration-hover: var(--text-decoration-hover, none);
 	color: var(--_color-hover);
 	text-decoration: var(--_text-decoration-hover);
 }
 .underline {
 	text-decoration: underline;
 }
+
 .link-container {
 	display: inline-flex;
 	align-items: center;
