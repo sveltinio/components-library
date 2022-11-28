@@ -5,6 +5,7 @@ declare global {
 	export namespace Vi {
 		interface Assertion {
 			toBeInTheDocument(): void;
+			toBe(txt: string): void;
 			toHaveAttribute(attr: string, txt?: string): void;
 			toHaveAccessibleName(txt?: string): void;
 			toHaveAccessibleDescription(): void;

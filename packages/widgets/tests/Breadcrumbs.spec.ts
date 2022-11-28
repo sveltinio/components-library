@@ -9,7 +9,7 @@ describe('Breadcrumbs', () => {
 			props: {
 				baseURL: 'http://example.com',
 				parent: 'posts',
-				currentTitle: 'Welcome'
+				current: 'Welcome'
 			}
 		});
 		expect(container).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('Breadcrumbs', () => {
 			props: {
 				baseURL: 'http://example.com',
 				parent: 'posts',
-				currentTitle: 'Welcome'
+				current: 'Welcome'
 			}
 		});
 		expect(screen.queryByText('Posts')).toBeInTheDocument();
@@ -33,7 +33,7 @@ describe('Breadcrumbs', () => {
 			props: {
 				baseURL: 'http://example.com',
 				parent: 'posts',
-				currentTitle: 'Welcome'
+				current: 'Welcome'
 			}
 		});
 		const currentPage = getByTestId('currentPage');
@@ -44,7 +44,7 @@ describe('Breadcrumbs', () => {
 		render(Breadcrumbs, {
 			props: {
 				baseURL: 'http://example.com',
-				currentTitle: 'Welcome'
+				current: 'Welcome'
 			}
 		});
 		expect(screen.queryByText('Posts')).not.toBeInTheDocument();
