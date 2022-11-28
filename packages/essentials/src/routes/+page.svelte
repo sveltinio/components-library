@@ -4,13 +4,13 @@
 	<h2><tt>Demos</tt></h2>
 
 	<ul>
-		<a href="/demos/button"><li>Button</li></a>
-		<a href="/demos/button-group"><li>Button Group</li></a>
-		<a href="/demos/color"><li>ColorViewer</li></a>
-		<a href="/demos/dropdown"><li>Dropdown</li></a>
-		<a href="/demos/link"><li>Link</li></a>
-		<a href="/demos/list"><li>List</li></a>
-		<a href="/demos/tabs"><li>Tabs</li></a>
+		<li><a href="/demos/button">Button</a></li>
+		<li><a href="/demos/button-group">Button Group</a></li>
+		<li><a href="/demos/color">ColorViewer</a></li>
+		<li><a href="/demos/dropdown">Dropdown</a></li>
+		<li><a href="/demos/link">Link</a></li>
+		<li><a href="/demos/list">List</a></li>
+		<li><a href="/demos/tabs">Tabs</a></li>
 	</ul>
 </section>
 
