@@ -16,7 +16,7 @@ Each package has its own folder and README in the `/packages` directory. All pac
 | [@sveltinio/media-content](packages/media-content/README.md) | [![media-content]](https://www.npmjs.com/package/@sveltinio/media-content) | [Changelog](packages/media-content/CHANGELOG.md) |
 | [@sveltinio/seo](packages/seo/README.md)                     | [![seo]](https://www.npmjs.com/package/@sveltinio/seo)                     | [Changelog](packages/seo/CHANGELOG.md)           |
 | [@sveltinio/services](packages/services/README.md)           | [![services]](https://www.npmjs.com/package/@sveltinio/services)           | [Changelog](packages/services/CHANGELOG.md)      |
-| [@sveltinio/widgets](packages//README.md)                    | [![widgets]](https://www.npmjs.com/package/@sveltinio/widgets)             | [Changelog](packages/widgets/CHANGELOG.md)       |
+| [@sveltinio/widgets](packages/widgets/README.md)                    | [![widgets]](https://www.npmjs.com/package/@sveltinio/widgets)             | [Changelog](packages/widgets/CHANGELOG.md)       |
 
 ## Demos
 
