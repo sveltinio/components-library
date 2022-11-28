@@ -8,8 +8,10 @@ describe('PrevNextButtons', () => {
 	it('should be in the document', async () => {
 		const { container } = render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 		expect(container).toBeInTheDocument();
@@ -20,8 +22,10 @@ describe('PrevNextButtons - Previous', () => {
 	it('should have the link to the previous item', async () => {
 		const { getByTestId } = render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 		expect(getByTestId('link-to-previous')).toBeDefined;
@@ -30,8 +34,10 @@ describe('PrevNextButtons - Previous', () => {
 	it('should have the link to the previous item with an accessible name (alt)', async () => {
 		const { getByTestId } = render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 
@@ -42,8 +48,10 @@ describe('PrevNextButtons - Previous', () => {
 	it('should have the a link to the previous item with an accessible description (title)', async () => {
 		const { getByTestId } = render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 
@@ -54,8 +62,10 @@ describe('PrevNextButtons - Previous', () => {
 	it('should have "Why" as text', async () => {
 		const { getByTestId } = render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 		const messageText = getByTestId('previous-message-text');
@@ -65,8 +75,10 @@ describe('PrevNextButtons - Previous', () => {
 	it('should have the link to the previous item with aria-label "Why"', async () => {
 		render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 		const linkNode = screen.getByLabelText('link to Why');
@@ -78,8 +90,10 @@ describe('PrevNextButtons - Next', () => {
 	it('should have the link to the next item', async () => {
 		const { getByTestId } = render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 		expect(getByTestId('link-to-next')).toBeDefined;
@@ -88,8 +102,10 @@ describe('PrevNextButtons - Next', () => {
 	it('should have the link to the next item with an accessible name (alt)', async () => {
 		const { getByTestId } = render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 
@@ -100,8 +116,10 @@ describe('PrevNextButtons - Next', () => {
 	it('should have the a link to the next item with an accessible description (title)', async () => {
 		const { getByTestId } = render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 
@@ -112,8 +130,10 @@ describe('PrevNextButtons - Next', () => {
 	it('should have "Getting Started" as text', async () => {
 		const { getByTestId } = render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 		const messageText = getByTestId('next-message-text');
@@ -123,8 +143,10 @@ describe('PrevNextButtons - Next', () => {
 	it('should have the link to the next item with aria-label "Getting Started"', async () => {
 		render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 		const linkNode = screen.getByLabelText('link to Getting Started');
@@ -134,8 +156,10 @@ describe('PrevNextButtons - Next', () => {
 	it('should have the link with href "posts/getting-started"', async () => {
 		render(PrevNextButtons, {
 			props: {
-				previous: previous,
-				next: next
+				prevValue: previous.metadata.title,
+				prevHref: '/' + previous.resource + '/' + previous.metadata.slug,
+				nextValue: next.metadata.title,
+				nextHref: '/' + next.resource + '/' + next.metadata.slug
 			}
 		});
 		const linkNode = screen.getByLabelText('link to Getting Started');

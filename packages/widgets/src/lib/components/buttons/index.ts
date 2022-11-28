@@ -1,3 +1,4 @@
-export { default as Button } from './Button.svelte';
-export { default as PrevNextButtons } from './PrevNextButtons.svelte';
-export { default as ScrollToTopButton } from './ScrollToTopButton.svelte';
+import { PrevNextButtons } from './prevnext/index.js';
+import { ScrollToTopButton } from './scroll-to-top/index.js';
+
+export { PrevNextButtons, ScrollToTopButton };
