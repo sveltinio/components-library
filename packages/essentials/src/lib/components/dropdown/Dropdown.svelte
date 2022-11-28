@@ -38,6 +38,7 @@
 </script>
 
 <div
+	class="dropdown"
 	style={cssStyles}
 	use:clickOutside={() => {
 		ctx.setValue(false);

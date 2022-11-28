@@ -36,11 +36,7 @@
 				{#each navItems as item}
 					{#if item.children}
 						{#each item.children as child}
-							<DropdownItem
-								id={child.weight}
-								label={child.name}
-								on:click={handleDropdownButton}
-							/>
+							<DropdownItem id={child.weight} label={child.name} on:click={handleDropdownButton} />
 						{/each}
 					{/if}
 				{/each}
