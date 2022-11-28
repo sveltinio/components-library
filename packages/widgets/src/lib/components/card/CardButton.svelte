@@ -8,7 +8,7 @@
 	<a
 		{href}
 		title={label}
-		data-sveltekit-prefetch={prefetch ? '' : 'off'}
+		data-sveltekit-preload-data={prefetch ? 'hover' : ''}
 		aria-label={label}
 		class="card-btn">{label}</a
 	>
