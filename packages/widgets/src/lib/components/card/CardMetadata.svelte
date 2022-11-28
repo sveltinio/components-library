@@ -1,29 +1,38 @@
 <script lang="ts">
 	export let date: string;
-	export let withCover: boolean;
+	export let withCover = false;
 </script>
 
-<p class="badge" class:badge-absolute={withCover}><time datetime="2020-12-02">{date}</time></p>
+<p class="badge" class:no-cover={!withCover} class:cover={withCover}>
+	<time datetime="2020-12-02">{date}</time>
+</p>
 
 <style>
 	.badge {
 		position: relative;
 		display: inline-block;
-		color: #334155;
-		font-size: 0.875rem;
-		font-weight: 600;
-		line-height: 1rem; /* 16px */
-		text-transform: uppercase;
-		border-radius: 9999px;
-		background-color: #f8fafc;
-		margin-top: -2.875rem;
-		padding: 0.5rem 0.1rem;
+		color: var(--_badge-color);
+		font-size: var(--_badge-font-size);
+		font-weight: var(--_badge-font-weight);
+		line-height: var(--_badge-line-height);
+		text-transform: var(--_badge-text-transform);
+		border-radius: var(--_badge-border-radius);
+		background-color: var(--_badge-bg-color);
+		padding-top: var(--_badge-pt);
+		padding-right: var(--_badge-pr);
+		padding-bottom: var(--_badge-pb);
+		padding-left: var(--_badge-pl);
 	}
 
-	.badge-absolute {
+	.no-cover {
+		margin-top: var(--_badge-mt);
+		margin-left: var(--_badge-ml);
+	}
+
+	.cover {
 		position: absolute;
-		top: 60%;
-		right: 10%;
+		top: var(--_badge-absolute-t);
+		right: var(--_badge-absolute-r);
 		padding: 0.5rem 0.75rem;
 	}
 </style>

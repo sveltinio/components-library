@@ -1,22 +1,13 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import type { CardContext } from './types.js';
-
-	export let altText: string;
 	export let src: string;
+	export let alt: string;
+	export let title = '';
 
-	const ctx: CardContext = getContext('SveltinCard');
-
-	let resource = ctx.resource;
-	let slug = ctx.slug;
+	let titleTxt = title == '' ? alt : title;
 </script>
 
 <div class="card-header">
-	<img
-		src={`/resources/${resource}/${slug}/${src}`}
-		alt={`cover for ${altText}`}
-		title={`cover for ${altText}`}
-	/>
+	<img {src} {alt} title={titleTxt} />
 </div>
 
 <style>

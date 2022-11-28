@@ -1,34 +1,48 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import Button from '../buttons/Button.svelte';
-	import type { CardContext } from './types.js';
-
-	const ctx: CardContext = getContext('SveltinCard');
-
-	let resource = ctx.resource;
-	let slug = ctx.slug;
-
-	export let label: string;
-	export let type = 'primary';
-	export let size = 'sm';
-	export let outlined = false;
-	export let fullWidth = false;
-
-	let href = '';
-	if (resource && slug) {
-		href = `/${resource}/${slug}`;
-	}
+	export let label = 'Read More »';
+	export let href: string;
+	export let prefetch = '';
 </script>
 
-<div class="card-button" data-testid="card-button-link">
-	<Button {label} {type} {size} {outlined} {fullWidth} {href} />
+<div class="card-btn-wrapper" data-testid="card-button-link">
+	<a {href} title={label} data-sveltekit-prefetch={prefetch} aria-label={label} class="card-btn"
+		>{label}</a
+	>
 </div>
 
 <style>
-	.card-button {
-		width: 100%;
-		height: auto;
-		padding: 0.5rem 1.75rem 1.25rem 1.75rem;
-		text-align: right;
+	.card-btn-wrapper {
+		width: var(--_btn-wrapper-width);
+		height: var(--_btn-wrapper-height);
+		padding-top: var(--_btn-wrapper-pt);
+		padding-right: var(--_btn-wrapper-pr);
+		padding-bottom: var(--_btn-wrapper-pb);
+		padding-left: var(--_btn-wrapper-pl);
+		margin-top: var(--_btn-wrapper-mt);
+		margin-right: var(--_btn-wrapper-mr);
+		margin-bottom: var(--_btn-wrapper-mb);
+		margin-left: var(--_btn-wrapper-ml);
+	}
+
+	.card-btn {
+		cursor: var(--_btn-cursor);
+		display: flex;
+		justify-content: var(--_btn-text-align);
+		align-items: center;
+		color: var(--_btn-color);
+		font-size: var(--_btn-font-size);
+		font-weight: var(--_btn-font-weight);
+		line-height: var(--_btn-line-height);
+		letter-spacing: var(--_btn-letter-spacing);
+		text-decoration: var(--_btn-text-decoration);
+		padding-top: var(--_btn-pt);
+		padding-right: var(--_btn-pr);
+		padding-bottom: var(--_btn-pb);
+		padding-left: var(--_btn-pl);
+		background-color: var(--_btn-bg-color);
+		border-color: var(--_btn-border-color);
+		border-style: var(--_btn-border-style);
+		border-width: var(--_btn-border-width);
+		border-radius: var(--_btn-border-radius);
 	}
 </style>

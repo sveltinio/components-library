@@ -22,8 +22,7 @@ describe('Card', () => {
 				slug: 'welcome'
 			}
 		});
-		const card = getByTestId('card-container');
-		expect(card.getAttribute('id')).toBe('card-welcome');
+		expect(getByTestId('card-container')).toHaveClass('card');
 	});
 
 	it('should render slotted title', async () => {
