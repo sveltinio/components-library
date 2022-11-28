@@ -94,6 +94,13 @@ export class ContentMetadataMaker {
 	}
 }
 
+export interface TocEntry {
+	id?: string;
+	depth: number;
+	value?: string;
+	children?: Array<TocEntry>;
+}
+
 export interface IHeadingItem {
 	id: string;
 	title: string;

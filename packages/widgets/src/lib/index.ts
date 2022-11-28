@@ -9,14 +9,11 @@ import {
 	CardButton
 } from './components/card/index.js';
 
-import { ResponsiveCard } from './components/responsive-card/index.js';
 import { PrevNextButtons, ScrollToTopButton } from './components/buttons/index.js';
-import { CollapsibleList } from './components/list/index.js';
 import { Breadcrumbs } from './components/breadcrumbs/index.js';
 import { GitHubButton, GitHubForkRibbon } from './components/github/index.js';
 
 export {
-	ResponsiveCard,
 	Card,
 	CardCover,
 	CardTitle,
@@ -26,7 +23,6 @@ export {
 	TOC,
 	PrevNextButtons,
 	ScrollToTopButton,
-	CollapsibleList,
 	Breadcrumbs,
 	GitHubButton,
 	GitHubForkRibbon

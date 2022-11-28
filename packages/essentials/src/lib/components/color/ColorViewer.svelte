@@ -3,7 +3,7 @@
 	export let bordered = true;
 </script>
 
-<div class="preview">
+<div class="preview" {...$$restProps}>
 	<div class="color" class:bordered style="background: {value};" />
 	{value}
 </div>
