@@ -1,78 +1,79 @@
-import { ContentMetadata, HeadingItem, ResourceContentMaker } from '$lib/types.js';
+import { ContentMetadata, ResourceContentMaker } from '$lib/types.js';
+import type { TocEntry } from '$lib/types.js';
 
-const headings: Array<HeadingItem> = [
+const tocEntries: Array<TocEntry> = [
 	{
 		depth: 2,
-		title: 'Headings',
+		value: 'Headings',
 		id: 'headings'
 	},
 	{
 		depth: 2,
-		title: 'Paragraph',
+		value: 'Paragraph',
 		id: 'paragraph'
 	},
 	{
 		depth: 2,
-		title: 'Blockquotes',
+		value: 'Blockquotes',
 		id: 'blockquotes',
 		children: [
 			{
 				depth: 3,
-				title: 'w/o attribution',
+				value: 'w/o attribution',
 				id: 'wo-attribution'
 			},
 			{
 				depth: 3,
-				title: 'w/ attribution',
+				value: 'w/ attribution',
 				id: 'w-attribution'
 			}
 		]
 	},
 	{
 		depth: 2,
-		title: 'Tables',
+		value: 'Tables',
 		id: 'tables'
 	},
 	{
 		depth: 2,
-		title: 'Lists',
+		value: 'Lists',
 		id: 'lists',
 		children: [
 			{
 				depth: 3,
-				title: 'Unordered',
+				value: 'Unordered',
 				id: 'unordered'
 			},
 			{
 				depth: 3,
-				title: 'Ordered',
+				value: 'Ordered',
 				id: 'ordered'
 			},
 			{
 				depth: 3,
-				title: 'Nested',
+				value: 'Nested',
 				id: 'nested'
 			}
 		]
 	},
 	{
 		depth: 2,
-		title: 'Other Elements',
+		value: 'Other Elements',
 		id: 'other-elements'
 	},
 	{
 		depth: 2,
-		title: 'Emoij',
+		value: 'Emoij',
 		id: 'emoij'
 	},
 	{
 		depth: 2,
-		title: 'Code Blocks',
+		value: 'Code Blocks',
 		id: 'code-blocks',
 		children: [
 			{
 				depth: 3,
-				title: 'with backticks',
+				value: 'with backticks',
 				id: 'with-backticks'
 			}
 		]
@@ -140,5 +141,5 @@ export {
 	contentItemWithCoverAndCreateDate,
 	next,
 	previous,
-	headings
+	tocEntries
 };

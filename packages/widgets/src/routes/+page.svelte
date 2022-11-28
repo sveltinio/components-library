@@ -1,189 +1,44 @@
-<script lang="ts">
-	import CardMetadata from '$lib/components/card/CardMetadata.svelte';
-	import ResponsiveCard from '$lib/components/responsive-card/ResponsiveCard.svelte';
-	import {
-		Card,
-		CardTitle,
-		CardCover,
-		CardContent,
-		CardButton,
-		PrevNextButtons,
-		TOC,
-		ScrollToTopButton,
-		CollapsibleList,
-		Breadcrumbs,
-		GitHubButton,
-		GitHubForkRibbon
-	} from '$lib/index.js';
-	import {
-		contentItem,
-		contentItemWithCover,
-		contentItemWithCoverAndCreateDate,
-		previous,
-		next,
-		headings
-	} from '../data/sample.js';
-</script>
-
 <section class="main">
 	<h1><tt>@sveltinio/widgets</tt></h1>
 
 	<h2><tt>Demos</tt></h2>
 
-	<section id="scroll-to-top" class="container">
-		<h3>ScrollToTop</h3>
-		<ScrollToTopButton showOnPx={200} />
-		<p>Scroll down, it will appear</p>
-	</section>
-
-	<section id="responsive-card" class="container">
-		<h3>Resposive Card</h3>
-		<ResponsiveCard />
-	</section>
-
-	<section id="card" class="container">
-		<h3>Card</h3>
-
-		<h4 id="card-wo-cover-create-date)">plain</h4>
-		<Card resource={contentItem.resource} slug={contentItem.metadata.slug}>
-			<CardTitle>{contentItem.metadata.title}</CardTitle>
-			<CardContent>{contentItem.metadata.headline}</CardContent>
-			<CardButton label="Read More »" type="secondary" fullWidth />
-		</Card>
-
-		<!--	<h4 id="card-without-cover-with-create-date">w/ create date, w/o cover</h4>
-		<Card item={contentItemWithCreateDate} /> -->
-
-		<h4 id="card-with-cover-without-create-date">w/ cover, w/o create date</h4>
-		<Card resource={contentItemWithCover.resource} slug={contentItemWithCover.metadata.slug}>
-			<CardCover
-				altText={contentItemWithCover.metadata.title}
-				src={contentItemWithCover.metadata.cover || ''}
-			/>
-			<CardTitle>
-				{contentItemWithCover.metadata.title}</CardTitle
-			>
-
-			<CardContent>{contentItemWithCover.metadata.headline}</CardContent>
-			<CardButton label="Read More »" type="secondary" fullWidth />
-		</Card>
-
-		<h4 id="card-without-cover-and-create-date">w/ cover & created_at</h4>
-		<Card
-			resource={contentItemWithCoverAndCreateDate.resource}
-			slug={contentItemWithCover.metadata.slug}
-		>
-			{#if contentItemWithCoverAndCreateDate.metadata.cover}
-				<CardCover
-					altText={contentItemWithCoverAndCreateDate.metadata.title}
-					src={contentItemWithCoverAndCreateDate.metadata.cover}
-				/>
-			{/if}
-
-			{#if contentItemWithCoverAndCreateDate.metadata.created_at}
-				<CardMetadata
-					date={contentItemWithCoverAndCreateDate.metadata.created_at}
-					withCover={false}
-				/>
-			{/if}
-			<CardTitle>
-				{contentItemWithCoverAndCreateDate.metadata.title}</CardTitle
-			>
-			<CardContent>{contentItemWithCoverAndCreateDate.metadata.headline}</CardContent>
-			<CardButton label="Read More »" fullWidth outlined />
-		</Card>
-	</section>
-
-	<section id="prev-next-buttons" class="container">
-		<h3>PrevNextButtons</h3>
-
-		<h4>Default Styles</h4>
-		<PrevNextButtons {previous} {next} />
-
-		<h4>Custom Styles</h4>
-		<PrevNextButtons
-			{previous}
-			{next}
-			borderTopColor="#008C7D"
-			borderBottomColor="#A9AD9B"
-			linkColor="#006B70"
-			linkHoverBgColor="#ECF5CE"
-		/>
-	</section>
-
-	<section id="collapsable-list" class="container">
-		<h3>CollapsibleList</h3>
-
-		<div style="width: 50%">
-			<CollapsibleList headerText="Expand Me">
-				<ul>
-					<li>First</li>
-					<li>Second</li>
-					<li>Third</li>
-				</ul>
-			</CollapsibleList>
-		</div>
-	</section>
-
-	<section id="breadcrumbs" class="container">
-		<h3>Breadcrumbs</h3>
-
-		<Breadcrumbs baseURL="http://example.com" parent="posts" currentTitle="Getting Started" />
-	</section>
-
-	<section id="toc" class="container">
-		<h3>TOC</h3>
-		<h4 id="toc-default">default</h4>
-		<TOC resource="posts" slug="welcome" {headings} withChildren={false} />
-
-		<h4 id="toc-open">Open by default</h4>
-		<TOC resource="posts" slug="welcome" {headings} isOpen={true} withChildren={false} />
-
-		<h4 id="toc-with-children">w/ children</h4>
-		<TOC resource="posts" slug="welcome" {headings} withChildren={true} />
-	</section>
-
-	<section id="github-buttons" class="container">
-		<h3>GitHubButton</h3>
-		<div class="row">
-			<ul class="list-inline">
-				<li>
-					<GitHubButton username="sveltinio" repo="sveltin" action="star" />
-				</li>
-				<li>
-					<GitHubButton username="sveltinio" repo="sveltin" action="follow" />
-				</li>
-				<li>
-					<GitHubButton username="sveltinio" repo="sveltin" action="issue" />
-				</li>
-				<li>
-					<GitHubButton username="sveltinio" repo="sveltin" action="watch" />
-				</li>
-			</ul>
-		</div>
-	</section>
-
-	<section id="github-buttons" class="container">
-		<h3>GitHubForkRibbon</h3>
-
-		<GitHubForkRibbon username="sveltinio" repo="sveltin" />
-		<p>It is placed at the top of the page</p>
-	</section>
+	<ul>
+		<li><a href="/demos/breadcrumbs">Breadcrumbs</a></li>
+		<li><a href="/demos/buttons">Buttons</a></li>
+		<li><a href="/demos/card">Card</a></li>
+		<li><a href="/demos/github">GitHub</a></li>
+		<li><a href="/demos/toc">TOC (Table of Contents)</a></li>
+	</ul>
 </section>
 
 <style>
-	.row {
-		display: flex;
-		flex-wrap: wrap;
+	ul {
+		max-width: 32rem;
 	}
-	.list-inline {
-		padding-left: 0;
+
+	li {
 		list-style: none;
+		padding: 1rem;
+		margin-top: 0.75rem; /* 12px */
+		border-style: solid;
+		border-color: rgb(226 232 240); /* slate-200 */
+		border-top-width: 0px;
+		border-right-width: 0px;
+		border-bottom-width: 1px;
+		border-left-width: 0px;
+		background-color: white;
+		overflow: hidden;
+		box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 	}
-	.list-inline > li {
-		display: inline-block;
-		padding-right: 5px;
-		padding-left: 5px;
-		margin: 0;
+
+	a {
+		color: rgb(30 41 59); /* slate-800 */
+		text-decoration: none;
+	}
+
+	li:hover {
+		cursor: pointer;
+		background-color: rgb(241 245 249); /* slate-100 */
 	}
 </style>
