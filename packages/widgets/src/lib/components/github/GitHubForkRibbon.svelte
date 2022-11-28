@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let username: string;
 	export let repo: string;
-	export let textColor = '#ffffff';
+	export let color = '#ffffff';
 	export let bgColor = '#a60042';
 </script>
 
@@ -10,9 +10,10 @@
 		<a
 			href="https://github.com/{username}/{repo}/fork"
 			target="_blank"
+			rel="noreferrer"
 			title="fork {username}/{repo} on GitHub"
 			aria-label="fork {username}/{repo} on GitHub"
-			style:color={textColor}
+			style:color
 			data-testid="githubLink">Fork me on GitHub</a
 		>
 	</div>

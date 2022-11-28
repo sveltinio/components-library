@@ -7,9 +7,9 @@ describe('GitHubButton', () => {
 	it('should be in the document', async () => {
 		const { container } = render(GitHubButton, {
 			props: {
+				type: 'star',
 				username: 'sveltinio',
-				repo: 'sveltin',
-				action: 'star'
+				repo: 'sveltin'
 			}
 		});
 		expect(container).toBeInTheDocument();
@@ -18,9 +18,9 @@ describe('GitHubButton', () => {
 	it('should props defined', async () => {
 		const { getByTestId } = render(GitHubButton, {
 			props: {
+				type: 'star',
 				username: 'sveltinio',
-				repo: 'sveltin',
-				action: 'star'
+				repo: 'sveltin'
 			}
 		});
 		const githubLink = getByTestId('githubLink');
@@ -33,9 +33,9 @@ describe('GitHubButton', () => {
 	it('should have star as text content', async () => {
 		const { getByTestId } = render(GitHubButton, {
 			props: {
+				type: 'star',
 				username: 'sveltinio',
-				repo: 'sveltin',
-				action: 'star'
+				repo: 'sveltin'
 			}
 		});
 		const githubLink = getByTestId('githubLink');
@@ -45,9 +45,9 @@ describe('GitHubButton', () => {
 	it('should have the star icon', async () => {
 		const { getByTestId } = render(GitHubButton, {
 			props: {
+				type: 'star',
 				username: 'sveltinio',
-				repo: 'sveltin',
-				action: 'star'
+				repo: 'sveltin'
 			}
 		});
 		const githubLink = getByTestId('githubLink');
@@ -58,9 +58,9 @@ describe('GitHubButton', () => {
 	it('should have the follow icon and github username text', async () => {
 		const { getByTestId } = render(GitHubButton, {
 			props: {
+				type: 'follow',
 				username: 'sveltinio',
-				repo: 'sveltin',
-				action: 'follow'
+				repo: 'sveltin'
 			}
 		});
 		const githubLink = getByTestId('githubLink');
@@ -72,9 +72,9 @@ describe('GitHubButton', () => {
 	it('should have the issue icon', async () => {
 		const { getByTestId } = render(GitHubButton, {
 			props: {
+				type: 'issue',
 				username: 'sveltinio',
-				repo: 'sveltin',
-				action: 'issue'
+				repo: 'sveltin'
 			}
 		});
 		const githubLink = getByTestId('githubLink');
@@ -85,9 +85,9 @@ describe('GitHubButton', () => {
 	it('should have the watch icon', async () => {
 		const { getByTestId } = render(GitHubButton, {
 			props: {
+				type: 'watch',
 				username: 'sveltinio',
-				repo: 'sveltin',
-				action: 'watch'
+				repo: 'sveltin'
 			}
 		});
 		const githubLink = getByTestId('githubLink');
