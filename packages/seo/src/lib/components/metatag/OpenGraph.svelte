@@ -27,10 +27,16 @@
 
 			{#if data.opengraph.type == 'article'}
 				{#if data.opengraph.article?.published_at}
-					<meta property="article:published_at" content={data.opengraph.article?.published_at} />
+					<meta
+						property="article:published_at"
+						content={data.opengraph.article?.published_at}
+					/>
 				{/if}
 				{#if data.opengraph.article?.modified_at}
-					<meta property="article:modified_at" content={data.opengraph.article?.modified_at} />
+					<meta
+						property="article:modified_at"
+						content={data.opengraph.article?.modified_at}
+					/>
 				{/if}
 				{#if data.opengraph.article?.expiration_time}
 					<meta

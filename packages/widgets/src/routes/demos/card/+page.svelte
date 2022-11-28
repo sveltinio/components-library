@@ -1,6 +1,13 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { Card, CardTitle, CardCover, CardContent, CardButton, CardMetadata } from '$lib/index.js';
+	import {
+		Card,
+		CardTitle,
+		CardCover,
+		CardContent,
+		CardButton,
+		CardMetadata
+	} from '$lib/index.js';
 	import {
 		contentItem,
 		contentItemWithCover,

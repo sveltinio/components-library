@@ -92,7 +92,8 @@
 						/>
 					</svg>
 				</slot>
-				<span class="text" aria-current="page" data-testid="currentPage">{capitalize(current)}</span
+				<span class="text" aria-current="page" data-testid="currentPage"
+					>{capitalize(current)}</span
 				>
 			</div>
 		</li>

@@ -93,7 +93,8 @@
 	}
 
 	const settingsString = makeSettingsString<IYouTubeSettings>(settings, matchersCallback);
-	const paramsStrings = type === 'video' ? '?'.concat(settingsString) : '&'.concat(settingsString);
+	const paramsStrings =
+		type === 'video' ? '?'.concat(settingsString) : '&'.concat(settingsString);
 	const baseURL = makeBaseURL(type, id, username);
 
 	iframeURL = settingsString != '' ? baseURL.concat(paramsStrings) : baseURL;

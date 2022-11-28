@@ -60,7 +60,12 @@
 			referrerpolicy="no-referrer"
 		/>
 	{:else}
-		<img data-testid="thumbnail" src={thumbnailURL} alt={altText} referrerpolicy="no-referrer" />
+		<img
+			data-testid="thumbnail"
+			src={thumbnailURL}
+			alt={altText}
+			referrerpolicy="no-referrer"
+		/>
 	{/if}
 
 	<button on:click={play} data-testid="play-button">

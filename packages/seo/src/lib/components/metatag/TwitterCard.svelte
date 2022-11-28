@@ -39,7 +39,10 @@
 					{/if}
 					<meta property="twitter:app:id:iphone" content={data.twitter.app.idIPhone} />
 					<meta property="twitter:app:id:ipad" content={data.twitter.app.idIPad} />
-					<meta property="twitter:app:id:googleplay" content={data.twitter.app.idGooglePlay} />
+					<meta
+						property="twitter:app:id:googleplay"
+						content={data.twitter.app.idGooglePlay}
+					/>
 				{/if}
 			{/if}
 		{/if}
