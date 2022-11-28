@@ -37,7 +37,8 @@
 					alt="Click to open the video on the Vimeo website"
 					aria-label="Click to open the video on the Vimeo website"
 					href="https://www.slideshare.net/{user}/{title}"
-					target="_blank">{title}</a
+					target="_blank"
+					rel="noreferrer">{title}</a
 				>
 			</strong>
 			from
@@ -47,7 +48,8 @@
 					alt="Link to the user page on Vimeo website"
 					aria-label="Link to the user page on Vimeo website"
 					href="https://www.slideshare.net/{user}"
-					target="_blank">{user}</a
+					target="_blank"
+					rel="noreferrer">{user}</a
 				></strong
 			>
 		</div>
