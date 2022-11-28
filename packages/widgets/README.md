@@ -10,14 +10,13 @@ Collection of styled and ready-to-use Svelte components for page navigation, TOC
 
 ## Components List
 
-- [Card](#card)
-- [TOC](#toc) (Table of Contents)
-- [PrevNextButtons](#prevnextbuttons)
-- [ScrollToTopButton](#scrolltotopbutton)
-- [CollapsibleList](#collasiblelist)
-- [Breadcrumbs](#breadcrumbs)
-- [GitHubButton](#githubbutton) (star, follow, issue, watch)
-- [GitHubForkRibbon](#githubforkribbon)
+- [Breadcrumbs]
+- [Card]
+- [GitHubButton] (star, follow, issue, watch)
+- [GitHubForkRibbon]
+- [PrevNextButtons]
+- [ScrollToTopButton]
+- [TOC] (Table of Contents)
 
 ## Install
 
@@ -38,112 +37,14 @@ yarn add @sveltinio/widgets
 pnpm dev
 ```
 
-## Usage
-
-### Card
-
-#### Properties
-
-The `Card` component exposes the following properties:
-
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
-
-### TOC
-
-#### Properties
-
-The `TOC` component exposes the following properties:
-
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
-
-### PrevNextButtons
-
-#### Properties
-
-The `PrevNextButtons` component exposes the following properties:
-
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
-
-### ScrollToTopButton
-
-#### Properties
-
-The `ScrollToTopButton` component exposes the following properties:
-
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
-
-### CollasibleList
-
-#### Properties
-
-The `CollapsibleList` component exposes the following properties:
-
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
-
-### Breadcrumbs
-
-#### Properties
-
-The `Breadcrumbs` component exposes the following properties:
-
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
-
-### GitHubButton
-
-#### Properties
-
-The `GitHubButton` component exposes the following properties:
-
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
-
-### GitHubForkRibbon
-
-#### Properties
-
-The `GitHubForkRibbon` component exposes the following properties:
-
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
-
 ## License
 
 Free and open-source software under the [MIT License](LICENSE)
+
+[Breadcrumbs]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/breadcrumbs/README.md
+[Card]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/card/README.md
+[GitHubButton]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/github/README.md
+[GitHubForkRibbon]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/github/README.md
+[PrevNextButtons]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/buttons/prevnext/README.md
+[ScrollToTopButton]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/buttons/scroll-to-top/README.md
+[TOC]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/toc/README.md
