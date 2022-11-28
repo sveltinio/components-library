@@ -13,12 +13,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	{...$$restProps}
 >
-	<path
-		d="M6 15L12 9L18 15"
-		stroke="currentColor"
-		stroke-linecap="round"
-		stroke-linejoin="round"
-	/>
+	<path d="M6 15L12 9L18 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
 
 <style>
