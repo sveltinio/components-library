@@ -1,12 +1,6 @@
 # Card
 
-## Properties
-
-The `Card` component exposes the following properties:
-
-| Property | Type   | Required | Default      | Description                                       |
-| :------- | :----: | :------: | :----------: | :------------------------------------------------ |
-| styles   | Object |   no     | empty object | Used to pass CSS variables to apply custom styles |
+## Examples
 
 ```html
 <script>
@@ -36,6 +30,14 @@ The `Card` component exposes the following properties:
     <CardButton label="Read More »" href="{base}/posts/getting-started"/>
 </CardCover>
 ```
+
+## Properties
+
+The `Card` component exposes the following properties:
+
+| Property | Type   | Required | Default      | Description                                       |
+| :------- | :----: | :------: | :----------: | :------------------------------------------------ |
+| styles   | Object |   no     | empty object | Used to pass CSS variables to apply custom styles |
 
 ## Theming
 

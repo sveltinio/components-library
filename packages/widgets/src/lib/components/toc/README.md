@@ -1,20 +1,6 @@
 # TOC
 
-## Properties
-
-The `TOC` component exposes the following properties:
-
-| Property   | Type             | Required | Default           | Description                                       |
-| :--------- | :--------------: | :------: | :---------------: | :------------------------------------------------ |
-| data       | `Array<TocEntry>`|   yes    |                   | The data tree to be rendered                      |
-| label      | string           |   no     | Table of Contents | The text to be showed on the button               |
-| full       | boolean          |   no     | true              | If false, only level 1 and 2 will be rendered     |
-| iconOnly   | boolean          |   no     | false             | If true, the label is not rendered                |
-| labelOnly  | boolean          |   no     | false             | If true, the icon is not rendered                 |
-| prefixChar | string           |   no     | #                 | Prepend char to the list items                    |
-| ordered    | boolean          |   no     | false             | If true, on ordered list will be used             |
-| theme      | string           |   no     | blank             | One of: ["blank", "sveltin"]                      |
-| styles     | Object           |   no     | empty object      | Used to pass CSS variables to apply custom styles |
+## Examples
 
 ```html
 <script>
@@ -42,6 +28,22 @@ The `TOC` component exposes the following properties:
 <!-- sveltin theme -->
 <TOC theme="sveltin" data={tocEntries} prefixChar="#" />
 ```
+
+## Properties
+
+The `TOC` component exposes the following properties:
+
+| Property   | Type             | Required | Default           | Description                                       |
+| :--------- | :--------------: | :------: | :---------------: | :------------------------------------------------ |
+| data       | `Array<TocEntry>`|   yes    |                   | The data tree to be rendered                      |
+| label      | string           |   no     | Table of Contents | The text to be showed on the button               |
+| full       | boolean          |   no     | true              | If false, only level 1 and 2 will be rendered     |
+| iconOnly   | boolean          |   no     | false             | If true, the label is not rendered                |
+| labelOnly  | boolean          |   no     | false             | If true, the icon is not rendered                 |
+| prefixChar | string           |   no     | #                 | Prepend char to the list items                    |
+| ordered    | boolean          |   no     | false             | If true, on ordered list will be used             |
+| theme      | string           |   no     | blank             | One of: ["blank", "sveltin"]                      |
+| styles     | Object           |   no     | empty object      | Used to pass CSS variables to apply custom styles |
 
 ## Theming
 

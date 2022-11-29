@@ -2,15 +2,7 @@
 
 ## GitHubButton
 
-### Properties
-
-The `GitHubButton` component exposes the following properties:
-
-| Property | Type   | Required | Description                                  |
-| :------- | :----: | :------: | :------------------------------------------- |
-| type     | string |   yes    | onw of: ["star", "follow", "watch", "issue"] |
-| username | string |   yes    | username                                     |
-| repo     | string |   yes    | repository name                              |
+### Examples
 
 ```html
 <script>
@@ -25,10 +17,31 @@ The `GitHubButton` component exposes the following properties:
 <GitHubButton type="watch" username="sveltinio" repo="sveltin" />
 <!-- issue -->
 <GitHubButton type="issue" username="sveltinio" repo="sveltin" />
-
 ```
 
+### Properties
+
+The `GitHubButton` component exposes the following properties:
+
+| Property | Type   | Required | Description                                  |
+| :------- | :----: | :------: | :------------------------------------------- |
+| type     | string |   yes    | onw of: ["star", "follow", "watch", "issue"] |
+| username | string |   yes    | username                                     |
+| repo     | string |   yes    | repository name                              |
+
 ## GitHubForkRibbon
+
+### Examples
+
+```html
+<script>
+    import {GitHubForkRibbon} from '@sveltinio/widgets';
+</script>
+
+<GitHubForkRibbon username="sveltinio" repo="sveltin" />
+
+<GitHubForkRibbon username="sveltinio" repo="sveltin" bgColor="#7e22ce" />
+```
 
 ### Properties
 
@@ -41,12 +54,3 @@ The `GitHubForkRibbon` component exposes the following properties:
 | color    | string |    no    | ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/FFFFFF.png) |                 |
 | bgColor  | string |    no    | ![#a60042](https://via.placeholder.com/15/a60042/a60042.png) |                 |
 
-```html
-<script>
-    import {GitHubForkRibbon} from '@sveltinio/widgets';
-</script>
-
-<GitHubForkRibbon username="sveltinio" repo="sveltin" />
-
-<GitHubForkRibbon username="sveltinio" repo="sveltin" bgColor="#7e22ce" />
-```

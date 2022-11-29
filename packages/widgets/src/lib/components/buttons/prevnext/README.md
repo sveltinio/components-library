@@ -1,5 +1,20 @@
 # PrevNextButtons
 
+## Examples
+
+```html
+<script>
+    import { PrevNextButtons } from '@sveltinio/widgets';
+</script>
+
+<PrevNextButtons
+    prevValue="prev title"
+    prevHref="/path_to/previous_slug"
+    nextValue="next title"
+    nextHref="/path_to/next_slug"
+/>
+```
+
 ## Properties
 
 The `PrevNextButtons` component exposes the following properties:
@@ -17,19 +32,6 @@ The `PrevNextButtons` component exposes the following properties:
 | nextPrefix | string |    no    |    »         | |
 | nextAlt    | string |    no    | `nextLabel`  | |
 | styles     | Object |    no    | empty object | Used to pass CSS variables to apply custom styles |
-
-```html
-<script>
-    import { PrevNextButtons } from '@sveltinio/widgets';
-</script>
-
-<PrevNextButtons
-    prevValue="prev title"
-    prevHref="/path_to/previous_slug"
-    nextValue="next title"
-    nextHref="/path_to/next_slug"
-/>
-```
 
 ## Theming
 

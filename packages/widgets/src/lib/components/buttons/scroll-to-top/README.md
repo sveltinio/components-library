@@ -1,14 +1,6 @@
 # ScrollToTopButton
 
-## Properties
-
-The `ScrollToTopButton` component exposes the following properties:
-
-| Property  | Type   | Required | Default                                                      | Description |
-| :-------- | :----: | :------: | :----------------------------------------------------------: | :---------- |
-| iconColor | string |    no    | ![#ffffff](https://via.placeholder.com/15/ffffff/ffffff.png) | |
-| fillColor | string |    no    | ![#4b5563](https://via.placeholder.com/15/4b5563/4b5563.png) | |
-| showOnPx  | number |    no    | 400                                                          | |
+## Examples
 
 ```html
 <script lang="ts">
@@ -22,3 +14,13 @@ The `ScrollToTopButton` component exposes the following properties:
     <DummyIcon slot="icon" />
 </ScrollToTopButton>
 ```
+
+## Properties
+
+The `ScrollToTopButton` component exposes the following properties:
+
+| Property  | Type   | Required | Default                                                      | Description |
+| :-------- | :----: | :------: | :----------------------------------------------------------: | :---------- |
+| iconColor | string |    no    | ![#ffffff](https://via.placeholder.com/15/ffffff/ffffff.png) | |
+| fillColor | string |    no    | ![#4b5563](https://via.placeholder.com/15/4b5563/4b5563.png) | |
+| showOnPx  | number |    no    | 400                                                          | |

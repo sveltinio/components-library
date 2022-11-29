@@ -1,5 +1,15 @@
 # Breadcrumbs
 
+## Examples
+
+```html
+<script>
+    import { Breadcrumbs } from '@sveltinio/widgets';
+<script>
+
+<Breadcrumbs baseURL="http://example.com" parent="posts" current="Getting Started" />
+```
+
 ## Properties
 
 The `Breadcrumbs` component exposes the following properties:
@@ -10,14 +20,6 @@ The `Breadcrumbs` component exposes the following properties:
 | parent   | string |    no    | empty string | text to be showed as link to the parent page       |
 | current  | string |   yes    |              | text to be showed (a page name, a post title etc.) |
 | styles   | Object |    no    | empty object | Used to pass CSS variables to apply custom styles  |
-
-```html
-<script>
-    import { Breadcrumbs } from '@sveltinio/widgets';
-<script>
-
-<Breadcrumbs baseURL="http://example.com" parent="posts" current="Getting Started" />
-```
 
 ## Theming
 
