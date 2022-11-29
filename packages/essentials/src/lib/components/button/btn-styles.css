@@ -1,6 +1,9 @@
 .btn {
 	--_cursor: var(--cursor, pointer);
+	--_font-size: var(--font-size, 1rem);
 	--_font-weight: var(--font-weight, 500);
+	--_line-height: var(--line-height, 1.5rem);
+	--_letter-spacing: var(--letter-spacing, 0em);
 	--_text-decoration: var(--text-decoration, none);
 	--_color: var(--color, rgb(82, 82, 91)); /* zync-600 */
 	--_border-color: var(--border-color, rgb(228, 228, 231)); /* zync-200 */
@@ -29,7 +32,11 @@ a {
 	padding-bottom: var(--_pb);
 	padding-left: var(--_pl);
 	cursor: var(--_cursor);
+	font-size: var(--_font-size);
 	font-weight: var(--_font-weight);
+	line-height: var(--_line-height);
+	letter-spacing: var(--_letter-spacing);
+	text-decoration: var(--_text-decoration);
 	color: var(--_color);
 	border-width: var(--_border-width);
 	border-color: var(--_border-color);
@@ -88,30 +95,30 @@ a {
 
 /** Sizes */
 .btn-xs {
-	font-size: 0.75rem;
-	line-height: 1rem;
-	letter-spacing: 0.025em;
+	--_font-size: var(--font-size, 0.75rem); /* 12px */
+	--_line-height: var(--line-height, 1rem); /* 16px */
+	--_letter-spacing: var(--letter-spacing, 0.025em);
 }
 
 .btn-sm {
-	font-size: 0.875rem;
-	line-height: 1rem;
-	letter-spacing: 0.05em;
+	--_font-size: var(--font-size, 0.875rem); /* 14px */
+	--_line-height: var(--line-height, 1.25rem);
+	--_letter-spacing: var(--letter-spacing, 0.05em);
 }
 
 .btn-base {
-	font-size: 0.875rem;
-	line-height: 1.25rem;
-}
-
-.btn-md {
-	font-size: 1rem;
-	line-height: 1.5rem;
+	--_font-size: var(--font-size, 1rem); /* 16px */
+	--_line-height: var(--line-height, 1.5rem); /* 24px */
 }
 
 .btn-lg {
-	font-size: 1rem;
-	line-height: 1.5rem;
+	--_font-size: var(--font-size, 1.125rem); /* 18px */
+	--_line-height: var(--line-height, 1.75rem); /* 28px */
+}
+
+.btn-xl {
+	--_font-size: var(--font-size, 1.25rem); /* 20px */
+	--_line-height: var(--line-height, 1.75rem); /* 28px */
 }
 
 .btn-full {

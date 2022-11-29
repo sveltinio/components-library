@@ -62,6 +62,12 @@ The `Button` component allows you to pass the following styles as props:
 
 | CSS Variable        | Default            | |
 | :------------------ | ------------------:| :----------------------------------------------------------: |
+| `cursor`            | `pointer`          | |
+| `font-size`         | `1rem`             | |
+| `font-weight`       | `500`              | |
+| `line-height`       | `1.5rem`           | |
+| `letter-spacing`    | `0em`              | |
+| `text-decoration`   | `none`             | |
 | `color`             | `rgb(255 255 255)` | ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/FFFFFF.png) |
 | `border-color`      | `rgb(228 228 231)` | ![#E4E4E7](https://via.placeholder.com/15/E4E4E7/E4E4E7.png) |
 | `border-width`      | `1px`              | ![#E4E4E7](https://via.placeholder.com/15/E4E4E7/E4E4E7.png) |

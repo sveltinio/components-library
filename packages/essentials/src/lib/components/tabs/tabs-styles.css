@@ -5,8 +5,10 @@
 	--_tabs-list-border-color: var(--tabs-list-border-color, rgb(226, 232, 240)); /* slate-200 */
 	/* tab */
 	--_tab-font-size: var(--tab-font-size, 0.875rem); /* 14px */
+	--_tab-font-weight: var(--font-weight, 500);
 	--_tab-line-height: var(--tab-line-height, 1.25rem);
-	--_tab-letter-spacing: var(--tab-letter-spacing);
+	--_tab-letter-spacing: var(--tab-letter-spacing, 0rem);
+	--_tab-text-decoration: var(--tab-text-decoration, none);
 	/* tab padding */
 	--_tab-pt: var(--tab-pt, 0.5rem);
 	--_tab-pr: var(--tab-pr, 1rem);
@@ -103,7 +105,10 @@ li {
 	justify-content: center;
 	text-align: center;
 	font-size: var(--_tab-font-size);
+	font-weight: var(--_tab-font-weight);
 	line-height: var(--_tab-line-height);
+	letter-spacing: var(--_tab-letter-spacing);
+	text-decoration: var(--_tab-text-decoration);
 	padding-top: var(--_tab-pt);
 	padding-right: var(--_tab-pr);
 	padding-bottom: var(--_tab-pb);

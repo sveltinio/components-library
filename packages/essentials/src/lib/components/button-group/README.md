@@ -36,6 +36,9 @@ To simplify custom styles on the component we used the built-in solution for com
 | `color`               | `rgb(75, 85, 99)`    | ![#475569](https://via.placeholder.com/15/475569/475569.png) |
 | `font-size`           | `0.875rem`           | |
 | `font-weight`         | `500`                | |
+| `line-height`         | `1.5rem`             | |
+| `letter-spacing`      | `0em`                | |
+| `text-decoration`     | `none`               | |
 | `bg-color`            | `rgb(255, 255, 255)` | ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/FFFFFF.png) |
 | `bg-color-hover`      | `rgb(241, 245, 249)` | ![#f1f5f9](https://via.placeholder.com/15/f1f5f9/f1f5f9.png) |
 | `border-color`        | `rgb(226, 232, 240)` | ![#e2e8f0](https://via.placeholder.com/15/e2e8f0/e2e8f0.png) |

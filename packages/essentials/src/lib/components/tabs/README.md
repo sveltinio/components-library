@@ -24,7 +24,6 @@ The `Tabs` component is used to easily includes tabs within the page. It support
    <Tab id="4" title="Tab 4" icon={DummyIcon}>Sample content for <strong>Tab 4</strong></Tab>
    <Tab id="5" title="Tab 5" icon={DummyIcon}>Sample content for <strong>Tab 5</strong></Tab>
 </Tabs>
-
 ```
 
 ## Properties
@@ -56,7 +55,10 @@ To simplify custom styles on the component we used the built-in solution for com
 | `tabs-list-border-style`    | `solid`              | |
 | `tabs-list-border-color`    | `rgb(226 232 240)`   | ![#e2e8f0](https://via.placeholder.com/15/e2e8f0/e2e8f0.png) |
 | `tab-font-size`             | `0.875rem`           | |
+| `tab-font-weight`           | `500`                | |
 | `tab-line-height`           | `1.25rem`            | |
+| `tab-letter-spaging`        | `0em`                | |
+| `tab-text-decoration`       | `none`               | |
 | `tab-pt`                    | `0.5rem`             | |
 | `tab-pr`                    | `1rem`               | |
 | `tab-pb`                    | `0.5rem`             | |
