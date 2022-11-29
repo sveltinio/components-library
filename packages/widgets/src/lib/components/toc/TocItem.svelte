@@ -17,7 +17,24 @@
 <style>
 	li {
 		position: relative;
-		margin: 0;
+		margin-top: var(--_item-mt);
+		margin-right: var(--_item-mr);
+		margin-bottom: var(--_item-mb);
+		margin-left: var(--_item-ml);
+
+		border-top-width: var(--_item-border-t-width);
+		border-top-style: var(--_item-border-t-style);
+		border-top-color: var(--_item-border-t-color);
+		border-right-width: var(--_item-border-r-width);
+		border-right-style: var(--_item-border-r-style);
+		border-right-color: var(--_item-border-r-color);
+		border-bottom-width: var(--_item-border-b-width);
+		border-bottom-style: var(--_item-border-b-style);
+		border-bottom-color: var(--_item-border-b-color);
+		border-left-width: var(--_item-border-l-width);
+		border-left-style: var(--_item-border-l-style);
+		border-left-color: var(--_item-border-l-color);
+		border-radius: var(--_item_border-radius);
 	}
 
 	a.toc-list-item-link {
@@ -27,7 +44,6 @@
 		padding-right: var(--_item-pr);
 		padding-bottom: var(--_item-pb);
 		padding-left: var(--_item-pl);
-		border-radius: 0.375rem; /* 6px */
 	}
 
 	a.toc-list-item-link-default,

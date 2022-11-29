@@ -8,6 +8,23 @@
 	--_btn-border-style: var(--btn-border-style, none);
 	--_btn-border-color: var(--btn-border-color, transparent);
 	--_btn-border-radius: var(--btn-border-radius, 30px);
+	--_item-mt: var(--item-mt, 0);
+	--_item-mr: var(--item-mr, 0);
+	--_item-mb: var(--item-mb, 0);
+	--_item-ml: var(--item-ml, 0);
+	--_item-border-t-width: var(--item-border-t-width, 1px);
+	--_item-border-t-style: var(--item-border-t-style, solid);
+	--_item-border-t-color: var(--item-border-t-color, transparent);
+	--_item-border-r-width: var(--item-border-r-width, 1px);
+	--_item-border-r-style: var(--item-border-r-style, solid);
+	--_item-border-r-color: var(--item-border-r-color, transparent);
+	--_item-border-b-width: var(--item-border-b-width, 1px);
+	--_item-border-b-style: var(--item-border-b-style, solid);
+	--_item-border-b-color: var(--item-border-b-color, transparent);
+	--_item-border-l-width: var(--item-border-l-width, 1px);
+	--_item-border-l-style: var(--item-border-l-style, solid);
+	--_item-border-l-color: var(--item-border-l-color, transparent);
+	--_item-border-radius: var(--item-border-radius, 0.375rem); /* 6px */
 }
 .default {
 	--_text-transform: var(--text-transform, none);
@@ -18,15 +35,16 @@
 	--_box-border-radius: var(--box-border-radius, 0px);
 	/* btn */
 	--_btn-color: var(--btn-color, rgb(31, 51, 55)); /* slate-800 */
-	--_btn-bg-color: var(--btn-bg-color, rgb(248, 250, 252)); /* slate-50 */
-	--_btn-bg-color-hover: var(--btn-bg-color-hover, rgb(241, 245, 249)); /* slate-100 */
-	--_btn-pt: var(--btn-pt, 3px);
-	--_btn-pr: var(--btn-pr, 6px);
-	--_btn-pb: var(--btn-pb, 3px);
-	--_btn-pl: var(--btn-pl, 6px);
+	--_btn-bg-color: var(--btn-bg-color, transparent);
+	--_btn-bg-color-hover: var(--btn-bg-color-hover, rgb(248, 250, 252)); /* slate-50 */
+	--_btn-pt: var(--btn-pt, 0.375rem); /* 6px */
+	--_btn-pr: var(--btn-pr, 0.625rem); /* 8px */
+	--_btn-pb: var(--btn-pb, 0.375rem); /* 6px */
+	--_btn-pl: var(--btn-pl, 0.625rem); /* 8px */
 	/* list */
 	--_list-style-type: var(--list-style-type, none);
-	--_list-bg-color-hover: var(--bg-color-hover, rgb(241, 245, 249)); /* slate-100 */
+	--_list-width: var(--list-width, 100%);
+	--_list-bg-color-hover: var(--bg-color-hover, rgb(248, 250, 252)); /* slate-50 */
 	--_list-pt: var(--list-pt, 10px);
 	--_list-pr: var(--list-pr, 0);
 	--_list-pb: var(--list-pb, 0);
@@ -53,12 +71,13 @@
 	--_btn-color: var(--btn-color, rgb(60, 60, 60)); /* slate-700 */
 	--_btn-bg-color: var(--btn-bg-color, rgb(248, 250, 252)); /* slate-50 */
 	--_btn-bg-color-hover: var(--btn-bg-color-hover, rgb(241, 245, 249)); /* slate-100 */
-	--_btn-pt: var(--btn-pt, 3px);
-	--_btn-pr: var(--btn-pr, 8px);
-	--_btn-pb: var(--btn-pb, 3px);
-	--_btn-pl: var(--btn-pl, 8px);
+	--_btn-pt: var(--btn-pt, 0.375rem); /* 6px */
+	--_btn-pr: var(--btn-pr, 0.625rem); /* 8px */
+	--_btn-pb: var(--btn-pb, 0.375rem); /* 6px */
+	--_btn-pl: var(--btn-pl, 0.625rem); /* 8px */
 	/* list */
 	--_list-style-type: var(--list-style-type, none);
+	--_list-width: var(--list-width, 100%);
 	--_list-bg-color-hover: var(--bg-color-hover, rgb(241, 245, 249)); /* slate-100 */
 	--_list-pt: var(--list-pt, 10px);
 	--_list-pr: var(--list-pr, 0);
@@ -110,10 +129,10 @@ button {
 .toc-default button {
 	color: var(--_btn-color);
 	text-transform: var(--_text-transform);
-	padding-top: var(--_btn-padding-top);
-	padding-left: var(--_btn-padding-left);
-	padding-bottom: var(--_btn-padding-bottom);
-	padding-right: var(--_btn-padding-right);
+	padding-top: var(--_btn-pt);
+	padding-right: var(--_btn-pr);
+	padding-bottom: var(--_btn-pb);
+	padding-left: var(--_btn-pl);
 	background-color: var(--_btn-bg-color);
 }
 
@@ -134,10 +153,10 @@ button {
 	color: var(--_btn-color);
 	background-color: var(--_btn-bg-color);
 	margin: 10px 0 10px 0;
-	padding-top: var(--_btn-padding-top);
-	padding-left: var(--_btn-padding-left);
-	padding-bottom: var(--_btn-padding-bottom);
-	padding-right: var(--_btn-padding-right);
+	padding-top: var(--_btn-pt);
+	padding-right: var(--_btn-pr);
+	padding-bottom: var(--_btn-pb);
+	padding-left: var(--_btn-pl);
 	text-transform: var(--_text-transform);
 }
 

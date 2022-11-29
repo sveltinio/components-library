@@ -43,6 +43,7 @@
 
 <style>
 	.toc-list {
+		width: var(--_list-width);
 		list-style-type: var(--_list-style-type);
 		padding-top: var(--_list-pt);
 		padding-right: var(--_list-pr);
