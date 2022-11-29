@@ -43,7 +43,9 @@ The following are the ones exposed by the component:
 
 ## Theming
 
-To simplify custom styles on the component we used the built-in solution for component theming using [style props].
+To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
+
+Below is the CSS variables list to apply your own styles to the component.
 
 ### Link
 
@@ -54,4 +56,4 @@ To simplify custom styles on the component we used the built-in solution for com
 | `color-hover`           | `rgb(30, 41, 59)`  | ![#1E293B](https://via.placeholder.com/15/1E293B/1E293B.png) |
 | `text-decoration-hover` |       none         | |
 
-[style props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
+[style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props

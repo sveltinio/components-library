@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { ToggleList } from '$lib/index.js';
 	//Icons
-	import { LongArrowDownRightIcon } from '@indaco/svelte-iconoir/icons/LongArrowDownRightIcon';
-	import { LongArrowRightUpIcon } from '@indaco/svelte-iconoir/icons/LongArrowRightUpIcon';
-	import { CloudUploadIcon } from '@indaco/svelte-iconoir/icons/CloudUploadIcon';
-	import { BellIcon } from '@indaco/svelte-iconoir/icons/BellIcon';
+	import {
+		LongArrowDownRightIcon,
+		LongArrowUpRightIcon,
+		CloudUploadIcon,
+		BellIcon
+	} from '@indaco/svelte-iconoir';
 	// sample data
 	const contentForToggleList = [
 		{ label: 'First', url: '#first', icon: CloudUploadIcon },
@@ -12,26 +14,32 @@
 	];
 
 	const myOwnStyles = {
-		'title-color': '#365314',
-		'title-color-hover': '#365314',
-		'title-bg-color': '#bef264',
-		'title-bg-color-hover': '#a3e635',
+		'btn-color': '#365314',
+		'btn-color-hover': '#365314',
+		'btn-bg-color': '#bef264',
+		'btn-bg-color-hover': '#a3e635',
 		'item-border-width': '2px',
 		'item-border-style': 'dashed',
 		'item-border-color': '#bef264',
 		'item-border-color-hover': '#365314',
-		'item-color': '#365314'
+		'item-color': '#365314',
+		'item-bg-color-hover': '#bef264'
 	};
 </script>
 
 <h3>Default</h3>
 <ToggleList title="My Toggle List" items={contentForToggleList} />
 
-<h3>Custom Icons</h3>
-<ToggleList title="My Toggle List 2" items={contentForToggleList} styles={myOwnStyles}>
-	<LongArrowDownRightIcon slot="whenClosedIcon" />
-	<LongArrowRightUpIcon slot="whenOpenIcon" />
+<h3>Left Side icon</h3>
+<ToggleList title="My Toggle List 3" items={contentForToggleList}>
+	<BellIcon size="18" slot="leftSideIcon" />
 </ToggleList>
 
-<h3>No Icons for the Title</h3>
-<ToggleList title="My Toggle List 3" items={contentForToggleList} noIcons />
+<h3>Full Size</h3>
+<ToggleList title="My Toggle List" items={contentForToggleList} full />
+
+<h3>Custom Styles</h3>
+<ToggleList title="My Toggle List 2" items={contentForToggleList} styles={myOwnStyles} full>
+	<LongArrowDownRightIcon slot="whenClosedIcon" />
+	<LongArrowUpRightIcon slot="whenOpenIcon" />
+</ToggleList>
