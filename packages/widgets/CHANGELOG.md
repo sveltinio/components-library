@@ -1,5 +1,12 @@
 # @sveltinio/widgets
 
+## 0.2.0
+
+### Minor Changes
+
+- componentes refactored to be usable easily out of sveltin projects
+- components theming support added.
+
 ## 0.1.7
 
 ### Patch Changes
