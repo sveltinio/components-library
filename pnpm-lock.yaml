@@ -17,7 +17,7 @@ importers:
       prettier: ^2.8.0
       prettier-plugin-svelte: ^2.8.1
       svelte: ^3.53.1
-      svelte-check: ^2.9.2
+      svelte-check: ^2.10.0
       svelte-preprocess: ^4.10.7
       turbo: latest
       typescript: ^4.9.3
@@ -37,7 +37,7 @@ importers:
       prettier: 2.8.0
       prettier-plugin-svelte: 2.8.1_3ndnxlh52lolrqe4kgjgbxb3xa
       svelte: 3.53.1
-      svelte-check: 2.9.2_svelte@3.53.1
+      svelte-check: 2.10.0_svelte@3.53.1
       svelte-preprocess: 4.10.7_7dvewpees4iyn2tkw2qzal77a4
       turbo: 1.6.3
       typescript: 4.9.3
@@ -64,7 +64,7 @@ importers:
   packages/essentials:
     specifiers:
       '@indaco/svelte-iconoir': ^3.1.0
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567
       '@sveltejs/package': 1.0.0-next.6
       '@sveltejs/vite-plugin-svelte': ^1.3.1
@@ -79,7 +79,7 @@ importers:
       micromatch: ^4.0.5
       rimraf: ^3.0.2
       svelte: ^3.53.1
-      svelte-check: ^2.9.2
+      svelte-check: ^2.10.0
       svelte-preprocess: ^4.10.7
       tslib: ^2.4.1
       typescript: ^4.9.3
@@ -89,7 +89,7 @@ importers:
       '@indaco/svelte-iconoir': 3.1.0
       svelte: 3.53.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1+vite@3.2.4
       '@sveltejs/package': 1.0.0-next.6_7dvewpees4iyn2tkw2qzal77a4
       '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.53.1+vite@3.2.4
@@ -103,7 +103,7 @@ importers:
       jsdom: 20.0.3
       micromatch: 4.0.5
       rimraf: 3.0.2
-      svelte-check: 2.9.2_svelte@3.53.1
+      svelte-check: 2.10.0_svelte@3.53.1
       svelte-preprocess: 4.10.7_7dvewpees4iyn2tkw2qzal77a4
       tslib: 2.4.1
       typescript: 4.9.3
@@ -113,7 +113,7 @@ importers:
 
   packages/media-content:
     specifiers:
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567
       '@sveltejs/package': 1.0.0-next.6
       '@sveltejs/vite-plugin-svelte': ^1.3.1
@@ -129,7 +129,7 @@ importers:
       micromatch: ^4.0.5
       rimraf: ^3.0.2
       svelte: ^3.53.1
-      svelte-check: ^2.9.2
+      svelte-check: ^2.10.0
       svelte-preprocess: ^4.10.7
       tslib: ^2.4.1
       typescript: ^4.9.3
@@ -138,7 +138,7 @@ importers:
     dependencies:
       svelte: 3.53.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1+vite@3.2.4
       '@sveltejs/package': 1.0.0-next.6_7dvewpees4iyn2tkw2qzal77a4
       '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.53.1+vite@3.2.4
@@ -153,7 +153,7 @@ importers:
       jsdom: 20.0.3
       micromatch: 4.0.5
       rimraf: 3.0.2
-      svelte-check: 2.9.2_svelte@3.53.1
+      svelte-check: 2.10.0_svelte@3.53.1
       svelte-preprocess: 4.10.7_7dvewpees4iyn2tkw2qzal77a4
       tslib: 2.4.1
       typescript: 4.9.3
@@ -163,7 +163,7 @@ importers:
 
   packages/seo:
     specifiers:
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567
       '@sveltejs/package': 1.0.0-next.6
       '@sveltejs/vite-plugin-svelte': ^1.3.1
@@ -178,7 +178,7 @@ importers:
       micromatch: ^4.0.5
       rimraf: ^3.0.2
       svelte: ^3.53.1
-      svelte-check: ^2.9.2
+      svelte-check: ^2.10.0
       svelte-preprocess: ^4.10.7
       tslib: ^2.4.1
       typescript: ^4.9.3
@@ -187,7 +187,7 @@ importers:
     dependencies:
       svelte: 3.53.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1+vite@3.2.4
       '@sveltejs/package': 1.0.0-next.6_7dvewpees4iyn2tkw2qzal77a4
       '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.53.1+vite@3.2.4
@@ -201,7 +201,7 @@ importers:
       jsdom: 20.0.3
       micromatch: 4.0.5
       rimraf: 3.0.2
-      svelte-check: 2.9.2_svelte@3.53.1
+      svelte-check: 2.10.0_svelte@3.53.1
       svelte-preprocess: 4.10.7_7dvewpees4iyn2tkw2qzal77a4
       tslib: 2.4.1
       typescript: 4.9.3
@@ -211,7 +211,7 @@ importers:
 
   packages/services:
     specifiers:
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567
       '@sveltejs/package': 1.0.0-next.6
       '@sveltejs/vite-plugin-svelte': ^1.3.1
@@ -227,7 +227,7 @@ importers:
       micromatch: ^4.0.5
       rimraf: ^3.0.2
       svelte: ^3.53.1
-      svelte-check: ^2.9.2
+      svelte-check: ^2.10.0
       svelte-preprocess: ^4.10.7
       tslib: ^2.4.1
       typescript: ^4.9.3
@@ -236,7 +236,7 @@ importers:
     dependencies:
       svelte: 3.53.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1+vite@3.2.4
       '@sveltejs/package': 1.0.0-next.6_7dvewpees4iyn2tkw2qzal77a4
       '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.53.1+vite@3.2.4
@@ -251,7 +251,7 @@ importers:
       jsdom: 20.0.3
       micromatch: 4.0.5
       rimraf: 3.0.2
-      svelte-check: 2.9.2_svelte@3.53.1
+      svelte-check: 2.10.0_svelte@3.53.1
       svelte-preprocess: 4.10.7_7dvewpees4iyn2tkw2qzal77a4
       tslib: 2.4.1
       typescript: 4.9.3
@@ -261,7 +261,7 @@ importers:
 
   packages/widgets:
     specifiers:
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567
       '@sveltejs/package': 1.0.0-next.6
       '@sveltejs/vite-plugin-svelte': ^1.3.1
@@ -276,7 +276,7 @@ importers:
       micromatch: ^4.0.5
       rimraf: ^3.0.2
       svelte: ^3.53.1
-      svelte-check: ^2.9.2
+      svelte-check: ^2.10.0
       svelte-preprocess: ^4.10.7
       tslib: ^2.4.1
       typescript: ^4.9.3
@@ -285,7 +285,7 @@ importers:
     dependencies:
       svelte: 3.53.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.89
+      '@sveltejs/adapter-auto': 1.0.0-next.90
       '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1+vite@3.2.4
       '@sveltejs/package': 1.0.0-next.6_7dvewpees4iyn2tkw2qzal77a4
       '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.53.1+vite@3.2.4
@@ -299,7 +299,7 @@ importers:
       jsdom: 20.0.3
       micromatch: 4.0.5
       rimraf: 3.0.2
-      svelte-check: 2.9.2_svelte@3.53.1
+      svelte-check: 2.10.0_svelte@3.53.1
       svelte-preprocess: 4.10.7_7dvewpees4iyn2tkw2qzal77a4
       tslib: 2.4.1
       typescript: 4.9.3
@@ -309,64 +309,63 @@ importers:
 
   sites/components.sveltin.io:
     specifiers:
-      '@indaco/svelte-iconoir': ^3.1.0
-      '@sveltejs/adapter-static': 1.0.0-next.48
-      '@sveltejs/kit': 1.0.0-next.567
-      '@sveltinio/essentials': workspace:^0.2.1
-      '@sveltinio/media-content': workspace:^0.3.2
-      '@sveltinio/seo': workspace:^0.1.7
-      '@sveltinio/services': workspace:^0.3.1
-      '@sveltinio/widgets': workspace:^0.1.7
+      '@indaco/svelte-iconoir': ^3.0.1
+      '@sveltejs/adapter-static': 1.0.0-next.43
+      '@sveltejs/kit': 1.0.0-next.505
+      '@sveltinio/essentials': workspace:../../packages/essentials/dist
+      '@sveltinio/media-content': workspace:../../packages/media-content/dist
+      '@sveltinio/seo': workspace:../../packages/seo/dist
+      '@sveltinio/services': workspace:../../packages/services/dist
+      '@sveltinio/widgets': workspace:../../packages/widgets/dist
       '@tailwindcss/aspect-ratio': ^0.4.2
       '@tailwindcss/line-clamp': ^0.4.2
-      '@tailwindcss/typography': ^0.5.8
+      '@tailwindcss/typography': ^0.5.7
       '@types/gtag.js': ^0.0.11
       '@types/lodash-es': ^4.17.6
-      '@types/node': ^18.11.9
-      '@typescript-eslint/eslint-plugin': ^5.43.0
-      '@typescript-eslint/parser': ^5.43.0
-      autoprefixer: ^10.4.13
-      cssnano: ^5.1.14
-      eslint: ^8.27.0
-      eslint-config-custom: workspace:0.0.0
+      '@types/node': ^18.7.23
+      '@typescript-eslint/eslint-plugin': ^5.38.1
+      '@typescript-eslint/parser': ^5.38.1
+      autoprefixer: ^10.4.12
+      cssnano: ^5.1.13
+      eslint: ^8.24.0
+      eslint-config-custom: workspace:*
       install: ^0.13.0
       lodash-es: ^4.17.21
       mdast-util-to-string: ^3.1.0
       mdsvex: ^0.10.6
-      mdsvex-relative-images: ^1.0.3
+      mdsvex-relative-images: ^1.0.2
       mdsvexamples: ^0.3.2
-      postcss: ^8.4.19
+      postcss: ^8.4.16
       postcss-import: ^15.0.0
       postcss-load-config: ^4.0.1
       postcss-nested: ^5.0.6
       prettier: ^2.7.1
-      prettier-plugin-svelte: ^2.8.0
+      prettier-plugin-svelte: ^2.7.1
       prettier-plugin-tailwindcss: ^0.1.13
       rehype-autolink-headings: ^6.1.1
-      rehype-external-links: ^2.0.1
-      rehype-slug: ^5.1.0
+      rehype-slug: ^5.0.1
       remark-emoji: ^3.0.2
+      remark-external-links: 9.0.1
       remark-slug: ^7.0.1
       rimraf: ^3.0.2
-      svelte: ^3.53.1
-      svelte-check: ^2.9.2
+      svelte: ^3.50.1
+      svelte-check: ^2.9.0
       svelte-preprocess: ^4.10.7
-      tailwindcss: ^3.2.4
-      tslib: ^2.4.1
-      typescript: ^4.9.3
+      tailwindcss: ^3.1.8
+      tslib: ^2.4.0
+      typescript: ^4.8.4
       unist-util-visit: ^4.1.1
-      vite: ^3.2.4
-      vite-plugin-inspect: ^0.7.8
+      vite: ^3.1.4
     dependencies:
-      '@sveltinio/essentials': link:../../packages/essentials
-      '@sveltinio/media-content': link:../../packages/media-content
-      '@sveltinio/seo': link:../../packages/seo
-      '@sveltinio/services': link:../../packages/services
-      '@sveltinio/widgets': link:../../packages/widgets
+      '@sveltinio/essentials': link:../../packages/essentials/dist
+      '@sveltinio/media-content': link:../../packages/media-content/dist
+      '@sveltinio/seo': link:../../packages/seo/dist
+      '@sveltinio/services': link:../../packages/services/dist
+      '@sveltinio/widgets': link:../../packages/widgets/dist
     devDependencies:
       '@indaco/svelte-iconoir': 3.1.0
-      '@sveltejs/adapter-static': 1.0.0-next.48
-      '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1+vite@3.2.4
+      '@sveltejs/adapter-static': 1.0.0-next.43
+      '@sveltejs/kit': 1.0.0-next.505_svelte@3.53.1+vite@3.2.4
       '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.4
       '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
       '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
@@ -393,9 +392,9 @@ importers:
       prettier-plugin-svelte: 2.8.1_3ndnxlh52lolrqe4kgjgbxb3xa
       prettier-plugin-tailwindcss: 0.1.13_prettier@2.8.0
       rehype-autolink-headings: 6.1.1
-      rehype-external-links: 2.0.1
       rehype-slug: 5.1.0
       remark-emoji: 3.0.2
+      remark-external-links: 9.0.1
       remark-slug: 7.0.1
       rimraf: 3.0.2
       svelte: 3.53.1
@@ -406,7 +405,6 @@ importers:
       typescript: 4.9.3
       unist-util-visit: 4.1.1
       vite: 3.2.4_@types+node@18.11.9
-      vite-plugin-inspect: 0.7.9_vite@3.2.4
 
 packages:
 
@@ -954,32 +952,47 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@rollup/pluginutils/5.0.2:
-    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-    dependencies:
-      '@types/estree': 1.0.0
-      estree-walker: 2.0.2
-      picomatch: 2.3.1
-    dev: true
-
   /@sinclair/typebox/0.24.51:
     resolution: {integrity: sha512-1P1OROm/rdubP5aFDSZQILU0vrLCJ4fvHt6EoqHEM+2D/G5MK3bIaymUKLit8Js9gbns5UyJnkP/TZROLw4tUA==}
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.0-next.89:
-    resolution: {integrity: sha512-S+sASFX4sSZD1xEKmZ3zHxQh2DGxXBUpCGAtUakKkI2MRvFIm+zYIm+7GPekofMLd19FjdFDKkuOjBKPdmA8+w==}
+  /@sveltejs/adapter-auto/1.0.0-next.90:
+    resolution: {integrity: sha512-qxH46Oqqn40998wTmnbffONI0HcW/kiZ3OIjZoysjONne+LU4uEsG425MZ2RHDxmR04zxhsdjCAsn6B4du8D7w==}
     dependencies:
       import-meta-resolve: 2.2.0
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.48:
-    resolution: {integrity: sha512-Z5Z+QZOav6D0KDeU3ReksGERJg/sX1k5OKWWXyQ11OwGErEEwSXHYRUyjaBmZEPeGzpVVGwwMUK8YWJlG/MKeA==}
+  /@sveltejs/adapter-static/1.0.0-next.43:
+    resolution: {integrity: sha512-PAgSp1GA8HkYE4p30/sBvJme2nefhcTBJafqQdMNoUksWZF2WzuL8OEO8wa9ndE6cghcGk3j6Ve0Oskg/wtTOw==}
+    dev: true
+
+  /@sveltejs/kit/1.0.0-next.505_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-vg2WvWiUB7useJZOKbdM8WOXv10WD7SVDER74IXd1t/TWb/uXHzwMQ/ZAsXZFdxQsz1cDGFub3iC76PW+j58Pg==}
+    engines: {node: '>=16.14'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      svelte: ^3.44.0
+      vite: ^3.1.0
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.53.1+vite@3.2.4
+      '@types/cookie': 0.5.1
+      cookie: 0.5.0
+      devalue: 3.1.3
+      kleur: 4.1.5
+      magic-string: 0.26.7
+      mime: 3.0.0
+      node-fetch: 3.3.0
+      sade: 1.8.1
+      set-cookie-parser: 2.5.1
+      sirv: 2.0.2
+      svelte: 3.53.1
+      tiny-glob: 0.2.9
+      undici: 5.13.0
+      vite: 3.2.4_@types+node@18.11.9
+    transitivePeerDependencies:
+      - diff-match-patch
+      - supports-color
     dev: true
 
   /@sveltejs/kit/1.0.0-next.567_svelte@3.53.1+vite@3.2.4:
@@ -1004,7 +1017,7 @@ packages:
       svelte: 3.53.1
       tiny-glob: 0.2.9
       undici: 5.13.0
-      vite: 3.2.4_@types+node@18.11.9
+      vite: 3.2.4
     transitivePeerDependencies:
       - diff-match-patch
       - supports-color
@@ -1158,10 +1171,6 @@ packages:
 
   /@types/cookie/0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
-    dev: true
-
-  /@types/estree/1.0.0:
-    resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
   /@types/fined/1.1.3:
@@ -2346,6 +2355,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /data-uri-to-buffer/4.0.0:
+    resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
+    engines: {node: '>= 12'}
+    dev: true
+
   /data-urls/3.0.2:
     resolution: {integrity: sha512-Jy/tj3ldjZJo63sVAvg6LHt2mHvl4V6AgRAmNDtLdm7faqtsx+aJG42rsyCo9JCoRVKwPFzKlIPx3DIibwSIaQ==}
     engines: {node: '>=12'}
@@ -2477,6 +2491,10 @@ packages:
       acorn-node: 1.8.2
       defined: 1.0.1
       minimist: 1.2.7
+    dev: true
+
+  /devalue/3.1.3:
+    resolution: {integrity: sha512-9KO89Cb+qjzf2CqdrH+NuLaqdk9GhDP5EhR4zlkR51dvuIaiqtlkDkGzLMShDemwUy21raSMdu+kpX8Enw3yGQ==}
     dev: true
 
   /devalue/4.2.0:
@@ -3067,10 +3085,6 @@ packages:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
 
-  /estree-walker/2.0.2:
-    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
-    dev: true
-
   /esutils/2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
@@ -3164,6 +3178,14 @@ packages:
     resolution: {integrity: sha512-YpkpUnK8od0o1hmeSc7UUs/eB/vIPWJYjKck2QKIzAf71Vm1AAQ3EbuZB3g2JIy+pg+ERD0vqI79KyZiB2e2Nw==}
     dependencies:
       reusify: 1.0.4
+
+  /fetch-blob/3.2.0:
+    resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
+    engines: {node: ^12.20 || >= 14.13}
+    dependencies:
+      node-domexception: 1.0.0
+      web-streams-polyfill: 3.2.1
+    dev: true
 
   /figures/3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
@@ -3276,6 +3298,13 @@ packages:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
+    dev: true
+
+  /formdata-polyfill/4.0.10:
+    resolution: {integrity: sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==}
+    engines: {node: '>=12.20.0'}
+    dependencies:
+      fetch-blob: 3.2.0
     dev: true
 
   /fraction.js/4.2.0:
@@ -4237,10 +4266,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /kolorist/1.6.0:
-    resolution: {integrity: sha512-dLkz37Ab97HWMx9KTes3Tbi3D1ln9fCAy2zr2YVExJasDRPGRaKcoE4fycWNtnCAJfjFqe0cnY+f8KT2JePEXQ==}
-    dev: true
-
   /levn/0.3.0:
     resolution: {integrity: sha512-0OO4y2iOHix2W6ujICbKIaEQXvFQHue65vUG3pb5EUomzPI90z9hsA1VsO/dbIIpC53J8gxM9Q4Oho0jrCM/yA==}
     engines: {node: '>= 0.8.0'}
@@ -4511,6 +4536,14 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /mdast-util-definitions/5.1.1:
+    resolution: {integrity: sha512-rQ+Gv7mHttxHOBx2dkF4HWTg+EE+UR78ptQWDylzPKaQuVGdG4HIoY3SrS/pCp80nZ04greFvXbVFHT+uf0JVQ==}
+    dependencies:
+      '@types/mdast': 3.0.10
+      '@types/unist': 2.0.6
+      unist-util-visit: 4.1.1
+    dev: true
+
   /mdast-util-to-string/3.1.0:
     resolution: {integrity: sha512-n4Vypz/DZgwo0iMHLQL49dJzlp7YtAJP+N07MZHpjPf/5XJuHUWstviF4Mn2jEiR/GNmtnRRqnwsXExk3igfFA==}
     dev: true
@@ -4720,10 +4753,24 @@ packages:
       tslib: 2.4.1
     dev: true
 
+  /node-domexception/1.0.0:
+    resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
+    engines: {node: '>=10.5.0'}
+    dev: true
+
   /node-emoji/1.11.0:
     resolution: {integrity: sha512-wo2DpQkQp7Sjm2A0cq+sN7EHKO6Sl0ctXeBdFZrL9T9+UywORbufTcTZxom8YqpLQt/FqNMUkOpkZrJVYSKD3A==}
     dependencies:
       lodash: 4.17.21
+    dev: true
+
+  /node-fetch/3.3.0:
+    resolution: {integrity: sha512-BKwRP/O0UvoMKp7GNdwPlObhYGB5DQqwhEDQlNKuoqwVYSxkSZCSbHjnFFmUEtwSKRPU4kNK8PbDYYitwaE3QA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      data-uri-to-buffer: 4.0.0
+      fetch-blob: 3.2.0
+      formdata-polyfill: 4.0.10
     dev: true
 
   /node-plop/0.31.0:
@@ -5752,17 +5799,6 @@ packages:
       unist-util-visit: 4.1.1
     dev: true
 
-  /rehype-external-links/2.0.1:
-    resolution: {integrity: sha512-u2dNypma+ps12SJWlS23zvbqwNx0Hl24t0YHXSM/6FCZj/pqWETCO3WyyrvALv4JYvRtuPjhiv2Lpen15ESqbA==}
-    dependencies:
-      '@types/hast': 2.3.4
-      extend: 3.0.2
-      is-absolute-url: 4.0.1
-      space-separated-tokens: 2.0.2
-      unified: 10.1.2
-      unist-util-visit: 4.1.1
-    dev: true
-
   /rehype-slug/5.1.0:
     resolution: {integrity: sha512-Gf91dJoXneiorNEnn+Phx97CO7oRMrpi+6r155tTxzGuLtm+QrI4cTwCa9e1rtePdL4i9tSO58PeSS6HWfgsiw==}
     dependencies:
@@ -5781,6 +5817,19 @@ packages:
     dependencies:
       emoticon: 4.0.1
       node-emoji: 1.11.0
+      unist-util-visit: 4.1.1
+    dev: true
+
+  /remark-external-links/9.0.1:
+    resolution: {integrity: sha512-EYw+p8Zqy5oT5+W8iSKzInfRLY+zeKWHCf0ut+Q5SwnaSIDGXd2zzvp4SWqyAuVbinNmZ0zjMrDKaExWZnTYqQ==}
+    dependencies:
+      '@types/hast': 2.3.4
+      '@types/mdast': 3.0.10
+      extend: 3.0.2
+      is-absolute-url: 4.0.1
+      mdast-util-definitions: 5.1.1
+      space-separated-tokens: 2.0.2
+      unified: 10.1.2
       unist-util-visit: 4.1.1
     dev: true
 
@@ -6301,8 +6350,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/2.9.2_g7z2chviobwh5b53nr2x4mtdq4:
-    resolution: {integrity: sha512-DRi8HhnCiqiGR2YF9ervPGvtoYrheE09cXieCTEqeTPOTJzfoa54Py8rovIBv4bH4n5HgZYIyTQ3DDLHQLl2uQ==}
+  /svelte-check/2.10.0_svelte@3.53.1:
+    resolution: {integrity: sha512-5iLCoja/WsithyRkNtIeDQ0euJlgWj3Zzo2IA6iuHMuuX9D9OrRYZj2WlA5ACnAFQnN5L9mxWcwUW9VxDNEoGg==}
     hasBin: true
     peerDependencies:
       svelte: ^3.24.0
@@ -6314,7 +6363,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.53.1
-      svelte-preprocess: 4.10.7_jgeygver3mevbte7srfft5qwby
+      svelte-preprocess: 4.10.7_7dvewpees4iyn2tkw2qzal77a4
       typescript: 4.9.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -6329,7 +6378,7 @@ packages:
       - sugarss
     dev: true
 
-  /svelte-check/2.9.2_svelte@3.53.1:
+  /svelte-check/2.9.2_g7z2chviobwh5b53nr2x4mtdq4:
     resolution: {integrity: sha512-DRi8HhnCiqiGR2YF9ervPGvtoYrheE09cXieCTEqeTPOTJzfoa54Py8rovIBv4bH4n5HgZYIyTQ3DDLHQLl2uQ==}
     hasBin: true
     peerDependencies:
@@ -6342,7 +6391,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.53.1
-      svelte-preprocess: 4.10.7_7dvewpees4iyn2tkw2qzal77a4
+      svelte-preprocess: 4.10.7_jgeygver3mevbte7srfft5qwby
       typescript: 4.9.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -6819,10 +6868,6 @@ packages:
     hasBin: true
     dev: true
 
-  /ufo/1.0.0:
-    resolution: {integrity: sha512-DRty0ZBNlJ2R59y4mEupJRKLbkLQsc4qtxjpQv78AwEDuBkaUogMc2LkeqW3HddFlw6NwnXYfdThEZOiNgkmmQ==}
-    dev: true
-
   /uglify-js/3.17.4:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
     engines: {node: '>=0.8.0'}
@@ -7041,24 +7086,6 @@ packages:
       vfile-message: 3.1.3
     dev: true
 
-  /vite-plugin-inspect/0.7.9_vite@3.2.4:
-    resolution: {integrity: sha512-YBI5/smKxx2gc5MrzQ8n6ztGxdtItoqumJn96d6b57SvC9aSvjMXsvzUgrR/dlVXCnpu755m1TXp3h/TsVOwJA==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      vite: ^3.1.0
-    dependencies:
-      '@rollup/pluginutils': 5.0.2
-      debug: 4.3.4
-      fs-extra: 10.1.0
-      kolorist: 1.6.0
-      sirv: 2.0.2
-      ufo: 1.0.0
-      vite: 3.2.4_@types+node@18.11.9
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-    dev: true
-
   /vite/3.2.4:
     resolution: {integrity: sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -7239,6 +7266,11 @@ packages:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
     dependencies:
       defaults: 1.0.4
+    dev: true
+
+  /web-streams-polyfill/3.2.1:
+    resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
+    engines: {node: '>= 8'}
     dev: true
 
   /webidl-conversions/7.0.0:
