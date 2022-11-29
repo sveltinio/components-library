@@ -47,7 +47,9 @@ The `Tabs` component is used to easily includes tabs within the page. It support
 
 ## Theming
 
-To simplify custom styles on the component we used the built-in solution for component theming using [style props](https://svelte.dev/docs#template-syntax-component-directives---style-props).
+To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
+
+Below is the CSS variables list to apply your own styles to the component.
 
 | CSS Variable                | Default              | |
 | :-------------------------- | -------------------: | :----------------------------------------------------------: |
@@ -103,6 +105,8 @@ To simplify custom styles on the component we used the built-in solution for com
 | `content-border-width`      | `1px`                | |
 | `content-border-style`      | `solid`              | |
 | `content-border-color`      | `rgb(226 232 240)`   | ![#e2e8f0](https://via.placeholder.com/15/e2e8f0/e2e8f0.png) |
+
+[style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
 
 ### Example
 

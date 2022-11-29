@@ -41,6 +41,8 @@ The `Card` component exposes the following properties:
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
+Below is the CSS variables list to apply your own styles to the component.
+
 | CSS Variable           | Default              |                                                              |
 | :--------------------- | -------------------: | :----------------------------------------------------------: |
 | `min-height`           | `24rem`              | |

@@ -56,9 +56,9 @@ The following are the ones exposed by the component
 
 ## Theming
 
-To simplify custom styles on the component we used the built-in solution for component theming using [style props](https://svelte.dev/docs#template-syntax-component-directives---style-props).
+To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-The `Button` component allows you to pass the following styles as props:
+Below is the CSS variables list to apply your own styles to the component.
 
 | CSS Variable        | Default            | |
 | :------------------ | ------------------:| :----------------------------------------------------------: |
@@ -81,6 +81,8 @@ The `Button` component allows you to pass the following styles as props:
 | `ring-width`        | `2px`              | |
 | `ring-offset`       | `2px`              | |
 | `ring-style`        | `solid`            | |
+
+[style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
 
 ### Example
 

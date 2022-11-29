@@ -49,5 +49,4 @@ The `GitHubForkRibbon` component exposes the following properties:
 <GitHubForkRibbon username="sveltinio" repo="sveltin" />
 
 <GitHubForkRibbon username="sveltinio" repo="sveltin" bgColor="#7e22ce" />
-
 ```

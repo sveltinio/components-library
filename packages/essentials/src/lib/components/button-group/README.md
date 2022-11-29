@@ -31,6 +31,8 @@ The `ButtonGroup` component is the main wrapper component.
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
+Below is the CSS variables list to apply your own styles to the component.
+
 | CSS Variable          | Default              | |
 | :-------------------- | -------------------: | :----------------------------------------------------------: |
 | `color`               | `rgb(75, 85, 99)`    | ![#475569](https://via.placeholder.com/15/475569/475569.png) |
