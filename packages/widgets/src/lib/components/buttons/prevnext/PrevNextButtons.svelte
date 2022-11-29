@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.css';
+	import './prevnext-styles.css';
 	import { stylesObjToCSSVars, capitalize } from '../../../utils.js';
 
 	export let prevLabel = 'previous';

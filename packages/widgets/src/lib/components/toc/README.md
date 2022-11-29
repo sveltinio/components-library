@@ -51,41 +51,59 @@ Below is the CSS variables list to apply your own styles to the component.
 
 | CSS Variable                 | Default              |                                                              |
 | :--------------------------- | -------------------: | :----------------------------------------------------------: |
-| `min-height`                 | `45px`               |                                                              |
-| `gap`                        | `4px`                |                                                              |
-| `font-size`                  | `16px`               |                                                              |
-| `font-weight`                | `bold`               |                                                              |
-| `line-height`                | `1.75rem`            |                                                              |
-| `text-transform`             | `none`               |                                                              |
-| `box-bg-color`               | `transparent`        |                                                              |
-| `box-border-color`           | `transparent`        |                                                              |
-| `box-border-style`           | `none`               |                                                              |
-| `box-border-weight`          | `0px`                |                                                              |
-| `box-border-radius`          | `30px`               |                                                              |
+| `min-height`                 | `45px`               | |
+| `gap`                        | `4px`                | |
+| `font-size`                  | `16px`               | |
+| `font-weight`                | `bold`               | |
+| `line-height`                | `1.75rem`            | |
+| `text-transform`             | `none`               | |
+| `box-bg-color`               | `transparent`        | |
+| `box-border-color`           | `transparent`        | |
+| `box-border-style`           | `none`               | |
+| `box-border-weight`          | `0px`                | |
+| `box-border-radius`          | `30px`               | |
 | `btn-color`                  | `rgb(31, 51, 55)`    | ![#1e293b](https://via.placeholder.com/15/1e293b/1e293b.png) |
-| `btn-bg-color`               | `rgb(248, 250, 252)` | ![#f8fafc](https://via.placeholder.com/15/f8fafc/f8fafc.png) |
-| `btn-bg-color-hover`         | `rgb(241, 245, 249)` | ![#f1f5f9](https://via.placeholder.com/15/f1f5f9/f1f5f9.png) |
-| `btn-border-color`           | `transparent`        |                                                              |
-| `btn-border-style`           | `none`               |                                                              |
-| `btn-border-weight`          | `0px`                |                                                              |
-| `btn-border-radius`          | `30px`               |                                                              |
-| `btn-pt`                     | `3px`                |                                                              |
-| `btn-pr`                     | `6px`                |                                                              |
-| `btn-pb`                     | `3px`                |                                                              |
-| `btn-pl`                     | `6px`                |                                                              |
-| `list-style-type`            | `none`               |                                                              |
-| `list-bg-color-hover`        | `rgb(241, 245, 249)` | ![#f1f5f9](https://via.placeholder.com/15/f1f5f9/f1f5f9.png) |
-| `list-pt`                    | `10px`               |                                                              |
-| `list-pr`                    | `0`                  |                                                              |
-| `list-pb`                    | `0`                  |                                                              |
-| `list-pl`                    | `20px`               |                                                              |
+| `btn-bg-color`               | `transparent`        | |
+| `btn-bg-color-hover`         | `rgb(248, 250, 252)` | ![#f8fafc](https://via.placeholder.com/15/f8fafc/f8fafc.png) |
+| `btn-border-color`           | `transparent`        | |
+| `btn-border-style`           | `none`               | |
+| `btn-border-weight`          | `0px`                | |
+| `btn-border-radius`          | `30px`               | |
+| `btn-pt`                     | `0.375rem`           | |
+| `btn-pr`                     | `0.625rem`           | |
+| `btn-pb`                     | `0.375rem`           | |
+| `btn-pl`                     | `0.625rem`           | |
+| `list-style-type`            | `none`               | |
+| `list-width`                 | `100%`               | |
+| `list-bg-color-hover`        | `rgb(248, 250, 252)` | ![#f8fafc](https://via.placeholder.com/15/f8fafc/f8fafc.png) |
+| `list-pt`                    | `10px`               | |
+| `list-pr`                    | `0`                  | |
+| `list-pb`                    | `0`                  | |
+| `list-pl`                    | `20px`               | |
 | `item-color`                 | `rgb(71, 85, 105)`   | ![#334155](https://via.placeholder.com/15/334155/334155.png) |
-| `item-text-decoration`       | `none`               |                                                              |
-| `item-text-decoration-hover` | `none`               |                                                              |
+| `item-text-decoration`       | `none`               | |
+| `item-text-decoration-hover` | `none`               | |
 | `item-bg-color-hover`        | `rgb(248, 250, 252)` | ![#f8fafc](https://via.placeholder.com/15/f8fafc/f8fafc.png) |
-| `item-pt`                    | `0.25rem`            |                                                              |
-| `item-pr`                    | `0.25rem`            |                                                              |
-| `item-pb`                    | `0.25rem`            |                                                              |
-| `item-pl`                    | `0.25rem`            |                                                              |
+| `item-pt`                    | `0.25rem`            | |
+| `item-pr`                    | `0.25rem`            | |
+| `item-pb`                    | `0.25rem`            | |
+| `item-pl`                    | `0.25rem`            | |
+| `item-mt`                    | `0`                  | |
+| `item-mr`                    | `0`                  | |
+| `item-mb`                    | `0`                  | |
+| `item-ml`                    | `0`                  | |
+| `item-border-t-width`        | `1px`                | |
+| `item-border-t-style`        | `solid`              | |
+| `item-border-t-color`        | `transparent`        | |
+| `item-border-r-width`        | `1px`                | |
+| `item-border-r-style`        | `solid`              | |
+| `item-border-r-color`        | `transparent`        | |
+| `item-border-b-width`        | `1px`                | |
+| `item-border-b-style`        | `solid`              | |
+| `item-border-b-color`        | `transparent`        | |
+| `item-border-l-width`        | `1px`                | |
+| `item-border-l-style`        | `solid`              | |
+| `item-border-l-color`        | `transparent`        | |
+| `item-border-radius`         | `0.375rem`           | |
 
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props

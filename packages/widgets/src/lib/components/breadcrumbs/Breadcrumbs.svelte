@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.css';
+	import './bc-styles.css';
 	import { stylesObjToCSSVars, capitalize } from '../../utils.js';
 
 	export let baseURL = '/';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.css';
+	import './card-styles.css';
 	import { stylesObjToCSSVars } from '../../utils.js';
 	export let styles = {};
 
