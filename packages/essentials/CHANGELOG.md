@@ -1,5 +1,30 @@
 # @sveltinio/essentials
 
+## 0.3.0
+
+### Minor Changes
+
+The following components have been added to the package:
+
+- `Button`
+- `ButtonGroup`
+- `ColorViewer`
+- `Dropdown`
+- `ToggleList`
+- `Tabs`
+
+**Deleted Components:**
+
+`ModernImage`
+
+**Renamed/Refactored Components:**
+
+`ExternaLink` is now `Link` and works for both internal and external link
+
+#### Docs
+
+README file per component.
+
 ## 0.2.1
 
 ### Patch Changes

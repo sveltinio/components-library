@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/essentials",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"private": false,
 	"type": "module",
 	"description": "A collection of Svelte unstyled components to handle external links or images using AVIF, WEBP, embed YouTube videos ...",
