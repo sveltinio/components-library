@@ -1,5 +1,11 @@
 # @sveltinio/widgets
 
+## 0.2.2
+
+### Patch Changes
+
+- make TOC component more costumizable via new variables
+
 ## 0.2.1
 
 ### Patch Changes
