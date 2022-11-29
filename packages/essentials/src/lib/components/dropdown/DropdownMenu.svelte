@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.css';
+	import './dropdown-styles.css';
 	import { getContext, onDestroy } from 'svelte';
 	import type { DropdownContext } from './types.js';
 

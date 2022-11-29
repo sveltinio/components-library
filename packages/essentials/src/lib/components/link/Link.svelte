@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.css';
+	import './link-styles.css';
 	import { ExternalLinkIcon } from './index.js';
 	import { stylesObjToCSSVars } from '$lib/utils';
 

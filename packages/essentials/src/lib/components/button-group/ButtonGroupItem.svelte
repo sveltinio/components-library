@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.css';
+	import './btngroup-styles.css';
 	import { createEventDispatcher, getContext, onDestroy } from 'svelte';
 	import type { ButtonGroupContext } from './types.js';
 

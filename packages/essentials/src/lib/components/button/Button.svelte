@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.css';
+	import './btn-styles.css';
 	import { createEventDispatcher } from 'svelte';
 	import { stylesObjToCSSVars } from '$lib/utils';
 

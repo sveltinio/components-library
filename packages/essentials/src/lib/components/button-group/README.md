@@ -21,11 +21,11 @@
 
 The `ButtonGroup` component is the main wrapper component.
 
-| Property     | Type   | Required | Default      | Description                                       |
-| :----------- | :----: | :------: | :----------: |:------------------------------------------------- |
-| activeButton | string |    no    | empty string | show/hide the items                               |
-| size         | string |    no    | `base`       | one of: [`xs`, `sm`, `base`, `md`, `lg`]          |
-| styles       | Object |    no    | empty object | Used to pass CSS variables to apply custom styles |
+| Property     | Type   | Required | Default      | Description                                                  |
+| :----------- | :----: | :------: | :----------: |:------------------------------------------------------------ |
+| activeButton | string |    no    | empty string | show/hide the items                                          |
+| size         | string |    no    | `base`       | Set the label size. One of: [`xs`, `sm`, `base`, `md`, `lg`] |
+| styles       | Object |    no    | empty object | Used to pass CSS variables to apply custom styles            |
 
 ## Theming
 

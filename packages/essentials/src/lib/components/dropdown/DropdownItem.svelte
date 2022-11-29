@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.css';
+	import './dropdown-styles.css';
 	import { createEventDispatcher } from 'svelte';
 
 	export let id: number;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.css';
+	import './btngroup-styles.css';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { stylesObjToCSSVars } from '$lib/utils.js';
