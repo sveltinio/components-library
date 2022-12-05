@@ -1,0 +1,303 @@
+@charset "UTF-8";
+
+.sw__prevnextbtn {
+	/** ****************************************************** */
+	/** container (css class name: sw__prevnextbtn__container) */
+	/** ****************************************************** */
+	--_max-width: var(--max-width, 100%);
+	--_gap: var(--gap, 0.0625rem); /* 2px */
+	--_bg-color: var(--bg-color, transparent); /* slate-50 */
+
+	--_mt: var(--mt, 0.5rem); /* 8px */
+	--_mr: var(--mr, 0.5rem); /* 8px */
+	--_mb: var(--mb, 0.5rem); /* 8px */
+	--_ml: var(--ml, 0.5rem); /* 8px */
+
+	--_pt: var(--pt, 0.5rem); /* 8px */
+	--_pr: var(--pr, 0px);
+	--_pb: var(--pb, 0.5rem); /* 8px */
+	--_pl: var(--pl, 0px);
+
+	--_border-t-color: var(--border-t-color, rgb(226, 232, 240)); /* slate-200 */
+	--_border-t-style: var(--border-t-style, solid);
+	--_border-t-width: var(--border-t-width, 1px);
+	--_border-r-color: var(--border-r-color, transparent); /* slate-300 */
+	--_border-r-style: var(--border-r-style, solid);
+	--_border-r-width: var(--border-r-width, 1px);
+	--_border-b-color: var(--border-b-color, transparent); /* slate-300 */
+	--_border-b-style: var(--border-b-style, solid);
+	--_border-b-width: var(--border-b-width, 1px);
+	--_border-l-color: var(--border-l-color, transparent); /* slate-300 */
+	--_border-l-style: var(--border-l-style, solid);
+	--_border-l-width: var(--border-l-width, 1px);
+	--_border-tl-radius: var(--border-tl-radius, 0);
+	--_border-tr-radius: var(--border-tr-radius, 0);
+	--_border-bl-radius: var(--border-bl-radius, 0);
+	--_border-br-radius: var(--border-br-radius, 0);
+	/*- md breakpoint: min-width 768px */
+	--_gap-md: var(--gap-md, 0.25rem);
+	--_max-width-md: var(--max-width-md, var(--_max-width));
+	/*- lg breakpoint: min-width 1024px */
+	--_gap-lg: var(--gap-md, var(--_gap-md));
+	--_max-width-lg: var(--max-width-lg, var(--_max-width-md));
+	/** ****************************************************** */
+	/** spacer (css class name: spacer)                      */
+	/** ****************************************************** */
+	--_spacer-width: var(--spacer-width, 1px);
+	--_spacer-style: var(--spacer-style, solid);
+	--_spacer-color: var(--spacer-color, rgb(226, 232, 240)); /* slate-200 */
+	/** ****************************************************** */
+	/** link (css class name: link)                            */
+	/** ****************************************************** */
+	--_link-cursor: var(--link-cursor, pointer);
+	--_link-bg-color: var(--link-bg-color, transparent);
+	--_link-border-color: var(--link-border-color, rgb(226, 232, 240)); /* slate-200 */
+	--_link-border-style: var(--link-border-style, solid);
+	--_link-border-width: var(--link-border-width, 1px);
+	--_link-border-radius: var(--link-border-radius, 0.25rem);
+
+	--_link-mt: var(--link-mt, 0px);
+	--_link-mr: var(--link-mr, 0px);
+	--_link-mb: var(--link-mb, 0px);
+	--_link-ml: var(--link-ml, 0px);
+
+	--_link-pt: var(--link-pt, 0px);
+	--_link-pr: var(--link-pr, 0px);
+	--_link-pb: var(--link-pb, 0px);
+	--_link-pl: var(--link-pl, 0px);
+	/*- hover -*/
+	--_link-bg-color-hover: var(--link-bg-color-hover, rgb(248, 250, 252)); /* slate-50 */
+	--_link-border-color-hover: var(--link-border-color, rgb(226, 232, 240)); /* slate-200 */
+	--_link-border-style-hover: var(--link-border-style, solid);
+	--_link-border-width-hover: var(--link-border-width, 1px);
+	/*- md breakpoint: min-width 768px */
+	--_link-mt-md: var(--link-mt-md, var(--_link-mt));
+	--_link-mr-md: var(--link-mr-md, var(--_link-mr));
+	--_link-mb-md: var(--link-mb-md, var(--_link-mb));
+	--_link-ml-md: var(--link-ml-md, var(--_link-ml));
+
+	--_link-pt-md: var(--link-pt-md, 0.5rem);
+	--_link-pr-md: var(--link-pr-md, 0.5rem);
+	--_link-pb-md: var(--link-pb-md, 0.5rem);
+	--_link-pl-md: var(--link-pl-md, 0.5rem);
+	/*- lg breakpoint: min-width 1024px */
+	--_link-mt-lg: var(--link-mt-lg, var(--_link-mt-md));
+	--_link-mr-lg: var(--link-mr-lg, var(--_link-mr-md));
+	--_link-mb-lg: var(--link-mb-lg, var(--_link-mb-md));
+	--_link-ml-lg: var(--link-ml-lg, var(--_link-ml-md));
+
+	--_link-pt-lg: var(--link-pt-lg, var(--_link-pt-md));
+	--_link-pr-lg: var(--link-pr-lg, var(--_link-pr-md));
+	--_link-pb-lg: var(--link-pb-lg, var(--_link-pb-md));
+	--_link-pl-lg: var(--link-pl-lg, var(--_link-pl-md));
+	/** ****************************************************** */
+	/** content (css class name: content)                      */
+	/** ****************************************************** */
+	--_content-max-width: var(--content-max-width, 100%);
+	--_content-gap: var(--content-gap, 0px);
+
+	--_content-mt: var(--content-mt, 0px);
+	--_content-mr: var(--content-mr, 0px);
+	--_content-mb: var(--content-mb, 0px);
+	--_content-ml: var(--content-ml, 0px);
+
+	--_content-pt: var(--content-pt, 0.125rem);
+	--_content-pr: var(--content-pr, 0px);
+	--_content-pb: var(--content-pb, 0.125rem);
+	--_content-pl: var(--content-pl, 0px);
+
+	--_content-border-color: var(--content-border-color, transparent);
+	--_content-border-style: var(--content-border-style, solid);
+	--_content-border-width: var(--content-border-width, 1px);
+	--_content-border-radius: var(--content-border-radius, 0.25rem);
+
+	--_content-bg-color: var(--content-bg-color, transparent);
+	/*- hover -*/
+	--_content-bg-color-hover: var(--content-bg-color-hover, var(--_content-bg-color));
+	--_content-border-color-hover: var(
+		--content-border-color-hover,
+		var(--_content-border-color)
+	); /* slate-50 */
+	--_content-border-style-hover: var(--content-border-style-hover, solid);
+	--_content-border-width-hover: var(--content-border-width-hover, 1px);
+	--_content-border-radius-hover: var(--content-border-radius-hover, 0.25rem);
+
+	/*- md breakpoint: min-width 768px */
+	--_content-max-width-md: var(--content-max-width-md, var(--_content-max-width));
+
+	--_content-mt-md: var(--content-mt-md, var(--_content-mt));
+	--_content-mr-md: var(--content-mr-md, var(--_content-mr));
+	--_content-mb-md: var(--content-mb-md, var(--_content-mb));
+	--_content-ml-md: var(--content-ml-md, var(--_content-ml));
+
+	--_content-pt-md: var(--content-pt-md, 0.5rem);
+	--_content-pr-md: var(--content-pr-md, 1rem);
+	--_content-pb-md: var(--content-pb-md, 0.5rem);
+	--_content-pl-md: var(--content-pl-md, 1rem);
+	/*- lg breakpoint: min-width 1024px */
+	--_content-max-width-lg: var(--content-max-width-lg, var(--_content-max-width-md));
+
+	--_content-mt-lg: var(--content-mt-lg, var(--_content-mt-md));
+	--_content-mr-lg: var(--content-mr-lg, var(--_content-mr-md));
+	--_content-mb-lg: var(--content-mb-lg, var(--_content-mb-md));
+	--_content-ml-lg: var(--content-ml-lg, var(--_content-ml-md));
+
+	--_content-pt-lg: var(--content-pt-lg, 1rem);
+	--_content-pr-lg: var(--content-pr-lg, var(--_content-pr-md));
+	--_content-pb-lg: var(--content-pb-lg, 1rem);
+	--_content-pl-lg: var(--content-pl-lg, var(--_content-pl-md));
+	/** ****************************************************** */
+	/** content-l (css class name: content-left)               */
+	/** ****************************************************** */
+	--_content-l-ml: var(--content-l-ml, 0px);
+	--_content-l-mr: var(--content-l-mr, 0px);
+	--_content-l-text-align: var(--content-l-text-align, left);
+	/*- md breakpoint: min-width 768px */
+	--_content-l-ml-md: var(--content-l-ml-md, var(--_content-l-ml));
+	--_content-l-mr-md: var(--content-l-mr-md, var(--_content-l-mr));
+	--_content-l-text-align-md: var(--content-l-text-align-md, var(--_content-l-text-align));
+	/*- lg breakpoint: min-width 1024px */
+	--_content-l-ml-lg: var(--content-l-ml-lg, var(--_content-l-ml));
+	--_content-l-mr-lg: var(--content-l-mr-lg, var(--_content-l-mr-md));
+	--_content-l-text-align-lg: var(--content-l-text-align-lg, var(--_content-l-text-align-md));
+
+	/** ****************************************************** */
+	/** content-r (css class name: content-right)              */
+	/** ****************************************************** */
+	--_content-r-ml: var(--content-r-ml, auto);
+	--_content-r-mr: var(--content-r-mr, 0px);
+	--_content-r-text-align: var(--content-r-text-align, right);
+	/*- md breakpoint: min-width 768px */
+	--_content-r-ml-md: var(--content-r-ml-md, var(--_content-r-ml));
+	--_content-r-mr-md: var(--content-r-mr-md, var(--_content-r-mr));
+	--_content-r-text-align-md: var(--content-r-text-align-md, var(--_content-r-text-align));
+	/*- lg breakpoint: min-width 1024px */
+	--_content-r-ml-lg: var(--content-r-ml-lg, var(--_content-r-ml-md));
+	--_content-r-mr-lg: var(--content-r-mr-lg, var(--_content-r-mr-md));
+	--_content-r-text-align-lg: var(--content-r-text-align-lg, var(--_content-r-text-align-md));
+	/** ****************************************************** */
+	/** placeholder (css class name: placeholder)              */
+	/** ****************************************************** */
+	--_placeholder-color: var(--placeholder-color, rgb(51, 65, 85)); /* slate-700 */
+	--_placeholder-font-size: var(--placeholder-font-size, 0.875rem); /* 14px */
+	--_placeholder-font-weight: var(--placeholder-font-weight, 400);
+	--_placeholder-line-height: var(--placeholder-line-height, 1.5);
+	--_placeholder-letter-spacing: var(--placeholder-letter-spacing, 0em);
+	--_placeholder-text-decoration: var(--content-placeholder-text-decoration, none);
+
+	--_placeholder-pt: var(--placeholder-pt, 0px);
+	--_placeholder-pr: var(--placeholder-pr, 0px);
+	--_placeholder-pb: var(--placeholder-pb, 0px);
+	--_placeholder-pl: var(--placeholder-pl, 0px);
+
+	--_placeholder-mt: var(--placeholder-mt, 0px);
+	--_placeholder-mr: var(--placeholder-mr, auto);
+	--_placeholder-mb: var(--placeholder-mb, 0px);
+	--_placeholder-ml: var(--placeholder-ml, auto);
+
+	/*- md breakpoint: min-width 768px */
+	--_placeholder-font-size-md: var(--placeholder-font-size-md, var(--_placeholder-font-size));
+	--_placeholder-font-weight-md: var(--placeholder-font-weight-md, var(--_placeholder-font-weight));
+	--_placeholder-line-height-md: var(--placeholder-line-height-md, var(--_placeholder-line-height));
+	--_placeholder-letter-spacing-md: var(
+		--placeholder-letter-spacing-md,
+		var(--_placeholder-letter-spacing)
+	);
+	--_placeholder-text-decoration-md: var(
+		--placeholder-text-decoration-md,
+		var(--_placeholder-text-decoration)
+	);
+	--_placeholder-mt-md: var(--placeholder-mt-md, var(--_placeholder-mt));
+	--_placeholder-mr-md: var(--placeholder-mr-md, 0px);
+	--_placeholder-mb-md: var(--placeholder-mb-md, var(--_plaholder-mb));
+	--_placeholder-ml-md: var(--placeholder-ml-md, 0px);
+
+	--_placeholder-pt-md: var(--placeholder-pt-md, var(--_placeholder-pt));
+	--_placeholder-pr-md: var(--placeholder-pr-md, var(--_placeholder-pr));
+	--_placeholder-pb-md: var(--placeholder-pb-md, var(--_placeholder-pb));
+	--_placeholder-pl-md: var(--placeholder-pl-md, var(--_placeholder-pl));
+
+	/*- lg breakpoint: min-width 1024px */
+	--_placeholder-font-size-lg: var(--placeholder-font-size-lg, var(--_placeholder-font-size-md));
+	--_placeholder-font-weight-lg: var(
+		--placeholder-font-weight-lg,
+		var(--_placeholder-font-weight-md)
+	);
+	--_placeholder-line-height-lg: var(
+		--placeholder-line-height-lg,
+		var(--_placeholder-line-height-md)
+	);
+	--_placeholder-letter-spacing-lg: var(
+		--placeholder-letter-spacing-lg,
+		var(--_placeholder-letter-spacing-md)
+	);
+	--_placeholder-text-decoration-lg: var(
+		--placeholder-text-decoration-lg,
+		var(--_placeholder-text-decoration-md)
+	);
+
+	--_placeholder-mt-lg: var(--placeholder-mt-lg, var(--_placeholder-mt-md));
+	--_placeholder-mr-lg: var(--placeholder-mr-lg, var(--_placeholder-mr-md));
+	--_placeholder-mb-lg: var(--placeholder-mb-lg, var(--_plaholder-mb-md));
+	--_placeholder-ml-lg: var(--placeholder-ml-lg, var(--_placeholder-ml-md));
+
+	--_placeholder-pt-lg: var(--placeholder-pt-lg, var(--_placeholder-pt-md));
+	--_placeholder-pr-lg: var(--placeholder-pr-lg, var(--_placeholder-pt-md));
+	--_placeholder-pb-lg: var(--placeholder-pb-lg, var(--_placeholder-pt-md));
+	--_placeholder-pl-lg: var(--placeholder-pl-lg, var(--_placeholder-pt-md));
+
+	/** ****************************************************** */
+	/** message (css class name: message)                      */
+	/** ****************************************************** */
+	--_message-color: var(--message-color, rgb(51, 65, 85)); /* slate-700 */
+	--_message-font-size: var(--message-font-size, 1rem); /* 16px */
+	--_message-font-weight: var(--message-font-weight, 600);
+	--_message-line-height: var(--message-line-height, 1.5);
+	--_message-letter-spacing: var(--message-letter-spacing, 0.025em);
+	--_message-text-decoration: var(--message-text-decoration, none);
+
+	--_message-mt: var(--message-mt, 0px);
+	--_message-mr: var(--message-mr, 0px);
+	--_message-mb: var(--message-mb, 0px);
+	--_message-ml: var(--message-ml, 0px);
+
+	--_message-pt: var(--message-pt, 0px); /* 4px */
+	--_message-pr: var(--message-pr, 0px); /* 4px */
+	--_message-pb: var(--message-pb, 0px); /* 4px */
+	--_message-pl: var(--message-pl, 0px); /* 4px */
+	/*- md breakpoint: min-width 768px */
+	--_message-font-size-md: var(--message-font-size-md, var(--_message-font-size));
+	--_message-font-weight-md: var(--message-font-weight-md, var(--_message-font-weight));
+	--_message-line-height-md: var(--message-line-height-md, var(--_message-line-height));
+	--_message-letter-spacing-md: var(--message-letter-spacing-md, var(--_message-letter-spacing));
+	--_message-text-decoration-md: var(--message-text-decoration-md, var(--_message-text-decoration));
+
+	--_message-mt-md: var(--message-mt-md, var(--_message-mt));
+	--_message-mr-md: var(--message-mr-md, var(--_message-mr));
+	--_message-mb-md: var(--message-mb-md, var(--_message-mb));
+	--_message-ml-md: var(--message-ml-md, var(--_message-ml));
+
+	--_message-pt-md: var(--message-pt-md, var(--_message-pt));
+	--_message-pr-md: var(--message-pr-md, var(--_message-pr));
+	--_message-pb-md: var(--message-pb-md, var(--_message-pb));
+	--_message-pl-md: var(--message-pl-md, var(--_message-pl));
+	/*- lg breakpoint: min-width 1024px */
+	--_message-font-size-lg: var(--message-font-size-lg, var(--_message-font-size-md));
+	--_message-font-weight-lg: var(--message-font-weight-lg, var(--_message-font-weight-md));
+	--_message-line-height-lg: var(--message-line-height-lg, var(--_message-line-height-md));
+	--_message-letter-spacing-lg: var(--message-letter-spacing-lg, var(--_message-letter-spacing-md));
+	--_message-text-decoration-lg: var(
+		--message-text-decoration-lg,
+		var(--_message-text-decoration-md)
+	);
+
+	--_message-mt-lg: var(--message-mt-lg, var(--_message-mt-md));
+	--_message-mr-lg: var(--message-mr-lg, var(--_message-mr-md));
+	--_message-mb-lg: var(--message-mb-lg, var(--_message-mb-md));
+	--_message-ml-lg: var(--message-ml-lg, var(--_message-ml-md));
+
+	--_message-pt-lg: var(--message-pt-lg, var(--_message-pt-md));
+	--_message-pr-lg: var(--message-pr-lg, var(--_message-pr-md));
+	--_message-pb-lg: var(--message-pb-lg, var(--_message-pb-md));
+	--_message-pl-lg: var(--message-pl-lg, var(--_message-pl-md));
+}

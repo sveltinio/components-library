@@ -130,8 +130,8 @@ next.metadata = <ContentMetadata>{
 const previous = ResourceContentMaker.create();
 previous.resource = 'posts';
 previous.metadata = <ContentMetadata>{
-	title: 'Why',
-	slug: 'why'
+	title: 'Welcome',
+	slug: 'welcome'
 };
 
 export {

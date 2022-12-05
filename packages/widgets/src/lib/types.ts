@@ -95,10 +95,17 @@ export class ContentMetadataMaker {
 }
 
 export interface TocEntry {
-	id?: string;
+	id: string;
 	depth: number;
-	value?: string;
+	value: string;
 	children?: Array<TocEntry>;
+}
+
+export interface PagesNavigatorItem {
+	placeholder?: string;
+	label: string;
+	href: string;
+	alt?: string;
 }
 
 export interface IHeadingItem {

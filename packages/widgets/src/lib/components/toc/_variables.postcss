@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+.sw__toc {
+	--_min-height: var(--min-height, 45px);
+	--_gap: var(--gap, 0.25rem); /* 4px */
+	--_font-size: var(--font-size, 1rem); /* 16px */
+	--_font-weight: var(--font-weight, 600);
+	--_line-height: var(--line-height, normal);
+	--_btn-border-weight: var(--btn-border-weight, 0px);
+	--_btn-border-style: var(--btn-border-style, none);
+	--_btn-border-color: var(--btn-border-color, transparent);
+	--_btn-border-radius: var(--btn-border-radius, 0.5rem); /* 8px */
+	--_item-mt: var(--item-mt, 0);
+	--_item-mr: var(--item-mr, 0);
+	--_item-mb: var(--item-mb, 0);
+	--_item-ml: var(--item-ml, 0);
+	--_item-border-t-width: var(--item-border-t-width, 1px);
+	--_item-border-t-style: var(--item-border-t-style, solid);
+	--_item-border-t-color: var(--item-border-t-color, transparent);
+	--_item-border-r-width: var(--item-border-r-width, 1px);
+	--_item-border-r-style: var(--item-border-r-style, solid);
+	--_item-border-r-color: var(--item-border-r-color, transparent);
+	--_item-border-b-width: var(--item-border-b-width, 1px);
+	--_item-border-b-style: var(--item-border-b-style, solid);
+	--_item-border-b-color: var(--item-border-b-color, transparent);
+	--_item-border-l-width: var(--item-border-l-width, 1px);
+	--_item-border-l-style: var(--item-border-l-style, solid);
+	--_item-border-l-color: var(--item-border-l-color, transparent);
+	--_item_border-radius: var(--item-border-radius, 0.375rem); /* 6px */
+}
+
+.sw__toc__default {
+	--_text-transform: var(--text-transform, none);
+	--_box-bg-color: var(--box-bg-color, transparent);
+	--_box-border-weight: var(--box-border-weight, 0px);
+	--_box-border-style: var(--box-border-style, none);
+	--_box-border-color: var(--box-border-color, transparent);
+	--_box-border-radius: var(--box-border-radius, 0px);
+	/* btn */
+	--_btn-color: var(--btn-color, rgb(31, 51, 55)); /* slate-800 */
+	--_btn-bg-color: var(--btn-bg-color, transparent);
+	--_btn-bg-color-hover: var(--btn-bg-color-hover, rgb(248, 250, 252)); /* slate-50 */
+	--_btn-pt: var(--btn-pt, 0.375rem); /* 6px */
+	--_btn-pr: var(--btn-pr, 0.625rem); /* 8px */
+	--_btn-pb: var(--btn-pb, 0.375rem); /* 6px */
+	--_btn-pl: var(--btn-pl, 0.625rem); /* 8px */
+	/* list */
+	--_list-style-type: var(--list-style-type, none);
+	--_list-width: var(--list-width, 100%);
+	--_list-bg-color-hover: var(--bg-color-hover, rgb(248, 250, 252)); /* slate-50 */
+	--_list-pt: var(--list-pt, 10px);
+	--_list-pr: var(--list-pr, 0);
+	--_list-pb: var(--list-pb, 0);
+	--_list-pl: var(--list-pl, 20px);
+	/* item */
+	--_item-color: var(--item-color, rgb(30, 41, 59)); /* slate-800 */
+	--_item-text-decoration: var(--item-text-decoration, none);
+	--_item-text-decoration-hover: var(--item-text-decoration-hove, none);
+	--_item-bg-color-hover: var(--item-bg-color-hover, rgb(241, 245, 249)); /* slate-100 */
+	--_item-pt: var(--item-pt, 0.25rem);
+	--_item-pr: var(--item-pr, 0.25rem);
+	--_item-pb: var(--item-pb, 0.25rem);
+	--_item-pl: var(--item-pl, 0.25rem);
+}
+
+.sw__toc__sveltin {
+	--_text-transform: var(--text-transform, uppercase);
+	--_box-bg-color: var(--box-bg-color, rgb(248, 250, 252)); /* slate-50 */
+	--_box-border-weight: var(--box-border-weight, 3px);
+	--_box-border-style: var(--box-border-style, solid);
+	--_box-border-color: var(--box-border-color, rgb(148, 163, 184)); /* slate-400 */
+	--_box-border-radius: var(--box-border-radius, 0px);
+	/* btn */
+	--_btn-color: var(--btn-color, rgb(60, 60, 60)); /* slate-700 */
+	--_btn-bg-color: var(--btn-bg-color, rgb(248, 250, 252)); /* slate-50 */
+	--_btn-bg-color-hover: var(--btn-bg-color-hover, rgb(241, 245, 249)); /* slate-100 */
+	--_btn-pt: var(--btn-pt, 0.375rem); /* 6px */
+	--_btn-pr: var(--btn-pr, 0.625rem); /* 8px */
+	--_btn-pb: var(--btn-pb, 0.375rem); /* 6px */
+	--_btn-pl: var(--btn-pl, 0.625rem); /* 8px */
+	/* list */
+	--_list-style-type: var(--list-style-type, none);
+	--_list-width: var(--list-width, 100%);
+	--_list-bg-color-hover: var(--bg-color-hover, rgb(241, 245, 249)); /* slate-100 */
+	--_list-pt: var(--list-pt, 10px);
+	--_list-pr: var(--list-pr, 0);
+	--_list-pb: var(--list-pb, 0);
+	--_list-pl: var(--list-pl, 20px);
+	/* item */
+	--_item-color: var(--item-color, rgb(51, 65, 85)); /* slate-700 */
+	--_item-text-decoration: var(--item-text-decoration, none);
+	--_item-text-decoration-hover: var(--item-text-decoration-hove, none);
+	--_item-bg-color-hover: var(--item-bg-color-hover, rgb(226, 232, 240)); /* slate-200 */
+	--_item-pt: var(--item-pt, 0.25rem);
+	--_item-pr: var(--item-pr, 0.25rem);
+	--_item-pb: var(--item-pb, 0.25rem);
+	--_item-pl: var(--item-pl, 0.25rem);
+}

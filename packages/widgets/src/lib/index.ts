@@ -9,9 +9,10 @@ import {
 	CardButton
 } from './components/card/index.js';
 
-import { PrevNextButtons, ScrollToTopButton } from './components/buttons/index.js';
+import { ScrollToTopButton } from './components/buttons/index.js';
 import { Breadcrumbs } from './components/breadcrumbs/index.js';
 import { GitHubButton, GitHubForkRibbon } from './components/github/index.js';
+import { PagesNavigator } from './components/pagesnavigator/index.js';
 
 export {
 	Card,
@@ -21,7 +22,7 @@ export {
 	CardContent,
 	CardButton,
 	TOC,
-	PrevNextButtons,
+	PagesNavigator,
 	ScrollToTopButton,
 	Breadcrumbs,
 	GitHubButton,

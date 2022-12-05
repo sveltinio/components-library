@@ -6,7 +6,7 @@
 
 ## Description
 
-Collection of styled and ready-to-use Svelte components for page navigation, TOC, scroll to top, collapsible lists ...
+A collection of responsive, fully configurable and ready-to-use Svelte components for pages navigation, TOC (Table of Contents), scroll to top button, ...
 
 ## Components List
 
@@ -14,7 +14,7 @@ Collection of styled and ready-to-use Svelte components for page navigation, TOC
 - [Card]
 - [GitHubButton] (star, follow, issue, watch)
 - [GitHubForkRibbon]
-- [PrevNextButtons]
+- [PagesNavigator]
 - [ScrollToTopButton]
 - [TOC] (Table of Contents)
 
@@ -45,6 +45,6 @@ Free and open-source software under the [MIT License](LICENSE)
 [Card]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/card/README.md
 [GitHubButton]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/github/README.md
 [GitHubForkRibbon]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/github/README.md
-[PrevNextButtons]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/buttons/prevnext/README.md
+[PagesNavigator]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/pagesnavigator/README.md
 [ScrollToTopButton]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/buttons/scroll-to-top/README.md
 [TOC]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/toc/README.md
