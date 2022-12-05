@@ -1,9 +1,13 @@
 <script lang="ts">
-	import './styles.css';
+	import './styles.postcss';
+	import { stylesObjToCSSVars } from '../../../utils.js';
 
 	export let showOnPx = 400;
 	export let iconColor = '#ffffff';
 	export let fillColor = '#4b5563';
+
+	export let styles = {};
+	const cssStyles = stylesObjToCSSVars(styles);
 
 	let hidden = true;
 
@@ -25,15 +29,19 @@
 
 <svelte:window on:scroll={handleOnScroll} />
 
-<div class="scroll-to-top">
+<div
+	class="sw__scroll_to_top sw__scroll_to_top_container"
+	style={cssStyles}
+	data-testid="scroll-to-top-container"
+>
 	<a
-		data-testid="scrollBtn"
+		class="bounce-btn animate-bounce"
+		data-testid="bounce_btn"
 		href="#top"
 		aria-label="Back to top"
 		on:click={goTop}
 		style:color={iconColor}
 		style:background-color={fillColor}
-		class="animate-bounce"
 		class:hide={hidden}
 		class:show={!hidden}
 	>

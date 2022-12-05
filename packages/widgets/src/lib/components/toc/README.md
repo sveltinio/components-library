@@ -43,7 +43,18 @@ The `TOC` component exposes the following properties:
 | prefixChar | string           |   no     | #                 | Prepend char to the list items                    |
 | ordered    | boolean          |   no     | false             | If true, on ordered list will be used             |
 | theme      | string           |   no     | blank             | One of: ["blank", "sveltin"]                      |
-| styles     | Object           |   no     | empty object      | Used to pass CSS variables to apply custom styles |
+| styles     | Object           |   no     | `{}`              | Used to pass CSS variables to apply custom styles |
+
+**data** is an array of `TocEntry` objects:
+
+```typescript
+export interface TocEntry = {
+   id?: string;
+   depth: number;
+   value?: string;
+   children?: Array<TocEntry>;
+};
+```
 
 ## Theming
 
@@ -54,23 +65,23 @@ Below is the CSS variables list to apply your own styles to the component.
 | CSS Variable                 | Default              |                                                              |
 | :--------------------------- | -------------------: | :----------------------------------------------------------: |
 | `min-height`                 | `45px`               | |
-| `gap`                        | `4px`                | |
-| `font-size`                  | `16px`               | |
+| `gap`                        | `0.25rem`            | |
+| `font-size`                  | `1rem`               | |
 | `font-weight`                | `bold`               | |
-| `line-height`                | `1.75rem`            | |
-| `text-transform`             | `none`               | |
+| `line-height`                | `normal`             | |
+| `text-transform`             | `0em`                | |
 | `box-bg-color`               | `transparent`        | |
 | `box-border-color`           | `transparent`        | |
 | `box-border-style`           | `none`               | |
 | `box-border-weight`          | `0px`                | |
-| `box-border-radius`          | `30px`               | |
+| `box-border-radius`          | `0.5rem`             | |
 | `btn-color`                  | `rgb(31, 51, 55)`    | ![#1e293b](https://via.placeholder.com/15/1e293b/1e293b.png) |
 | `btn-bg-color`               | `transparent`        | |
 | `btn-bg-color-hover`         | `rgb(248, 250, 252)` | ![#f8fafc](https://via.placeholder.com/15/f8fafc/f8fafc.png) |
 | `btn-border-color`           | `transparent`        | |
 | `btn-border-style`           | `none`               | |
 | `btn-border-weight`          | `0px`                | |
-| `btn-border-radius`          | `30px`               | |
+| `btn-border-radius`          | `0.5rem`             | |
 | `btn-pt`                     | `0.375rem`           | |
 | `btn-pr`                     | `0.625rem`           | |
 | `btn-pb`                     | `0.375rem`           | |

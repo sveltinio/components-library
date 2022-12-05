@@ -13,7 +13,7 @@ describe('ScrollToTopButton', () => {
 		const { getByTestId } = render(ScrollToTopButton, {});
 		vi.fn(() => window.scrollTo);
 
-		const scrollBtn = getByTestId('scrollBtn');
+		const scrollBtn = getByTestId('bounce_btn');
 		expect(scrollBtn).toHaveClass('animate-bounce', 'hide');
 	});
 
@@ -22,7 +22,7 @@ describe('ScrollToTopButton', () => {
 		vi.fn(() => window.scrollTo);
 		window.HTMLElement.prototype.scrollIntoView = vi.fn();
 
-		const scrollBtn = getByTestId('scrollBtn');
+		const scrollBtn = getByTestId('bounce_btn');
 		await fireEvent.click(scrollBtn);
 		expect(document.body.scrollIntoView).toBeCalled();
 	});

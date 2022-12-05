@@ -8,8 +8,13 @@
    import DummyIcon from '../_DummyIcon.svelte';
 </script>
 
+<!-- Default -->
 <ScrollToTopButton />
+
+<!-- Set position on page -->
 <ScrollToTopButton showOnPx={200} />
+
+<!-- Custom icon-->
 <ScrollToTopButton>
     <DummyIcon slot="icon" />
 </ScrollToTopButton>
@@ -23,4 +28,5 @@ The `ScrollToTopButton` component exposes the following properties:
 | :-------- | :----: | :------: | :----------------------------------------------------------: | :---------- |
 | iconColor | string |    no    | ![#ffffff](https://via.placeholder.com/15/ffffff/ffffff.png) | |
 | fillColor | string |    no    | ![#4b5563](https://via.placeholder.com/15/4b5563/4b5563.png) | |
-| showOnPx  | number |    no    | 400                                                          | |
+| showOnPx  | number |    no    | `400px`                                                      | Position of page to show the button |
+| styles    | Object |    no    |   `{}`                                                       | Used to pass CSS variables to apply custom styles |

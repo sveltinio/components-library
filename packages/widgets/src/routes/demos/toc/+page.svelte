@@ -12,19 +12,19 @@
 	<TOC data={tocEntries} />
 
 	<h3 id="toc2-default">Ordered</h3>
-	<TOC data={tocEntries} ordered={true} />
+	<TOC data={tocEntries} ordered />
 
 	<h3 id="toc2-open">Custom title</h3>
 	<TOC data={tocEntries} label="My TOC" />
 
 	<h3 id="toc2-with-children">Label only</h3>
-	<TOC data={tocEntries} labelOnly={true} />
+	<TOC data={tocEntries} labelOnly />
 
 	<h3 id="toc2-with-children">Icon only</h3>
-	<TOC data={tocEntries} iconOnly={true} />
+	<TOC data={tocEntries} iconOnly />
 
 	<h3 id="toc2-with-children">Open by default</h3>
-	<TOC data={tocEntries} isOpen={true} />
+	<TOC data={tocEntries} isOpen />
 
 	<h3 id="toc2-sveltin">sveltin theme</h3>
 	<TOC theme="sveltin" data={tocEntries} prefixChar="#" />

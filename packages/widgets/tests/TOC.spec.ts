@@ -4,7 +4,7 @@ import { render, fireEvent } from '@testing-library/svelte';
 import { TOC } from '../src/lib/index.js';
 import { tocEntries } from '../src/data/sample.js';
 
-describe('TOC2', () => {
+describe('TOC', () => {
 	it('should be in the document', async () => {
 		const { container } = render(TOC, {
 			props: {
@@ -25,7 +25,7 @@ describe('TOC2', () => {
 			}
 		});
 
-		expect(getByTestId('toc_container')).toContainElement(getByTestId('toggle_btn'));
+		expect(getByTestId('toc_container')).toContainElement(getByTestId('toc_btn'));
 	});
 
 	it('should have a 4 list', async () => {
@@ -49,7 +49,7 @@ describe('TOC2', () => {
 		const lists = getAllByTestId('toc_list');
 		expect(lists[0]).toHaveClass('hidden');
 
-		const button = getByTestId('toggle_btn');
+		const button = getByTestId('toc_btn');
 		await fireEvent.click(button);
 
 		expect(lists[0]).toHaveClass('visible');

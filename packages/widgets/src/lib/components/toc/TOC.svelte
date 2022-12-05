@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './toc-styles.css';
+	import './styles.postcss';
 	import type { TocEntry } from '../../types.js';
 	import { stylesObjToCSSVars } from '../../utils.js';
 	import TocList from './TocList.svelte';
@@ -21,22 +21,25 @@
 	const toggleVisibility = () => (isOpen = !isOpen);
 </script>
 
-<nav class="{theme} toc-{theme}" style={cssStyles} data-testid="toc_container">
-	<button
-		on:click|preventDefault={toggleVisibility}
-		alt={label}
-		aria-label={label}
-		aria-expanded={isOpen}
-		data-testid="toggle_btn"
-	>
-		{#if !labelOnly}
-			<slot name="icon">
-				<TocIcon />
-			</slot>
-		{/if}
-		{#if !iconOnly}
-			<span>{label}</span>
-		{/if}
-	</button>
-	<TocList {data} {ordered} {theme} {isOpen} {full} {prefixChar} />
-</nav>
+<div class="sw__toc sw__toc__container" data-testid="toc_container">
+	<nav class="sw__toc__{theme} toc toc-{theme}" style={cssStyles} data-testid="toc_nav">
+		<button
+			class="toc-btn"
+			on:click|preventDefault={toggleVisibility}
+			alt={label}
+			aria-label={label}
+			aria-expanded={isOpen}
+			data-testid="toc_btn"
+		>
+			{#if !labelOnly}
+				<slot name="icon">
+					<TocIcon />
+				</slot>
+			{/if}
+			{#if !iconOnly}
+				<span>{label}</span>
+			{/if}
+		</button>
+		<TocList {data} {ordered} {theme} {isOpen} {full} {prefixChar} />
+	</nav>
+</div>

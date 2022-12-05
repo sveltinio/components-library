@@ -40,26 +40,3 @@
 		{/if}
 	{/each}
 </svelte:element>
-
-<style>
-	.toc-list {
-		width: var(--_list-width);
-		list-style-type: var(--_list-style-type);
-		padding-top: var(--_list-pt);
-		padding-right: var(--_list-pr);
-		padding-bottom: var(--_list-pb);
-		padding-left: var(--_list-pl);
-		overflow: hidden;
-		transition: all 0.5s;
-	}
-	.visible {
-		display: block;
-	}
-	.hidden {
-		display: none;
-	}
-
-	.toc-list-style-ordered {
-		list-style-type: decimal;
-	}
-</style>
