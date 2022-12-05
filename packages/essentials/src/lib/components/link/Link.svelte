@@ -21,7 +21,7 @@
 	if (noOpener) relOptions.push('noopener');
 	if (noReferrer) relOptions.push('noreferrer');
 
-	let prefetchValue = prefetch && !external ? 'hover' : '';
+	let prefetchValue = prefetch && !external ? 'hover' : 'off';
 	let target = external ? '_blank' : '_self';
 	let _titleText = title == '' ? alt : title;
 	let externalIcon = external && icon ? true : false;

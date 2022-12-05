@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './list-styles.css';
-	import { ArrowUpIcon, ArrowDownIcon, ArrowRightIcon } from '$lib';
+	import { ArrowUpIcon, ArrowRightIcon } from '$lib';
 	import { stylesObjToCSSVars } from '$lib/utils';
 	import type { ListItem } from './types';
 
