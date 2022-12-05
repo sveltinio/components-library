@@ -6,18 +6,6 @@
 	let titleTxt = title == '' ? alt : title;
 </script>
 
-<div class="card-header">
+<div class="sw__bc--card-header">
 	<img {src} {alt} title={titleTxt} />
 </div>
-
-<style>
-	.card-header {
-		width: 100%;
-		height: auto;
-	}
-
-	.card-header img {
-		object-fit: cover;
-		width: 100%;
-	}
-</style>
