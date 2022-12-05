@@ -92,12 +92,8 @@
 		text-align: center;
 		width: 100%;
 	}
-	@media (min-width: 768px) {
-		.github-fork-ribbon-wrapper.right .github-fork-ribbon {
-			top: 1px;
-		}
-	}
-	@media (min-width: 1024px) {
+
+	@media (min-width: 620px) {
 		.github-fork-ribbon-wrapper {
 			width: 150px;
 		}
