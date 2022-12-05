@@ -16,5 +16,5 @@
 
 	<Breadcrumbs baseURL="/" parent="posts" current="Getting Started" />
 
-	<Breadcrumbs baseURL="/" parent="posts" current="Getting Started" styles={customStyles} />
+	<Breadcrumbs baseURL="/" current="Contact" styles={customStyles} />
 </section>

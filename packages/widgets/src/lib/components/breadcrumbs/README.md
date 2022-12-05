@@ -29,6 +29,10 @@ Below is the CSS variables list to apply your own styles to the component.
 
 | CSS Variable          | Default              |                                                              |
 | :-------------------- | -------------------: | :----------------------------------------------------------: |
+| `font-size`           | `14px`               | |
+| `font-weight`         | `500`                | |
+| `line-height`         | `normal`             | |
+| `text-transform`      | `0em`                | |
 | `icon-color`          | `rgb(148, 163, 184)` | ![#94a3b8](https://via.placeholder.com/15/94a3b8/94a3b8.png) |
 | `icon-color-hover`    | `rgb(51, 65, 85)`    | ![#334155](https://via.placeholder.com/15/334155/334155.png) |
 | `parent-color`        | `rgb(100, 116, 139)` | ![#64748b](https://via.placeholder.com/15/64748b/64748b.png) |
