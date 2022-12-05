@@ -1,0 +1,139 @@
+/* Write your global styles here, in PostCSS syntax */
+/* CSS RESET by https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/* END OF CSS RESET by */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #ffffff;
+	margin: 2rem;
+}
+
+.container {
+	margin: 1.5rem 0;
+	padding: 1.5rem 2rem;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: rgb(203 213 225);
+}
+
+a {
+	color: rgb(30 41 59); /* slate-800 */
+	text-decoration: none;
+}
+
+.main {
+	& h1 {
+		margin: 1em 0 0.5em 0;
+		color: #343434;
+		font-weight: normal;
+		font-family: 'Ultra', sans-serif;
+		font-size: 36px;
+		line-height: 42px;
+		text-transform: uppercase;
+	}
+
+	& h2 {
+		margin: 1em 0 0.5em 0;
+		color: #343434;
+		font-weight: normal;
+		font-size: 30px;
+		line-height: 40px;
+		font-family: 'Orienta', sans-serif;
+	}
+
+	& h3 {
+		color: #343434;
+		font-size: 22px;
+		line-height: 40px;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-family: 'Orienta', sans-serif;
+		letter-spacing: 1px;
+		font-style: italic;
+		margin: 1em 0 0.5em 0;
+	}
+
+	& h4 {
+		padding: 0;
+		margin: 2em 0 1em 0;
+		color: #343434;
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: normal;
+		font-family: 'Orienta', sans-serif;
+		text-transform: uppercase;
+	}
+}
+
+.demo-card {
+	max-width: 28rem;
+	padding: 1.25rem 1rem;
+	margin-top: 0.75rem; /* 12px */
+	border-style: solid;
+	border-color: rgb(226 232 240); /* slate-200 */
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	background-color: white;
+	overflow: hidden;
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+
+	&:hover {
+		cursor: pointer;
+		background-color: rgb(241 245 249); /* slate-100 */
+	}
+}
