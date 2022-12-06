@@ -12,10 +12,7 @@ A collection of responsive, fully configurable and ready-to-use Svelte component
 
 - [Breadcrumbs]
 - [Card]
-- [GitHubButton] (star, follow, issue, watch)
-- [GitHubForkRibbon]
 - [PagesNavigator]
-- [ScrollToTopButton]
 - [TOC] (Table of Contents)
 
 ## Install
@@ -43,8 +40,5 @@ Free and open-source software under the [MIT License](LICENSE)
 
 [Breadcrumbs]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/breadcrumbs/README.md
 [Card]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/card/README.md
-[GitHubButton]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/github/README.md
-[GitHubForkRibbon]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/github/README.md
 [PagesNavigator]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/pagesnavigator/README.md
-[ScrollToTopButton]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/buttons/scroll-to-top/README.md
 [TOC]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/toc/README.md
