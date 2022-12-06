@@ -3,7 +3,7 @@
 	"version": "0.2.2",
 	"private": false,
 	"type": "module",
-	"description": "A collection of responsive, fully configurable and ready-to-use Svelte components for pages navigation, TOC (Table of Contents), scroll to top button, ...",
+	"description": "A collection of responsive, fully configurable and ready-to-use Svelte components for pages navigation, TOC (Table of Contents), ...",
 	"author": "dev <dev@sveltin.io>",
 	"license": "MIT",
 	"keywords": [
@@ -12,8 +12,7 @@
 		"components",
 		"pages navigator",
 		"toc",
-		"table of contents",
-		"scroll to top button"
+		"table of contents"
 	],
 	"repository": {
 		"type": "git",
