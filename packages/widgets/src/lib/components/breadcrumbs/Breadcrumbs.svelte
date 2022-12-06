@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.postcss';
+	import './styles.css';
 	import { stylesObjToCSSVars, capitalize } from '../../utils.js';
 
 	export let baseURL = '/';
