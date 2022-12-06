@@ -13,7 +13,9 @@ const config = {
 	},
 	package: {
 		dir: 'dist',
-		emitTypes: true
+		emitTypes: true,
+		// exclude postcss files to be part of the package.
+		files: (filepath) => !/^_|\/_|\.postcss$/.test(filepath)
 	}
 };
 

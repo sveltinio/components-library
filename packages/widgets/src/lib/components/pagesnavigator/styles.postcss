@@ -1,7 +1,6 @@
 @charset "UTF-8";
-@import './_variables.postcss' screen;
+@import './variables.css' screen;
 
-/* breakpoints */
 $sm: 640px;
 $md: 768px;
 $lg: 1240px;
@@ -180,7 +179,7 @@ $lg: 1240px;
 			gap: var(--_gap-md);
 
 			& .link {
-				width: 50%;
+				width: var(--_link-width);
 
 				margin-top: var(--_link-mt-md);
 				margin-right: var(--_link-mr-md);

@@ -49,6 +49,7 @@
 	/** ****************************************************** */
 	/** link (css class name: link)                            */
 	/** ****************************************************** */
+	--_link-width: var(--link-width, 50%);
 	--_link-cursor: var(--link-cursor, pointer);
 	--_link-bg-color: var(--link-bg-color, transparent);
 	--_link-border-color: var(--link-border-color, rgb(226, 232, 240)); /* slate-200 */

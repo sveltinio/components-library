@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.postcss';
+	import './styles.css';
 	import type { TocEntry } from '../../types.js';
 	import { stylesObjToCSSVars } from '../../utils.js';
 	import TocList from './TocList.svelte';

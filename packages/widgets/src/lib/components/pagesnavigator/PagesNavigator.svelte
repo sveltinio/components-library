@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.postcss';
+	import './styles.css';
 	import type { PagesNavigatorItem } from '../../types.js';
 	import { stylesObjToCSSVars, capitalize } from '../../utils.js';
 

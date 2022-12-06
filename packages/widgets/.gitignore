@@ -89,3 +89,5 @@ $RECYCLE.BIN/
 
 # Jest
 coverage/
+
+styles.css
