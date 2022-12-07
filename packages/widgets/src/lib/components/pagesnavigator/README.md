@@ -43,9 +43,9 @@ export interface PagesNavigatorItem = {
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-Please, refer to the [Design-Rules] document to better understand how the component has been designed and how to customize the styles.
+Please, refer to the [Design Rules] document to better understand how the component has been designed and how to customize the styles.
 
-The CSS variables are defined in the [_variables.postcss](./_variables.postcss) file.
+The CSS variables are defined in the [variables.css](./variables.css) file.
 
 ### Examples
 
@@ -153,4 +153,4 @@ The CSS variables are defined in the [_variables.postcss](./_variables.postcss) 
 ```
 
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
-[Design-Rules]: https://github.com/sveltinio/components-library/blob/main/docs/design-rules.md
+[Design Rules]: https://github.com/sveltinio/components-library/blob/main/docs/design-rules.md

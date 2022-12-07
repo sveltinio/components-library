@@ -1,15 +1,16 @@
+/* stylelint-disable custom-property-pattern */
 @charset "UTF-8";
 
 .sw__breadcrumbs {
-	--_font-size: var(--font-size, 0.875rem); /* 14px */
-	--_font-weight: var(--font-weight, 500);
-	--_line-height: var(--line-height, normal);
-	--_letter-spacing: var(--letter-spacing, 0em);
-	--_icon-color: var(--icon-color, rgb(148, 163, 184)); /* slate-400 */
-	--_icon-color-hover: var(--icon-color-hover, rgb(51, 65, 85)); /* slate-700 */
-	--_parent-color: var(--parent-color, rgb(100, 116, 139)); /* slate-500 */
-	--_parent-color-hover: var(--parent-color-hover, rgb(51, 65, 85)); /* slate-700 */
-	--_current-color: var(--current-color, rgb(100, 116, 139)); /* slate-500 */
-	--_divider-ml: var(--divider-ml, 0.5rem); /* 8px */
-	--_divider-mr: var(--divider-mr, 0.5rem); /* 8px */
+  --_font-size: var(--font-size, 0.875rem); /* 14px */
+  --_font-weight: var(--font-weight, 500);
+  --_line-height: var(--line-height, normal);
+  --_letter-spacing: var(--letter-spacing, 0);
+  --_icon-color: var(--icon-color, rgb(148 163 184)); /* slate-400 */
+  --_icon-color-hover: var(--icon-color-hover, rgb(51 65 85)); /* slate-700 */
+  --_parent-color: var(--parent-color, rgb(100 116 139)); /* slate-500 */
+  --_parent-color-hover: var(--parent-color-hover, rgb(51 65 85)); /* slate-700 */
+  --_current-color: var(--current-color, rgb(100 116 139)); /* slate-500 */
+  --_divider-ml: var(--divider-ml, 0.5rem); /* 8px */
+  --_divider-mr: var(--divider-mr, 0.5rem); /* 8px */
 }

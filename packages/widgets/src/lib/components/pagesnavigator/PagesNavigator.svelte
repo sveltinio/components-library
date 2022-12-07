@@ -26,10 +26,10 @@
 </script>
 
 <div
-	class="sw__prevnextbtn sw__prevnextbtn__container"
-	class:sw__prevnextbtn__spacer-bottom={!prev.label || !next.label}
+	class="sw__pagesnav sw__pagesnav__main"
+	class:sw__pagesnav__spacer-bottom={!prev.label || !next.label}
 	style={cssStyles}
-	data-testid="prevnext_container"
+	data-testid="pagesnav_main"
 >
 	{#if prev}
 		<a

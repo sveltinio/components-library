@@ -10,6 +10,13 @@
 			"options": {
 				"bracketSameLine": false
 			}
+		},
+		{
+			"files": ["*.css", "*.postcss"],
+			"options": {
+				"useTabs": false,
+				"singleQuote": false
+			}
 		}
 	]
 }

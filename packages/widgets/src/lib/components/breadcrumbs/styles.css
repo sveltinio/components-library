@@ -1,56 +1,57 @@
 @charset "UTF-8";
-@import './variables.css' screen;
+
+@import url("./variables.css") screen;
 
 .sw__breadcrumbs__container {
-	font-size: var(--_font-size);
-	font-weight: var(--_font-weight);
-	line-height: var(--_line-height);
-	letter-spacing: var(--_letter-spacing);
+  font-size: var(--_font-size);
+  font-weight: var(--_font-weight);
+  line-height: var(--_line-height);
+  letter-spacing: var(--_letter-spacing);
 }
 
 .sw__breadcrumbs__container .list {
-	list-style: none;
+  list-style: none;
 }
 
 .sw__breadcrumbs__container .list .item {
-	display: inline-flex;
-	align-items: center;
+  display: inline-flex;
+  align-items: center;
 }
 
 .sw__breadcrumbs__container .list .item .current {
-	color: var(--_current-color);
+  color: var(--_current-color);
 }
 
 .sw__breadcrumbs__container .list .item .parent {
-	color: var(--_parent-color);
-	text-decoration: none;
+  color: var(--_parent-color);
+  text-decoration: none;
 }
 
 .sw__breadcrumbs__container .list .item .parent:hover {
-	color: var(--_parent-color-hover);
+  color: var(--_parent-color-hover);
 }
 
 .sw__breadcrumbs__container .list .item .icon {
-	color: var(--_icon-color);
+  color: var(--_icon-color);
 }
 
 .sw__breadcrumbs__container .list .item.icon-home:hover {
-	color: var(--_icon-color-hover);
+  color: var(--_icon-color-hover);
 }
 
 .sw__breadcrumbs__container .list .item .icon-divider {
-	margin-left: var(--_divider-ml);
-	margin-right: var(--_divider-mr);
+  margin-left: var(--_divider-ml);
+  margin-right: var(--_divider-mr);
 }
 
 .sw__breadcrumbs__container .list .sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border-width: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

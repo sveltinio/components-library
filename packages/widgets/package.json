@@ -23,7 +23,7 @@
 		"url": "https://github.com/sveltinio/components-library/issues"
 	},
 	"dependencies": {
-		"svelte": "^3.53.1"
+		"svelte": "^3.54.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "1.0.0-next.90",
@@ -46,6 +46,9 @@
 		"postcss-preset-env": "^7.8.3",
 		"postcss-simple-vars": "^7.0.1",
 		"rimraf": "^3.0.2",
+		"stylelint": "^14.16.0",
+		"stylelint-config-prettier": "^9.0.4",
+		"stylelint-config-standard": "^29.0.0",
 		"svelte-check": "^2.10.1",
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.1",
