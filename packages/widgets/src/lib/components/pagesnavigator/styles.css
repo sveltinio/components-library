@@ -1,4 +1,3 @@
-/* stylelint-disable declaration-empty-line-before */
 @charset "UTF-8";
 
 @import url("./variables.css") screen;
@@ -15,33 +14,26 @@
   gap: var(--_gap);
   overflow: hidden;
   background-color: var(--_bg-color);
-
   margin-top: var(--_mt);
   margin-right: var(--_mr);
   margin-bottom: var(--_mb);
   margin-left: var(--_ml);
-
   padding-top: var(--_pt);
   padding-right: var(--_pr);
   padding-bottom: var(--_pb);
   padding-left: var(--_pl);
-
   border-top-color: var(--_border-t-color);
   border-top-width: var(--_border-t-width);
   border-top-style: var(--_border-t-style);
-
   border-right-color: var(--_border-r-color);
   border-right-width: var(--_border-r-width);
   border-right-style: var(--_border-r-style);
-
   border-bottom-color: var(--_border-b-color);
   border-bottom-width: var(--_border-b-width);
   border-bottom-style: var(--_border-b-style);
-
   border-left-color: var(--_border-l-color);
   border-left-width: var(--_border-l-width);
   border-left-style: var(--_border-l-style);
-
   border-top-left-radius: var(--_border-tl-radius);
   border-top-right-radius: var(--_border-tr-radius);
   border-bottom-left-radius: var(--_border-bl-radius);
@@ -55,12 +47,10 @@
   border-style: var(--_link-border-style);
   border-color: var(--_link-border-color);
   border-radius: var(--_link-border-radius);
-
   margin-top: var(--_link-mt);
   margin-right: var(--_link-mr);
   margin-bottom: var(--_link-mb);
   margin-left: var(--_link-ml);
-
   padding-top: var(--_link-pt);
   padding-right: var(--_link-pr);
   padding-bottom: var(--_link-pb);
@@ -79,21 +69,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: var(--_content-gap);
-
   margin-top: var(--_content-mt);
   margin-right: var(--_content-mr);
   margin-bottom: var(--_content-mb);
   margin-left: var(--_content-ml);
-
   padding-top: var(--_content-pt);
   padding-right: var(--_content-pr);
   padding-bottom: var(--_content-pb);
   padding-left: var(--_content-pl);
-
   background-color: var(--_content-bg-color);
-
   border-width: var(--_content-border-width);
   border-style: var(--_content-border-style);
   border-color: var(--_content-border-color);
@@ -102,7 +87,6 @@
 
 .sw__pagesnav__main .link .content:hover {
   background-color: var(--_content-bg-color-hover);
-
   border-width: var(--_content-border-width-hover);
   border-style: var(--_content-border-style-hover);
   border-color: var(--_content-border-color-hover);
@@ -119,12 +103,10 @@
   letter-spacing: var(--_placeholder-letter-spacing);
   -webkit-text-decoration: var(--_placeholder-text-decoration);
   text-decoration: var(--_placeholder-text-decoration);
-
   padding-top: var(--_placeholder-pt);
   padding-right: var(--_placeholder-pr);
   padding-bottom: var(--_placeholder-pb);
   padding-left: var(--_placeholder-pl);
-
   margin-top: var(--_placeholder-mt);
   margin-right: var(--_placeholder-mr);
   margin-bottom: var(--_placeholder-mb);
@@ -141,12 +123,10 @@
   letter-spacing: var(--_message-letter-spacing);
   -webkit-text-decoration: var(--_message-text-decoration);
   text-decoration: var(--_message-text-decoration);
-
   padding-top: var(--_message-pt);
   padding-right: var(--_message-pr);
   padding-bottom: var(--_message-pb);
   padding-left: var(--_message-pl);
-
   margin-top: var(--_message-mt);
   margin-right: var(--_message-mr);
   margin-bottom: var(--_message-mb);
@@ -176,12 +156,10 @@
 
   .sw__pagesnav__main .link {
     width: var(--_link-width);
-
     margin-top: var(--_link-mt-md);
     margin-right: var(--_link-mr-md);
     margin-bottom: var(--_link-mb-md);
     margin-left: var(--_link-ml-md);
-
     padding-top: var(--_link-pt-md);
     padding-right: var(--_link-pr-md);
     padding-bottom: var(--_link-pb-md);
@@ -192,12 +170,10 @@
     max-width: var(--_content-max-width-md);
     flex-direction: column;
     align-items: unset;
-
     margin-top: var(--_content-mt-md);
     margin-right: var(--_content-mr-md);
     margin-bottom: var(--_content-mb-md);
     margin-left: var(--_content-ml-md);
-
     padding-top: var(--_content-pt-md);
     padding-right: var(--_content-pr-md);
     padding-bottom: var(--_content-pb-md);
@@ -210,12 +186,10 @@
     font-weight: var(--_placeholder-font-weight-md);
     line-height: var(--_placeholder-line-height-md);
     letter-spacing: var(--_placeholder-letter-spacing-md);
-
     padding-top: var(--_placeholder-pt-md);
     padding-right: var(--_placeholder-pr-md);
     padding-bottom: var(--_placeholder-pb-md);
     padding-left: var(--_placeholder-pl-md);
-
     margin-top: var(--_placeholder-mt-md);
     margin-right: var(--_placeholder-mr-md);
     margin-bottom: var(--_placeholder-mb-md);
@@ -228,12 +202,10 @@
     font-weight: var(--_message-font-weight-md);
     line-height: var(--_message-line-height-md);
     letter-spacing: var(--_message-letter-spacing-md);
-
     padding-top: var(--_message-pt-md);
     padding-right: var(--_message-pr-md);
     padding-bottom: var(--_message-pb-md);
     padding-left: var(--_message-pl-md);
-
     margin-top: var(--_message-mt-md);
     margin-right: var(--_message-mr-md);
     margin-bottom: var(--_message-mb-md);
@@ -268,12 +240,10 @@
   }
   .sw__pagesnav__main .link .content {
     max-width: var(--_content-max-width-lg);
-
     margin-top: var(--_content-mt-lg);
     margin-right: var(--_content-mr-lg);
     margin-bottom: var(--_content-mb-lg);
     margin-left: var(--_content-ml-lg);
-
     padding-top: var(--_content-pt-lg);
     padding-right: var(--_content-pr-lg);
     padding-bottom: var(--_content-pb-lg);
@@ -286,12 +256,10 @@
     font-weight: var(--_placeholder-font-weight-lg);
     line-height: var(--_placeholder-line-height-lg);
     letter-spacing: var(--_placeholder-letter-spacing-lg);
-
     padding-top: var(--_placeholder-pt-lg);
     padding-right: var(--_placeholder-pr-lg);
     padding-bottom: var(--_placeholder-pb-lg);
     padding-left: var(--_placeholder-pl-lg);
-
     margin-top: var(--_placeholder-mt-lg);
     margin-right: var(--_placeholder-mr-lg);
     margin-bottom: var(--_placeholder-mb-lg);
@@ -304,12 +272,10 @@
     font-weight: var(--_message-font-weight-lg);
     line-height: var(--_message-line-height-lg);
     letter-spacing: var(--_message-letter-spacing-lg);
-
     padding-top: var(--_message-pt-lg);
     padding-right: var(--_message-pr-lg);
     padding-bottom: var(--_message-pb-lg);
     padding-left: var(--_message-pl-lg);
-
     margin-top: var(--_message-mt-lg);
     margin-right: var(--_message-mr-lg);
     margin-bottom: var(--_message-mb-lg);

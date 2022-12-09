@@ -1,6 +1,5 @@
 <section class="main">
-	<h1><tt>@sveltinio/widgets</tt></h1>
-
+	<h1>@sveltinio/widgets</h1>
 	<h2><tt>Demos</tt></h2>
 
 	<a class="link" href="/demos/breadcrumbs">

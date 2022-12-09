@@ -1,4 +1,3 @@
-/* stylelint-disable declaration-empty-line-before */
 @charset "UTF-8";
 
 @import url("./variables.css") screen;
@@ -51,7 +50,6 @@
   margin-right: var(--_item-mr);
   margin-bottom: var(--_item-mb);
   margin-left: var(--_item-ml);
-
   border-top-width: var(--_item-border-t-width);
   border-top-style: var(--_item-border-t-style);
   border-top-color: var(--_item-border-t-color);
@@ -115,15 +113,12 @@
 
 .sw__toc__container .toc-sveltin {
   background-color: var(--_box-bg-color);
-
   border-left: var(--_box-border-weight) var(--_box-border-style) var(--_box-border-color);
   border-radius: var(--_box-border-radius);
-
   margin-top: var(--_box-mt);
   margin-right: var(--_box-mr);
   margin-bottom: var(--_box-mb);
   margin-left: var(--_box-ml);
-
   padding-top: var(--_box-pt);
   padding-right: var(--_box-pr);
   padding-bottom: var(--_box-pb);
@@ -133,14 +128,11 @@
 .sw__toc__container .toc-sveltin .toc-btn {
   color: var(--_btn-color);
   text-transform: var(--_text-transform);
-
   background-color: var(--_btn-bg-color);
-
   margin-top: var(--_btn-mt);
   margin-right: var(--_btn-mr);
   margin-bottom: var(--_btn-mb);
   margin-left: var(--_btn-ml);
-
   padding-top: var(--_btn-pt);
   padding-right: var(--_btn-pr);
   padding-bottom: var(--_btn-pb);
