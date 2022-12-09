@@ -44,10 +44,6 @@ else
         # run test
         pnpm turbo test --filter="@sveltinio/${PACKAGE}" --force
     else
-        # run postcss cli
-        source postcss.sh "../packages/$PACKAGE"
-        # run format
-        pnpm format --filter="@sveltinio/${PACKAGE}"
         # run the action
         pnpm turbo $ACTION --filter="@sveltinio/${PACKAGE}"
     fi

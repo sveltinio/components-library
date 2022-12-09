@@ -7,7 +7,7 @@ rm -rf "${projectFolder}/node_modules"
 foldersToRemove=("dist" ".svelte-kit" ".turbo" "node_modules" "coverage")
 
 packagesFolder="${projectFolder}/packages"
-packagesList=("eslint-config-custom" "essentials" "media-content" "seo" "services" "widgets")
+packagesList=("eslint-config-custom" "stylelint-config-custom" "essentials" "media-content" "seo" "services" "widgets")
 for package in ${packagesList[@]}
 do
     echo "- Cleaning: $package"
