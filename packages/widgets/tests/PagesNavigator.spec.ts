@@ -69,7 +69,7 @@ describe('PagesNavigator - Previous', () => {
 			}
 		});
 		const messageText = getByTestId('previous_message_text');
-		expect(messageText.innerHTML).toBe('«&nbsp;Welcome');
+		expect(messageText.innerHTML).toBe('Welcome');
 	});
 
 	it('should have the link to the previous item with aria-label "Welcome"', async () => {
@@ -127,7 +127,7 @@ describe('PagesNavigator - Next', () => {
 			}
 		});
 		const messageText = getByTestId('next_message_text');
-		expect(messageText.innerHTML).toBe('Getting Started&nbsp;»');
+		expect(messageText.innerHTML).toBe('Getting Started');
 	});
 
 	it('should have the link to the next item with aria-label "Getting Started"', async () => {
