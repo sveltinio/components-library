@@ -7,7 +7,9 @@
 	<h1><tt>@sveltinio/widgets</tt></h1>
 
 	<h2><tt>TOC</tt></h2>
+</section>
 
+<section>
 	<h3 id="toc2-default">Default</h3>
 	<TOC data={tocEntries} />
 

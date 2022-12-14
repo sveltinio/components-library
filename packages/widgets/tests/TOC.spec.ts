@@ -25,7 +25,7 @@ describe('TOC', () => {
 			}
 		});
 
-		expect(getByTestId('toc_container')).toContainElement(getByTestId('toc_btn'));
+		expect(getByTestId('toc_main')).toContainElement(getByTestId('toc_btn'));
 	});
 
 	it('should have a 4 list', async () => {

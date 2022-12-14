@@ -11,22 +11,19 @@
 <TOC data={tocEntries} />
 
 <!-- Ordered -->
-<TOC data={tocEntries} ordered={true} />
+<TOC data={tocEntries} ordered />
 
 <!-- Custom Label -->
 <TOC data={tocEntries} label="My TOC" />
 
 <!-- Label only -->
-<TOC data={tocEntries} labelOnly={true} />
+<TOC data={tocEntries} labelOnly />
 
 <!-- Icon only -->
-<TOC data={tocEntries} iconOnly={true} />
+<TOC data={tocEntries} iconOnly />
 
 <!-- Open by default -->
-<TOC data={tocEntries} isOpen={true} />
-
-<!-- sveltin theme -->
-<TOC theme="sveltin" data={tocEntries} prefixChar="#" />
+<TOC data={tocEntries} isOpen />
 ```
 
 ## Properties
@@ -42,13 +39,13 @@ The `TOC` component exposes the following properties:
 | labelOnly  | boolean          |   no     | false             | If true, the icon is not rendered                 |
 | prefixChar | string           |   no     | #                 | Prepend char to the list items                    |
 | ordered    | boolean          |   no     | false             | If true, on ordered list will be used             |
-| theme      | string           |   no     | blank             | One of: ["blank", "sveltin"]                      |
+| theme      | string           |    no    |                   | The css class name used to make a theme variant   |
 | styles     | Object           |   no     | `{}`              | Used to pass CSS variables to apply custom styles |
 
 **data** is an array of `TocEntry` objects:
 
 ```typescript
-export interface TocEntry = {
+type TocEntry = {
    id?: string;
    depth: number;
    value?: string;
