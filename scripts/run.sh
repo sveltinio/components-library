@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 EMERALD_COLOR="#34d399"
 BLUE_COLOR="#60a5fa"
@@ -14,7 +14,7 @@ blue_text () {
 echo ""
 echo "Choose the $(blue_text 'action') to run:"
 
-ACTION=$(gum choose "postcss" "dev" "test" "build" "update" "clean")
+ACTION=$(gum choose "dev" "test" "build" "yalc" "update" "clean")
 
 echo "Selected action: $(emerald_text ${ACTION})"
 echo ""
@@ -30,19 +30,17 @@ else
     echo "Selected package: $(emerald_text ${PACKAGE})"
     echo ""
 
-    if [[ $ACTION == "postcss" ]]
-    then
-        # run postcss cli
-        source postcss.sh "../packages/$PACKAGE"
-    elif [[ $ACTION == "update" ]]
+    if [[ $ACTION == "update" ]]
     then
         pnpm $ACTION --filter="@sveltinio/${PACKAGE}"
     elif [[ $ACTION == "test" ]]
     then
-        # run postcss cli
-        source postcss.sh "../packages/$PACKAGE"
         # run test
         pnpm turbo test --filter="@sveltinio/${PACKAGE}" --force
+    elif [[ $ACTION == "yalc" ]]
+    then
+        cd "../packages/$PACKAGE/dist"
+        yalc publish
     else
         # run the action
         pnpm turbo $ACTION --filter="@sveltinio/${PACKAGE}"

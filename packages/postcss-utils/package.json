@@ -1,0 +1,20 @@
+{
+	"name": "postcss-utils",
+	"version": "0.0.0",
+	"main": "index.cjs",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"cssnano": "^5.1.14",
+		"postcss": "^8.4.20",
+		"postcss-cli": "^10.1.0",
+		"postcss-preset-env": "^7.8.3",
+		"stylelint": "^14.16.0"
+	},
+	"exports": {
+		".": {
+			"require": "./index.cjs",
+			"import": "./index.mjs"
+		}
+	}
+}

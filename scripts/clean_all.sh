@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-projectFolder="../"
+projectFolder=".."
 echo "- Cleaning the project root folder"
 rm -rf "${projectFolder}/node_modules"
 
 foldersToRemove=("dist" ".svelte-kit" ".turbo" "node_modules" "coverage")
 
 packagesFolder="${projectFolder}/packages"
-packagesList=("eslint-config-custom" "stylelint-config-custom" "essentials" "media-content" "seo" "services" "widgets")
+packagesList=("eslint-config-custom" "stylelint-config-custom" "postcss-utils" "essentials" "media-content" "seo" "services" "widgets")
 for package in ${packagesList[@]}
 do
     echo "- Cleaning: $package"
@@ -18,6 +18,14 @@ do
             rm -rf "$packagesFolder/$package/$folder"
         fi
     done
+done
+
+echo "- Find and delete styles.css file for components in the widgets package"
+stylesCSSFiles=( $(find ${projectFolder}/packages/widgets -type f \( -name "styles.css" \)) )
+# loop over it
+for f in ${stylesCSSFiles[@]}
+do
+    rm $f
 done
 
 #
