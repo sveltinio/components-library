@@ -1,93 +1,11 @@
-/***
-    The new CSS reset - version 1.7.3 (last updated 7.8.2022)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
+@custom-media --viewport-medium (min-width: 768px);
+@custom-media --viewport-large (min-width: 1024px);
 
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
- */
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
-  all: unset;
-  display: revert;
-}
-
-/* Preferred box-sizing value */
-*,
-*::before,
-*::after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-
-/* Reapply the pointer cursor for anchor tags */
-a,
-button {
-  cursor: revert;
-}
-
-/* Remove list styles (bullets/numbers) */
-ol,
-ul,
-menu {
-  list-style: none;
-}
-
-/* For images to not be able to exceed their container */
-img {
-  max-width: 100%;
-}
-
-/* removes spacing between cells in tables */
-table {
-  border-collapse: collapse;
-}
-
-/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
-input,
-textarea {
-  -webkit-user-select: auto;
-}
-
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-  white-space: revert;
-}
-
-/* minimum style to allow to style meter element */
-meter {
-  -webkit-appearance: revert;
-  appearance: revert;
-}
-
-/* reset default text opacity of input placeholder */
-::placeholder {
-  color: unset;
-}
-
-/* fix the feature of 'hidden' attribute.
-   display:revert; revert to element instead of attribute */
-:where([hidden]) {
-  display: none;
-}
-
-/* revert for bug in Chromium browsers
-   - fix for the content editable attribute will work properly.
-   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
-:where([contenteditable]:not([contenteditable="false"])) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-  -webkit-user-select: auto;
-}
-
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable="true"]) {
-  -webkit-user-drag: element;
-}
-
-/* END OF CSS RESET */
-/* END OF CSS RESET by */
 
 html {
   scroll-behavior: smooth;
@@ -98,17 +16,15 @@ body {
   margin: 2rem;
 }
 
-.container {
-  margin: 1.5rem 0;
-  padding: 1.5rem 2rem;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: rgb(203 213 225);
-}
-
-a {
-  color: rgb(30 41 59); /* slate-800 */
-  text-decoration: none;
+h3 {
+  padding: 0;
+  margin: 2em 0 1em 0;
+  color: #343434;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: normal;
+  font-family: "Orienta", sans-serif;
+  text-transform: uppercase;
 }
 
 .main {
@@ -130,47 +46,107 @@ a {
     line-height: 40px;
     font-family: "Orienta", sans-serif;
   }
+}
 
-  & h3 {
-    color: #343434;
-    font-size: 22px;
-    line-height: 40px;
-    font-weight: normal;
-    text-transform: uppercase;
-    font-family: "Orienta", sans-serif;
-    letter-spacing: 1px;
-    font-style: italic;
-    margin: 1em 0 0.5em 0;
+.grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.grid {
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-left: auto;
+  gap: 1.5rem;
+  @media (--viewport-medium) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: 0;
+    }
   }
 
-  & h4 {
-    padding: 0;
-    margin: 2em 0 1em 0;
-    color: #343434;
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: normal;
-    font-family: "Orienta", sans-serif;
-    text-transform: uppercase;
+  @media (--viewport-large) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+      margin-left: 0;
+    }
+  }
+}
+
+.demo-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  @media (--viewport-medium) {
+    & {
+      gap: 1rem;
+    }
   }
 }
 
 .demo-card {
-  max-width: 28rem;
-  padding: 1.25rem 1rem;
-  margin-top: 0.75rem; /* 12px */
-  border-style: solid;
-  border-color: rgb(226 232 240); /* slate-200 */
-  border-top-width: 0px;
-  border-right-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 0px;
+  text-decoration: none;
+  width: 18.75rem;
+  height: auto;
+  display: flex;
+  color: #334155;
+  flex-direction: column;
   background-color: white;
-  overflow: hidden;
+  padding: 1.875rem;
+  border-radius: 5px;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 
   &:hover {
     cursor: pointer;
-    background-color: rgb(241 245 249); /* slate-100 */
+    background-color: rgb(248 250 252); /* slate-50 */
   }
+
+  & h2 {
+    margin: 0;
+  }
+
+  & p {
+    margin-top: 2rem;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+
+  & a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+  }
+}
+
+/* used to showcase how to use a css class for theming the pagesnavigator component */
+.pagesnav-orange {
+  --max-width: 80rem;
+  --bg-color: #fbbf24;
+  --border-t-color: #b45309;
+  --border-r-color: #b45309;
+  --border-b-color: #b45309;
+  --border-l-color: #b45309;
+  --border-tl-radius: 1rem;
+  --border-br-radius: 1rem;
+  --link-border-color: transparent;
+  --link-bg-color: transparent;
+  --link-bg-color-hover: transparent;
+  --content-bg-color-hover: #fcd34d;
+  --content-border-color: transparent;
+  --content-border-color-hover: #f59e0b;
+  --content-ml: 4px;
+  --content-mr: 4px;
+  --placeholder-color: #92400e;
+  --message-color: #92400e;
+  --icon-color: #92400e;
 }
