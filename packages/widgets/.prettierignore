@@ -17,3 +17,5 @@ node_modules
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+
+src/**/styles.css

@@ -13,7 +13,9 @@
 		"lint": {
 			"dependsOn": ["format"]
 		},
-		"test": {},
+		"test": {
+			"env": ["NODE_ENV"]
+		},
 		"build": {
 			"dependsOn": ["clean", "lint", "test", "^build"]
 		},
