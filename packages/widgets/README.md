@@ -6,12 +6,13 @@
 
 ## Description
 
-A collection of responsive, fully configurable and ready-to-use Svelte components for pages navigation, TOC (Table of Contents), scroll to top button, ...
+A collection of responsive, fully configurable and ready-to-use Svelte components for cards, pages navigation, TOC (Table of Contents) ...
 
 ## Components List
 
 - [Breadcrumbs]
 - [Card]
+- [ResponsiveCard]
 - [PagesNavigator]
 - [TOC] (Table of Contents)
 
@@ -41,4 +42,5 @@ Free and open-source software under the [MIT License](LICENSE)
 [Breadcrumbs]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/breadcrumbs/README.md
 [Card]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/card/README.md
 [PagesNavigator]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/pagesnavigator/README.md
+[ResponsiveCard]:  https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/responsivecard/README.md
 [TOC]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/toc/README.md

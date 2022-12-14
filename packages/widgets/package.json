@@ -3,13 +3,15 @@
 	"version": "0.3.0-pre.0",
 	"private": false,
 	"type": "module",
-	"description": "A collection of responsive, fully configurable and ready-to-use Svelte components for pages navigation, TOC (Table of Contents), ...",
+	"description": "A collection of responsive, fully configurable and ready-to-use Svelte components for cards, pages navigation, TOC (Table of Contents), ...",
 	"author": "dev <dev@sveltin.io>",
 	"license": "MIT",
 	"keywords": [
 		"sveltekit",
 		"svelte",
 		"components",
+		"card",
+		"responsive card",
 		"pages navigator",
 		"toc",
 		"table of contents"
