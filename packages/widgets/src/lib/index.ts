@@ -30,5 +30,8 @@ export {
 import { PagesNavigator } from './components/pagesnavigator/index.js';
 export { PagesNavigator };
 
+import { ScrollToTopButton } from './components/scroll-to-top/index.js';
+export { ScrollToTopButton };
+
 import { TOC } from './components/toc/index.js';
 export { TOC };

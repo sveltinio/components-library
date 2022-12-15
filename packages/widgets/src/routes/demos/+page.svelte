@@ -13,15 +13,20 @@
 			url: 'demos/card'
 		},
 		{
+			name: 'PagesNavigator',
+			headline: 'Pages Navigator components to help users to navigate throught the pages.',
+			url: 'demos/pagesnavigator'
+		},
+		{
 			name: 'ResponsiveCard',
 			headline:
 				'ResponsiveCard component display content vertically on small screen, horizontally on large screen.',
 			url: 'demos/responsivecard'
 		},
 		{
-			name: 'PagesNavigator',
-			headline: 'Pages Navigator components to help users to navigate throught the pages.',
-			url: 'demos/pagesnavigator'
+			name: 'ScrollToTopButton',
+			headline: 'ScrollToTopButton components helps to scroll to the top of the page.',
+			url: 'demos/scroll-to-top'
 		},
 		{
 			name: 'TOC',
