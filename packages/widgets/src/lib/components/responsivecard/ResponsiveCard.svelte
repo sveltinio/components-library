@@ -1,10 +1,13 @@
 <script lang="ts">
 	import './styles.css';
 	import { stylesObjToCSSVars } from '../../utils.js';
+	import CardTitle from './CardTitle.svelte';
+	import CardTitleLink from './CardTitleLink.svelte';
+	import CardContent from './CardContent.svelte';
 
 	export let title: string;
-	export let headline: string;
-	export let lineClamp = '4';
+	export let content: string;
+	export let lineClamp = 4;
 	export let href = '';
 
 	let themeClassName = '';
@@ -19,36 +22,29 @@
 	style={cssStyles}
 	data-testid="responsivecard-main"
 >
-	<div class="card">
-		{#if $$slots.cardImage}
-			<slot name="cardImage" />
+	{#if $$slots.cardImage}
+		<slot name="cardImage" />
+	{/if}
+
+	<div class="card__wrapper">
+		{#if $$slots.cardBadge}
+			<slot name="cardBadge" />
 		{/if}
 
-		<div class="card__body">
-			{#if $$slots.cardBadge}
-				<slot name="cardBadge" />
-			{/if}
+		{#if $$slots.cardAction}
+			<CardTitle {title} />
+		{:else}
+			<CardTitleLink {title} {href} />
+		{/if}
 
-			{#if $$slots.cardAction}
-				<h2>
-					{title}
-				</h2>
-			{:else}
-				<a {href}
-					><h2>
-						{title}
-					</h2></a
-				>
-			{/if}
-			<p style:-webkit-line-clamp={lineClamp}>
-				{headline}
-			</p>
+		<CardContent {content} {lineClamp} />
 
+		{#if $$slots.cardAction}
 			<div class="card__footer">
 				<slot name="cardInfo" />
 
 				<slot name="cardAction" />
 			</div>
-		</div>
+		{/if}
 	</div>
 </div>

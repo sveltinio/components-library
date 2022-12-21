@@ -25,19 +25,13 @@ The `Breadcrumbs` component exposes the following properties:
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-Below is the CSS variables list to apply your own styles to the component.
+Please, refer to the [Design Rules] document to better understand how the component has been designed and how to customize the styles.
 
-| CSS Variable          | Default              |                                                              |
-| :-------------------- | -------------------: | :----------------------------------------------------------: |
-| `font-size`           | `14px`               | |
-| `font-weight`         | `500`                | |
-| `line-height`         | `normal`             | |
-| `text-transform`      | `0em`                | |
-| `icon-color`          | `rgb(148, 163, 184)` | ![#94a3b8](https://via.placeholder.com/15/94a3b8/94a3b8.png) |
-| `icon-color-hover`    | `rgb(51, 65, 85)`    | ![#334155](https://via.placeholder.com/15/334155/334155.png) |
-| `parent-color`        | `rgb(100, 116, 139)` | ![#64748b](https://via.placeholder.com/15/64748b/64748b.png) |
-| `parent-color-hover`  | `rgb(51, 65, 85)`    | ![#334155](https://via.placeholder.com/15/334155/334155.png) |
-| `current-color`       | `rgb(100, 116, 139)` | ![#64748b](https://via.placeholder.com/15/64748b/64748b.png) |
+The CSS variables are defined in the [variables.css](./variables.css) file.
+
+<!-- Resources -->
+[style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
+[Design Rules]: https://github.com/sveltinio/components-library/blob/main/docs/design-rules.md
 
 ### Example
 

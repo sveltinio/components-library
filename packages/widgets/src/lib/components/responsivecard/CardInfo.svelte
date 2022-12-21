@@ -12,7 +12,7 @@
 
 <div class="card__info">
 	{#if showAvatar}
-		<div class="circle"><span class="initials">{getInitials(author)}</span></div>
+		<div class="avatar"><span class="initials">{getInitials(author)}</span></div>
 	{/if}
 	<div>
 		<p class="author">{author}</p>

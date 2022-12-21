@@ -1,13 +1,62 @@
 import '@testing-library/jest-dom';
-import { describe, it, expect } from 'vitest';
+import { it, describe, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { ResponsiveCard } from '../src/lib/';
+import { ResponsiveCard } from '../src/lib/index.js';
+import { CardActionSlotTest } from './slot/index.js';
 
-describe('ResponsiveCard ', () => {
+describe('Card', () => {
 	it('should be in the document', async () => {
 		const { container } = render(ResponsiveCard, {
-			props: {}
+			props: {
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
+			}
 		});
 		expect(container).toBeInTheDocument();
+	});
+
+	it('should contain welcome as text', async () => {
+		const { getByText } = render(ResponsiveCard, {
+			props: {
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
+			}
+		});
+		expect(getByText('welcome')).toBeInTheDocument();
+	});
+
+	it('should have card-title-link element containing a create-title', async () => {
+		const { getByTestId } = render(ResponsiveCard, {
+			props: {
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
+			}
+		});
+		expect(getByTestId('card-title-link')).toContainElement(getByTestId('card-title'));
+	});
+
+	it('should have card-title defined', async () => {
+		const { getByTestId } = render(ResponsiveCard, {
+			props: {
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
+			}
+		});
+		expect(getByTestId('card-title')).toBeDefined();
+	});
+
+	it('should have title set to specific value', async () => {
+		const { getByTestId } = render(ResponsiveCard, {
+			props: {
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
+			}
+		});
+		expect(getByTestId('card-title').innerHTML).toBe('welcome');
 	});
 });

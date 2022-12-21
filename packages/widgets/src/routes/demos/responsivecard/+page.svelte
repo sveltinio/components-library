@@ -26,8 +26,7 @@
 </script>
 
 <section class="main">
-	<h1><tt>@widgets/ResponsiveCard</tt></h1>
-
+	<h1><tt>@sveltinio/widgets</tt></h1>
 	<h2><tt>ResponsiveCard</tt></h2>
 </section>
 
@@ -39,7 +38,7 @@
 	<div class="demo-card-container">
 		<ResponsiveCard
 			title={contentItem_1.metadata.title}
-			headline={contentItem_1.metadata.headline ?? ''}
+			content={contentItem_1.metadata.headline ?? ''}
 		>
 			<ResponsiveCardImage slot="cardImage" src={item_1_CoverImgPath} alt="viola photo" />
 			<ResponsiveCardBadge
@@ -64,7 +63,7 @@
 
 		<ResponsiveCard
 			title={contentItem_2.metadata.title}
-			headline={contentItem_2.metadata.headline ?? ''}
+			content={contentItem_2.metadata.headline ?? ''}
 		>
 			<ResponsiveCardImage
 				slot="cardImage"
@@ -98,7 +97,7 @@
 
 		<ResponsiveCard
 			title={contentItem_1.metadata.title}
-			headline={contentItem_1.metadata.headline ?? ''}
+			content={contentItem_1.metadata.headline ?? ''}
 		>
 			<ResponsiveCardAction
 				slot="cardAction"

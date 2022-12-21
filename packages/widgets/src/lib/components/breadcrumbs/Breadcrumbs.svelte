@@ -6,17 +6,25 @@
 	export let parent = '';
 	export let current: string;
 
+	let themeClassName = '';
+	export { themeClassName as theme };
+
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 </script>
 
-<nav class="sw__breadcrumbs sw__breadcrumbs__container" style={cssStyles} aria-label="breadcrumb">
+<nav
+	class="sw__breadcrumbs sw__breadcrumbs__main {themeClassName}"
+	style={cssStyles}
+	aria-label="breadcrumb"
+	data-testid="breadcrumbs_main"
+>
 	<ol class="list">
 		<li class="item">
 			<a href={baseURL}>
 				<slot name="base-icon">
 					<svg
-						class="icon icon-home"
+						class="icon icon_home"
 						width="1.25rem"
 						height="1.25rem"
 						stroke-width="1.5"
@@ -38,14 +46,14 @@
 						/>
 					</svg>
 				</slot>
-				<span class="sr-only">Home</span>
+				<span class="sr_only">Home</span>
 			</a>
 		</li>
 		{#if parent}
 			<li class="item">
 				<slot name="divider-icon">
 					<svg
-						class="icon icon-divider"
+						class="icon icon_divider"
 						width="20"
 						height="20"
 						stroke-width="1.5"
@@ -70,7 +78,7 @@
 		<li class="item">
 			<slot name="divider-icon">
 				<svg
-					class="icon icon-divider"
+					class="icon icon_divider"
 					width="20"
 					height="20"
 					stroke-width="1.5"

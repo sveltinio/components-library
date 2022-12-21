@@ -1,16 +1,36 @@
-/* stylelint-disable custom-property-pattern */
-@charset "UTF-8";
-
 .sw__breadcrumbs {
-  --_font-size: var(--font-size, 0.875rem); /* 14px */
+  /* ****************************************** */
+  /* * main (class name: sw__breadcrumbs__main) */
+  /* ****************************************** */
+  --_font-size: var(--font-size, 0.875rem);
   --_font-weight: var(--font-weight, 500);
   --_line-height: var(--line-height, normal);
   --_letter-spacing: var(--letter-spacing, 0);
-  --_icon-color: var(--icon-color, rgb(148 163 184)); /* slate-400 */
-  --_icon-color-hover: var(--icon-color-hover, rgb(51 65 85)); /* slate-700 */
-  --_parent-color: var(--parent-color, rgb(100 116 139)); /* slate-500 */
-  --_parent-color-hover: var(--parent-color-hover, rgb(51 65 85)); /* slate-700 */
-  --_current-color: var(--current-color, rgb(100 116 139)); /* slate-500 */
-  --_divider-ml: var(--divider-ml, 0.5rem); /* 8px */
-  --_divider-mr: var(--divider-mr, 0.5rem); /* 8px */
+
+  /* ****************************************** */
+  /* * main (class name: icon) */
+  /* ****************************************** */
+  --_icon-color: var(--icon-color, #94a3b8);
+
+  /* ****************************************** */
+  /* * main (class name: icon_home)             */
+  /* ****************************************** */
+  --_icon-home-color-hover: var(--icon-home-color-hover, #334155);
+
+  /* ****************************************** */
+  /* * parent (class name: parent)              */
+  /* ****************************************** */
+  --_parent-color: var(--parent-color, #64748b);
+  --_parent-color-hover: var(--parent-color-hover, #334155);
+
+  /* ****************************************** */
+  /* * current (class name: current)            */
+  /* ****************************************** */
+  --_current-color: var(--current-color, #64748b);
+
+  /* ****************************************** */
+  /* * divider (class name: icon_divider)       */
+  /* ****************************************** */
+  --_divider-ml: var(--divider-ml, 0.5rem);
+  --_divider-mr: var(--divider-mr, 0.5rem);
 }

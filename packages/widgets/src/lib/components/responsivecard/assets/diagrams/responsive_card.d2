@@ -1,0 +1,80 @@
+DOM: "ResponsiveCard Component Structure" {
+  CardImage: {
+    # keys, shapes and labels
+    div.shape: circle
+    img.shape: circle
+    # connections
+    div -> img
+  }
+
+  CardBody: {
+    # keys, shapes and labels
+    div.shape: circle
+
+    CardBadge: {
+      # keys, shapes and labels
+      div.shape: circle
+      a.shape: circle
+      span.shape: circle
+      # connections
+      a -> span: label
+      div -> a
+    }
+
+    CardTitle: {
+      h2.shape: circle
+    }
+
+    CardContent: {
+      # keys, shapes and labels
+      div.shape: circle
+      p.shape: circle
+      # connections
+      div -> p
+    }
+
+    footer: "div"
+    footer.shape: circle
+
+    CardInfo: {
+      # keys, shapes and labels
+      div.shape: circle
+      avatarDiv: "div"
+      avatarDiv.shape: circle
+      infoDiv: "div"
+      infoDiv.shape: circle
+      pInfoDiv: "p"
+      pInfoDiv.shape: circle
+      spanInfoDiv: "span"
+      spanInfoDiv.shape: circle
+      # connections
+      infoDiv -> pInfoDiv: author
+      infoDiv -> spanInfoDiv: date
+      div -> avatarDiv: avatar
+      div -> infoDiv: athor & date
+    }
+
+    CardAction: {
+      # keys, shapes and labels
+      div.shape: circle
+      a.shape: circle
+      svg.shape: circle
+      # connections
+      div -> a
+      div -> svg: icon
+    }
+
+    # connections
+    div -> CardBadge
+    div -> CardTitle
+    div -> CardContent
+    footer -> CardInfo
+    footer -> CardAction
+    div -> footer: footer
+  }
+
+  # connections
+  div.shape: circle
+  div -> CardImage
+  div -> CardBody
+}
