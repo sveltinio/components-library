@@ -14,11 +14,11 @@
 
 <svelte:element
 	this={listType}
-	class="toc-list"
+	class="list"
 	class:visible={isOpen}
 	class:hidden={!isOpen}
-	class:toc-list-style-ordered={ordered}
-	data-testid="toc_list"
+	class:list_ordered={ordered}
+	data-testid="toc-list"
 >
 	{#each data as item}
 		{#if full}

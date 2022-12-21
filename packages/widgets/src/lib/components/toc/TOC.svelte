@@ -3,7 +3,7 @@
 	import type { TocEntry } from '../../types.js';
 	import { stylesObjToCSSVars } from '../../utils.js';
 	import TocList from './TocList.svelte';
-	import TocIcon from './TocIcon.svelte';
+	import TocButton from './TocButton.svelte';
 
 	export let data: Array<TocEntry>;
 	export let label = 'Table of Contents';
@@ -19,27 +19,9 @@
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
-
-	const toggleVisibility = () => (isOpen = !isOpen);
 </script>
 
-<nav class="sw__toc sw__toc__main {themeClassName}" style={cssStyles} data-testid="toc_main">
-	<button
-		class="toc-btn"
-		on:click|preventDefault={toggleVisibility}
-		alt={label}
-		aria-label={label}
-		aria-expanded={isOpen}
-		data-testid="toc_btn"
-	>
-		{#if !labelOnly}
-			<slot name="icon">
-				<TocIcon />
-			</slot>
-		{/if}
-		{#if !iconOnly}
-			<span>{label}</span>
-		{/if}
-	</button>
+<nav class="sw__toc sw__toc__main {themeClassName}" style={cssStyles} data-testid="toc-main">
+	<TocButton {label} bind:isOpen {iconOnly} {labelOnly} />
 	<TocList {data} {ordered} {isOpen} {full} {prefixChar} />
 </nav>

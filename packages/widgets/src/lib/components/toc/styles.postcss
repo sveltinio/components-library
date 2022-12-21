@@ -1,33 +1,43 @@
 @charset "UTF-8";
 /* stylelint-disable declaration-empty-line-before */
 
+@import url("../reset") screen;
 @import url("./variables") screen;
 
 .sw__toc__main {
-  margin: 0;
-  padding: 0.24rem 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: var(--_box-bg-color);
-  border: var(--_box-border-weight) var(--_box-border-style) var(--_box-border-color);
-  border-radius: var(--_box-border-radius);
+  gap: var(--_gap);
+  padding-top: var(--_pt);
+  padding-right: var(--_pr);
+  padding-bottom: var(--_pb);
+  padding-left: var(--_pl);
+  background-color: var(--_bg-color);
+  border-width: var(--_border-width);
+  border-style: var(--_border-style);
+  border-color: var(--_border-color);
+  border-radius: var(--_border-radius);
 
-  & .toc-btn {
-    min-height: var(--_min-height);
+  & .btn {
+    min-height: var(--_btn-min-height);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    gap: var(--_gap);
-    font-size: var(--_font-size);
-    font-weight: var(--_font-weight);
-    line-height: var(--_line-height);
-    border-radius: var(--_btn-border-radius);
-    border: var(--_btn-border-weight) var(--_btn-border-style) var(--_btn-border-color);
+    cursor: var(--_btn-cursor);
+    gap: var(--_btn-gap);
     color: var(--_btn-color);
-    text-transform: var(--_text-transform);
+    font-size: var(--_btn-font-size);
+    font-weight: var(--_btn-font-weight);
+    line-height: var(--_btn-line-height);
+    text-transform: var(--_btn-text-transform);
+
+    border-width: var(--_btn-border-width);
+    border-style: var(--_btn-border-style);
+    border-color: var(--_btn-border-color);
+    border-radius: var(--_btn-border-radius);
+
     padding-top: var(--_btn-pt);
     padding-right: var(--_btn-pr);
     padding-bottom: var(--_btn-pb);
@@ -36,6 +46,10 @@
 
     &:hover {
       background-color: var(--_btn-bg-color-hover);
+    }
+
+    & span {
+      color: var(--_btn-color);
     }
   }
 
@@ -47,17 +61,17 @@
     display: none;
   }
 
-  & .toc-list {
+  & .list {
     width: var(--_list-width);
-    list-style-type: var(--_list-style-type);
+    list-style-type: var(--_list-style);
     padding-top: var(--_list-pt);
     padding-right: var(--_list-pr);
     padding-bottom: var(--_list-pb);
     padding-left: var(--_list-pl);
     overflow: hidden;
-    transition: all 0.5s;
+    transition: all var(--_list-transition-duration) ease-in-out;
 
-    & .list-item {
+    & .list__item {
       position: relative;
       margin-top: var(--_item-mt);
       margin-right: var(--_item-mr);
@@ -78,7 +92,7 @@
       border-left-color: var(--_item-border-l-color);
       border-radius: var(--_item-border-radius);
 
-      & .toc-list-item-link {
+      & .list__item_link {
         display: block;
         color: var(--_item-color);
         text-decoration: var(--_item-text-decoration);
@@ -88,10 +102,16 @@
         padding-left: var(--_item-pl);
 
         &:hover {
+          color: var(--_item-color-hover);
           background-color: var(--_item-bg-color-hover);
           text-decoration: var(--_item-text-decoration-hover);
         }
       }
     }
+  }
+
+  & .list_ordered {
+    list-style: var(--_list-ordered-style);
+    margin-left: var(--_list-ordered-ml);
   }
 }

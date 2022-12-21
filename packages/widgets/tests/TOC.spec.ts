@@ -25,7 +25,7 @@ describe('TOC', () => {
 			}
 		});
 
-		expect(getByTestId('toc_main')).toContainElement(getByTestId('toc_btn'));
+		expect(getByTestId('toc-main')).toContainElement(getByTestId('toc-btn'));
 	});
 
 	it('should have a 4 list', async () => {
@@ -35,7 +35,7 @@ describe('TOC', () => {
 			}
 		});
 
-		const lists = getAllByTestId('toc_list');
+		const lists = getAllByTestId('toc-list');
 		expect(lists.length).toBe(4);
 	});
 
@@ -46,10 +46,10 @@ describe('TOC', () => {
 			}
 		});
 
-		const lists = getAllByTestId('toc_list');
+		const lists = getAllByTestId('toc-list');
 		expect(lists[0]).toHaveClass('hidden');
 
-		const button = getByTestId('toc_btn');
+		const button = getByTestId('toc-btn');
 		await fireEvent.click(button);
 
 		expect(lists[0]).toHaveClass('visible');

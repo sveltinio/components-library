@@ -1,37 +1,66 @@
 .sw__toc {
-  --_min-height: var(--min-height, 45px);
-  --_gap: var(--gap, 0.25rem);
-  --_font-size: var(--font-size, 1rem);
-  --_font-weight: var(--font-weight, 600);
-  --_line-height: var(--line-height, normal);
-  --_text-transform: var(--text-transform, none);
-  --_box-bg-color: var(--box-bg-color, transparent);
-  --_box-border-weight: var(--box-border-weight, 0);
-  --_box-border-style: var(--box-border-style, none);
-  --_box-border-color: var(--box-border-color, transparent);
-  --_box-border-radius: var(--box-border-radius, 0);
-  --_btn-color: var(--btn-color, #1f3337);
+  /* * ******************************************** */
+  /* * main (css class name: sw__toc__main)         */
+  /* * ******************************************** */
+  --_gap: var(--gap, 0.375rem);
+  --_pt: var(--pt, 0.25rem);
+  --_pr: var(--pr, 0rem);
+  --_pb: var(--pb, 0.25rem);
+  --_pl: var(--pl, 0rem);
+  --_bg-color: var(--bg-color, transparent);
+  --_border-width: var(--border-width, 0);
+  --_border-style: var(--border-style, none);
+  --_border-color: var(--border-color, transparent);
+  --_border-radius: var(--border-radius, 0);
+
+  /* * ******************************************** */
+  /* * button (css class name: btn)                 */
+  /* * ******************************************** */
+  --_btn-cursor: var(--btn-cursor, pointer);
+  --_btn-min-height: var(--btn-min-height, 2.875rem);
+  --_btn-gap: var(--btn-gap, 0.375rem);
+  --_btn-color: var(--btn-color, hsl(215deg 25% 27%)); /* slate-800 */
+  --_btn-font-size: var(--btn-font-size, 1rem);
+  --_btn-font-weight: var(--btn-font-weight, 600);
+  --_btn-line-height: var(--btn-line-height, normal);
+  --_btn-text-transform: var(--btn-text-transform, none);
   --_btn-bg-color: var(--btn-bg-color, transparent);
-  --_btn-bg-color-hover: var(--btn-bg-color-hover, #f8fafc);
+  --_btn-bg-color-hover: var(--btn-bg-color-hover, hsl(210deg 40% 98%)); /* slate-50 */
   --_btn-pt: var(--btn-pt, 0.375rem);
   --_btn-pr: var(--btn-pr, 0.625rem);
   --_btn-pb: var(--btn-pb, 0.375rem);
   --_btn-pl: var(--btn-pl, 0.625rem);
-  --_btn-border-weight: var(--btn-border-weight, 0);
+  --_btn-border-width: var(--btn-border-width, 0);
   --_btn-border-style: var(--btn-border-style, none);
   --_btn-border-color: var(--btn-border-color, transparent);
   --_btn-border-radius: var(--btn-border-radius, 0.5rem);
-  --_list-style-type: var(--list-style-type, none);
+
+  /* * ******************************************** */
+  /* * list (css class name: list)                  */
+  /* * ******************************************** */
+  --_list-style: var(--list-style, none);
   --_list-width: var(--list-width, 100%);
-  --_list-bg-color-hover: var(--bg-color-hover, #f8fafc);
-  --_list-pt: var(--list-pt, 10px);
-  --_list-pr: var(--list-pr, 0);
-  --_list-pb: var(--list-pb, 0);
-  --_list-pl: var(--list-pl, 20px);
-  --_item-color: var(--item-color, #1e293b);
+  --_list-bg-color-hover: var(--bg-color-hover, hsl(210deg 40% 98%)); /* slate-50 */
+  --_list-pt: var(--list-pt, 0rem);
+  --_list-pr: var(--list-pr, 0rem);
+  --_list-pb: var(--list-pb, 0rem);
+  --_list-pl: var(--list-pl, 1.25rem);
+  --_list-transition-duration: var(--list-transition-duration, 0.5s);
+
+  /* * ******************************************** */
+  /* * ordered list (css class name: list_ordered)  */
+  /* * ******************************************** */
+  --_list-ordered-style: var(--list-ordered-style, decimal);
+  --_list-ordered-ml: var(--list-ordered-ml, 0.75rem);
+
+  /* * ******************************************** */
+  /* * item (css class name: list__item)            */
+  /* * ******************************************** */
+  --_item-color: var(--item-color, hsl(217deg 33% 17%)); /* slate-800 */
+  --_item-color-hover: var(--item-color-hover, hsl(217deg 33% 17%)); /* slate-800 */
   --_item-text-decoration: var(--item-text-decoration, none);
   --_item-text-decoration-hover: var(--item-text-decoration-hove, none);
-  --_item-bg-color-hover: var(--item-bg-color-hover, #f1f5f9);
+  --_item-bg-color-hover: var(--item-bg-color-hover, hsl(210deg 40% 96%)); /* slate-100 */
   --_item-mt: var(--item-mt, 0);
   --_item-mr: var(--item-mr, 0);
   --_item-mb: var(--item-mb, 0);
