@@ -13,8 +13,8 @@ describe('ScrollToTopButton', () => {
 		const { getByTestId } = render(ScrollToTopButton, {});
 		vi.fn(() => window.scrollTo);
 
-		const scrollBtn = getByTestId('bounce_btn');
-		expect(scrollBtn).toHaveClass('animate-bounce', 'hide');
+		const scrollBtn = getByTestId('bounce-btn');
+		expect(scrollBtn).toHaveClass('animate_bounce', 'hide');
 	});
 
 	it('page should scroll to top when clicked', async () => {
@@ -22,7 +22,7 @@ describe('ScrollToTopButton', () => {
 		vi.fn(() => window.scrollTo);
 		window.HTMLElement.prototype.scrollIntoView = vi.fn();
 
-		const scrollBtn = getByTestId('bounce_btn');
+		const scrollBtn = getByTestId('bounce-btn');
 		await fireEvent.click(scrollBtn);
 		expect(document.body.scrollIntoView).toBeCalled();
 	});

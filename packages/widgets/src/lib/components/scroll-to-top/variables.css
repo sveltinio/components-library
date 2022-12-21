@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-.sw__scroll_to_top {
+.sw__stt {
   /** ****************************************************** */
-  /** bounce-btn (css class name: bounce-btn)                */
+  /** bounce buttontn (css class name: bounce_btn)           */
   /** ****************************************************** */
   --_margin: var(--margin, 1.25rem);
   --_padding: var(--padding, 0.125rem);
@@ -14,17 +14,17 @@
   /*- lg breakpoint: min-width 1024px */
   --_margin-lg: var(--margin-lg, var(--_margin-md));
   --_padding-lg: var(--padding-lg, 0.375rem);
+  --_transition: var(--transition, all);
+  --_timing-function: var(--timing-function, cubic-bezier(0.4, 0, 0.2, 1));
   /** ****************************************************** */
-  /** outline (css class name: bounce-btn)                   */
+  /** outline (css class name: bounce-btn:focus)             */
   /** ****************************************************** */
   --_outline-width: var(--outline-width, 1px);
   --_outline-style: var(--outline-style, solid);
   --_outline-color: var(--outline-color, transparent);
   --_outline-offset: var(--_outline-offset, 2px);
   /** ****************************************************** */
-  /** transition (css class name: bounce-btn)                */
+  /** animation (css class name: animate_bounce)             */
   /** ****************************************************** */
-  --_transition: var(--transition, all);
-  --_timing-function: var(--timing-function, cubic-bezier(0.4, 0, 0.2, 1));
-  --_duration: var(--duration, 1s);
+  --_bounce-duration: var(--bounce-duration, 1s);
 }

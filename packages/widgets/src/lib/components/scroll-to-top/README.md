@@ -30,3 +30,11 @@ The `ScrollToTopButton` component exposes the following properties:
 | fillColor | string |    no    | ![#4b5563](https://via.placeholder.com/15/4b5563/4b5563.png) | |
 | showOnPx  | number |    no    | `400px`                                                      | Position of page to show the button |
 | styles    | Object |    no    |   `{}`                                                       | Used to pass CSS variables to apply custom styles |
+
+## Theming
+
+To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
+
+The two component properties `styles` and `theme` are the ones allowing you to customize the component appearence.
+
+Read more [here](./THEMING.md).

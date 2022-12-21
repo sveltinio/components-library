@@ -9,13 +9,12 @@
 
 <section class="main">
 	<h1><tt>@sveltinio/widgets</tt></h1>
+	<h2><tt>ScrollToTopButton</tt></h2>
+</section>
 
-	<h2><tt>Buttons</tt></h2>
-
-	<section id="scroll-to-top" class="container">
-		<h3>Scroll-To-Top</h3>
-		<p>Scroll down, they will appear</p>
-
+<section>
+	<p>Scroll down and it will appear</p>
+	<div class="demo-card-container">
 		<!-- Default -->
 		<ScrollToTopButton showOnPx={10} />
 
@@ -26,5 +25,5 @@
 			fillColor="red"
 			styles={customBtnStyles}
 		/>
-	</section>
+	</div>
 </section>

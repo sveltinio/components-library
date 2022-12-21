@@ -29,14 +29,10 @@
 
 <svelte:window on:scroll={handleOnScroll} />
 
-<div
-	class="sw__scroll_to_top sw__scroll_to_top_main"
-	style={cssStyles}
-	data-testid="scroll-to-top_main"
->
+<div class="sw__stt sw__stt__main" style={cssStyles} data-testid="scroll-to-top_main">
 	<a
-		class="bounce-btn animate-bounce"
-		data-testid="bounce_btn"
+		class="bounce_btn animate_bounce"
+		data-testid="bounce-btn"
 		href="#top"
 		aria-label="Back to top"
 		on:click={goTop}
