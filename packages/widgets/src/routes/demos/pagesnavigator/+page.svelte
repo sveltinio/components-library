@@ -55,7 +55,6 @@
 
 <section class="main">
 	<h1><tt>@sveltinio/widgets</tt></h1>
-
 	<h2><tt>PagesNavigator</tt></h2>
 </section>
 
@@ -65,7 +64,7 @@
 
 	<h3>Custom Icons</h3>
 	<PagesNavigator prev={prevObj} next={nextObj}>
-		<span slot="previous-icon">
+		<span slot="prevIcon">
 			<svg
 				width="20px"
 				height="20px"
@@ -84,7 +83,7 @@
 			>
 		</span>
 
-		<span slot="next-icon">
+		<span slot="nextIcon">
 			<svg
 				width="20px"
 				height="20px"

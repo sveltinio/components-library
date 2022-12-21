@@ -1,4 +1,7 @@
 .sw__pagesnav {
+  /* * ****************************************************** */
+  /* * main (css class name: sw__pagesnav__main)              */
+  /* * ****************************************************** */
   --_max-width: var(--max-width, 100%);
   --_gap: var(--gap, 0.0625rem);
   --_bg-color: var(--bg-color, transparent);
@@ -10,7 +13,7 @@
   --_pr: var(--pr, 0);
   --_pb: var(--pb, 0.5rem);
   --_pl: var(--pl, 0);
-  --_border-t-color: var(--border-t-color, #e2e8f0);
+  --_border-t-color: var(--border-t-color, hsl(214deg 32% 91%)); /* slate-200 */
   --_border-t-style: var(--border-t-style, solid);
   --_border-t-width: var(--border-t-width, 1px);
   --_border-r-color: var(--border-r-color, transparent);
@@ -30,13 +33,21 @@
   --_max-width-md: var(--max-width-md, var(--_max-width));
   --_gap-lg: var(--gap-md, var(--_gap-md));
   --_max-width-lg: var(--max-width-lg, var(--_max-width-md));
+
+  /* * ****************************************************** */
+  /* * spacer (css class name: spacer)                        */
+  /* * ****************************************************** */
   --_spacer-width: var(--spacer-width, 1px);
   --_spacer-style: var(--spacer-style, solid);
-  --_spacer-color: var(--spacer-color, #e2e8f0);
+  --_spacer-color: var(--spacer-color, hsl(214deg 32% 91%)); /* slate-200 */
+
+  /* * ****************************************************** */
+  /* * link (css class name: link)                            */
+  /* * ****************************************************** */
   --_link-width: var(--link-width, 100%);
   --_link-cursor: var(--link-cursor, pointer);
   --_link-bg-color: var(--link-bg-color, transparent);
-  --_link-border-color: var(--link-border-color, #e2e8f0);
+  --_link-border-color: var(--link-border-color, hsl(214deg 32% 91%)); /* slate-200 */
   --_link-border-style: var(--link-border-style, solid);
   --_link-border-width: var(--link-border-width, 1px);
   --_link-border-radius: var(--link-border-radius, 0.25rem);
@@ -48,10 +59,11 @@
   --_link-pr: var(--link-pr, 0);
   --_link-pb: var(--link-pb, 0);
   --_link-pl: var(--link-pl, 0);
-  --_link-bg-color-hover: var(--link-bg-color-hover, #f8fafc);
-  --_link-border-color-hover: var(--link-border-color, #e2e8f0);
+  --_link-bg-color-hover: var(--link-bg-color-hover, hsl(210deg 40% 98%)); /* slate-50 */
+  --_link-border-color-hover: var(--link-border-color, hsl(214deg 32% 91%)); /* slate-200 */
   --_link-border-style-hover: var(--link-border-style, solid);
   --_link-border-width-hover: var(--link-border-width, 1px);
+  /* - content: md breakpoint (min-width: 768px) */
   --_link-width-md: var(--link-width-md, var(--_link-width));
   --_link-mt-md: var(--link-mt-md, var(--_link-mt));
   --_link-mr-md: var(--link-mr-md, var(--_link-mr));
@@ -61,6 +73,7 @@
   --_link-pr-md: var(--link-pr-md, 0.5rem);
   --_link-pb-md: var(--link-pb-md, 0.5rem);
   --_link-pl-md: var(--link-pl-md, 0.5rem);
+  /* - content: lg breakpoint (min-width: 1024px) */
   --_link-width-lg: var(--link-width-lg, var(--_link-width-md));
   --_link-mt-lg: var(--link-mt-lg, var(--_link-mt-md));
   --_link-mr-lg: var(--link-mr-lg, var(--_link-mr-md));
@@ -70,6 +83,10 @@
   --_link-pr-lg: var(--link-pr-lg, var(--_link-pr-md));
   --_link-pb-lg: var(--link-pb-lg, var(--_link-pb-md));
   --_link-pl-lg: var(--link-pl-lg, var(--_link-pl-md));
+
+  /* * ****************************************************** */
+  /* * content (css class name: content )                     */
+  /* * ****************************************************** */
   --_content-width: var(--content-width, 100%);
   --_content-gap: var(--content-gap, 0.25rem);
   --_content-mt: var(--content-mt, 0);
@@ -90,6 +107,7 @@
   --_content-border-style-hover: var(--content-border-style-hover, solid);
   --_content-border-width-hover: var(--content-border-width-hover, 1px);
   --_content-border-radius-hover: var(--content-border-radius-hover, 0.25rem);
+  /* - content: md breakpoint (min-width: 768px) */
   --_content-gap-md: var(--content-gap-md, 1rem);
   --_content-width-md: var(--content-width-md, var(--_content-width));
   --_content-mt-md: var(--content-mt-md, var(--_content-mt));
@@ -100,6 +118,7 @@
   --_content-pr-md: var(--content-pr-md, 1rem);
   --_content-pb-md: var(--content-pb-md, 0.5rem);
   --_content-pl-md: var(--content-pl-md, 1rem);
+  /* - content: lg breakpoint (min-width: 1024px) */
   --_content-gap-lg: var(--content-gap-lg, var(--_content-gap-md));
   --_content-width-lg: var(--content-width-lg, var(--_content-width-md));
   --_content-mt-lg: var(--content-mt-lg, var(--_content-mt-md));
@@ -110,26 +129,46 @@
   --_content-pr-lg: var(--content-pr-lg, var(--_content-pr-md));
   --_content-pb-lg: var(--content-pb-lg, 1rem);
   --_content-pl-lg: var(--content-pl-lg, var(--_content-pl-md));
+
+  /* * ****************************************************** */
+  /* * left side content (css class name: content__previous ) */
+  /* * ****************************************************** */
   --_content-l-ml: var(--content-l-ml, 0);
   --_content-l-mr: var(--content-l-mr, 0);
   --_content-l-text-align: var(--content-l-text-align, left);
+  /* - content: md breakpoint (min-width: 768px) */
   --_content-l-ml-md: var(--content-l-ml-md, var(--_content-l-ml));
   --_content-l-mr-md: var(--content-l-mr-md, var(--_content-l-mr));
   --_content-l-text-align-md: var(--content-l-text-align-md, var(--_content-l-text-align));
+  /* - content: lg breakpoint (min-width: 1024px) */
   --_content-l-ml-lg: var(--content-l-ml-lg, var(--_content-l-ml-md));
   --_content-l-mr-lg: var(--content-l-mr-lg, var(--_content-l-mr-md));
+
   --_content-l-text-align-lg: var(--content-l-text-align-lg, var(--_content-l-text-align-md));
+  /* * ****************************************************** */
+  /* * right side content (css class name: content__next )    */
+  /* * ****************************************************** */
   --_content-r-ml: var(--content-r-ml, auto);
   --_content-r-mr: var(--content-r-mr, 0);
   --_content-r-text-align: var(--content-r-text-align, right);
+  /* - content: md breakpoint (min-width: 768px) */
   --_content-r-ml-md: var(--content-r-ml-md, var(--_content-r-ml));
   --_content-r-mr-md: var(--content-r-mr-md, var(--_content-r-mr));
   --_content-r-text-align-md: var(--content-r-text-align-md, var(--_content-r-text-align));
+  /* - content: lg breakpoint (min-width: 1024px) */
   --_content-r-ml-lg: var(--content-r-ml-lg, var(--_content-r-ml-md));
   --_content-r-mr-lg: var(--content-r-mr-lg, var(--_content-r-mr-md));
   --_content-r-text-align-lg: var(--content-r-text-align-lg, var(--_content-r-text-align-md));
-  --_icon-color: var(--icon-color, #000);
-  --_placeholder-color: var(--placeholder-color, #334155);
+
+  /* * ****************************************************** */
+  /* * icon (css class name: content__icon)                   */
+  /* * ****************************************************** */
+  --_icon-color: var(--icon-color, hsl(0deg 0% 0%));
+
+  /* * ****************************************************** */
+  /* * placeholder (css class name: content__placeholder)     */
+  /* * ****************************************************** */
+  --_placeholder-color: var(--placeholder-color, hsl(215deg 25% 27%)); /* slate-700 */
   --_placeholder-font-size: var(--placeholder-font-size, 0.875rem);
   --_placeholder-font-weight: var(--placeholder-font-weight, 400);
   --_placeholder-line-height: var(--placeholder-line-height, 1.5);
@@ -143,6 +182,7 @@
   --_placeholder-mr: var(--placeholder-mr, auto);
   --_placeholder-mb: var(--placeholder-mb, 0);
   --_placeholder-ml: var(--placeholder-ml, auto);
+  /* - placeholder: md breakpoint (min-width: 768px) */
   --_placeholder-font-size-md: var(--placeholder-font-size-md, var(--_placeholder-font-size));
   --_placeholder-font-weight-md: var(--placeholder-font-weight-md, var(--_placeholder-font-weight));
   --_placeholder-line-height-md: var(--placeholder-line-height-md, var(--_placeholder-line-height));
@@ -162,6 +202,7 @@
   --_placeholder-pr-md: var(--placeholder-pr-md, var(--_placeholder-pr));
   --_placeholder-pb-md: var(--placeholder-pb-md, var(--_placeholder-pb));
   --_placeholder-pl-md: var(--placeholder-pl-md, var(--_placeholder-pl));
+  /* - placeholder: lg breakpoint (min-width: 1024px) */
   --_placeholder-font-size-lg: var(--placeholder-font-size-lg, var(--_placeholder-font-size-md));
   --_placeholder-font-weight-lg: var(
     --placeholder-font-weight-lg,
@@ -187,12 +228,17 @@
   --_placeholder-pr-lg: var(--placeholder-pr-lg, var(--_placeholder-pt-md));
   --_placeholder-pb-lg: var(--placeholder-pb-lg, var(--_placeholder-pt-md));
   --_placeholder-pl-lg: var(--placeholder-pl-lg, var(--_placeholder-pt-md));
-  --_message-color: var(--message-color, #334155);
+
+  /* * ****************************************************** */
+  /* * message (css class name: content__message)             */
+  /* * ****************************************************** */
+  --_message-color: var(--message-color, hsl(215deg 25% 27%)); /* slate-700 */
   --_message-font-size: var(--message-font-size, 0.875rem);
   --_message-font-weight: var(--message-font-weight, 500);
   --_message-line-height: var(--message-line-height, 1.5);
   --_message-letter-spacing: var(--message-letter-spacing, 0.025em);
   --_message-text-decoration: var(--message-text-decoration, none);
+  /* - message: md breakpoint (min-width: 768px) */
   --_message-mt: var(--message-mt, 0);
   --_message-mr: var(--message-mr, 0);
   --_message-mb: var(--message-mb, 0);
@@ -214,6 +260,7 @@
   --_message-pr-md: var(--message-pr-md, var(--_message-pr));
   --_message-pb-md: var(--message-pb-md, var(--_message-pb));
   --_message-pl-md: var(--message-pl-md, var(--_message-pl));
+  /* - message: lg breakpoint (min-width: 1024px) */
   --_message-font-size-lg: var(--message-font-size-lg, var(--_message-font-size-md));
   --_message-font-weight-lg: var(--message-font-weight-lg, var(--_message-font-weight-md));
   --_message-line-height-lg: var(--message-line-height-lg, var(--_message-line-height-md));
