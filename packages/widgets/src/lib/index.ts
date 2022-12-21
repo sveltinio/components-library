@@ -2,15 +2,8 @@
 import { Breadcrumbs } from './components/breadcrumbs/index.js';
 export { Breadcrumbs };
 
-import {
-	Card,
-	CardCover,
-	CardTitle,
-	CardMetadata,
-	CardContent,
-	CardButton
-} from './components/card/index.js';
-export { Card, CardCover, CardTitle, CardMetadata, CardContent, CardButton };
+import { Card, CardAction, CardImage } from './components/card/index.js';
+export { Card, CardAction, CardImage };
 
 import {
 	ResponsiveCard,

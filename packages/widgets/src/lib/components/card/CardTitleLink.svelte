@@ -1,9 +1,12 @@
 <script lang="ts">
 	export let title: string;
+	export let href = '';
 </script>
 
 <div class="card__title" data-testid="card-title">
-	<h2 data-test-id="card-title-text">
-		{title}
-	</h2>
+	<a {href}
+		><h2 data-testid="card-title-text">
+			{title}
+		</h2></a
+	>
 </div>

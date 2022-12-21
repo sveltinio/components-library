@@ -1,1 +1,1 @@
-export { default as CardSlotTest } from './CardSlotTest.svelte';
+export { default as CardActionSlotTest } from './CardActionSlotTest.svelte';

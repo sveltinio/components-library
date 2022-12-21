@@ -1,9 +1,10 @@
 <script lang="ts">
-	export let lineClamp = '3';
+	export let content: string;
+	export let lineClamp = 2;
 </script>
 
-<div class="card-content">
-	<p style:-webkit-line-clamp={lineClamp} data-testid="card-text">
-		<slot />
+<div class="card__content" data-testid="card-content">
+	<p style:-webkit-line-clamp={lineClamp} data-testid="card-content-text">
+		{content}
 	</p>
 </div>
