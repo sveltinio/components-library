@@ -60,19 +60,20 @@
 		"vitest": "^0.26.2"
 	},
 	"scripts": {
-		"build": "pnpm clean && svelte-kit sync && svelte-package",
+		"build": "pnpm clean && pnpm sync && pnpm build:css && svelte-package",
 		"build:css": "NODE_ENV=production node styles-builder.js",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check": "pnpm sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "pnpm sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"clean": "rimraf dist",
-		"dev": "svelte-kit sync && pnpm dev:css && vite dev",
+		"dev": "pnpm sync && pnpm dev:css && vite dev",
 		"dev:css": "NODE_ENV=development node styles-builder.js",
 		"lint": "prettier --plugin-search-dir=. --check . && eslint .",
 		"lint:styles": "stylelint \"**/styles.postcss\"",
 		"format": "prettier --plugin-search-dir=. --write .",
-		"test": "svelte-kit sync && pnpm build:css &&  vitest run",
-		"test:coverage": "svelte-kit sync && vitest run --coverage",
-		"test:watch": "svelte-kit sync && vitest watch"
+		"sync": "svelte-kit sync",
+		"test": "pnpm sync && vitest run",
+		"test:coverage": "pnpm sync && vitest run --coverage",
+		"test:watch": "pnpm sync && vitest watch"
 	},
 	"types": "index.d.ts",
 	"svelte": "index.js",

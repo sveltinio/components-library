@@ -13,10 +13,9 @@
 		"lint": {
 			"dependsOn": ["format"]
 		},
-		"test": {
-			"env": ["NODE_ENV"]
-		},
+		"test": {},
 		"build": {
+			"env": ["NODE_ENV"],
 			"dependsOn": ["clean", "lint", "test", "^build"]
 		},
 		"components.sveltin.io#build": {
