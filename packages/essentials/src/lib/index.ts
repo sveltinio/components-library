@@ -28,5 +28,6 @@ export type { ListItem };
 
 import { Tabs, Tab } from './components/tabs/index.js';
 export { Tabs, Tab };
+
 import { ToggleList } from './components/list/index.js';
 export { ToggleList };

@@ -9,6 +9,8 @@ The `Button` component can be used for both `button` and link `a` by adding the 
 - **focus**: with or without the focus ring
 - **icons**: render an Icon either on the left side or the right side. Wrap the Icon with the Button component, then add the slot='leftIcon' or slot='rightIcon' prop to your Icon.
 
+<img src="./assets/images/showcase.png" alt="Button - Showcase" />
+
 ## Examples
 
 ```html
@@ -19,17 +21,17 @@ The `Button` component can be used for both `button` and link `a` by adding the 
    const handleButtonClick = (event) => { alert('button clicked on:' + event.detail); };
 </script>
 
-<button type="primary" on:click="{handleButtonClick}" />
-<button label="Click Me" type="secondary" border="dashed" />
-<button label="Click Me" outlined rounded />
-<button label="Click Me" type="success" rounded withFocus />
-<button type="success"><MailIcon slot="leftIcon" /> Button Text</button>
-<button type="success"><MailIcon slot="rightIcon" /> Button Text</button>
-<button type="primary" size="lg" circular>
+<Button type="primary" on:click="{handleButtonClick}" />
+<Button label="Click Me" type="secondary" border="dashed" />
+<Button label="Click Me" outlined rounded />
+<Button label="Click Me" type="success" rounded withFocus />
+<Button type="success"><MailIcon slot="leftIcon" /> Button Text</Button>
+<Button type="success"><MailIcon slot="rightIcon" /> Button Text</Button>
+<Button type="primary" size="lg" circular>
    <PlusIcon />
-</button>
-<button href="https://sveltin.io" />
-<button type="secondary" href="#" prefetch />
+</Button>
+<Button href="https://sveltin.io" />
+<Button type="secondary" href="#" prefetch />
 ```
 
 ## Properties
@@ -53,58 +55,16 @@ The following are the ones exposed by the component
 | href          | string  |    no    |             | The URL of the page the link goes to                            |
 | prefetch      | boolean |    no    |    false    | Enable data-sveltekit-prefetch for the link                     |
 | external      | boolean |    no    |    false    | If true, opens the linked document in a new window or tab       |
+| theme         | string  |    no    |             | The css class name used to make a theme variant                 |
+| styles        | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles               |
 
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-Below is the CSS variables list to apply your own styles to the component.
+The two component properties `styles` and `class` are the ones allowing you to customize the component appearence.
 
-| CSS Variable        | Default            | |
-| :------------------ | ------------------:| :----------------------------------------------------------: |
-| `cursor`            | `pointer`          | |
-| `font-size`         | `1rem`             | |
-| `font-weight`       | `500`              | |
-| `line-height`       | `1.5rem`           | |
-| `letter-spacing`    | `0em`              | |
-| `text-decoration`   | `none`             | |
-| `color`             | `rgb(255 255 255)` | ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/FFFFFF.png) |
-| `border-color`      | `rgb(228 228 231)` | ![#E4E4E7](https://via.placeholder.com/15/E4E4E7/E4E4E7.png) |
-| `border-width`      | `1px`              | ![#E4E4E7](https://via.placeholder.com/15/E4E4E7/E4E4E7.png) |
-| `bg-color`          | `rgb(228 228 231)` | ![#E4E4E4](https://via.placeholder.com/15/E4E4E4/E4E4E4.png) |
-| `bg-color-hover`    | `rgb(244 244 245)` | ![#F4F4F5](https://via.placeholder.com/15/F4F4F5/F4F4F5.png) |
-| `outlined-bg-hover` | `rgb(244 244 245)` | ![#F4F4F5](https://via.placeholder.com/15/F4F4F5/F4F4F5.png) |
-| `pt`                | `0.5rem`           | |
-| `pr`                | `1rem`             | |
-| `pb`                | `0.5rem`           | |
-| `pl`                | `1rem`             | |
-| `ring-width`        | `2px`              | |
-| `ring-offset`       | `2px`              | |
-| `ring-style`        | `solid`            | |
+Read more [here](./THEMING.md)
 
+<!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
-
-### Example
-
-```html
-<script>
-   import { Button } from '@sveltinio/essentials';
-
-   const myStyles = {
-      color: "rgb(54 83 20)",
-      "border-color": "rgb(236 252 203)",
-      "bg-color": "rgb(132 204 22)",
-      "bg-hover": "rgb(163 230 53)",
-      "ring-color": "rgb(190 242 100)",
-      "ring-style": "dashed"
-   }
-</script>
-
-<Button
-   label="Custom Success"
-   type="success"
-   rounded
-   withFocus
-   styles={myStyles}
-/>
-```

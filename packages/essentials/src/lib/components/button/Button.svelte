@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './btn-styles.css';
+	import './styles.css';
 	import { createEventDispatcher } from 'svelte';
 	import { stylesObjToCSSVars } from '$lib/utils';
 
@@ -10,13 +10,17 @@
 	export let border = 'solid';
 	export let outlined = false;
 	export let rounded = false;
-	export let circular = false;
+	export let circle = false;
 	export let fullSize = false;
 	export let withFocusRing = false;
 
 	export let href = '';
 	export let prefetch = false;
 	export let external = false;
+
+	let className = '';
+	export { className as class };
+
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 
@@ -25,11 +29,8 @@
 		dispatch('click', { eventDetails: e });
 	};
 
-	$: outlinedClass = outlined
-		? `btn-outlined btn-outlined-${type} btn-outlined-${type}-text btn-outlined-${type}-bg`
-		: `btn-${type} btn-${type}-text btn-${type}-bg`;
-	$: fullSizeClass = fullSize ? `btn-full` : '';
-	$: focusClass = withFocusRing ? `btn-focus btn-${type}-focus` : '';
+	$: outlinedClass = outlined ? `btn_outlined btn_${type}_outlined` : `btn_${type}`;
+	$: focusClass = withFocusRing ? `btn_focus btn_${type}_focus` : '';
 	$: _altText = altText != '' ? altText : label;
 </script>
 
@@ -41,35 +42,47 @@
 		target={external ? '_blank' : '_self'}
 		aria-label={_altText}
 		data-testid="btn"
-		class="btn btn-{size} btn-border-{border} {outlinedClass} {focusClass} {fullSizeClass}"
-		class:btn-rounded={rounded}
-		class:btn-circular={circular}
+		class="sw__btn sw__btn__main btn btn_{size} btn_border_{border} {outlinedClass} {focusClass}"
+		class:btn_full={fullSize}
+		class:btn_rounded={rounded}
+		class:btn_circle={circle}
 		style={cssStyles}
-		{...$$restProps}><slot>{label}</slot></a
+		{...$$restProps}
 	>
+		<span class="btn__content">
+			{#if $$slots.leftIcon}
+				<slot name="leftIcon" />
+			{/if}
+			<slot>
+				{label}
+			</slot>
+			{#if $$slots.rightIcon}
+				<slot name="rightIcon" />
+			{/if}
+		</span>
+	</a>
 {:else}
 	<button
 		aria-label={_altText}
 		data-testid="btn"
-		class="btn btn-{size} btn-border-{border} {outlinedClass} {focusClass} {fullSizeClass}"
-		class:btn-rounded={rounded}
-		class:btn-circular={circular}
+		class="sw__btn sw__btn__main btn btn_{size} btn_border_{border} {outlinedClass} {focusClass} {className}"
+		class:btn_full={fullSize}
+		class:btn_rounded={rounded}
+		class:btn_circle={circle}
 		style={cssStyles}
 		{...$$restProps}
 		on:click={clickDispatcher}
 	>
-		{#if $$slots.leftIcon}
-			<span style="margin-right: 0.3rem;">
+		<span class="btn__content">
+			{#if $$slots.leftIcon}
 				<slot name="leftIcon" />
-			</span>
-		{/if}
-		<slot>
-			{label}
-		</slot>
-		{#if $$slots.rightIcon}
-			<span style="margin-left: 0.3rem;">
+			{/if}
+			<slot>
+				{label}
+			</slot>
+			{#if $$slots.rightIcon}
 				<slot name="rightIcon" />
-			</span>
-		{/if}
+			{/if}
+		</span>
 	</button>
 {/if}
