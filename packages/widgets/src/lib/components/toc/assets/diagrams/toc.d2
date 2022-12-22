@@ -1,0 +1,34 @@
+DOM: "TOC Component Structure" {
+  TocButton: {
+    # keys, shapes and labels
+    button.shape: circle
+    svg.shape: circle
+    span.shape: circle
+    # connections
+    button -> svg: icon
+    button -> span: label
+  }
+
+  TocList: {
+    list.shape: circle
+    list: "ul|ol"
+  }
+
+  TocItem: {
+    # keys, shapes and labels
+    li.shape: circle
+    a.shape: circle
+    # connections
+    li -> _.TocList.list: repeat
+    li -> a
+    _.TocList.list -> li: {
+      source-arrowhead: 1
+      target-arrowhead: *
+    }
+  }
+
+  # connections
+  nav.shape: circle
+  nav -> TocButton
+  nav -> TocList
+}

@@ -7,7 +7,6 @@
 	export let full = false;
 	export let ordered: boolean;
 	export let prefixChar: string;
-	export let theme: string;
 
 	let listType = ordered ? 'ol' : 'ul';
 	let prefix = ordered ? '' : prefixChar;
@@ -15,11 +14,11 @@
 
 <svelte:element
 	this={listType}
-	class="toc-list"
+	class="list"
 	class:visible={isOpen}
 	class:hidden={!isOpen}
-	class:toc-list-style-ordered={ordered}
-	data-testid="toc_list"
+	class:list_ordered={ordered}
+	data-testid="toc-list"
 >
 	{#each data as item}
 		{#if full}
@@ -27,16 +26,15 @@
 				<svelte:self
 					data={item.children}
 					bind:ordered
-					bind:theme
 					bind:isOpen
 					bind:full
 					prefixChar={prefix}
 				/>
 			{:else}
-				<TocItem id={item.id} value={item.value} prefixChar={prefix} bind:theme />
+				<TocItem id={item.id} value={item.value} prefixChar={prefix} />
 			{/if}
 		{:else}
-			<TocItem id={item.id} value={item.value} prefixChar={prefix} bind:theme />
+			<TocItem id={item.id} value={item.value} prefixChar={prefix} />
 		{/if}
 	{/each}
 </svelte:element>

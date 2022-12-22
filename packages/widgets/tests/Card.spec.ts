@@ -2,56 +2,71 @@ import '@testing-library/jest-dom';
 import { it, describe, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { Card } from '../src/lib/index.js';
-import { CardSlotTest } from './slot/index.js';
+import { CardActionSlotTest } from './slot/index.js';
 
 describe('Card', () => {
 	it('should be in the document', async () => {
 		const { container } = render(Card, {
 			props: {
-				resource: 'posts',
-				slug: 'welcome'
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
 			}
 		});
 		expect(container).toBeInTheDocument();
 	});
 
-	it('should have a valid id', async () => {
-		const { getByTestId } = render(Card, {
+	it('should contain welcome as text', async () => {
+		const { getByText } = render(Card, {
 			props: {
-				resource: 'posts',
-				slug: 'welcome'
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
 			}
 		});
-		expect(getByTestId('card-container')).toHaveClass('sw__card sw__card__container');
+		expect(getByText('welcome')).toBeInTheDocument();
 	});
 
-	it('should render slotted title', async () => {
-		const { getByTestId } = render(CardSlotTest, {
-			props: { Component: Card }
+	it('should have card-title element containing a create-title-text', async () => {
+		const { getByTestId } = render(Card, {
+			props: {
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
+			}
 		});
-
-		const slot = getByTestId('card-title');
-		expect(slot).not.toBeNull();
-		expect(slot.textContent).toBe('Card Title');
+		expect(getByTestId('card-title')).toContainElement(getByTestId('card-title-text'));
 	});
 
-	it('should render slotted content', async () => {
-		const { getByTestId } = render(CardSlotTest, {
-			props: { Component: Card }
+	it('should have card-title-text defined', async () => {
+		const { getByTestId } = render(Card, {
+			props: {
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
+			}
 		});
+		expect(getByTestId('card-title-text')).toBeDefined();
+	});
 
-		const slot = getByTestId('card-text');
-		expect(slot).not.toBeNull();
-		expect(slot.textContent).toBe('Card Content');
+	it('should have title and content set to specific value', async () => {
+		const { getByTestId } = render(Card, {
+			props: {
+				title: 'welcome',
+				content: 'Lorem ipsum...',
+				href: '/welcome'
+			}
+		});
+		expect(getByTestId('card-title-text').innerHTML).toBe('welcome');
 	});
 
 	it('should render slotted button', async () => {
-		const { getByTestId } = render(CardSlotTest, {
+		const { getByTestId } = render(CardActionSlotTest, {
 			props: { Component: Card }
 		});
 
-		const slot = getByTestId('card-button-link');
+		const slot = getByTestId('card-action-link');
 		expect(slot).not.toBeNull();
-		expect(slot.textContent).toBe('Read More »');
+		expect(slot.innerHTML).toBe('Read More');
 	});
 });

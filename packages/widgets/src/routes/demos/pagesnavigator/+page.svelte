@@ -16,76 +16,99 @@
 	const customStyles_1 = {
 		'border-t-width': '2px',
 		'border-t-color': '#374151',
-		'spacer-color': '#6b7280',
+		'spacer-color': '#e5e7eb',
 		'link-border-color': 'transparent',
 		'link-bg-color': 'transparent',
 		'link-bg-color-hover': 'transparent',
-		'content-max-width-md': '100%',
-		'content-max-width-lg': '50%',
 		'content-bg-color': '#f3f4f6',
 		'content-border-color': '#e5e7eb',
 		'content-border-color-hover': '#6b7280'
-	};
-	const orange = {
-		'max-width': '80rem',
-		'bg-color': '#fbbf24',
-		'border-t-color': '#b45309',
-		'border-r-color': '#b45309',
-		'border-b-color': '#b45309',
-		'border-l-color': '#b45309',
-		'border-tl-radius': '1rem',
-		'border-br-radius': '1rem',
-		'link-border-color': 'transparent',
-		'link-bg-color': 'transparent',
-		'link-bg-color-hover': 'transparent',
-		'content-bg-color-hover': '#fcd34d',
-		'content-border-color': 'transparent',
-		'content-border-color-hover': '#f59e0b',
-		'content-max-width-md': '100%',
-		'content-max-width-lg': '80%',
-		'placeholder-color': '#92400e',
-		'message-color': '#92400e'
 	};
 
 	const dark = {
 		'border-t-color': '#1f2937',
 		'bg-color': '#374151',
 		'spacer-color': '#1f2937',
+
+		'link-width-md': '20rem',
+		'link-width-lg': '15rem',
 		'link-border-color': 'transparent',
 		'link-bg-color': 'transparent',
 		'link-bg-color-hover': 'transparent',
-		'content-max-width-md': '70%',
-		'content-max-width-lg': '60%',
-		'content-l-ml': 'auto',
-		'content-l-mr-md': '2rem',
-		'content-l-text-align': 'right',
-		'content-r-ml-md': '2rem',
-		'content-r-mr-md': 'auto',
-		'content-r-text-align': 'left',
+
 		'content-bg-color-hover': '#4b5563',
 		'content-border-color': '#64748b',
+		'content-l-text-align': 'right',
+		'content-l-ml-md': 'auto',
+		'content-l-mr-md': '1rem',
+		'content-r-text-align': 'left',
+		'content-r-ml-md': '1rem',
+		'content-r-mr-md': 'auto',
+
+		'icon-color': '#e2e8f0',
 		'placeholder-color': '#e2e8f0',
 		'placeholder-letter-spacing': '0.025em',
 		'message-color': '#e2e8f0',
-		'message-font-weight': '500',
 		'message-letter-spacing': '0.05em'
 	};
 </script>
 
 <section class="main">
 	<h1><tt>@sveltinio/widgets</tt></h1>
-
 	<h2><tt>PagesNavigator</tt></h2>
+</section>
 
-	<h4>Default Styles</h4>
+<section>
+	<h3>Default Styles</h3>
 	<PagesNavigator prev={prevObj} next={nextObj} />
 
-	<h4>Custom Styles - Sample 1</h4>
+	<h3>Custom Icons</h3>
+	<PagesNavigator prev={prevObj} next={nextObj}>
+		<span slot="prevIcon">
+			<svg
+				width="20px"
+				height="20px"
+				stroke-width="1.5"
+				viewBox="0 0 24 24"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				color="currentColor"
+				><path
+					d="M16 12H8m0 0l3.5 3.5M8 12l3.5-3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/></svg
+			>
+		</span>
+
+		<span slot="nextIcon">
+			<svg
+				width="20px"
+				height="20px"
+				stroke-width="1.5"
+				viewBox="0 0 24 24"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				color="currentColor"
+				><path
+					d="M8 12h8m0 0l-3.5-3.5M16 12l-3.5 3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/></svg
+			>
+		</span>
+	</PagesNavigator>
+
+	<h3>Custom Styles - Sample 1</h3>
 	<PagesNavigator prev={prevObj} next={nextObj} styles={customStyles_1} spacer />
 
-	<h4>Custom Styles - Sample 2</h4>
-	<PagesNavigator prev={prevObj} next={nextObj} styles={orange} />
-
-	<h4>Custom Styles - Sample 3</h4>
+	<h3>Custom Styles - Sample 2</h3>
 	<PagesNavigator prev={prevObj} next={nextObj} styles={dark} spacer />
+
+	<h3>Custom Styles - with css class</h3>
+	<PagesNavigator prev={prevObj} next={nextObj} theme="pagesnav-orange" />
 </section>

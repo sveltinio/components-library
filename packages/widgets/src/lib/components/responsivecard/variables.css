@@ -1,0 +1,158 @@
+.sw__responsivecard {
+  --_white: var(--white, hsl(0deg 0% 100%)); /*white */
+  --_light: var(--light, hsl(210deg 40% 98%)); /* slate-50 */
+  --_dark: var(--dark, hsl(221deg 39% 11%)); /* gray-900 */
+  --_mute: var(--mute, hsl(210deg 40% 96%)); /* slate-100 */
+  --_amber: var(--amber, hsl(32deg 95% 44%)); /* amber-600 */
+  --_blue: var(--blue, hsl(221deg 83% 53%)); /* blue-600 */
+  --_green: var(--green, hsl(142deg 76% 36%)); /* green-600 */
+  --_gray: var(--gray, hsl(215deg 14% 34%)); /* gray-600 */
+  --_pink: var(--pink, hsl(333deg 71% 51%)); /* pink-600 */
+  --_purple: var(--purple, hsl(271deg 81% 56%)); /* purple-600 */
+  --_red: var(--red, hsl(0deg 72% 51%)); /* red-600 */
+
+  /* ********************************************* */
+  /* * main (class name: sw__responsivecard__main) */
+  /* ********************************************* */
+  --_width: var(--width, 24rem);
+  --_max-width: var(--max-width, var(--_width));
+  --_mt: var(--mt, 0rem);
+  --_mr: var(--mr, 0rem);
+  --_mb: var(--mb, 0rem);
+  --_ml: var(--ml, 0rem);
+  --_pt: var(--pt, 0rem);
+  --_pr: var(--pr, 0rem);
+  --_pb: var(--pb, 0rem);
+  --_pl: var(--pl, 0rem);
+  --_gap: var(--gap, 0.5rem);
+  --_bg-color: var(--bg-color, hsl(0deg 0% 100%)); /* white */
+  --_border-width: var(--border-width, 0);
+  --_border-style: var(--border-style, solid);
+  --_border-color: var(--border-color, transparent);
+  --_border-radius: var(--border-radius, 0.8rem);
+  --_shadow-color: var(--shadow-color, hsl(214deg 32% 91%)); /* slate-200 */
+  /* - body: md breakpoint (min-width: 768px) */
+  --_width-md: var(--width-md, auto);
+  --_max-width-md: var(--max-width-md, 48rem);
+
+  /* ********************************************* */
+  /* * image (css class name: card__image)         */
+  /* ********************************************* */
+  --_img-border-tl-radius: var(--img-border-tl-radius, 0.8rem);
+  --_img-border-tr-radius: var(--img-border-tr-radius, 0.8rem);
+  --_img-border-bl-radius: var(--img-border-bl-radius, 0rem);
+  --_img-border-br-radius: var(--img-border-br-radius, 0rem);
+  /* - body: md breakpoint (min-width: 768px) */
+  --_img-border-tl-radius-md: var(--img-border-tl-radius-md, 0.8rem);
+  --_img-border-tr-radius-md: var(--img-border-tr-radius-md, 0rem);
+  --_img-border-bl-radius-md: var(--img-border-bl-radius-md, 0.8rem);
+  --_img-border-br-radius-md: var(--img-border-br-radius-md, 0rem);
+
+  /* ********************************************* */
+  /* * body (css class name: card__wrapper) */
+  /* ********************************************* */
+  --_wrapper-gap: var(--wrapper-gap, 0.5rem);
+  --_wrapper-pt: var(--wrapper-pt, 1rem);
+  --_wrapper-pr: var(--wrapper-pr, 2.3rem);
+  --_wrapper-pb: var(--wrapper-pb, 2.3rem);
+  --_wrapper-pl: var(--wrapper-pl, 2.3rem);
+  /* - body: md breakpoint (min-width: 768px) */
+  --_wrapper-pt-md: var(--wrapper-pt-md, 2.3rem);
+  --_wrapper-pr-md: var(--wrapper-pr-md, var(--_wrapper-pr));
+  --_wrapper-pb-md: var(--wrapper-pb-md, var(--_wrapper-pb));
+  --_wrapper-pl-md: var(--wrapper-pl-md, var(--_wrapper-pl));
+
+  /* ********************************************* */
+  /* * title (css class name: card__wrapper > h2)  */
+  /* ********************************************* */
+  --_title-color: var(--title-color, hsl(215deg 19% 35%)); /* slate-600 */
+  --_title-font-size: var(--title-font-size, 1.2rem);
+  --_title-font-weight: var(--title-font-weight, 700);
+  --_title-text-decoration: var(--_title-text-decoration, none);
+  --_title-line-height: var(--title-line-height, 1.4rem);
+  --_title-letter-spacing: var(--title-letter-spacing, 0em);
+  --_title-mt: var(--title-mt, 0.5rem);
+  --_title-mr: var(--title-mr, 0rem);
+  --_title-mb: var(--title-mb, 0rem);
+  --_title-ml: var(--title-ml, 0rem);
+  /* - title: md breakpoint (min-width: 768px) */
+  --_title-font-size-md: var(--title-font-size-md, 1.4rem);
+  --_title-font-weight-md: var(--title-font-weight-md, var(--_title-font-weight));
+  --_title-text-decoration-md: var(--_title-text-decoration-md, var(--_title-text-decoration));
+  --_title-line-height-md: var(--title-line-height-md, var(--_title-line-height));
+  --_title-letter-spacing-md: var(--title-letter-spacing-md, var(--_title-letter-spacing));
+  --_title-mt-md: var(--title-mt-md, var(--_title-mt));
+  --_title-mr-md: var(--title-mr-md, var(--_title-mr));
+  --_title-mb-md: var(--title-mb-md, var(--_title-mb));
+  --_title-ml-md: var(--title-ml-md, var(--_title-ml));
+
+  /* ********************************************* */
+  /* * content (css class name: card__wrapper > p) */
+  /* ********************************************* */
+  --_content-color: var(--content-color, hsl(215deg 16% 47%)); /* slate-500 */
+  --_content-font-size: var(--content-font-size, 0.9rem);
+  --_content-font-weight: var(--content-font-weight, 500);
+  --_content-line-height: var(--content-line-height, 1.5rem);
+  --_content-letter-spacing: var(--content-letter-spacing, 0em);
+  --_content-text-align: var(--content-text-align, left);
+  /* - content: md breakpoint (min-width: 768px) */
+  --_content-font-size-md: var(--content-font-size-md, var(--_content-font-size));
+  --_content-font-weight-md: var(--content-font-weight-md, var(--_content-font-weight));
+  --_content-line-height-md: var(--content-line-height-md, var(--_content-line-height));
+  --_content-letter-spacing-md: var(--content-letter-spacing-md, var(--_content-letter-spacing));
+  --_content-text-align-md: var(--content-text-align-md, justify);
+
+  /* ********************************************* */
+  /* * footer (css class name: card__footer)       */
+  /* ********************************************* */
+  --_footer-gap: var(--footer-gap, 1.25rem);
+  --_footer-mt: var(--footer-mt, 1rem);
+  --_footer-align-items: var(--foter-align-items, flex-start);
+  --_footer-justify-content: var(--footer-justify-content, space-between);
+
+  /* - content: md breakpoint (min-width: 768px) */
+  --_footer-align-items-md: var(--foter-align-items-md, flex-end);
+  --_footer-justify-content-md: var(--footer-justify-content-md, space-between);
+
+  /* ********************************************* */
+  /* * info (css class name: card__info)           */
+  /* ********************************************* */
+  --_info-color: var(--info-color, hsl(215deg 16% 47%)); /* slate-500 */
+  --_info-font-size: var(--info-font-size, 0.9rem);
+  --_info-font-weight: var(--info-font-weight, 500);
+  --_info-line-height: var(--info-line-height, 1.5rem);
+  --_info-letter-spacing: var(--info-letter-spacing, 0em);
+  --_info-text-align: var(--info-text-align, left);
+
+  --_avatar-size: var(--avatar-size, 2rem);
+  --_avatar-color: var(--avatar-color, hsl(215deg 25% 27%)); /* slate-700 */
+  --_avatar-bg-color: var(--avatar-bg-color, hsl(210deg 40% 96%)); /* slate-100 */
+  --_avatar-border-radius: var(--avatar-border-radius, 50%);
+
+  --_author-color: var(--author-color, hsl(215deg 19% 35%)); /* slate-600 */
+  --_author-font-weight: var(--author-font-weight, bold);
+
+  --_date-color: var(--date-color, hsl(215deg 20% 65%)); /* slate-400 */
+  /* ********************************************* */
+  /* * button link (css class name: card__actions) */
+  /* ********************************************* */
+  --_btn-color: var(--btn-color, hsl(217deg 33% 17%)); /* slate-800 */
+  --_btn-font-size: var(--btn-font-size, 0.9rem);
+  --_btn-font-weight: var(--btn-font-weight, 500);
+  --_btn-line-height: var(--btn-line-height, 1rem);
+  --_btn-letter-spacing: var(--btn-letter-spacing, 0);
+  --_btn-width: var(--btn-width, 100%);
+  --_btn-gap: var(--btn-gap, 0.25rem);
+  --_btn-pt: var(--btn-pt, 0.5rem);
+  --_btn-pr: var(--btn-pr, 0.5rem);
+  --_btn-pb: var(--btn-pb, 0.5rem);
+  --_btn-pl: var(--btn-pl, 0.5rem);
+  --_btn-border-width: var(--btn-border-width, 0);
+  --_btn-border-style: var(--btn-border-style, solid);
+  --_btn-border-color: var(--btn-border-color, transparent);
+  --_btn-border-radius: var(--btn-border-radius, 0.375rem);
+  --_btn-bg-color: var(--btn-bg-color, hsl(210deg 40% 96%)); /* slate-100 */
+  --_btn-bg-color-hover: var(--btn-bg-color-hover, hsl(214deg 32% 91%)); /* slate-200 */
+  /* - body: md breakpoint (min-width: 768px) */
+  --_btn-width-md: var(--btn-width-md, auto);
+}

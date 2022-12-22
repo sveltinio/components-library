@@ -1,0 +1,47 @@
+DOM: "PagesNavigator Component Structure" {
+  Previous: {
+    # keys, shapes and labels
+    a.shape: circle
+    contentDiv: "div"
+    contentDiv.shape: circle
+    svg.shape: circle
+    contentDivPrevious: "div"
+    contentDivPrevious.shape: circle
+    span.shape: circle
+    p.shape: circle
+    # connections
+    a -> contentDiv
+    contentDiv -> svg: icon
+    contentDiv -> contentDivPrevious: content-previous
+    contentDivPrevious -> span: placeholder
+    contentDivPrevious -> p: message
+  }
+
+  Spacer: {
+    div.shape: circle
+  }
+
+  Next: {
+    # keys, shapes and labels
+    a.shape: circle
+    contentDiv: "div"
+    contentDiv.shape: circle
+    svg.shape: circle
+    contentDivNext: "div"
+    contentDivNext.shape: circle
+    span.shape: circle
+    p.shape: circle
+    # connections
+    a -> contentDiv
+    contentDiv -> svg: icon
+    contentDiv -> contentDivNext: content-next
+    contentDivNext -> span: placeholder
+    contentDivNext -> p: message
+  }
+
+  # connections
+  div.shape: circle
+  div -> Previous
+  div -> Spacer
+  div -> Next
+}

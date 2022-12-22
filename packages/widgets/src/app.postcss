@@ -1,56 +1,11 @@
-/* Write your global styles here, in PostCSS syntax */
-/* CSS RESET by https://www.joshwcomeau.com/css/custom-css-reset/ */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@custom-media --viewport-medium (min-width: 768px);
+@custom-media --viewport-large (min-width: 1024px);
 
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  line-height: 1.5;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-#root,
-#__next {
-  isolation: isolate;
-}
-
-/* END OF CSS RESET by */
 
 html {
   scroll-behavior: smooth;
@@ -61,17 +16,15 @@ body {
   margin: 2rem;
 }
 
-.container {
-  margin: 1.5rem 0;
-  padding: 1.5rem 2rem;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: rgb(203 213 225);
-}
-
-a {
-  color: rgb(30 41 59); /* slate-800 */
-  text-decoration: none;
+h3 {
+  padding: 0;
+  margin: 2em 0 1em 0;
+  color: #343434;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: normal;
+  font-family: "Orienta", sans-serif;
+  text-transform: uppercase;
 }
 
 .main {
@@ -93,47 +46,141 @@ a {
     line-height: 40px;
     font-family: "Orienta", sans-serif;
   }
+}
 
-  & h3 {
-    color: #343434;
-    font-size: 22px;
-    line-height: 40px;
-    font-weight: normal;
-    text-transform: uppercase;
-    font-family: "Orienta", sans-serif;
-    letter-spacing: 1px;
-    font-style: italic;
-    margin: 1em 0 0.5em 0;
+.grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.grid {
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-left: auto;
+  gap: 1.5rem;
+  @media (--viewport-medium) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: 0;
+    }
   }
 
-  & h4 {
-    padding: 0;
-    margin: 2em 0 1em 0;
-    color: #343434;
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: normal;
-    font-family: "Orienta", sans-serif;
-    text-transform: uppercase;
+  @media (--viewport-large) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+      margin-left: 0;
+    }
+  }
+}
+
+.demo-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  @media (--viewport-medium) {
+    & {
+      gap: 1rem;
+    }
   }
 }
 
 .demo-card {
-  max-width: 28rem;
-  padding: 1.25rem 1rem;
-  margin-top: 0.75rem; /* 12px */
-  border-style: solid;
-  border-color: rgb(226 232 240); /* slate-200 */
-  border-top-width: 0px;
-  border-right-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 0px;
+  text-decoration: none;
+  width: 18.75rem;
+  height: auto;
+  display: flex;
+  color: #334155;
+  flex-direction: column;
   background-color: white;
-  overflow: hidden;
+  padding: 1.875rem;
+  border-radius: 5px;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 
   &:hover {
     cursor: pointer;
-    background-color: rgb(241 245 249); /* slate-100 */
+    background-color: rgb(248 250 252); /* slate-50 */
   }
+
+  & h2 {
+    margin: 0;
+  }
+
+  & p {
+    margin-top: 2rem;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+
+  & a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+  }
+}
+
+/* used to showcase how to use a css class for theming the pagesnavigator component */
+.pagesnav-orange {
+  --max-width: 80rem;
+  --bg-color: #fbbf24;
+  --border-t-color: #b45309;
+  --border-r-color: #b45309;
+  --border-b-color: #b45309;
+  --border-l-color: #b45309;
+  --border-tl-radius: 1rem;
+  --border-br-radius: 1rem;
+  --link-border-color: transparent;
+  --link-bg-color: transparent;
+  --link-bg-color-hover: transparent;
+  --content-bg-color-hover: #fcd34d;
+  --content-border-color: transparent;
+  --content-border-color-hover: #f59e0b;
+  --content-ml: 4px;
+  --content-mr: 4px;
+  --placeholder-color: #92400e;
+  --message-color: #92400e;
+  --icon-color: #92400e;
+}
+
+.toc-violet-theme {
+  --text-transform: uppercase;
+  --bg-color: #7c3aed; /* violet-600 */
+  --border-width: 2px;
+  --border-style: dashed;
+  --border-color: #c084fc; /* violet-400 */
+  --border-radius: 0px;
+  /* btn */
+  --btn-color: white;
+  --btn-bg-color: none;
+  --btn-bg-color-hover: #5b21b6; /* violet-800 */
+  --btn-pt: 0.375rem; /* 6px */
+  --btn-pr: 0.625rem; /* 8px */
+  --btn-pb: 0.375rem; /* 6px */
+  --btn-pl: 0.625rem; /* 8px */
+  /* list */
+  --list-style-type: none;
+  --list-width: var(--list-width, 100%);
+  --list-bg-color-hover: #c4b5fd; /* violet-300 */
+  --list-pt: 10px;
+  --list-pr: 0;
+  --list-pb: 0;
+  --list-pl: 20px;
+  /* item */
+  --item-color: white; /* slate-700 */
+  --item-text-decoration: none;
+  --item-text-decoration-hov: none;
+  --item-bg-color-hover: rgb(226, 232, 240); /* slate-200 */
+  --item-pt: 0.25rem;
+  --item-pr: 0.25rem;
+  --item-pb: 0.25rem;
+  --item-pl: 0.25rem;
 }

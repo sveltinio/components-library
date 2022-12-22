@@ -34,7 +34,7 @@ describe('PagesNavigator - Previous', () => {
 				next: nextObj
 			}
 		});
-		expect(getByTestId('link_to_previous')).toBeDefined;
+		expect(getByTestId('link-to-previous')).toBeDefined();
 	});
 
 	it('should have the link to the previous item with an accessible name (alt)', async () => {
@@ -45,7 +45,7 @@ describe('PagesNavigator - Previous', () => {
 			}
 		});
 
-		const link = getByTestId('link_to_previous');
+		const link = getByTestId('link-to-previous');
 		expect(link).toHaveAccessibleName();
 	});
 
@@ -57,7 +57,7 @@ describe('PagesNavigator - Previous', () => {
 			}
 		});
 
-		const link = getByTestId('link_to_previous');
+		const link = getByTestId('link-to-previous');
 		expect(link).toHaveAccessibleDescription();
 	});
 
@@ -68,8 +68,8 @@ describe('PagesNavigator - Previous', () => {
 				next: nextObj
 			}
 		});
-		const messageText = getByTestId('previous_message_text');
-		expect(messageText.innerHTML).toBe('«&nbsp;Welcome');
+		const messageText = getByTestId('previous-message-text');
+		expect(messageText.innerHTML).toBe('Welcome');
 	});
 
 	it('should have the link to the previous item with aria-label "Welcome"', async () => {
@@ -92,7 +92,7 @@ describe('PagesNavigator - Next', () => {
 				next: nextObj
 			}
 		});
-		expect(getByTestId('link_to_next')).toBeDefined;
+		expect(getByTestId('link-to-next')).toBeDefined();
 	});
 
 	it('should have the link to the next item with an accessible name (alt)', async () => {
@@ -103,7 +103,7 @@ describe('PagesNavigator - Next', () => {
 			}
 		});
 
-		const link = getByTestId('link_to_next');
+		const link = getByTestId('link-to-next');
 		expect(link).toHaveAccessibleName();
 	});
 
@@ -115,7 +115,7 @@ describe('PagesNavigator - Next', () => {
 			}
 		});
 
-		const link = getByTestId('link_to_next');
+		const link = getByTestId('link-to-next');
 		expect(link).toHaveAccessibleDescription();
 	});
 
@@ -126,8 +126,8 @@ describe('PagesNavigator - Next', () => {
 				next: nextObj
 			}
 		});
-		const messageText = getByTestId('next_message_text');
-		expect(messageText.innerHTML).toBe('Getting Started&nbsp;»');
+		const messageText = getByTestId('next-message-text');
+		expect(messageText.innerHTML).toBe('Getting Started');
 	});
 
 	it('should have the link to the next item with aria-label "Getting Started"', async () => {

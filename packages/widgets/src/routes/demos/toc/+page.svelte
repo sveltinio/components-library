@@ -5,9 +5,10 @@
 
 <section class="main">
 	<h1><tt>@sveltinio/widgets</tt></h1>
-
 	<h2><tt>TOC</tt></h2>
+</section>
 
+<section>
 	<h3 id="toc2-default">Default</h3>
 	<TOC data={tocEntries} />
 
@@ -27,5 +28,5 @@
 	<TOC data={tocEntries} isOpen />
 
 	<h3 id="toc2-sveltin">sveltin theme</h3>
-	<TOC theme="sveltin" data={tocEntries} prefixChar="#" />
+	<TOC data={tocEntries} theme="toc-violet-theme" prefixChar="*" />
 </section>

@@ -1,0 +1,34 @@
+DOM: "Card Component Structure" {
+  CardImage: {
+    # keys, shapes and labels
+    div.shape: circle
+    img.shape: circle
+    # connections
+    div -> img
+  }
+
+  CardTitle: {
+    h2.shape: circle
+  }
+
+  CardAction: {
+    # keys, shapes and labels
+    div.shape: circle
+    a.shape: circle
+    svg.shape: circle
+    # connections
+    div -> a
+    div -> svg
+  }
+
+  CardContent: {
+    p.shape: circle
+  }
+
+  # connections
+  div.shape: circle
+  div -> CardImage
+  div -> CardTitle
+  div -> CardContent
+  div -> CardAction
+}

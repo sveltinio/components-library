@@ -1,5 +1,4 @@
-import { ContentMetadata, ResourceContentMaker } from '$lib/types.js';
-import type { TocEntry } from '$lib/types.js';
+import type { ResourceContent, TocEntry } from '$lib/types.js';
 
 const tocEntries: Array<TocEntry> = [
 	{
@@ -80,66 +79,90 @@ const tocEntries: Array<TocEntry> = [
 	}
 ];
 
-const contentItem = ResourceContentMaker.create();
-contentItem.resource = 'posts';
-contentItem.metadata = <ContentMetadata>{
-	slug: 'welcome',
-	title: 'Card Title',
-	headline:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+const contentItem_1: ResourceContent = {
+	resource: 'posts',
+	metadata: {
+		slug: 'welcome',
+		title: 'Welcome',
+		draft: false,
+		author: 'John Foo',
+		created_at: '13 Dec 2022',
+		headline:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		cover: 'dummy.jpeg',
+		category: 'tutorial'
+	}
 };
 
-const contentItemWithCreateDate = ResourceContentMaker.create();
-contentItemWithCreateDate.resource = 'posts';
-contentItemWithCreateDate.metadata = <ContentMetadata>{
-	slug: 'welcome',
-	title: 'Card Title',
-	created_at: '13-Jan-2022',
-	headline:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+const contentItem_2: ResourceContent = {
+	resource: 'posts',
+	metadata: {
+		slug: 'microphone',
+		title: 'The microphone and the voice',
+		draft: false,
+		author: 'John Foo',
+		created_at: '13 Dec 2022',
+		headline:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		cover: 'dummy_2.jpeg',
+		category: 'music'
+	}
 };
 
-const contentItemWithCover = ResourceContentMaker.create();
-contentItemWithCover.resource = 'posts';
-contentItemWithCover.metadata = <ContentMetadata>{
-	slug: 'welcome',
-	title: 'Card Title',
-	headline:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-	cover: 'dummy.jpeg'
+const contentItem_3: ResourceContent = {
+	resource: 'posts',
+	metadata: {
+		slug: 'welcome',
+		title: 'Welcome',
+		draft: false,
+		author: 'John Foo',
+		created_at: '13 Dec 2022',
+		headline:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		cover: 'dummy.jpeg'
+	}
 };
 
-const contentItemWithCoverAndCreateDate = ResourceContentMaker.create();
-contentItemWithCoverAndCreateDate.resource = 'posts';
-contentItemWithCoverAndCreateDate.metadata = <ContentMetadata>{
-	slug: 'welcome',
-	title: 'Card Title',
-	created_at: '13-Jan-2022',
-	headline:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-	cover: 'dummy.jpeg'
+const contentItem_4: ResourceContent = {
+	resource: 'posts',
+	metadata: {
+		slug: 'welcome',
+		title: 'Welcome',
+		author: 'John Foo',
+		draft: false,
+		created_at: '13 Dec 2022',
+		headline:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		cover: 'dummy.jpeg'
+	}
 };
 
-const next = ResourceContentMaker.create();
-next.resource = 'posts';
-next.metadata = <ContentMetadata>{
-	title: 'Getting Started',
-	slug: 'getting-started'
+const previous: ResourceContent = {
+	resource: 'posts',
+	metadata: {
+		slug: 'welcome',
+		title: 'Welcome',
+		author: 'John Foo',
+		draft: false,
+		created_at: '13 Dec 2022',
+		headline:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		cover: 'dummy.jpeg'
+	}
 };
 
-const previous = ResourceContentMaker.create();
-previous.resource = 'posts';
-previous.metadata = <ContentMetadata>{
-	title: 'Welcome',
-	slug: 'welcome'
+const next: ResourceContent = {
+	resource: 'posts',
+	metadata: {
+		slug: 'getting-started',
+		title: 'Getting Started',
+		draft: false,
+		author: 'John Foo',
+		created_at: '13 Dec 2022',
+		headline:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		cover: 'dummy_2.jpeg'
+	}
 };
 
-export {
-	contentItem,
-	contentItemWithCreateDate,
-	contentItemWithCover,
-	contentItemWithCoverAndCreateDate,
-	next,
-	previous,
-	tocEntries
-};
+export { contentItem_1, contentItem_2, contentItem_3, contentItem_4, next, previous, tocEntries };

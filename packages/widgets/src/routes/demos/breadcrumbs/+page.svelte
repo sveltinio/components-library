@@ -11,9 +11,10 @@
 
 <section class="main">
 	<h1><tt>@sveltinio/widgets</tt></h1>
-
 	<h2><tt>Breadcrumbs</tt></h2>
+</section>
 
+<section>
 	<Breadcrumbs baseURL="/" parent="posts" current="Getting Started" />
 
 	<Breadcrumbs baseURL="/" current="Contact" styles={customStyles} />

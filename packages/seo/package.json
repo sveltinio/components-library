@@ -41,7 +41,7 @@
 		"cssnano": "^5.1.14",
 		"eslint": "^8.30.0",
 		"eslint-config-custom": "workspace:0.0.0",
-		"jsdom": "latest",
+		"jsdom": "^20.0.3",
 		"micromatch": "^4.0.5",
 		"postcss": "^8.4.20",
 		"postcss-cli": "^10.1.0",

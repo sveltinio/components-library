@@ -1,122 +1,136 @@
 @charset "UTF-8";
+/* stylelint-disable declaration-empty-line-before */
 
-@import url("./variables.css") screen;
+@import url("../reset") screen;
+@import url("./variables") screen;
 
-.sw__card__container {
-  position: relative;
-  max-width: var(--_max-width);
+.sw__card__main {
+  width: var(--_width);
+  min-width: var(--_max-width);
   overflow: hidden;
-  border-radius: var(--_border-radius);
-  border-style: var(--_border-style);
+  display: flex;
+  flex-direction: column;
+  gap: var(--_gap);
+
+  margin-top: var(--_mt);
+  margin-right: var(--_mr);
+  margin-bottom: var(--_mb);
+  margin-left: var(--_ml);
+
+  padding-top: var(--_pt);
+  padding-right: var(--_pr);
+  padding-bottom: var(--_pb);
+  padding-left: var(--_pl);
+
+  background-color: var(--_bg-color);
+
   border-width: var(--_border-width);
+  border-style: var(--_border-style);
   border-color: var(--_border-color);
-  /* stylelint-disable length-zero-no-unit */
-  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+  border-radius: var(--_border-radius);
+  box-shadow: 0 0.1rem 1rem var(--_shadow-color);
 
-  & .header {
-    width: 100%;
-    height: auto;
-
-    img {
-      object-fit: cover;
+  & .card__image {
+    & img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-left-radius: var(--_img-border-tl-radius);
+      border-top-right-radius: var(--_img-border-tr-radius);
+      border-bottom-left-radius: var(--_img-border-bl-radius);
+      border-bottom-right-radius: var(--_img-border-br-radius);
     }
   }
 
-  & .card-title {
-    color: var(--_title-color);
-    font-size: var(--_title-font-size);
-    font-weight: var(--_title-font-weight);
-    line-height: var(--_title-line-height);
+  & .card__title {
     margin-top: var(--_title-mt);
     margin-right: var(--_title-mr);
     margin-bottom: var(--_title-mb);
     margin-left: var(--_title-ml);
+    padding-top: var(--_title-pt);
+    padding-right: var(--_title-pr);
+    padding-bottom: var(--_title-pb);
+    padding-left: var(--_title-pl);
+
+    & h2 {
+      color: var(--_title-color);
+      font-size: var(--_title-font-size);
+      font-weight: var(--_title-font-weight);
+      line-height: var(--_title-line-height);
+      letter-spacing: var(--_title-letter-spacing);
+      text-decoration: var(--_title-text-decoration);
+    }
+
+    & a {
+      color: var(--_title-color);
+      text-decoration: none;
+    }
   }
 
-  & .card-content {
-    background-color: var(--_content-bg-color);
-    width: var(--_content-width);
-    height: var(--_content-height);
+  & .card__content {
     padding-top: var(--_content-pt);
     padding-right: var(--_content-pr);
     padding-bottom: var(--_content-pb);
     padding-left: var(--_content-pl);
-    margin-top: var(--_content-mt);
-    margin-right: var(--_content-mr);
-    margin-bottom: var(--_content-mb);
-    margin-left: var(--_content-ml);
 
-    p {
+    & p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
       color: var(--_content-color);
       font-size: var(--_content-font-size);
+      font-weight: var(--_content-font-weight);
       line-height: var(--_content-line-height);
-      -webkit-box-orient: vertical;
-      display: -webkit-box;
-      overflow: hidden;
+      letter-spacing: var(--_content-letter-spacing);
+      text-align: var(--_content-text-align);
+    }
+
+    & a {
+      color: var(--_content-color);
+      text-decoration: none;
     }
   }
 
-  & .card-btn-wrapper {
-    width: var(--_btn-wrapper-width);
-    height: var(--_btn-wrapper-height);
-    padding-top: var(--_btn-wrapper-pt);
-    padding-right: var(--_btn-wrapper-pr);
-    padding-bottom: var(--_btn-wrapper-pb);
-    padding-left: var(--_btn-wrapper-pl);
-    margin-top: var(--_btn-wrapper-mt);
-    margin-right: var(--_btn-wrapper-mr);
-    margin-bottom: var(--_btn-wrapper-mb);
-    margin-left: var(--_btn-wrapper-ml);
+  & .card__footer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: var(--_footer-justify);
+    padding-top: var(--_footer-pt);
+    padding-right: var(--_footer-pr);
+    padding-bottom: var(--_footer-pb);
+    padding-left: var(--_footer-pl);
 
-    & .card-btn {
-      cursor: var(--_btn-cursor);
-      display: flex;
-      justify-content: var(--_btn-text-align);
+    & .card__actions {
+      width: var(--_btn-width);
+      display: inline-flex;
       align-items: center;
-      color: var(--_btn-color);
+      justify-content: center;
+      gap: var(--_btn-gap);
+
       font-size: var(--_btn-font-size);
       font-weight: var(--_btn-font-weight);
       line-height: var(--_btn-line-height);
       letter-spacing: var(--_btn-letter-spacing);
-      text-decoration: var(--_btn-text-decoration);
+
+      background-color: var(--_btn-bg-color);
       padding-top: var(--_btn-pt);
       padding-right: var(--_btn-pr);
       padding-bottom: var(--_btn-pb);
       padding-left: var(--_btn-pl);
-      background-color: var(--_btn-bg-color);
-      border-color: var(--_btn-border-color);
-      border-style: var(--_btn-border-style);
+
       border-width: var(--_btn-border-width);
+      border-style: var(--_btn-border-style);
+      border-color: var(--_btn-border-color);
       border-radius: var(--_btn-border-radius);
+
+      &:hover {
+        background-color: var(--_btn-bg-color-hover);
+      }
+
+      & a {
+        color: var(--_btn-color);
+        text-decoration: none;
+      }
     }
-  }
-
-  & .badge {
-    position: relative;
-    display: inline-block;
-    color: var(--_badge-color);
-    font-size: var(--_badge-font-size);
-    font-weight: var(--_badge-font-weight);
-    line-height: var(--_badge-line-height);
-    text-transform: var(--_badge-text-transform);
-    border-radius: var(--_badge-border-radius);
-    background-color: var(--_badge-bg-color);
-    padding-top: var(--_badge-pt);
-    padding-right: var(--_badge-pr);
-    padding-bottom: var(--_badge-pb);
-    padding-left: var(--_badge-pl);
-  }
-
-  & .no-cover {
-    margin-top: var(--_badge-mt);
-    margin-left: var(--_badge-ml);
-  }
-
-  & .cover {
-    position: absolute;
-    top: var(--_badge-absolute-t);
-    right: var(--_badge-absolute-r);
-    padding: 0.5rem 0.75rem;
   }
 }
