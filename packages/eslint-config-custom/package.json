@@ -5,9 +5,9 @@
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
-		"eslint": "^8.29.0",
+		"eslint": "^8.30.0",
 		"eslint-config-prettier": "^8.5.0",
-		"eslint-config-turbo": "latest",
+		"eslint-config-turbo": "^0.0.7",
 		"eslint-plugin-svelte3": "^4.0.0"
 	},
 	"devDependencies": {
