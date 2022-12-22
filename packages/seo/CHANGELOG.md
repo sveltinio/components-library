@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.2.0
+
+### Minor Changes
+
+- refactor types and fixed json-ld components
+
 ## 0.1.7
 
 ### Patch Changes

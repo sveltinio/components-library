@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/seo",
-	"version": "0.1.7",
+	"version": "0.2.0",
 	"private": false,
 	"type": "module",
 	"description": "A collection of SEO related Svelte components for metatags, json-ld.",
