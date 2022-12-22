@@ -3,6 +3,6 @@
 </script>
 
 <section class="main">
-	<h1>@sveltinio/widgets</h1>
-	<h2><a href="{base}/demos">Demos</a></h2>
+	<h1><tt>@sveltinio/widgets</tt></h1>
+	<h2><a href="{base}/demos"><tt>Demos</tt></a></h2>
 </section>
