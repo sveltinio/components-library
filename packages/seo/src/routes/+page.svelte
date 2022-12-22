@@ -11,8 +11,8 @@
 
 <!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->
 <PageMetaTags data={homePage} />
-<JsonLdWebSite websiteData={website} />
-<JsonLdSiteNavigationElements websiteData={website} menuData={menu} />
+<JsonLdWebSite data={website} />
+<JsonLdSiteNavigationElements data={website} menuData={menu} />
 <JsonLdWebPage data={homePage} />
 <!-- END OF USAGE NOTE -->
 

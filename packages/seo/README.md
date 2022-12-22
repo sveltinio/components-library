@@ -41,99 +41,72 @@ yarn add @sveltinio/seo
 pnpm dev
 ```
 
-## Usage
+## Properties
 
 ### PageMetags
 
-#### Properties
-
 The `PageMetatags` component exposes the following properties:
 
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
+| Property | Type                 | Required |
+| :------- | :------------------: | :------: |
+| `data`   | [SEOWebPageMetadata] | yes      |
 
 ### OpenGraph
 
-#### Properties
-
 The `OpenGraph` component exposes the following properties:
 
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
+| Property | Type                 | Required |
+| :------- | :------------------: | :------: |
+| `data`   | [SEOWebPageMetadata] | yes      |
 
 ### TwitterCard
 
-#### Properties
-
 The `TwitterCard` component exposes the following properties:
 
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
+| Property | Type                 | Required |
+| :------- | :------------------: | :------: |
+| `data`   | [SEOWebPageMetadata] | yes      |
 
 ### JsonLdWebSite
 
-#### Properties
-
 The `JsonLdWebSite` component exposes the following properties:
 
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
+| Property | Type         | Required |
+| :------- | :----------: | :------: |
+| `data`   | [SEOWebPage] | yes      |
 
 ### JsonLdWebPage
 
-#### Properties
-
 The `JsonLdWebPage` component exposes the following properties:
 
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
+| Property | Type                 | Required |
+| :------- | :------------------: | :------: |
+| `data`   | [SEOWebPageMetadata] | yes      |
 
 ### JsonLdBreadcrumbs
 
-#### Properties
-
 The `JsonLdBreadcrumbs` component exposes the following properties:
 
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
+| Property  | Type     | Required |
+| :-------- | :------: | :------: |
+| `baseURL` | `string` | yes      |
+| `parent`  | `string` | yes      |
+| `current` | `string` | yes      |
 
 ### JsonLdSiteNavigationElement
 
-#### Properties
-
 The `JsonLdSiteNavigationElement` component exposes the following properties:
 
-| Property | Type | Required | Default | Description |
-| :------- | :--: | :------: | :-----: | :---------- |
-
-```html
-
-```
+| Property   | Type                 | Required |
+| :--------- | :------------------: | :------: |
+| `data`     | [SEOWebSite]         | yes      |
+| `menuData` | Array<[SEOMenuItem]> | yes      |
 
 ## License
 
 Free and open-source software under the [MIT License](LICENSE)
+
+[SEOWebSite]: https://github.com/sveltinio/components-library/blob/main/packages/seo/src/lib/types.ts
+[SEOWebPage]: https://github.com/sveltinio/components-library/blob/main/packages/seo/src/lib/types.ts
+[SEOWebPageMetadata]: https://github.com/sveltinio/components-library/blob/main/packages/seo/src/lib/types.ts
+[SEOMenuItem]: https://github.com/sveltinio/components-library/blob/main/packages/seo/src/lib/types.ts

@@ -1,4 +1,4 @@
-export interface IWebSite {
+export type SEOWebSite = {
 	name: string;
 	baseURL: string;
 	language: string;
@@ -11,41 +11,30 @@ export interface IWebSite {
 	copyright: string;
 	keywords: string;
 	contactEmail: string;
-	sitemap: ISitemap;
-	socials: ISocials;
-	webmaster: IWebMaster;
-}
+	socials?: Socials;
+	webmaster?: WebMaster;
+};
 
-export interface ISitemap {
-	changefreq: string;
-	priority: number;
-}
+export type Socials = {
+	[key: string]: string;
+};
 
-export interface ISocials {
-	linkedin: string;
-	twitter: string;
-	github: string;
-	facebook: string;
-	instagram: string;
-	youtube: string;
-}
-
-export interface IWebMaster {
+export type WebMaster = {
 	name: string;
 	address: string;
 	contactEmail: string;
-}
+};
 
-export interface IMenuItem {
+export type SEOMenuItem = {
 	identifier: string;
 	name: string;
 	url: string;
 	weight: number;
 	external?: boolean;
-	children?: Array<IMenuItem>;
-}
+	children?: Array<SEOMenuItem>;
+};
 
-export interface IWebPageMetadata {
+export type SEOWebPageMetadata = {
 	url: string;
 	title: string;
 	description?: string;
@@ -53,9 +42,9 @@ export interface IWebPageMetadata {
 	keywords?: string;
 	image?: string;
 	imageAlt?: string;
-	opengraph?: IOpenGraph;
-	twitter?: ITwitterCard;
-}
+	opengraph?: OpenGraph;
+	twitter?: TwitterCard;
+};
 
 export enum EnumOpenGraphType {
 	Website = 'website',
@@ -79,52 +68,52 @@ export const OpenGraphProfileGender: typeof EnumOpenGraphProfileGender = {
 	Female: EnumOpenGraphProfileGender.Female
 };
 
-export interface IOpenGraph {
+export type OpenGraph = {
 	type: string;
-	article?: IOpenGraphArticle;
-	book?: IOpenGraphBook;
-	profile?: IOpenGraphProfile;
-	album?: IOpenGraphMusicAlbum;
-	song?: IOpenGraphMusicSong;
-}
+	article?: OpenGraphArticle;
+	book?: OpenGraphBook;
+	profile?: OpenGraphProfile;
+	album?: OpenGraphMusicAlbum;
+	song?: OpenGraphMusicSong;
+};
 
-export interface IOpenGraphArticle {
+export type OpenGraphArticle = {
 	published_at?: string;
 	modified_at?: string;
 	expiration_time?: string;
 	section?: string;
 	tags?: Array<string>;
-}
+};
 
-export interface IOpenGraphBook {
+export type OpenGraphBook = {
 	author: string;
 	isbn: string;
 	release_date: string;
 	tags: Array<string>;
-}
+};
 
-export interface IOpenGraphProfile {
+export type OpenGraphProfile = {
 	first_name: string;
 	last_name: string;
 	username: string;
 	gender?: EnumOpenGraphProfileGender;
-}
+};
 
-export interface IOpenGraphMusicAlbum {
-	song: IOpenGraphMusicSong;
+export type OpenGraphMusicAlbum = {
+	song: OpenGraphMusicSong;
 	disc: number;
 	track: number;
-	musician: IOpenGraphProfile;
+	musician: OpenGraphProfile;
 	release_data: string;
-}
+};
 
-export interface IOpenGraphMusicSong {
+export type OpenGraphMusicSong = {
 	duration: number;
-	album: IOpenGraphMusicAlbum;
+	album: OpenGraphMusicAlbum;
 	disc: number;
 	track: number;
-	musician: Array<IOpenGraphProfile>;
-}
+	musician: Array<OpenGraphProfile>;
+};
 
 /**
  * EnumTwitterCardType
@@ -152,31 +141,31 @@ export const TwitterCardType: typeof EnumTwitterCardType = {
 };
 
 /**
- * ITwitterCard
+ * TwitterCard
  * @param type The card type: summary | summary_large_image | player | app
  * @param site (otional) The Twitter @username the card should be attributed to.
  * @param player (optional) A Card that can display video/audio/media
  * @param app (optional) A Card with a direct download to a mobile app
  */
-export interface ITwitterCard {
+export type TwitterCard = {
 	type: string;
 	site?: string;
-	player?: ITwitterPlayer;
-	app?: ITwitterApp;
-}
+	player?: TwitterPlayer;
+	app?: TwitterApp;
+};
 
 /**
- * ITwitterPlayer
+ * TwitterPlayer
  * * https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/player-card
  * @param url HTTPS URL to iFrame player
  * @param width Width of iFrame specified in twitter:player in pixels
  * @param height Height of iFrame specified in twitter:player in pixels
  */
-export interface ITwitterPlayer {
+export type TwitterPlayer = {
 	url: string; // HTTPS URL to iFrame player.
 	width: string; // Width of iFrame specified in twitter:player in pixels
 	height: string; // Height of iFrame specified in twitter:player in pixels
-}
+};
 
 /**
  * ITwitterApp
@@ -186,12 +175,12 @@ export interface ITwitterPlayer {
  * @param idIPad String value, the numeric representation of your app ID in the App Store
  * @param idGooglePlay String value, the numeric representation of your app ID in the Google Play
  */
-export interface ITwitterApp {
+export type TwitterApp = {
 	country?: string;
 	idIPhone: string;
 	idIPad: string;
 	idGooglePlay: string;
-}
+};
 
 interface ISchemaOrg {
 	toJsonLdObject(): Record<string, unknown>;

@@ -8,7 +8,7 @@
 <!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->
 <PageMetaTags data={sampleArticle} />
 <JsonLdWebPage data={sampleArticle} />
-<JsonLdBreadcrumbs baseURL={website.baseURL} parent="posts" currentTitle="Getting Started" />
+<JsonLdBreadcrumbs baseURL={website.baseURL} parent="posts" current="Getting Started" />
 <!-- END OF USAGE NOTE -->
 
 <section class="main">

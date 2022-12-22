@@ -1,7 +1,7 @@
 import { OpenGraphType, TwitterCardType } from '$lib/types.js';
-import type { IWebPageMetadata, IMenuItem, IWebSite } from '$lib/types.js';
+import type { SEOWebPageMetadata, SEOMenuItem, SEOWebSite } from '$lib/types.js';
 
-const website: IWebSite = {
+const website: SEOWebSite = {
 	name: 'example.com',
 	baseURL: 'https://example.com',
 	language: 'en-GB',
@@ -14,17 +14,8 @@ const website: IWebSite = {
 	copyright: 'MIT License @ 2021-present example.com',
 	keywords: 'sveltekit, components, tests, jest',
 	contactEmail: '',
-	sitemap: {
-		changefreq: 'monthly',
-		priority: 0.5
-	},
 	socials: {
-		linkedin: '',
-		twitter: '',
-		github: 'https://github.com/sveltinio',
-		facebook: '',
-		instagram: '',
-		youtube: ''
+		github: 'https://github.com/sveltinio'
 	},
 	webmaster: {
 		name: 'indaco',
@@ -33,7 +24,7 @@ const website: IWebSite = {
 	}
 };
 
-const homePage: IWebPageMetadata = {
+const homePage: SEOWebPageMetadata = {
 	url: website.baseURL,
 	title: 'Home Page',
 	description: 'This is the description for the Home Page',
@@ -46,7 +37,7 @@ const homePage: IWebPageMetadata = {
 	}
 };
 
-const sampleArticle: IWebPageMetadata = {
+const sampleArticle: SEOWebPageMetadata = {
 	url: website.baseURL + '/posts/' + 'getting-started',
 	title: 'Getting Started Article',
 	description: 'This is the description for the Getting Started Article',
@@ -65,7 +56,7 @@ const sampleArticle: IWebPageMetadata = {
 	}
 };
 
-const menu: Array<IMenuItem> = [
+const menu: Array<SEOMenuItem> = [
 	{
 		identifier: 'home',
 		name: 'Home',

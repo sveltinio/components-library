@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { IWebPageMetadata } from '../../types.js';
+	import type { SEOWebPageMetadata } from '../../types.js';
 
-	export let data: IWebPageMetadata;
+	export let data: SEOWebPageMetadata;
 
 	const keywordsArray: Array<string> = [];
 

@@ -18,7 +18,7 @@ describe('JsonLdWebSite', () => {
 	it('should have jsonld WebSite object with props', async () => {
 		render(JsonLdWebSite, {
 			props: {
-				websiteData: website
+				data: website
 			}
 		});
 		const jsonLdScript = getScripts('application/ld+json');

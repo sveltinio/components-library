@@ -1,20 +1,22 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { IWebSite } from '../../types.js';
+	import type { SEOWebSite } from '../../types.js';
 
-	export let websiteData: IWebSite;
+	export let data: SEOWebSite;
 
-	const sameAs = Object.values(websiteData.socials).filter((v) => v != '');
-	const schemaOrgWebSite = {
+	const schemaOrgWebSite: Record<string, string | Array<string>> = {
 		'@context': 'https://schema.org',
 		'@type': 'WebSite',
-		'@id': `${websiteData.baseURL}/#website`,
-		name: `${websiteData.name}`,
-		url: `${websiteData.baseURL}`,
-		description: `${websiteData.seoDescription}`,
-		inLanguage: `${websiteData.language}`,
-		sameAs: [`${sameAs}`]
+		'@id': `${data.baseURL}/#website`,
+		name: `${data.name}`,
+		url: `${data.baseURL}`,
+		description: `${data.seoDescription}`,
+		inLanguage: `${data.language}`
 	};
+
+	if (data.socials != undefined) {
+		schemaOrgWebSite.sameAs = Object.values(data.socials).filter((v) => v != '');
+	}
 
 	let jsonLdString = JSON.stringify(schemaOrgWebSite);
 

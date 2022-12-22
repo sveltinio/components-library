@@ -1,23 +1,23 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { IMenuItem, IWebSite } from '../../types.js';
+	import type { SEOMenuItem, SEOWebSite } from '../../types.js';
 	import {
 		JsonLdSiteNavigationElementMaker,
 		JsonLdSiteNavigationElement,
 		JsonLdSiteNavigationElementListMaker
 	} from '../../types.js';
 
-	export let websiteData: IWebSite;
-	export let menuData: IMenuItem[];
+	export let data: SEOWebSite;
+	export let menuData: SEOMenuItem[];
 
 	let elementList = Array<JsonLdSiteNavigationElement>();
 
-	menuData.forEach((elem: IMenuItem) => {
+	menuData.forEach((elem: SEOMenuItem) => {
 		const item = JsonLdSiteNavigationElementMaker.make();
 		if (!elem.external) {
 			item.position = elem.weight;
 			item.name = elem.identifier;
-			item.url = `${websiteData.baseURL}` + elem.url;
+			item.url = `${data.baseURL}` + elem.url;
 		} else {
 			item.position = elem.weight;
 			item.name = elem.identifier;

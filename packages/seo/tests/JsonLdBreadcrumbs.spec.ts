@@ -20,7 +20,7 @@ describe('JsonLdBreadcrumbs', () => {
 			props: {
 				baseURL: website.baseURL,
 				parent: '',
-				currentTitle: 'Home'
+				current: 'Home'
 			}
 		});
 
@@ -36,7 +36,7 @@ describe('JsonLdBreadcrumbs', () => {
 			props: {
 				baseURL: website.baseURL,
 				parent: '',
-				currentTitle: 'Home'
+				current: 'Home'
 			}
 		});
 		const jsonLdScript = getScripts('application/ld+json');
@@ -54,7 +54,7 @@ describe('JsonLdBreadcrumbs', () => {
 			props: {
 				baseURL: website.baseURL,
 				parent: '',
-				currentTitle: 'About'
+				current: 'About'
 			}
 		});
 		const jsonLdScript = getScripts('application/ld+json');

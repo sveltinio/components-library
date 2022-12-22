@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { JsonLdWebPage, JsonLdWebPageMaker } from '../../types.js';
-	import type { IWebPageMetadata } from '../../types.js';
+	import type { SEOWebPageMetadata } from '../../types.js';
 	import { onMount } from 'svelte';
 
-	export let data: IWebPageMetadata;
+	export let data: SEOWebPageMetadata;
 
 	const webpage: JsonLdWebPage = JsonLdWebPageMaker.make();
 	webpage.title = data.title;

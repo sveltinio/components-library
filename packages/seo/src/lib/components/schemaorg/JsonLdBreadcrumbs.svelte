@@ -9,7 +9,7 @@
 
 	export let baseURL: string;
 	export let parent: string;
-	export let currentTitle: string;
+	export let current: string;
 
 	let itemElementList = Array<JsonLdBreadcrumbsItem>();
 
@@ -28,12 +28,12 @@
 
 		const currentPage = JsonLdBreadcrumbsItemMaker.make();
 		currentPage.position = 3;
-		currentPage.name = currentTitle;
+		currentPage.name = current;
 		itemElementList.push(currentPage);
 	} else {
 		const currentPage = JsonLdBreadcrumbsItemMaker.make();
 		currentPage.position = 2;
-		currentPage.name = currentTitle;
+		currentPage.name = current;
 		itemElementList.push(currentPage);
 	}
 

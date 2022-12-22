@@ -17,7 +17,7 @@ function getScripts(scriptType: string): string {
 beforeEach(() => {
 	render(JsonLdSiteNavigationElements, {
 		props: {
-			websiteData: website,
+			data: website,
 			menuData: menu
 		}
 	});
