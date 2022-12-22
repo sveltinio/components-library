@@ -55,7 +55,7 @@ The following are the ones exposed by the component
 | href          | string  |    no    |             | The URL of the page the link goes to                            |
 | prefetch      | boolean |    no    |    false    | Enable data-sveltekit-prefetch for the link                     |
 | external      | boolean |    no    |    false    | If true, opens the linked document in a new window or tab       |
-| theme         | string  |    no    |             | The css class name used to make a theme variant                 |
+| class         | string  |    no    |             | The css class name used to make a theme variant                 |
 | styles        | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles               |
 
 ## Theming
