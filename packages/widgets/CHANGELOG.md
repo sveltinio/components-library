@@ -1,5 +1,15 @@
 # @sveltinio/widgets
 
+## 0.3.0
+
+### Minor Changes
+
+- all components refactored
+- styling with PostCSS
+- component diagrams added
+- docs about styling
+- screenshots added
+
 ## 0.2.2
 
 ### Patch Changes

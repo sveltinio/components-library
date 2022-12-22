@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/widgets",
-	"version": "0.2.2",
+	"version": "0.3.0",
 	"private": false,
 	"type": "module",
 	"description": "A collection of responsive, fully configurable and ready-to-use Svelte components for cards, pages navigation, TOC (Table of Contents), ...",
