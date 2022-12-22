@@ -4,15 +4,15 @@
 @import url("./variables") screen;
 
 .sw__btn__main .btn__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--_icon-gap);
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--_icon-gap);
+}
 
 a {
   -webkit-text-decoration: var(--text-decoration);
-          text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
 }
 
 .btn {
@@ -28,7 +28,7 @@ a {
   line-height: var(--_line-height);
   letter-spacing: var(--_letter-spacing);
   -webkit-text-decoration: var(--_text-decoration);
-          text-decoration: var(--_text-decoration);
+  text-decoration: var(--_text-decoration);
   color: var(--_color);
   border-width: var(--_border-width);
   border-color: var(--_border-color);
@@ -37,8 +37,8 @@ a {
 }
 
 .btn:hover {
-    background-color: var(--_bg-color-hover);
-  }
+  background-color: var(--_bg-color-hover);
+}
 
 .btn_focus:focus {
   outline-width: var(--_ring-width);
@@ -151,8 +151,8 @@ a {
   --_border-color: var(--_primary-border-color);
 }
 .btn_primary:hover {
-    --_bg-color-hover: var(--_primary-bg-color-hover);
-  }
+  --_bg-color-hover: var(--_primary-bg-color-hover);
+}
 
 .btn_primary_focus:focus {
   outline-color: var(--_primary-ring-color);
@@ -164,8 +164,8 @@ a {
 }
 
 .btn_primary_outlined:hover {
-    background-color: var(--_primary-outlined-bg-hover);
-  }
+  background-color: var(--_primary-outlined-bg-hover);
+}
 
 /* - secondary */
 .btn_secondary {
@@ -174,8 +174,8 @@ a {
   --_border-color: var(--_secondary-border-color);
 }
 .btn_secondary:hover {
-    --_bg-color-hover: var(--_secondary-bg-color-hover);
-  }
+  --_bg-color-hover: var(--_secondary-bg-color-hover);
+}
 
 .btn_secondary_focus:focus {
   outline-color: var(--_secondary-ring-color);
@@ -187,8 +187,8 @@ a {
 }
 
 .btn_secondary_outlined:hover {
-    background-color: var(--_secondary-outlined-bg-hover);
-  }
+  background-color: var(--_secondary-outlined-bg-hover);
+}
 
 /* - success */
 .btn_success {
@@ -197,8 +197,8 @@ a {
   --_border-color: var(--_success-border-color);
 }
 .btn_success:hover {
-    --_bg-color-hover: var(--_success-bg-color-hover);
-  }
+  --_bg-color-hover: var(--_success-bg-color-hover);
+}
 
 .btn_success_focus:focus {
   outline-color: var(--_success-ring-color);
@@ -210,8 +210,8 @@ a {
 }
 
 .btn_success_outlined:hover {
-    background-color: var(--_success-outlined-bg-hover);
-  }
+  background-color: var(--_success-outlined-bg-hover);
+}
 
 /* - error */
 .btn_error {
@@ -220,8 +220,8 @@ a {
   --_border-color: var(--_error-border-color);
 }
 .btn_error:hover {
-    --_bg-color-hover: var(--_error-bg-color-hover);
-  }
+  --_bg-color-hover: var(--_error-bg-color-hover);
+}
 
 .btn_error_focus:focus {
   outline-color: var(--_error-ring-color);
@@ -233,8 +233,8 @@ a {
 }
 
 .btn_error_outlined:hover {
-    background-color: var(--_error-outlined-bg-hover);
-  }
+  background-color: var(--_error-outlined-bg-hover);
+}
 
 /** Warning */
 .btn_warning {
@@ -243,8 +243,8 @@ a {
   --_border-color: var(--_warning-border-color);
 }
 .btn_warning:hover {
-    --_bg-color-hover: var(--_warning-bg-color-hover);
-  }
+  --_bg-color-hover: var(--_warning-bg-color-hover);
+}
 
 .btn_warning_focus:focus {
   outline-color: var(--_warning-ring-color);
@@ -256,8 +256,8 @@ a {
 }
 
 & .btn_warning_outlined:hover {
-    background-color: var(--_warning-outlined-bg-hover);
-  }
+  background-color: var(--_warning-outlined-bg-hover);
+}
 
 /** Info */
 .btn_info {
@@ -266,8 +266,8 @@ a {
   --_border-color: var(--_info-border-color);
 }
 .btn_info:hover {
-    --_bg-color-hover: var(--_info-bg-color-hover);
-  }
+  --_bg-color-hover: var(--_info-bg-color-hover);
+}
 
 .btn_info_focus:focus {
   outline-color: var(--_info-ring-color);
@@ -279,8 +279,8 @@ a {
 }
 
 .btn_info_outlined:hover {
-    background-color: var(--_info-outlined-bg-hover);
-  }
+  background-color: var(--_info-outlined-bg-hover);
+}
 
 /** Light */
 .btn_light {
@@ -289,8 +289,8 @@ a {
   border: none;
 }
 .btn_light:hover {
-    --_bg-color-hover: var(--_light-bg-color-hover);
-  }
+  --_bg-color-hover: var(--_light-bg-color-hover);
+}
 
 .btn_light_focus:focus {
   outline-color: var(--__light-ring-color);
@@ -302,8 +302,8 @@ a {
 }
 
 .btn_light_outlined:hover {
-    background-color: var(--_light-outlined-bg-hover);
-  }
+  background-color: var(--_light-outlined-bg-hover);
+}
 
 /** Dark */
 .btn_dark {
@@ -312,8 +312,8 @@ a {
   --_border-color: var(--_dark-border-color);
 }
 .btn_dark:hover {
-    --_bg-color-hover: var(--_dark-bg-color-hover);
-  }
+  --_bg-color-hover: var(--_dark-bg-color-hover);
+}
 
 .btn_dark_focus:focus {
   outline-color: var(--_dark-ring-color);
@@ -325,5 +325,5 @@ a {
 }
 
 .btn_dark_outlined:hover {
-    background-color: var(--_dark-outlined-bg-hover);
-  }
+  background-color: var(--_dark-outlined-bg-hover);
+}
