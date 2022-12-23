@@ -29,8 +29,8 @@
 		dispatch('click', { eventDetails: e });
 	};
 
-	$: outlinedClass = outlined ? `btn_outlined btn_${type}_outlined` : `btn_${type}`;
-	$: focusClass = withFocusRing ? `btn_focus btn_${type}_focus` : '';
+	$: outlinedClass = outlined ? `btn--outlined btn--${type}-outlined` : `btn--${type}`;
+	$: focusClass = withFocusRing ? `btn--focus btn--${type}-focus` : '';
 	$: _altText = altText != '' ? altText : label;
 </script>
 
@@ -42,10 +42,10 @@
 		target={external ? '_blank' : '_self'}
 		aria-label={_altText}
 		data-testid="btn"
-		class="sw__btn sw__btn__main btn btn_{size} btn_border_{border} {outlinedClass} {focusClass}"
-		class:btn_full={fullSize}
-		class:btn_rounded={rounded}
-		class:btn_circle={circle}
+		class="se__btn se__btn__main btn btn--{size} btn--border-{border} {outlinedClass} {focusClass}"
+		class:btn--full={fullSize}
+		class:btn--rounded={rounded}
+		class:btn--circle={circle}
 		style={cssStyles}
 		{...$$restProps}
 	>
@@ -65,10 +65,10 @@
 	<button
 		aria-label={_altText}
 		data-testid="btn"
-		class="sw__btn sw__btn__main btn btn_{size} btn_border_{border} {outlinedClass} {focusClass} {className}"
-		class:btn_full={fullSize}
-		class:btn_rounded={rounded}
-		class:btn_circle={circle}
+		class="se__btn se__btn__main btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {className}"
+		class:btn--full={fullSize}
+		class:btn--rounded={rounded}
+		class:btn--circle={circle}
 		style={cssStyles}
 		{...$$restProps}
 		on:click={clickDispatcher}

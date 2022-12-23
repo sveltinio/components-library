@@ -37,7 +37,7 @@ describe('Button', () => {
 			}
 		});
 
-		expect(getByTestId('btn').classList.contains('btn_primary')).toBeTruthy();
+		expect(getByTestId('btn').classList.contains('btn--primary')).toBeTruthy();
 	});
 
 	it('should be success and rounded', async () => {
@@ -49,7 +49,7 @@ describe('Button', () => {
 			}
 		});
 
-		expect(getByTestId('btn')).toHaveClass('btn_success btn_rounded');
+		expect(getByTestId('btn')).toHaveClass('btn--success btn--rounded');
 	});
 
 	it('should be error and outlined', async () => {
@@ -61,7 +61,7 @@ describe('Button', () => {
 			}
 		});
 
-		expect(getByTestId('btn')).toHaveClass('btn_outlined btn_error_outlined');
+		expect(getByTestId('btn')).toHaveClass('btn--outlined btn--error-outlined');
 	});
 
 	it('should have size xs', async () => {
@@ -73,7 +73,7 @@ describe('Button', () => {
 			}
 		});
 
-		expect(getByTestId('btn')).toHaveClass('btn_xs');
+		expect(getByTestId('btn')).toHaveClass('btn--xs');
 	});
 
 	it('should be primary, circular and lg size', async () => {
@@ -86,7 +86,7 @@ describe('Button', () => {
 			}
 		});
 
-		expect(getByTestId('btn')).toHaveClass('btn btn_primary btn_lg btn_circle');
+		expect(getByTestId('btn')).toHaveClass('btn btn--primary btn--lg btn--circle');
 	});
 
 	it('should be primary and dashed border', async () => {
@@ -98,7 +98,7 @@ describe('Button', () => {
 			}
 		});
 
-		expect(getByTestId('btn')).toHaveClass('btn btn_primary btn_border_dashed');
+		expect(getByTestId('btn')).toHaveClass('btn btn--primary btn--border-dashed');
 	});
 
 	it('should be primary with focus ring', async () => {
@@ -111,7 +111,7 @@ describe('Button', () => {
 		});
 
 		expect(getByTestId('btn')).toHaveClass(
-			'btn btn_primary btn_border_solid btn_focus btn_primary_focus'
+			'btn btn--primary btn--border-solid btn--focus btn--primary-focus'
 		);
 	});
 
