@@ -11,13 +11,13 @@ The `Link` component defines a hyperlink used to link an internal or external re
    import DummyIcon from './DummyIcon.svelte';
 </script>
 
-<Link url={base} alt="link to the homepage">Home</Link>
+<Link href="{base}/contact">Contact</Link>
 
-<Link external url="https://sveltin.io" alt="link to sveltin homepage">sveltin</Link>
+<Link href="https://sveltin.io" external>sveltin</Link>
 
-<Link external icon={false} label="sveltin.io" url="https://sveltin.io" alt="link to sveltin homepage" />
+<Link href="https://sveltin.io" label="sveltin.io" external icon={false}  />
 
-<Link external url="https://sveltin.io" alt="link to sveltin homepage">
+<Link href="https://sveltin.io" external>
    <DummyIcon slot="icon" />
 </Link>
 ```
@@ -30,30 +30,23 @@ The following are the ones exposed by the component:
 
 | Property   |  Type   | Required | Default  | Description                                                         |
 | :--------- | :-----: | :------: | :------- | :------------------------------------------------------------------ |
-| label      | string  |    no    |          | If present, it will be the text to display                          |
-| url        | string  |   yes    |          | The URL of the page the link goes to                                |
-| underline  | boolean |    no    | false    | Underlined label text                                               |
-| alt        | string  |    yes   |          | The text description of the link                                    |
+| label      | string  |    no    |          | The text to display and used for the `aria-label` prop too          |
+| href       | string  |   yes    |          | The URL of the page the link goes to                                |
 | external   | boolean |    no    | false    | If external, an icon will be apped next to the right of the label   |
-| prefetch   | boolean | no       | yes      | Enable `data-sveltekit-preload-data` when not an externali link     |
-| icon       | boolean |    no    | true     | Shows an icon next right to the label when external id true         |
+| prefetch   | boolean |    no    | yes      | Enable `data-sveltekit-preload-data` when not an external link      |
+| icon       | boolean |    no    | true     | Shows an icon next right to the label when external is true         |
 | noOpenener | boolean |    no    | true     | Go to the linked resource without granting the new browsing context |
 | noReferrer | boolean |    no    | true     | Prevent passing the referrer information to the target website      |
-| styles     | object  |    no    |          | Object to pass styles as css variables. Check the theming section   |
+| class      | string  |    no    |          | The css class name used to make a theme variant                     |
+| styles     | Object  |    no    | `{}`     | Used to pass CSS variables to apply custom styles                   |
 
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-Below is the CSS variables list to apply your own styles to the component.
+The two component properties `styles` and `class` are the ones allowing you to customize the component appearence.
 
-### Link
+Read more [here](./THEMING.md)
 
-| CSS Variable            | Default            | |
-| :---------------------- | -----------------: | :----------------------------------------------------------: |
-| `color`                 | `rgb(30 41 59)`    | ![#1E293B](https://via.placeholder.com/15/1E293B/1E293B.png) |
-| `text-decoration`       |       none         | |
-| `color-hover`           | `rgb(30, 41, 59)`  | ![#1E293B](https://via.placeholder.com/15/1E293B/1E293B.png) |
-| `text-decoration-hover` |       none         | |
-
+<!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props

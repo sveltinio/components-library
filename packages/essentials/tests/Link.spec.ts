@@ -9,8 +9,7 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io',
-				alt: 'sveltin-site-link'
+				href: 'https://sveltin.io'
 			}
 		});
 		expect(container).toBeInTheDocument();
@@ -21,8 +20,7 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io',
-				alt: 'sveltin-site-link'
+				href: 'https://sveltin.io'
 			}
 		});
 
@@ -35,8 +33,7 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io',
-				alt: 'sveltin-site-link'
+				href: 'https://sveltin.io'
 			}
 		});
 
@@ -44,18 +41,17 @@ describe('Link', () => {
 		expect(link).toHaveAccessibleName();
 	});
 
-	it('should have an accessible description (title)', async () => {
-		const { getByTestId } = render(Link, {
+	it('should have aria-label prop set', async () => {
+		const { getByLabelText } = render(Link, {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io',
-				alt: 'sveltin-site-link'
+				href: 'https://sveltin.io'
 			}
 		});
 
-		const link = getByTestId('link');
-		expect(link).toHaveAccessibleDescription();
+		const ariaLabel = getByLabelText('sveltin');
+		expect(ariaLabel).toBeTruthy();
 	});
 
 	it('should be an internal link', async () => {
@@ -63,8 +59,7 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io',
-				alt: 'sveltin-site-link'
+				href: 'https://sveltin.io'
 			}
 		});
 
@@ -77,8 +72,7 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io',
-				alt: 'sveltin-site-link',
+				href: 'https://sveltin.io',
 				external: true
 			}
 		});
@@ -92,8 +86,7 @@ describe('Link', () => {
 			props: {
 				id: 'sveltin-site-link',
 				label: 'sveltin',
-				url: 'https://sveltin.io',
-				alt: 'sveltin-site-link',
+				href: 'https://sveltin.io',
 				external: true
 			}
 		});
