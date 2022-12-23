@@ -1,0 +1,13 @@
+.se__colorpreview {
+  --_font-size: var(--font-size, 1rem); /* 14px */
+  --_font-weight: var(--font-weight, 500);
+  --_line-height: var(--line-height, 1.25rem); /* 18px */
+  --_letter-spacing: var(--letter-spacing, 0em);
+  --_color: var(--color, hsl(215deg 25% 27%)); /* slate-700 */
+
+  --_gap: var(--gap, 0.5rem); /* 8px */
+
+  --_border-width: var(--border-width, 1px);
+  --_border-style: var(--border-style, solid);
+  --_border-color: var(--border-color, transparent);
+}

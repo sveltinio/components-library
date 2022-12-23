@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* stylelint-disable declaration-empty-line-before */
+
+/*! CSS file minified in production */
+
+@import url("../reset") screen;
+@import url("./variables") screen;
+
+.se__colorpreview__main {
+  display: flex;
+  align-items: center;
+  gap: var(--_gap);
+  font-size: var(--_font-size);
+  font-weight: var(--_font-weight);
+  line-height: var(--_line-height);
+  letter-spacing: var(--_letter-spacing);
+  color: var(--_color);
+
+  & .preview {
+    border-width: var(--_border-width);
+    border-style: var(--_border-style);
+    border-color: var(--_border-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  & .border {
+    --_border-color: var(--border-color, hsl(214deg 32% 91%)); /* slate-200 */
+  }
+}

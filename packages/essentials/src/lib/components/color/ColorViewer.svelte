@@ -1,31 +1,24 @@
 <script lang="ts">
+	import './styles.css';
+	import { stylesObjToCSSVars } from '$lib/utils';
+
 	export let value: string;
-	export let bordered = true;
+	export let size = 24;
+	export let border = true;
+	export let showValue = true;
+
+	let className = '';
+	export { className as class };
+
+	export let styles = {};
+	const cssStyles = stylesObjToCSSVars(styles);
 </script>
 
-<div class="preview" {...$$restProps}>
-	<div class="color" class:bordered style="background: {value};" />
-	{value}
+<div class="se__colorpreview se__colorpreview__main {className}" style={cssStyles} {...$$restProps}>
+	<div
+		class="preview"
+		class:border
+		style="background: {value}; width: {size}px; height: {size}px;"
+	/>
+	{#if showValue}{value}{/if}
 </div>
-
-<style>
-	.preview {
-		align-items: center;
-		display: flex;
-		font-family: 'Courier New', Courier, monospace;
-	}
-
-	.color {
-		border: 1px solid transparent;
-		border-radius: 50%;
-		flex-shrink: 0;
-		width: 1rem;
-		height: 1rem;
-		margin-right: 0.8em;
-	}
-
-	.bordered {
-		--_border-color: var(--border-color, rgb(226, 232, 240)); /* slate-200 */
-		border-color: var(--_border-color);
-	}
-</style>
