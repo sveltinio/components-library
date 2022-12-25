@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './btngroup-styles.css';
 	import { createEventDispatcher, getContext, onDestroy } from 'svelte';
 	import type { ButtonGroupContext } from './types.js';
 
@@ -24,7 +23,7 @@
 	});
 </script>
 
-<button {id} class="btn-group-item" class:active={activeButton === id} on:click={clickDispatcher}>
+<button {id} class="btngroup__item" class:active={activeButton === id} on:click={clickDispatcher}>
 	{#if icon}
 		<svelte:component this={icon} />
 	{/if}

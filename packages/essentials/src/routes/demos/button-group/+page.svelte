@@ -19,18 +19,31 @@
 
 <section class="main">
 	<h1><tt>@essentials/ButtonGroup</tt></h1>
-
 	<h2><tt>ButtonGroup</tt></h2>
+</section>
 
-	<div id="buttons-group" class="container">
+<section>
+	<div class="demo-container">
+		<h3>Default</h3>
 		<ButtonGroup>
 			<ButtonGroupItem id="1" on:click={handleMessage}>Button 1</ButtonGroupItem>
 			<ButtonGroupItem id="2" on:click={handleMessage}>Button 2</ButtonGroupItem>
 			<ButtonGroupItem id="3" on:click={handleMessage}>Button 3</ButtonGroupItem>
 		</ButtonGroup>
 	</div>
-	<div id="custom-buttons-group" class="container">
+
+	<div class="demo-container">
+		<h3>Custom Styles with styles prop</h3>
 		<ButtonGroup styles={customStyles}>
+			<ButtonGroupItem id="1" on:click={handleMessage}>Button 1</ButtonGroupItem>
+			<ButtonGroupItem id="2" on:click={handleMessage}>Button 2</ButtonGroupItem>
+			<ButtonGroupItem id="3" on:click={handleMessage}>Button 3</ButtonGroupItem>
+		</ButtonGroup>
+	</div>
+
+	<div class="demo-container">
+		<h3>Custom Styles with CSS Class</h3>
+		<ButtonGroup class="my-btngroup">
 			<ButtonGroupItem id="1" on:click={handleMessage}>Button 1</ButtonGroupItem>
 			<ButtonGroupItem id="2" on:click={handleMessage}>Button 2</ButtonGroupItem>
 			<ButtonGroupItem id="3" on:click={handleMessage}>Button 3</ButtonGroupItem>
