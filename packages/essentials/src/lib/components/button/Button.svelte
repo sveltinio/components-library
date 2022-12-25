@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './styles.css';
 	import { createEventDispatcher } from 'svelte';
-	import { stylesObjToCSSVars } from '$lib/utils';
+	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils';
 
 	export let label = 'Button Text';
 	export let altText = '';
@@ -20,6 +20,11 @@
 
 	let className = '';
 	export { className as class };
+
+	// to avoid hacking default class names
+	if (!isValidClassName(className, ['sn-e-c-btn-vars', 'sn-e-c-btn'])) {
+		className = '';
+	}
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
@@ -42,7 +47,7 @@
 		target={external ? '_blank' : '_self'}
 		aria-label={_altText}
 		data-testid="btn"
-		class="se__btn se__btn__main btn btn--{size} btn--border-{border} {outlinedClass} {focusClass}"
+		class="sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass}"
 		class:btn--full={fullSize}
 		class:btn--rounded={rounded}
 		class:btn--circle={circle}
@@ -65,7 +70,7 @@
 	<button
 		aria-label={_altText}
 		data-testid="btn"
-		class="se__btn se__btn__main btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {className}"
+		class="sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {className}"
 		class:btn--full={fullSize}
 		class:btn--rounded={rounded}
 		class:btn--circle={circle}

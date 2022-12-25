@@ -6,19 +6,19 @@
 @import url("../reset") screen;
 @import url("./variables") screen;
 
-.se__btn__main .btn__content {
+.sn-e-c-btn .btn__content {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--_icon-gap);
 }
 
-a:where(.se__btn.se__btn__main.btn) {
+a:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   -webkit-text-decoration: var(--text-decoration);
   text-decoration: var(--text-decoration);
 }
 
-a:where(.se__btn.se__btn__main.btn) {
+a:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   display: inline-flex;
   align-items: center;
   padding-top: var(--_pt);
@@ -39,7 +39,7 @@ a:where(.se__btn.se__btn__main.btn) {
   outline-color: none;
 }
 
-button:where(.se__btn.se__btn__main.btn) {
+button:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   display: inline-flex;
   align-items: center;
   padding-top: var(--_pt);
@@ -60,96 +60,96 @@ button:where(.se__btn.se__btn__main.btn) {
   outline-color: none;
 }
 
-a:where(.se__btn.se__btn__main.btn):hover {
+a:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_bg-color-hover);
 }
 
-button:where(.se__btn.se__btn__main.btn):hover {
+button:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_bg-color-hover);
 }
 
-.btn--focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   outline-width: var(--_ring-width);
   outline-style: var(--_ring-style);
   outline-offset: var(--_ring-offset);
 }
 
-.btn--outlined:where(.se__btn.se__btn__main.btn) {
+.btn--outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   background-color: hsl(0, 0%, 100%); /* white */
 }
 
 /* * Shapes (component prop "shape")   */
-.btn--rounded:where(.se__btn.se__btn__main.btn) {
+.btn--rounded:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   border-radius: var(--_rounded-border-radius);
 }
 
-.btn--circle:where(.se__btn.se__btn__main.btn) {
+.btn--circle:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   padding: var(--_circle-p);
   border-radius: 50%;
 }
 
 /* * Borders (component prop "border") */
-.btn--border-solid:where(.se__btn.se__btn__main.btn) {
+.btn--border-solid:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   border-style: solid;
 }
 
-.btn--border-dashed:where(.se__btn.se__btn__main.btn) {
+.btn--border-dashed:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   border-style: dashed;
 }
 
-.btn--border-dotted:where(.se__btn.se__btn__main.btn) {
+.btn--border-dotted:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   border-style: dotted;
 }
 
-.btn--border-double:where(.se__btn.se__btn__main.btn) {
+.btn--border-double:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   border-style: double;
 }
 
-.btn--border-hidden:where(.se__btn.se__btn__main.btn) {
+.btn--border-hidden:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   border-style: hidden;
 }
 
-.btn--border-none:where(.se__btn.se__btn__main.btn) {
+.btn--border-none:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   border-style: none;
 }
 
 /* * Sizes (component prop "size")     */
-.btn--xs:where(.se__btn.se__btn__main.btn) {
+.btn--xs:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_font-size: var(--_font-size-xs);
   --_font-weight: var(--_font-weight-xs);
   --_line-height: var(--_line-height-xs);
   --_letter-spacing: var(--_letter-spacing-xs);
 }
 
-.btn--sm:where(.se__btn.se__btn__main.btn) {
+.btn--sm:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_font-size: var(--_font-size-sm);
   --_font-weight: var(--_font-weight-sm);
   --_line-height: var(--_line-height-sm);
   --_letter-spacing: var(--_letter-spacing-sm);
 }
 
-.btn--base:where(.se__btn.se__btn__main.btn) {
+.btn--base:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_font-size: var(--_font-size-base);
   --_font-weight: var(--_font-weight-base);
   --_line-height: var(--_line-height-base);
   --_letter-spacing: var(--_letter-spacing-base);
 }
 
-.btn--lg:where(.se__btn.se__btn__main.btn) {
+.btn--lg:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_font-size: var(--_font-size-lg);
   --_font-weight: var(--_font-weight-lg);
   --_line-height: var(--_line-height-lg);
   --_letter-spacing: var(--_letter-spacing-lg);
 }
 
-.btn--xl:where(.se__btn.se__btn__main.btn) {
+.btn--xl:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_font-size: var(--_font-size-xl);
   --_font-weight: var(--_font-weight-xl);
   --_line-height: var(--_line-height-xl);
   --_letter-spacing: var(--_letter-spacing-xl);
 }
 
-.btn--full:where(.se__btn.se__btn__main.btn) {
+.btn--full:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -160,132 +160,132 @@ button:where(.se__btn.se__btn__main.btn):hover {
 /* * Variants (component prop "type")  */
 
 /* - default - */
-.btn--default:where(.se__btn.se__btn__main.btn) {
+.btn--default:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   border-color: var(--_border-color);
   outline: none;
 }
-.btn--default-outlined:where(.se__btn.se__btn__main.btn) {
+.btn--default-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   border-color: var(--_border-color);
   outline: none;
 }
 
-.btn--default-focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--default-focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_ring-color: var(--ring-color, hsl(240, 5%, 84%)); /* zync-300 */
   outline-color: var(--_ring-color);
 }
 
 /* - primary - */
-.btn--primary:where(.se__btn.se__btn__main.btn) {
+.btn--primary:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_primary-color);
   --_bg-color: var(--_primary-bg-color);
   --_border-color: var(--_primary-border-color);
 }
-.btn--primary:where(.se__btn.se__btn__main.btn):hover {
+.btn--primary:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   --_bg-color-hover: var(--_primary-bg-color-hover);
 }
 
-.btn--primary-focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--primary-focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   outline-color: var(--_primary-ring-color);
 }
 
-.btn--primary-outlined:where(.se__btn.se__btn__main.btn) {
+.btn--primary-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_primary-outlined-color);
   --_border-color: var(--_primary-outlined-border-color);
 }
 
-.btn--primary-outlined:where(.se__btn.se__btn__main.btn):hover {
+.btn--primary-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_primary-outlined-bg-hover);
 }
 
 /* - secondary - */
-.btn--secondary:where(.se__btn.se__btn__main.btn) {
+.btn--secondary:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_secondary-color);
   --_bg-color: var(--_secondary-bg-color);
   --_border-color: var(--_secondary-border-color);
 }
-.btn--secondary:where(.se__btn.se__btn__main.btn):hover {
+.btn--secondary:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   --_bg-color-hover: var(--_secondary-bg-color-hover);
 }
 
-.btn--secondary-focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--secondary-focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   outline-color: var(--_secondary-ring-color);
 }
 
-.btn--secondary-outlined:where(.se__btn.se__btn__main.btn) {
+.btn--secondary-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_secondary-outlined-color);
   --_border-color: var(--_secondary-outlined-border-color);
 }
 
-.btn--secondary-outlined:where(.se__btn.se__btn__main.btn):hover {
+.btn--secondary-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_secondary-outlined-bg-hover);
 }
 
 /* - success - */
-.btn--success:where(.se__btn.se__btn__main.btn) {
+.btn--success:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_success-color);
   --_bg-color: var(--_success-bg-color);
   --_border-color: var(--_success-border-color);
 }
-.btn--success:where(.se__btn.se__btn__main.btn):hover {
+.btn--success:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   --_bg-color-hover: var(--_success-bg-color-hover);
 }
 
-.btn--success-focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--success-focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   outline-color: var(--_success-ring-color);
 }
 
-.btn--success-outlined:where(.se__btn.se__btn__main.btn) {
+.btn--success-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_success-outlined-color);
   --_border-color: var(--_success-outlined-border-color);
 }
 
-.btn--success-outlined:where(.se__btn.se__btn__main.btn):hover {
+.btn--success-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_success-outlined-bg-hover);
 }
 
 /* - error - */
-.btn--error:where(.se__btn.se__btn__main.btn) {
+.btn--error:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_error-color);
   --_bg-color: var(--_error-bg-color);
   --_border-color: var(--_error-border-color);
 }
-.btn--error:where(.se__btn.se__btn__main.btn):hover {
+.btn--error:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   --_bg-color-hover: var(--_error-bg-color-hover);
 }
 
-.btn--error-focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--error-focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   outline-color: var(--_error-ring-color);
 }
 
-.btn--error-outlined:where(.se__btn.se__btn__main.btn) {
+.btn--error-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_error-outlined-color);
   --_border-color: var(--_error-outlined-border-color);
 }
 
-.btn--error-outlined:where(.se__btn.se__btn__main.btn):hover {
+.btn--error-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_error-outlined-bg-hover);
 }
 
 /* - warning - */
-.btn--warning:where(.se__btn.se__btn__main.btn) {
+.btn--warning:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_warning-color);
   --_bg-color: var(--_warning-bg-color);
   --_border-color: var(--_warning-border-color);
 }
-.btn--warning:where(.se__btn.se__btn__main.btn):hover {
+.btn--warning:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   --_bg-color-hover: var(--_warning-bg-color-hover);
 }
 
-.btn--warning-focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--warning-focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   outline-color: var(--_warning-ring-color);
 }
 
-& .btn--warning-outlined:where(.se__btn.se__btn__main.btn) {
+& .btn--warning-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_warning-outlined-color);
   --_border-color: var(--_warning-outlined-border-color);
 }
 
-& .btn--warning-outlined:where(.se__btn.se__btn__main.btn):hover {
+& .btn--warning-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_warning-outlined-bg-hover);
 }
 
@@ -299,61 +299,61 @@ button:where(.se__btn.se__btn__main.btn):hover {
   --_bg-color-hover: var(--_info-bg-color-hover);
 }
 
-.btn--info-focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--info-focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   outline-color: var(--_info-ring-color);
 }
 
-.btn--info-outlined:where(.se__btn.se__btn__main.btn) {
+.btn--info-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_info-outlined-color);
   --_border-color: var(--_info-outlinted-border-color);
 }
 
-.btn--info-outlined:where(.se__btn.se__btn__main.btn):hover {
+.btn--info-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_info-outlined-bg-hover);
 }
 
 /* - light - */
-.btn--light:where(.se__btn.se__btn__main.btn) {
+.btn--light:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_light-color);
   --_bg-color: var(--_light-bg-color);
   border: none;
 }
-.btn--light:where(.se__btn.se__btn__main.btn):hover {
+.btn--light:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   --_bg-color-hover: var(--_light-bg-color-hover);
 }
 
-.btn--light-focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--light-focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   outline-color: var(--_light-ring-color);
 }
 
-.btn--light-outlined:where(.se__btn.se__btn__main.btn) {
+.btn--light-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_light-outlined-color);
   border: none;
 }
 
-.btn--light-outlined:where(.se__btn.se__btn__main.btn):hover {
+.btn--light-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_light-outlined-bg-hover);
 }
 
 /* - dark - */
-.btn--dark:where(.se__btn.se__btn__main.btn) {
+.btn--dark:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_dark-color);
   --_bg-color: var(--_dark-bg-color);
   --_border-color: var(--_dark-border-color);
 }
-.btn--dark:where(.se__btn.se__btn__main.btn):hover {
+.btn--dark:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   --_bg-color-hover: var(--_dark-bg-color-hover);
 }
 
-.btn--dark-focus:focus:where(.se__btn.se__btn__main.btn) {
+.btn--dark-focus:focus:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   outline-color: var(--_dark-ring-color);
 }
 
-.btn--dark-outlined:where(.se__btn.se__btn__main.btn) {
+.btn--dark-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn) {
   --_color: var(--_dark-outlined-color);
   --_border-color: var(--_dark-outlined-border-color);
 }
 
-.btn--dark-outlined:where(.se__btn.se__btn__main.btn):hover {
+.btn--dark-outlined:where(.sn-e-c-btn-vars.sn-e-c-btn):hover {
   background-color: var(--_dark-outlined-bg-hover);
 }

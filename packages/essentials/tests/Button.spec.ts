@@ -86,7 +86,7 @@ describe('Button', () => {
 			}
 		});
 
-		expect(getByTestId('btn')).toHaveClass('btn btn--primary btn--lg btn--circle');
+		expect(getByTestId('btn')).toHaveClass('btn--primary btn--lg btn--circle');
 	});
 
 	it('should be primary and dashed border', async () => {
@@ -98,7 +98,7 @@ describe('Button', () => {
 			}
 		});
 
-		expect(getByTestId('btn')).toHaveClass('btn btn--primary btn--border-dashed');
+		expect(getByTestId('btn')).toHaveClass('btn--primary btn--border-dashed');
 	});
 
 	it('should be primary with focus ring', async () => {
@@ -111,7 +111,7 @@ describe('Button', () => {
 		});
 
 		expect(getByTestId('btn')).toHaveClass(
-			'btn btn--primary btn--border-solid btn--focus btn--primary-focus'
+			'btn--primary btn--border-solid btn--focus btn--primary-focus'
 		);
 	});
 

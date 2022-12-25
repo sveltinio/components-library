@@ -1,6 +1,6 @@
-.se__btn {
+.sn-e-c-btn-vars {
   /** ************************************* */
-  /** main (css class name: se__btn__main)  */
+  /** main (css class name: sn-e-c-btn)  */
   /** ************************************* */
   --_cursor: var(--cursor, pointer);
   --_font-size: var(--font-size, 1rem);
