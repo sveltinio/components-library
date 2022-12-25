@@ -14,8 +14,17 @@ const config = {
 	package: {
 		dir: 'dist',
 		emitTypes: true,
-		// exclude postcss files to be part of the package.
-		files: (filepath) => !/^_|\/_|\.postcss$/.test(filepath)
+		// exclude postcss and d2 files as well as the whole assets folder to be part of the package
+		files: (filepath) => {
+			const postcssFileRegex = /^_|\/_|\.postcss$/;
+			const d2FileRegex = /^_|\/_|\.d2$/;
+			const assetsFolderRegex = /assets/;
+			return (
+				!postcssFileRegex.test(filepath) &&
+				!d2FileRegex.test(filepath) &&
+				!assetsFolderRegex.test(filepath)
+			);
+		}
 	}
 };
 
