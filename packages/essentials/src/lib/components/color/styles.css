@@ -6,7 +6,7 @@
 @import url("../reset") screen;
 @import url("./variables") screen;
 
-.se__colorpreview__main {
+.sn-e-c-colorviewer {
   display: flex;
   align-items: center;
   gap: var(--_gap);
@@ -17,14 +17,14 @@
   color: var(--_color);
 }
 
-.se__colorpreview__main .preview {
-    border-width: var(--_border-width);
-    border-style: var(--_border-style);
-    border-color: var(--_border-color);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+.sn-e-c-colorviewer .preview {
+  border-width: var(--_border-width);
+  border-style: var(--_border-style);
+  border-color: var(--_border-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
 
-.se__colorpreview__main .border {
-    --_border-color: var(--border-color, hsl(214, 32%, 91%)); /* slate-200 */
-  }
+.sn-e-c-colorviewer .border {
+  --_border-color: var(--border-color, hsl(214, 32%, 91%)); /* slate-200 */
+}
