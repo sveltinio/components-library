@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './styles.css';
 	import { ExternalLinkIcon } from './index.js';
-	import { stylesObjToCSSVars } from '$lib/utils';
+	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils';
 
 	export let label = '';
 	export let href: string;
@@ -13,6 +13,11 @@
 
 	let className = '';
 	export { className as class };
+
+	// to avoid hacking default class names
+	if (!isValidClassName(className, ['sn-e-c-link-vars', 'sn-e-c-link'])) {
+		className = '';
+	}
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
@@ -33,7 +38,7 @@
 	{target}
 	data-sveltekit-preload-data={prefetchValue}
 	aria-label={label}
-	class="se__link se__link__main {className}"
+	class="sn-e-c-link-vars sn-e-c-link {className}"
 	style={cssStyles}
 	data-testid="link"
 	{...$$restProps}
