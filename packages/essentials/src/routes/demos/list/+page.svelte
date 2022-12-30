@@ -1,12 +1,7 @@
 <script lang="ts">
 	import { ToggleList } from '$lib/index.js';
 	//Icons
-	import {
-		LongArrowDownRightIcon,
-		LongArrowUpRightIcon,
-		CloudUploadIcon,
-		BellIcon
-	} from '@indaco/svelte-iconoir';
+	import { LongArrowDownRightIcon, CloudUploadIcon, BellIcon } from '@indaco/svelte-iconoir';
 	// sample data
 	const contentForToggleList = [
 		{ label: 'First', url: '#first', icon: CloudUploadIcon },
@@ -31,15 +26,22 @@
 <ToggleList title="My Toggle List" items={contentForToggleList} />
 
 <h3>Left Side icon</h3>
-<ToggleList title="My Toggle List 3" items={contentForToggleList}>
-	<BellIcon size="18" slot="leftSideIcon" />
+<ToggleList title="My Toggle List" items={contentForToggleList}>
+	<BellIcon size="20" slot="leftSideIcon" />
 </ToggleList>
 
 <h3>Full Size</h3>
 <ToggleList title="My Toggle List" items={contentForToggleList} full />
 
-<h3>Custom Styles</h3>
-<ToggleList title="My Toggle List 2" items={contentForToggleList} styles={myOwnStyles} full>
-	<LongArrowDownRightIcon slot="whenClosedIcon" />
-	<LongArrowUpRightIcon slot="whenOpenIcon" />
+<h3>Custom Icon on the right side</h3>
+<ToggleList title="My Toggle List" items={contentForToggleList}>
+	<LongArrowDownRightIcon slot="rightSideIcon" />
 </ToggleList>
+
+<h3>Custom Styles with props</h3>
+<ToggleList title="My Toggle List" items={contentForToggleList} styles={myOwnStyles} full>
+	<LongArrowDownRightIcon slot="rightSideIcon" />
+</ToggleList>
+
+<h3>Custom Styles with CSS class</h3>
+<ToggleList title="My Toggle List" items={contentForToggleList} class="my-togglelist" />

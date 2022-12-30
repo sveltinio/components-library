@@ -1,0 +1,61 @@
+.sn-e-c-togglelist-vars {
+  /* * btn (css class name: toggle__btn) * */
+  --_btn-width: var(--btn-width, auto);
+  --_btn-width-full: var(--btn-width, 100%);
+  --_btn-cursor: var(--btn-cursor, pointer);
+  --_btn-color: var(--btn-color, hsl(215deg 25% 27%)); /* slate-700 */
+  --_btn-color-hover: var(--btn-color-hover, hsl(222deg 47% 11%)); /* slate-900 */
+  --_btn-font-size: var(--btn-font-size, 1rem); /* 16px */
+  --_btn-font-weight: var(--btn-font-weight, 600); /* 24px */
+  --_btn-line-height: var(--btn-line-height, 1.5rem);
+  --_btn-letter-spacing: var(--btn-letter-spacing, 0em);
+  --_btn-text-decoration: var(--btn-text-decoration, none);
+
+  --_btn-pt: var(--btn-pt, 0.5rem); /* 8px */
+  --_btn-pr: var(--btn-pr, 0.5rem); /* 8px */
+  --_btn-pb: var(--btn-pb, 0.5rem); /* 8px */
+  --_btn-pl: var(--btn-pl, 0.5rem); /* 8px */
+
+  --_btn-border-width: var(--btn-border-width, 0);
+  --_btn-border-style: var(--btn-border-style, solid);
+  --_btn-border-color: var(--btn-border-color, transparent);
+  --_btn-border-radius: var(--btn-border-radius, 0.25rem); /* 4px */
+
+  --_btn-bg-color: var(--btn-bg-color, hsl(0deg 0% 100%)); /* white */
+  --_btn-bg-color-hover: var(--btn-bg-color-hover, rgb(248, 250, 252)); /* slate-50 */
+
+  /* * list (css class name: list) * */
+  --_list-mt: var(--list-mt, 0.5rem); /* 8px */
+  --_list-mr: var(--list-mr, 0rem);
+  --_list-mb: var(--list-mb, 0.5rem); /* 8px */
+  --_list-ml: var(--list-ml, 1rem); /* 16px */
+
+  --_list-pt: var(--list-pt, 0rem);
+  --_list-pr: var(--list-pr, 0rem);
+  --_list-pb: var(--list-pb, 0rem);
+  --_list-pl: var(--list-pl, 0rem);
+
+  /* * item */
+  --_item-gap: var(--item-gap, 0.5rem); /* 8px */
+  --_item-color: var(--item-color, hsl(215deg 25% 27%)); /* slate-700 */
+  --_item-color-hover: var(--item-color-hover, hsl(222deg 47% 11%)); /* slate-900 */
+  --_item-font-size: var(--item-font-size, 1rem); /* 16px */
+  --_item-font-weight: var(--item-font-weight, 500);
+  --_item-line-height: var(--item-line-height, 1.5rem); /* 24px */
+  --_item-letter-spacing: var(--item-letter-spacing, 0em);
+  --_item-text-decoration: var(--item-text-decoration, none);
+
+  --_item-bg-color: var(--item-bg-color, transparent);
+  --_item-bg-color-hover: var(--item-bg-color-hover, transparent);
+
+  --_item-border-width: var(--item-border-width, 1px);
+  --_item-border-style: var(--item-border-style, solid);
+  --_item-border-color: var(--item-border-color, hsl(210deg 40% 96%)); /* slate-100 */
+  --_item-border-color-hover: var(--item-border-color-hover, hsl(215deg 20% 65%)); /* slate-400 */
+
+  --_active-item-color: var(--active-item-color, hsl(222deg 47% 11%)); /* slate-900 */
+  --_active-item-border-color: var(--active-item-border-color, hsl(222deg 47% 11%)); /* slate-900 */
+
+  /* * icon * */
+  --_icon-color: var(--icon-color, var(var(--_btn-color)));
+}

@@ -35,15 +35,15 @@
 		},
 		{
 			name: 'Tabs',
-			headline: 'Table of contents component.',
+			headline: 'Show contents in tabbed format',
 			url: 'demos/tabs'
 		}
 	];
 </script>
 
 <section class="main">
-	<h1>@sveltinio/essentials</h1>
-	<h2>Demos</h2>
+	<h1><tt>@sveltinio/essentials</tt></h1>
+	<h2><tt>Demos</tt></h2>
 </section>
 
 <div class="demo-grid-wrapper">

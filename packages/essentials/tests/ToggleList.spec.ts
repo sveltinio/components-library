@@ -24,7 +24,7 @@ describe('Link', () => {
 			}
 		});
 
-		const listTitle = getByTestId('list-title-btn');
+		const listTitle = getByTestId('list-toggle-btn');
 		expect(listTitle).not.toBeNull();
 		expect(listTitle.textContent?.trim()).toBe('My Toggle List');
 	});
@@ -37,10 +37,8 @@ describe('Link', () => {
 			}
 		});
 
-		const whenClosedIconSlot = getByTestId('when-closed-icon');
-		expect(whenClosedIconSlot).not.toBeNull();
-		const whenOpenIconSlot = getByTestId('when-open-icon');
-		expect(whenOpenIconSlot).not.toBeNull();
+		const rightSideIconSlot = getByTestId('right-side-icon');
+		expect(rightSideIconSlot).not.toBeNull();
 	});
 
 	it('should have 2 items', async () => {
@@ -96,9 +94,7 @@ describe('Link', () => {
 			props: { Component: ToggleList }
 		});
 
-		const whenClosedIconSlot = getByTestId('when-closed-icon');
-		expect(whenClosedIconSlot).not.toBeNull();
-		const whenOpenIconSlot = getByTestId('when-open-icon');
-		expect(whenOpenIconSlot).not.toBeNull();
+		const rightSideIconSlot = getByTestId('right-side-icon');
+		expect(rightSideIconSlot).not.toBeNull();
 	});
 });
