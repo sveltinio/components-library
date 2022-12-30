@@ -12,6 +12,7 @@
 
 	// to avoid hacking default class names
 	if (!isValidClassName(className, ['sn-e-c-colorviewer-vars', 'sn-e-c-colorviewer'])) {
+		console.error('@sveltinio ERROR: Invalid class name for the ColorViewer component!');
 		className = '';
 	}
 
