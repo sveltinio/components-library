@@ -1,6 +1,6 @@
 # [DRAFT] Design Rules
 
-created on: 2022-12-06 - updated on: 2022-12-06
+created on: 2022-12-06 - updated on: 2022-12-25
 
 ## Goal
 
@@ -10,33 +10,17 @@ Describe how the components have been designed and styled to easily allow applyi
 
 To simplify custom styles on the components we used the Svelte's built-in solution for component theming using [style-props].
 
-Components (mainly the ones on the `widgets` package) make extensively use of the CSS variables to allow maximum flexibility in terms of styling maintaining the logic behind them. In this way, almost each aspect of the component can have custom styles. The flipside of this approach is having lots of CSS variables means can be tough to know which one to use and how that variable is applied to the component.
+Components make extensively use of the CSS variables to allow maximum flexibility in terms of styling maintaining the logic behind them. In this way, almost each aspect of the component can have custom styles. The flipside of this approach is having lots of CSS variables means can be tough to know which one to use and how that variable is applied to the component.
 
 A structured and defined approach makes development, testing, and deployment easier and more predictable. This short document is intended to introduce the approach used designing and developing `sveltinio/*` components.
 
-## BEM
+## Sveltinio components - Naming conventions
 
-[BEM] is a component-based approach to web development. The idea behind it is to divide the user interface into independent blocks. This makes interface development easy and fast even with a complex UI, and it allows reuse of existing code without copying and pasting.
+We tried to follow the principles detailed in the [CSS architecture for design systems] and the [CSS Guidelines (2.2.5)] by [Harry Roberts].
 
-- **B**: it stands for Block
-- **E**: it stands for Elements
-- **M**: it stands for Modifiers
+CSS classes and variables for components follow a [BEM] inspired approach.
 
-### BEM Naming Rule
-
-`block-name__elem-name_mod-name_mod-val`
-
-- Names are written in lowercase Latin letters
-- Words are separated by a hyphen (`-`)
-- The block name defines the namespace for its elements and modifiers
-- The element name is separated from the block name by a double underscore (`__`)
-- The modifier name is separated from the block or element name by a single underscore (`_`)
-- The modifier value is separated from the modifier name by a single underscore (`_`)
-- For boolean modifiers, the value is not included in the name
-
-## Sveltinio components - Approach
-
-We used a BEM inspired approach to name CSS classes and variables for components leveraging on the CSS nested classes approach through [postcss] and [postcss-present-env] to make the CSS classes and variables:
+Leveraging on the CSS nested classes approach through [postcss] and [postcss-present-env] as well as the CSS pseudo-class selectors like `:is` and `:where` to make CSS classes and variables:
 
 - scoped to the component
 - with a shorter name
@@ -45,17 +29,19 @@ We used a BEM inspired approach to name CSS classes and variables for components
 
 A class name for a component in `@sveltinio/*` package follows the format:
 
-`s<package>__<component>--<block-name>`
+`sn-<package>-<category-class>__<component>__<element>--<modifier>`
 
-- **s**: stands for "sveltin". A simple dummy char
-- **package**: the first letter of the package name (e.g. w=widgets)
-- **component**: a shorter string representing for the component name
-- **block-name**: as described by the BEM naming rule
+- **sn**: stands for "sveltin" used as global namespace;
+- **package**: the first letter of the package name (e.g. `e` for `essentials`, `w` for `widgets`, etc.);
+- **category-class**: `c-` means "component" etc.;
+- **component**: is the primary component block, the `block` as per BEM;
+- **element** is a child of the primary block, as per BEM;
+- **modifier**: is a variation of a component style, as per BEM.
 
-Each component is wrapped by a parent HTML element with 2 CSS classes:
+The component block 2 CSS classes:
 
-- `s<package>__<component>`: contains all the CSS variables used by the component
-- `s<package>__<component>_main`: represents the parent class used to nest and scope all the other ones
+- `sn-<package>-<category-class>-<component>-vars`: contains all the CSS variables used by the component;
+- `sn-<package>-<category-class>-<component>`: represents the main class used style the component and the one to nest and scope all the other classes.
 
 ### CSS variables names
 
@@ -103,6 +89,9 @@ Breakpoints are identified with the last two letters of the variable name (`sm`,
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
 [BEM]: https://en.bem.info/methodology/naming-convention/
+[CSS architecture for design systems]: https://bradfrost.com/blog/post/css-architecture-for-design-systems/
+[CSS Guidelines (2.2.5)]: https://cssguidelin.es/
+[Harry Roberts]: http://csswizardry.com/
 [postcss]: https://postcss.org/
 [postcss-present-env]: https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env
 [Tailwind CSS]: https://tailwindcss.com
