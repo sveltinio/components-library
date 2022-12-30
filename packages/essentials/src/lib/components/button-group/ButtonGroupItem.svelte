@@ -23,7 +23,12 @@
 	});
 </script>
 
-<button {id} class="btngroup__item" class:active={activeButton === id} on:click={clickDispatcher}>
+<button
+	{id}
+	class="btngroup__item"
+	class:is-active={activeButton === id}
+	on:click={clickDispatcher}
+>
 	{#if icon}
 		<svelte:component this={icon} />
 	{/if}

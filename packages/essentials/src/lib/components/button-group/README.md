@@ -23,11 +23,21 @@
 
 The `ButtonGroup` component is the main wrapper component.
 
+### Functionals
+
 | Property     | Type   | Required | Default      | Description                                                  |
 | :----------- | :----: | :------: | :----------: |:------------------------------------------------------------ |
 | activeButton | string |    no    | empty string | show/hide the items                                          |
 | size         | string |    no    | `base`       | Set the label size. One of: [`xs`, `sm`, `base`, `md`, `lg`] |
-| styles       | Object |    no    | empty object | Used to pass CSS variables to apply custom styles            |
+
+### Styles
+
+| Property |  Type   | Required |   Default   | Description                                       |
+| :------- | :-----: | :------: | :---------: | :------------------------------------------------ |
+| class    | string  |    no    |             | The css class name used to make a theme variant   |
+| styles   | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles |
+
+Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
 ## Theming
 

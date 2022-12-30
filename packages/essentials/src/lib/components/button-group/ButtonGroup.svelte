@@ -13,6 +13,7 @@
 
 	// to avoid hacking default class names
 	if (!isValidClassName(className, ['sn-e-c-btn-vars', 'sn-e-c-btn'])) {
+		console.error('@sveltinio ERROR: Invalid class name for the ButtonGroup component!');
 		className = '';
 	}
 

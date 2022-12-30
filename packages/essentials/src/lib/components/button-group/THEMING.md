@@ -13,7 +13,7 @@ The two component properties `styles` and `theme` are the ones allowing you to c
 
 The CSS variables are defined in the [variables.css](./variables.css) file.
 
-## Example
+## Examples
 
 ### Custom Styles with prop
 
