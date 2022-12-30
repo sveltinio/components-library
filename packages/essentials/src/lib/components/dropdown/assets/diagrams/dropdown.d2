@@ -1,0 +1,37 @@
+# Layout Engine: Dagre
+DOM: "Dropdown Component Structure" {
+  DropdownButton: {
+    # keys, shapes and labels
+    button.shape: circle
+    arrowDown: svg
+    arrowDown.shape: circle
+    arrowUp: svg
+    arrowUp.shape: circle
+    # connections
+    button -> arrowDown: arrowDown
+    button -> arrowUp: arrowUp
+  }
+
+  DropdownMenu: {
+    list.shape: circle
+    list: "ul"
+  }
+
+  DropdownItem: {
+    # keys, shapes and labels
+    li.shape: circle
+    item: "a"
+    item.shape: circle
+    # connections
+    li -> item
+    _.DropdownMenu.list -> li: {
+      source-arrowhead: 1
+      target-arrowhead: *
+    }
+  }
+
+  # connections
+  div.shape: circle
+  div -> DropdownButton
+  div -> DropdownMenu
+}

@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/* stylelint-disable declaration-empty-line-before */
+
+/* CSS file minified in production */
+
+@import url("../reset") screen;
+@import url("./variables") screen;
+
+.sn-e-c-dropdown {
+  position: relative;
+  font-size: var(--_font-size);
+  font-weight: var(--_font-weight);
+  line-height: var(--_line-height);
+  letter-spacing: var(--_letter-spacing);
+
+  & .show {
+    display: block;
+  }
+
+  & .hide {
+    display: none;
+  }
+
+  & .btn {
+    cursor: var(--_btn-cursor);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--_btn-icon-gap);
+    color: var(--_btn-color);
+    font-size: var(--_btn-font-size);
+    font-weight: var(--_btn-font-weight);
+    line-height: var(--_btn-line-height);
+    letter-spacing: var(--_btn-letter-spacing);
+    padding-top: var(--_btn-pt);
+    padding-right: var(--_btn-pr);
+    padding-bottom: var(--_btn-pb);
+    padding-left: var(--_btn-pl);
+    border-color: var(--_btn-border-color);
+    border-style: var(--_btn-border-style);
+    border-width: var(--_btn-border-width);
+    border-radius: var(--_btn-border-radius);
+    background-color: var(--_btn-bg-color);
+
+    &:hover {
+      background-color: var(--_btn-bg-color-hover);
+    }
+
+    &:focus {
+      outline-color: var(--_btn-ring-color);
+      outline-width: var(--_btn-ring-width);
+      outline-style: var(--_btn-ring-style);
+      outline-offset: var(--_btn-ring-offset);
+    }
+
+    & .btn__icon {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      color: var(--_icon-color);
+    }
+  }
+
+  & .list {
+    list-style: none;
+    max-width: var(--_content-max-w);
+    width: var(--_content-width);
+    color: var(--_content-color);
+    margin-top: var(--_content-mt);
+    margin-right: var(--_content-mr);
+    margin-bottom: var(--_content-mb);
+    margin-left: var(--_content-ml);
+    background-color: var(--_content-bg-color);
+    box-shadow: 0 0 0 0 hsl(0deg 0% 100%), 0 0 0 1px hsl(210deg 40% 96%);
+
+    & .list__item {
+      cursor: var(--_item-curson);
+      padding-top: var(--_item-pt);
+      padding-right: var(--_item-pr);
+      padding-bottom: var(--_item-pb);
+      padding-left: var(--_item-pl);
+
+      &:hover {
+        background-color: var(--_item-bg-color-hover);
+      }
+
+      & a {
+        color: var(--_item-color);
+        text-decoration: var(--_item-text-decoration, none);
+      }
+    }
+  }
+
+  & .list--absolute {
+    position: absolute;
+    transform-origin: top;
+    z-index: var(--_content-z-index);
+  }
+
+  & .rotate0 {
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  & .rotate180 {
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(-180deg);
+  }
+}

@@ -1,50 +1,45 @@
 <script lang="ts">
 	import { navItems } from '../../../../src/data/sample.js';
-	import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '$lib/index.js';
-
-	const handleDropdownButton = (event: { detail: string }) => {
-		alert('dropdown clicked on:' + event.detail);
-	};
+	import { Dropdown, DropdownButton, DropdownContent, DropdownItem } from '$lib/index.js';
 </script>
 
 <section class="main">
 	<h1><tt>@sveltinio/essentials</tt></h1>
-
 	<h2><tt>Dropdown</tt></h2>
+</section>
 
-	<section id="dropdown-menu" class="container">
+<section>
+	<div class="demo-container">
 		<h3>Dropdown items as links</h3>
 		<Dropdown>
 			<DropdownButton label="Posts" />
-			<DropdownMenu>
+			<DropdownContent>
 				{#each navItems as item}
 					{#if item.children}
 						{#each item.children as child}
-							<DropdownItem id={child.weight} label={child.name} href={child.url} />
+							<DropdownItem label={child.name} href={child.url} />
 						{/each}
 					{/if}
 				{/each}
-			</DropdownMenu>
+			</DropdownContent>
 		</Dropdown>
-	</section>
+	</div>
+</section>
 
-	<section id="dropdown-button" class="container">
-		<h3>Dropdown items as button</h3>
+<section>
+	<div class="demo-container">
+		<h3>Dropdown Menu absolute</h3>
 		<Dropdown>
 			<DropdownButton label="Posts" />
-			<DropdownMenu>
+			<DropdownContent absolute>
 				{#each navItems as item}
 					{#if item.children}
 						{#each item.children as child}
-							<DropdownItem
-								id={child.weight}
-								label={child.name}
-								on:click={handleDropdownButton}
-							/>
+							<DropdownItem label={child.name} href={child.url} />
 						{/each}
 					{/if}
 				{/each}
-			</DropdownMenu>
+			</DropdownContent>
 		</Dropdown>
-	</section>
+	</div>
 </section>

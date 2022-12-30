@@ -1,0 +1,51 @@
+.sn-e-c-dropdown-vars {
+  --_font-size: var(--font-size, 1rem);
+  --_font-weight: var(--font-weight, 500);
+  --_line-height: var(--line-height, 1.5rem);
+  --_letter-spacing: var(--letter-spacing, 0em);
+
+  /*- btn -*/
+  --_btn-cursor: var(--btn-cursor, pointer);
+  --_btn-color: var(--btn-color, hsl(215deg 25% 27%)); /* slate-700*/
+  --_btn-font-size: var(--btn-font-size, 1rem); /* 16px */
+  --_btn-font-weight: var(--btn-font-weight, 500);
+  --_btn-line-height: var(--btn-line-height, 1.5rem); /* 24px */
+  --_btn-letter-spacing: var(--btn-letter-spacing, 0em);
+  --_btn-bg-color: var(--btn-bg-color, hsl(210deg 40% 98%)); /* slate-50*/
+  --_btn-bg-color-hover: var(--btn-bg-color-hover, hsl(210deg 40% 96%)); /*slate-100*/
+  --_btn-pt: var(--btn-pt, 0.5rem);
+  --_btn-pr: var(--btn-pr, 1rem);
+  --_btn-pb: var(--btn-pb, 0.5rem);
+  --_btn-pl: var(--btn-pl, 1rem);
+  --_btn-border-color: var(--btn-border-color, hsl(213deg 27% 84%)); /* slate-300*/
+  --_btn-border-style: var(--btn-border-style, solid);
+  --_btn-border-width: var(--btn-border-width, 1px);
+  --_btn-border-radius: var(--btn-border-radius, 0.25rem);
+  --_btn-ring-color: var(--btn-ring-color, transparent);
+  --_btn-ring-width: var(--btn-ring-width, 2px);
+  --_btn-ring-style: var(--btn-ring-style, solid);
+  --_btn-ring-offset: var(--btn-ring-offset, 2px);
+  --_btn-icon-gap: var(--btn-icon-gap, 0.125rem);
+
+  /*- content -*/
+  --_content-max-w: var(--content-max-w, 24rem); /* 384px */
+  --_content-color: var(--content-color, hsl(215deg 25% 27%)); /* slate-700*/
+  --_content-bg-color: var(--content-bg-color, hsl(0deg 0% 100%)); /* white */
+  --_content-width: var(--content-width, 14rem); /* 224px */
+  --_content-mt: var(--content-mt, 0.5rem); /* 8px */
+  --_content-mr: var(--content-mr, 0);
+  --_content-mb: var(--content-mb, 0);
+  --_content-ml: var(--content-ml, 0);
+  --_content-z-index: var(--content-z-index, 10);
+
+  /*- item -*/
+  --_item-cursor: var(--item-cursor, pointer);
+  --_item-color: var(--item-color, hsl(215deg 25% 27%)); /* slate-700*/
+
+  --_item-text-decoration: var(--item-text-decoration, none);
+  --_item-bg-color-hover: var(--item-bg-color-hover, hsl(210deg 40% 96%)); /*slate-100*/
+  --_item-pt: var(--item-pt, 0.5rem); /* 8px */
+  --_item-pr: var(--item-pr, 1rem); /* 16px */
+  --_item-pb: var(--item-pb, 0.5rem); /* 8px */
+  --_item-pl: var(--item-pl, 1rem); /* 16px */
+}

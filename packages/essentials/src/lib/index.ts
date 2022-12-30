@@ -1,6 +1,3 @@
-import { ArrowDownIcon, ArrowUpIcon, ArrowRightIcon } from './components/icons/index.js';
-export { ArrowDownIcon, ArrowUpIcon, ArrowRightIcon };
-
 import { Button } from './components/button/index.js';
 export { Button };
 
@@ -18,10 +15,10 @@ export { ExternalLinkIcon, Link };
 import {
 	Dropdown,
 	DropdownButton,
-	DropdownMenu,
+	DropdownContent,
 	DropdownItem
 } from './components/dropdown/index.js';
-export { Dropdown, DropdownButton, DropdownMenu, DropdownItem };
+export { Dropdown, DropdownButton, DropdownContent, DropdownItem };
 
 import type { ListItem } from './components/list/types.js';
 export type { ListItem };
