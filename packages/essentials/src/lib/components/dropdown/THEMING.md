@@ -37,6 +37,8 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 
 ## Examples
 
+<img src="./assets/images/custom_styles.png" alt="Dropdown - Custom Styles" />
+
 ### Custom Styles with prop
 
 ```html
@@ -49,34 +51,38 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
    } from '@sveltinio/essentials';
 
    const myStyles = {
-      color: "rgb(54 83 20)",
-      "border-color": "rgb(236 252 203)",
-      "bg-color": "rgb(132 204 22)",
-      "bg-hover": "rgb(163 230 53)",
-      "ring-color": "rgb(190 242 100)",
-      "ring-style": "dashed"
-   }
+      'btn-color': '#ecfeff',
+      'btn-bg-color': '#0891b2',
+      'btn-bg-color-hover': '#0e7490',
+      'btn-border-color': '#67e8f9',
+      'content-bg-color': '#ecfeff',
+      'item-color': '#164e63',
+      'item-bg-color-hover': '#cffafe'
+   };
 </script>
 
-<Button
-   label="Custom Success"
-   type="success"
-   rounded
-   withFocus
-   styles={myStyles}
-/>
+<Dropdown styles={myStyles}>
+ <DropdownButton label="Menu" />
+ <DropdownContent>
+  <DropdownItem label="Item 1" href="#" />
+  <DropdownItem label="Item 2" href="#" />
+  <DropdownItem label="Item 3" href="#" />
+ </DropdownContent>
+</Dropdown>
 ```
 
 ### Custom Styles with CSS Class
 
 ```css
 /* app.css*/
-.my-primary-btn {
-  --primary-color: white;
-  --primary-bg-color: #a855f7;
-  --primary-border-color: #e879f9;
-  --primary-bg-color-hover: #c026d3;
-  --primary-ring-color: #d946ef;
+.my-dropdown {
+  --btn-color: #ecfeff;
+  --btn-bg-color: #0891b2;
+  --btn-bg-color-hover: #0e7490;
+  --btn-border-color: #67e8f9;
+  --content-bg-color: #ecfeff;
+  --item-color: #164e63;
+  --item-bg-color-hover: #cffafe;
 }
 ```
 
@@ -90,7 +96,14 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
    } from '@sveltinio/essentials';
 </script>
 
-<Button label="My Primary Button" type="primary" rounded class="my-primary-btn" />
+<Dropdown class="my-dropdown">
+ <DropdownButton label="Menu" />
+ <DropdownContent>
+  <DropdownItem label="Item 1" href="#" />
+  <DropdownItem label="Item 2" href="#" />
+  <DropdownItem label="Item 3" href="#" />
+ </DropdownContent>
+</Dropdown>
 ```
 
 <!-- Resources -->

@@ -41,6 +41,7 @@
   /*- item -*/
   --_item-cursor: var(--item-cursor, pointer);
   --_item-color: var(--item-color, hsl(215deg 25% 27%)); /* slate-700*/
+  --_item-color-hover: var(--item-color-hover, var(var(--_item-color)));
 
   --_item-text-decoration: var(--item-text-decoration, none);
   --_item-bg-color-hover: var(--item-bg-color-hover, hsl(210deg 40% 96%)); /*slate-100*/

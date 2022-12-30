@@ -74,20 +74,27 @@
     background-color: var(--_content-bg-color);
     box-shadow: 0 0 0 0 hsl(0deg 0% 100%), 0 0 0 1px hsl(210deg 40% 96%);
 
-    & .list__item {
-      cursor: var(--_item-curson);
-      padding-top: var(--_item-pt);
-      padding-right: var(--_item-pr);
-      padding-bottom: var(--_item-pb);
-      padding-left: var(--_item-pl);
-
+    & .item {
+      cursor: var(--_item-cursor);
       &:hover {
         background-color: var(--_item-bg-color-hover);
       }
 
       & a {
+        display: inline-flex;
+        width: 100%;
         color: var(--_item-color);
         text-decoration: var(--_item-text-decoration, none);
+
+        padding-top: var(--_item-pt);
+        padding-right: var(--_item-pr);
+        padding-bottom: var(--_item-pb);
+        padding-left: var(--_item-pl);
+
+        &:hover {
+          color: var(--_item-color-hover);
+          background-color: var(--_item-bg-color-hover);
+        }
       }
     }
   }

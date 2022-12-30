@@ -5,7 +5,7 @@
 	export let target = '_self';
 </script>
 
-<li class="list__item">
+<li class="item">
 	<a {href} {target} data-sveltekit-preload-data={prefetch ? 'hover' : 'off'} role="menuitem">
 		{label}
 	</a>
