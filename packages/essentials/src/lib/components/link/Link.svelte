@@ -16,6 +16,7 @@
 
 	// to avoid hacking default class names
 	if (!isValidClassName(className, ['sn-e-c-link-vars', 'sn-e-c-link'])) {
+		console.error('@sveltinio ERROR: Invalid class name for the Link component!');
 		className = '';
 	}
 
