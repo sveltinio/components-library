@@ -23,26 +23,55 @@
 	};
 </script>
 
-<h3>Default</h3>
-<ToggleList bind:route={$page} title="My Toggle List" items={contentForToggleList} />
+<section class="main">
+	<h1><tt>@sveltinio/essentials</tt></h1>
+	<h2><tt>Tabs</tt></h2>
+</section>
 
-<h3>Left Side icon</h3>
-<ToggleList title="My Toggle List" items={contentForToggleList}>
-	<BellIcon size="20" slot="leftSideIcon" />
-</ToggleList>
+<section>
+	<div class="demo-container">
+		<h3>Default</h3>
+		<ToggleList bind:route={$page} title="My Toggle List" items={contentForToggleList} />
+	</div>
+</section>
 
-<h3>Full Size</h3>
-<ToggleList title="My Toggle List" items={contentForToggleList} full />
+<section>
+	<div class="demo-container">
+		<h3>Left Side icon</h3>
+		<ToggleList title="My Toggle List" items={contentForToggleList}>
+			<BellIcon size="20" slot="leftSideIcon" />
+		</ToggleList>
+	</div>
+</section>
 
-<h3>Custom Icon on the right side</h3>
-<ToggleList title="My Toggle List" items={contentForToggleList}>
-	<LongArrowDownRightIcon slot="rightSideIcon" />
-</ToggleList>
+<section>
+	<div class="demo-container">
+		<h3>Full Size</h3>
+		<ToggleList title="My Toggle List" items={contentForToggleList} full />
+	</div>
+</section>
 
-<h3>Custom Styles with props</h3>
-<ToggleList title="My Toggle List" items={contentForToggleList} styles={myOwnStyles} full>
-	<LongArrowDownRightIcon slot="rightSideIcon" />
-</ToggleList>
+<section>
+	<div class="demo-container">
+		<h3>Custom Icon on the right side</h3>
+		<ToggleList title="My Toggle List" items={contentForToggleList}>
+			<LongArrowDownRightIcon slot="rightSideIcon" />
+		</ToggleList>
+	</div>
+</section>
 
-<h3>Custom Styles with CSS class</h3>
-<ToggleList title="My Toggle List" items={contentForToggleList} class="my-togglelist" />
+<section>
+	<div class="demo-container">
+		<h3>Custom Styles with props</h3>
+		<ToggleList title="My Toggle List" items={contentForToggleList} styles={myOwnStyles} full>
+			<LongArrowDownRightIcon slot="rightSideIcon" />
+		</ToggleList>
+	</div>
+</section>
+
+<section>
+	<div class="demo-container">
+		<h3>Custom Styles with CSS class</h3>
+		<ToggleList title="My Toggle List" items={contentForToggleList} class="my-togglelist" />
+	</div>
+</section>
