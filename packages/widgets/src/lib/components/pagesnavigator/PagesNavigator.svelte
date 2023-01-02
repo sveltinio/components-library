@@ -12,8 +12,8 @@
 	export let labels = true;
 	export let spacer = false;
 
-	let themeClassName = '';
-	export { themeClassName as theme };
+	let className = '';
+	export { className as class };
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
@@ -26,8 +26,8 @@
 </script>
 
 <div
-	class="sw__pagesnav sw__pagesnav__main {themeClassName}"
-	class:sw__pagesnav__spacer_bottom={!prev.href || !next.href}
+	class="sn-w-colors sn-w-c-pagesnav-vars sn-w-c-pagesnav {className}"
+	class:pagesnav__spacer--bottom={!prev.href || !next.href}
 	style={cssStyles}
 	data-testid="pagesnav-main"
 >

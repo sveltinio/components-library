@@ -59,56 +59,70 @@
 </section>
 
 <section>
-	<h3>Default Styles</h3>
-	<PagesNavigator prev={prevObj} next={nextObj} />
+	<div class="demo-container">
+		<h3>Default Styles</h3>
+		<PagesNavigator prev={prevObj} next={nextObj} />
 
-	<h3>Custom Icons</h3>
-	<PagesNavigator prev={prevObj} next={nextObj}>
-		<span slot="prevIcon">
-			<svg
-				width="20px"
-				height="20px"
-				stroke-width="1.5"
-				viewBox="0 0 24 24"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-				color="currentColor"
-				><path
-					d="M16 12H8m0 0l3.5 3.5M8 12l3.5-3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-					stroke="currentColor"
+		<h3>Custom Icons</h3>
+		<PagesNavigator prev={prevObj} next={nextObj}>
+			<span slot="prevIcon">
+				<svg
+					width="20px"
+					height="20px"
 					stroke-width="1.5"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				/></svg
-			>
-		</span>
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					color="currentColor"
+					><path
+						d="M16 12H8m0 0l3.5 3.5M8 12l3.5-3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/></svg
+				>
+			</span>
 
-		<span slot="nextIcon">
-			<svg
-				width="20px"
-				height="20px"
-				stroke-width="1.5"
-				viewBox="0 0 24 24"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-				color="currentColor"
-				><path
-					d="M8 12h8m0 0l-3.5-3.5M16 12l-3.5 3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-					stroke="currentColor"
+			<span slot="nextIcon">
+				<svg
+					width="20px"
+					height="20px"
 					stroke-width="1.5"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				/></svg
-			>
-		</span>
-	</PagesNavigator>
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					color="currentColor"
+					><path
+						d="M8 12h8m0 0l-3.5-3.5M16 12l-3.5 3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/></svg
+				>
+			</span>
+		</PagesNavigator>
+	</div>
+</section>
 
-	<h3>Custom Styles - Sample 1</h3>
-	<PagesNavigator prev={prevObj} next={nextObj} styles={customStyles_1} spacer />
+<section>
+	<div class="demo-container">
+		<h3>Custom Styles - Sample 1</h3>
+		<PagesNavigator prev={prevObj} next={nextObj} styles={customStyles_1} spacer />
+	</div>
+</section>
 
-	<h3>Custom Styles - Sample 2</h3>
-	<PagesNavigator prev={prevObj} next={nextObj} styles={dark} spacer />
+<section>
+	<div class="demo-container">
+		<h3>Custom Styles - Sample 2</h3>
+		<PagesNavigator prev={prevObj} next={nextObj} styles={dark} spacer />
+	</div>
+</section>
 
-	<h3>Custom Styles - with css class</h3>
-	<PagesNavigator prev={prevObj} next={nextObj} theme="pagesnav-orange" />
+<section>
+	<div class="demo-container">
+		<h3>Custom Styles - with css class</h3>
+		<PagesNavigator prev={prevObj} next={nextObj} class="pagesnav-orange" />
+	</div>
 </section>

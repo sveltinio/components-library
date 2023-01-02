@@ -1,17 +1,16 @@
 @charset "UTF-8";
 /* stylelint-disable declaration-empty-line-before */
 
+/* CSS file minified in production */
+
 @import url("../reset") screen;
+@import url("../colors") screen;
 @import url("./variables") screen;
 
 @custom-media --viewport-medium (min-width: 768px);
 @custom-media --viewport-large (min-width: 1024px);
 
-.sw__pagesnav__spacer_bottom {
-  padding-bottom: 1rem;
-}
-
-.sw__pagesnav__main {
+.sn-w-c-pagesnav {
   max-width: var(--_max-width);
   display: flex;
   flex-direction: column;
@@ -270,7 +269,7 @@
         margin-right: auto;
       }
 
-      & .prev__only_with_spacer {
+      & .prev__only--with-spacer {
         margin-right: 0;
       }
 
@@ -279,7 +278,7 @@
         margin-left: auto;
       }
 
-      & .next__only_with_spacer {
+      & .next__only--with-spacer {
         margin-left: 0;
       }
 
@@ -289,11 +288,11 @@
         border-left-color: var(--_spacer-color);
       }
 
-      & .spacer__with_prev {
+      & .spacer--with-prev {
         margin-right: auto;
       }
 
-      & .spacer__with_next {
+      & .spacer--with-next {
         margin-left: auto;
       }
     }
@@ -377,7 +376,7 @@
         margin-right: auto;
       }
 
-      & .prev__only_with_spacer {
+      & .prev__only--with-spacer {
         margin-right: 0;
       }
 
@@ -386,17 +385,21 @@
         margin-left: auto;
       }
 
-      & .next__only_with_spacer {
+      & .next__only--with-spacer {
         margin-left: 0;
       }
 
-      & .spacer__with_prev {
+      & .spacer__with-prev {
         margin-right: auto;
       }
 
-      & .spacer__with_next {
+      & .spacer__with-next {
         margin-left: auto;
       }
     }
   }
+}
+
+.pagesnav__spacer--bottom {
+  padding-bottom: 1rem;
 }

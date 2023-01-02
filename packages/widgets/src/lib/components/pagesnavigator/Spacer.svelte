@@ -13,6 +13,6 @@
 
 <div
 	class="spacer"
-	class:spacer__with_prev={spacer && !isValid(next)}
-	class:spacer__with_next={spacer && !isValid(prev)}
+	class:spacer--with-prev={spacer && !isValid(next)}
+	class:spacer--with-next={spacer && !isValid(prev)}
 />

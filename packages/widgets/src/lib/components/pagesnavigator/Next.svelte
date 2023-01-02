@@ -20,12 +20,11 @@
 
 <a
 	href={next.href}
-	alt="link to {nextAltText}"
 	title="link to {nextAltText}"
 	aria-label="link to {nextAltText}"
 	class="link"
 	class:next__only={!isValid(prev)}
-	class:next__only_with_spacer={spacer && !isValid(prev)}
+	class:next__only--with-spacer={spacer && !isValid(prev)}
 	data-testid="link-to-next"
 >
 	<div class="content">

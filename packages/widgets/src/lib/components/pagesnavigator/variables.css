@@ -1,7 +1,5 @@
-.sw__pagesnav {
-  /* * ****************************************************** */
-  /* * main (css class name: sw__pagesnav__main)              */
-  /* * ****************************************************** */
+.sn-w-c-pagesnav-vars {
+  /* * main (css class name: sn-w-c-pagesnav)              * */
   --_max-width: var(--max-width, 100%);
   --_gap: var(--gap, 0.0625rem);
   --_bg-color: var(--bg-color, transparent);
@@ -13,7 +11,7 @@
   --_pr: var(--pr, 0);
   --_pb: var(--pb, 0.5rem);
   --_pl: var(--pl, 0);
-  --_border-t-color: var(--border-t-color, hsl(214deg 32% 91%)); /* slate-200 */
+  --_border-t-color: var(--border-t-color, var(--slate-200));
   --_border-t-style: var(--border-t-style, solid);
   --_border-t-width: var(--border-t-width, 1px);
   --_border-r-color: var(--border-r-color, transparent);
@@ -34,20 +32,16 @@
   --_gap-lg: var(--gap-md, var(--_gap-md));
   --_max-width-lg: var(--max-width-lg, var(--_max-width-md));
 
-  /* * ****************************************************** */
-  /* * spacer (css class name: spacer)                        */
-  /* * ****************************************************** */
+  /* * spacer (css class name: spacer)                        * */
   --_spacer-width: var(--spacer-width, 1px);
   --_spacer-style: var(--spacer-style, solid);
-  --_spacer-color: var(--spacer-color, hsl(214deg 32% 91%)); /* slate-200 */
+  --_spacer-color: var(--spacer-color, var(--slate-200));
 
-  /* * ****************************************************** */
-  /* * link (css class name: link)                            */
-  /* * ****************************************************** */
+  /* * link (css class name: link)                            * */
   --_link-width: var(--link-width, 100%);
   --_link-cursor: var(--link-cursor, pointer);
   --_link-bg-color: var(--link-bg-color, transparent);
-  --_link-border-color: var(--link-border-color, hsl(214deg 32% 91%)); /* slate-200 */
+  --_link-border-color: var(--link-border-color, var(--slate-200));
   --_link-border-style: var(--link-border-style, solid);
   --_link-border-width: var(--link-border-width, 1px);
   --_link-border-radius: var(--link-border-radius, 0.25rem);
@@ -59,8 +53,8 @@
   --_link-pr: var(--link-pr, 0);
   --_link-pb: var(--link-pb, 0);
   --_link-pl: var(--link-pl, 0);
-  --_link-bg-color-hover: var(--link-bg-color-hover, hsl(210deg 40% 98%)); /* slate-50 */
-  --_link-border-color-hover: var(--link-border-color, hsl(214deg 32% 91%)); /* slate-200 */
+  --_link-bg-color-hover: var(--link-bg-color-hover, var(--slate-50));
+  --_link-border-color-hover: var(--link-border-color, var(--slate-200));
   --_link-border-style-hover: var(--link-border-style, solid);
   --_link-border-width-hover: var(--link-border-width, 1px);
   /* - content: md breakpoint (min-width: 768px) */
@@ -84,9 +78,7 @@
   --_link-pb-lg: var(--link-pb-lg, var(--_link-pb-md));
   --_link-pl-lg: var(--link-pl-lg, var(--_link-pl-md));
 
-  /* * ****************************************************** */
   /* * content (css class name: content )                     */
-  /* * ****************************************************** */
   --_content-width: var(--content-width, 100%);
   --_content-gap: var(--content-gap, 0.25rem);
   --_content-mt: var(--content-mt, 0);
@@ -130,9 +122,7 @@
   --_content-pb-lg: var(--content-pb-lg, 1rem);
   --_content-pl-lg: var(--content-pl-lg, var(--_content-pl-md));
 
-  /* * ****************************************************** */
-  /* * left side content (css class name: content__previous ) */
-  /* * ****************************************************** */
+  /* * left side content (css class name: content__previous ) * */
   --_content-l-ml: var(--content-l-ml, 0);
   --_content-l-mr: var(--content-l-mr, 0);
   --_content-l-text-align: var(--content-l-text-align, left);
@@ -143,11 +133,9 @@
   /* - content: lg breakpoint (min-width: 1024px) */
   --_content-l-ml-lg: var(--content-l-ml-lg, var(--_content-l-ml-md));
   --_content-l-mr-lg: var(--content-l-mr-lg, var(--_content-l-mr-md));
-
   --_content-l-text-align-lg: var(--content-l-text-align-lg, var(--_content-l-text-align-md));
-  /* * ****************************************************** */
-  /* * right side content (css class name: content__next )    */
-  /* * ****************************************************** */
+
+  /* * right side content (css class name: content__next )    * */
   --_content-r-ml: var(--content-r-ml, auto);
   --_content-r-mr: var(--content-r-mr, 0);
   --_content-r-text-align: var(--content-r-text-align, right);
@@ -160,15 +148,11 @@
   --_content-r-mr-lg: var(--content-r-mr-lg, var(--_content-r-mr-md));
   --_content-r-text-align-lg: var(--content-r-text-align-lg, var(--_content-r-text-align-md));
 
-  /* * ****************************************************** */
-  /* * icon (css class name: content__icon)                   */
-  /* * ****************************************************** */
-  --_icon-color: var(--icon-color, hsl(0deg 0% 0%));
+  /* * icon (css class name: content__icon)                   * */
+  --_icon-color: var(--icon-color, var(--black));
 
-  /* * ****************************************************** */
-  /* * placeholder (css class name: content__placeholder)     */
-  /* * ****************************************************** */
-  --_placeholder-color: var(--placeholder-color, hsl(215deg 25% 27%)); /* slate-700 */
+  /* * placeholder (css class name: content__placeholder)     * */
+  --_placeholder-color: var(--placeholder-color, var(--slate-700));
   --_placeholder-font-size: var(--placeholder-font-size, 0.875rem);
   --_placeholder-font-weight: var(--placeholder-font-weight, 400);
   --_placeholder-line-height: var(--placeholder-line-height, 1.5);
@@ -229,9 +213,7 @@
   --_placeholder-pb-lg: var(--placeholder-pb-lg, var(--_placeholder-pt-md));
   --_placeholder-pl-lg: var(--placeholder-pl-lg, var(--_placeholder-pt-md));
 
-  /* * ****************************************************** */
-  /* * message (css class name: content__message)             */
-  /* * ****************************************************** */
+  /* * message (css class name: content__message)             * */
   --_message-color: var(--message-color, hsl(215deg 25% 27%)); /* slate-700 */
   --_message-font-size: var(--message-font-size, 0.875rem);
   --_message-font-weight: var(--message-font-weight, 500);
