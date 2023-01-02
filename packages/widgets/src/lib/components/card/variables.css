@@ -1,5 +1,5 @@
 .sn-w-c-card-vars {
-  /* * main (class name: sw__card__main)           * */
+  /* * main (class name: sn-w-c-card)              * */
   --_width: var(--width, 24rem);
   --_max-width: var(--max-width, var(--_width));
   --_mt: var(--mt, 0rem);

@@ -114,7 +114,7 @@ The `Card` component provides two slots:
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-The two component properties `styles` and `theme` are the ones allowing you to customize the component appearence.
+The two component properties `styles` and `class` are the ones allowing you to customize the component appearence.
 
 Read more [here](./THEMING.md)
 
