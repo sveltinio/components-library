@@ -1,22 +1,20 @@
 .sn-e-c-btn-vars {
-  /** ************************************* */
-  /** main (css class name: sn-e-c-btn)  */
-  /** ************************************* */
+  /* * main (css class name: sn-e-c-btn) * */
   --_cursor: var(--cursor, pointer);
   --_font-size: var(--font-size, 1rem);
   --_font-weight: var(--font-weight, 500);
   --_line-height: var(--line-height, 1.5rem);
   --_letter-spacing: var(--letter-spacing, 0em);
   --_text-decoration: var(--text-decoration, none);
-  --_color: var(--color, hsl(240deg 5% 34%)); /* zync-600 */
+  --_color: var(--color, var(--zync-600));
 
-  --_border-color: var(--border-color, hsl(240deg 6% 90%)); /* zync-200 */
+  --_border-color: var(--border-color, var(--zync-200));
   --_border-width: var(--border-width, 1px);
 
-  --_bg-color: var(--bg-color, hsl(0deg 0% 98%)); /* zync-50 */
-  --_bg-color-hover: var(--bg-color-hover, hsl(240deg 5% 96%)); /* zync-100 */
+  --_bg-color: var(--bg-color, var(--zync-50));
+  --_bg-color-hover: var(--bg-color-hover, var(--zync-100));
 
-  --_outlined-bg-hover: var(--outlined-bg-hover, hsl(240deg 5% 96%)); /* zync-100 */
+  --_outlined-bg-hover: var(--outlined-bg-hover, var(--zync-100));
   --_rounded-border-radius: var(--rounded-border-radius, 0.375rem);
   --_circle-p: var(--circle-p, 4px);
 
@@ -31,9 +29,7 @@
 
   --_icon-gap: var(--icon-gap, 0.375rem);
 
-  /** ************************************* */
-  /** Sizes                                 */
-  /** ************************************* */
+  /* *  sizes                           * */
   /*- xs */
   --_font-size-xs: var(--font-size-xs, 0.75rem); /* 12 px */
   --_font-weight-xs: var(--font-weight-xs, var(--_font-weight));
@@ -64,123 +60,82 @@
   --_line-height-xl: var(--line-height-xl, 1.75rem); /* 28px */
   --_letter-spacing-xl: var(--letter-spacing-xl, var(--_letter-spacing-lg));
 
-  /** ************************************* */
-  /** Colors                                */
-  /** ************************************* */
+  /* *  colors                           * */
   /* - primary */
-  --_primary-color: var(--primary-color, hsl(0deg 0% 100%)); /* white */
-  --_primary-bg-color: var(--primary-bg-color, hsl(189deg 94% 43%)); /* cyan-500 */
-  --_primary-bg-color-hover: var(--primary-bg-color-hover, hsl(192deg 91% 36%)); /* cyan-600 */
-  --_primary-border-color: var(--primary-border-color, hsl(188deg 86% 53%)); /* cyan-400 */
-  --_primary-ring-color: var(--primary-ring-color, hsl(189deg 94% 43%)); /* cyan-500 */
-  --_primary-outlined-color: var(--primary-outlined-color, hsl(192deg 91% 36%)); /* cyan-600 */
-  --_primary-outlined-border-color: var(
-    --primary-outlined-border-color,
-    hsl(188deg 86% 53%)
-  ); /* cyan-400 */
-  --_primary-outlined-bg-hover: var(
-    --primary-outlined-bg-hover,
-    hsl(183deg 100% 96%)
-  ); /* cyan-50 */
+  --_primary-color: var(--primary-color, var(--white));
+  --_primary-bg-color: var(--primary-bg-color, var(--cyan-500));
+  --_primary-bg-color-hover: var(--primary-bg-color-hover, var(--cyan-600));
+  --_primary-border-color: var(--primary-border-color, var(--cyan-400));
+  --_primary-ring-color: var(--primary-ring-color, var(--cyan-500));
+  --_primary-outlined-color: var(--primary-outlined-color, var(--cyan-600));
+  --_primary-outlined-border-color: var(--primary-outlined-border-color, var(--cyan-400));
+  --_primary-outlined-bg-hover: var(--primary-outlined-bg-hover, var(--cyan-50));
 
   /* - secondary */
-  --_secondary-color: var(--secondary-color, hsl(0deg 0% 100%)); /* white */
-  --_secondary-bg-color: var(--secondary-bg-color, hsl(239deg 84% 67%)); /* indigo-500 */
-  --_secondary-bg-color-hover: var(
-    --secondary-bg-color-hover,
-    hsl(243deg 75% 59%)
-  ); /* indigo-600 */
-  --_secondary-border-color: var(--secondary-border-color, hsl(234deg 89% 74%)); /* indigo-400 */
-  --_secondary-ring-color: var(--secondary-ring-color, hsl(239deg 84% 67%)); /* indigo-500 */
-  --_secondary-outlined-color: var(
-    --secondary-outlined-color,
-    hsl(243deg 75% 59%)
-  ); /* indigo-600 */
-  --_secondary-outlined-border-color: var(
-    --secondary-outlined-border-color,
-    hsl(234deg 89% 74%)
-  ); /* indigo-400 */
-  --_secondary-outlined-bg-hover: var(
-    --secondary-outlined-bg-hover,
-    hsl(226deg 100% 97%)
-  ); /* indigo-50 */
+  --_secondary-color: var(--secondary-color, var(--white));
+  --_secondary-bg-color: var(--secondary-bg-color, var(--indigo-500));
+  --_secondary-bg-color-hover: var(--secondary-bg-color-hover, var(--indigo-600));
+  --_secondary-border-color: var(--secondary-border-color, var(--indigo-400));
+  --_secondary-ring-color: var(--secondary-ring-color, var(--indigo-500));
+  --_secondary-outlined-color: var(--secondary-outlined-color, var(--indigo-600));
+  --_secondary-outlined-border-color: var(--secondary-outlined-border-color, var(--indigo-500));
+  --_secondary-outlined-bg-hover: var(--secondary-outlined-bg-hover, var(--indigo-50));
 
   /* - success */
-  --_success-color: var(--success-color, hsl(0deg 0% 100%)); /* white */
-  --_success-bg-color: var(--success-bg-color, hsl(160deg 84% 39%)); /* green-500 */
-  --_success-bg-color-hover: var(--success-bg-color-hover, hsl(142deg 76% 36%)); /* green-600*/
-  --_success-border-color: var(--success-border-color, hsl(142deg 69% 58%)); /* green-400 */
-  --_success-ring-color: var(--success-ring-color, hsl(160deg 84% 39%)); /* green-500 */
-  --_success-outlined-color: var(--success-outlined-color, hsl(142deg 76% 36%)); /* green-600 */
-  --_success-outlined-border-color: var(
-    --success-outlined-border-color,
-    hsl(142deg 69% 58%)
-  ); /* green-400 */
-  --_success-outlined-bg-hover: var(--success-outlined-bg-hover, hsl(138deg 76% 97%)); /* green-50*/
+  --_success-color: var(--success-color, var(--white));
+  --_success-bg-color: var(--success-bg-color, var(--green-500));
+  --_success-bg-color-hover: var(--success-bg-color-hover, var(--green-600));
+  --_success-border-color: var(--success-border-color, var(--green-400));
+  --_success-ring-color: var(--success-ring-color, var(--green-500));
+  --_success-outlined-color: var(--success-outlined-color, var(--green-600));
+  --_success-outlined-border-color: var(--success-outlined-border-color, var(--green-400));
+  --_success-outlined-bg-hover: var(--success-outlined-bg-hover, var(--green-50));
 
   /* - error */
-  --_error-color: var(--error-color, hsl(0deg 0% 100%)); /* white */
-  --_error-bg-color: var(--error-bg-color, hsl(0deg 84% 60%)); /* red-500 */
-  --_error-bg-color-hover: var(--error-bg-color-hover, hsl(0deg 72% 51%)); /* red-600 */
-  --_error-border-color: var(--error-border-color, hsl(0deg 91% 71%)); /* red-400 */
-  --_error-ring-color: var(--error-ring-color, hsl(0deg 84% 60%)); /* red-500 */
-  --_error-outlined-color: var(--error-outlined-color, hsl(0deg 72% 51%)); /* red-600 */
-  --_error-outlined-border-color: var(
-    --error-outlined-border-color,
-    hsl(0deg 91% 71%)
-  ); /* red-400 */
-  --_error-outlined-bg-hover: var(--error-outlined-bg-hover, hsl(0deg 86% 97%)); /* red-50 */
+  --_error-color: var(--error-color, var(--white));
+  --_error-bg-color: var(--error-bg-color, var(--red-500));
+  --_error-bg-color-hover: var(--error-bg-color-hover, var(--red-600));
+  --_error-border-color: var(--error-border-color, var(--red-400));
+  --_error-ring-color: var(--error-ring-color, var(--red-500));
+  --_error-outlined-color: var(--error-outlined-color, var(--red-600));
+  --_error-outlined-border-color: var(--error-outlined-border-color, var(--red-400));
+  --_error-outlined-bg-hover: var(--error-outlined-bg-hover, var(--red-50));
 
   /* - warning */
-  --_warning-color: var(--warning-color, hsl(0deg 0% 100%)); /* white */
-  --_warning-bg-color: var(--warning-bg-color, hsl(25deg 95% 53%)); /* orange-500 */
-  --_warning-bg-color-hover: var(--warning-bg-color-hover, hsl(21deg 90% 48%)); /* orange-600 */
-  --_warning-border-color: var(--warning-border-color, hsl(27deg 96% 61%)); /* orange-400 */
-  --_warning-ring-color: var(--warning-ring-color, hsl(25deg 95% 53%)); /* orange-500 */
-  --_warning-outlined-color: var(--warning-color, hsl(21deg 90% 48%)); /* orange-600 */
-  --_warning-outlined-border-color: var(
-    --warning-outlined-border-color,
-    hsl(27deg 96% 61%)
-  ); /* orange-400 */
-  --_warning-outlined-bg-hover: var(
-    --warning-outlined-bg-hover,
-    hsl(33deg 100% 96%)
-  ); /* orange-50 */
+  --_warning-color: var(--warning-color, var(--white));
+  --_warning-bg-color: var(--warning-bg-color, var(--orange-500));
+  --_warning-bg-color-hover: var(--warning-bg-color-hover, var(--orange-600));
+  --_warning-border-color: var(--warning-border-color, var(--orange-400));
+  --_warning-ring-color: var(--warning-ring-color, var(--orange-500));
+  --_warning-outlined-color: var(--warning-color, var(--orange-600));
+  --_warning-outlined-border-color: var(--warning-outlined-border-color, var(--orange-400));
+  --_warning-outlined-bg-hover: var(--warning-outlined-bg-hover, var(--orange-50));
 
   /* - info */
-  --_info-color: var(--info-color, hsl(0deg 0% 100%)); /* white */
-  --_info-bg-color: var(--info-bg-color, hsl(199deg 89% 48%)); /* sky-500 */
-  --_info-border-color: var(--info-border-color, hsl(198deg 93% 60%)); /* sky-400 */
-  --_info-bg-color-hover: var(--info-bg-color-hover, hsl(200deg 98% 39%)); /* sky-600 */
-  --_info-ring-color: var(--info-ring-color, hsl(199deg 89% 48%)); /* sky-500 */
-
-  --_info-outlined-color: var(--info-outlined-color, hsl(200deg 98% 39%)); /* sky-600 */
-  --_info-outlined-border-color: var(
-    --info-outlined-border-color,
-    hsl(198deg 93% 60%)
-  ); /* sky-400 */
-  --_info-outlined-bg-hover: var(--info-outlined-bg-hover, hsl(204deg 100% 97%)); /* sky-50 */
+  --_info-color: var(--info-color, var(--white));
+  --_info-bg-color: var(--info-bg-color, var(--sky-500));
+  --_info-border-color: var(--info-border-color, var(--sky-400));
+  --_info-bg-color-hover: var(--info-bg-color-hover, var(--sky-600));
+  --_info-ring-color: var(--info-ring-color, var(--sky-500));
+  --_info-outlined-color: var(--info-outlined-color, var(--sky-600));
+  --_info-outlined-border-color: var(--info-outlined-border-color, var(--sky-400));
+  --_info-outlined-bg-hover: var(--info-outlined-bg-hover, var(--sky-50));
 
   /* - light */
-  --_light-color: var(--light-color, hsl(217deg 19% 27%)); /* gray-700 */
-  --_light-bg-color: var(--light-bg-color, hsl(210deg 20% 98%)); /* gray-50 */
-  --_light-bg-color-hover: var(--light-bg-color-hover, hsl(220deg 14% 96%)); /* gray-100 */
-  --_light-ring-color: var(--light-ring-color, hsl(213deg 27% 84%)); /* gray-300 */
-
-  --_light-outlined-color: var(--light-outlined-color, hsl(215deg 14% 34%)); /* gray-600 */
-  --_light-outlined-bg-hover: var(--light-outlined-bg-hover, hsl(210deg 20% 98%)); /* gray-50 */
+  --_light-color: var(--light-color, var(--gray-700));
+  --_light-bg-color: var(--light-bg-color, var(--gray-50));
+  --_light-bg-color-hover: var(--light-bg-color-hover, var(--gray-100));
+  --_light-ring-color: var(--light-ring-color, var(--gray-300));
+  --_light-outlined-color: var(--light-outlined-color, var(--gray-600));
+  --_light-outlined-bg-hover: var(--light-outlined-bg-hover, var(--gray-50));
 
   /* - dark */
-  --_dark-color: var(--dark-color, hsl(0deg 0% 100%)); /* white */
-  --_dark-bg-color: var(--dark-bg-color, hsl(240deg 5% 26%)); /* zync-700 */
-  --_dark-border-color: var(--dark-border-color, hsl(215deg 20% 65%)); /* zync-400 */
-  --_dark-bg-color-hover: var(--dark-bg-color-hover, hsl(217deg 33% 17%)); /* zync-800 */
-  --_dark-ring-color: var(--dark-ring-color, hsl(240deg 5% 26%)); /* zync-700 */
-
-  --_dark-outlined-color: var(--dark-outlined-color, hsl(217deg 33% 17%)); /* zync-800 */
-  --_dark-outlined-border-color: var(
-    --dark-outlined-border-color,
-    hsl(215deg 20% 65%)
-  ); /* zync-400 */
-  --_dark-outlined-bg-hover: var(--dark-outlined-bg-hover, hsl(0deg 0% 98%)); /* zync-50 */
+  --_dark-color: var(--dark-color, var(--white));
+  --_dark-bg-color: var(--dark-bg-color, var(--zync-700));
+  --_dark-border-color: var(--dark-border-color, var(--zync-400));
+  --_dark-bg-color-hover: var(--dark-bg-color-hover, var(--zync-800));
+  --_dark-ring-color: var(--dark-ring-color, var(--zync-700));
+  --_dark-outlined-color: var(--dark-outlined-color, var(--zync-800));
+  --_dark-outlined-border-color: var(--dark-outlined-border-color, var(--zync-400));
+  --_dark-outlined-bg-hover: var(--dark-outlined-bg-hover, var(--zync-50));
 }

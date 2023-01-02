@@ -22,7 +22,7 @@
 	export { className as class };
 
 	// to avoid hacking default class names
-	if (!isValidClassName(className, ['sn-e-c-btn-vars', 'sn-e-c-btn'])) {
+	if (!isValidClassName(className, ['sn-e-colors', 'sn-e-c-btn-vars', 'sn-e-c-btn'])) {
 		console.error('@sveltinio ERROR: Invalid class name for the Button component!');
 		className = '';
 	}
@@ -48,7 +48,7 @@
 		target={external ? '_blank' : '_self'}
 		aria-label={_altText}
 		data-testid="btn"
-		class="sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass}"
+		class="sn-e-colors sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass}"
 		class:btn--full={fullSize}
 		class:btn--rounded={rounded}
 		class:btn--circle={circle}
@@ -71,7 +71,7 @@
 	<button
 		aria-label={_altText}
 		data-testid="btn"
-		class="sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {className}"
+		class="sn-e-colors sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {className}"
 		class:btn--full={fullSize}
 		class:btn--rounded={rounded}
 		class:btn--circle={circle}
