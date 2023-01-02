@@ -34,33 +34,10 @@
 	https://source.unsplash.com/600x400/?music
 	https://placeimg.com/400/400/any
 -->
-<section>
-	<div class="demo-card-container">
-		<ResponsiveCard
-			title={contentItem_1.metadata.title}
-			content={contentItem_1.metadata.headline ?? ''}
-		>
-			<ResponsiveCardImage slot="cardImage" src={item_1_CoverImgPath} alt="viola photo" />
-			<ResponsiveCardBadge
-				slot="cardBadge"
-				data={{
-					value: String(contentItem_1.metadata.category),
-					color: 'red',
-					url: ResourceContentUtils.getMetadataURL(
-						base,
-						contentItem_1.resource,
-						'category',
-						String(contentItem_1.metadata.category)
-					)
-				}}
-			/>
-			<ResponsiveCardInfo
-				slot="cardInfo"
-				author={contentItem_1.metadata.author ?? ''}
-				date={contentItem_1.metadata.created_at ?? ''}
-			/>
-		</ResponsiveCard>
 
+<section>
+	<div class="demo-container">
+		<h3>Complete</h3>
 		<ResponsiveCard
 			title={contentItem_2.metadata.title}
 			content={contentItem_2.metadata.headline ?? ''}
@@ -94,7 +71,42 @@
 				href={ResourceContentUtils.getURL(base, contentItem_2)}
 			/>
 		</ResponsiveCard>
+	</div>
+</section>
 
+<section>
+	<div class="demo-container">
+		<h3>Title as Link</h3>
+		<ResponsiveCard
+			title={contentItem_1.metadata.title}
+			content={contentItem_1.metadata.headline ?? ''}
+		>
+			<ResponsiveCardImage slot="cardImage" src={item_1_CoverImgPath} alt="viola photo" />
+			<ResponsiveCardBadge
+				slot="cardBadge"
+				data={{
+					value: String(contentItem_1.metadata.category),
+					color: 'red',
+					url: ResourceContentUtils.getMetadataURL(
+						base,
+						contentItem_1.resource,
+						'category',
+						String(contentItem_1.metadata.category)
+					)
+				}}
+			/>
+			<ResponsiveCardInfo
+				slot="cardInfo"
+				author={contentItem_1.metadata.author ?? ''}
+				date={contentItem_1.metadata.created_at ?? ''}
+			/>
+		</ResponsiveCard>
+	</div>
+</section>
+
+<section>
+	<div class="demo-container">
+		<h3>No Image</h3>
 		<ResponsiveCard
 			title={contentItem_1.metadata.title}
 			content={contentItem_1.metadata.headline ?? ''}

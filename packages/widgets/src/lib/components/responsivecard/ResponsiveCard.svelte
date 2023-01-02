@@ -10,15 +10,15 @@
 	export let lineClamp = 4;
 	export let href = '';
 
-	let themeClassName = '';
-	export { themeClassName as theme };
+	let className = '';
+	export { className as class };
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 </script>
 
 <div
-	class="sw__responsivecard sw__responsivecard__main {themeClassName}"
+	class="sw__responsivecard sw__responsivecard__main {className}"
 	style={cssStyles}
 	data-testid="responsivecard-main"
 >
