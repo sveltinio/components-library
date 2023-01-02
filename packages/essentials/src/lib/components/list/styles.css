@@ -4,6 +4,7 @@
 /* CSS file minified in production */
 
 @import url("../reset") screen;
+@import url("../colors") screen;
 @import url("./variables") screen;
 
 .sn-e-c-togglelist ul {
@@ -105,8 +106,9 @@
   padding-left: 1rem; /* 16px */
 }
 
-.sn-e-c-togglelist .is-active {
-  background-color: #639;
+.sn-e-c-togglelist .item.is-active {
+  color: var(--_active-item-color);
+  border-color: var(--_active-item-border-color);
 }
 
 .sn-e-c-togglelist .icon-to-right {

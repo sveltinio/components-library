@@ -3,8 +3,8 @@
   --_btn-width: var(--btn-width, auto);
   --_btn-width-full: var(--btn-width, 100%);
   --_btn-cursor: var(--btn-cursor, pointer);
-  --_btn-color: var(--btn-color, hsl(215deg 25% 27%)); /* slate-700 */
-  --_btn-color-hover: var(--btn-color-hover, hsl(222deg 47% 11%)); /* slate-900 */
+  --_btn-color: var(--btn-color, var(--slate-700));
+  --_btn-color-hover: var(--btn-color-hover, var(--slate-900));
   --_btn-font-size: var(--btn-font-size, 1rem); /* 16px */
   --_btn-font-weight: var(--btn-font-weight, 600); /* 24px */
   --_btn-line-height: var(--btn-line-height, 1.5rem);
@@ -21,8 +21,8 @@
   --_btn-border-color: var(--btn-border-color, transparent);
   --_btn-border-radius: var(--btn-border-radius, 0.25rem); /* 4px */
 
-  --_btn-bg-color: var(--btn-bg-color, hsl(0deg 0% 100%)); /* white */
-  --_btn-bg-color-hover: var(--btn-bg-color-hover, rgb(248, 250, 252)); /* slate-50 */
+  --_btn-bg-color: var(--btn-bg-color, var(--white));
+  --_btn-bg-color-hover: var(--btn-bg-color-hover, var(--slate-50));
 
   /* * list (css class name: list) * */
   --_list-mt: var(--list-mt, 0.5rem); /* 8px */
@@ -35,10 +35,10 @@
   --_list-pb: var(--list-pb, 0rem);
   --_list-pl: var(--list-pl, 0rem);
 
-  /* * item */
+  /* * item (css class name: item) * */
   --_item-gap: var(--item-gap, 0.5rem); /* 8px */
-  --_item-color: var(--item-color, hsl(215deg 25% 27%)); /* slate-700 */
-  --_item-color-hover: var(--item-color-hover, hsl(222deg 47% 11%)); /* slate-900 */
+  --_item-color: var(--item-color, var(--slate-700));
+  --_item-color-hover: var(--item-color-hover, var(--slate-900));
   --_item-font-size: var(--item-font-size, 1rem); /* 16px */
   --_item-font-weight: var(--item-font-weight, 500);
   --_item-line-height: var(--item-line-height, 1.5rem); /* 24px */
@@ -50,12 +50,12 @@
 
   --_item-border-width: var(--item-border-width, 1px);
   --_item-border-style: var(--item-border-style, solid);
-  --_item-border-color: var(--item-border-color, hsl(210deg 40% 96%)); /* slate-100 */
-  --_item-border-color-hover: var(--item-border-color-hover, hsl(215deg 20% 65%)); /* slate-400 */
+  --_item-border-color: var(--item-border-color, var(--slate-100));
+  --_item-border-color-hover: var(--item-border-color-hover, var(--slate-400));
 
-  --_active-item-color: var(--active-item-color, hsl(222deg 47% 11%)); /* slate-900 */
-  --_active-item-border-color: var(--active-item-border-color, hsl(222deg 47% 11%)); /* slate-900 */
+  --_active-item-color: var(--active-item-color, var(--slate-900));
+  --_active-item-border-color: var(--active-item-border-color, var(--slate-900));
 
   /* * icon * */
-  --_icon-color: var(--icon-color, var(var(--_btn-color)));
+  --_icon-color: var(--icon-color, var(--_btn-color));
 }

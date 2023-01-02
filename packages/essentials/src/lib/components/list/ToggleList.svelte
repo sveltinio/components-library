@@ -1,7 +1,8 @@
 <script lang="ts">
-	import './styles.postcss';
+	import './styles.css';
 	import { stylesObjToCSSVars, isValidClassName } from '../../utils';
 	import type { ListItem } from './types';
+	import { activeAction } from './action.js';
 
 	export let title: string;
 	export let items: Array<ListItem>;
@@ -10,7 +11,9 @@
 	let className = '';
 	export { className as class };
 	// to avoid hacking default class names
-	if (!isValidClassName(className, ['sn-e-c-togglelist-vars', 'sn-e-c-togglelist'])) {
+	if (
+		!isValidClassName(className, ['sn-e-colors', 'sn-e-c-togglelist-vars', 'sn-e-c-togglelist'])
+	) {
 		console.error('@sveltinio ERROR: Invalid class name for the ToggleList component!');
 		className = '';
 	}
@@ -23,7 +26,7 @@
 </script>
 
 <div
-	class="sn-e-c-togglelist-vars sn-e-c-togglelist {className}"
+	class="sn-e-colors sn-e-c-togglelist-vars sn-e-c-togglelist {className}"
 	style={cssStyles}
 	{...$$restProps}
 	data-testid="list-wrapper"
@@ -71,7 +74,7 @@
 
 	<ul class="list" class:hide={!isOpen} data-testid="items-list">
 		{#each items as item, id}
-			<li class="item" data-testid="list-item-{id}">
+			<li class="item" use:activeAction data-testid="list-item-{id}">
 				<a class="item__link" href={item.url} data-testid="item-link-{id}">
 					{#if item.icon}
 						<svelte:component this={item.icon} size="20px" />

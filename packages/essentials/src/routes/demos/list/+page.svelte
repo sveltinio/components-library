@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { ToggleList } from '$lib/index.js';
+	import { page } from '$app/stores';
 	//Icons
 	import { LongArrowDownRightIcon, CloudUploadIcon, BellIcon } from '@indaco/svelte-iconoir';
 	// sample data
 	const contentForToggleList = [
-		{ label: 'First', url: '#first', icon: CloudUploadIcon },
-		{ label: 'Second', url: '#second', icon: BellIcon }
+		{ label: 'First', url: '#first' },
+		{ label: 'Second', url: '#second' }
 	];
 
 	const myOwnStyles = {
@@ -23,7 +24,7 @@
 </script>
 
 <h3>Default</h3>
-<ToggleList title="My Toggle List" items={contentForToggleList} />
+<ToggleList bind:route={$page} title="My Toggle List" items={contentForToggleList} />
 
 <h3>Left Side icon</h3>
 <ToggleList title="My Toggle List" items={contentForToggleList}>
