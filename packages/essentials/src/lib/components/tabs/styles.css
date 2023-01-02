@@ -43,6 +43,8 @@
   border-left-width: var(--_tabs-group-border-l-width);
   border-left-style: var(--_tabs-group-border-l-style);
   border-left-color: var(--_tabs-group-border-l-color);
+
+  border-radius: var(--_tabs-group-border-radius);
 }
 
 .sn-e-c-tabs .tabs__group--justify-start {
