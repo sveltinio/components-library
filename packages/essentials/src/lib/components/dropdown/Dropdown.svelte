@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './styles.postcss';
+	import './styles.css';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils.js';
@@ -11,7 +11,7 @@
 	export { className as class };
 
 	// to avoid hacking default class names
-	if (!isValidClassName(className, ['sn-e-c-dropdown-vars', 'sn-e-c-dropdown'])) {
+	if (!isValidClassName(className, ['sn-e-colors', 'sn-e-c-dropdown-vars', 'sn-e-c-dropdown'])) {
 		console.error('@sveltinio ERROR: Invalid class name for the Dropdown component!');
 		className = '';
 	}
@@ -49,7 +49,7 @@
 </script>
 
 <div
-	class="sn-e-c-dropdown-vars sn-e-c-dropdown {className}"
+	class="sn-e-colors sn-e-c-dropdown-vars sn-e-c-dropdown {className}"
 	style={cssStyles}
 	use:clickOutside={() => {
 		ctx.setValue(false);

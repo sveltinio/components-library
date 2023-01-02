@@ -4,6 +4,7 @@
 /* CSS file minified in production */
 
 @import url("../reset") screen;
+@import url("../colors") screen;
 @import url("./variables") screen;
 
 .sn-e-c-dropdown {
@@ -76,23 +77,31 @@
   box-shadow: 0 0 0 0 hsl(0, 0%, 100%), 0 0 0 1px hsl(210, 40%, 96%);
 }
 
-.sn-e-c-dropdown .list .list__item {
-  cursor: var(--_item-curson);
+.sn-e-c-dropdown .list .item {
+  cursor: var(--_item-cursor);
+}
+
+.sn-e-c-dropdown .list .item:hover {
+  background-color: var(--_item-bg-color-hover);
+}
+
+.sn-e-c-dropdown .list .item a {
+  display: inline-flex;
+  width: 100%;
+  color: var(--_item-color);
+  text-decoration: none;
+  -webkit-text-decoration: var(--_item-text-decoration, none);
+  text-decoration: var(--_item-text-decoration, none);
+
   padding-top: var(--_item-pt);
   padding-right: var(--_item-pr);
   padding-bottom: var(--_item-pb);
   padding-left: var(--_item-pl);
 }
 
-.sn-e-c-dropdown .list .list__item:hover {
+.sn-e-c-dropdown .list .item a:hover {
+  color: var(--_item-color-hover);
   background-color: var(--_item-bg-color-hover);
-}
-
-.sn-e-c-dropdown .list .list__item a {
-  color: var(--_item-color);
-  text-decoration: none;
-  -webkit-text-decoration: var(--_item-text-decoration, none);
-  text-decoration: var(--_item-text-decoration, none);
 }
 
 .sn-e-c-dropdown .list--absolute {
