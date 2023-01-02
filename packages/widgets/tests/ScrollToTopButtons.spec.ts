@@ -14,7 +14,7 @@ describe('ScrollToTopButton', () => {
 		vi.fn(() => window.scrollTo);
 
 		const scrollBtn = getByTestId('bounce-btn');
-		expect(scrollBtn).toHaveClass('animate_bounce', 'hide');
+		expect(scrollBtn).toHaveClass('btn', 'bounce', 'hide');
 	});
 
 	it('page should scroll to top when clicked', async () => {

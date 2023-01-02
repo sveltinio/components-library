@@ -1,15 +1,18 @@
 @charset "UTF-8";
 
+/* CSS file minified in production */
+
 @import url("../reset") screen;
+@import url("../colors") screen;
 @import url("./variables") screen;
 
 @custom-media --viewport-medium (min-width: 768px);
 @custom-media --viewport-large (min-width: 1024px);
 
-.sw__stt__main {
+.sn-w-c-sttb {
   z-index: 50;
 
-  & .bounce_btn {
+  & .btn {
     position: fixed;
     bottom: var(--_bottom);
     right: var(--_right);
@@ -38,7 +41,7 @@
     transform: translateY(0.5rem);
   }
 
-  & .animate_bounce {
+  & .bounce {
     animation-name: bounce;
     animation-duration: var(--_bounce-duration);
     animation-iteration-count: infinite;
@@ -47,7 +50,7 @@
   /** md breakpoint */
   @media (--viewport-medium) {
     & {
-      & .bounce_btn {
+      & .btn {
         margin: var(--_margin-md);
         padding: var(--_padding-md);
       }
@@ -57,7 +60,7 @@
   /** lf breakpoint */
   @media (--viewport-large) {
     & {
-      & .bounce_btn {
+      & .btn {
         margin: var(--_margin-lg);
         padding: var(--_padding-lg);
       }

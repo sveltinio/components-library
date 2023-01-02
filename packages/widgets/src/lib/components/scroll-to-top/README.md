@@ -24,12 +24,19 @@
 
 The `ScrollToTopButton` component exposes the following properties:
 
-| Property  | Type   | Required | Default                                                      | Description |
-| :-------- | :----: | :------: | :----------------------------------------------------------: | :---------- |
-| iconColor | string |    no    | ![#ffffff](https://via.placeholder.com/15/ffffff/ffffff.png) | |
-| fillColor | string |    no    | ![#4b5563](https://via.placeholder.com/15/4b5563/4b5563.png) | |
+| Property  | Type   | Required | Default                                                      | Description                         |
+| :-------- | :----: | :------: | :----------------------------------------------------------: | :---------------------------------- |
+| iconColor | string |    no    | ![#ffffff](https://via.placeholder.com/15/ffffff/ffffff.png) |                                     |
+| fillColor | string |    no    | ![#4b5563](https://via.placeholder.com/15/4b5563/4b5563.png) |                                     |
 | showOnPx  | number |    no    | `400px`                                                      | Position of page to show the button |
-| styles    | Object |    no    |   `{}`                                                       | Used to pass CSS variables to apply custom styles |
+
+### Styles
+
+| Property  | Type   | Required | Default | Description                                       |
+| :-------- | :----: | :------: | :-----: | :------------------------------------------------ |
+| styles    | Object |    no    |   `{}`  | Used to pass CSS variables to apply custom styles |
+
+Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
 ## Theming
 
