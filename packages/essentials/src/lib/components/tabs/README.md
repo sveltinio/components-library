@@ -111,7 +111,7 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-The two component properties `class` and `styles` are the ones allowing you to customize the component appearence.
+The two component properties `styles` and `class` are the ones allowing you to customize the component appearence.
 
 Read more [here](./THEMING.md)
 

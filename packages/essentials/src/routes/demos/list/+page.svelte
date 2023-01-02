@@ -2,7 +2,7 @@
 	import { ToggleList } from '$lib/index.js';
 	import { page } from '$app/stores';
 	//Icons
-	import { LongArrowDownRightIcon, CloudUploadIcon, BellIcon } from '@indaco/svelte-iconoir';
+	import { LongArrowDownRightIcon, BellIcon } from '@indaco/svelte-iconoir';
 	// sample data
 	const contentForToggleList = [
 		{ label: 'First', url: '#first' },

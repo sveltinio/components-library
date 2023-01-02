@@ -55,8 +55,6 @@ The `Button` component exposes a set of properties but it does not prevent you t
 | href          | string  |    no    |             | The URL of the page the link goes to                            |
 | prefetch      | boolean |    no    |    false    | Enable data-sveltekit-prefetch for the link                     |
 | external      | boolean |    no    |    false    | If true, opens the linked document in a new window or tab       |
-| class         | string  |    no    |             | The css class name used to make a theme variant                 |
-| styles        | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles               |
 
 ### Styles
 
@@ -71,7 +69,7 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-The two component properties `class` and `styles` are the ones allowing you to customize the component appearence.
+The two component properties `styles` and `class` are the ones allowing you to customize the component appearence.
 
 Read more [here](./THEMING.md)
 
