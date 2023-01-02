@@ -12,7 +12,7 @@
 	export { className as class };
 
 	// to avoid hacking default class names
-	if (!isValidClassName(className, ['sn-e-c-btn-vars', 'sn-e-c-btn'])) {
+	if (!isValidClassName(className, ['sn-e-colors', 'sn-e-c-btn-vars', 'sn-e-c-btn'])) {
 		console.error('@sveltinio ERROR: Invalid class name for the ButtonGroup component!');
 		className = '';
 	}
@@ -44,7 +44,7 @@
 </script>
 
 <div
-	class="sn-e-c-btngroup-vars sn-e-c-btngroup {className} btn-{size}"
+	class="sn-e-colors sn-e-c-btngroup-vars sn-e-c-btngroup {className} btn-{size}"
 	style={cssStyles}
 	role="group"
 	{...$$restProps}

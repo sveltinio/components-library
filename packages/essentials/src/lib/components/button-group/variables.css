@@ -1,16 +1,14 @@
 .sn-e-c-btngroup-vars {
-  /** ****************************************** */
-  /** main (css class name: .sn-e-c-btngroup)  */
-  /** ****************************************** */
-  --_color: var(--color, hsl(215deg 19% 35%)); /* slate-600*/
+  /* * main (css class name: .sn-e-c-btngroup) * */
+  --_color: var(--color, var(--slate-600));
   --_font-size: var(--font-size, 0.875rem); /* 14px */
   --_font-weight: var(--font-weight, 500);
   --_line-height: var(--line-height, 1.5rem);
   --_letter-spacing: var(--letter-spacing, 0em);
   --_text-decoration: var(--text-decoration, none);
-  --_bg-color: var(--bg-color, hsl(0deg 0% 100%)); /* white */
-  --_bg-color-hover: var(--bg-color-hover, hsl(210deg 40% 96%)); /* slate-100 */
-  --_border-color: var(--border-color, hsl(214deg 32% 91%)); /* slate-200 */
+  --_bg-color: var(--bg-color, var(--white));
+  --_bg-color-hover: var(--bg-color-hover, var(--slate-100));
+  --_border-color: var(--border-color, var(--slate-200));
   --_border-style: var(--border-style, solid);
   --_border-width: var(--border-width, thin);
   --_border-radius: var(--border-radius, 0.25rem);
@@ -18,15 +16,13 @@
   --_pr: var(--pr, 1rem);
   --_pb: var(--pb, 0.5rem);
   --_pl: var(--pl, 1rem);
-  --_active-color: var(--active-color, hsl(222deg 47% 11%)); /* slate-900 */
-  --_active-bg-color: var(--active-bg-color, hsl(210deg 40% 96%)); /* slate-100 */
-  --_active-border-color: var(--active-border-color, hsl(214deg 32% 91%)); /* slate-200 */
+  --_active-color: var(--active-color, var(--slate-900));
+  --_active-bg-color: var(--active-bg-color, var(--slate-100));
+  --_active-border-color: var(--active-border-color, var(--slate-200));
   --_active-border-style: var(--active-border-style, solid);
   --_active-border-width: var(--active-border-width, thin);
 
-  /** ****************************************** */
-  /** Label Sizes                                */
-  /** ****************************************** */
+  /** Label Sizes                              * */
   /*- xs */
   --_font-size-xs: var(--font-size-xs, 0.75rem); /* 12 px */
   --_font-weight-xs: var(--font-weight-xs, var(--_font-weight));
