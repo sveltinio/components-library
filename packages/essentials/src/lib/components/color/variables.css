@@ -3,7 +3,7 @@
   --_font-weight: var(--font-weight, 500);
   --_line-height: var(--line-height, 1.25rem); /* 18px */
   --_letter-spacing: var(--letter-spacing, 0em);
-  --_color: var(--color, hsl(215deg 25% 27%)); /* slate-700 */
+  --_color: var(--color, var(--slate-700));
 
   --_gap: var(--gap, 0.5rem); /* 8px */
 

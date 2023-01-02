@@ -11,7 +11,13 @@
 	export { className as class };
 
 	// to avoid hacking default class names
-	if (!isValidClassName(className, ['sn-e-c-colorviewer-vars', 'sn-e-c-colorviewer'])) {
+	if (
+		!isValidClassName(className, [
+			'sn-e-colors',
+			'sn-e-c-colorviewer-vars',
+			'sn-e-c-colorviewer'
+		])
+	) {
 		console.error('@sveltinio ERROR: Invalid class name for the ColorViewer component!');
 		className = '';
 	}
@@ -21,7 +27,7 @@
 </script>
 
 <div
-	class="sn-e-c-colorviewer-vars sn-e-c-colorviewer {className}"
+	class="sn-e-colors sn-e-c-colorviewer-vars sn-e-c-colorviewer {className}"
 	style={cssStyles}
 	{...$$restProps}
 >

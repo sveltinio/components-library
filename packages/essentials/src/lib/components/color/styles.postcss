@@ -4,6 +4,7 @@
 /* CSS file minified in production */
 
 @import url("../reset") screen;
+@import url("../colors") screen;
 @import url("./variables") screen;
 
 .sn-e-c-colorviewer {
@@ -25,6 +26,6 @@
   }
 
   & .border {
-    --_border-color: var(--border-color, hsl(214deg 32% 91%)); /* slate-200 */
+    --_border-color: var(--border-color, var(--slate-200));
   }
 }
