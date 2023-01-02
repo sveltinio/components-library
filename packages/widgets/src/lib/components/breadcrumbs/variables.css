@@ -5,6 +5,11 @@
   --_line-height: var(--line-height, normal);
   --_letter-spacing: var(--letter-spacing, 0);
 
+  --_mt: var(--mt, 0rem);
+  --_mr: var(--mr, 0rem);
+  --_mb: var(--mb, 0rem);
+  --_ml: var(--ml, 0rem);
+
   /* * main (class name: item__icon)         * */
   --_icon-color: var(--icon-color, var(--slate-400));
 
