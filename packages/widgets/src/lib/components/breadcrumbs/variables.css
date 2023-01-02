@@ -1,36 +1,23 @@
-.sw__breadcrumbs {
-  /* ****************************************** */
-  /* * main (class name: sw__breadcrumbs__main) */
-  /* ****************************************** */
+.sn-w-c-breadcrumbs-vars {
+  /* * main (class name: sn-w-c-breadcrumbs) * */
   --_font-size: var(--font-size, 0.875rem);
   --_font-weight: var(--font-weight, 500);
   --_line-height: var(--line-height, normal);
   --_letter-spacing: var(--letter-spacing, 0);
 
-  /* ****************************************** */
-  /* * main (class name: icon) */
-  /* ****************************************** */
-  --_icon-color: var(--icon-color, #94a3b8);
+  /* * main (class name: item__icon)         * */
+  --_icon-color: var(--icon-color, var(--slate-400));
 
-  /* ****************************************** */
-  /* * main (class name: icon_home)             */
-  /* ****************************************** */
-  --_icon-home-color-hover: var(--icon-home-color-hover, #334155);
+  /* * main (class name: icon_home)          * */
+  --_icon-home-color-hover: var(--icon-home-color-hover, var(--slate-700));
 
-  /* ****************************************** */
-  /* * parent (class name: parent)              */
-  /* ****************************************** */
-  --_parent-color: var(--parent-color, #64748b);
-  --_parent-color-hover: var(--parent-color-hover, #334155);
+  /* * parent (class name: parent)           * */
+  --_parent-color: var(--parent-color, var(--slate-500));
+  --_parent-color-hover: var(--parent-color-hover, var(--slate-700));
 
-  /* ****************************************** */
-  /* * current (class name: current)            */
-  /* ****************************************** */
-  --_current-color: var(--current-color, #64748b);
+  /* * current (class name: current)         * */
+  --_current-color: var(--current-color, var(--slate-500));
 
-  /* ****************************************** */
-  /* * divider (class name: icon_divider)       */
-  /* ****************************************** */
-  --_divider-ml: var(--divider-ml, 0.5rem);
-  --_divider-mr: var(--divider-mr, 0.5rem);
+  /* * divider (class name: icon__divider)    * */
+  --_divider-gap: var(--divider-ml, 0.25rem);
 }

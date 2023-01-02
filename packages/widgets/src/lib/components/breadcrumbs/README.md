@@ -2,24 +2,39 @@
 
 ## Examples
 
+<img src="./assets/images/default.png" alt="Breadcrumbs - Default" />
+
 ```html
 <script>
+    import { page } from '$app/stores';
     import { Breadcrumbs } from '@sveltinio/widgets';
 <script>
 
-<Breadcrumbs baseURL="http://example.com" parent="posts" current="Getting Started" />
+<Breadcrumbs url="http://example.com/blog/posts/welcome" />
+
+<!-- SvelteKit example -->
+<Breadcrumbs url={$page.url.href} />
 ```
 
 ## Properties
 
 The `Breadcrumbs` component exposes the following properties:
 
-| Property | Type   | Required | Default      | Description                                        |
-| :------- | :----: | :------: | :----------: | :------------------------------------------------- |
-| baseURL  | string |    no    |     /        |                                                    |
-| parent   | string |    no    | empty string | text to be showed as link to the parent page       |
-| current  | string |   yes    |              | text to be showed (a page name, a post title etc.) |
-| styles   | Object |    no    | empty object | Used to pass CSS variables to apply custom styles  |
+| Property    | Type    | Required | Default | Description                                         |
+| :---------- | :-----: | :------: | :-----: | :-------------------------------------------------- |
+| url         | string  |    yes   |         | An absolute or relative URL string                  |
+| showCurrent | boolean |    no    | `true`  | If false, the current item it not on the bradcrumbs |
+| class       | string  |    no    |         | The css class name used to make a theme variant     |
+| styles      | Object  |    no    | `{}`    | Used to pass CSS variables to apply custom styles   |
+
+## Slots
+
+Slots are used to replace the default root and divider icons.
+
+The `Breadcrumbs` component provides two slots:
+
+- `baseIcon`
+- `dividerIcon`
 
 ## Theming
 
@@ -32,25 +47,3 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
 [Design Rules]: https://github.com/sveltinio/components-library/blob/main/docs/design-rules.md
-
-### Example
-
-```html
-<script>
-    import { Breadcrumbs } from '@sveltinio/widgets';
-    const customStyles = {
-        'icon-color': '#8b5cf6',
-        'icon-color-hover': '#4338ca',
-        'parent-color': '#8b5cf6',
-        'parent-color-hover': '#4338ca',
-        'current-color': '#4338ca'
-    };
-<script>
-
-<Breadcrumbs
-    baseURL="http://example.com"
-    parent="posts"
-    current="Getting Started"
-    styles={customStyles}
-/>
-```

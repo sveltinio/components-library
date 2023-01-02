@@ -1,20 +1,38 @@
 <script lang="ts">
 	import './styles.css';
-	import { stylesObjToCSSVars, capitalize } from '../../utils.js';
+	import { stylesObjToCSSVars, capitalize, makeTitle } from '../../utils.js';
 
-	export let baseURL = '/';
-	export let parent = '';
-	export let current: string;
+	export let url = '';
+	export let showCurrent = true;
 
-	let themeClassName = '';
-	export { themeClassName as theme };
+	const parsedURL = new URL(url);
+
+	const baseURL = parsedURL?.origin;
+	const segments = parsedURL?.pathname.split('/').filter((part) => part?.trim() !== '');
+
+	const current = segments.pop() || '';
+
+	const parents =
+		segments.map((segment, segmentIndex) => {
+			const previousParts = segments.slice(0, segmentIndex);
+			return {
+				label: segment,
+				href:
+					previousParts?.length > 0
+						? `${previousParts?.join('/')}/${segment}`
+						: `${segment}`
+			};
+		}) || [];
+
+	let className = '';
+	export { className as theme };
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 </script>
 
 <nav
-	class="sw__breadcrumbs sw__breadcrumbs__main {themeClassName}"
+	class="sn-w-colors sn-w-c-breadcrumbs-vars sn-w-c-breadcrumbs {className}"
 	style={cssStyles}
 	aria-label="breadcrumb"
 	data-testid="breadcrumbs_main"
@@ -22,9 +40,9 @@
 	<ol class="list">
 		<li class="item">
 			<a href={baseURL}>
-				<slot name="base-icon">
+				<slot name="baseIcon">
 					<svg
-						class="icon icon_home"
+						class="icon icon__home"
 						width="1.25rem"
 						height="1.25rem"
 						stroke-width="1.5"
@@ -46,58 +64,62 @@
 						/>
 					</svg>
 				</slot>
-				<span class="sr_only">Home</span>
+				<span class="sr--only">Home</span>
 			</a>
 		</li>
-		{#if parent}
+		{#each parents as parent}
 			<li class="item">
-				<slot name="divider-icon">
-					<svg
-						class="icon icon_divider"
-						width="20"
-						height="20"
-						stroke-width="1.5"
-						viewBox="0 0 24 24"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-						aria-hidden="true"
-					>
-						<path
-							d="M9 6L15 12L9 18"
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						/>
-					</svg>
-				</slot>
-				<a href="{baseURL}/{parent}" class="parent" data-testid="linkToParent"
-					>{capitalize(parent)}</a
+				<span class="icon icon__divider">
+					<slot name="dividerIcon">
+						<svg
+							width="20"
+							height="20"
+							stroke-width="1.5"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							aria-hidden="true"
+						>
+							<path
+								d="M9 6L15 12L9 18"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</slot>
+				</span>
+				<a href="{baseURL}/{parent.href}" class="is-parent" data-testid="linkToParent"
+					>{capitalize(parent?.label)}</a
+				>
+			</li>
+		{/each}
+		{#if showCurrent}
+			<li class="item">
+				<span class="icon icon__divider">
+					<slot name="dividerIcon">
+						<svg
+							width="20"
+							height="20"
+							stroke-width="1.5"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							aria-hidden="true"
+						>
+							<path
+								d="M9 6L15 12L9 18"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</slot>
+				</span>
+				<span class="is-current" aria-current="page" data-testid="currentPage"
+					>{makeTitle(current)}</span
 				>
 			</li>
 		{/if}
-		<li class="item">
-			<slot name="divider-icon">
-				<svg
-					class="icon icon_divider"
-					width="20"
-					height="20"
-					stroke-width="1.5"
-					viewBox="0 0 24 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					aria-hidden="true"
-				>
-					<path
-						d="M9 6L15 12L9 18"
-						stroke="currentColor"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</svg>
-			</slot>
-			<span class="current" aria-current="page" data-testid="currentPage"
-				>{capitalize(current)}</span
-			>
-		</li>
 	</ol>
 </nav>

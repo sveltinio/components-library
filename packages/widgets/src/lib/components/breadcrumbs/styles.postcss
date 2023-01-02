@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
+/* CSS file minified in production */
+
 @import url("../reset") screen;
+@import url("../colors") screen;
 @import url("./variables") screen;
 
-.sw__breadcrumbs__main {
+.sn-w-c-breadcrumbs {
   font-size: var(--_font-size);
   font-weight: var(--_font-weight);
   line-height: var(--_line-height);
@@ -15,12 +18,13 @@
     & .item {
       display: inline-flex;
       align-items: center;
+      gap: 0.25rem;
 
-      & .current {
+      & .is-current {
         color: var(--_current-color);
       }
 
-      & .parent {
+      & .is-parent {
         color: var(--_parent-color);
         text-decoration: none;
 
@@ -31,21 +35,22 @@
 
       & .icon {
         color: var(--_icon-color);
+        display: flex;
       }
 
-      & .icon_home {
+      & .icon__home {
         &:hover {
           color: var(--_icon-home-color-hover);
         }
       }
 
-      & .icon_divider {
-        margin-left: var(--_divider-ml);
-        margin-right: var(--_divider-mr);
+      & .icon__divider {
+        margin-left: var(--_divider-gap);
+        margin-right: var(--_divider-gap);
       }
     }
 
-    & .sr_only {
+    & .sr--only {
       position: absolute;
       width: 1px;
       height: 1px;

@@ -7,9 +7,7 @@ describe('Breadcrumbs', () => {
 	it('should be in the document', async () => {
 		const { container } = render(Breadcrumbs, {
 			props: {
-				baseURL: 'http://example.com',
-				parent: 'posts',
-				current: 'Welcome'
+				url: 'http://example.com/posts/welcome'
 			}
 		});
 		expect(container).toBeInTheDocument();
@@ -18,9 +16,7 @@ describe('Breadcrumbs', () => {
 	it('should have a link to posts', async () => {
 		const { getByTestId } = render(Breadcrumbs, {
 			props: {
-				baseURL: 'http://example.com',
-				parent: 'posts',
-				current: 'Welcome'
+				url: 'http://example.com/posts/welcome'
 			}
 		});
 		expect(screen.queryByText('Posts')).toBeInTheDocument();
@@ -31,9 +27,7 @@ describe('Breadcrumbs', () => {
 	it('should have Welcome as text content for currentTitle ', async () => {
 		const { getByTestId } = render(Breadcrumbs, {
 			props: {
-				baseURL: 'http://example.com',
-				parent: 'posts',
-				current: 'Welcome'
+				url: 'http://example.com/posts/welcome'
 			}
 		});
 		const currentPage = getByTestId('currentPage');
@@ -43,8 +37,7 @@ describe('Breadcrumbs', () => {
 	it('should not have a link to posts', async () => {
 		render(Breadcrumbs, {
 			props: {
-				baseURL: 'http://example.com',
-				current: 'Welcome'
+				url: 'http://example.com/welcome'
 			}
 		});
 		expect(screen.queryByText('Posts')).not.toBeInTheDocument();

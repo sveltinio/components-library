@@ -1,1 +1,63 @@
-@import url("../reset") screen;@import url("./variables") screen;.sw__breadcrumbs__main{font-size:var(--_font-size);font-weight:var(--_font-weight);letter-spacing:var(--_letter-spacing);line-height:var(--_line-height)}.sw__breadcrumbs__main .list{list-style:none}.sw__breadcrumbs__main .list .item{align-items:center;display:inline-flex}.sw__breadcrumbs__main .list .item .current{color:var(--_current-color)}.sw__breadcrumbs__main .list .item .parent{color:var(--_parent-color);text-decoration:none}.sw__breadcrumbs__main .list .item .parent:hover{color:var(--_parent-color-hover)}.sw__breadcrumbs__main .list .item .icon{color:var(--_icon-color)}.sw__breadcrumbs__main .list .item .icon_home:hover{color:var(--_icon-home-color-hover)}.sw__breadcrumbs__main .list .item .icon_divider{margin-left:var(--_divider-ml);margin-right:var(--_divider-mr)}.sw__breadcrumbs__main .list .sr_only{clip:rect(0,0,0,0);border-width:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}
+@charset "UTF-8";
+
+/* CSS file minified in production */
+
+@import url("../reset") screen;
+@import url("../colors") screen;
+@import url("./variables") screen;
+
+.sn-w-c-breadcrumbs {
+  font-size: var(--_font-size);
+  font-weight: var(--_font-weight);
+  line-height: var(--_line-height);
+  letter-spacing: var(--_letter-spacing);
+}
+
+.sn-w-c-breadcrumbs .list {
+  list-style: none;
+}
+
+.sn-w-c-breadcrumbs .list .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.sn-w-c-breadcrumbs .list .item .is-current {
+  color: var(--_current-color);
+}
+
+.sn-w-c-breadcrumbs .list .item .is-parent {
+  color: var(--_parent-color);
+  text-decoration: none;
+}
+
+.sn-w-c-breadcrumbs .list .item .is-parent:hover {
+  color: var(--_parent-color-hover);
+}
+
+.sn-w-c-breadcrumbs .list .item .icon {
+  color: var(--_icon-color);
+  display: flex;
+}
+
+.sn-w-c-breadcrumbs .list .item .icon__home:hover {
+  color: var(--_icon-home-color-hover);
+}
+
+.sn-w-c-breadcrumbs .list .item .icon__divider {
+  margin-left: var(--_divider-gap);
+  margin-right: var(--_divider-gap);
+}
+
+.sn-w-c-breadcrumbs .list .sr--only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
