@@ -21,7 +21,7 @@
 
 ## Properties
 
-The `ButtonGroup` component is the main wrapper component.
+The `ButtonGroup` component is the main wrapper component and exposes the following set of properties.
 
 ### Functionals
 

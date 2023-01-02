@@ -30,9 +30,7 @@
 
 ## Properties
 
-The Dropdown components set exposes a set of properties but it does not prevent you to pass any additional props.
-
-The following are the ones exposed by the component
+The Dropdown components set exposes a set of properties.
 
 ### Dropdown - Functionals
 

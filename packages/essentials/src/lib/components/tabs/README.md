@@ -79,6 +79,8 @@ The `Tabs` component is used to easily includes tabs within the page. It support
 
 ## Properties
 
+The `Tabs` and `Tab` components expose a set of properties.
+
 ### Tabs - Functionals
 
 | Property  |  Type  | Required | Default      | Description                                                     |

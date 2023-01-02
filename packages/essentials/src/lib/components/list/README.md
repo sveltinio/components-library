@@ -55,6 +55,8 @@ The **ToggleList** component is used to includes a toggle list within the page. 
 
 ## Properties
 
+The `ToggleList` component exposes a set of properties but it does not prevent you to pass any additional props.
+
 ### Functionals
 
 | Property  |  Type            | Required | Default | Description                                                                          |

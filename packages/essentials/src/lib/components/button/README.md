@@ -36,11 +36,9 @@ The `Button` component can be used for both `button` and link `a` by adding the 
 
 ## Properties
 
-### Functionals
-
 The `Button` component exposes a set of properties but it does not prevent you to pass any additional props.
 
-The following are the ones exposed by the component
+### Functionals
 
 | Property      |  Type   | Required |   Default   | Description                                                     |
 | :------------ | :-----: | :------: | :---------: | :-------------------------------------------------------------- |

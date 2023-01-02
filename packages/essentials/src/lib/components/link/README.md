@@ -24,9 +24,9 @@ The `Link` component defines a hyperlink used to link an internal or external re
 
 ## Properties
 
-The `Link` component exposes a set of properties but it does not prevent you to pass any additional props.
+### Functionals
 
-The following are the ones exposed by the component:
+The `Link` component exposes a set of properties but it does not prevent you to pass any additional props.
 
 | Property   |  Type   | Required | Default  | Description                                                         |
 | :--------- | :-----: | :------: | :------- | :------------------------------------------------------------------ |
@@ -37,8 +37,15 @@ The following are the ones exposed by the component:
 | icon       | boolean |    no    | true     | Shows an icon next right to the label when external is true         |
 | noOpenener | boolean |    no    | true     | Go to the linked resource without granting the new browsing context |
 | noReferrer | boolean |    no    | true     | Prevent passing the referrer information to the target website      |
-| class      | string  |    no    |          | The css class name used to make a theme variant                     |
-| styles     | Object  |    no    | `{}`     | Used to pass CSS variables to apply custom styles                   |
+
+### Styles
+
+| Property |  Type   | Required |   Default   | Description                                       |
+| :------- | :-----: | :------: | :---------: | :------------------------------------------------ |
+| class    | string  |    no    |             | The css class name used to make a theme variant   |
+| styles   | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles |
+
+Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
 ## Theming
 
