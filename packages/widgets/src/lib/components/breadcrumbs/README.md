@@ -20,10 +20,17 @@
 
 The `Breadcrumbs` component exposes the following properties:
 
+### Functionals
+
 | Property    | Type    | Required | Default | Description                                         |
 | :---------- | :-----: | :------: | :-----: | :-------------------------------------------------- |
 | url         | string  |    yes   |         | An absolute or relative URL string                  |
 | showCurrent | boolean |    no    | `true`  | If false, the current item it not on the bradcrumbs |
+
+### Styles
+
+| Property    | Type    | Required | Default | Description                                         |
+| :---------- | :-----: | :------: | :-----: | :-------------------------------------------------- |
 | class       | string  |    no    |         | The css class name used to make a theme variant     |
 | styles      | Object  |    no    | `{}`    | Used to pass CSS variables to apply custom styles   |
 
