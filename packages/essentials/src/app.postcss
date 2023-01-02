@@ -16,17 +16,6 @@ body {
   margin: 2rem;
 }
 
-h3 {
-  padding: 0;
-  margin: 2em 0 1em 0;
-  color: #343434;
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: normal;
-  font-family: "Orienta", sans-serif;
-  text-transform: uppercase;
-}
-
 .main {
   & h1 {
     margin: 1em 0 0.5em 0;
@@ -121,6 +110,7 @@ h3 {
   flex-direction: column;
 
   gap: 1.5rem;
+  margin: 1rem 0;
 
   & .row {
     display: flex;
@@ -129,6 +119,17 @@ h3 {
     align-items: center;
     justify-content: flex-start;
     gap: 0.75rem;
+  }
+
+  & h3 {
+    padding: 0;
+    margin: 1rem 0;
+    color: #343434;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: normal;
+    font-family: "Orienta", sans-serif;
+    text-transform: uppercase;
   }
 
   @media (--viewport-medium) {
@@ -193,4 +194,70 @@ h3 {
   --content-bg-color: #ecfeff;
   --item-color: #164e63;
   --item-bg-color-hover: #cffafe;
+}
+
+/* // https://www.tints.dev/brand/1D3040 */
+.my-tabs {
+  --color: #e3ebf2;
+  --bg-color: #1d3040;
+  --tab-font-size: 1rem;
+  --tab-bg-color-hover: #5387b1;
+  --tab-pr: 1.75rem;
+  --tab-pl: 1.75rem;
+  --tabs-group-border-color: transparent;
+  --tab-active-bg-color: #385d7b;
+  --tab-active-border-b-color: #5387b1;
+  --tab-border-b-color-hover: transparent;
+  --content-border-tr-radius: 0.5rem;
+}
+
+.rounded-tabs {
+  --tabs-group-gap: 0.25rem;
+  --tabs-group-border-width: 0px;
+  --tabs-group-border-b-color: transparent;
+  --tab-color-hover: white;
+  --tab-bg-color-hover: #5387b1;
+  --tab-border-tl-radius: 0.5rem;
+  --tab-border-tr-radius: 1rem;
+  --tab-border-bl-radius: 1rem;
+  --tab-border-br-radius: 0.5rem;
+  --tab-active-border-t-width: 1px;
+  --tab-active-border-t-color: #c7d8e6;
+  --tab-active-border-r-width: 1px;
+  --tab-active-border-r-color: #c7d8e6;
+  --tab-active-border-b-width: 1px;
+  --tab-active-border-b-color: #c7d8e6;
+  --tab-active-border-l-width: 1px;
+  --tab-active-border-l-color: #c7d8e6;
+  --tab-active-bg-color: #385d7b;
+  --tab-active-color: white;
+}
+
+.pills-tabgroup {
+  --max-width: 50%;
+  --tabs-group-pt: 0.5rem;
+  --tabs-group-pb: 0.5rem;
+  --tabs-group-pb: 0.5rem;
+  --tabs-group-pb: 0.5rem;
+  --tabs-group-gap: 0.5rem;
+  --tabs-group-border-t-style: solid;
+  --tabs-group-border-t-width: 1px;
+  --tabs-group-border-t-color: #e7e5e4;
+  --tabs-group-border-r-style: solid;
+  --tabs-group-border-r-width: 1px;
+  --tabs-group-border-r-color: #e7e5e4;
+  --tabs-group-border-b-color: #e7e5e4;
+  --tabs-group-border-l-style: solid;
+  --tabs-group-border-l-width: 1px;
+  --tabs-group-border-l-color: #e7e5e4;
+  --tabs-group-border-radius: 99px;
+  --tab-color: #292524;
+  --tab-bg-color: #f5f5f4;
+  --tab-bg-color-hover: #e7e5e4;
+  --tab-border-tl-radius: 1rem;
+  --tab-border-tr-radius: 1rem;
+  --tab-border-bl-radius: 1rem;
+  --tab-border-br-radius: 1rem;
+  --tab-active-bg-color: #d6d3d1;
+  --tab-active-border-b-color: transparent;
 }
