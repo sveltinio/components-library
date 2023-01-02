@@ -1,5 +1,14 @@
 # @sveltinio/essentials
 
+## 0.4.0
+
+### Minor Changes
+
+- components refactored
+- styling capabilities improved
+- deps updated
+- fix `prefetch` when using with SvelteKit
+
 ## 0.3.0
 
 ### Minor Changes
