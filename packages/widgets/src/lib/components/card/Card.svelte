@@ -10,14 +10,18 @@
 	export let lineClamp = 4;
 	export let href = '';
 
-	let themeClassName = '';
-	export { themeClassName as theme };
+	let className = '';
+	export { className as class };
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 </script>
 
-<div class="sw__card sw__card__main {themeClassName}" style={cssStyles} data-testid="card-main">
+<div
+	class="sn-w-colors sn-w-c-card-vars sn-w-c-card {className}"
+	style={cssStyles}
+	data-testid="card-main"
+>
 	{#if $$slots.cardImage}
 		<slot name="cardImage" />
 	{/if}

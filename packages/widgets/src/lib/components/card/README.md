@@ -83,14 +83,23 @@ The `Card` component is used to group and display content in a easily readable w
 
 The `Card` component exposes the following properties:
 
+### Functionals
+
 | Property    | Type   | Required | Default | Description                                                 |
 | :---------- | :----: | :------: | :-----: | :---------------------------------------------------------- |
 | `title`     | string |   yes    |         | The card title text                                         |
 | `content`   | string |   yes    |         | The card content text                                       |
 | `href`      | string |    no    |         | If set, the title is a link to the href                     |
 | `lineClamp` | number |    no    | `4`     | The number of lines after which the content will be clamped |
-| `theme`     | string |    no    |         | The css class name used to make a theme variant             |
-| `styles`    | Object |    no    |   `{}`  | Used to pass CSS variables to apply custom styles           |
+
+### Styles
+
+| Property    | Type   | Required | Default | Description                                       |
+| :---------- | :----: | :------: | :-----: | :------------------------------------------------ |
+| `class`     | string |    no    |         | The css class name used to make a theme variant   |
+| `styles`    | Object |    no    |   `{}`  | Used to pass CSS variables to apply custom styles |
+
+Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
 ## Slots
 

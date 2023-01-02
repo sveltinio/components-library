@@ -16,17 +16,6 @@ body {
   margin: 2rem;
 }
 
-h3 {
-  padding: 0;
-  margin: 2em 0 1em 0;
-  color: #343434;
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: normal;
-  font-family: "Orienta", sans-serif;
-  text-transform: uppercase;
-}
-
 .main {
   & h1 {
     margin: 1em 0 0.5em 0;
@@ -48,7 +37,7 @@ h3 {
   }
 }
 
-.grid-wrapper {
+.demo-grid-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -56,7 +45,7 @@ h3 {
   width: 100%;
 }
 
-.grid {
+.demo-grid {
   margin-right: auto;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -73,18 +62,6 @@ h3 {
     & {
       grid-template-columns: repeat(3, 1fr);
       margin-left: 0;
-    }
-  }
-}
-
-.demo-card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  @media (--viewport-medium) {
-    & {
-      gap: 1rem;
     }
   }
 }
@@ -125,6 +102,69 @@ h3 {
     border-radius: 5px;
     font-size: 0.9em;
     text-align: center;
+  }
+}
+
+.demo-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+  margin: 1rem 0;
+
+  & .row {
+    display: flex;
+    width: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  & h3 {
+    padding: 0;
+    margin: 1rem 0;
+    color: #343434;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: normal;
+    font-family: "Orienta", sans-serif;
+    text-transform: uppercase;
+  }
+
+  @media (--viewport-medium) {
+    & {
+      gap: 1rem;
+    }
+  }
+}
+
+.grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.grid {
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-left: auto;
+  gap: 1.5rem;
+  @media (--viewport-medium) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: 0;
+    }
+  }
+
+  @media (--viewport-large) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+      margin-left: 0;
+    }
   }
 }
 

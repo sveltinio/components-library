@@ -10,32 +10,42 @@
 </section>
 
 <section>
-	<h3 id="card-wo-cover-create-date)">Basic</h3>
-	<Card title={contentItem_1.metadata.title} content={contentItem_1.metadata.headline ?? ''}>
-		<CardAction
-			slot="cardAction"
-			href="{base}/{contentItem_1.resource}/{contentItem_1.metadata.slug}"
-		/>
-	</Card>
+	<div class="demo-container">
+		<h3 id="card-wo-cover-create-date)">Basic</h3>
+		<Card title={contentItem_1.metadata.title} content={contentItem_1.metadata.headline ?? ''}>
+			<CardAction
+				slot="cardAction"
+				href="{base}/{contentItem_1.resource}/{contentItem_1.metadata.slug}"
+			/>
+		</Card>
+	</div>
+</section>
 
-	<h3 id="card-wo-cover-create-date)">Title as link</h3>
-	<Card
-		title={contentItem_2.metadata.title}
-		content={contentItem_2.metadata.headline ?? ''}
-		href="{base}/{contentItem_2.resource}/{contentItem_2.metadata.slug}"
-	/>
+<section>
+	<div class="demo-container">
+		<h3 id="card-wo-cover-create-date)">Title as link</h3>
+		<Card
+			title={contentItem_2.metadata.title}
+			content={contentItem_2.metadata.headline ?? ''}
+			href="{base}/{contentItem_2.resource}/{contentItem_2.metadata.slug}"
+		/>
+	</div>
+</section>
 
-	<h3 id="card-with-cover-without-create-date">Complete</h3>
-	<Card title={contentItem_3.metadata.title} content={contentItem_3.metadata.headline ?? ''}>
-		<CardImage
-			slot="cardImage"
-			alt={contentItem_3.metadata.title}
-			src="{assets}/resources/{contentItem_3.resource}/{contentItem_3.metadata
-				.slug}/{contentItem_3.metadata.cover}"
-		/>
-		<CardAction
-			slot="cardAction"
-			href="{base}/{contentItem_3.resource}/{contentItem_3.metadata.slug}"
-		/>
-	</Card>
+<section>
+	<div class="demo-container">
+		<h3 id="card-with-cover-without-create-date">Complete</h3>
+		<Card title={contentItem_3.metadata.title} content={contentItem_3.metadata.headline ?? ''}>
+			<CardImage
+				slot="cardImage"
+				alt={contentItem_3.metadata.title}
+				src="{assets}/resources/{contentItem_3.resource}/{contentItem_3.metadata
+					.slug}/{contentItem_3.metadata.cover}"
+			/>
+			<CardAction
+				slot="cardAction"
+				href="{base}/{contentItem_3.resource}/{contentItem_3.metadata.slug}"
+			/>
+		</Card>
+	</div>
 </section>
