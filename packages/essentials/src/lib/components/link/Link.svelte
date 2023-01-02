@@ -15,7 +15,7 @@
 	export { className as class };
 
 	// to avoid hacking default class names
-	if (!isValidClassName(className, ['sn-e-c-link-vars', 'sn-e-c-link'])) {
+	if (!isValidClassName(className, ['sn-e-colors', 'sn-e-c-link-vars', 'sn-e-c-link'])) {
 		console.error('@sveltinio ERROR: Invalid class name for the Link component!');
 		className = '';
 	}
@@ -39,7 +39,7 @@
 	{target}
 	data-sveltekit-preload-data={prefetchValue}
 	aria-label={label}
-	class="sn-e-c-link-vars sn-e-c-link {className}"
+	class="sn-e-colors sn-e-c-link-vars sn-e-c-link {className}"
 	style={cssStyles}
 	data-testid="link"
 	{...$$restProps}
