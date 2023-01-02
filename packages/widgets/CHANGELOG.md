@@ -1,5 +1,13 @@
 # @sveltinio/widgets
 
+## 0.4.0
+
+### Minor Changes
+
+- refactor(breadcrumbs): it is now really usable
+- refactor: colors and css class names
+- fix: `package` on `svelte.config.js` to exclude files when building and make the package size smaller
+
 ## 0.3.0
 
 ### Minor Changes
