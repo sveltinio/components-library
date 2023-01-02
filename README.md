@@ -10,13 +10,13 @@ Each package has its own folder and README in the `/packages` directory. All pac
 
 ### Packages
 
-| Package                                                      |                                  Version                                   | Changelog                                        |
-| ------------------------------------------------------------ | :------------------------------------------------------------------------: | ------------------------------------------------ |
-| [@sveltinio/essentials](packages/essentials/README.md)       | [![essentials]](https://www.npmjs.com/package/@sveltinio/essentials)       | [Changelog](packages/essentials/CHANGELOG.md)    |
-| [@sveltinio/media-content](packages/media-content/README.md) | [![media-content]](https://www.npmjs.com/package/@sveltinio/media-content) | [Changelog](packages/media-content/CHANGELOG.md) |
-| [@sveltinio/seo](packages/seo/README.md)                     | [![seo]](https://www.npmjs.com/package/@sveltinio/seo)                     | [Changelog](packages/seo/CHANGELOG.md)           |
-| [@sveltinio/services](packages/services/README.md)           | [![services]](https://www.npmjs.com/package/@sveltinio/services)           | [Changelog](packages/services/CHANGELOG.md)      |
-| [@sveltinio/widgets](packages/widgets/README.md)                    | [![widgets]](https://www.npmjs.com/package/@sveltinio/widgets)             | [Changelog](packages/widgets/CHANGELOG.md)       |
+| Package                                            |                                  Version                                   | Changelog                                        |
+| -------------------------------------------------- | :------------------------------------------------------------------------: | ------------------------------------------------ |
+| [@sveltinio/essentials](packages/essentials)       | [![essentials]](https://www.npmjs.com/package/@sveltinio/essentials)       | [Changelog](packages/essentials/CHANGELOG.md)    |
+| [@sveltinio/media-content](packages/media-content) | [![media-content]](https://www.npmjs.com/package/@sveltinio/media-content) | [Changelog](packages/media-content/CHANGELOG.md) |
+| [@sveltinio/seo](packages/seo)                     | [![seo]](https://www.npmjs.com/package/@sveltinio/seo)                     | [Changelog](packages/seo/CHANGELOG.md)           |
+| [@sveltinio/services](packages/services)           | [![services]](https://www.npmjs.com/package/@sveltinio/services)           | [Changelog](packages/services/CHANGELOG.md)      |
+| [@sveltinio/widgets](packages/widgets)             | [![widgets]](https://www.npmjs.com/package/@sveltinio/widgets)             | [Changelog](packages/widgets/CHANGELOG.md)       |
 
 ## Demos
 
@@ -33,7 +33,7 @@ pnpm install
 Run the demos:
 
 ```bash
-pnpm demo # or pnpm turbo run dev
+pnpm dev # or pnpm turbo run dev
 ```
 
 ## Develop & Build
