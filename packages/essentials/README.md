@@ -6,7 +6,7 @@
 
 ## Description
 
-A collection of essentials Svelte _unstyled_ components.
+A collection of _essentials_ and fully configurable Svelte components.
 
 ## Components List
 
@@ -17,7 +17,6 @@ A collection of essentials Svelte _unstyled_ components.
 - [Link]
 - [Tabs]
 - [ToggleList]
-- [ScrollToTopButton]
 
 ## Install
 
@@ -49,4 +48,3 @@ Free and open-source software under the [MIT License](LICENSE)
 [Link]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/link/README.md
 [Tabs]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/tabs/README.md
 [ToggleList]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/list/README.md
-[ScrollToTopButton]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/scroll-to-top/README.md
