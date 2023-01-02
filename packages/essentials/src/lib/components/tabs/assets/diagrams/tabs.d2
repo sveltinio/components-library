@@ -1,0 +1,31 @@
+# Layout Engine: Dagre
+DOM: "Tabs Component Structure" {
+  TabsGroup: {
+    # keys, shapes and labels
+    list.shape: circle
+    list: "ul"
+
+    item.shape: circle
+    item: "li"
+    svg.shape: circle
+    # connections
+    item -> svg: icon
+
+    list -> item: {
+      source-arrowhead: 1
+      target-arrowhead: *
+    }
+  }
+
+  Tab: {
+    elem.shape: circle
+    elem: "..."
+  }
+
+  # connections
+  div.shape: circle
+  div -> TabsGroup
+  div -> Tab: {
+    target-arrowhead: *
+  }
+}

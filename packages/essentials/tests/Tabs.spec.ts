@@ -15,10 +15,10 @@ describe('Tabs', () => {
 			props: { Component: Tabs }
 		});
 
-		const titlesList = getByTestId('tabs-titles-list');
+		const titlesList = getByTestId('tabs-group');
 		expect(titlesList).not.toBeNull();
 
-		const titleItem = getByTestId('label-1');
+		const titleItem = getByTestId('tab-1');
 		expect(titleItem).not.toBeNull();
 	});
 
@@ -27,10 +27,10 @@ describe('Tabs', () => {
 			props: { Component: Tabs }
 		});
 
-		const slot = getByTestId('label-1');
+		const slot = getByTestId('tab-1');
 		expect(slot).not.toBeNull();
 
-		expect(slot.textContent).toBe('Tab 1');
+		expect(slot.textContent?.trim()).toBe('Tab 1');
 	});
 
 	it('should render tab content', async () => {

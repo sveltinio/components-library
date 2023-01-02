@@ -1,80 +1,52 @@
 <script lang="ts">
-	import './tabs-styles.css';
+	import './styles.css';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { stylesObjToCSSVars } from '$lib/utils.js';
+	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils.js';
 	import type { TabItem, TabsContext } from './types.js';
+	import TabsGroup from './TabsGroup.svelte';
 
 	export let activeTab = '1';
 	export let size = 'base';
+	export let justify = 'start';
 	export let bordered = false;
+
+	let className = '';
+	export { className as class };
+	// to avoid hacking default class names
+	if (!isValidClassName(className, ['sn-e-colors', 'sn-e-c-tabs-vars', 'sn-e-c-tabs'])) {
+		console.error('@sveltinio ERROR: Invalid class name for the Tabs component!');
+		className = '';
+	}
+
 	export let styles = {};
+	const cssStyles = stylesObjToCSSVars(styles);
 
 	let activeTabStore = writable(activeTab);
-	let titles: Array<TabItem> = [];
+	let tabs: Array<TabItem> = [];
 
-	const cssStyles = stylesObjToCSSVars(styles);
 	const ctx: TabsContext = {
 		activeTab: activeTabStore,
 		setActiveTab: (_value) => activeTabStore.set(_value),
-		registerTab: (id: string, title: string, icon: any) => {
-			titles.push({ id, title, icon });
-			titles = titles;
+		registerTab: (id: string, label: string, icon: any) => {
+			tabs.push({ id, label, icon });
+			tabs = tabs;
 		},
 		unregisterTab(id: string) {
-			const tabIndex = titles.findIndex((title) => title.id === id);
+			const tabIndex = tabs.findIndex((tab) => tab.id === id);
 			if (tabIndex > -1) {
-				titles.splice(tabIndex, 1);
-				titles = titles;
+				tabs.splice(tabIndex, 1);
+				tabs = tabs;
 			}
 		}
 	};
-	setContext('Tabs', ctx);
-
-	$: activeTab = $activeTabStore;
-	$: activeClassName = (id: string): boolean => {
-		if (activeTab != id) return false;
-		return true;
-	};
-
-	$: activeBorderedClassName = (id: string): boolean => {
-		if (activeTab != id) return false;
-		return true;
-	};
+	setContext('SNE_Tabs', ctx);
 </script>
 
-<div class="tabs" style={cssStyles}>
-	<ul class="tabs-list" class:tabs-list-bordered={bordered} data-testid="tabs-titles-list">
-		{#each titles as item}
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<li
-				class="tab"
-				class:tab-bordered={bordered}
-				class:active-tab={activeClassName(item.id)}
-				class:active-tab-bordered={bordered ? activeBorderedClassName(item.id) : ''}
-				on:click={() => {
-					ctx.setActiveTab(item.id);
-					activeTab = item.id;
-				}}
-				data-testid="tab-{item.id}"
-			>
-				<div class="inner">
-					{#if item.icon}
-						<svelte:component this={item.icon} />
-					{/if}
-					<span
-						class="label-{size}"
-						class:ml-2={item.icon != undefined}
-						data-testid="label-{item.id}"
-					>
-						{item.title}
-					</span>
-				</div>
-			</li>
-		{/each}
-	</ul>
+<div class="sn-e-colors sn-e-c-tabs-vars sn-e-c-tabs {className}" style={cssStyles}>
+	<TabsGroup {tabs} {activeTab} {justify} {size} {bordered} />
 
-	<div class="tab-content" class:tab-content-bordered={bordered} data-testid="tab-content">
+	<div class="tab__content" class:tab__content--bordered={bordered} data-testid="tab-content">
 		<slot setActiveTab={ctx.setActiveTab} />
 	</div>
 </div>
