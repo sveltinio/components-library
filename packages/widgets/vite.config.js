@@ -1,11 +1,11 @@
 import path from 'path';
 import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
 
-const config: UserConfig = {
+/** @type {import('vite').UserConfig} */
+const config = {
 	clearScreen: false,
 	server: {
-		port: 3005,
+		port: 3001,
 		fs: {
 			// Allow serving files from one level up to the project root
 			// Alternatevaly set server.fs.strict to false
@@ -23,7 +23,8 @@ const config: UserConfig = {
 		reporters: ['dot'],
 		silent: true,
 		environment: 'jsdom'
-	}
+	},
+	ssr: { noExternal: ['@indaco/svelte-iconoir/**'] }
 };
 
 export default config;
