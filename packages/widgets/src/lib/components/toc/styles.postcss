@@ -1,10 +1,13 @@
 @charset "UTF-8";
 /* stylelint-disable declaration-empty-line-before */
 
+/* CSS file minified in production */
+
 @import url("../reset") screen;
+@import url("../colors") screen;
 @import url("./variables") screen;
 
-.sw__toc__main {
+.sn-w-c-toc {
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -92,7 +95,7 @@
       border-left-color: var(--_item-border-l-color);
       border-radius: var(--_item-border-radius);
 
-      & .list__item_link {
+      & .item__link {
         display: block;
         color: var(--_item-color);
         text-decoration: var(--_item-text-decoration);
@@ -110,7 +113,7 @@
     }
   }
 
-  & .list_ordered {
+  & .list--ordered {
     list-style: var(--_list-ordered-style);
     margin-left: var(--_list-ordered-ml);
   }

@@ -1,1 +1,122 @@
-@import url("../reset") screen;@import url("./variables") screen;.sw__toc__main{align-items:flex-start;background-color:var(--_bg-color);border-color:var(--_border-color);border-radius:var(--_border-radius);border-style:var(--_border-style);border-width:var(--_border-width);display:flex;flex-direction:column;gap:var(--_gap);overflow:hidden;padding:var(--_pt) var(--_pr) var(--_pb) var(--_pl)}.sw__toc__main .btn{align-items:center;background-color:var(--_btn-bg-color);border-color:var(--_btn-border-color);border-radius:var(--_btn-border-radius);border-style:var(--_btn-border-style);border-width:var(--_btn-border-width);color:var(--_btn-color);cursor:var(--_btn-cursor);display:inline-flex;font-size:var(--_btn-font-size);font-weight:var(--_btn-font-weight);gap:var(--_btn-gap);justify-content:center;line-height:var(--_btn-line-height);min-height:var(--_btn-min-height);padding:var(--_btn-pt) var(--_btn-pr) var(--_btn-pb) var(--_btn-pl);text-transform:var(--_btn-text-transform)}.sw__toc__main .btn:hover{background-color:var(--_btn-bg-color-hover)}.sw__toc__main .btn span{color:var(--_btn-color)}.sw__toc__main .visible{display:block}.sw__toc__main .hidden{display:none}.sw__toc__main .list{list-style-type:var(--_list-style);overflow:hidden;padding:var(--_list-pt) var(--_list-pr) var(--_list-pb) var(--_list-pl);transition:all var(--_list-transition-duration) ease-in-out;width:var(--_list-width)}.sw__toc__main .list .list__item{border-bottom:var(--_item-border-b-width) var(--_item-border-b-style) var(--_item-border-b-color);border-left:var(--_item-border-l-width) var(--_item-border-l-style) var(--_item-border-l-color);border-radius:var(--_item-border-radius);border-right:var(--_item-border-r-width) var(--_item-border-r-style) var(--_item-border-r-color);border-top:var(--_item-border-t-width) var(--_item-border-t-style) var(--_item-border-t-color);margin:var(--_item-mt) var(--_item-mr) var(--_item-mb) var(--_item-ml);position:relative}.sw__toc__main .list .list__item .list__item_link{color:var(--_item-color);display:block;padding:var(--_item-pt) var(--_item-pr) var(--_item-pb) var(--_item-pl);-webkit-text-decoration:var(--_item-text-decoration);text-decoration:var(--_item-text-decoration)}.sw__toc__main .list .list__item .list__item_link:hover{background-color:var(--_item-bg-color-hover);color:var(--_item-color-hover);-webkit-text-decoration:var(--_item-text-decoration-hover);text-decoration:var(--_item-text-decoration-hover)}.sw__toc__main .list_ordered{list-style:var(--_list-ordered-style);margin-left:var(--_list-ordered-ml)}
+@charset "UTF-8";
+/* stylelint-disable declaration-empty-line-before */
+
+/* CSS file minified in production */
+
+@import url("../reset") screen;
+@import url("../colors") screen;
+@import url("./variables") screen;
+
+.sn-w-c-toc {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--_gap);
+  padding-top: var(--_pt);
+  padding-right: var(--_pr);
+  padding-bottom: var(--_pb);
+  padding-left: var(--_pl);
+  background-color: var(--_bg-color);
+  border-width: var(--_border-width);
+  border-style: var(--_border-style);
+  border-color: var(--_border-color);
+  border-radius: var(--_border-radius);
+}
+
+.sn-w-c-toc .btn {
+    min-height: var(--_btn-min-height);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: var(--_btn-cursor);
+    gap: var(--_btn-gap);
+    color: var(--_btn-color);
+    font-size: var(--_btn-font-size);
+    font-weight: var(--_btn-font-weight);
+    line-height: var(--_btn-line-height);
+    text-transform: var(--_btn-text-transform);
+
+    border-width: var(--_btn-border-width);
+    border-style: var(--_btn-border-style);
+    border-color: var(--_btn-border-color);
+    border-radius: var(--_btn-border-radius);
+
+    padding-top: var(--_btn-pt);
+    padding-right: var(--_btn-pr);
+    padding-bottom: var(--_btn-pb);
+    padding-left: var(--_btn-pl);
+    background-color: var(--_btn-bg-color);
+  }
+
+.sn-w-c-toc .btn:hover {
+      background-color: var(--_btn-bg-color-hover);
+    }
+
+.sn-w-c-toc .btn span {
+      color: var(--_btn-color);
+    }
+
+.sn-w-c-toc .visible {
+    display: block;
+  }
+
+.sn-w-c-toc .hidden {
+    display: none;
+  }
+
+.sn-w-c-toc .list {
+    width: var(--_list-width);
+    list-style-type: var(--_list-style);
+    padding-top: var(--_list-pt);
+    padding-right: var(--_list-pr);
+    padding-bottom: var(--_list-pb);
+    padding-left: var(--_list-pl);
+    overflow: hidden;
+    transition: all var(--_list-transition-duration) ease-in-out;
+  }
+
+.sn-w-c-toc .list .list__item {
+      position: relative;
+      margin-top: var(--_item-mt);
+      margin-right: var(--_item-mr);
+      margin-bottom: var(--_item-mb);
+      margin-left: var(--_item-ml);
+
+      border-top-width: var(--_item-border-t-width);
+      border-top-style: var(--_item-border-t-style);
+      border-top-color: var(--_item-border-t-color);
+      border-right-width: var(--_item-border-r-width);
+      border-right-style: var(--_item-border-r-style);
+      border-right-color: var(--_item-border-r-color);
+      border-bottom-width: var(--_item-border-b-width);
+      border-bottom-style: var(--_item-border-b-style);
+      border-bottom-color: var(--_item-border-b-color);
+      border-left-width: var(--_item-border-l-width);
+      border-left-style: var(--_item-border-l-style);
+      border-left-color: var(--_item-border-l-color);
+      border-radius: var(--_item-border-radius);
+    }
+
+.sn-w-c-toc .list .list__item .item__link {
+        display: block;
+        color: var(--_item-color);
+        -webkit-text-decoration: var(--_item-text-decoration);
+                text-decoration: var(--_item-text-decoration);
+        padding-top: var(--_item-pt);
+        padding-right: var(--_item-pr);
+        padding-bottom: var(--_item-pb);
+        padding-left: var(--_item-pl);
+      }
+
+.sn-w-c-toc .list .list__item .item__link:hover {
+          color: var(--_item-color-hover);
+          background-color: var(--_item-bg-color-hover);
+          -webkit-text-decoration: var(--_item-text-decoration-hover);
+                  text-decoration: var(--_item-text-decoration-hover);
+        }
+
+.sn-w-c-toc .list--ordered {
+    list-style: var(--_list-ordered-style);
+    margin-left: var(--_list-ordered-ml);
+  }

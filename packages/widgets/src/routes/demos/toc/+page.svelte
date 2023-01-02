@@ -9,24 +9,50 @@
 </section>
 
 <section>
-	<h3 id="toc2-default">Default</h3>
-	<TOC data={tocEntries} />
+	<div class="demo-container">
+		<h3 id="toc2-default">Default</h3>
+		<TOC data={tocEntries} />
+	</div>
+</section>
 
-	<h3 id="toc2-default">Ordered</h3>
-	<TOC data={tocEntries} ordered />
+<section>
+	<div class="demo-container">
+		<h3 id="toc2-default">Ordered</h3>
+		<TOC data={tocEntries} ordered />
+	</div>
+</section>
 
-	<h3 id="toc2-open">Custom title</h3>
-	<TOC data={tocEntries} label="My TOC" />
+<section>
+	<div class="demo-container">
+		<h3 id="toc2-open">Custom title</h3>
+		<TOC data={tocEntries} label="My TOC" />
+	</div>
+</section>
 
-	<h3 id="toc2-with-children">Label only</h3>
-	<TOC data={tocEntries} labelOnly />
+<section>
+	<div class="demo-container">
+		<h3 id="toc2-with-children">Label only</h3>
+		<TOC data={tocEntries} labelOnly />
+	</div>
+</section>
 
-	<h3 id="toc2-with-children">Icon only</h3>
-	<TOC data={tocEntries} iconOnly />
+<section>
+	<div class="demo-container">
+		<h3 id="toc2-with-children">Icon only</h3>
+		<TOC data={tocEntries} iconOnly />
+	</div>
+</section>
 
-	<h3 id="toc2-with-children">Open by default</h3>
-	<TOC data={tocEntries} isOpen />
+<section>
+	<div class="demo-container">
+		<h3 id="toc2-with-children">Open by default</h3>
+		<TOC data={tocEntries} isOpen />
+	</div>
+</section>
 
-	<h3 id="toc2-sveltin">sveltin theme</h3>
-	<TOC data={tocEntries} theme="toc-violet-theme" prefixChar="*" />
+<section>
+	<div class="demo-container">
+		<h3 id="toc2-sveltin">sveltin theme</h3>
+		<TOC data={tocEntries} class="toc-violet-theme" prefixChar="*" />
+	</div>
 </section>

@@ -12,7 +12,6 @@
 <button
 	class="btn"
 	on:click|preventDefault={toggleVisibility}
-	alt={label}
 	aria-label={label}
 	aria-expanded={isOpen}
 	data-testid="toc-btn"

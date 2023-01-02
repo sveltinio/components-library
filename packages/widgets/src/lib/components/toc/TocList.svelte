@@ -17,7 +17,7 @@
 	class="list"
 	class:visible={isOpen}
 	class:hidden={!isOpen}
-	class:list_ordered={ordered}
+	class:list--ordered={ordered}
 	data-testid="toc-list"
 >
 	{#each data as item}

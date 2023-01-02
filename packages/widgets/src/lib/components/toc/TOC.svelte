@@ -14,14 +14,18 @@
 	export let isOpen = false;
 	export let ordered = false;
 
-	let themeClassName = '';
-	export { themeClassName as theme };
+	let className = '';
+	export { className as class };
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 </script>
 
-<nav class="sw__toc sw__toc__main {themeClassName}" style={cssStyles} data-testid="toc-main">
+<nav
+	class="sn-w-colors sn-w-c-toc-vars sn-w-c-toc {className}"
+	style={cssStyles}
+	data-testid="toc-main"
+>
 	<TocButton {label} bind:isOpen {iconOnly} {labelOnly} />
 	<TocList {data} {ordered} {isOpen} {full} {prefixChar} />
 </nav>
