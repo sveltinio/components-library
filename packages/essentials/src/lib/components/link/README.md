@@ -38,22 +38,11 @@ The `Link` component exposes a set of properties but it does not prevent you to 
 | noOpenener | boolean |    no    | true     | Go to the linked resource without granting the new browsing context |
 | noReferrer | boolean |    no    | true     | Prevent passing the referrer information to the target website      |
 
-### Styles
-
-| Property |  Type   | Required |   Default   | Description                                       |
-| :------- | :-----: | :------: | :---------: | :------------------------------------------------ |
-| class    | string  |    no    |             | The css class name used to make a theme variant   |
-| styles   | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles |
-
-Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
-
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-The two component properties `class` and `styles` are the ones allowing you to customize the component appearence.
-
-Read more [here](./THEMING.md)
+The CSS variables are defined in the [variables.css](./variables.css) file.
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props

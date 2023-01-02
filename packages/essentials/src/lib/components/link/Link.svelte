@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './styles.css';
 	import { ExternalLinkIcon } from './index.js';
-	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils';
+	import { stylesObjToCSSVars } from '$lib/utils';
 
 	export let label = '';
 	export let href: string;
@@ -10,15 +10,6 @@
 	export let icon = true;
 	export let noOpener = true;
 	export let noReferrer = true;
-
-	let className = '';
-	export { className as class };
-
-	// to avoid hacking default class names
-	if (!isValidClassName(className, ['sn-e-colors', 'sn-e-c-link-vars', 'sn-e-c-link'])) {
-		console.error('@sveltinio ERROR: Invalid class name for the Link component!');
-		className = '';
-	}
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
@@ -39,7 +30,7 @@
 	{target}
 	data-sveltekit-preload-data={prefetchValue}
 	aria-label={label}
-	class="sn-e-colors sn-e-c-link-vars sn-e-c-link {className}"
+	class="sn-e-colors sn-e-c-link-vars sn-e-c-link"
 	style={cssStyles}
 	data-testid="link"
 	{...$$restProps}
