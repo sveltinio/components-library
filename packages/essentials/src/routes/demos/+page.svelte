@@ -4,55 +4,55 @@
 	const demos: Array<Record<string, string>> = [
 		{
 			name: 'Button',
-			headline: 'Breadcrumbs helps users to navigate through the website.',
+			headline:
+				'Interactive and accessible component activated by a user to perform an action',
 			url: 'demos/button'
 		},
 		{
 			name: 'ButtonGroup',
-			headline: 'Cards are used to group and display content in a easily readable way.',
+			headline: 'Accessible component as a container for grouping a set of buttons.',
 			url: 'demos/button-group'
 		},
 		{
 			name: 'ColorViewer',
-			headline: 'Pages Navigator components to help users to navigate throught the pages.',
+			headline: 'Render a colorful circle with the label set to the color value.',
 			url: 'demos/color'
 		},
 		{
 			name: 'Dropdown',
-			headline:
-				'ResponsiveCard component display content vertically on small screen, horizontally on large screen.',
+			headline: 'Open a menu when the button is clicked and displays a menu of link targets.',
 			url: 'demos/dropdown'
 		},
 		{
 			name: 'Link',
-			headline: 'ScrollToTopButton components helps to scroll to the top of the page.',
+			headline: 'Provide an interactive reference to a resource either external or local.',
 			url: 'demos/link'
 		},
 		{
 			name: 'List',
-			headline: 'Table of contents component.',
+			headline: 'Presents a list of options and allows a user to select one them.',
 			url: 'demos/list'
 		},
 		{
 			name: 'Tabs',
-			headline: 'Show contents in tabbed format',
+			headline: 'A set of tab elements and their associated tab panels.',
 			url: 'demos/tabs'
 		}
 	];
 </script>
 
-<section class="main">
-	<h1><tt>@sveltinio/essentials</tt></h1>
-	<h2><tt>Demos</tt></h2>
-</section>
+<div class="header">
+	<h1>@sveltinio/essentials</h1>
+	<h2>Demos</h2>
+</div>
 
-<div class="demo-grid-wrapper">
-	<div class="demo-grid">
-		{#each demos as demo}
-			<a class="demo-card" href="{base}/{demo.url}">
+<div class="demos-grid">
+	{#each demos as demo}
+		<div class="demo-card">
+			<a href="{base}/{demo.url}">
 				<h2>{demo.name}</h2>
 				<p>{demo.headline}</p>
 			</a>
-		{/each}
-	</div>
+		</div>
+	{/each}
 </div>
