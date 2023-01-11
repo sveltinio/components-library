@@ -22,7 +22,8 @@ The `ColorViewer` component exposes a set of properties but it does not prevent 
 | Property   |  Type   | Required | Default  | Description                                       |
 | :--------- | :-----: | :------: | :------- | :------------------------------------------------ |
 | value      | string  |    no    |          | Sets the emement's background color               |
-| showValue  | boolean |    no    | true     | If false, hide the color value string             |
+| labelColor | string  |    no    |          | If false, hide the color value string             |
+| showLabel  | boolean |    no    | true     | If false, hide the color value string             |
 | size       | integer |    no    | 16       | Size in pixels                                    |
 | border     | boolean |    no    | true     | If true, sets the element's border                |
 
