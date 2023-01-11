@@ -20,7 +20,7 @@ function main() {
 			});
 		})
 		.catch((err) => {
-			console.log(`\x1b[31m ${err} \x1b[0m`);
+			console.log(pc.red(pc.bold(err)));
 		});
 
 	console.log(pc.blue(pc.bold('-> Processing PostCSS files for components')));
@@ -37,7 +37,7 @@ function main() {
 			});
 		})
 		.catch((err) => {
-			console.log(`\x1b[31m ${err} \x1b[0m`);
+			console.log(pc.red(pc.bold(err)));
 		});
 }
 

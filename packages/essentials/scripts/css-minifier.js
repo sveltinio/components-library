@@ -12,13 +12,29 @@ function main() {
 		.then((filesList) => {
 			filesList.forEach((input) => {
 				const parsedInput = path.parse(input);
-				const output = path.join(parsedInput.dir, parsedInput.name).concat('.min').concat('.css');
+				const output = path
+					.join(parsedInput.dir, parsedInput.name)
+					.concat('.min')
+					.concat(parsedInput.ext);
 				postcssProcess(input, output, mode);
 				fs.rmSync(input);
 			});
 		})
 		.catch((err) => {
-			console.log(`\x1b[31m ${err} \x1b[0m`);
+			console.log(pc.red(pc.bold(err)));
+		});
+
+	findByName(distFolder, ['colors.css', 'tw-preflight.css'])
+		.then((filesList) => {
+			filesList.forEach((input) => {
+				const parsedInput = path.parse(input);
+				const output = path.join(parsedInput.dir, parsedInput.name).concat(parsedInput.ext);
+				postcssProcess(input, output, mode);
+				fs.rmSync(input);
+			});
+		})
+		.catch((err) => {
+			console.log(pc.red(pc.bold(err)));
 		});
 }
 
