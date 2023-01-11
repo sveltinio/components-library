@@ -92,3 +92,5 @@ coverage/
 
 # pa11y-ci
 pa11y-results.json
+
+src/lib/styles/**/styles.css

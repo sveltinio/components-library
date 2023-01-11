@@ -2,24 +2,31 @@
 	import { MailIcon } from '@indaco/svelte-iconoir/icons/MailIcon';
 	import { PlusIcon } from '@indaco/svelte-iconoir/icons/PlusIcon';
 	import { Button } from '$lib/index.js';
+
+	const handleButtonClick = (event: any) => {
+		alert('button clicked on:' + event.detail.eventDetails);
+	};
 </script>
 
-<section class="main">
-	<h1><tt>@sveltinio/essentials</tt></h1>
-	<h2><tt>Button</tt></h2>
-</section>
+<div class="header" role="main">
+	<h1>@sveltinio/essentials</h1>
+	<h2>Button</h2>
+</div>
 
-<section>
-	<div id="buttons-basic" class="demo-container">
-		<h3 id="buttons-default">Variants</h3>
-		<div class="row">
-			<Button />
-			<Button type="primary" />
-			<Button type="secondary" />
+<section role="contentinfo">
+	<div class="actions">
+		<a class="btn-back" href="/demos">← Return To The Demos</a>
+	</div>
+
+	<div id="buttons-variants-wrapper" class="demo-wrapper">
+		<h3 id="buttons-variants">Variants</h3>
+		<div class="preview">
+			<Button href="https://google.com" external />
+			<Button type="primary" on:click={handleButtonClick} />
+			<Button type="secondary" href="https://google.com" external />
 			<Button type="error" />
 			<Button type="warning" />
-		</div>
-		<div class="row">
+
 			<Button type="success" />
 			<Button type="info" />
 			<Button type="light" />
@@ -27,29 +34,34 @@
 		</div>
 	</div>
 
-	<div id="buttons-ring-focus" class="demo-container">
-		<h3 id="buttons-default">Focus Ring</h3>
-		<div class="row">
+	<div id="buttons-disabled-wrapper" class="demo-wrapper">
+		<h3 id="buttons-disabled">Disabled</h3>
+		<div class="preview">
+			<Button disabled>Disabled</Button>
+			<Button type="primary" disabled />
+			<Button type="secondary" disabled />
+			<Button type="error" disabled />
+			<Button type="warning" disabled />
+		</div>
+	</div>
+
+	<div id="buttons-ring-focus-wrapper" class="demo-wrapper">
+		<h3 id="buttons-ring-focus">Focus Ring</h3>
+		<div class="preview">
 			<Button withFocusRing />
 			<Button type="primary" withFocusRing />
 			<Button type="secondary" withFocusRing />
 			<Button type="error" withFocusRing />
 			<Button type="warning" withFocusRing />
 		</div>
-		<div class="row">
-			<Button type="success" withFocusRing />
-			<Button type="info" withFocusRing />
-			<Button type="light" withFocusRing />
-			<Button type="dark" withFocusRing />
-		</div>
 	</div>
 
-	<div id="buttons-ring" class="demo-container">
-		<h3 id="buttons-default">
+	<div id="buttons-ring-wrapper" class="demo-wrapper">
+		<h3 id="buttons-ring">
 			Sizes [<i>xs</i>, <i>sm</i>, <i>base</i>, <i>lg</i>, <i>xl</i>]. Default:
 			<i>base</i>
 		</h3>
-		<div class="row">
+		<div class="preview">
 			<Button size="xs" />
 			<Button size="sm" />
 			<Button />
@@ -58,9 +70,9 @@
 		</div>
 	</div>
 
-	<div id="buttons-rounded" class="demo-container">
-		<h3 id="buttons-default">Rounded</h3>
-		<div class="row">
+	<div id="buttons-rounded-wrapper" class="demo-wrapper">
+		<h3 id="buttons-rounded">Rounded</h3>
+		<div class="preview">
 			<Button rounded />
 			<Button type="primary" rounded />
 			<Button type="secondary" rounded />
@@ -69,20 +81,31 @@
 		</div>
 	</div>
 
-	<div id="buttons-outlined" class="demo-container">
-		<h3 id="buttons-default">Outlined</h3>
-		<div class="row">
-			<Button outlined rounded />
-			<Button type="primary" outlined rounded />
-			<Button type="secondary" outlined rounded />
-			<Button type="error" outlined rounded />
-			<Button type="warning" outlined rounded />
+	<div id="buttons-outlined-wrapper" class="demo-wrapper">
+		<h3 id="buttons-outlined">Outlined</h3>
+		<div class="preview">
+			<Button outlined />
+			<Button type="primary" outlined />
+			<Button type="secondary" outlined />
+			<Button type="error" outlined />
+			<Button type="warning" outlined />
 		</div>
 	</div>
 
-	<div id="buttons-circular" class="demo-container">
-		<h3 id="buttons-default">Circular</h3>
-		<div class="row">
+	<div id="buttons-outlined-disabled-wrapper" class="demo-wrapper">
+		<h3 id="buttons-outlined-disabled">Outlined Disabled</h3>
+		<div class="preview">
+			<Button disabled />
+			<Button type="primary" outlined disabled />
+			<Button type="secondary" outlined disabled />
+			<Button type="error" outlined disabled />
+			<Button type="warning" outlined disabled />
+		</div>
+	</div>
+
+	<div id="buttons-circular-wrapper" class="demo-wrapper">
+		<h3 id="buttons-circular">Circular</h3>
+		<div class="preview">
 			<Button circle>
 				<PlusIcon />
 			</Button>
@@ -93,27 +116,27 @@
 		</div>
 	</div>
 
-	<div id="buttons-with-icons" class="demo-container">
-		<h3 id="buttons-default">Icon</h3>
-		<div class="row">
+	<div id="buttons-with-icons-wrapper" class="demo-wrapper">
+		<h3 id="buttons-with-icons">Icon (left & right)</h3>
+		<div class="preview">
 			<Button type="primary">
-				<MailIcon slot="leftIcon" /> Button Text
+				<MailIcon slot="leftIcon" aria-hidden="true" focusable="false" /> Button Text
 			</Button>
 			<Button type="secondary">
-				<MailIcon slot="leftIcon" /> Button Text
+				<MailIcon slot="leftIcon" aria-hidden="true" focusable="false" /> Button Text
 			</Button>
 			<Button type="error">
-				Button Text <MailIcon slot="rightIcon" />
+				Button Text <MailIcon slot="rightIcon" aria-hidden="true" focusable="false" />
 			</Button>
 			<Button type="warning">
-				Button Text <MailIcon slot="rightIcon" />
+				Button Text <MailIcon slot="rightIcon" aria-hidden="true" focusable="false" />
 			</Button>
 		</div>
 	</div>
 
-	<div id="buttons-theming" class="demo-container">
-		<h3 id="buttons-custom-colors">Custom Styles with prop</h3>
-		<div class="row">
+	<div id="buttons-theming-with-prop-wrapper" class="demo-wrapper">
+		<h3 id="buttons-theming-with-prop">Custom Styles with prop</h3>
+		<div class="preview">
 			<Button
 				label="Custom Styles"
 				type="success"
@@ -122,7 +145,7 @@
 				styles={{
 					color: 'rgb(54 83 20)',
 					'border-color': 'rgb(236 252 203)',
-					'bg-color': 'rgb(132 204 22)',
+					'bg-color': 'rgb(0 103 39)',
 					'bg-color-hover': 'rgb(163 230 53)',
 					'ring-color': 'rgb(190 242 100)',
 					'ring-width': '3px',
@@ -132,10 +155,10 @@
 		</div>
 	</div>
 
-	<div id="buttons-theming" class="demo-container">
-		<h3 id="buttons-custom-colors">Custom Styles with CSS Class</h3>
-		<div class="row">
-			<Button label="My Primary Button" type="primary" rounded class="my-own-primary-btn" />
+	<div id="buttons-theming-with-css-class-wrapper" class="demo-wrapper">
+		<h3 id="buttons-theming-with-css-class">Custom Styles with CSS Class</h3>
+		<div class="preview">
+			<Button label="My Primary Button" type="primary" rounded class="my-primary-btn" />
 		</div>
 	</div>
 </section>

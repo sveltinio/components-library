@@ -9,6 +9,10 @@ The two component properties `styles` and `theme` are the ones allowing you to c
 
 > Refer to the [Design Rules] document to better understand how the component has been designed and how to customize the styles.
 
+## DOM Element Structure
+
+The `Button` component is a `button` or a `a` HTML element. If an icon is present, the icon is placed in a `span` within the main HTML element
+
 ## CSS Variables
 
 The CSS variables are defined in the [variables.css](./variables.css) file.
@@ -16,6 +20,8 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 ## Examples
 
 ### Custom Styles with prop
+
+<img src="./assets/images/custom_prop.png" alt="Button - Custom Styles with prop" />
 
 ```html
 <script>
@@ -42,12 +48,14 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 
 ### Custom Styles with CSS Class
 
+<img src="./assets/images/custom_class.png" alt="Button - Custom Styles with CSS class" />
+
 ```css
 /* app.css*/
 .my-primary-btn {
   --primary-color: white;
-  --primary-bg-color: #a855f7;
-  --primary-border-color: #e879f9;
+  --primary-bg-color: #7e22ce;
+  --primary-border-color: #a855f7;
   --primary-bg-color-hover: #c026d3;
   --primary-ring-color: #d946ef;
 }
