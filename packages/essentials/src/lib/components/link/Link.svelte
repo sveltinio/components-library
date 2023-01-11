@@ -1,7 +1,9 @@
 <script lang="ts">
-	import './styles.css';
+	import '../../styles/base.css';
+	import '../../styles/components/link/variables.css';
+	import '../../styles/components/link/styles.css';
 	import { ExternalLinkIcon } from './index.js';
-	import { stylesObjToCSSVars } from '$lib/utils';
+	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils';
 
 	export let label = '';
 	export let href: string;
@@ -22,6 +24,12 @@
 		prefetch && !external ? `hover` : `off`;
 	const target = external ? '_blank' : '_self';
 	const externalIcon = external && icon ? true : false;
+
+	$: className = '';
+	// avoid hacking default class names
+	$: isValidClassName($$props.class ?? '', ['sn-e-c-link-vars', 'sn-e-c-link'])
+		? (className = $$props.class)
+		: (className = '');
 </script>
 
 <a
@@ -29,9 +37,9 @@
 	rel={relOptions.join(' ')}
 	{target}
 	data-sveltekit-preload-data={prefetchValue}
-	aria-label={label}
-	class="sn-e-colors sn-e-c-link-vars sn-e-c-link"
+	class="sn-e-c-link-vars sn-e-c-link {className}"
 	style={cssStyles}
+	aria-label={label}
 	data-testid="link"
 	{...$$restProps}
 	><span class="link__content">

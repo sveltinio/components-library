@@ -1,35 +1,47 @@
 <script lang="ts">
 	import { Link } from '$lib/index.js';
-	import DummyIcon from '../_dummyIcon.svelte';
+	//import DummyIcon from '../_dummyIcon.svelte';
 	import { base } from '$app/paths';
 </script>
 
-<section class="main">
-	<h1><tt>@sveltinio/essentials</tt></h1>
+<div class="header" role="main">
+	<h1>@sveltinio/essentials</h1>
+	<h2>Link</h2>
+</div>
 
-	<h2><tt>Link</tt></h2>
-</section>
+<section role="contentinfo">
+	<div class="actions">
+		<a class="btn-back" href="/demos">← Return To The Demos</a>
+	</div>
 
-<section>
-	<div id="internal-link" class="demo-container">
+	<div id="internal-link" class="demo-wrapper">
 		<h3>Internal Link</h3>
-		<Link href="{base}/contact">Contact</Link>
+		<div class="preview">
+			<Link href="{base}/contact">Contact</Link>
+		</div>
 	</div>
 
-	<div id="external-link" class="demo-container">
+	<div id="external-link" class="demo-wrapper">
 		<h3>External Link</h3>
-		<Link href="https://sveltin.io" external>sveltin</Link>
+		<div class="preview">
+			<Link href="https://sveltin.io" external>sveltin</Link>
+		</div>
 	</div>
 
-	<div id="external-link-slot" class="demo-container">
+	<div id="external-link-slot" class="demo-wrapper">
 		<h3>External w/ label text w/o icon</h3>
-		<Link href="https://sveltin.io" label="sveltin.io" external icon={false} />
+		<div class="preview">
+			<Link href="https://sveltin.io" label="sveltin.io" external icon={false} />
+		</div>
 	</div>
-
-	<div id="external-custom-icon" class="demo-container">
+	<!--
+	<div id="external-custom-icon" class="demo-wrapper">
 		<h3>external with custom icon</h3>
-		<Link href="https://sveltin.io" external>
-			<DummyIcon slot="icon" />
-		</Link>
+		<div class="preview">
+			<Link href="https://sveltin.io" external>
+				<DummyIcon slot="icon" />
+			</Link>
+		</div>
 	</div>
+	-->
 </section>
