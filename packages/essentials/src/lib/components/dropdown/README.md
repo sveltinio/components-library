@@ -1,12 +1,14 @@
 # Dropdown
 
-`Dropdown` open a menu when the button is clicked. It is made by a combination of the `Dropdown`, `DropdownButton`, `DropdownContent`, and `DropdownItem` components.
+The `Dropdown` is an accessible ([WAI-ARIA Accessibility Reference]) menu button component acting as navigation menu button that opens a menu of items that behave as links.
+
+It is made up by combining the `Dropdown`, `DropdownButton`, `DropdownContent`, and `DropdownItem` components.
 
 ## Examples
 
 <img src="./assets/images/default.png" alt="Dropdown - Default Styles" />
 
-### **WITH ITEMS AS LINKS**
+## Usage
 
 ```html
 <script>
@@ -19,12 +21,12 @@
 <script>
 
 <Dropdown>
- <DropdownButton label="Menu" />
- <DropdownContent>
-  <DropdownItem label="Item 1" href="#" />
-  <DropdownItem label="Item 2" href="#" />
-  <DropdownItem label="Item 3" href="#" />
- </DropdownContent>
+   <DropdownButton label="Menu" />
+   <DropdownContent>
+      <DropdownItem label="Item 1" href="#" />
+      <DropdownItem label="Item 2" href="#" />
+      <DropdownItem label="Item 3" href="#" />
+   </DropdownContent>
 </Dropdown>
 ```
 
@@ -78,6 +80,13 @@ The `DropdownItem` component exposes the following properties:
 | prefetch | boolean | no       | `yes`    | Enable `data-sveltekit-preload-data`        |
 | target   | string  | no       | `_self`  | Specifies where to open the linked document |
 
+## Slots
+
+| Name        | Default | Fallback | Description                                       |
+| :---------- | :-----: | :------: | :------------------------------------------------ |
+| `leftIcon`  | ✗       |    ✗     | The css class name used to make a theme variant   |
+| `rightIcon` | ✗       |    ✗     | The css class name used to make a theme variant   |
+
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
@@ -88,3 +97,4 @@ Read more [here](./THEMING.md)
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
+[WAI-ARIA Accessibility Reference]: https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/

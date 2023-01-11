@@ -11,7 +11,7 @@ The two component properties `styles` and `theme` are the ones allowing you to c
 
 ## DOM Element Structure
 
-Below is the DOM Element Structure for the `PagesNavigator` component.
+Below is the DOM Element Structure for the `Dropdown` component.
 
 > Legend
 >
@@ -27,9 +27,9 @@ The DOM Element Structure above can be mapped to the following table going throu
 | Component       | HTML Element & CSS Class Name | CSS Variables Prefix |
 | :-------------- | ----------------------------: | -------------------: |
 |                 | `div.sn-e-c-dropdown`         |                      |
-| DropdownButton  | `sn-e-c-dropdown__button`     | |
-| DropdownContent | `sn-e-c-dropdown__list`       | |
-| DropdownItem    | `sn-e-c-dropdown__list__item` | |
+| DropdownButton  | `btn`                         | `btn`                |
+| DropdownContent | `list`                        | `list`               |
+| DropdownItem    | `list__item`                  | `item`               |
 
 ## CSS Variables
 
