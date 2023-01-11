@@ -1,5 +1,5 @@
 .sn-e-c-togglelist-vars {
-  /* * btn (css class name: toggle__btn) * */
+  /* * button (css class name: btn) * */
   --_btn-width: var(--btn-width, auto);
   --_btn-width-full: var(--btn-width, 100%);
   --_btn-cursor: var(--btn-cursor, pointer);
@@ -16,13 +16,18 @@
   --_btn-pb: var(--btn-pb, 0.5rem); /* 8px */
   --_btn-pl: var(--btn-pl, 0.5rem); /* 8px */
 
-  --_btn-border-width: var(--btn-border-width, 0);
+  --_btn-border-width: var(--btn-border-width, 1px);
   --_btn-border-style: var(--btn-border-style, solid);
   --_btn-border-color: var(--btn-border-color, transparent);
-  --_btn-border-radius: var(--btn-border-radius, 0.25rem); /* 4px */
+  --_btn-border-radius: var(--btn-border-radius, 0.25rem);
 
   --_btn-bg-color: var(--btn-bg-color, var(--white));
   --_btn-bg-color-hover: var(--btn-bg-color-hover, var(--slate-50));
+
+  --_btn-ring-width: var(--btn-ring-width, 2px);
+  --_btn-ring-color: var(--btn-ring-color, var(--slate-300));
+  --_btn-ring-style: var(--btn-ring-style, solid);
+  --_btn-ring-offset: var(--btn-ring-offset, 1px);
 
   /* * list (css class name: list) * */
   --_list-mt: var(--list-mt, 0.5rem); /* 8px */
@@ -35,7 +40,7 @@
   --_list-pb: var(--list-pb, 0rem);
   --_list-pl: var(--list-pl, 0rem);
 
-  /* * item (css class name: item) * */
+  /* * item (css class name: list__item) * */
   --_item-gap: var(--item-gap, 0.5rem); /* 8px */
   --_item-color: var(--item-color, var(--slate-700));
   --_item-color-hover: var(--item-color-hover, var(--slate-900));
@@ -53,8 +58,8 @@
   --_item-border-color: var(--item-border-color, var(--slate-100));
   --_item-border-color-hover: var(--item-border-color-hover, var(--slate-400));
 
-  --_active-item-color: var(--active-item-color, var(--slate-900));
-  --_active-item-border-color: var(--active-item-border-color, var(--slate-900));
+  --_item-active-color: var(--item-active-color, var(--slate-900));
+  --_item-active-border-color: var(--item-active-border-color, var(--slate-900));
 
   /* * icon * */
   --_icon-color: var(--icon-color, var(--_btn-color));

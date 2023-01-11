@@ -1,13 +1,10 @@
 @charset "UTF-8";
+
 /* stylelint-disable declaration-empty-line-before */
 
-/* CSS file minified in production */
-
-@import url("../reset") screen;
-@import url("../colors") screen;
-@import url("./variables") screen;
-
 .sn-e-c-togglelist {
+  position: relative;
+
   & ul {
     list-style: none;
   }
@@ -24,7 +21,7 @@
     display: none;
   }
 
-  & .toggle__btn {
+  & .btn {
     width: var(--_btn-width);
     display: flex;
     align-items: center;
@@ -50,6 +47,13 @@
       background-color: var(--_btn-bg-color-hover);
     }
 
+    &:focus {
+      outline-color: var(--_btn-ring-color);
+      outline-width: var(--_btn-ring-width);
+      outline-style: var(--_btn-ring-style);
+      outline-offset: var(--_btn-ring-offset);
+    }
+
     & .btn__icon {
       display: flex;
       margin: 0;
@@ -59,7 +63,7 @@
     }
   }
 
-  & .toggle__btn--full {
+  & .btn--full {
     width: var(--_btn-width-full);
   }
 
@@ -73,7 +77,7 @@
     padding-bottom: var(--_list-pb);
     padding-left: var(--_list-pl);
 
-    & .item {
+    & .list__item {
       border-top: 0;
       border-bottom: 0;
       border-right: 0;
@@ -102,14 +106,26 @@
         line-height: var(--_item-line-height);
         letter-spacing: var(--_item-letter-spacing);
 
-        padding-left: 1rem; /* 16px */
+        padding: 0 1rem; /* 16px */
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }
 
-  & .item.is-active {
-    color: var(--_active-item-color);
-    border-color: var(--_active-item-border-color);
+  & .list__item.focus {
+    color: var(--_item-color-hover);
+    border-left-color: var(--_item-border-color-hover);
+    border-left-width: var(--_item-border-width);
+    border-left-style: var(--_item-border-style);
+    background-color: var(--_item-bg-color-hover);
+  }
+
+  & .list__item.is-active {
+    color: var(--_item-active-color);
+    border-color: var(--_item-active-border-color);
   }
 
   & .icon-to-right {
