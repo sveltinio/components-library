@@ -2,11 +2,23 @@
 	import { ToggleList } from '$lib/index.js';
 	import { page } from '$app/stores';
 	//Icons
-	import { LongArrowDownRightIcon, BellIcon } from '@indaco/svelte-iconoir';
+	/*
+	import { LongArrowDownRightIcon } from '@indaco/svelte-iconoir/icons/LongArrowDownRightIcon';
+	import { BellIcon } from '@indaco/svelte-iconoir/icons/BellIcon';
+	import { MovieIcon } from '@indaco/svelte-iconoir/icons/MovieIcon';
+	import { Music1Icon } from '@indaco/svelte-iconoir/icons/Music1Icon';
+	*/
+
 	// sample data
 	const contentForToggleList = [
-		{ label: 'First', url: '#first' },
-		{ label: 'Second', url: '#second' }
+		{ label: 'Home', url: 'https://sveltin.io' },
+		{ label: 'Components', url: 'https://component.sveltin.io' }
+	];
+
+	/*
+	const contentForToggleListWithIcons = [
+		{ label: 'Home', url: 'https://sveltin.io', icon: MovieIcon },
+		{ label: 'Components', url: 'https://component.sveltin.io', icon: Music1Icon }
 	];
 
 	const myOwnStyles = {
@@ -21,57 +33,81 @@
 		'item-color': '#365314',
 		'item-bg-color-hover': '#bef264'
 	};
+	*/
+
+	$: route = $page;
 </script>
 
-<section class="main">
-	<h1><tt>@sveltinio/essentials</tt></h1>
-	<h2><tt>Tabs</tt></h2>
-</section>
+<div class="header" role="main">
+	<h1>@sveltinio/essentials</h1>
+	<h2>ToggleList</h2>
+</div>
 
-<section>
-	<div class="demo-container">
+<section role="contentinfo">
+	<div class="actions">
+		<a class="btn-back" href="/demos">← Return To The Demos</a>
+	</div>
+
+	<div class="demo-wrapper">
 		<h3>Default</h3>
-		<ToggleList bind:route={$page} title="My Toggle List" items={contentForToggleList} />
+		<div class="preview">
+			<ToggleList bind:route title="My Toggle List" items={contentForToggleList} />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
+	<!-- To avoid a11y errors due to duplicated ids. Uncomment to see other examples.
+	<div class="demo-wrapper">
 		<h3>Left Side icon</h3>
-		<ToggleList title="My Toggle List" items={contentForToggleList}>
-			<BellIcon size="20" slot="leftSideIcon" />
-		</ToggleList>
+		<div class="preview">
+			<ToggleList title="My Toggle List" items={contentForToggleList}>
+				<BellIcon size="20" slot="leftSideIcon" />
+			</ToggleList>
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
+	<div class="demo-wrapper">
+		<h3>Custom Right side Icon</h3>
+		<div class="preview">
+			<ToggleList title="My Toggle List" items={contentForToggleList}>
+				<LongArrowDownRightIcon slot="rightSideIcon" />
+			</ToggleList>
+		</div>
+	</div>
+
+	<div class="demo-wrapper">
+		<h3>Icons</h3>
+		<div class="preview">
+			<ToggleList title="My Toggle List" items={contentForToggleListWithIcons} />
+		</div>
+	</div>
+
+	<div class="demo-wrapper">
 		<h3>Full Size</h3>
-		<ToggleList title="My Toggle List" items={contentForToggleList} full />
+		<div class="preview">
+			<ToggleList title="My Toggle List" items={contentForToggleList} full />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>Custom Icon on the right side</h3>
-		<ToggleList title="My Toggle List" items={contentForToggleList}>
-			<LongArrowDownRightIcon slot="rightSideIcon" />
-		</ToggleList>
-	</div>
-</section>
-
-<section>
-	<div class="demo-container">
+	<div class="demo-wrapper">
 		<h3>Custom Styles with props</h3>
-		<ToggleList title="My Toggle List" items={contentForToggleList} styles={myOwnStyles} full>
-			<LongArrowDownRightIcon slot="rightSideIcon" />
-		</ToggleList>
+		<div class="preview">
+			<ToggleList
+				title="My Toggle List"
+				items={contentForToggleList}
+				styles={myOwnStyles}
+				full
+			>
+				<LongArrowDownRightIcon slot="rightSideIcon" />
+			</ToggleList>
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
+	<div class="demo-wrapper">
 		<h3>Custom Styles with CSS class</h3>
-		<ToggleList title="My Toggle List" items={contentForToggleList} class="my-togglelist" />
+		<div class="preview">
+			<ToggleList title="My Toggle List" items={contentForToggleList} class="my-togglelist" />
+		</div>
 	</div>
+
+	-->
 </section>

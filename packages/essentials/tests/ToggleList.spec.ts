@@ -24,7 +24,7 @@ describe('Link', () => {
 			}
 		});
 
-		const listTitle = getByTestId('list-toggle-btn');
+		const listTitle = getByTestId('list_toggle_btn');
 		expect(listTitle).not.toBeNull();
 		expect(listTitle.textContent?.trim()).toBe('My Toggle List');
 	});
@@ -37,7 +37,7 @@ describe('Link', () => {
 			}
 		});
 
-		const rightSideIconSlot = getByTestId('right-side-icon');
+		const rightSideIconSlot = getByTestId('right_side_icon');
 		expect(rightSideIconSlot).not.toBeNull();
 	});
 
@@ -61,7 +61,7 @@ describe('Link', () => {
 			}
 		});
 
-		const links = getAllByRole('link');
+		const links = getAllByRole('menuitem');
 		expect(links).toHaveLength(2);
 
 		expect(links[0].textContent?.trim()).toBe('First');
@@ -83,7 +83,7 @@ describe('Link', () => {
 			}
 		});
 
-		const wrapper = getByTestId('list-wrapper');
+		const wrapper = getByTestId('list_wrapper');
 		expect(wrapper).not.toBeNull();
 		expect(wrapper).toBeTruthy();
 		expect(wrapper).toHaveAttribute('style', '--title-color-hover: red; --item-border-width: 3px;');
@@ -94,7 +94,7 @@ describe('Link', () => {
 			props: { Component: ToggleList }
 		});
 
-		const rightSideIconSlot = getByTestId('right-side-icon');
+		const rightSideIconSlot = getByTestId('right_side_icon');
 		expect(rightSideIconSlot).not.toBeNull();
 	});
 });
