@@ -1,55 +1,80 @@
 .sn-e-c-btngroup-vars {
   /* * main (css class name: .sn-e-c-btngroup) * */
+
+  --_min-height: 2.5rem;
+  --_height: 2.5rem;
+
+  --_pt: var(--pt, 0.5rem);
+  --_pr: var(--pr, 1rem);
+  --_pb: var(--pb, 0.5rem);
+  --_pl: var(--pl, 1rem);
+
+  --_gap: var(--gap, 0.25rem);
+
   --_color: var(--color, var(--slate-600));
   --_font-size: var(--font-size, 0.875rem); /* 14px */
   --_font-weight: var(--font-weight, 500);
   --_line-height: var(--line-height, 1.5rem);
   --_letter-spacing: var(--letter-spacing, 0em);
   --_text-decoration: var(--text-decoration, none);
+
   --_bg-color: var(--bg-color, var(--white));
   --_bg-color-hover: var(--bg-color-hover, var(--slate-100));
+
   --_border-color: var(--border-color, var(--slate-200));
   --_border-style: var(--border-style, solid);
   --_border-width: var(--border-width, thin);
   --_border-radius: var(--border-radius, 0.25rem);
-  --_pt: var(--pt, 0.5rem);
-  --_pr: var(--pr, 1rem);
-  --_pb: var(--pb, 0.5rem);
-  --_pl: var(--pl, 1rem);
+
   --_active-color: var(--active-color, var(--slate-900));
   --_active-bg-color: var(--active-bg-color, var(--slate-100));
   --_active-border-color: var(--active-border-color, var(--slate-200));
   --_active-border-style: var(--active-border-style, solid);
   --_active-border-width: var(--active-border-width, thin);
 
-  /** Label Sizes                              * */
-  /*- xs */
+  --_ring-width: var(--ring-width, 1px);
+  --_ring-style: var(--ring-style, solid);
+  --_ring-offset: var(--ring-offset, 0px);
+  --_ring-color: var(--ring-color, var(--_active-border-color));
+
+  /* *  sizes                           * */
+  /*- xs -*/
+  --_min-height-xs: var(--min-height-xs, 2.5rem);
+  --_height-xs: var(--height-xs, 2.5rem);
   --_font-size-xs: var(--font-size-xs, 0.75rem); /* 12 px */
   --_font-weight-xs: var(--font-weight-xs, var(--_font-weight));
   --_line-height-xs: var(--line-height-xs, 1rem); /* 16px */
   --_letter-spacing-xs: var(--letter-spacing-xs, 0.025em);
 
-  /*- sm */
+  /*- sm -*/
+  --_min-height-sm: var(--min-height-sm, var(--_min-height-xs));
+  --_height-sm: var(--height-sm, var(--_height-xs));
   --_font-size-sm: var(--font-size-sm, 0.875rem); /* 14px */
   --_font-weight-sm: var(--font-weight-sm, var(--_font-weight));
   --_line-height-sm: var(--line-height-sm, 1.25rem); /* 18px */
   --_letter-spacing-sm: var(--letter-spacing-sm, 0.05em);
 
-  /*- base */
+  /*- base -*/
+  --_min-height-base: var(--min-height-base, 3rem);
+  --_height-base: var(--height-base, 3rem);
   --_font-size-base: var(--font-size-base, 1rem); /* 16px */
   --_font-weight-base: var(--font-weight-base, var(--_font-weight));
   --_line-height-base: var(--line-height-base, 1.5rem); /* 24px */
   --_letter-spacing-base: var(--letter-spacing, 0em);
 
-  /*- lg */
+  /* - lg -*/
+  --_min-height-lg: var(--min-height-lg, var(--_min-height-base));
+  --_height-lg: var(--height-lg, var(--_height-base));
   --_font-size-lg: var(--font-size-lg, 1.125rem); /* 18px */
-  --_font-weight-lg: var(--font-weight-lg, var(--_font-weight));
+  --_font-weight-lg: var(--font-weight-lg, var(--_font-weight-base));
   --_line-height-lg: var(--line-height-lg, 1.75rem); /* 28px */
-  --_letter-spacing-lg: var(--letter-spacing-lg, --_letter-spacing-base);
+  --_letter-spacing-lg: var(--letter-spacing-lg, var(--_letter-spacing-base));
 
-  /*- xl */
+  /*- xl -*/
+  --_min-height-xl: var(--min-height-xl, var(--_min-height-lg));
+  --_height-xl: var(--height-xl, var(--_height-lg));
   --_font-size-xl: var(--font-size-xl, 1.25rem); /* 20px */
-  --_font-weight-xl: var(--font-weight-xl, var(--_font-weight));
+  --_font-weight-xl: var(--font-weight-xl, var(--_font-weight-lg));
   --_line-height-xl: var(--line-height-xl, 1.75rem); /* 28px */
-  --_letter-spacing-xl: var(--letter-spacing-xl, --_letter-spacing-lg);
+  --_letter-spacing-xl: var(--letter-spacing-xl, var(--_letter-spacing-lg));
 }
