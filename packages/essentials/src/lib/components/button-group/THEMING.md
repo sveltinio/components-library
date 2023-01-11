@@ -17,7 +17,7 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 
 ### Custom Styles with prop
 
-<img src="./assets/images/custom_styles_prop.png" alt="ButtonGroup - Custom Styles with prop" />
+<img src="./assets/images/custom_prop.png" alt="ButtonGroup - Custom Styles with prop" />
 
 ```html
 <script>
@@ -41,15 +41,15 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 </script>
 
 <ButtonGroup styles={myBtnGroupStyles}>
-    <ButtonGroupItem id="1" on:click={handleMessage}>Button 1</ButtonGroupItem>
-    <ButtonGroupItem id="2" on:click={handleMessage}>Button 2</ButtonGroupItem>
-    <ButtonGroupItem id="3" on:click={handleMessage}>Button 3</ButtonGroupItem>
+   <ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
+   <ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
+   <ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
 </ButtonGroup>
 ```
 
 ### Custom Styles with CSS Class
 
-<img src="./assets/images/custom_styles_class.png" alt="ButtonGroup - Custom Styles with CSS class" />
+<img src="./assets/images/custom_class.png" alt="ButtonGroup - Custom Styles with CSS class" />
 
 ```css
 /* app.css*/
@@ -72,9 +72,9 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 </script>
 
 <ButtonGroup class="my-btngroup">
-    <ButtonGroupItem id="1" on:click={handleMessage}>Button 1</ButtonGroupItem>
-    <ButtonGroupItem id="2" on:click={handleMessage}>Button 2</ButtonGroupItem>
-    <ButtonGroupItem id="3" on:click={handleMessage}>Button 3</ButtonGroupItem>
+   <ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
+   <ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
+   <ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
 </ButtonGroup>
 ```
 

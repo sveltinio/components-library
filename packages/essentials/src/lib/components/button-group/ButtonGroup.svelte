@@ -1,5 +1,7 @@
 <script lang="ts">
-	import './styles.css';
+	import '../../styles/base.css';
+	import '../../styles/components/button-group/variables.css';
+	import '../../styles/components/button-group/styles.css';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils.js';
@@ -7,21 +9,13 @@
 
 	export let activeButton = '';
 	export let size = 'base';
-
-	let className = '';
-	export { className as class };
-
-	// to avoid hacking default class names
-	if (!isValidClassName(className, ['sn-e-colors', 'sn-e-c-btn-vars', 'sn-e-c-btn'])) {
-		console.error('@sveltinio ERROR: Invalid class name for the ButtonGroup component!');
-		className = '';
-	}
+	export let responsive = false;
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 
-	let activeButtonsGroupStore = writable(activeButton);
 	let buttons: Array<ButtonGroupItemType> = [];
+	let activeButtonsGroupStore = writable(activeButton);
 
 	const ctx: ButtonGroupContext = {
 		activeButton: activeButtonsGroupStore,
@@ -41,13 +35,22 @@
 	setContext('ButtonGroup', ctx);
 
 	$: activeButton = $activeButtonsGroupStore;
+	$: className = '';
+	// avoid hacking default class names
+	$: isValidClassName($$props.class ?? '', [
+		'sn-e-colors',
+		'sn-e-c-btngroup-vars',
+		'sn-e-c-btngroup'
+	])
+		? (className = $$props.class)
+		: (className = '');
 </script>
 
 <div
-	class="sn-e-colors sn-e-c-btngroup-vars sn-e-c-btngroup {className} btn-{size}"
+	class="sn-e-colors sn-e-c-btngroup-vars sn-e-c-btngroup size--{size} {className}"
+	class:sn-e-c-btngroup--responsive={responsive}
 	style={cssStyles}
 	role="group"
-	{...$$restProps}
 >
 	<slot style={cssStyles} setActiveButton={ctx.setActiveButton} />
 </div>
