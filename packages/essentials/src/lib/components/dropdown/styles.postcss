@@ -1,11 +1,6 @@
 @charset "UTF-8";
+
 /* stylelint-disable declaration-empty-line-before */
-
-/* CSS file minified in production */
-
-@import url("../reset") screen;
-@import url("../colors") screen;
-@import url("./variables") screen;
 
 .sn-e-c-dropdown {
   position: relative;
@@ -65,17 +60,17 @@
 
   & .list {
     list-style: none;
-    max-width: var(--_content-max-w);
-    width: var(--_content-width);
-    color: var(--_content-color);
-    margin-top: var(--_content-mt);
-    margin-right: var(--_content-mr);
-    margin-bottom: var(--_content-mb);
-    margin-left: var(--_content-ml);
-    background-color: var(--_content-bg-color);
+    max-width: var(--_list-max-w);
+    width: var(--_list-width);
+    color: var(--_list-color);
+    margin-top: var(--_list-mt);
+    margin-right: var(--_list-mr);
+    margin-bottom: var(--_list-mb);
+    margin-left: var(--_list-ml);
+    background-color: var(--_list-bg-color);
     box-shadow: 0 0 0 0 hsl(0deg 0% 100%), 0 0 0 1px hsl(210deg 40% 96%);
 
-    & .item {
+    & .list__item {
       cursor: var(--_item-cursor);
 
       &:hover {
@@ -93,9 +88,17 @@
         padding-bottom: var(--_item-pb);
         padding-left: var(--_item-pl);
 
-        &:hover {
+        &:hover,
+        &:focus {
           color: var(--_item-color-hover);
           background-color: var(--_item-bg-color-hover);
+        }
+
+        &:focus {
+          outline-width: var(--_item-ring-width);
+          outline-style: var(--_item-ring-style);
+          outline-color: var(--_item-ring-color);
+          outline-offset: var(--_item-ring-offset);
         }
       }
     }
@@ -104,7 +107,7 @@
   & .list--absolute {
     position: absolute;
     transform-origin: top;
-    z-index: var(--_content-z-index);
+    z-index: var(--_list-z-index);
   }
 
   & .rotate0 {
