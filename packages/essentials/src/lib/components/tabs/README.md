@@ -1,6 +1,6 @@
 # Tabs
 
-The `Tabs` component is used to easily includes tabs within the page. It supports different variants and sizes:
+The `Tabs` component an accessible ([WAI-ARIA Accessibility Reference]) component that display one panel of content at a time. It supports different variants and sizes:
 
 - **types**: `default`, `bordered`
 - **sizes**: `xs`, `sm`, `base` (default), `md`, `lg` and `full`
@@ -117,3 +117,4 @@ Read more [here](./THEMING.md)
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
+[WAI-ARIA Accessibility Reference]: https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/

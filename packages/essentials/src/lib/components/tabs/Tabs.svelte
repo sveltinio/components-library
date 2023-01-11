@@ -1,23 +1,16 @@
 <script lang="ts">
-	import './styles.css';
-	import { setContext } from 'svelte';
+	import '../../styles/base.css';
+	import '../../styles/components/tabs/variables.css';
+	import '../../styles/components/tabs/styles.css';
+	import { onMount, setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils.js';
 	import type { TabItem, TabsContext } from './types.js';
-	import TabsGroup from './TabsGroup.svelte';
 
 	export let activeTab = '1';
 	export let size = 'base';
 	export let justify = 'start';
 	export let bordered = false;
-
-	let className = '';
-	export { className as class };
-	// to avoid hacking default class names
-	if (!isValidClassName(className, ['sn-e-colors', 'sn-e-c-tabs-vars', 'sn-e-c-tabs'])) {
-		console.error('@sveltinio ERROR: Invalid class name for the Tabs component!');
-		className = '';
-	}
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
@@ -41,12 +34,153 @@
 		}
 	};
 	setContext('SNE_Tabs', ctx);
+
+	let mainElem: HTMLElement;
+	let tabsList: Array<HTMLElement> = [];
+	let firstTab: HTMLElement;
+	let lastTab: HTMLElement;
+
+	/** ********************************************** **/
+	/** Accessibility: Mouse and Keyborad interactions **/
+	/** ********************************************** **/
+	const setActiveTab = (tab: HTMLElement) => {
+		const index = tabsList.indexOf(tab) + 1;
+
+		ctx.setActiveTab(String(index));
+		activeTab = String(index);
+	};
+
+	const setFocusOnTab = (tab: HTMLElement) => {
+		tab.focus();
+	};
+
+	const setFocusOnPreviousTab = (currentTab: HTMLElement) => {
+		if (currentTab === firstTab) {
+			setFocusOnTab(lastTab);
+		} else {
+			const index = tabsList.indexOf(currentTab);
+			setFocusOnTab(tabsList[index - 1]);
+		}
+	};
+
+	const setFocusOnNextTab = (currentTab: HTMLElement) => {
+		if (currentTab === lastTab) {
+			setFocusOnTab(firstTab);
+		} else {
+			const index = tabsList.indexOf(currentTab);
+			setFocusOnTab(tabsList[index + 1]);
+		}
+	};
+
+	/** Event handlers **/
+	function onTabClick(e: MouseEvent): void {
+		e.stopPropagation();
+		e.preventDefault();
+		const currentTab = e.target as HTMLElement;
+		const currentTabId = currentTab.getAttribute('id') || activeTab;
+		ctx.setActiveTab(currentTabId);
+		activeTab = currentTabId;
+	}
+
+	function onTabKeydown(e: KeyboardEvent): void {
+		e.stopPropagation();
+		e.preventDefault();
+		const target = e.currentTarget as HTMLButtonElement;
+
+		switch (e.code) {
+			case 'Enter':
+			case 'Space':
+				setActiveTab(target);
+				break;
+			case 'Esc':
+			case 'Escape':
+				target.blur();
+				break;
+			case 'Left':
+			case 'ArrowLeft':
+				setFocusOnPreviousTab(target);
+				break;
+			case 'Tab':
+			case 'Right':
+			case 'ArrowRight':
+				setFocusOnNextTab(target);
+				break;
+			case 'Home':
+			case 'PageUp':
+				break;
+			case 'End':
+			case 'PageDown':
+				break;
+		}
+	}
+	/** ********************************************** **/
+
+	$: className = '';
+	// avoid hacking default class names
+	$: isValidClassName($$props.class ?? '', ['sn-e-colors', 'sn-e-c-tabs-vars', 'sn-e-c-tabs'])
+		? (className = $$props.class)
+		: (className = '');
+	$: activeTab = $activeTabStore;
+	$: activeClass = (id: string): boolean => activeTab == id;
+
+	/** ********************************************** **/
+
+	onMount(() => {
+		const tabNodes = mainElem.querySelectorAll('[role="tab"]');
+
+		Array.from(tabNodes).forEach((node) => {
+			const tab = node as HTMLElement;
+			tabsList.push(tab);
+
+			tab.addEventListener('keydown', onTabKeydown);
+			tab.addEventListener('click', onTabClick);
+
+			if (!firstTab) {
+				firstTab = tab;
+			}
+			lastTab = tab;
+		});
+	});
 </script>
 
 <div class="sn-e-colors sn-e-c-tabs-vars sn-e-c-tabs {className}" style={cssStyles}>
-	<TabsGroup {tabs} {activeTab} {justify} {size} {bordered} />
+	<div
+		bind:this={mainElem}
+		class="tabs__group tabs__group--justify-{justify}"
+		role="tablist"
+		data-testid="tabs_group"
+	>
+		{#each tabs as tab}
+			<button
+				id={tab.id}
+				tabindex={activeClass(tab.id) ? 0 : -1}
+				class="tab tab--{size}"
+				class:tab--bordered={bordered}
+				class:is-active={!bordered && activeClass(tab.id)}
+				class:is-active--bordered={bordered && activeClass(tab.id)}
+				role="tab"
+				aria-selected={activeClass(tab.id)}
+				aria-controls="panel-{tab.id}"
+				data-testid="tab_{tab.id}"
+			>
+				{#if tab.icon}
+					<svelte:component this={tab.icon} />
+				{/if}
 
-	<div class="tab__content" class:tab__content--bordered={bordered} data-testid="tab-content">
-		<slot setActiveTab={ctx.setActiveTab} />
+				{tab.label}
+			</button>
+		{/each}
+	</div>
+
+	<div
+		id="panel-{activeTab}"
+		tabindex="0"
+		class="tab__panel"
+		class:tab__panel--bordered={bordered}
+		role="tabpanel"
+		aria-labelledby={activeTab}
+		data-testid="tab_panel-{activeTab}"
+	>
+		<slot />
 	</div>
 </div>

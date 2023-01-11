@@ -15,10 +15,10 @@ describe('Tabs', () => {
 			props: { Component: Tabs }
 		});
 
-		const titlesList = getByTestId('tabs-group');
+		const titlesList = getByTestId('tabs_group');
 		expect(titlesList).not.toBeNull();
 
-		const titleItem = getByTestId('tab-1');
+		const titleItem = getByTestId('tab_1');
 		expect(titleItem).not.toBeNull();
 	});
 
@@ -27,7 +27,7 @@ describe('Tabs', () => {
 			props: { Component: Tabs }
 		});
 
-		const slot = getByTestId('tab-1');
+		const slot = getByTestId('tab_1');
 		expect(slot).not.toBeNull();
 
 		expect(slot.textContent?.trim()).toBe('Tab 1');
@@ -38,7 +38,7 @@ describe('Tabs', () => {
 			props: { Component: Tabs }
 		});
 
-		const slot = getByTestId('tab-content');
+		const slot = getByTestId('tab_panel-1');
 		expect(slot).not.toBeNull();
 
 		expect(slot.textContent?.trim()).toBe('Sample content for Tab 1');

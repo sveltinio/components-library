@@ -11,7 +11,7 @@ The two component properties `styles` and `theme` are the ones allowing you to c
 
 ## DOM Element Structure
 
-Below is the DOM Element Structure for the `PagesNavigator` component.
+Below is the DOM Element Structure for the `Tabs` component.
 
 > Legend
 >
@@ -22,13 +22,13 @@ Below is the DOM Element Structure for the `PagesNavigator` component.
 
 ## CSS Variables
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+The CSS variables are defined in the [variables.css](../../styles/components/tabs/variables.css) file.
 
 ## Examples
 
 ### Custom Styles with prop
 
-<img src="./assets/images/custom_props.png" alt="Tabs - Custom Styles with component prop" />
+<img src="./assets/images/custom_prop.png" alt="Tabs - Custom Styles with component prop" />
 
 ```html
 <script lang="ts">
@@ -80,7 +80,7 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
   --tab-active-bg-color: #385d7b;
   --tab-active-border-b-color: #5387b1;
   --tab-border-b-color-hover: transparent;
-  --content-border-tr-radius: 0.5rem;
+  --panel-border-tr-radius: 0.5rem;
 }
 ```
 
