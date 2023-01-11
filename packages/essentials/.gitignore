@@ -89,3 +89,6 @@ $RECYCLE.BIN/
 
 # Jest
 coverage/
+
+# pa11y-ci
+pa11y-results.json

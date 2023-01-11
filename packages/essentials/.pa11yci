@@ -1,0 +1,27 @@
+{
+	"defaults": {
+		"standard": "WCAG2AAA",
+		"runners": [
+			"axe",
+			"htmlcs"
+		],
+		"reporters": [
+			"cli",
+			[
+				"json",
+				{
+					"fileName": "./pa11y-results.json"
+				}
+			]
+		]
+	},
+	"urls": [
+		"http://localhost:3001/demos/button",
+		"http://localhost:3001/demos/button-group",
+		"http://localhost:3001/demos/color",
+		"http://localhost:3001/demos/dropdown",
+		"http://localhost:3001/demos/link",
+		"http://localhost:3001/demos/list",
+		"http://localhost:3001/demos/tabs"
+	]
+}
