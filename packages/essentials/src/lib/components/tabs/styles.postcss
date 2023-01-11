@@ -1,20 +1,15 @@
 @charset "UTF-8";
+
 /* stylelint-disable declaration-empty-line-before */
 
-/* CSS file minified in production */
-
-@import url("../reset") screen;
-@import url("../colors") screen;
-@import url("./variables") screen;
-
 .sn-e-c-tabs {
+  position: relative;
   width: var(--_width);
   max-width: var(--_max-width);
 
   & .tabs__group {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     gap: var(--_tabs-group-gap);
 
     margin-top: var(--_tabs-group-mt);
@@ -97,7 +92,8 @@
     border-bottom-left-radius: var(--_tab-border-bl-radius);
     border-bottom-right-radius: var(--_tab-border-br-radius);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--_tab-color-hover);
       background-color: var(--_tab-bg-color-hover);
 
@@ -105,6 +101,10 @@
       border-right-color: var(--_tab-border-r-color-hover);
       border-bottom-color: var(--_tab-border-b-color-hover);
       border-left-color: var(--_tab-border-l-color-hover);
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 
@@ -190,35 +190,35 @@
     letter-spacing: var(--_tab-letter-spacing-xl);
   }
 
-  & .tab__content {
-    color: var(--_content-color);
-    margin-top: var(--_content-mt);
-    margin-right: var(--_content-mr);
-    margin-bottom: var(--_content-mb);
-    margin-left: var(--_content-ml);
-    padding-top: var(--_content-pt);
-    padding-right: var(--_content-pr);
-    padding-bottom: var(--_content-pb);
-    padding-left: var(--_content-pl);
-    background-color: var(--_content-bg-color);
+  & .tab__panel {
+    color: var(--_panel-color);
+    margin-top: var(--_panel-mt);
+    margin-right: var(--_panel-mr);
+    margin-bottom: var(--_panel-mb);
+    margin-left: var(--_panel-ml);
+    padding-top: var(--_panel-pt);
+    padding-right: var(--_panel-pr);
+    padding-bottom: var(--_panel-pb);
+    padding-left: var(--_panel-pl);
+    background-color: var(--_panel-bg-color);
 
-    font-size: var(--_content-font-size);
-    font-weight: var(--_content-font-weight);
-    line-height: var(--_content-line-height);
-    letter-spacing: var(--_content-letter-spacing);
-    text-align: var(--_content-text-align);
+    font-size: var(--_panel-font-size);
+    font-weight: var(--_panel-font-weight);
+    line-height: var(--_panel-line-height);
+    letter-spacing: var(--_panel-letter-spacing);
+    text-align: var(--_panel-text-align);
 
-    border-width: var(--_content-border-width);
-    border-style: var(--_content-border-style);
-    border-color: var(--_content-border-color);
-    border-top-left-radius: var(--_content-border-tl-radius);
-    border-top-right-radius: var(--_content-border-tr-radius);
-    border-bottom-left-radius: var(--_content-border-bl-radius);
-    border-bottom-right-radius: var(--_content-border-br-radius);
+    border-width: var(--_panel-border-width);
+    border-style: var(--_panel-border-style);
+    border-color: var(--_panel-border-color);
+    border-top-left-radius: var(--_panel-border-tl-radius);
+    border-top-right-radius: var(--_panel-border-tr-radius);
+    border-bottom-left-radius: var(--_panel-border-bl-radius);
+    border-bottom-right-radius: var(--_panel-border-br-radius);
     border-top: 0;
   }
 
-  & .tab__content--bordered {
-    --_content-border-color: var(--slate-200);
+  & .tab__panel--bordered {
+    --_panel-border-color: var(--slate-200);
   }
 }

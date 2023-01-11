@@ -107,6 +107,11 @@
   --_tab-border-b-color-hover: var(--tab-border-b-color-hover, var(--_tab-border-b-color));
   --_tab-border-l-color-hover: var(--tab-border-l-color-hover, var(--_tab-border-l-color));
 
+  --_tab-ring-width: var(--tab-ring-width, 2px);
+  --_tab-ring-style: var(--tab-ring-style, solid);
+  --_tab-ring-color: var(--tab-ring-color, var(--_tab-ring-color));
+  --_tab-ring-offset: var(--tab-ring-offset, 1px);
+
   /*- active -*/
   --_tab-active-color: var(--tab-active-color, var(--_color));
   --_tab-active-bg-color: var(--tab-active-bg-color, var(--_bg-color));
@@ -124,30 +129,30 @@
   --_tab-active-border-l-color: var(--tab-active-border-l-color, transparent);
 
   /* * content (css class name: tab__content)   * */
-  --_content-mt: var(--content-mt, 0);
-  --_content-mr: var(--content-mr, 0);
-  --_content-mb: var(--content-mb, 0);
-  --_content-ml: var(--content-ml, 0);
+  --_panel-mt: var(--content-mt, 0);
+  --_panel-mr: var(--content-mr, 0);
+  --_panel-mb: var(--content-mb, 0);
+  --_panel-ml: var(--content-ml, 0);
 
-  --_content-pt: var(--content-pt, 2rem); /* 32px */
-  --_content-pr: var(--content-pr, 2rem);
-  --_content-pb: var(--content-pb, 2rem);
-  --_content-pl: var(--content-pl, 2rem);
+  --_panel-pt: var(--content-pt, 2rem); /* 32px */
+  --_panel-pr: var(--content-pr, 2rem);
+  --_panel-pb: var(--content-pb, 2rem);
+  --_panel-pl: var(--content-pl, 2rem);
 
-  --_content-color: var(--content-color, var(--_color));
-  --_content-font-size: var(--content-font-size, 1rem); /* 16px */
-  --_content-font-weight: var(--content-font-weight, 500);
-  --_content-line-height: var(--content-line-height, 1.5rem); /* 20px */
-  --_content-letter-spacing: var(--content-letter-spacing, 0em);
-  --_content-text-align: var(--content-text-align, left);
-  --_content-bg-color: var(--content-bg-color, var(--_bg-color));
+  --_panel-color: var(--content-color, var(--_color));
+  --_panel-font-size: var(--content-font-size, 1rem); /* 16px */
+  --_panel-font-weight: var(--content-font-weight, 500);
+  --_panel-line-height: var(--content-line-height, 1.5rem); /* 20px */
+  --_panel-letter-spacing: var(--content-letter-spacing, 0em);
+  --_panel-text-align: var(--content-text-align, left);
+  --_panel-bg-color: var(--content-bg-color, var(--_bg-color));
 
-  --_content-border-width: var(--content-border-width, 1px);
-  --_content-border-style: var(--content-border-style, solid);
-  --_content-border-color: var(--content-border-color, transparent);
+  --_panel-border-width: var(--content-border-width, 1px);
+  --_panel-border-style: var(--content-border-style, solid);
+  --_panel-border-color: var(--content-border-color, transparent);
 
-  --_content-border-tl-radius: var(--content-border-tl-radius, 0rem);
-  --_content-border-tr-radius: var(--content-border-tr-radius, 0rem);
-  --_content-border-bl-radius: var(--content-border-bl-radius, 0.5rem);
-  --_content-border-br-radius: var(--content-border-br-radius, 0.5rem);
+  --_panel-border-tl-radius: var(--content-border-tl-radius, 0rem);
+  --_panel-border-tr-radius: var(--content-border-tr-radius, 0rem);
+  --_panel-border-bl-radius: var(--content-border-bl-radius, 0.5rem);
+  --_panel-border-br-radius: var(--content-border-br-radius, 0.5rem);
 }
