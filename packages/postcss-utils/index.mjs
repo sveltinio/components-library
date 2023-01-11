@@ -25,11 +25,11 @@ export async function findByExtension(where, ext) {
 			// file extension without leading "."
 			const extension = path.extname(file.name).slice(1);
 
-			if (Array.isArray(matchExts)) {
-				matchExts.forEach((x) => {
+			if (Array.isArray(ext)) {
+				ext.forEach((x) => {
 					if (extension === x) results.push(fullPath);
 				});
-			} else if (typeof matchExts == 'string') {
+			} else if (typeof ext == 'string') {
 				if (extension === ext) results.push(fullPath);
 			} else {
 				console.error('Invalid type. Must be a string or an array of strings');
@@ -42,7 +42,7 @@ export async function findByExtension(where, ext) {
 /**
  * Returns the files list at specified path with specific extensions
  * @param {string} where - The path where to look for files.
- * @param {string} name - The file name.
+ * @param {string|string[]} name - The file name or an array of file names.
  * @returns {string[]} - The files list.
  */
 export async function findByName(where, name) {
@@ -54,8 +54,16 @@ export async function findByName(where, name) {
 		if (file.isDirectory()) {
 			results = [...results, ...(await findByName(fullPath, name))];
 		} else if (file.isFile()) {
-			if (file.name === name) {
-				results.push(fullPath);
+			if (Array.isArray(name)) {
+				name.forEach((n) => {
+					if (file.name === n) {
+						results.push(fullPath);
+					}
+				});
+			} else {
+				if (file.name === name) {
+					results.push(fullPath);
+				}
 			}
 		}
 	}
