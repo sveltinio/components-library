@@ -63,10 +63,10 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 ## Slots
 
-| Name        | Default | Fallback | Description                                       |
-| :---------- | :-----: | :------: | :------------------------------------------------ |
-| `leftIcon`  | ✗       |    ✗     | The css class name used to make a theme variant   |
-| `rightIcon` | ✗       |    ✗     | The css class name used to make a theme variant   |
+| Name            | Default | Fallback |
+| :-------------- | :-----: | :------: |
+| `leftSideIcon`  | ✗       |    ✗     |
+| `rightSideIcon` | ✗       |    ✓     |
 
 ## Theming
 

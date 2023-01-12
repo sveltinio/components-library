@@ -82,10 +82,9 @@ The `DropdownItem` component exposes the following properties:
 
 ## Slots
 
-| Name        | Default | Fallback | Description                                       |
-| :---------- | :-----: | :------: | :------------------------------------------------ |
-| `leftIcon`  | ✗       |    ✗     | The css class name used to make a theme variant   |
-| `rightIcon` | ✗       |    ✗     | The css class name used to make a theme variant   |
+| Name      | Default | Fallback |
+| :-------- | :-----: | :------: |
+| `btnIcon` | ✗       |    ✓     |
 
 ## Theming
 

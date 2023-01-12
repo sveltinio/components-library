@@ -38,6 +38,12 @@ The `Link` component exposes a set of properties but it does not prevent you to 
 | noOpenener | boolean |    no    | true     | Go to the linked resource without granting the new browsing context |
 | noReferrer | boolean |    no    | true     | Prevent passing the referrer information to the target website      |
 
+## Slots
+
+| Name   | Default | Fallback |
+| :----- | :-----: | :------: |
+| `icon` | ✗       |    ✓     |
+
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
