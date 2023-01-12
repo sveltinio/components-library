@@ -24,16 +24,16 @@ Below is the DOM Element Structure for the `Dropdown` component.
 
 The DOM Element Structure above can be mapped to the following table going through the structure from top to bottom and from left to right.
 
-| Component       | HTML Element & CSS Class Name | CSS Variables Prefix |
-| :-------------- | ----------------------------: | -------------------: |
-|                 | `div.sn-e-c-dropdown`         |                      |
-| DropdownButton  | `btn`                         | `btn`                |
-| DropdownContent | `list`                        | `list`               |
-| DropdownItem    | `list__item`                  | `item`               |
+| Component       | HTML Elem | CSS Class Name    | CSS Variables Prefix |
+| :-------------- | --------: | ----------------: | -------------------: |
+|                 | `div`     | `sn-e-c-dropdown` |                      |
+| DropdownButton  |           | `btn`             | `btn`                |
+| DropdownContent |           | `list`            | `list`               |
+| DropdownItem    |           | `list__item`      | `item`               |
 
 ## CSS Variables
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+The CSS variables are defined in the [variables.css](../../styles/components/dropdown/variables.css) file.
 
 ## Examples
 

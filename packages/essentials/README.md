@@ -6,7 +6,7 @@
 
 ## Description
 
-A collection of _essentials_ and fully configurable Svelte components.
+A collection of _essentials_, type-safe, accessible and configurable Svelte components.
 
 ## Components List
 
@@ -41,10 +41,10 @@ pnpm dev
 
 Free and open-source software under the [MIT License](LICENSE)
 
-[Button]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/button/README.md
-[ButtonGroup]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/button-group/README.md
-[ColorViewer]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/color/README.md
-[Dropdown]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/dropdown/README.md
-[Link]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/link/README.md
-[Tabs]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/tabs/README.md
-[ToggleList]: https://github.com/sveltinio/components-library/blob/main/packages/essentials/src/lib/components/list/README.md
+[Button]: https://github.com/sveltinio/components-library/tree/main/packages/essentials/src/lib/components/button
+[ButtonGroup]: https://github.com/sveltinio/components-library/tree/main/packages/essentials/src/lib/components/button-group/
+[ColorViewer]: https://github.com/sveltinio/components-library/tree/main/packages/essentials/src/lib/components/color/
+[Dropdown]: https://github.com/sveltinio/components-library/tree/main/packages/essentials/src/lib/components/dropdown/
+[Link]: https://github.com/sveltinio/components-library/tree/main/packages/essentials/src/lib/components/link/
+[Tabs]: https://github.com/sveltinio/components-library/tree/main/packages/essentials/src/lib/components/tabs/
+[ToggleList]: https://github.com/sveltinio/components-library/tree/main/packages/essentials/src/lib/components/list/

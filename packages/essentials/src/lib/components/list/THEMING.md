@@ -24,15 +24,16 @@ Below is the DOM Element Structure for the `ToggleList` component.
 
 The DOM Element Structure above can be mapped to the following table going through the structure from top to bottom and from left to right.
 
-| Component    | CSS Class Name | CSS Variables Prefix |
-| :----------- | -------------: | -------------------: |
-| ToggleButton | `btn`          | `btn`                |
-| List         | `list`         | `list`               |
-| Item         | `list__item`   | `item`               |
+| Component    | HTML Elem | CSS Class Name      | CSS Variables Prefix |
+| :----------- | --------: | ------------------: | -------------------: |
+|              | `div`     | `sn-e-c-togglelist` |                      |
+| ToggleButton |           | `btn`               | `btn`                |
+| List         |           | `list`              | `list`               |
+| Item         |           | `list__item`        | `item`               |
 
 ## CSS Variables
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+The CSS variables are defined in the [variables.css](../../styles/components/list/variables.css) file.
 
 ## Examples
 
