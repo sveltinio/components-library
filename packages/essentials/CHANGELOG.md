@@ -1,5 +1,29 @@
 # @sveltinio/essentials
 
+## 0.5.0
+
+### Minor Changes
+
+#### Features
+
+- all components are now accessibles implementing relative WAI-ARIA Accessibility Reference
+- accessibility tested against WCAG2AAA with `pa11y` (`axe-core` and `htmlcs` as runners)
+
+#### Fixes
+
+- exclude files when building to reduce package size
+- css files are all minified when building
+
+#### Docs
+
+- README and THEMING files updated and more consistent across components
+
+#### Chores
+
+- chore: deps updated
+- make use of `vitePreprocess` insted of `svelte-preprocess`
+- `publint` added to check packaging errors and ensure compatibility across environments.
+
 ## 0.4.0
 
 ### Minor Changes
