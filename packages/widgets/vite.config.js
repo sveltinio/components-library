@@ -5,7 +5,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 const config = {
 	clearScreen: false,
 	server: {
-		port: 3001,
+		port: 3005,
 		fs: {
 			// Allow serving files from one level up to the project root
 			// Alternatevaly set server.fs.strict to false
