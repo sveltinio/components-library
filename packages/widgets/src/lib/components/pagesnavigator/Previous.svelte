@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PagesNavigatorItem } from '../../types.js';
+	import type { PagesNavigatorItem } from './types.js';
 	import { capitalize, isValid } from '../../utils.js';
 
 	export let prev: PagesNavigatorItem;

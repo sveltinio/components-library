@@ -2,7 +2,7 @@
 	import '../../styles/base.css';
 	import '../../styles/components/toc/variables.css';
 	import '../../styles/components/toc/styles.css';
-	import type { TocEntry } from '../../types.js';
+	import type { TocEntry } from './types.js';
 	import { stylesObjToCSSVars } from '../../utils.js';
 	import TocList from './TocList.svelte';
 	import TocButton from './TocButton.svelte';

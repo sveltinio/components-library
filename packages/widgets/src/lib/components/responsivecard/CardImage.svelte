@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getLastSegment, isImageFile } from '$lib/utils.js';
+	import { getLastSegment, isImageFile } from '../../utils.js';
 	export let src: string;
 	export let alt: string;
 	export let title = '';

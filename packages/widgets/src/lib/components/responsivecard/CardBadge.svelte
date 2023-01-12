@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { CardBadge } from '$lib/types';
+	import type { CardBadge } from './types.js';
 
 	export let data: CardBadge;
 </script>

@@ -2,7 +2,7 @@
 	import '../../styles/base.css';
 	import '../../styles/components/pagesnavigator/variables.css';
 	import '../../styles/components/pagesnavigator/styles.css';
-	import type { PagesNavigatorItem } from '../../types.js';
+	import type { PagesNavigatorItem } from './types.js';
 	import { stylesObjToCSSVars, isValid } from '../../utils.js';
 	import Spacer from './Spacer.svelte';
 	import Previous from './Previous.svelte';

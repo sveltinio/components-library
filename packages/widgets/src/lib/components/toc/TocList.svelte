@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TocEntry } from '$lib/types.js';
+	import type { TocEntry } from './types.js';
 	import TocItem from './TocItem.svelte';
 
 	export let data: Array<TocEntry>;

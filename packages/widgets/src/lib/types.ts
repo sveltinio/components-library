@@ -37,19 +37,11 @@ export class ResourceContentUtils {
 	}
 }
 
-export type TocEntry = {
-	id: string;
-	depth: number;
-	value: string;
-	children?: Array<TocEntry>;
-};
+import type { TocEntry } from './components/toc/types.js';
+export type { TocEntry };
 
-export type PagesNavigatorItem = {
-	placeholder?: string;
-	label: string;
-	href: string;
-	alt?: string;
-};
+import type { PagesNavigatorItem } from './components/pagesnavigator/types.js';
+export type { PagesNavigatorItem };
 
 export type YAMLFrontmatter = {
 	title: string;
@@ -64,8 +56,5 @@ export type YAMLFrontmatter = {
 	[key: string]: string | undefined | Array<TocEntry> | boolean;
 };
 
-export type CardBadge = {
-	value: string;
-	color: string;
-	url?: string;
-};
+import type { CardBadge } from './components/responsivecard/types.js';
+export type { CardBadge };
