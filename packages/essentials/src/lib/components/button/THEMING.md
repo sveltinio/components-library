@@ -15,7 +15,7 @@ The `Button` component is a `button` or a `a` HTML element. If an icon is presen
 
 ## CSS Variables
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+The CSS variables are defined in the [variables.css](../../styles/components/button/variables.css) file.
 
 ## Examples
 

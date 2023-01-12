@@ -20,6 +20,16 @@ Below is the DOM Element Structure for the `Tabs` component.
 
 ![DropDown](./assets/images/component_structure.png "Tabs Component - DOM Element Structure")
 
+## Info Mapping Table
+
+The DOM Element Structure above can be mapped to the following table going through the structure from top to bottom and from left to right.
+
+| Component | HTML Elem | CSS Class Name         | CSS Variables Prefix |
+| :-------- | --------: | ---------------------: | -------------------: |
+|           | `div`     | `sn-e-c-tabs`          |                      |
+| TabGroup  |           | `tabs__group`          | `tabs__group`        |
+| Tab       |           | `tab`<br/>`tab__panel` | `tab` <br/> `panel`  |
+
 ## CSS Variables
 
 The CSS variables are defined in the [variables.css](../../styles/components/tabs/variables.css) file.

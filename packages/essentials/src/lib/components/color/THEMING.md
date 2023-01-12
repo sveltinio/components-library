@@ -11,11 +11,13 @@ The two component properties `styles` and `theme` are the ones allowing you to c
 
 ## CSS Variables
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+The CSS variables are defined in the [variables.css](../../styles/components/color/variables.css) file.
 
 ## Examples
 
 ### Custom Styles with prop
+
+<img src="./assets/images/custom_prop.png" alt="ColorViewer - Custom Styles with prop" />
 
 ```html
 <script>
@@ -24,10 +26,11 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
    const myStyles = {
       'border-color': '#075985',
       'border-width': '2px',
+      color: '#075985'
    };
 </script>
 
-<ColorViewer value="#22d3ee" border styles={myStyles} />
+<ColorViewer value="#0ea5e9" labelColor="#075985" border styles={myStyles} />
 ```
 
 ### Custom Styles with CSS Class

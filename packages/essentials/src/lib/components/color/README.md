@@ -4,13 +4,17 @@ A simple utility component to render a colorful circle with the label set to the
 
 ## Examples
 
+<img src="./assets/images/showcase.png" alt="ColorViewer - Showcase" />
+
+## Usage
+
 ```html
 <script>
    import { ColorViewer } from '@sveltinio/essentials';
 <script>
 
 <ColorViewer value="#FF5577" />
-<ColorViewer value="#22d3ee" border showValue={false} />
+<ColorViewer value="#22d3ee" border showLabel={false} />
 ```
 
 ## Properties

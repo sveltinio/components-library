@@ -9,9 +9,15 @@ The two component properties `styles` and `theme` are the ones allowing you to c
 
 > Refer to the [Design Rules] document to better understand how the component has been designed and how to customize the styles.
 
+## Info Mapping Table
+
+| Component       | HTML Elem | CSS Class Name    | CSS Variables Prefix |
+| :-------------- | --------: | ----------------: | -------------------: |
+|                 | `div`     | `sn-e-c-btngroup` |                      |
+
 ## CSS Variables
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+The CSS variables are defined in the [variables.css](../../styles/components/button-group/variables.css) file.
 
 ## Examples
 
