@@ -3,11 +3,11 @@
 	import { Breadcrumbs } from '$lib/index.js';
 
 	const customStyles = {
-		'icon-color': '#8b5cf6',
-		'icon-color-hover': '#4338ca',
-		'parent-color': '#8b5cf6',
-		'parent-color-hover': '#4338ca',
-		'current-color': '#4338ca'
+		'icon-color': '#6d28d9',
+		'icon-color-hover': '#6b21a8',
+		'parent-color': '#6d28d9',
+		'parent-color-hover': '#6b21a8',
+		'current-color': '#6b21a8'
 	};
 </script>
 

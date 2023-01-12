@@ -1,7 +1,8 @@
 <script lang="ts">
 	import '../../styles/base.css';
 	import '../../styles/components/breadcrumbs/variables.css';
-	import '../../styles/components/breadcrumbs/styles.css';
+	//import '../../styles/components/breadcrumbs/styles.css';
+	import './styles.postcss';
 	import { stylesObjToCSSVars, capitalize, makeTitle } from '../../utils.js';
 
 	export let url = '';
@@ -36,7 +37,7 @@
 <nav
 	class="sn-w-colors sn-w-c-breadcrumbs-vars sn-w-c-breadcrumbs {className}"
 	style={cssStyles}
-	aria-label="breadcrumb"
+	aria-label="Breadcrumb"
 	data-testid="breadcrumbs_main"
 >
 	<ol class="list">

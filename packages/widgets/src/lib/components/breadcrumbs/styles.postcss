@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/* stylelint-disable declaration-empty-line-before */
+
 .sn-w-c-breadcrumbs {
   font-size: var(--_font-size);
   font-weight: var(--_font-weight);
@@ -18,6 +20,16 @@
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
+
+      & a {
+        &:focus,
+        &:focus-visible {
+          outline-width: var(--_ring-width);
+          outline-style: var(--_ring-style);
+          outline-color: var(--_ring-color);
+          outline-offset: var(--_ring-offset);
+        }
+      }
 
       & .is-current {
         color: var(--_current-color);

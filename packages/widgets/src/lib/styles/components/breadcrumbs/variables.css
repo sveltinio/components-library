@@ -10,6 +10,11 @@
   --_mb: var(--mb, 0rem);
   --_ml: var(--ml, 0rem);
 
+  --_ring-width: var(--ring-width, 2px);
+  --_ring-style: var(--ring-style, solid);
+  --_ring-color: var(--ring-color, var(--_current-color));
+  --_ring-offset: var(--ring-offset, 4px);
+
   /* * main (class name: item__icon)         * */
   --_icon-color: var(--icon-color, var(--slate-400));
 

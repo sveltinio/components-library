@@ -1,6 +1,6 @@
 # Breadcrumbs
 
-Breadcrumbs helps users to navigate through the website.
+Breadcrumbs is an accessible ([WAI-ARIA Accessibility Reference]) component helping users to navigate through the website.
 
 ## Examples
 
@@ -55,4 +55,4 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
-[Design Rules]: https://github.com/sveltinio/components-library/blob/main/docs/design-rules.md
+[WAI-ARIA Accessibility Reference]: https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/
