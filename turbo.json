@@ -4,19 +4,27 @@
 		"dev": {
 			"cache": false
 		},
-		"demo": {
-			"cache": false
-		},
 		"format": {},
 		"check": {},
 		"clean": {},
 		"lint": {
 			"dependsOn": ["format"]
 		},
-		"test": {},
+		"test": {
+			"dependsOn": ["build"]
+		},
+		"test:packages": {
+			"dependsOn": ["build:packages"],
+			"cache": false
+		},
 		"build": {
 			"env": ["NODE_ENV"],
 			"dependsOn": ["clean", "lint", "^build"]
+		},
+		"build:packages": {
+			"env": ["NODE_ENV"],
+			"dependsOn": ["clean", "lint", "^build:packages"],
+			"cache": false
 		},
 		"components.sveltin.io#build": {
 			"dependsOn": ["^build"],

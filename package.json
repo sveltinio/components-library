@@ -15,6 +15,7 @@
 		"dev": "turbo run dev",
 		"demo": "turbo run demo",
 		"test": "turbo run test --concurrency=2 --force",
+		"test:packages": "turbo run test --filter='@sveltinio/*' --concurrency=2 --force",
 		"build": "pnpm clean && pnpm build:packages && pnpm build:sites",
 		"build:packages": "turbo run build --filter='@sveltinio/*' --concurrency=2 --force",
 		"build:sites": "turbo run build --filter='components.sveltin.io'",

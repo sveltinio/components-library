@@ -49,7 +49,4 @@ jobs:
           version: 7
 
       - run: pnpm install --no-frozen-lockfile
-      # generate files
-      - run: pnpm turbo run build --filter="@sveltinio/*" --force
-      # run tests
-      - run: pnpm turbo run test --filter="@sveltinio/*" --force
+      - run: pnpm test:packages
