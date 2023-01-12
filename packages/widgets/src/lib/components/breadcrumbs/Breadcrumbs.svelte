@@ -1,5 +1,7 @@
 <script lang="ts">
-	import './styles.css';
+	import '../../styles/base.css';
+	import '../../styles/components/breadcrumbs/variables.css';
+	import '../../styles/components/breadcrumbs/styles.css';
 	import { stylesObjToCSSVars, capitalize, makeTitle } from '../../utils.js';
 
 	export let url = '';

@@ -1,5 +1,8 @@
 <script lang="ts">
-	import './styles.css';
+	import '../../styles/base.css';
+	import '../../styles/components/responsivecard/variables.css';
+	import '../../styles/components/responsivecard/styles.css';
+	import '../../styles/components/responsivecard/badge.css';
 	import { stylesObjToCSSVars } from '../../utils.js';
 	import CardTitle from './CardTitle.svelte';
 	import CardTitleLink from './CardTitleLink.svelte';

@@ -1,5 +1,7 @@
 <script lang="ts">
-	import './styles.css';
+	import '../../styles/base.css';
+	import '../../styles/components/scroll-to-top/variables.css';
+	import '../../styles/components/scroll-to-top/styles.css';
 	import { stylesObjToCSSVars } from '../../utils.js';
 
 	export let showOnPx = 400;

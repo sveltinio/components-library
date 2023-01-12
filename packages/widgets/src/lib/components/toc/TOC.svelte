@@ -1,5 +1,7 @@
 <script lang="ts">
-	import './styles.css';
+	import '../../styles/base.css';
+	import '../../styles/components/toc/variables.css';
+	import '../../styles/components/toc/styles.css';
 	import type { TocEntry } from '../../types.js';
 	import { stylesObjToCSSVars } from '../../utils.js';
 	import TocList from './TocList.svelte';

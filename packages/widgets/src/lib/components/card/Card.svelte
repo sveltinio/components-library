@@ -1,5 +1,7 @@
 <script lang="ts">
-	import './styles.css';
+	import '../../styles/base.css';
+	import '../../styles/components/card/variables.css';
+	import '../../styles/components/card/styles.css';
 	import { stylesObjToCSSVars } from '../../utils.js';
 	import CardContent from './CardContent.svelte';
 	import CardTitle from './CardTitle.svelte';

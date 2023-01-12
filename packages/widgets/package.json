@@ -54,6 +54,7 @@
 		"postcss-load-config": "^4.0.1",
 		"postcss-preset-env": "^7.8.3",
 		"postcss-utils": "workspace:0.0.0",
+		"publint": "^0.1.8",
 		"rimraf": "^3.0.2",
 		"stylelint": "^14.16.1",
 		"stylelint-config-custom": "workspace:0.0.0",
@@ -64,16 +65,18 @@
 		"vitest": "^0.27.1"
 	},
 	"scripts": {
-		"build": "pnpm clean && pnpm sync && pnpm build:css && svelte-package",
-		"build:css": "cross-env NODE_ENV=production node styles-builder.js",
+		"build": "pnpm clean && pnpm sync && pnpm build:css && svelte-package && pnpm postbuild",
+		"build:css": "cross-env NODE_ENV=production node ./scripts/postcss-process.js",
 		"check": "pnpm sync && svelte-check",
 		"check:watch": "pnpm sync && svelte-check --watch",
 		"clean": "rimraf dist",
 		"dev": "pnpm sync && pnpm dev:css && vite dev",
-		"dev:css": "cross-env NODE_ENV=development node styles-builder.js",
+		"dev:css": "cross-env NODE_ENV=development node ./scripts/postcss-process.js",
 		"lint": "prettier --plugin-search-dir=. --check . && eslint .",
 		"lint:styles": "stylelint \"**/styles.postcss\"",
 		"format": "prettier --plugin-search-dir=. --write .",
+		"minify": "cross-env NODE_ENV=production node ./scripts/css-minifier.js",
+		"postbuild": "pnpm exec publint ./dist && pnpm minify",
 		"sync": "svelte-kit sync",
 		"test": "pnpm sync && vitest run",
 		"test:coverage": "pnpm sync && vitest run --coverage",
@@ -82,14 +85,10 @@
 	},
 	"types": "index.d.ts",
 	"svelte": "index.js",
-	"sideEffects": false,
-	"publishConfig": {
-		"directory": "dist"
-	},
 	"exports": {
 		".": {
-			"import": "./index.js",
-			"types": "./types.d.ts"
+			"types": "./types.d.ts",
+			"import": "./index.js"
 		},
 		"./dist": "./index.js"
 	}
