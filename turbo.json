@@ -16,7 +16,7 @@
 		"test": {},
 		"build": {
 			"env": ["NODE_ENV"],
-			"dependsOn": ["clean", "lint", "test", "^build"]
+			"dependsOn": ["clean", "lint", "^build"]
 		},
 		"components.sveltin.io#build": {
 			"dependsOn": ["^build"],
