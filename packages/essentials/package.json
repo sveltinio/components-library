@@ -92,12 +92,8 @@
 		"test:watch": "pnpm sync && vitest watch",
 		"test:a11y": "rimraf a11y-results.json && pa11y-ci"
 	},
-	"types": "types.d.ts",
+	"types": "index.d.ts",
 	"svelte": "index.js",
-	"sideEffects": false,
-	"publishConfig": {
-		"directory": "dist"
-	},
 	"exports": {
 		".": {
 			"types": "./types.d.ts",
