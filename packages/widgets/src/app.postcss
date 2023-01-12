@@ -1,170 +1,145 @@
 @custom-media --viewport-medium (min-width: 768px);
 @custom-media --viewport-large (min-width: 1024px);
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+section {
+  margin: 3rem;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+.header {
+  margin: 3rem;
+  color: hsl(215.3deg 25% 26.7%); /* slate-700 */
+  line-height: 1.5rem;
 
-body {
-  background-color: #ffffff;
-  margin: 2rem;
-}
-
-.main {
   & h1 {
-    margin: 1em 0 0.5em 0;
-    color: #343434;
+    font-family: "Bitter", sans-serif;
+    font-size: 2.25rem;
     font-weight: normal;
-    font-family: "Ultra", sans-serif;
-    font-size: 36px;
-    line-height: 42px;
-    text-transform: uppercase;
+    font-style: normal;
+    line-height: 1.1rem;
+    margin: 1em 0 0.5em 0;
   }
 
   & h2 {
-    margin: 1em 0 0.5em 0;
-    color: #343434;
+    font-family: "Baloo Bhai", sans-serif;
     font-weight: normal;
-    font-size: 30px;
-    line-height: 40px;
-    font-family: "Orienta", sans-serif;
-  }
-}
-
-.demo-grid-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 1rem;
-  width: 100%;
-}
-
-.demo-grid {
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin-left: auto;
-  gap: 1.5rem;
-  @media (--viewport-medium) {
-    & {
-      grid-template-columns: repeat(2, 1fr);
-      margin-left: 0;
-    }
-  }
-
-  @media (--viewport-large) {
-    & {
-      grid-template-columns: repeat(3, 1fr);
-      margin-left: 0;
-    }
-  }
-}
-
-.demo-card {
-  text-decoration: none;
-  width: 18.75rem;
-  height: auto;
-  display: flex;
-  color: #334155;
-  flex-direction: column;
-  background-color: white;
-  padding: 1.875rem;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-
-  &:hover {
-    cursor: pointer;
-    background-color: rgb(248 250 252); /* slate-50 */
-  }
-
-  & h2 {
-    margin: 0;
+    font-style: normal;
+    font-size: 2.5rem;
+    line-height: 1.5rem;
+    margin: 1em 0 1.5em;
   }
 
   & p {
-    margin-top: 2rem;
-    line-height: 1.4;
-    flex-grow: 1;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   & a {
-    display: block;
     text-decoration: none;
-    padding: 10px 15px;
-    background-color: teal;
-    color: white;
-    border-radius: 5px;
-    font-size: 0.9em;
-    text-align: center;
+    color: inherit;
   }
 }
 
-.demo-container {
+.actions {
+  padding: 0.75rem 0;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+}
 
-  gap: 1.5rem;
-  margin: 1rem 0;
+.btn-back {
+  position: relative;
+  padding: 0.5rem;
+  background-color: #d9f99d;
+  color: #365314;
+  border-radius: 0.25rem;
+}
 
-  & .row {
+/* Used on the main demo page */
+.demos-grid {
+  max-width: 1280px;
+  padding: 2.5rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  gap: 1rem;
+}
+
+.demo-card {
+  position: relative;
+  max-width: 24rem;
+  padding: 0.125rem;
+
+  border-radius: 0.5rem;
+  background: linear-gradient(to top right, #5eead4, #93c5fd);
+  box-shadow: 0 1px 3px 0 hsla(0deg 0% 0% / 0.1), 0 1px 2px -1px hsla(0deg 0% 0% / 0.1);
+
+  & > a {
+    text-decoration: none;
+
+    display: flex;
+    color: hsl(215.3deg 25% 26.7%); /* slate-700 */
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: hsl(0deg 0% 100%); /* white */
+    padding: 1.75rem;
+    border-radius: 0.375rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: hsl(210deg 40% 98%); /* slate-50 */
+    }
+  }
+
+  & h2 {
+    font-family: "Baloo Bhai", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 1.5rem;
+  }
+
+  & p {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+/* Used on the single component demo page */
+.demo-wrapper {
+  & h3 {
+    padding: 0;
+    margin: 2rem 0;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.375rem;
+    color: hsl(215.3deg 19.3% 34.5%); /* slate-600 */
+    line-height: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  & .preview {
     display: flex;
     width: auto;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
     gap: 0.75rem;
-  }
-
-  & h3 {
-    padding: 0;
     margin: 1rem 0;
-    color: #343434;
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: normal;
-    font-family: "Orienta", sans-serif;
-    text-transform: uppercase;
   }
 
-  @media (--viewport-medium) {
-    & {
-      gap: 1rem;
-    }
-  }
-}
-
-.grid-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 1rem;
-  width: 100%;
-}
-
-.grid {
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin-left: auto;
-  gap: 1.5rem;
-  @media (--viewport-medium) {
-    & {
-      grid-template-columns: repeat(2, 1fr);
-      margin-left: 0;
-    }
-  }
-
-  @media (--viewport-large) {
-    & {
-      grid-template-columns: repeat(3, 1fr);
-      margin-left: 0;
-    }
+  & .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75rem;
   }
 }
 

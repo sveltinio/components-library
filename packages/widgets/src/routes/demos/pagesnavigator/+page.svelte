@@ -53,76 +53,86 @@
 	};
 </script>
 
-<section class="main">
-	<h1><tt>@sveltinio/widgets</tt></h1>
-	<h2><tt>PagesNavigator</tt></h2>
-</section>
+<div class="header" role="main">
+	<h1>@sveltinio/widgets</h1>
+	<h2>PagesNavigator</h2>
+</div>
 
-<section>
-	<div class="demo-container">
-		<h3>Default Styles</h3>
-		<PagesNavigator prev={prevObj} next={nextObj} />
+<section role="contentinfo">
+	<div class="actions">
+		<a class="btn-back" href="/demos">← Return To The Demos</a>
+	</div>
 
-		<h3>Custom Icons</h3>
-		<PagesNavigator prev={prevObj} next={nextObj}>
-			<span slot="prevIcon">
-				<svg
-					width="20px"
-					height="20px"
-					stroke-width="1.5"
-					viewBox="0 0 24 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					color="currentColor"
-					><path
-						d="M16 12H8m0 0l3.5 3.5M8 12l3.5-3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-						stroke="currentColor"
+	<div id="pagesnavigator-default-wrapper" class="demo-wrapper">
+		<h3 id="pagesnavigator-default">Defaults</h3>
+		<div class="preview">
+			<PagesNavigator prev={prevObj} next={nextObj} />
+		</div>
+	</div>
+
+	<div id="pagesnavigator-custom-icons-wrapper" class="demo-wrapper">
+		<h3 id="pagesnavigator-custom-icons">Custom Icons</h3>
+		<div class="preview">
+			<PagesNavigator prev={prevObj} next={nextObj}>
+				<span slot="prevIcon">
+					<svg
+						width="20px"
+						height="20px"
 						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/></svg
-				>
-			</span>
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						color="currentColor"
+						><path
+							d="M16 12H8m0 0l3.5 3.5M8 12l3.5-3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/></svg
+					>
+				</span>
 
-			<span slot="nextIcon">
-				<svg
-					width="20px"
-					height="20px"
-					stroke-width="1.5"
-					viewBox="0 0 24 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					color="currentColor"
-					><path
-						d="M8 12h8m0 0l-3.5-3.5M16 12l-3.5 3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-						stroke="currentColor"
+				<span slot="nextIcon">
+					<svg
+						width="20px"
+						height="20px"
 						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/></svg
-				>
-			</span>
-		</PagesNavigator>
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						color="currentColor"
+						><path
+							d="M8 12h8m0 0l-3.5-3.5M16 12l-3.5 3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/></svg
+					>
+				</span>
+			</PagesNavigator>
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>Custom Styles - Sample 1</h3>
-		<PagesNavigator prev={prevObj} next={nextObj} styles={customStyles_1} spacer />
+	<div id="pagesnavigator-theming-with-prop-1-wrapper" class="demo-wrapper">
+		<h3 id="pagesnavigator-theming-with-prop-1-">Custom Styles - Sample 1</h3>
+		<div class="preview">
+			<PagesNavigator prev={prevObj} next={nextObj} styles={customStyles_1} spacer />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>Custom Styles - Sample 2</h3>
-		<PagesNavigator prev={prevObj} next={nextObj} styles={dark} spacer />
+	<div id="pagesnavigator-theming-with-prop-2-wrapper" class="demo-wrapper">
+		<h3 id="pagesnavigator-theming-with-prop-2-">Custom Styles - Sample 2</h3>
+		<div class="preview">
+			<PagesNavigator prev={prevObj} next={nextObj} styles={dark} spacer />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>Custom Styles - with css class</h3>
-		<PagesNavigator prev={prevObj} next={nextObj} class="pagesnav-orange" />
+	<div id="pagesnavigator-theming-with-css-class-wrapper" class="demo-wrapper">
+		<h3 id="pagesnavigator-theming-with-css-class-">Custom Styles with css class</h3>
+		<div class="preview">
+			<PagesNavigator prev={prevObj} next={nextObj} class="pagesnav-orange" />
+		</div>
 	</div>
 </section>

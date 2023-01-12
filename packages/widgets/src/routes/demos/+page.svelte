@@ -19,8 +19,7 @@
 		},
 		{
 			name: 'ResponsiveCard',
-			headline:
-				'ResponsiveCard component display content vertically on small screen, horizontally on large screen.',
+			headline: 'Shows content vertically on small screen, horizontally on large screen.',
 			url: 'demos/responsivecard'
 		},
 		{
@@ -30,24 +29,24 @@
 		},
 		{
 			name: 'TOC',
-			headline: 'Table of contents component.',
+			headline: 'Responsive Table of contents component for your pages.',
 			url: 'demos/toc'
 		}
 	];
 </script>
 
-<section class="main">
-	<h1><tt>@sveltinio/widgets</tt></h1>
-	<h2><tt>Demos</tt></h2>
-</section>
+<div class="header">
+	<h1>@sveltinio/widgets</h1>
+	<h2>Demos</h2>
+</div>
 
-<div class="grid-wrapper">
-	<div class="grid">
-		{#each demos as demo}
-			<a class="demo-card" href="{base}/{demo.url}">
+<div class="demos-grid">
+	{#each demos as demo}
+		<div class="demo-card">
+			<a href="{base}/{demo.url}">
 				<h2>{demo.name}</h2>
 				<p>{demo.headline}</p>
 			</a>
-		{/each}
-	</div>
+		</div>
+	{/each}
 </div>

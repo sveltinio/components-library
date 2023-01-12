@@ -35,86 +35,97 @@
 	https://placeimg.com/400/400/any
 -->
 
-<section>
-	<div class="demo-container">
-		<h3>Complete</h3>
-		<ResponsiveCard
-			title={contentItem_2.metadata.title}
-			content={contentItem_2.metadata.headline ?? ''}
-		>
-			<ResponsiveCardImage
-				slot="cardImage"
-				src={item_2_CoverImgPath}
-				alt="microphone photo"
-			/>
-			<ResponsiveCardBadge
-				slot="cardBadge"
-				data={{
-					value: String(contentItem_2.metadata.category),
-					color: 'blue',
-					url: ResourceContentUtils.getMetadataURL(
-						base,
-						contentItem_2.resource,
-						'category',
-						String(contentItem_2.metadata.category)
-					)
-				}}
-			/>
-			<ResponsiveCardInfo
-				slot="cardInfo"
-				author={contentItem_2.metadata.author ?? ''}
-				date={contentItem_2.metadata.created_at ?? ''}
-				showAvatar={false}
-			/>
-			<ResponsiveCardAction
-				slot="cardAction"
-				href={ResourceContentUtils.getURL(base, contentItem_2)}
-			/>
-		</ResponsiveCard>
-	</div>
-</section>
+<div class="header" role="main">
+	<h1>@sveltinio/widgets</h1>
+	<h2>PagesNavigator</h2>
+</div>
 
-<section>
-	<div class="demo-container">
-		<h3>Title as Link</h3>
-		<ResponsiveCard
-			title={contentItem_1.metadata.title}
-			content={contentItem_1.metadata.headline ?? ''}
-		>
-			<ResponsiveCardImage slot="cardImage" src={item_1_CoverImgPath} alt="viola photo" />
-			<ResponsiveCardBadge
-				slot="cardBadge"
-				data={{
-					value: String(contentItem_1.metadata.category),
-					color: 'red',
-					url: ResourceContentUtils.getMetadataURL(
-						base,
-						contentItem_1.resource,
-						'category',
-						String(contentItem_1.metadata.category)
-					)
-				}}
-			/>
-			<ResponsiveCardInfo
-				slot="cardInfo"
-				author={contentItem_1.metadata.author ?? ''}
-				date={contentItem_1.metadata.created_at ?? ''}
-			/>
-		</ResponsiveCard>
+<section role="contentinfo">
+	<div class="actions">
+		<a class="btn-back" href="/demos">← Return To The Demos</a>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>No Image</h3>
-		<ResponsiveCard
-			title={contentItem_1.metadata.title}
-			content={contentItem_1.metadata.headline ?? ''}
-		>
-			<ResponsiveCardAction
-				slot="cardAction"
-				href={ResourceContentUtils.getURL(base, contentItem_1)}
-			/>
-		</ResponsiveCard>
+	<div id="responsivecard-complete-wrapper" class="demo-wrapper">
+		<h3 id="responsivecard-complete">Complete</h3>
+		<div class="preview">
+			<ResponsiveCard
+				title={contentItem_2.metadata.title}
+				content={contentItem_2.metadata.headline ?? ''}
+			>
+				<ResponsiveCardImage
+					slot="cardImage"
+					src={item_2_CoverImgPath}
+					alt="microphone photo"
+				/>
+				<ResponsiveCardBadge
+					slot="cardBadge"
+					data={{
+						value: String(contentItem_2.metadata.category),
+						color: 'blue',
+						url: ResourceContentUtils.getMetadataURL(
+							base,
+							contentItem_2.resource,
+							'category',
+							String(contentItem_2.metadata.category)
+						)
+					}}
+				/>
+				<ResponsiveCardInfo
+					slot="cardInfo"
+					author={contentItem_2.metadata.author ?? ''}
+					date={contentItem_2.metadata.created_at ?? ''}
+					showAvatar={false}
+				/>
+				<ResponsiveCardAction
+					slot="cardAction"
+					href={ResourceContentUtils.getURL(base, contentItem_2)}
+				/>
+			</ResponsiveCard>
+		</div>
+	</div>
+
+	<div id="responsivecard-title-link-wrapper" class="demo-wrapper">
+		<h3 id="responsivecard-title-link">Title as Link</h3>
+		<div class="preview">
+			<ResponsiveCard
+				title={contentItem_1.metadata.title}
+				content={contentItem_1.metadata.headline ?? ''}
+			>
+				<ResponsiveCardImage slot="cardImage" src={item_1_CoverImgPath} alt="viola photo" />
+				<ResponsiveCardBadge
+					slot="cardBadge"
+					data={{
+						value: String(contentItem_1.metadata.category),
+						color: 'red',
+						url: ResourceContentUtils.getMetadataURL(
+							base,
+							contentItem_1.resource,
+							'category',
+							String(contentItem_1.metadata.category)
+						)
+					}}
+				/>
+				<ResponsiveCardInfo
+					slot="cardInfo"
+					author={contentItem_1.metadata.author ?? ''}
+					date={contentItem_1.metadata.created_at ?? ''}
+				/>
+			</ResponsiveCard>
+		</div>
+	</div>
+
+	<div id="responsivecard-no-image-wrapper" class="demo-wrapper">
+		<h3 id="responsivecard-no-image">No Image</h3>
+		<div class="preview">
+			<ResponsiveCard
+				title={contentItem_1.metadata.title}
+				content={contentItem_1.metadata.headline ?? ''}
+			>
+				<ResponsiveCardAction
+					slot="cardAction"
+					href={ResourceContentUtils.getURL(base, contentItem_1)}
+				/>
+			</ResponsiveCard>
+		</div>
 	</div>
 </section>

@@ -3,56 +3,62 @@
 	import { tocEntries } from '../../../data/sample.js';
 </script>
 
-<section class="main">
-	<h1><tt>@sveltinio/widgets</tt></h1>
-	<h2><tt>TOC</tt></h2>
-</section>
+<div class="header" role="main">
+	<h1>@sveltinio/widgets</h1>
+	<h2>TOC</h2>
+</div>
 
-<section>
-	<div class="demo-container">
-		<h3 id="toc2-default">Default</h3>
-		<TOC data={tocEntries} />
+<section role="contentinfo">
+	<div class="actions">
+		<a class="btn-back" href="/demos">← Return To The Demos</a>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3 id="toc2-default">Ordered</h3>
-		<TOC data={tocEntries} ordered />
+	<div id="toc-default-wrapper" class="demo-wrapper">
+		<h3 id="toc-default">Default</h3>
+		<div class="preview">
+			<TOC data={tocEntries} />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3 id="toc2-open">Custom title</h3>
-		<TOC data={tocEntries} label="My TOC" />
+	<div id="toc-ordered-wrapper" class="demo-wrapper">
+		<h3 id="toc-ordered">Ordered</h3>
+		<div class="preview">
+			<TOC data={tocEntries} ordered />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3 id="toc2-with-children">Label only</h3>
-		<TOC data={tocEntries} labelOnly />
+	<div id="toc-custom-title-wrapper" class="demo-wrapper">
+		<h3 id="toc-custom-title">Custom Title</h3>
+		<div class="preview">
+			<TOC data={tocEntries} label="My TOC" />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3 id="toc2-with-children">Icon only</h3>
-		<TOC data={tocEntries} iconOnly />
+	<div id="toc-label-only-wrapper" class="demo-wrapper">
+		<h3 id="toc-label-only">Label Only</h3>
+		<div class="preview">
+			<TOC data={tocEntries} labelOnly />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3 id="toc2-with-children">Open by default</h3>
-		<TOC data={tocEntries} isOpen />
+	<div id="toc-icon-only-wrapper" class="demo-wrapper">
+		<h3 id="toc-icon-only">Icon Only</h3>
+		<div class="preview">
+			<TOC data={tocEntries} iconOnly />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3 id="toc2-sveltin">sveltin theme</h3>
-		<TOC data={tocEntries} class="toc-violet-theme" prefixChar="*" />
+	<div id="toc-open-wrapper" class="demo-wrapper">
+		<h3 id="toc-open">Open by default</h3>
+		<div class="preview">
+			<TOC data={tocEntries} isOpen />
+		</div>
+	</div>
+
+	<div id="toc-theming-with-css-class-wrapper" class="demo-wrapper">
+		<h3 id="toc-theming-with-css-class">Custom styles with CSS class</h3>
+		<div class="preview">
+			<TOC data={tocEntries} class="toc-violet-theme" prefixChar="*" />
+		</div>
 	</div>
 </section>

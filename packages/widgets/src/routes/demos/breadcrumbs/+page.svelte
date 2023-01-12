@@ -11,66 +11,72 @@
 	};
 </script>
 
-<section class="main">
-	<h1><tt>@sveltinio/widgets</tt></h1>
-	<h2><tt>Breadcrumbs</tt></h2>
-</section>
+<div class="header" role="main">
+	<h1>@sveltinio/widgets</h1>
+	<h2>Breadcrumbs</h2>
+</div>
 
-<section>
-	<div class="demo-container">
-		<h3>Default</h3>
-		<Breadcrumbs url={$page.url.href} />
+<section role="contentinfo">
+	<div class="actions">
+		<a class="btn-back" href="/demos">← Return To The Demos</a>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>No Current</h3>
-		<Breadcrumbs url="http://example.com/blog/posts/welcome" showCurrent={false} />
+	<div id="breadcrumbs-default-wrapper" class="demo-wrapper">
+		<h3 id="buttons-variants">Defaults</h3>
+		<div class="preview">
+			<Breadcrumbs url={$page.url.href} />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>Single Page</h3>
-		<Breadcrumbs url="http://example.com/contact" />
+	<div id="breadcrumbs-no-current-wrapper" class="demo-wrapper">
+		<h3 id="breadcrumbs-no-current">No Current</h3>
+		<div class="preview">
+			<Breadcrumbs url="http://example.com/blog/posts/welcome" showCurrent={false} />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>MultiParent Page</h3>
-		<Breadcrumbs url="http://example.com/projects/music/prog" />
+	<div id="breadcrumbs-single-page-wrapper" class="demo-wrapper">
+		<h3 id="breadcrumbs-single-page">Single Page</h3>
+		<div class="preview">
+			<Breadcrumbs url="http://example.com/contact" />
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>Custom Divider Icon</h3>
-		<Breadcrumbs url="http://example.com/projects/music/prog">
-			><svg
-				slot="dividerIcon"
-				xmlns="http://www.w3.org/2000/svg"
-				width="20px"
-				height="20px"
-				viewBox="0 0 24 24"
-				stroke-width="1.5"
-				fill="none"
-				><path
-					d="M13 6l6 6-6 6M5 6l6 6-6 6"
-					stroke="currentColor"
+	<div id="breadcrumbs-multiparent-page-wrapper" class="demo-wrapper">
+		<h3 id="breadcrumbs-multiparent-page">MultiParent Pages</h3>
+		<div class="preview">
+			<Breadcrumbs url="http://example.com/projects/music/prog" />
+		</div>
+	</div>
+
+	<div id="breadcrumbs-custom-icon-wrapper" class="demo-wrapper">
+		<h3 id="breadcrumbs-custom-icon">Custom Divider Icon</h3>
+		<div class="preview">
+			<Breadcrumbs url="http://example.com/projects/music/prog">
+				><svg
+					slot="dividerIcon"
+					xmlns="http://www.w3.org/2000/svg"
+					width="20px"
+					height="20px"
+					viewBox="0 0 24 24"
 					stroke-width="1.5"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				/></svg
-			>
-		</Breadcrumbs>
+					fill="none"
+					><path
+						d="M13 6l6 6-6 6M5 6l6 6-6 6"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/></svg
+				>
+			</Breadcrumbs>
+		</div>
 	</div>
-</section>
 
-<section>
-	<div class="demo-container">
-		<h3>Custom Styles with prop</h3>
-		<Breadcrumbs url={$page.url.href} styles={customStyles} />
+	<div id="breadcrumbs-theming-with-prop-wrapper" class="demo-wrapper">
+		<h3 id="breadcrumbs-theming-with-prop">Custom Styles with prop</h3>
+		<div class="preview">
+			<Breadcrumbs url={$page.url.href} styles={customStyles} />
+		</div>
 	</div>
 </section>
