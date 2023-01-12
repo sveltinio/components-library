@@ -335,13 +335,16 @@ importers:
       '@types/postcss-preset-env': ^7.7.0
       '@typescript-eslint/eslint-plugin': ^5.48.1
       '@typescript-eslint/parser': ^5.48.1
+      axe-core: ^4.6.2
       c8: ^7.12.0
       cross-env: ^7.0.3
       cssnano: ^5.1.14
       eslint: ^8.31.0
       eslint-config-custom: workspace:0.0.0
       jsdom: ^20.0.3
-      micromatch: ^4.0.5
+      pa11y: ^6.2.3
+      pa11y-ci: ^3.0.1
+      picocolors: ^1.0.0
       postcss: ^8.4.21
       postcss-cli: ^10.1.0
       postcss-load-config: ^4.0.1
@@ -368,13 +371,16 @@ importers:
       '@types/postcss-preset-env': 7.7.0
       '@typescript-eslint/eslint-plugin': 5.48.1_3jon24igvnqaqexgwtxk6nkpse
       '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
+      axe-core: 4.6.2
       c8: 7.12.0
       cross-env: 7.0.3
       cssnano: 5.1.14_postcss@8.4.21
       eslint: 8.31.0
       eslint-config-custom: link:../eslint-config-custom
       jsdom: 20.0.3
-      micromatch: 4.0.5
+      pa11y: 6.2.3
+      pa11y-ci: 3.0.1
+      picocolors: 1.0.0
       postcss: 8.4.21
       postcss-cli: 10.1.0_postcss@8.4.21
       postcss-load-config: 4.0.1_postcss@8.4.21
@@ -1720,7 +1726,7 @@ packages:
       magic-string: 0.27.0
       svelte: 3.55.1
       svelte-hmr: 0.15.1_svelte@3.55.1
-      vite: 4.0.4_@types+node@18.11.18
+      vite: 4.0.4
       vitefu: 0.2.4_vite@4.0.4
     transitivePeerDependencies:
       - supports-color

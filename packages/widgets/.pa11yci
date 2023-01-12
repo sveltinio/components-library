@@ -1,0 +1,26 @@
+{
+	"defaults": {
+		"standard": "WCAG2AAA",
+		"runners": [
+			"axe",
+			"htmlcs"
+		],
+		"reporters": [
+			"cli",
+			[
+				"json",
+				{
+					"fileName": "./pa11y-results.json"
+				}
+			]
+		]
+	},
+	"urls": [
+		"http://localhost:3005/demos/breadcrumbs",
+		"http://localhost:3005/demos/card",
+		"http://localhost:3005/demos/pagesnavigator",
+		"http://localhost:3005/demos/responsivecard",
+		"http://localhost:3005/demos/scroll-to-top",
+		"http://localhost:3005/demos/toc"
+	]
+}
