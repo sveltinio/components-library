@@ -1,12 +1,12 @@
 # TOC
 
+Responsive Table of contents component for your pages.
+
 ## Examples
 
 ### Default
 
 <img src="./assets/images/default.gif" alt="TOC - Default Styles" />
-
-<details><summary>Source Code</summary>
 
 ```html
 <script>
@@ -16,13 +16,9 @@
 <TOC data={tocEntries} />
 ```
 
-</details>
-
 ### Ordered
 
 <img src="./assets/images/ordered.gif" alt="TOC - Ordered List" />
-
-<details><summary>Source Code</summary>
 
 ```html
 <script>
@@ -32,13 +28,9 @@
 <TOC data={tocEntries} ordered />
 ```
 
-</details>
-
 ### Icon Only
 
 <img src="./assets/images/icon-only.gif" alt="TOC - Icon Only" />
-
-<details><summary>Source Code</summary>
 
 ```html
 <script>
@@ -47,8 +39,6 @@
 
 <TOC data={tocEntries} iconOnly />
 ```
-
-</details>
 
 ## Properties
 
@@ -83,6 +73,12 @@ type TocEntry = {
 | styles     | Object           |   no     | `{}`    | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
+
+## Slots
+
+| Name   | Default | Fallback |
+| :----- | :-----: | :------: |
+| `icon` | ✗       |    ✓     |
 
 ## Theming
 

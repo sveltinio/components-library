@@ -3,7 +3,7 @@
 	"version": "0.4.0",
 	"private": false,
 	"type": "module",
-	"description": "A collection of responsive, fully configurable and ready-to-use Svelte components for cards, pages navigation, TOC (Table of Contents), ...",
+	"description": "A collection of responsive, type-safe, accessible and configurable Svelte components for cards, pages navigation, TOC (Table of Contents), ...",
 	"author": "dev <dev@sveltin.io>",
 	"license": "MIT",
 	"homepage": "https://components.sveltin.io",

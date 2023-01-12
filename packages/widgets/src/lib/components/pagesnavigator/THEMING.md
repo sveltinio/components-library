@@ -43,11 +43,13 @@ The DOM Element Structure above can be mapped to the following table going throu
 
 ## CSS Variables
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+The CSS variables are defined in the [variables.css](../../styles/components/pagesnavigator/variables.css) file.
 
 ## Examples
 
 ### Custom Styles - Sample 1
+
+<img src="./assets/images/custom_1.png" alt="PagesNavigator - Custom Styles - Sample 1" />
 
 ```html
 <script>
@@ -73,9 +75,9 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 <PagesNavigator prev={prevObj} next={nextObj} styles={customStyles_1} spacer />
 ```
 
-<img src="./assets/images/custom_1.png" alt="PagesNavigator - Custom Styles - Sample 1" />
-
 ### Custom Styles - Sample 2
+
+<img src="./assets/images/custom_2.png" alt="PagesNavigator - Custom Styles - Sample 2" />
 
 ```html
 <script>
@@ -110,9 +112,9 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 <PagesNavigator prev={prevObj} next={nextObj} styles={dark} spacer />
 ```
 
-<img src="./assets/images/custom_2.png" alt="PagesNavigator - Custom Styles - Sample 2" />
-
 ### Custom Styles with CSS class as theme
+
+<img src="./assets/images/custom_3.png" alt="PagesNavigator - Custom Styles with CSS class as theme" />
 
 ```css
 /* app.css */
@@ -149,8 +151,6 @@ The CSS variables are defined in the [variables.css](./variables.css) file.
 
 <PagesNavigator prev={prevObj} next={nextObj} class="pagesnav-orange" />
 ```
-
-<img src="./assets/images/custom_3.png" alt="PagesNavigator - Custom Styles with CSS class as theme" />
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props

@@ -8,8 +8,6 @@ The `Card` component is used to group and display content in a easily readable w
 
 <img src="./assets/images/default.png" alt="Card - Default Styles" />
 
-<details><summary>Source Code</summary>
-
 ```html
 <script>
    import { base } from '$app/paths';
@@ -28,13 +26,9 @@ The `Card` component is used to group and display content in a easily readable w
 </Card>
 ```
 
-</details>
-
 ### Title as link
 
 <img src="./assets/images/title_link.png" alt="Card - Default Styles" />
-
-<details><summary>Source Code</summary>
 
 ```html
 <script>
@@ -50,13 +44,9 @@ The `Card` component is used to group and display content in a easily readable w
 </Card>
 ```
 
-</details>
-
 ### Complete
 
 <img src="./assets/images/full.png" alt="Card - Default Styles" />
-
-<details><summary>Source Code</summary>
 
 ```html
 <script>
@@ -76,8 +66,6 @@ The `Card` component is used to group and display content in a easily readable w
     />
 </Card>
 ```
-
-</details>
 
 ## Properties
 
@@ -103,12 +91,10 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 ## Slots
 
-Slots are used to place contents in the card component.
-
-The `Card` component provides two slots:
-
-- `cardImage`
-- `cardAction`
+| Name         | Default | Fallback |
+| :----------- | :-----: | :------: |
+| `cardImage`  | ✗       |    ✗     |
+| `cardBadge`  | ✗       |    ✗     |
 
 ## Theming
 

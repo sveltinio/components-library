@@ -1,10 +1,12 @@
 # PagesNavigator
 
+PagesNavigator components to help users navigating throught the pages.
+
 ## Examples
 
 <img src="./assets/images/default.png" alt="PagesNavigator - Default Styles" />
 
-<details><summary>Source Code</summary>
+## Usage
 
 ```html
 <script>
@@ -16,8 +18,6 @@
 
 <PagesNavigator prev={prevObj} next={nextObj} />
 ```
-
-</details>
 
 ## Properties
 
@@ -37,8 +37,8 @@ The `PagesNavigator` component exposes the following properties:
 
 ```typescript
 type PagesNavigatorItem = {
-   placeholder?: string;
    label: string;
+   placeholder?: string;
    href: string;
    alt?: string;
 };
@@ -55,62 +55,10 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 ## Slots
 
-Slots are used to replace the default icons for previous and next with your favourite ones.
-
-<details><summary>Source Code</summary>
-
-```html
-<script>
-    import { PagesNavigator } from '@sveltinio/widgets';
-
-    const prevObj = { label: 'prev title', href: 'link_previous_slug' };
-    const nextObj = { label: 'next title', href: 'link_next_slug' }
-</script>
-
-<PagesNavigator prev={prevObj} next={nextObj} >
-    <span slot="previous-icon">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24px"
-            height="24px"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            class="icon"
-            color="currentColor"
-            ><path
-                d="M16 12H8m0 0l3.5 3.5M8 12l3.5-3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            /></svg
-        >
-    </span>
-
-    <span slot="next-icon">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24px"
-            height="24px"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            class="icon"
-            color="currentColor"
-            ><path
-                d="M8 12h8m0 0l-3.5-3.5M16 12l-3.5 3.5M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            /></svg
-        >
-    </span>
-</PagesNavigator>
-```
-
-</details>
+| Name       | Default | Fallback |
+| :--------- | :-----: | :------: |
+| `prevIcon` | ✗       |    ✓     |
+| `nextIcon` | ✗       |    ✓     |
 
 ## Theming
 

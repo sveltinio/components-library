@@ -45,7 +45,7 @@ The DOM Element Structure above can be mapped to the following table going throu
 
 ## CSS Variables
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+The CSS variables are defined in the [variables.css](../../styles/components/responsivecard/variables.css) file.
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props

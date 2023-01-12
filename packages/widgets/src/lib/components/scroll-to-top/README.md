@@ -1,6 +1,8 @@
 # ScrollToTopButton
 
-## Examples
+ScrollToTopButton components helps to scroll to the top of the page.
+
+## Usage
 
 ```html
 <script lang="ts">

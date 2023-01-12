@@ -1,12 +1,14 @@
 # ResponsiveCard
 
-The `ResponsiveCardCard` component is used to group and display content in a easily readable way. It displays content vertically on small screen, horizontally on large screen.
+The `ResponsiveCardCard` component is used to group and display content in a easily readable way. It displays content vertically on small screen and horizontally on large screen.
+
+## Examples
 
 | Mobile                                   | Desktop |
 | :--------------------------------------: | :-----------: |
 | ![](./assets/images/mobile.png "mobile") | ![](./assets/images/desktop.png "desktop") |
 
-<details><summary>Source Code</summary>
+## Usage
 
 ```html
 import {
@@ -37,8 +39,6 @@ import {
 </ResponsiveCard>
 ```
 
-</details>
-
 ## Properties
 
 The `ResponsiveCard` component exposes the following properties:
@@ -63,13 +63,11 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 ## Slots
 
-Slots are used to place contents in the card component.
-
-The `ResponsiveCard` component provides three slots:
-
-- `cardImage`
-- `cardBadge`
-- `cardAction`
+| Name         | Default | Fallback |
+| :----------- | :-----: | :------: |
+| `cardImage`  | ✗       |    ✗     |
+| `cardBadge`  | ✗       |    ✗     |
+| `cardAction` | ✗       |    ✗     |
 
 ## Theming
 

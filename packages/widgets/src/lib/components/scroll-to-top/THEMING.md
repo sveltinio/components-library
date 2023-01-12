@@ -11,4 +11,4 @@ The two component properties `styles` and `theme` are the ones allowing you to c
 
 ## CSS Variables
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+The CSS variables are defined in the [variables.css](../../styles/components/scroll-to-top/variables.css) file.

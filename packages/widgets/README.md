@@ -6,7 +6,7 @@
 
 ## Description
 
-A collection of responsive, fully configurable and ready-to-use Svelte components for cards, pages navigation, TOC (Table of Contents) ...
+A collection of responsive, type-safe, accessible and configurable Svelte components for cards, pages navigation, TOC (Table of Contents) ...
 
 ## Components List
 
@@ -40,9 +40,9 @@ pnpm dev
 
 Free and open-source software under the [MIT License](LICENSE)
 
-[Breadcrumbs]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/breadcrumbs/README.md
-[Card]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/card/README.md
-[PagesNavigator]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/pagesnavigator/README.md
-[ResponsiveCard]:  https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/responsivecard/README.md
-[ScrollToTopButton]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/scroll-to-top/README.md
-[TOC]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/toc/README.md
+[Breadcrumbs]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/breadcrumbs/
+[Card]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/card/
+[PagesNavigator]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/pagesnavigator/
+[ResponsiveCard]:  https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/responsivecard/
+[ScrollToTopButton]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/scroll-to-top/
+[TOC]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/toc/

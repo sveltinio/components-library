@@ -1,8 +1,12 @@
 # Breadcrumbs
 
+Breadcrumbs helps users to navigate through the website.
+
 ## Examples
 
 <img src="./assets/images/default.png" alt="Breadcrumbs - Default" />
+
+## Usage
 
 ```html
 <script>
@@ -36,12 +40,10 @@ The `Breadcrumbs` component exposes the following properties:
 
 ## Slots
 
-Slots are used to replace the default root and divider icons.
-
-The `Breadcrumbs` component provides two slots:
-
-- `baseIcon`
-- `dividerIcon`
+| Name          | Default | Fallback |
+| :------------ | :-----: | :------: |
+| `baseIcon`    | ✗       |    ✓     |
+| `dividerIcon` | ✗       |    ✓     |
 
 ## Theming
 

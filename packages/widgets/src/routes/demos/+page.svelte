@@ -14,12 +14,13 @@
 		},
 		{
 			name: 'PagesNavigator',
-			headline: 'Pages Navigator components to help users to navigate throught the pages.',
+			headline: 'PagesNavigator components to help users navigating throught the pages.',
 			url: 'demos/pagesnavigator'
 		},
 		{
 			name: 'ResponsiveCard',
-			headline: 'Shows content vertically on small screen, horizontally on large screen.',
+			headline:
+				'Display content vertically on small screen and horizontally on large screen.',
 			url: 'demos/responsivecard'
 		},
 		{
