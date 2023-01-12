@@ -1,28 +1,28 @@
 import adapter from '@sveltejs/adapter-auto';
-import preprocess from 'svelte-preprocess';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: [
-		preprocess({
-			postcss: true
-		})
-	],
+	preprocess: [vitePreprocess()],
 	kit: {
 		adapter: adapter()
 	},
 	package: {
 		dir: 'dist',
 		emitTypes: true,
-		// exclude postcss and d2 files as well as the whole assets folder to be part of the package
+		// files to not be part of the package
 		files: (filepath) => {
 			const postcssFileRegex = /^_|\/_|\.postcss$/;
 			const d2FileRegex = /^_|\/_|\.d2$/;
 			const assetsFolderRegex = /assets/;
+			const ds = /.DS_Store/;
+			const mdFiles = /^_|\/_|\.md$/;
 			return (
 				!postcssFileRegex.test(filepath) &&
+				!assetsFolderRegex.test(filepath) &&
 				!d2FileRegex.test(filepath) &&
-				!assetsFolderRegex.test(filepath)
+				!ds.test(filepath) &&
+				!mdFiles.test(filepath)
 			);
 		}
 	}
