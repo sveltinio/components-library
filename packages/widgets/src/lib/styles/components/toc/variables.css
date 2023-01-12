@@ -1,5 +1,7 @@
 .sn-w-c-toc-vars {
   /* * main (css class name: sn-w-c-toc)            * */
+  --_max-width: var(--max-width, 100%);
+  --_width: var(--width, 100%);
   --_gap: var(--gap, 0.375rem);
   --_pt: var(--pt, 0.25rem);
   --_pr: var(--pr, 0rem);

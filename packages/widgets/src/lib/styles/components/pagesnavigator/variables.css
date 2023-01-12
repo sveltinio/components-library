@@ -1,6 +1,7 @@
 .sn-w-c-pagesnav-vars {
   /* * main (css class name: sn-w-c-pagesnav)              * */
   --_max-width: var(--max-width, 100%);
+  --_width: var(--width, 100%);
   --_gap: var(--gap, 0.0625rem);
   --_bg-color: var(--bg-color, transparent);
   --_mt: var(--mt, 0.5rem);
