@@ -4,9 +4,9 @@
   --_width: var(--width, 100%);
   --_gap: var(--gap, 0.375rem);
   --_pt: var(--pt, 0.25rem);
-  --_pr: var(--pr, 0rem);
+  --_pr: var(--pr, 0.25rem);
   --_pb: var(--pb, 0.25rem);
-  --_pl: var(--pl, 0rem);
+  --_pl: var(--pl, 0.25rem);
   --_bg-color: var(--bg-color, transparent);
   --_border-width: var(--border-width, 0);
   --_border-style: var(--border-style, none);
@@ -14,24 +14,33 @@
   --_border-radius: var(--border-radius, 0);
 
   /* * button (css class name: btn)                 * */
-  --_btn-cursor: var(--btn-cursor, pointer);
-  --_btn-min-height: var(--btn-min-height, 2.875rem);
-  --_btn-gap: var(--btn-gap, 0.375rem);
-  --_btn-color: var(--btn-color, var(--slate-800));
-  --_btn-font-size: var(--btn-font-size, 1rem);
-  --_btn-font-weight: var(--btn-font-weight, 600);
-  --_btn-line-height: var(--btn-line-height, normal);
-  --_btn-text-transform: var(--btn-text-transform, none);
-  --_btn-bg-color: var(--btn-bg-color, transparent);
-  --_btn-bg-color-hover: var(--btn-bg-color-hover, var(--slate-50));
   --_btn-pt: var(--btn-pt, 0.375rem);
   --_btn-pr: var(--btn-pr, 0.625rem);
   --_btn-pb: var(--btn-pb, 0.375rem);
   --_btn-pl: var(--btn-pl, 0.625rem);
-  --_btn-border-width: var(--btn-border-width, 0);
-  --_btn-border-style: var(--btn-border-style, none);
+
+  --_btn-cursor: var(--btn-cursor, pointer);
+  --_btn-min-height: var(--btn-min-height, 2.875rem);
+  --_btn-icon-gap: var(--btn-icon-gap, 0.25rem);
+
+  --_btn-color: var(--btn-color, var(--slate-700));
+  --_btn-font-size: var(--btn-font-size, 1rem); /* 16px */
+  --_btn-font-weight: var(--btn-font-weight, 500);
+  --_btn-line-height: var(--btn-line-height, 1.5rem); /* 24px */
+  --_btn-letter-spacing: var(--btn-letter-spacing, 0em);
+
+  --_btn-bg-color: var(--btn-bg-color, transparent);
+  --_btn-bg-color-hover: var(--btn-bg-color-hover, var(--slate-50));
+
+  --_btn-border-width: var(--btn-border-width, 1px);
+  --_btn-border-style: var(--btn-border-style, solid);
   --_btn-border-color: var(--btn-border-color, transparent);
-  --_btn-border-radius: var(--btn-border-radius, 0.5rem);
+  --_btn-border-radius: var(--btn-border-radius, 0.25rem);
+
+  --_btn-ring-width: var(--btn-ring-width, 2px);
+  --_btn-ring-color: var(--btn-ring-color, var(--slate-300));
+  --_btn-ring-style: var(--btn-ring-style, solid);
+  --_btn-ring-offset: var(--btn-ring-offset, 1px);
 
   /* * list (css class name: list)                  * */
   --_list-style: var(--list-style, none);
@@ -48,30 +57,43 @@
   --_list-ordered-ml: var(--list-ordered-ml, 0.75rem);
 
   /* * item (css class name: list__item)            * */
-  --_item-color: var(--item-color, var(--slate-800));
-  --_item-color-hover: var(--item-color-hover, var(--slate-800));
-  --_item-text-decoration: var(--item-text-decoration, none);
-  --_item-text-decoration-hover: var(--item-text-decoration-hove, none);
-  --_item-bg-color-hover: var(--item-bg-color-hover, var(--slate-100));
   --_item-mt: var(--item-mt, 0);
   --_item-mr: var(--item-mr, 0);
   --_item-mb: var(--item-mb, 0);
   --_item-ml: var(--item-ml, 0);
+
   --_item-pt: var(--item-pt, 0.25rem);
   --_item-pr: var(--item-pr, 0.25rem);
   --_item-pb: var(--item-pb, 0.25rem);
   --_item-pl: var(--item-pl, 0.25rem);
+
+  --_item-color: var(--item-color, var(--slate-800));
+  --_item-color-hover: var(--item-color-hover, var(--slate-800));
+  --_item-text-decoration: var(--item-text-decoration, none);
+  --_item-text-decoration-hover: var(--item-text-decoration-hove, none);
+
+  --_item-bg-color-hover: var(--item-bg-color-hover, var(--slate-100));
+
+  --_item-border-radius: var(--item-border-radius, 0.375rem);
+
   --_item-border-t-width: var(--item-border-t-width, 1px);
   --_item-border-t-style: var(--item-border-t-style, solid);
   --_item-border-t-color: var(--item-border-t-color, transparent);
+
   --_item-border-r-width: var(--item-border-r-width, 1px);
   --_item-border-r-style: var(--item-border-r-style, solid);
   --_item-border-r-color: var(--item-border-r-color, transparent);
+
   --_item-border-b-width: var(--item-border-b-width, 1px);
   --_item-border-b-style: var(--item-border-b-style, solid);
   --_item-border-b-color: var(--item-border-b-color, transparent);
+
   --_item-border-l-width: var(--item-border-l-width, 1px);
   --_item-border-l-style: var(--item-border-l-style, solid);
   --_item-border-l-color: var(--item-border-l-color, transparent);
-  --_item-border-radius: var(--item-border-radius, 0.375rem);
+
+  --_item-ring-width: var(--item-ring-width, 1px);
+  --_item-ring-style: var(--item-ring-style, solid);
+  --_item-ring-color: var(--item-ring-color, transparent);
+  --_item-ring-offset: var(--item-ring-offset, 1px);
 }

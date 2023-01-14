@@ -14,10 +14,12 @@
 
 <svelte:element
 	this={listType}
+	id="toc-list"
 	class="list"
 	class:visible={isOpen}
 	class:hidden={!isOpen}
 	class:list--ordered={ordered}
+	role="menu"
 	data-testid="toc-list"
 >
 	{#each data as item}

@@ -1,6 +1,6 @@
 # TOC
 
-Responsive Table of contents component for your pages.
+Responsive and accessible ([WAI-ARIA Accessibility Reference]) Table of contents component.
 
 ## Examples
 
@@ -90,3 +90,4 @@ Read more [here](./THEMING.md).
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
+[WAI-ARIA Accessibility Reference]: https://www.w3.org/WAI/ARIA/apg/patterns/menu/

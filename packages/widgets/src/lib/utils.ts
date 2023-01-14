@@ -6,6 +6,10 @@ export const stylesObjToCSSVars = (obj: object): string => {
 		.join(';');
 };
 
+export const isValidClassName = (value: string, reservedNames: Array<string>): boolean => {
+	return value != '' && !reservedNames.some((element) => value.includes(element));
+};
+
 export const capitalize = (word: string): string => {
 	return word.charAt(0).toUpperCase() + word.slice(1);
 };

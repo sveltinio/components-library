@@ -1,9 +1,11 @@
 <script lang="ts">
 	import '../../styles/base.css';
 	import '../../styles/components/toc/variables.css';
-	import '../../styles/components/toc/styles.css';
+	//import '../../styles/components/toc/styles.css';
+	import './styles.postcss';
+	import { onMount, tick } from 'svelte';
 	import type { TocEntry } from './types.js';
-	import { stylesObjToCSSVars } from '../../utils.js';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 	import TocList from './TocList.svelte';
 	import TocButton from './TocButton.svelte';
 
@@ -16,16 +18,172 @@
 	export let isOpen = false;
 	export let ordered = false;
 
-	let className = '';
-	export { className as class };
-
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
+
+	const toggleOpen = () => (isOpen = !isOpen);
+
+	let mainElem: HTMLElement;
+	let tocBtn: HTMLElement;
+	let tocItemNodes: Array<HTMLLinkElement> = [];
+	let firstTOCItem: HTMLLinkElement;
+	let lastTOCItem: HTMLLinkElement;
+
+	/** ********************************************** **/
+	/** Accessibility: Mouse and Keyboard interactions **/
+	/** ********************************************** **/
+	const openTOC = () => (isOpen = true);
+	const closeTOC = () => (isOpen = false);
+
+	const setFocusOnItem = (item: HTMLElement) => {
+		tocItemNodes.forEach(async (itemNode) => {
+			if (itemNode === item) {
+				itemNode.tabIndex = 0;
+				await tick();
+				itemNode.focus();
+			} else {
+				itemNode.tabIndex = -1;
+			}
+		});
+	};
+
+	const setFocusOnFirstItem = () => setFocusOnItem(firstTOCItem);
+
+	const setFocusOnLastItem = () => setFocusOnItem(lastTOCItem);
+
+	const setFocusOnPreviousItem = (currentTOCItem: HTMLLinkElement) => {
+		let newTOCItem, index;
+
+		if (currentTOCItem === firstTOCItem) {
+			newTOCItem = firstTOCItem;
+		} else {
+			index = tocItemNodes.indexOf(currentTOCItem);
+			newTOCItem = tocItemNodes[index - 1];
+		}
+
+		setFocusOnItem(newTOCItem);
+		return newTOCItem;
+	};
+
+	const setFocusOnNextItem = (currentTOCItem: HTMLLinkElement) => {
+		let newTOCItem, index;
+
+		if (currentTOCItem === lastTOCItem) {
+			newTOCItem = lastTOCItem;
+		} else {
+			index = tocItemNodes.indexOf(currentTOCItem);
+			newTOCItem = tocItemNodes[index + 1];
+		}
+
+		setFocusOnItem(newTOCItem);
+		return newTOCItem;
+	};
+
+	/** Event handlers **/
+	function onButtonClick(e: MouseEvent): void {
+		e.stopPropagation();
+		e.preventDefault();
+		toggleOpen();
+	}
+
+	function onButtonKeydown(e: KeyboardEvent): void {
+		e.stopPropagation();
+		e.preventDefault();
+		switch (e.code) {
+			case 'Space':
+			case 'Enter':
+				toggleOpen();
+				if (isOpen) setFocusOnFirstItem();
+				break;
+			case 'Esc':
+			case 'Escape':
+				toggleOpen();
+				if (!isOpen) tocBtn.focus();
+				break;
+			case 'Tab':
+				if (isOpen) closeTOC();
+				tocBtn.blur();
+		}
+	}
+
+	function onTOCItemKeydown(e: KeyboardEvent): void {
+		e.stopPropagation();
+		e.preventDefault();
+		const target = e.currentTarget as HTMLLinkElement;
+
+		if (e.shiftKey) {
+			/*! TO BE DONE */
+		} else {
+			switch (e.code) {
+				case 'Space':
+				case 'Enter':
+					target.click();
+					break;
+				case 'Esc':
+				case 'Escape':
+					closeTOC();
+					break;
+				case 'Up':
+				case 'ArrowUp':
+					setFocusOnPreviousItem(target);
+					break;
+				case 'Down':
+				case 'ArrowDown':
+					setFocusOnNextItem(target);
+					break;
+				case 'Home':
+				case 'PageUp':
+					setFocusOnFirstItem();
+					break;
+				case 'End':
+				case 'PageDown':
+					setFocusOnLastItem();
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+	/** ********************************************** **/
+	$: className = '';
+	// avoid hacking default class names
+	$: isValidClassName($$props.class ?? '', ['sn-e-colors', 'sn-e-c-toc-vars', 'sn-e-c-toc'])
+		? (className = $$props.class)
+		: (className = '');
+
+	/** ********************************************** **/
+
+	onMount(() => {
+		tocBtn = mainElem.querySelector('button') as HTMLButtonElement;
+		if (tocBtn) {
+			tocBtn.addEventListener('click', onButtonClick);
+			tocBtn.addEventListener('keydown', onButtonKeydown);
+		}
+
+		const nodes = mainElem.querySelectorAll('[role="menuitem"');
+		console.log(nodes);
+
+		Array.from(nodes).forEach((node) => {
+			const tocItem = node as HTMLLinkElement;
+
+			tocItemNodes.push(tocItem);
+			tocItem.tabIndex = -1;
+
+			tocItem.addEventListener('keydown', onTOCItemKeydown);
+
+			if (!firstTOCItem) firstTOCItem = tocItem;
+
+			lastTOCItem = tocItem;
+		});
+	});
 </script>
 
 <nav
+	bind:this={mainElem}
 	class="sn-w-colors sn-w-c-toc-vars sn-w-c-toc {className}"
 	style={cssStyles}
+	aria-label={label}
 	data-testid="toc-main"
 >
 	<TocButton {label} bind:isOpen {iconOnly} {labelOnly} />

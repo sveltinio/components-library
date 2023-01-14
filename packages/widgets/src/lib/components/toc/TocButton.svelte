@@ -5,14 +5,13 @@
 	export let iconOnly: boolean;
 	export let labelOnly: boolean;
 	export let isOpen: boolean;
-
-	const toggleVisibility = () => (isOpen = !isOpen);
 </script>
 
 <button
 	class="btn"
-	on:click|preventDefault={toggleVisibility}
 	aria-label={label}
+	aria-haspopup="true"
+	aria-controls="toc-list"
 	aria-expanded={isOpen}
 	data-testid="toc-btn"
 >
