@@ -2,7 +2,7 @@
 	import '../../styles/base.css';
 	import '../../styles/components/breadcrumbs/variables.css';
 	import '../../styles/components/breadcrumbs/styles.css';
-	import { stylesObjToCSSVars, capitalize, makeTitle } from '../../utils.js';
+	import { stylesObjToCSSVars, isValidClassName, capitalize, makeTitle } from '../../utils.js';
 
 	export let url = '';
 	export let showCurrent = true;
@@ -26,11 +26,19 @@
 			};
 		}) || [];
 
-	let className = '';
-	export { className as theme };
-
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
+
+	/** ********************************************** **/
+	$: className = '';
+	// avoid hacking default class names
+	$: isValidClassName($$props.class ?? '', [
+		'sn-w-colors',
+		'sn-w-c-breadcrumbs-vars',
+		'sn-w-c-breadcrumbs'
+	])
+		? (className = $$props.class)
+		: (className = '');
 </script>
 
 <nav

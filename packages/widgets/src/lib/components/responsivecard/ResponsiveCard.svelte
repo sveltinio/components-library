@@ -3,7 +3,7 @@
 	import '../../styles/components/responsivecard/variables.css';
 	import '../../styles/components/responsivecard/styles.css';
 	import '../../styles/components/responsivecard/badge.css';
-	import { stylesObjToCSSVars } from '../../utils.js';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 	import CardTitle from './CardTitle.svelte';
 	import CardTitleLink from './CardTitleLink.svelte';
 	import CardContent from './CardContent.svelte';
@@ -13,15 +13,23 @@
 	export let lineClamp = 4;
 	export let href = '';
 
-	let className = '';
-	export { className as class };
-
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
+
+	/** ********************************************** **/
+	$: className = '';
+	// avoid hacking default class names
+	$: isValidClassName($$props.class ?? '', [
+		'sn-w-colors',
+		'sn-w-c-sw__responsivecard-vars',
+		'sn-w-c-sw__responsivecard'
+	])
+		? (className = $$props.class)
+		: (className = '');
 </script>
 
 <div
-	class="sw__responsivecard sw__responsivecard__main {className}"
+	class="sn-w-colors sn-w-c-sw__responsivecard-vars sn-w-c-sw__responsivecard {className}"
 	style={cssStyles}
 	data-testid="responsivecard-main"
 >

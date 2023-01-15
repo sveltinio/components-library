@@ -2,7 +2,7 @@
 	import '../../styles/base.css';
 	import '../../styles/components/card/variables.css';
 	import '../../styles/components/card/styles.css';
-	import { stylesObjToCSSVars } from '../../utils.js';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 	import CardContent from './CardContent.svelte';
 	import CardTitle from './CardTitle.svelte';
 	import CardTitleLink from './CardTitleLink.svelte';
@@ -12,11 +12,15 @@
 	export let lineClamp = 4;
 	export let href = '';
 
-	let className = '';
-	export { className as class };
-
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
+
+	/** ********************************************** **/
+	$: className = '';
+	// avoid hacking default class names
+	$: isValidClassName($$props.class ?? '', ['sn-w-colors', 'sn-w-c-card-vars', 'sn-w-c-card'])
+		? (className = $$props.class)
+		: (className = '');
 </script>
 
 <div

@@ -148,7 +148,7 @@
 	/** ********************************************** **/
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', ['sn-e-colors', 'sn-e-c-toc-vars', 'sn-e-c-toc'])
+	$: isValidClassName($$props.class ?? '', ['sn-w-colors', 'sn-w-c-toc-vars', 'sn-w-c-toc'])
 		? (className = $$props.class)
 		: (className = '');
 
