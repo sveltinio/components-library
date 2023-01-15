@@ -78,7 +78,7 @@ export async function findByName(where, name) {
  * @returns {void}
  */
 export function postcssProcess(input, output, mode) {
-	const dev = mode === 'development';
+	const dev = !mode ? 'development' : mode === 'development';
 
 	let plugins = [
 		postcssPresetEnv({

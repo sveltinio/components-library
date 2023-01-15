@@ -78,7 +78,8 @@ async function findByName(where, name) {
  * @returns {void}
  */
 function postcssProcess(input, output, mode) {
-	const dev = mode === 'development';
+	const dev = !mode ? 'development' : mode === 'development';
+
 	let plugins = [
 		postcssPresetEnv({
 			features: {
@@ -102,6 +103,10 @@ function postcssProcess(input, output, mode) {
 	}
 
 	fs.readFile(input, (err, css) => {
+		if (err) {
+			console.error(err);
+			return;
+		}
 		postcss(plugins)
 			.process(css, { from: input, to: output })
 			.then((result) => {
