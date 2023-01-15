@@ -3,7 +3,7 @@
 	import '../../styles/components/pagesnavigator/variables.css';
 	import '../../styles/components/pagesnavigator/styles.css';
 	import type { PagesNavigatorItem } from './types.js';
-	import { stylesObjToCSSVars, isValid } from '../../utils.js';
+	import { stylesObjToCSSVars, isValidClassName, areRequiredDefined } from '../../utils.js';
 	import Spacer from './Spacer.svelte';
 	import Previous from './Previous.svelte';
 	import Next from './Next.svelte';
@@ -14,9 +14,6 @@
 	export let labels = true;
 	export let spacer = false;
 
-	let className = '';
-	export { className as class };
-
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 
@@ -25,6 +22,13 @@
 		placeholders = false;
 		labels = true;
 	}
+
+	/** ********************************************** **/
+	$: className = '';
+	// avoid hacking default class names
+	$: isValidClassName($$props.class ?? '', ['sn-w-colors', 'sn-w-c-card-vars', 'sn-w-c-card'])
+		? (className = $$props.class)
+		: (className = '');
 </script>
 
 <div
@@ -33,7 +37,7 @@
 	style={cssStyles}
 	data-testid="pagesnav-main"
 >
-	{#if isValid(prev)}
+	{#if areRequiredDefined(prev)}
 		<Previous {prev} {next} {placeholders} {labels} {spacer}>
 			<slot name="prevIcon">
 				<svg
@@ -61,7 +65,7 @@
 		<Spacer {spacer} {prev} {next} />
 	{/if}
 
-	{#if isValid(next)}
+	{#if areRequiredDefined(next)}
 		<Next {prev} {next} {placeholders} {labels} {spacer}>
 			<slot name="nextIcon">
 				<svg

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PagesNavigatorItem } from './types.js';
-	import { capitalize, isValid } from '../../utils.js';
+	import { capitalize, areRequiredDefined } from '../../utils.js';
 
 	export let prev: PagesNavigatorItem;
 	export let next: PagesNavigatorItem;
@@ -23,8 +23,8 @@
 	title="link to {nextAltText}"
 	aria-label="link to {nextAltText}"
 	class="link"
-	class:next__only={!isValid(prev)}
-	class:next__only--with-spacer={spacer && !isValid(prev)}
+	class:next__only={!areRequiredDefined(prev)}
+	class:next__only--with-spacer={spacer && !areRequiredDefined(prev)}
 	data-testid="link-to-next"
 >
 	<div class="content">

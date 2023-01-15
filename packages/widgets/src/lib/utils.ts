@@ -19,7 +19,7 @@ export function pickRandomFrom(values: Array<string>): string {
 }
 
 // true is both the label the href props are valid
-export const isValid = (obj: PagesNavigatorItem): boolean => {
+export const areRequiredDefined = (obj: PagesNavigatorItem): boolean => {
 	return obj.label != undefined && !obj.href.includes('undefined');
 };
 
