@@ -3,7 +3,7 @@ import fs from 'fs';
 import pc from 'picocolors';
 import { findByExtension, postcssProcess } from 'postcss-utils';
 
-const getLastItem = (thePath) => thePath.substring(thePath.lastIndexOf('/') + 1);
+const getLastPathSegment = (thePath) => path.parse(thePath).base;
 
 function main() {
 	const mode = process.env.NODE_ENV;
@@ -28,7 +28,7 @@ function main() {
 		.then((filesList) => {
 			filesList.forEach((input) => {
 				const parsedInput = path.parse(input);
-				const componentName = getLastItem(parsedInput.dir);
+				const componentName = getLastPathSegment(parsedInput.dir);
 
 				const output = path
 					.join(outputFolderForProcessedFiles, componentName, parsedInput.name)
