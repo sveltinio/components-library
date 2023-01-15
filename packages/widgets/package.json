@@ -2,6 +2,7 @@
 	"name": "@sveltinio/widgets",
 	"version": "0.4.0",
 	"private": false,
+	"packageManager": "pnpm@7.25.0",
 	"type": "module",
 	"description": "A collection of responsive, type-safe, accessible and configurable Svelte components for cards, pages navigation, TOC (Table of Contents), ...",
 	"author": "dev <dev@sveltin.io>",
@@ -30,8 +31,8 @@
 		"svelte": "^3.55.1"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^1.0.0",
-		"@sveltejs/kit": "^1.1.0",
+		"@sveltejs/adapter-auto": "^1.0.1",
+		"@sveltejs/kit": "^1.1.1",
 		"@sveltejs/package": "^1.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.2",
 		"@testing-library/jest-dom": "^5.16.5",
