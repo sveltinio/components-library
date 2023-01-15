@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pnpm turbo run lint --filter="@sveltinio/*" && pnpm turbo run format --filter="@sveltinio/*" && pnpm turbo run test --force && pnpm exec lint-staged
+pnpm turbo run lint --filter="@sveltinio/*" && pnpm turbo run format --filter="@sveltinio/*" && pnpm turbo run test:packages --force && pnpm exec lint-staged
