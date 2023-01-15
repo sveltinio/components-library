@@ -22,6 +22,22 @@
 		<div class="preview">
 			<ScrollToTopButton showOnPx={10} />
 		</div>
+		<h4>Sample Text</h4>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatem cupiditate
+			obcaecati, sint nemo nihil optio illo ipsum veritatis sit porro perspiciatis praesentium
+			expedita, minus, incidunt neque? Consequatur, ea modi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatem cupiditate
+			obcaecati, sint nemo nihil optio illo ipsum veritatis sit porro perspiciatis praesentium
+			expedita, minus, incidunt neque? Consequatur, ea modi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatem cupiditate
+			obcaecati, sint nemo nihil optio illo ipsum veritatis sit porro perspiciatis praesentium
+			expedita, minus, incidunt neque? Consequatur, ea modi.
+		</p>
 	</div>
 
 	<div id="scroll-to-top-theming-with-prop-wrapper" class="demo-wrapper">
@@ -34,5 +50,21 @@
 				styles={customBtnStyles}
 			/>
 		</div>
+		<h4>Sample Text</h4>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatem cupiditate
+			obcaecati, sint nemo nihil optio illo ipsum veritatis sit porro perspiciatis praesentium
+			expedita, minus, incidunt neque? Consequatur, ea modi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatem cupiditate
+			obcaecati, sint nemo nihil optio illo ipsum veritatis sit porro perspiciatis praesentium
+			expedita, minus, incidunt neque? Consequatur, ea modi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatem cupiditate
+			obcaecati, sint nemo nihil optio illo ipsum veritatis sit porro perspiciatis praesentium
+			expedita, minus, incidunt neque? Consequatur, ea modi.
+		</p>
 	</div>
 </section>
