@@ -7,7 +7,7 @@
 {#if data.value != 'undefined'}
 	<div class="card__metadata">
 		<a href={data.url}>
-			<span class="badge badge-{data.color}">{data.value}</span>
+			<span class="badge badge--{data.color}">{data.value}</span>
 		</a>
 	</div>
 {/if}

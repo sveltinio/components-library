@@ -12,4 +12,15 @@
   --slate-700: hsl(215.3deg 25% 26.7%);
   --slate-800: hsl(217.2deg 32.6% 17.5%);
   --slate-900: hsl(222.2deg 47.4% 11.2%);
+
+  --_light: var(--light, var(--slate-50));
+  --_dark: var(--dark, var(--slate-900));
+  --_mute: var(--mute, var(--slate-100));
+  --_amber: var(--amber, hsl(32deg 95% 44%)); /* amber-600 */
+  --_blue: var(--blue, hsl(221deg 83% 53%)); /* blue-600 */
+  --_green: var(--green, hsl(142deg 76% 36%)); /* green-600 */
+  --_gray: var(--gray, hsl(215deg 14% 34%)); /* gray-600 */
+  --_pink: var(--pink, hsl(333deg 71% 51%)); /* pink-600 */
+  --_purple: var(--purple, hsl(271deg 81% 56%)); /* purple-600 */
+  --_red: var(--red, hsl(0deg 72% 51%)); /* red-600 */
 }

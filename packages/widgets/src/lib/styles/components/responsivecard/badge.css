@@ -5,36 +5,36 @@
   font-size: 0.75rem;
   padding: 0.25rem 0.75rem;
 }
-.badge-amber {
+.badge--amber {
   background: var(--_amber);
 }
-.badge-blue {
+.badge--blue {
   background: var(--_blue);
 }
-.badge-dark {
+.badge--dark {
   background: var(--_dark);
   color: var(--_light);
 }
-.badge-green {
+.badge--green {
   background-color: var(--_green);
 }
-.badge-gray {
+.badge--gray {
   background: var(--_gray);
 }
-.badge-light {
+.badge--light {
   background: var(--_light);
   color: var(--_dark);
 }
-.badge-mute {
+.badge--mute {
   background: var(--_mute);
   color: var(--_dark);
 }
-.badge-pink {
+.badge--pink {
   background: var(--_pink);
 }
-.badge-purple {
+.badge--purple {
   background: var(--_purple);
 }
-.badge-red {
+.badge--red {
   background: var(--_red);
 }

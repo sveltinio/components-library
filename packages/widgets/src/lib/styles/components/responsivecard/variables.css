@@ -1,19 +1,7 @@
-.sw__responsivecard {
-  --_white: var(--white, hsl(0deg 0% 100%)); /*white */
-  --_light: var(--light, hsl(210deg 40% 98%)); /* slate-50 */
-  --_dark: var(--dark, hsl(221deg 39% 11%)); /* gray-900 */
-  --_mute: var(--mute, hsl(210deg 40% 96%)); /* slate-100 */
-  --_amber: var(--amber, hsl(32deg 95% 44%)); /* amber-600 */
-  --_blue: var(--blue, hsl(221deg 83% 53%)); /* blue-600 */
-  --_green: var(--green, hsl(142deg 76% 36%)); /* green-600 */
-  --_gray: var(--gray, hsl(215deg 14% 34%)); /* gray-600 */
-  --_pink: var(--pink, hsl(333deg 71% 51%)); /* pink-600 */
-  --_purple: var(--purple, hsl(271deg 81% 56%)); /* purple-600 */
-  --_red: var(--red, hsl(0deg 72% 51%)); /* red-600 */
-
-  /* ********************************************* */
-  /* * main (class name: sw__responsivecard__main) */
-  /* ********************************************* */
+.sn-w-c-sw__responsivecard-vars {
+  /* ********************************************** */
+  /* * main (class name: sn-w-c-sw__responsivecard) */
+  /* ********************************************** */
   --_width: var(--width, 24rem);
   --_max-width: var(--max-width, var(--_width));
   --_mt: var(--mt, 0rem);
