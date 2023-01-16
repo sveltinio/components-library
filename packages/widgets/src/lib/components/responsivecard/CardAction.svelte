@@ -4,7 +4,7 @@
 </script>
 
 <div class="card__actions">
-	<a {href}>{label}</a>
+	<a {href} aria-label="{label} link">{label}</a>
 	<slot name="btn-icon">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

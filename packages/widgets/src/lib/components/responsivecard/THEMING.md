@@ -24,24 +24,20 @@ Below is the DOM Element Structure for the `ResponsiveCard` component.
 
 The DOM Element Structure above can be mapped to the following table going through the structure from top to bottom and from left to right.
 
-| Component   | HTML Element & CSS Class Name  | CSS Variables Prefix |
-| :---------- | -----------------------------: | -------------------: |
-|             | `div.sw__responsivecard__main` |                      |
-| CardImage   | `div.card__image`              | `img`                |
-| CardImage   | `img_card__image`              | `img`                |
-|             | `div.card__wrapper`            | `wrapper`            |
-| CardBadge   | `div.card__metadata`           |                      |
-| CardTitle.  | `h2.card__wrapper`             | `title`              |
-| CardContent | `div.card__content`            | `content`            |
-| CardContent | `p.card__content`              | `content`            |
-|             | `div.card_footer`              | `footer`             |
-| CardInfo    | `div.card_info`                | `info`               |
-| CardInfo    | `div.avatar`                   | `avatar`             |
-| CardInfo    | `div`                          |                      |
-| CardInfo    | `p.author`                     | `author`             |
-| CardInfo    | `span.date`                    | `date`               |
-| CardAction  | `a.card_actions`               | `btn`                |
-| CardAction  | `svg.card_actions`             |                      |
+| Component   | HTML Elem | CSS Class Name          | CSS Variables Prefix |
+| :---------- | --------: | ----------------------: | -------------------: |
+|             | `div`     | `sn-e-c-responsivecard` |                      |
+| CardImage   |           | `card__image`           | `img`                |
+|             | `div`     | `card__wrapper`         | `wrapper`            |
+| CardTitle   |           | `card__title`           | `title`              |
+| CardContent |           | `card__content`         | `content`            |
+|             | `div`     | `footer`                | `footer`             |
+| CardInfo    | `div`     | `card__info`            | `info`               |
+| CardInfo    | `div`     | `avatar`                | `avatar`             |
+| CardInfo    | `p`       | `author`                | `author`             |
+| CardInfo    | `span`    | `date`                  | `date`               |
+| CardAction  |           | `card__action`          | `btn`                |
+| CardAction  |           | `card__action`          | `btn`                |
 
 ## CSS Variables
 
