@@ -19,7 +19,7 @@
 			<TOC data={tocEntries} />
 		</div>
 	</div>
-
+	<!--
 	<div id="toc-ordered-wrapper" class="demo-wrapper">
 		<h3 id="toc-ordered">Ordered</h3>
 		<div class="preview">
@@ -61,4 +61,5 @@
 			<TOC data={tocEntries} class="toc-violet-theme" prefixChar="*" />
 		</div>
 	</div>
+	-->
 </section>
