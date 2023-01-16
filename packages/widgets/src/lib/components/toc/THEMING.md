@@ -86,7 +86,6 @@ The CSS variables are defined in the [variables.css](../../styles/components/toc
 <TOC data={tocEntries} class="toc-violet-theme" prefixChar="*" />
 ```
 
-
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
 [Design Rules]: https://github.com/sveltinio/components-library/blob/main/docs/design-rules.md
