@@ -23,6 +23,9 @@ export const areRequiredDefined = (obj: PagesNavigatorItem): boolean => {
 	return obj.label != undefined && !obj.href.includes('undefined');
 };
 
+export const pathSegments = (url: string): Array<string> =>
+	new URL(url).pathname.split('/').filter((part) => part?.trim() !== '');
+
 export const getLastSegment = (thePath: string) => thePath.substring(thePath.lastIndexOf('/') + 1);
 
 export function isImageFile(str: string): boolean {

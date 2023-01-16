@@ -2,16 +2,19 @@
 	import '../../styles/base.css';
 	import '../../styles/components/breadcrumbs/variables.css';
 	import '../../styles/components/breadcrumbs/styles.css';
-	import { stylesObjToCSSVars, isValidClassName, capitalize, makeTitle } from '../../utils.js';
+	import {
+		pathSegments,
+		stylesObjToCSSVars,
+		isValidClassName,
+		capitalize,
+		makeTitle
+	} from '../../utils.js';
 
 	export let url = '';
 	export let showCurrent = true;
 
-	const parsedURL = new URL(url);
-
-	const baseURL = parsedURL?.origin;
-	const segments = parsedURL?.pathname.split('/').filter((part) => part?.trim() !== '');
-
+	const baseURL = new URL(url).origin;
+	const segments = pathSegments(url);
 	const current = segments.pop() || '';
 
 	const parents =
@@ -29,7 +32,6 @@
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 
-	/** ********************************************** **/
 	$: className = '';
 	// avoid hacking default class names
 	$: isValidClassName($$props.class ?? '', [
@@ -52,13 +54,14 @@
 			<a href={baseURL}>
 				<slot name="baseIcon">
 					<svg
-						class="icon icon__home"
+						xmlns="http://www.w3.org/2000/svg"
 						width="1.25rem"
 						height="1.25rem"
 						stroke-width="1.5"
 						viewBox="0 0 24 24"
 						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
+						class="icon icon__home"
+						aria-hidden="true"
 					>
 						<path
 							d="M3 9.5L12 4L21 9.5"
@@ -74,7 +77,7 @@
 						/>
 					</svg>
 				</slot>
-				<span class="sr--only">Home</span>
+				<span class="sr--only" aria-label="Home, top level page">Home</span>
 			</a>
 		</li>
 		{#each parents as parent}
@@ -82,12 +85,12 @@
 				<span class="icon icon__divider">
 					<slot name="dividerIcon">
 						<svg
+							xmlns="http://www.w3.org/2000/svg"
 							width="20"
 							height="20"
 							stroke-width="1.5"
 							viewBox="0 0 24 24"
 							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
 							aria-hidden="true"
 						>
 							<path
@@ -99,8 +102,11 @@
 						</svg>
 					</slot>
 				</span>
-				<a href="{baseURL}/{parent.href}" class="is-parent" data-testid="linkToParent"
-					>{capitalize(parent?.label)}</a
+				<a
+					href="{baseURL}/{parent.href}"
+					class="is-parent"
+					aria-label={capitalize(parent?.label)}
+					data-testid="linkToParent">{capitalize(parent?.label)}</a
 				>
 			</li>
 		{/each}
@@ -109,12 +115,12 @@
 				<span class="icon icon__divider">
 					<slot name="dividerIcon">
 						<svg
+							xmlns="http://www.w3.org/2000/svg"
 							width="20"
 							height="20"
 							stroke-width="1.5"
 							viewBox="0 0 24 24"
 							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
 							aria-hidden="true"
 						>
 							<path
@@ -126,8 +132,11 @@
 						</svg>
 					</slot>
 				</span>
-				<span class="is-current" aria-current="page" data-testid="currentPage"
-					>{makeTitle(current)}</span
+				<span
+					class="is-current"
+					aria-current="page"
+					aria-label={makeTitle(current)}
+					data-testid="currentPage">{makeTitle(current)}</span
 				>
 			</li>
 		{/if}
