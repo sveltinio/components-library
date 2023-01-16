@@ -162,7 +162,6 @@
 		}
 
 		const nodes = mainElem.querySelectorAll('[role="menuitem"');
-		console.log(nodes);
 
 		Array.from(nodes).forEach((node) => {
 			const tocItem = node as HTMLLinkElement;
