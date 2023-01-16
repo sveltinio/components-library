@@ -1,8 +1,7 @@
 <script lang="ts">
 	import '../../styles/base.css';
 	import '../../styles/components/toc/variables.css';
-	//import '../../styles/components/toc/styles.css';
-	import './styles.postcss';
+	import '../../styles/components/toc/styles.css';
 	import { onMount, tick } from 'svelte';
 	import type { TocEntry } from './types.js';
 	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
@@ -28,6 +27,7 @@
 	let tocItemNodes: Array<HTMLLinkElement> = [];
 	let firstTOCItem: HTMLLinkElement;
 	let lastTOCItem: HTMLLinkElement;
+	let firstChars: Array<string> = [];
 
 	/** ********************************************** **/
 	/** Accessibility: Mouse and Keyboard interactions **/
@@ -79,6 +79,23 @@
 		return newTOCItem;
 	};
 
+	const setFocusByFirstChar = (currentMenuItem: HTMLLinkElement, c: string) => {
+		let start, index: number;
+
+		if (c.length > 1) return;
+		// Ensure matching the firstChars array when OnMount
+		c = c.toLowerCase();
+		// Start on position of currentItem
+		start = tocItemNodes.indexOf(currentMenuItem) + 1;
+		if (start >= tocItemNodes.length) start = 0;
+		// Check remaining items
+		index = firstChars.indexOf(c, start);
+		// If not in remaining, check from beginning
+		if (index === -1) index = firstChars.indexOf(c, 0);
+		// Found
+		if (index > -1) setFocusOnItem(tocItemNodes[index]);
+	};
+
 	/** Event handlers **/
 	function onButtonClick(e: MouseEvent): void {
 		e.stopPropagation();
@@ -92,17 +109,21 @@
 		switch (e.code) {
 			case 'Space':
 			case 'Enter':
-				toggleOpen();
-				if (isOpen) setFocusOnFirstItem();
+			case 'Down':
+			case 'ArrowDown':
+				openTOC();
+				setFocusOnFirstItem();
 				break;
-			case 'Esc':
-			case 'Escape':
-				toggleOpen();
-				if (!isOpen) tocBtn.focus();
+			case 'Up':
+			case 'ArrowUp':
+				openTOC();
+				setFocusOnLastItem();
 				break;
 			case 'Tab':
-				if (isOpen) closeTOC();
 				tocBtn.blur();
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -111,8 +132,15 @@
 		e.preventDefault();
 		const target = e.currentTarget as HTMLLinkElement;
 
+		const isChar = (txt: string): boolean => {
+			const charsRegex = /\S/;
+			return txt.length === 1 && charsRegex.test(txt);
+		};
+
 		if (e.shiftKey) {
-			/*! TO BE DONE */
+			if (isChar(e.key)) {
+				setFocusByFirstChar(target, e.key);
+			}
 		} else {
 			switch (e.code) {
 				case 'Space':
@@ -122,6 +150,7 @@
 				case 'Esc':
 				case 'Escape':
 					closeTOC();
+					tocBtn.focus();
 					break;
 				case 'Up':
 				case 'ArrowUp':
@@ -140,9 +169,16 @@
 					setFocusOnLastItem();
 					break;
 				default:
+					if (isChar(e.key)) {
+						setFocusByFirstChar(target, e.key);
+					}
 					break;
 			}
 		}
+	}
+
+	function onTOCItemMouseOver(e: MouseEvent) {
+		(e.currentTarget as HTMLHtmlElement).focus();
 	}
 
 	/** ********************************************** **/
@@ -169,7 +205,12 @@
 			tocItemNodes.push(tocItem);
 			tocItem.tabIndex = -1;
 
+			// get just the content without the prefix char
+			const tocItemContent = tocItem.textContent?.split(prefixChar)[1];
+			if (tocItemContent) firstChars.push(tocItemContent.trim()[0].toLowerCase());
+
 			tocItem.addEventListener('keydown', onTOCItemKeydown);
+			tocItem.addEventListener('mouseover', onTOCItemMouseOver);
 
 			if (!firstTOCItem) firstTOCItem = tocItem;
 

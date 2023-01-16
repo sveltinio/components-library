@@ -8,6 +8,16 @@ Responsive and accessible ([WAI-ARIA Accessibility Reference]) Table of contents
 
 <img src="./assets/images/default.gif" alt="TOC - Default Styles" />
 
+### Ordered
+
+<img src="./assets/images/ordered.gif" alt="TOC - Ordered List" />
+
+### Icon Only
+
+<img src="./assets/images/icon-only.gif" alt="TOC - Icon Only" />
+
+## Usage
+
 ```html
 <script>
     import { TOC } from '@sveltinio/widgets';
@@ -16,33 +26,11 @@ Responsive and accessible ([WAI-ARIA Accessibility Reference]) Table of contents
 <TOC data={tocEntries} />
 ```
 
-### Ordered
-
-<img src="./assets/images/ordered.gif" alt="TOC - Ordered List" />
-
-```html
-<script>
-    import { TOC } from '@sveltinio/widgets';
-</script>
-
-<TOC data={tocEntries} ordered />
-```
-
-### Icon Only
-
-<img src="./assets/images/icon-only.gif" alt="TOC - Icon Only" />
-
-```html
-<script>
-    import { TOC } from '@sveltinio/widgets';
-</script>
-
-<TOC data={tocEntries} iconOnly />
-```
-
 ## Properties
 
 The `TOC` component exposes the following properties:
+
+### Functionals
 
 | Property   | Type             | Required | Default           | Description                                   |
 | :--------- | :--------------: | :------: | :---------------: | :-------------------------------------------- |
@@ -90,4 +78,4 @@ Read more [here](./THEMING.md).
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
-[WAI-ARIA Accessibility Reference]: https://www.w3.org/WAI/ARIA/apg/patterns/menu/
+[WAI-ARIA Accessibility Reference]: https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/

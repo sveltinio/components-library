@@ -24,15 +24,12 @@ Below is the DOM Element Structure for the `Card` component.
 
 The DOM Element Structure above can be mapped to the following table going through the structure from top to bottom and from left to right.
 
-| Component | HTML Element & CSS Class Name | CSS Variables Prefix |
-| :-------- | ----------------------------: | -------------------: |
-|           | `div.sw__toc__main`           |                      |
-| TocButton | `button.btn`                  | `btn`                |
-| TocButton | `svg.btn`                     |                      |
-| TocButton | `span.btn`                    | `btn`                |
-| TocList   | `ul.list` or `ol.list`        | `list`               |
-| TocItem   | `li.list__item`               | `item`               |
-| TocItem   | `a.list__item_link`           | `item`               |
+| Component | HTML Elem | CSS Class Name | CSS Variables Prefix |
+| :-------- | --------: | -------------: | -------------------: |
+|           | `div`     | `sn-e-c-toc`   |                      |
+| TocButton |           | `btn`          | `btn`                |
+| TocList   |           | `list`         | `list`               |
+| TocItem   |           | `list__item`   | `item`               |
 
 ## CSS Variables
 
