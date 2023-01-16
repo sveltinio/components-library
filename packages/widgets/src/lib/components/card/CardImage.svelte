@@ -9,6 +9,6 @@
 
 {#if isImageFile(getLastSegment(src))}
 	<div class="card__image">
-		<img {src} {alt} title={titleTxt} />
+		<img {src} {alt} title={titleTxt} aria-label={alt} />
 	</div>
 {/if}

@@ -8,45 +8,11 @@ The `Card` component is used to group and display content in a easily readable w
 
 <img src="./assets/images/default.png" alt="Card - Default Styles" />
 
-```html
-<script>
-   import { base } from '$app/paths';
-   import { Card, CardAction } from '@sveltinio/widgets';
-</script>
-
-<Card
-    title="The microphone and the voice"
-    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt..."
->
-    <CardAction
-        slot="cardAction"
-        label="Read the article"
-        href="{base}/microphone"
-    />
-</Card>
-```
-
-### Title as link
-
-<img src="./assets/images/title_link.png" alt="Card - Default Styles" />
-
-```html
-<script>
-   import { base } from '$app/paths';
-   import { Card } from '@sveltinio/widgets';
-</script>
-
-<Card
-    title="The microphone and the voice"
-    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt..."
-    href="{base}/microphone"
->
-</Card>
-```
-
 ### Complete
 
 <img src="./assets/images/full.png" alt="Card - Default Styles" />
+
+## Usage
 
 ```html
 <script>

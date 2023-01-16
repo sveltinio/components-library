@@ -24,19 +24,14 @@ Below is the DOM Element Structure for the `Card` component.
 
 The DOM Element Structure above can be mapped to the following table going through the structure from top to bottom and from left to right.
 
-| Component   | HTML Element & CSS Class Name | CSS Variables Prefix |
-| :---------- | ----------------------------: | -------------------: |
-|             | `div.sw__card__main`          |                      |
-| CardImage   | `div.card__image`             |                      |
-| CardImage   | `img.card__image`             | `img`                |
-| CardTitle   | `div.card__title`             |                      |
-| CardTitle   | `h2.card__title`              | `title`              |
-| CardContent | `div.card__content`           |                      |
-| CardContent | `p.card__content`             | `content`            |
-|             | `div.footer`                  | `footer`             |
-| CardAction  | `div.card__actions`           |                      |
-| CardAction  | `a.card__actions`             | `btn`                |
-| CardAction  | `svg.card__actions`           |                      |
+| Component   | HTML Elem | CSS Class Name  | CSS Variables Prefix |
+| :---------- | --------: | --------------: | -------------------: |
+|             | `div`     | `sn-e-c-card`   |                      |
+| CardImage   |           | `card__image`   | `img`                |
+| CardTitle   |           | `card__title`   | `title`              |
+| CardContent |           | `card__content` | `content`            |
+|             | `div`     | `footer`        | `footer`             |
+| CardAction  |           | `card__action`  | `btn`                |
 
 ## CSS Variables
 
