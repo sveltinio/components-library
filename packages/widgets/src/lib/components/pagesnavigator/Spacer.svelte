@@ -15,4 +15,5 @@
 	class="spacer"
 	class:spacer--with-prev={spacer && !isValid(next)}
 	class:spacer--with-next={spacer && !isValid(prev)}
+	role="presentation"
 />

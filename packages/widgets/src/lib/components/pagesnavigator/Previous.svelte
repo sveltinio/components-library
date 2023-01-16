@@ -21,10 +21,10 @@
 <a
 	href={prev.href}
 	title="link to {prevAltText}"
-	aria-label="link to {prevAltText}"
 	class="link"
 	class:prev__only={!areRequiredDefined(next)}
 	class:prev__only--with-spacer={spacer && !areRequiredDefined(next)}
+	aria-label="link to {prevAltText}"
 	data-testid="link-to-previous"
 >
 	<div class="content">

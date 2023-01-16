@@ -31,10 +31,11 @@
 		: (className = '');
 </script>
 
-<div
+<nav
 	class="sn-w-colors sn-w-c-pagesnav-vars sn-w-c-pagesnav {className}"
 	class:pagesnav__spacer--bottom={!prev.href || !next.href}
 	style={cssStyles}
+	aria-label="Pages navigation"
 	data-testid="pagesnav-main"
 >
 	{#if areRequiredDefined(prev)}
@@ -88,4 +89,4 @@
 			</slot>
 		</Next>
 	{/if}
-</div>
+</nav>

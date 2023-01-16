@@ -21,10 +21,10 @@
 <a
 	href={next.href}
 	title="link to {nextAltText}"
-	aria-label="link to {nextAltText}"
 	class="link"
 	class:next__only={!areRequiredDefined(prev)}
 	class:next__only--with-spacer={spacer && !areRequiredDefined(prev)}
+	aria-label="link to {nextAltText}"
 	data-testid="link-to-next"
 >
 	<div class="content">

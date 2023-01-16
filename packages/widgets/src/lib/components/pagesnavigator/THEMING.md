@@ -24,22 +24,22 @@ Below is the DOM Element Structure for the `PagesNavigator` component.
 
 The DOM Element Structure above can be mapped to the following table going through the structure from top to bottom and from left to right.
 
-| Component | HTML Element & CSS Class Name  | CSS Variables Prefix |
-| :-------- | -----------------------------: | -------------------: |
-|           | `div.sw__pagesnavigator__main` |                      |
-| Previous  | `a.link`                       | `link`               |
-| Previous  | `div.content`                  | `content`            |
-| Previous  | `svg.content__icon`            | `icon`               |
-| Previous  | `div.content__previous`        | `content-l`          |
-| Previous  | `span.content__placeholder`    | `placeholder`        |
-| Previous  | `p.content__message`           | `message`            |
-| Spacer    | `div.spacer`                   | `spacer`             |
-| Next      | `a.link`                       | `link`               |
-| Next      | `div.content`                  | `content`            |
-| Next      | `svg.content__icon`            | `icon`               |
-| Next      | `div.content__next`            | `content-l`          |
-| Next      | `span.content__placeholder`    | `placeholder`        |
-| Next      | `p.content__message`           | `message`            |
+| Component | HTML Elem | CSS Class Name         | CSS Variables Prefix |
+| :-------- | --------: | ---------------------: | -------------------: |
+|           | `div`     | `sn-e-c-pagesnav`      |                      |
+| Previous  | `a`       | `link`                 | `link`               |
+| Previous  | `div`     | `content`              | `content`            |
+| Previous  | `svg`     | `content__icon`        | `icon`               |
+| Previous  | `div`     | `content__previous`    | `content-l`          |
+| Previous  | `svg`     | `content__placeholder` | `placeholder`        |
+| Previous  | `svg`     | `content__message`     | `message`            |
+| Spacer    | `div`     | `spacer`               | `spacer`             |
+| Next      | `a`       | `link`                 | `link`               |
+| Next      | `div`     | `content`              | `content`            |
+| Next      | `svg`     | `content__icon`        | `icon`               |
+| Next      | `div`     | `content__previous`    | `content-r`          |
+| Next      | `svg`     | `content__placeholder` | `placeholder`        |
+| Next      | `svg`     | `content__message`     | `message`            |
 
 ## CSS Variables
 
