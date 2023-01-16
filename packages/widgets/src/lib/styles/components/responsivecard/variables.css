@@ -1,7 +1,7 @@
-.sn-w-c-sw__responsivecard-vars {
-  /* ********************************************** */
-  /* * main (class name: sn-w-c-sw__responsivecard) */
-  /* ********************************************** */
+.sn-w-c-responsivecard-vars {
+  /* ****************************************** */
+  /* * main (class name: sn-w-c-responsivecard) */
+  /* ****************************************** */
   --_width: var(--width, 24rem);
   --_max-width: var(--max-width, var(--_width));
   --_mt: var(--mt, 0rem);

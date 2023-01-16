@@ -29,7 +29,7 @@
 </script>
 
 <div
-	class="sn-w-colors sn-w-c-sw__responsivecard-vars sn-w-c-sw__responsivecard {className}"
+	class="sn-w-colors sn-w-c-responsivecard-vars sn-w-c-responsivecard {className}"
 	style={cssStyles}
 	data-testid="responsivecard-main"
 >
