@@ -12,11 +12,11 @@
 	export let content: string;
 	export let lineClamp = 4;
 	export let href = '';
+	export let titleLink = true;
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
 
-	/** ********************************************** **/
 	$: className = '';
 	// avoid hacking default class names
 	$: isValidClassName($$props.class ?? '', [
@@ -42,7 +42,7 @@
 			<slot name="cardBadge" />
 		{/if}
 
-		{#if $$slots.cardAction}
+		{#if $$slots.cardAction && !titleLink}
 			<CardTitle {title} />
 		{:else}
 			<CardTitleLink {title} {href} />
