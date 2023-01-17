@@ -1,6 +1,5 @@
 import { defineMDSveXConfig as defineConfig } from 'mdsvex';
 import relativeImages from 'mdsvex-relative-images';
-import preview, { textFormatter, htmlFormatter } from 'remark-preview';
 
 import emoji from 'remark-emoji';
 import remarkSlug from 'remark-slug';
@@ -29,21 +28,7 @@ const mdsvexConfig = defineConfig({
 		],
 		relativeImages,
 		// external links open in a new tab
-		[remarkExternalLinks, { target: '_blank', rel: 'noopener' }],
-		// Add an HTML preview snippet (formatted).
-		// It is used on the RSS feed
-		preview(
-			textFormatter({
-				length: 50
-			}),
-			htmlFormatter({
-				length: 200,
-				maxBlocks: 1
-			}),
-			{
-				attribute: 'previewHtml'
-			}
-		)
+		[remarkExternalLinks, { target: '_blank', rel: 'noopener' }]
 	],
 	rehypePlugins: [
 		rehypeSlug[
