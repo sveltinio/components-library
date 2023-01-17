@@ -51,7 +51,7 @@
 >
 	<ol class="list">
 		<li class="item">
-			<a href={baseURL}>
+			<a href={baseURL} aria-label="Home, top level page">
 				<slot name="baseIcon">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@
 						/>
 					</svg>
 				</slot>
-				<span class="sr--only" aria-label="Home, top level page">Home</span>
+				<span class="sr--only">Home</span>
 			</a>
 		</li>
 		{#each parents as parent}
@@ -111,7 +111,12 @@
 			</li>
 		{/each}
 		{#if showCurrent}
-			<li class="item">
+			<li
+				class="item is-current"
+				aria-current="page"
+				aria-label={makeTitle(current)}
+				data-testid="currentPage"
+			>
 				<span class="icon icon__divider">
 					<slot name="dividerIcon">
 						<svg
@@ -132,12 +137,7 @@
 						</svg>
 					</slot>
 				</span>
-				<span
-					class="is-current"
-					aria-current="page"
-					aria-label={makeTitle(current)}
-					data-testid="currentPage">{makeTitle(current)}</span
-				>
+				{makeTitle(current)}
 			</li>
 		{/if}
 	</ol>

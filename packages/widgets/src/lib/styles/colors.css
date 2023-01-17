@@ -16,11 +16,11 @@
   --_light: var(--light, var(--slate-50));
   --_dark: var(--dark, var(--slate-900));
   --_mute: var(--mute, var(--slate-100));
-  --_amber: var(--amber, hsl(32deg 95% 44%)); /* amber-600 */
-  --_blue: var(--blue, hsl(221deg 83% 53%)); /* blue-600 */
-  --_green: var(--green, hsl(142deg 76% 36%)); /* green-600 */
-  --_gray: var(--gray, hsl(215deg 14% 34%)); /* gray-600 */
-  --_pink: var(--pink, hsl(333deg 71% 51%)); /* pink-600 */
-  --_purple: var(--purple, hsl(271deg 81% 56%)); /* purple-600 */
-  --_red: var(--red, hsl(0deg 72% 51%)); /* red-600 */
+  --_amber: var(--amber, hsl(22.7deg 82.5% 31.4%)); /* amber-800 */
+  --_blue: var(--blue, hsl(225.9deg 70.7% 40.2%)); /* blue-800 */
+  --_green: var(--green, hsl(142.8deg 64.2% 24.1%)); /* green-800 */
+  --_gray: var(--gray, hsl(215deg 27.9% 16.9%)); /* gray-800 */
+  --_pink: var(--pink, hsl(335.8 74.4% 35.3%)); /* pink-800 */
+  --_purple: var(--purple, hsl(272.9deg 67.2% 39.4%)); /* purple-800 */
+  --_red: var(--red, hsl(0deg 70% 35.3%)); /* red-800 */
 }

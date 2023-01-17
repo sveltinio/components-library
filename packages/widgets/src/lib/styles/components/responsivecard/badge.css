@@ -1,7 +1,7 @@
 .badge {
   align-self: flex-start;
   border-radius: 1rem;
-  color: var(--_light);
+  color: var(--white);
   font-size: 0.75rem;
   padding: 0.25rem 0.75rem;
 }

@@ -30,35 +30,35 @@
           outline-offset: var(--_ring-offset);
         }
       }
+    }
 
-      & .is-current {
-        color: var(--_current-color);
+    & .is-current {
+      color: var(--_current-color);
+    }
+
+    & .is-parent {
+      color: var(--_parent-color);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--_parent-color-hover);
       }
+    }
 
-      & .is-parent {
-        color: var(--_parent-color);
-        text-decoration: none;
+    & .icon {
+      color: var(--_icon-color);
+      display: flex;
+    }
 
-        &:hover {
-          color: var(--_parent-color-hover);
-        }
+    & .icon__home {
+      &:hover {
+        color: var(--_icon-home-color-hover);
       }
+    }
 
-      & .icon {
-        color: var(--_icon-color);
-        display: flex;
-      }
-
-      & .icon__home {
-        &:hover {
-          color: var(--_icon-home-color-hover);
-        }
-      }
-
-      & .icon__divider {
-        margin-left: var(--_divider-gap);
-        margin-right: var(--_divider-gap);
-      }
+    & .icon__divider {
+      margin-left: var(--_divider-gap);
+      margin-right: var(--_divider-gap);
     }
 
     & .sr--only {

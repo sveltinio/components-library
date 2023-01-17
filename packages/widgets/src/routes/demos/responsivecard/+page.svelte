@@ -25,20 +25,15 @@
 	)}`;
 </script>
 
-<section class="main">
-	<h1><tt>@sveltinio/widgets</tt></h1>
-	<h2><tt>ResponsiveCard</tt></h2>
-</section>
+<div class="header" role="main">
+	<h1>@sveltinio/widgets</h1>
+	<h2>ResponsiveCard</h2>
+</div>
 
 <!--
 	https://source.unsplash.com/600x400/?music
 	https://placeimg.com/400/400/any
 -->
-
-<div class="header" role="main">
-	<h1>@sveltinio/widgets</h1>
-	<h2>PagesNavigator</h2>
-</div>
 
 <section role="contentinfo">
 	<div class="actions">

@@ -13,6 +13,7 @@
 		href: `/${next.resource}/${next.metadata.slug}`
 	};
 
+	/*
 	const customStyles_1 = {
 		'border-t-width': '2px',
 		'border-t-color': '#374151',
@@ -51,6 +52,7 @@
 		'message-color': '#e2e8f0',
 		'message-letter-spacing': '0.05em'
 	};
+	*/
 </script>
 
 <div class="header" role="main">
@@ -70,6 +72,7 @@
 		</div>
 	</div>
 
+	<!--
 	<div id="pagesnavigator-custom-icons-wrapper" class="demo-wrapper">
 		<h3 id="pagesnavigator-custom-icons">Custom Icons</h3>
 		<div class="preview">
@@ -135,4 +138,6 @@
 			<PagesNavigator prev={prevObj} next={nextObj} class="pagesnav-orange" />
 		</div>
 	</div>
+
+	-->
 </section>

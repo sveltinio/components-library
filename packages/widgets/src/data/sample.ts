@@ -3,79 +3,35 @@ import type { ResourceContent, TocEntry } from '$lib/types.js';
 const tocEntries: Array<TocEntry> = [
 	{
 		depth: 2,
-		value: 'Headings',
-		id: 'headings'
+		value: 'Intro',
+		id: 'intro'
 	},
 	{
 		depth: 2,
-		value: 'Paragraph',
-		id: 'paragraph'
+		value: 'Motivation',
+		id: 'motivation'
 	},
 	{
 		depth: 2,
-		value: 'Blockquotes',
-		id: 'blockquotes',
+		value: 'Design & Development',
+		id: 'design-development',
 		children: [
 			{
 				depth: 3,
-				value: 'w/o attribution',
-				id: 'wo-attribution'
+				value: 'Component Design',
+				id: 'component-design'
 			},
 			{
 				depth: 3,
-				value: 'w/ attribution',
-				id: 'w-attribution'
+				value: 'Development',
+				id: 'development'
 			}
 		]
 	},
 	{
 		depth: 2,
-		value: 'Tables',
-		id: 'tables'
-	},
-	{
-		depth: 2,
-		value: 'Lists',
-		id: 'lists',
-		children: [
-			{
-				depth: 3,
-				value: 'Unordered',
-				id: 'unordered'
-			},
-			{
-				depth: 3,
-				value: 'Ordered',
-				id: 'ordered'
-			},
-			{
-				depth: 3,
-				value: 'Nested',
-				id: 'nested'
-			}
-		]
-	},
-	{
-		depth: 2,
-		value: 'Other Elements',
-		id: 'other-elements'
-	},
-	{
-		depth: 2,
-		value: 'Emoij',
-		id: 'emoij'
-	},
-	{
-		depth: 2,
-		value: 'Code Blocks',
-		id: 'code-blocks',
-		children: [
-			{
-				depth: 3,
-				value: 'with backticks',
-				id: 'with-backticks'
-			}
-		]
+		value: 'License',
+		id: 'license'
 	}
 ];
 
