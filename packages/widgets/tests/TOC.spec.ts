@@ -14,8 +14,8 @@ describe('TOC', () => {
 		expect(container).toBeInTheDocument();
 	});
 
-	it('should have 8 items', async () => {
-		expect(tocEntries.length).toBe(8);
+	it('should have 4 items', async () => {
+		expect(tocEntries.length).toBe(4);
 	});
 
 	it('should contain the toggle button', async () => {
@@ -28,7 +28,7 @@ describe('TOC', () => {
 		expect(getByTestId('toc-main')).toContainElement(getByTestId('toc-btn'));
 	});
 
-	it('should have a 4 list', async () => {
+	it('should have a 3 list', async () => {
 		const { getAllByTestId } = render(TOC, {
 			props: {
 				data: tocEntries
@@ -36,7 +36,7 @@ describe('TOC', () => {
 		});
 
 		const lists = getAllByTestId('toc-list');
-		expect(lists.length).toBe(4);
+		expect(lists.length).toBe(2);
 	});
 
 	it('should have first ul with class visible when open', async () => {
