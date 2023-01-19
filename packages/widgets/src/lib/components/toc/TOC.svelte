@@ -22,6 +22,8 @@
 
 	const toggleOpen = () => (isOpen = !isOpen);
 
+	let prefix = ordered ? '' : prefixChar;
+
 	let mainElem: HTMLElement;
 	let tocBtn: HTMLElement;
 	let tocItemNodes: Array<HTMLLinkElement> = [];
@@ -227,5 +229,5 @@
 	data-testid="toc-main"
 >
 	<TocButton {label} bind:isOpen {iconOnly} {labelOnly} />
-	<TocList {data} {ordered} {isOpen} {full} {prefixChar} />
+	<TocList {data} {ordered} {isOpen} {full} prefixChar={prefix} />
 </nav>

@@ -11,7 +11,6 @@
 	export let id = '';
 
 	let listType = ordered ? 'ol' : 'ul';
-	let prefix = ordered ? '' : prefixChar;
 </script>
 
 <svelte:element
@@ -24,23 +23,17 @@
 	role="menu"
 	data-testid="toc-list"
 >
-	{#each data as item}
-		{#if full}
-			{#if item.children}
-				{(id = item.id)}
-				<svelte:self
-					data={item.children}
-					bind:ordered
-					bind:isOpen
-					bind:full
-					id="{id}-nested"
-					prefixChar={prefix}
-				/>
-			{:else}
-				<TocItem id={item.id} value={item.value} prefixChar={prefix} />
-			{/if}
-		{:else}
-			<TocItem id={item.id} value={item.value} prefixChar={prefix} />
+	{#each data as item, idx (item.id)}
+		<TocItem id={item.id} value={item.value} {prefixChar} />
+		{#if full && item.children}
+			<svelte:self
+				data={item.children}
+				bind:ordered
+				bind:isOpen
+				bind:full
+				id="{idx}-nested"
+				{prefixChar}
+			/>
 		{/if}
 	{/each}
 </svelte:element>
