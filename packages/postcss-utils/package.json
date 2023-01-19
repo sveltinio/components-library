@@ -1,9 +1,9 @@
 {
 	"name": "postcss-utils",
 	"version": "0.0.0",
-	"main": "index.cjs",
-	"license": "MIT",
 	"private": true,
+	"packageManager": "pnpm@7.25.1",
+	"license": "MIT",
 	"dependencies": {
 		"cssnano": "^5.1.14",
 		"cssnano-preset-advanced": "^5.3.9",
@@ -12,6 +12,7 @@
 		"postcss-preset-env": "^7.8.3",
 		"stylelint": "^14.16.1"
 	},
+	"main": "index.cjs",
 	"exports": {
 		".": {
 			"require": "./index.cjs",

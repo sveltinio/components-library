@@ -1,13 +1,14 @@
 {
 	"name": "stylelint-config-custom",
 	"version": "0.0.0",
-	"type": "module",
-	"main": "index.cjs",
-	"license": "MIT",
 	"private": true,
+	"packageManager": "pnpm@7.25.1",
+	"type": "module",
+	"license": "MIT",
 	"dependencies": {
 		"stylelint": "^14.16.1",
 		"stylelint-config-prettier": "^9.0.4",
 		"stylelint-config-standard": "^29.0.0"
-	}
+	},
+	"main": "index.cjs"
 }

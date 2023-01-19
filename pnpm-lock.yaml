@@ -42,8 +42,8 @@ importers:
   packages/essentials:
     specifiers:
       '@indaco/svelte-iconoir': ^3.1.0
-      '@sveltejs/adapter-auto': ^1.0.1
-      '@sveltejs/kit': ^1.1.2
+      '@sveltejs/adapter-auto': ^1.0.2
+      '@sveltejs/kit': ^1.1.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -82,8 +82,8 @@ importers:
       svelte: 3.55.1
     devDependencies:
       '@indaco/svelte-iconoir': 3.1.0
-      '@sveltejs/adapter-auto': 1.0.1_@sveltejs+kit@1.1.2
-      '@sveltejs/kit': 1.1.2_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.1.4
+      '@sveltejs/kit': 1.1.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -120,8 +120,8 @@ importers:
 
   packages/media-content:
     specifiers:
-      '@sveltejs/adapter-auto': ^1.0.1
-      '@sveltejs/kit': ^1.1.2
+      '@sveltejs/adapter-auto': ^1.0.2
+      '@sveltejs/kit': ^1.1.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -145,8 +145,8 @@ importers:
     dependencies:
       svelte: 3.55.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.1_@sveltejs+kit@1.1.2
-      '@sveltejs/kit': 1.1.2_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.1.4
+      '@sveltejs/kit': 1.1.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -186,8 +186,8 @@ importers:
 
   packages/seo:
     specifiers:
-      '@sveltejs/adapter-auto': ^1.0.1
-      '@sveltejs/kit': ^1.1.2
+      '@sveltejs/adapter-auto': ^1.0.2
+      '@sveltejs/kit': ^1.1.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -215,8 +215,8 @@ importers:
     dependencies:
       svelte: 3.55.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.1_@sveltejs+kit@1.1.2
-      '@sveltejs/kit': 1.1.2_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.1.4
+      '@sveltejs/kit': 1.1.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -244,8 +244,8 @@ importers:
 
   packages/services:
     specifiers:
-      '@sveltejs/adapter-auto': ^1.0.1
-      '@sveltejs/kit': ^1.1.2
+      '@sveltejs/adapter-auto': ^1.0.2
+      '@sveltejs/kit': ^1.1.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -269,8 +269,8 @@ importers:
     dependencies:
       svelte: 3.55.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.1_@sveltejs+kit@1.1.2
-      '@sveltejs/kit': 1.1.2_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.1.4
+      '@sveltejs/kit': 1.1.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -304,8 +304,8 @@ importers:
 
   packages/widgets:
     specifiers:
-      '@sveltejs/adapter-auto': ^1.0.1
-      '@sveltejs/kit': ^1.1.2
+      '@sveltejs/adapter-auto': ^1.0.2
+      '@sveltejs/kit': ^1.1.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -341,8 +341,8 @@ importers:
     dependencies:
       svelte: 3.55.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.1_@sveltejs+kit@1.1.2
-      '@sveltejs/kit': 1.1.2_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.1.4
+      '@sveltejs/kit': 1.1.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -468,7 +468,7 @@ importers:
       svelte: 3.55.0
       svelte-check: 2.10.3_7tgmgw23w4ankk7vtabgm5xtbu
       svelte-preprocess: 4.10.7_4pbnl6cqae4gmabfifuvcfaifu
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.20
       tslib: 2.4.1
       typescript: 4.9.4
       unist-util-visit: 4.1.1
@@ -1288,7 +1288,7 @@ packages:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
       '@types/node': 18.11.18
-      '@types/yargs': 17.0.19
+      '@types/yargs': 17.0.20
       chalk: 4.1.2
     dev: true
 
@@ -1361,12 +1361,12 @@ packages:
     resolution: {integrity: sha512-1P1OROm/rdubP5aFDSZQILU0vrLCJ4fvHt6EoqHEM+2D/G5MK3bIaymUKLit8Js9gbns5UyJnkP/TZROLw4tUA==}
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.1_@sveltejs+kit@1.1.2:
-    resolution: {integrity: sha512-IGek24xN1wJb+gz0hyGSxbIvM7q2K+BXquyycteCWbH9MPosjw8+LuIB2HIH20thE/647UEQBNqCM9R73lAUXA==}
+  /@sveltejs/adapter-auto/1.0.2_@sveltejs+kit@1.1.4:
+    resolution: {integrity: sha512-UXpEO/gutERZnD+Z5Vi4J/ifD3WSRuCI7xwtLJTcKNQvJ6t5Xsj1X3Mw2F8Vv/XTUuxf7xPLYUgThU331r0Y9w==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.1.2_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/kit': 1.1.4_svelte@3.55.1+vite@4.0.4
       import-meta-resolve: 2.2.1
     dev: true
 
@@ -1402,8 +1402,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.1.2_svelte@3.55.1+vite@4.0.4:
-    resolution: {integrity: sha512-bykE1E79i7E757i3yP+N8hSuT63AET5rY7yhqz8do2EgPXsWozwJiQS6wsPlKn7bFDv+3LGeFGV3qSbVo3GmTw==}
+  /@sveltejs/kit/1.1.4_svelte@3.55.1+vite@4.0.4:
+    resolution: {integrity: sha512-FHt8j8PgwhgeA41WTJfD8yQdOmzRY1v6ORtyXjzbzIZ+106LTclRpywnFoKxACEilAQHdGLAivVf9bRHkW1LLQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -1489,7 +1489,7 @@ packages:
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.20
     dev: true
 
   /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.4:
@@ -1497,7 +1497,7 @@ packages:
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.20
     dev: true
 
   /@tailwindcss/typography/0.5.8_tailwindcss@3.2.4:
@@ -1509,7 +1509,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.20
     dev: true
 
   /@testing-library/dom/8.20.0:
@@ -1521,7 +1521,7 @@ packages:
       '@types/aria-query': 5.0.1
       aria-query: 5.1.3
       chalk: 4.1.2
-      dom-accessibility-api: 0.5.15
+      dom-accessibility-api: 0.5.16
       lz-string: 1.4.4
       pretty-format: 27.5.1
     dev: true
@@ -1536,7 +1536,7 @@ packages:
       aria-query: 5.1.3
       chalk: 3.0.0
       css.escape: 1.5.1
-      dom-accessibility-api: 0.5.15
+      dom-accessibility-api: 0.5.16
       lodash: 4.17.21
       redent: 3.0.0
     dev: true
@@ -1647,8 +1647,8 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@types/jest/29.2.5:
-    resolution: {integrity: sha512-H2cSxkKgVmqNHXP7TC2L/WUorrZu8ZigyRywfVzv6EyBlxj39n4C00hjXYQWsbwqgElaj/CiAeSRmk5GoaKTgw==}
+  /@types/jest/29.2.6:
+    resolution: {integrity: sha512-XEUC/Tgw3uMh6Ho8GkUtQ2lPhY5Fmgyp3TdlkTJs1W9VgNxs+Ow/x3Elh8lHQKqCbZL0AubQuqWjHVT033Hhrw==}
     dependencies:
       expect: 29.3.1
       pretty-format: 29.3.1
@@ -1730,7 +1730,7 @@ packages:
   /@types/testing-library__jest-dom/5.14.5:
     resolution: {integrity: sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==}
     dependencies:
-      '@types/jest': 29.2.5
+      '@types/jest': 29.2.6
     dev: true
 
   /@types/through/0.0.30:
@@ -1747,8 +1747,8 @@ packages:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
     dev: true
 
-  /@types/yargs/17.0.19:
-    resolution: {integrity: sha512-cAx3qamwaYX9R0fzOIZAlFpo4A+1uBVCxqpKz9D26uTF4srRXaGTTsikQmaotCtNdbhzyUH7ft6p9ktz9s6UNQ==}
+  /@types/yargs/17.0.20:
+    resolution: {integrity: sha512-eknWrTHofQuPk2iuqDm1waA7V6xPlbgBoaaXEgYkClhLOnB0TtbW+srJaOToAgawPxPlHQzwypFA2bhZaUGP5A==}
     dependencies:
       '@types/yargs-parser': 21.0.0
     dev: true
@@ -2294,7 +2294,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001445
+      caniuse-lite: 1.0.30001441
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2403,7 +2403,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001445
+      caniuse-lite: 1.0.30001446
       electron-to-chromium: 1.4.284
       node-releases: 2.0.8
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -2500,16 +2500,15 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001445
+      caniuse-lite: 1.0.30001446
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
   /caniuse-lite/1.0.30001441:
     resolution: {integrity: sha512-OyxRR4Vof59I3yGWXws6i908EtGbMzVUi3ganaZQHmydk1iwDhRnvaPG2WaR0KcqrDFKrxVZHULT396LEPhXfg==}
-    dev: true
 
-  /caniuse-lite/1.0.30001445:
-    resolution: {integrity: sha512-8sdQIdMztYmzfTMO6KfLny878Ln9c2M0fc7EH60IjlP4Dc4PiCy7K2Vl3ITmWgOyPgVQKa5x+UP/KqFsxj4mBg==}
+  /caniuse-lite/1.0.30001446:
+    resolution: {integrity: sha512-fEoga4PrImGcwUUGEol/PoFCSBnSkA9drgdkxXkJLsUBOnJ8rs3zDv6ApqYXGQFOyMPsjh79naWhF4DAxbF8rw==}
 
   /capital-case/1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
@@ -3338,8 +3337,8 @@ packages:
     dependencies:
       esutils: 2.0.3
 
-  /dom-accessibility-api/0.5.15:
-    resolution: {integrity: sha512-8o+oVqLQZoruQPYy3uAAQtc6YbtSiRq5aPJBhJ82YTJRHvI6ofhYAkC81WmjFTnfUbqg6T3aCglIpU9p/5e7Cw==}
+  /dom-accessibility-api/0.5.16:
+    resolution: {integrity: sha512-X7BJ2yElsnOJ30pZF4uIIDfBEVgF4XEBxL9Bxhy6dnrm5hkzqmsWHGTiHqRiITNhMyFLyAiWndIJP7Z1NTteDg==}
     dev: true
 
   /dom-serializer/1.4.1:
@@ -5375,7 +5374,7 @@ packages:
       debug: 4.3.4
       execa: 6.1.0
       lilconfig: 2.0.6
-      listr2: 5.0.6
+      listr2: 5.0.7
       micromatch: 4.0.5
       normalize-path: 3.0.0
       object-inspect: 1.12.3
@@ -5387,8 +5386,8 @@ packages:
       - supports-color
     dev: true
 
-  /listr2/5.0.6:
-    resolution: {integrity: sha512-u60KxKBy1BR2uLJNTWNptzWQ1ob/gjMzIJPZffAENzpZqbMZ/5PrXXOomDcevIS/+IB7s1mmCEtSlT2qHWMqag==}
+  /listr2/5.0.7:
+    resolution: {integrity: sha512-MD+qXHPmtivrHIDRwPYdfNkrzqDiuaKU/rfBcec3WMyMF3xylQj3jMq344OtvQxz7zaCFViRAeqlr2AFhPvXHw==}
     engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
       enquirer: '>= 2.3.0 < 3'
@@ -5416,8 +5415,8 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /local-pkg/0.4.2:
-    resolution: {integrity: sha512-mlERgSPrbxU3BP4qBqAvvwlgW4MTg78iwJdGGnv7kibKjWcJksrG3t6LB5lXI93wXRDvG4NpUgJFmTG4T6rdrg==}
+  /local-pkg/0.4.3:
+    resolution: {integrity: sha512-SFppqq5p42fe2qcZQqqEOiVRXl+WCP1MdT6k7BDEW1j++sp5fIY+/fdRQitvKgB5BrBcmrs5m/L0v2FrU5MY1g==}
     engines: {node: '>=14'}
     dev: true
 
@@ -6750,13 +6749,13 @@ packages:
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
 
-  /postcss-import/14.1.0_postcss@8.4.21:
+  /postcss-import/14.1.0_postcss@8.4.20:
     resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       postcss: ^8.0.0
     dependencies:
-      postcss: 8.4.21
+      postcss: 8.4.20
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.1
@@ -6781,14 +6780,14 @@ packages:
     dependencies:
       postcss: 8.4.21
 
-  /postcss-js/4.0.0_postcss@8.4.21:
+  /postcss-js/4.0.0_postcss@8.4.20:
     resolution: {integrity: sha512-77QESFBwgX4irogGVPgQ5s07vLvFqWr228qZY+w6lW599cRlK/HmnlivnnVUxkjHnCu4J16PDMHcH+e+2HbvTQ==}
     engines: {node: ^12 || ^14 || >= 16}
     peerDependencies:
       postcss: ^8.3.3
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.21
+      postcss: 8.4.20
     dev: true
 
   /postcss-lab-function/4.2.1_postcss@8.4.21:
@@ -6801,7 +6800,7 @@ packages:
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
 
-  /postcss-load-config/3.1.4_postcss@8.4.21:
+  /postcss-load-config/3.1.4_postcss@8.4.20:
     resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
     engines: {node: '>= 10'}
     peerDependencies:
@@ -6814,7 +6813,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.0.6
-      postcss: 8.4.21
+      postcss: 8.4.20
       yaml: 1.10.2
     dev: true
 
@@ -7020,13 +7019,13 @@ packages:
       postcss-selector-parser: 6.0.11
     dev: true
 
-  /postcss-nested/6.0.0_postcss@8.4.21:
+  /postcss-nested/6.0.0_postcss@8.4.20:
     resolution: {integrity: sha512-0DkamqrPcmkBDsLn+vQDIrtkSbNkv5AD/M322ySo9kqFkCIYklym2xEmWkwo+Y3/qZo34tzEPNUw4y7yMCdv5w==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
     dependencies:
-      postcss: 8.4.21
+      postcss: 8.4.20
       postcss-selector-parser: 6.0.11
     dev: true
 
@@ -8734,10 +8733,12 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
 
-  /tailwindcss/3.2.4:
+  /tailwindcss/3.2.4_postcss@8.4.20:
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
@@ -8753,11 +8754,11 @@ packages:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.0
-      postcss: 8.4.21
-      postcss-import: 14.1.0_postcss@8.4.21
-      postcss-js: 4.0.0_postcss@8.4.21
-      postcss-load-config: 3.1.4_postcss@8.4.21
-      postcss-nested: 6.0.0_postcss@8.4.21
+      postcss: 8.4.20
+      postcss-import: 14.1.0_postcss@8.4.20
+      postcss-js: 4.0.0_postcss@8.4.20
+      postcss-load-config: 3.1.4_postcss@8.4.20
+      postcss-nested: 6.0.0_postcss@8.4.20
       postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.2.0
       quick-lru: 5.1.1
@@ -9478,7 +9479,7 @@ packages:
       chai: 4.3.7
       debug: 4.3.4
       jsdom: 20.0.3
-      local-pkg: 0.4.2
+      local-pkg: 0.4.3
       picocolors: 1.0.0
       source-map: 0.6.1
       strip-literal: 1.0.0

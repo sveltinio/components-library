@@ -2,6 +2,7 @@
 	"name": "@sveltinio/essentials",
 	"version": "0.5.0",
 	"private": false,
+	"packageManager": "pnpm@7.25.1",
 	"type": "module",
 	"description": "A collection of essentials, type-safe, accessible and configurable Svelte components.",
 	"author": "dev <dev@sveltin.io>",
@@ -37,8 +38,8 @@
 	},
 	"devDependencies": {
 		"@indaco/svelte-iconoir": "^3.1.0",
-		"@sveltejs/adapter-auto": "^1.0.1",
-		"@sveltejs/kit": "^1.1.2",
+		"@sveltejs/adapter-auto": "^1.0.2",
+		"@sveltejs/kit": "^1.1.4",
 		"@sveltejs/package": "^1.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.2",
 		"@testing-library/jest-dom": "^5.16.5",
