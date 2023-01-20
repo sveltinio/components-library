@@ -42,7 +42,7 @@
   /* * content (css class name: card__content)     * */
   --_content-color: var(--content-color, var(--slate-500));
   --_content-font-size: var(--content-font-size, 0.9rem);
-  --_content-font-weight: var(--content-font-weight, 500);
+  --_content-font-weight: var(--content-font-weight, 400);
   --_content-line-height: var(--content-line-height, 1.25rem);
   --_content-letter-spacing: var(--content-letter-spacing, 0em);
   --_content-text-align: var(--content-text-align, justify);

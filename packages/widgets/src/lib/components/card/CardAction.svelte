@@ -3,8 +3,8 @@
 	export let href = '';
 </script>
 
-<div class="card__actions" data-testid="card-actions">
-	<a {href} aria-label="{label} link" data-testid="card-action-link">{label}</a>
+<a class="card__actions" {href} aria-label="{label} link" data-testid="card-action-link"
+	>{label}
 	<slot name="btn-icon">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -23,4 +23,4 @@
 			/></svg
 		>
 	</slot>
-</div>
+</a>
