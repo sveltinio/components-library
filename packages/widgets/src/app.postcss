@@ -77,7 +77,25 @@ section {
   background: linear-gradient(to top right, #5eead4, #93c5fd);
   box-shadow: 0 1px 3px 0 hsla(0deg 0% 0% / 0.1), 0 1px 2px -1px hsla(0deg 0% 0% / 0.1);
 
-  & > a {
+  & h2 {
+    font-family: "Baloo Bhai", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    margin: 0.5rem 0;
+  }
+
+  & p {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  & a {
     text-decoration: none;
 
     display: flex;
@@ -93,38 +111,11 @@ section {
       background-color: hsl(210deg 40% 98%); /* slate-50 */
     }
   }
-
-  & h2 {
-    font-family: "Baloo Bhai", sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 2rem;
-    line-height: 1.5rem;
-  }
-
-  & p {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  & h4 {
-    padding: 0;
-    margin: 1rem 0;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 1.175rem;
-    color: hsl(215.3deg 19.3% 34.5%); /* slate-600 */
-    line-height: 1.5rem;
-    text-transform: uppercase;
-  }
 }
 
 /* Used on the single component demo page */
-.demo-wrapper {
+.demo-wrapper,
+.demo-content {
   & h3 {
     padding: 0;
     margin: 2rem 0;
@@ -135,6 +126,14 @@ section {
     color: hsl(215.3deg 19.3% 34.5%); /* slate-600 */
     line-height: 1.5rem;
     text-transform: uppercase;
+  }
+
+  & p {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   & .preview {
@@ -152,6 +151,19 @@ section {
     flex-direction: column;
     justify-content: flex-start;
     gap: 0.75rem;
+  }
+}
+
+.demo-content {
+  margin: 2rem 0;
+
+  & h2 {
+    font-family: "Baloo Bhai", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    margin: 1rem 0;
   }
 }
 

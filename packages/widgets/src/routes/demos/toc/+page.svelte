@@ -14,53 +14,54 @@
 	</div>
 
 	<div id="toc-default-wrapper" class="demo-wrapper">
-		<h3 id="toc-default">Default</h3>
+		<!--<h3 id="toc-default">Default</h3> --->
 		<div class="preview">
 			<TOC data={tocEntries} />
 		</div>
 	</div>
+	<div class="demo-content">
+		<h2 id="intro">Intro</h2>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
+			soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
+			Perferendis, esse deleniti.
+		</p>
 
-	<h2 id="intro">Intro</h2>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
-		soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
-		Perferendis, esse deleniti.
-	</p>
+		<h2 id="motivation">Motivation</h2>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
+			soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
+			Perferendis, esse deleniti.
+		</p>
 
-	<h2 id="motivation">Motivation</h2>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
-		soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
-		Perferendis, esse deleniti.
-	</p>
+		<h2 id="design-development">Design & Development</h2>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
+			soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
+			Perferendis, esse deleniti.
+		</p>
 
-	<h2 id="design-development">Design & Development</h2>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
-		soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
-		Perferendis, esse deleniti.
-	</p>
+		<h3 id="component-design">Design Component</h3>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
+			soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
+			Perferendis, esse deleniti.
+		</p>
 
-	<h3 id="component-design">Design Component</h3>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
-		soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
-		Perferendis, esse deleniti.
-	</p>
+		<h3 id="development">Development</h3>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
+			soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
+			Perferendis, esse deleniti.
+		</p>
 
-	<h3 id="development">Development</h3>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
-		soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
-		Perferendis, esse deleniti.
-	</p>
-
-	<h2 id="license">License</h2>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
-		soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
-		Perferendis, esse deleniti.
-	</p>
+		<h2 id="license">License</h2>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem quasi qui officiis
+			soluta alias sit id magni laborum animi? Amet suscipit, omnis quae eveniet ut molestiae.
+			Perferendis, esse deleniti.
+		</p>
+	</div>
 	<!--
 	<div id="toc-ordered-wrapper" class="demo-wrapper">
 		<h3 id="toc-ordered">Ordered</h3>
