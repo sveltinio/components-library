@@ -72,14 +72,21 @@
 
     & .card__content {
       color: var(--_content-color);
-      font-size: var(--_content-color);
-      font-weight: var(--_content-font-weight);
-      line-height: var(--_content-line-height);
-      letter-spacing: var(--_content-letter-spacing);
-      text-align: var(--_content-text-align);
       display: -webkit-box;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      padding-top: var(--_content-pt);
+      padding-right: var(--_content-pr);
+      padding-bottom: var(--_content-pb);
+      padding-left: var(--_content-pl);
+
+      & p {
+        font-size: var(--_content-font-size);
+        font-weight: var(--_content-font-weight);
+        line-height: var(--_content-line-height);
+        letter-spacing: var(--_content-letter-spacing);
+        text-align: var(--_content-text-align);
+      }
     }
 
     & .card__metadata {

@@ -71,9 +71,13 @@
   --_title-ml-md: var(--title-ml-md, var(--_title-ml));
 
   /* * content (css class name: card__wrapper > p) */
+  --_content-pt: var(--content-pt, 1rem);
+  --_content-pr: var(--content-pr, 0);
+  --_content-pb: var(--content-pb, 0.5rem);
+  --_content-pl: var(--content-pl, 0);
   --_content-color: var(--content-color, var(--slate-600));
   --_content-font-size: var(--content-font-size, 0.9rem);
-  --_content-font-weight: var(--content-font-weight, 500);
+  --_content-font-weight: var(--content-font-weight, 400);
   --_content-line-height: var(--content-line-height, 1.5rem);
   --_content-letter-spacing: var(--content-letter-spacing, 0em);
   --_content-text-align: var(--content-text-align, left);
