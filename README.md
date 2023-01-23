@@ -51,7 +51,7 @@ pnpm install
 Run the tests:
 
 ```bash
-pnpm test
+pnpm test:packages
 ```
 
 ### Create new component
