@@ -34,7 +34,6 @@
 			<strong>
 				<a
 					data-testid="link-to-the-video"
-					alt="Click to open the video on the Vimeo website"
 					aria-label="Click to open the video on the Vimeo website"
 					href="https://www.slideshare.net/{user}/{title}"
 					target="_blank"
@@ -45,7 +44,6 @@
 			<strong
 				><a
 					data-testid="link-to-the-user-page"
-					alt="Link to the user page on Vimeo website"
 					aria-label="Link to the user page on Vimeo website"
 					href="https://www.slideshare.net/{user}"
 					target="_blank"
