@@ -1,5 +1,21 @@
 # @sveltinio/media-content
 
+## 0.3.5
+
+### Patch Changes
+
+#### Fixes
+
+- `svelte:component` props for `Vimeo` and `YouTube`
+- sandbox on iframe for `StackBlitz`
+- remove a11y warning for alt prop on `<a>` tag for `SlideShare`
+
+#### Chores
+
+- chore: deps updated
+- make use of `vitePreprocess` instead of `svelte-preprocess`
+- `publint` added to check packaging errors and ensure compatibility across environments.
+
 ## 0.3.4
 
 ### Patch Changes
