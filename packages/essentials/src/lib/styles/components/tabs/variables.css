@@ -107,7 +107,7 @@
   --_tab-border-b-color-hover: var(--tab-border-b-color-hover, var(--_tab-border-b-color));
   --_tab-border-l-color-hover: var(--tab-border-l-color-hover, var(--_tab-border-l-color));
 
-  --_tab-ring-width: var(--tab-ring-width, 2px);
+  --_tab-ring-width: var(--tab-ring-width, 1px);
   --_tab-ring-style: var(--tab-ring-style, solid);
   --_tab-ring-color: var(--tab-ring-color, var(--_tab-ring-color));
   --_tab-ring-offset: var(--tab-ring-offset, 1px);

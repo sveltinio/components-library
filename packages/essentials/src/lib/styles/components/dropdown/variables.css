@@ -25,7 +25,7 @@
   --_btn-border-color: var(--btn-border-color, var(--slate-300));
   --_btn-border-radius: var(--btn-border-radius, 0.25rem);
 
-  --_btn-ring-width: var(--btn-ring-width, 2px);
+  --_btn-ring-width: var(--btn-ring-width, 1px);
   --_btn-ring-color: var(--btn-ring-color, var(--_btn-border-color));
   --_btn-ring-style: var(--btn-ring-style, solid);
   --_btn-ring-offset: var(--btn-ring-offset, 1px);

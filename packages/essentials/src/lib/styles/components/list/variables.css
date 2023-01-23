@@ -24,7 +24,7 @@
   --_btn-bg-color: var(--btn-bg-color, var(--white));
   --_btn-bg-color-hover: var(--btn-bg-color-hover, var(--slate-50));
 
-  --_btn-ring-width: var(--btn-ring-width, 2px);
+  --_btn-ring-width: var(--btn-ring-width, 1px);
   --_btn-ring-color: var(--btn-ring-color, var(--slate-300));
   --_btn-ring-style: var(--btn-ring-style, solid);
   --_btn-ring-offset: var(--btn-ring-offset, 1px);

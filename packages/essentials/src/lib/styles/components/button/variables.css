@@ -18,7 +18,7 @@
   --_rounded-border-radius: var(--rounded-border-radius, 0.375rem);
   --_circle-p: var(--circle-p, 4px);
 
-  --_ring-width: var(--ring-width, 2px);
+  --_ring-width: var(--ring-width, 1px);
   --_ring-style: var(--ring-style, solid);
   --_ring-offset: var(--ring-offset, 2px);
 
