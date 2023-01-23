@@ -4,7 +4,7 @@
 	import '../../styles/components/tabs/styles.css';
 	import { onMount, setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils.js';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 	import type { TabItem, TabsContext } from './types.js';
 
 	export let activeTab = '1';

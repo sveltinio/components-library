@@ -4,7 +4,7 @@
 	import '../../styles/components/button-group/styles.css';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils.js';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 	import type { ButtonGroupItemType, ButtonGroupContext } from './types.js';
 
 	export let activeButton = '';

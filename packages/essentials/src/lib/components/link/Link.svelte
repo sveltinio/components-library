@@ -3,7 +3,7 @@
 	import '../../styles/components/link/variables.css';
 	import '../../styles/components/link/styles.css';
 	import { ExternalLinkIcon } from './index.js';
-	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 
 	export let label = '';
 	export let href: string;

@@ -3,7 +3,7 @@
 	import '../../styles/components/button/variables.css';
 	import '../../styles/components/button/styles.css';
 	import { createEventDispatcher } from 'svelte';
-	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 
 	export let label = 'Button Text';
 	export let alt = '';

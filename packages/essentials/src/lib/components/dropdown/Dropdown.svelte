@@ -4,7 +4,7 @@
 	import '../../styles/components/dropdown/styles.css';
 	import { onMount, tick, setContext } from 'svelte';
 	import { writable, get } from 'svelte/store';
-	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils.js';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 	import type { DropdownContext } from './types.js';
 	import { clickOutside } from './actions.js';
 

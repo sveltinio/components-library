@@ -2,7 +2,7 @@
 	import '../../styles/base.css';
 	import '../../styles/components/color/variables.css';
 	import '../../styles/components/color/styles.css';
-	import { stylesObjToCSSVars, isValidClassName } from '$lib/utils';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 
 	export let value: string;
 	export let size = 24;

@@ -3,7 +3,7 @@
 	import '../../styles/components/list/variables.css';
 	import '../../styles/components/list/styles.css';
 	import { onMount, tick } from 'svelte';
-	import { stylesObjToCSSVars, isValidClassName } from '../../utils';
+	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
 	import type { ListItem } from './types';
 
 	import ToggleButton from './ToggleButton.svelte';
