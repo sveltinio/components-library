@@ -26,6 +26,35 @@ Responsive and accessible ([WAI-ARIA Accessibility Reference]) Table of contents
 <TOC data={tocEntries} />
 ```
 
+### mdsvex & SvelteKit
+
+You can use [@sveltinio/remark-headings](https://github.com/sveltinio/remark-headings) to get the headings tree data to be passed to the `TOC` component like so:
+
+```javascript
+// mdsvex.config.js
+import rehypeSlug from 'rehype-slug';
+import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
+import headings from "@sveltinio/remark-headings";
+
+export default {
+  // ... rest of your config
+  remarkPlugins: [headings],
+  rehypePlugins: [
+    rehypeSlug,
+    [(rehypeAutoLinkHeadings, { behavior: 'wrap' })]
+  ]
+};
+```
+
+```html
+<!-- +page.svx -->
+<script>
+    import { TOC } from '@sveltinio/widgets';
+</script>
+
+<TOC data={headings} />
+```
+
 ## Properties
 
 The `TOC` component exposes the following properties:
