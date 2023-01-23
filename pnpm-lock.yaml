@@ -46,7 +46,7 @@ importers:
     specifiers:
       '@indaco/svelte-iconoir': ^3.1.0
       '@sveltejs/adapter-auto': ^1.0.2
-      '@sveltejs/kit': ^1.2.3
+      '@sveltejs/kit': ^1.2.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -85,8 +85,8 @@ importers:
       svelte: 3.55.1
     devDependencies:
       '@indaco/svelte-iconoir': 3.1.0
-      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.3
-      '@sveltejs/kit': 1.2.3_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.4
+      '@sveltejs/kit': 1.2.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -124,7 +124,7 @@ importers:
   packages/media-content:
     specifiers:
       '@sveltejs/adapter-auto': ^1.0.2
-      '@sveltejs/kit': ^1.2.3
+      '@sveltejs/kit': ^1.2.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -148,8 +148,8 @@ importers:
     dependencies:
       svelte: 3.55.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.3
-      '@sveltejs/kit': 1.2.3_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.4
+      '@sveltejs/kit': 1.2.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -190,7 +190,7 @@ importers:
   packages/seo:
     specifiers:
       '@sveltejs/adapter-auto': ^1.0.2
-      '@sveltejs/kit': ^1.2.3
+      '@sveltejs/kit': ^1.2.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -218,8 +218,8 @@ importers:
     dependencies:
       svelte: 3.55.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.3
-      '@sveltejs/kit': 1.2.3_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.4
+      '@sveltejs/kit': 1.2.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -248,7 +248,7 @@ importers:
   packages/services:
     specifiers:
       '@sveltejs/adapter-auto': ^1.0.2
-      '@sveltejs/kit': ^1.2.3
+      '@sveltejs/kit': ^1.2.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -272,8 +272,8 @@ importers:
     dependencies:
       svelte: 3.55.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.3
-      '@sveltejs/kit': 1.2.3_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.4
+      '@sveltejs/kit': 1.2.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -308,7 +308,7 @@ importers:
   packages/widgets:
     specifiers:
       '@sveltejs/adapter-auto': ^1.0.2
-      '@sveltejs/kit': ^1.2.3
+      '@sveltejs/kit': ^1.2.4
       '@sveltejs/package': ^1.0.2
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       '@testing-library/jest-dom': ^5.16.5
@@ -344,8 +344,8 @@ importers:
     dependencies:
       svelte: 3.55.1
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.3
-      '@sveltejs/kit': 1.2.3_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.4
+      '@sveltejs/kit': 1.2.4_svelte@3.55.1+vite@4.0.4
       '@sveltejs/package': 1.0.2_atrrhq7vg4ekua4nnyrpuardle
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
@@ -1368,12 +1368,12 @@ packages:
     resolution: {integrity: sha512-1P1OROm/rdubP5aFDSZQILU0vrLCJ4fvHt6EoqHEM+2D/G5MK3bIaymUKLit8Js9gbns5UyJnkP/TZROLw4tUA==}
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.2_@sveltejs+kit@1.2.3:
+  /@sveltejs/adapter-auto/1.0.2_@sveltejs+kit@1.2.4:
     resolution: {integrity: sha512-UXpEO/gutERZnD+Z5Vi4J/ifD3WSRuCI7xwtLJTcKNQvJ6t5Xsj1X3Mw2F8Vv/XTUuxf7xPLYUgThU331r0Y9w==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.2.3_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/kit': 1.2.4_svelte@3.55.1+vite@4.0.4
       import-meta-resolve: 2.2.1
     dev: true
 
@@ -1409,8 +1409,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.2.3_svelte@3.55.1+vite@4.0.4:
-    resolution: {integrity: sha512-VyXiFoqoxV/2gNYPGsoreqGXRfUz1ASBKH+b+1VnF4LXnOvA2h1lTAgniotlamuC6yBM94DkztQSlIRwiS+REA==}
+  /@sveltejs/kit/1.2.4_svelte@3.55.1+vite@4.0.4:
+    resolution: {integrity: sha512-MUFH5ag6PuWDAVAU1iVICcXHqieZAkv268wT5xUTZoOKsAxalWH4ZrpmoSpAZUnvgPJcFJ+/fkcN3nosD89+Uw==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -1431,7 +1431,7 @@ packages:
       sirv: 2.0.2
       svelte: 3.55.1
       tiny-glob: 0.2.9
-      undici: 5.15.2
+      undici: 5.16.0
       vite: 4.0.4
     transitivePeerDependencies:
       - supports-color
@@ -9233,8 +9233,8 @@ packages:
       busboy: 1.6.0
     dev: true
 
-  /undici/5.15.2:
-    resolution: {integrity: sha512-JsN6meyJESMJaLqOuozstwrolSkLWlTIT4qpGoKepNdnZy7HJMPKB0v0Td/CepGgoiPpUSvVO9Nh/5N9QrmDgQ==}
+  /undici/5.16.0:
+    resolution: {integrity: sha512-KWBOXNv6VX+oJQhchXieUznEmnJMqgXMbs0xxH2t8q/FUAWSJvOSr/rMaZKnX5RIVq7JDn0JbP4BOnKG2SGXLQ==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
