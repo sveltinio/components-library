@@ -6,19 +6,24 @@
 		<meta name="description" content="@sveltinio/essentials components demo" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css?family=Bitter:regular%7CBaloo+Bhai:regular%7CNunito+Sans:regular"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Bitter:regular%7CBaloo+Bhai:regular%7CNunito+Sans:regular"
+			media="all"
+		/>
+		<noscript>
+			<link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css?family=Bitter:regular%7CBaloo+Bhai:regular%7CNunito+Sans:regular"
+			/>
+		</noscript>
 		%sveltekit.head%
-		<style>
-			*,
-			*:after,
-			*:before {
-				box-sizing: border-box;
-			}
-
-			body {
-				background-color: #f8fafc;
-				margin: 2rem;
-			}
-		</style>
 	</head>
 	<body>
 		<div>%sveltekit.body%</div>
