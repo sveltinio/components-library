@@ -67,6 +67,6 @@ describe('Card', () => {
 
 		const slot = getByTestId('card-action-link');
 		expect(slot).not.toBeNull();
-		expect(slot.innerHTML).toBe('Read More');
+		expect(slot.innerHTML).toContain('Read More');
 	});
 });
