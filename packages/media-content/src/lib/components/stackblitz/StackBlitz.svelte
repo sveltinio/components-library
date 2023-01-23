@@ -37,7 +37,7 @@
 		src={iframeURL}
 		frameborder="0"
 		allowfullscreen
-		allow-same-origin
+		sandbox="allow-same-origin allow-scripts"
 		{title}
 	/>
 </div>
