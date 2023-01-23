@@ -129,6 +129,10 @@
 <section data-testid="content-section">
 	<svelte:component
 		this={renderedComponent}
+		{id}
+		{title}
+		provider="youtube"
+		{iframeURL}
 		on:component-event={(e) => handleEvent(e)}
 		{...props}
 	/>
