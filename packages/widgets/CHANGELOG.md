@@ -1,5 +1,35 @@
 # @sveltinio/widgets
 
+## 0.5.0
+
+### Minor Changes
+
+#### Features
+
+- all components are now accessibles implementing relative WAI-ARIA Accessibility Reference
+- accessibility tested against WCAG2AAA with `pa11y` (`axe-core` and `htmlcs` as runners)
+
+#### Fixes
+
+- exclude files when building to reduce package size
+- references to the right css variables
+
+#### Refactor
+
+- **TOC**: TocList component `each` block loop simplified
+- **Card**: CardAction as an `<a>` tag
+
+#### Docs
+
+- README and THEMING files updated and more consistent across components
+
+#### Chores
+
+- chore: deps updated
+- css files are all minified when building
+- make use of `vitePreprocess` instead of `svelte-preprocess`
+- `publint` added to check packaging errors and ensure compatibility across environments.
+
 ## 0.4.0
 
 ### Minor Changes
