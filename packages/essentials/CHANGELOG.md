@@ -1,5 +1,13 @@
 # @sveltinio/essentials
 
+## 0.5.1
+
+### Patch Changes
+
+#### Fixes
+
+- use relative paths instead of the `$lib` alias to import `utils.js` on components
+
 ## 0.5.0
 
 ### Minor Changes
