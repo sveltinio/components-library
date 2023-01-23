@@ -1,5 +1,6 @@
 <script lang="ts">
-	import '../app.css';
+	import '../tw-preflight.css';
+	import '../app.postcss';
 </script>
 
 <slot />
