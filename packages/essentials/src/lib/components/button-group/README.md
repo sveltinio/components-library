@@ -59,9 +59,9 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 ### ButtonGroup
 
-| Name | Default | Fallback | Description                                   |
-| :--- | :-----: | :------: | :-------------------------------------------- |
-|      | ✓       |    ✗     | Pass `ButtonGroupItem` child data and content |
+| Name | Default | Fallback | Description                 |
+| :--- | :-----: | :------: | :-------------------------- |
+|      | ✓       |    ✗     | `ButtonGroupItem` component |
 
 ## Events
 

@@ -78,6 +78,14 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 | label    | string  | yes      |                  | The tab label                                |
 | icon     | any     | no       |                  | The icon placed on the left of the tab label |
 
+## Slots
+
+### ButtonGroup
+
+| Name | Default | Fallback | Description     |
+| :--- | :-----: | :------: | :-------------- |
+|      | ✓       |    ✗     | `Tab` component |
+
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
