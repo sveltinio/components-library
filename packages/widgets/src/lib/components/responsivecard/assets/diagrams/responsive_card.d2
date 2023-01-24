@@ -57,12 +57,10 @@ DOM: "ResponsiveCard Component Structure" {
 
     CardAction: {
       # keys, shapes and labels
-      div.shape: circle
       a.shape: circle
       svg.shape: circle
       # connections
-      div -> a
-      div -> svg: icon
+      a -> svg: icon
     }
 
     # connections
