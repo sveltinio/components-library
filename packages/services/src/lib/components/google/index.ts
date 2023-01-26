@@ -1,2 +1,4 @@
-export { default as GoogleAnalytics } from './GoogleAnalytics.svelte';
-export { default as GoogleFonts } from './GoogleFonts.svelte';
+import GoogleAnalytics from './GoogleAnalytics.svelte';
+import GoogleFonts from './GoogleFonts.svelte';
+
+export { GoogleAnalytics, GoogleFonts };

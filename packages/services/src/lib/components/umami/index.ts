@@ -1,1 +1,3 @@
-export { default as UmamiAnalytics } from './UmamiAnalytics.svelte';
+import UmamiAnalytics from './UmamiAnalytics.svelte';
+
+export { UmamiAnalytics };
