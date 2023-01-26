@@ -1,1 +1,2 @@
-export { default as ColorViewer } from './ColorViewer.svelte';
+import ColorViewer from './ColorViewer.svelte';
+export { ColorViewer };

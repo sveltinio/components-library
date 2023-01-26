@@ -1,1 +1,3 @@
-export { default as ToggleList } from './ToggleList.svelte';
+import ToggleList from './ToggleList.svelte';
+
+export { ToggleList };

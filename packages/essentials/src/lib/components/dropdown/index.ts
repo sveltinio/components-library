@@ -1,4 +1,6 @@
-export { default as Dropdown } from './Dropdown.svelte';
-export { default as DropdownButton } from './DropdownButton.svelte';
-export { default as DropdownContent } from './DropdownContent.svelte';
-export { default as DropdownItem } from './DropdownItem.svelte';
+import Dropdown from './Dropdown.svelte';
+import DropdownButton from './DropdownButton.svelte';
+import DropdownContent from './DropdownContent.svelte';
+import DropdownItem from './DropdownItem.svelte';
+
+export { Dropdown, DropdownButton, DropdownContent, DropdownItem };

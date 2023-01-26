@@ -1,2 +1,4 @@
-export { default as ButtonGroupItem } from './ButtonGroupItem.svelte';
-export { default as ButtonGroup } from './ButtonGroup.svelte';
+import ButtonGroupItem from './ButtonGroupItem.svelte';
+import ButtonGroup from './ButtonGroup.svelte';
+
+export { ButtonGroup, ButtonGroupItem };
