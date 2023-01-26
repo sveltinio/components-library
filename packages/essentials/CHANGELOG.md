@@ -1,5 +1,11 @@
 # @sveltinio/essentials
 
+## 0.5.2
+
+### Patch Changes
+
+- fix: re-exporting components as they are instead of 'as default'
+
 ## 0.5.1
 
 ### Patch Changes
