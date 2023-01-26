@@ -1,5 +1,11 @@
 # @sveltinio/media-content
 
+## 0.3.6
+
+### Patch Changes
+
+- fix: re-exporting components as they are instead of 'as default'
+
 ## 0.3.5
 
 ### Patch Changes
