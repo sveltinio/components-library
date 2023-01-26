@@ -7,6 +7,7 @@
 	export let showOnPx = 400;
 	export let iconColor = '#ffffff';
 	export let fillColor = '#4b5563';
+	export let bounce = true;
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
@@ -37,7 +38,8 @@
 	data-testid="scroll-to-top_main"
 >
 	<a
-		class="btn bounce"
+		class="btn"
+		class:bounce
 		data-testid="bounce-btn"
 		href="#top"
 		aria-label="Back to top"
