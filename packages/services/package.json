@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/services",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"private": false,
 	"packageManager": "pnpm@7.25.1",
 	"type": "module",

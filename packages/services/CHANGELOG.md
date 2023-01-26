@@ -1,5 +1,11 @@
 # @sveltinio/services
 
+## 0.3.2
+
+### Patch Changes
+
+- fix: re-exporting components as they are instead of 'as default'
+
 ## 0.3.1
 
 ### Patch Changes
