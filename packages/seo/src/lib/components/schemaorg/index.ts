@@ -1,4 +1,6 @@
-export { default as JsonLdBreadcrumbs } from './JsonLdBreadcrumbs.svelte';
-export { default as JsonLdSiteNavigationElements } from './JsonLdSiteNavigationElements.svelte';
-export { default as JsonLdWebPage } from './JsonLdWebPage.svelte';
-export { default as JsonLdWebSite } from './JsonLdWebSite.svelte';
+import JsonLdBreadcrumbs from './JsonLdBreadcrumbs.svelte';
+import JsonLdSiteNavigationElements from './JsonLdSiteNavigationElements.svelte';
+import JsonLdWebPage from './JsonLdWebPage.svelte';
+import JsonLdWebSite from './JsonLdWebSite.svelte';
+
+export { JsonLdBreadcrumbs, JsonLdSiteNavigationElements, JsonLdWebPage, JsonLdWebSite };
