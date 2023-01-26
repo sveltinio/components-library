@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/widgets",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"private": false,
 	"packageManager": "pnpm@7.25.1",
 	"type": "module",
