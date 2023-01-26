@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.2.1
+
+### Patch Changes
+
+- fix: re-exporting components as they are instead of 'as default'
+
 ## 0.2.0
 
 ### Minor Changes
