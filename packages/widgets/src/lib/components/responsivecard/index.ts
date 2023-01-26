@@ -1,5 +1,13 @@
-export { default as ResponsiveCard } from './ResponsiveCard.svelte';
-export { default as ResponsiveCardImage } from './CardImage.svelte';
-export { default as ResponsiveCardBadge } from './CardBadge.svelte';
-export { default as ResponsiveCardInfo } from './CardInfo.svelte';
-export { default as ResponsiveCardAction } from './CardAction.svelte';
+import ResponsiveCard from './ResponsiveCard.svelte';
+import ResponsiveCardAction from './CardAction.svelte';
+import ResponsiveCardBadge from './CardBadge.svelte';
+import ResponsiveCardImage from './CardImage.svelte';
+import ResponsiveCardInfo from './CardInfo.svelte';
+
+export {
+	ResponsiveCard,
+	ResponsiveCardAction,
+	ResponsiveCardBadge,
+	ResponsiveCardImage,
+	ResponsiveCardInfo
+};

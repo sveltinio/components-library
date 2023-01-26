@@ -1,1 +1,3 @@
-export { default as ScrollToTopButton } from './ScrollToTopButton.svelte';
+import ScrollToTopButton from './ScrollToTopButton.svelte';
+
+export { ScrollToTopButton };
