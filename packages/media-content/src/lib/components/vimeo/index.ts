@@ -1,1 +1,3 @@
-export { default as Vimeo } from './Vimeo.svelte';
+import Vimeo from './Vimeo.svelte';
+
+export { Vimeo };

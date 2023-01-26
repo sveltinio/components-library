@@ -1,1 +1,3 @@
-export { default as SlideShare } from './SlideShare.svelte';
+import SlideShare from './SlideShare.svelte';
+
+export { SlideShare };

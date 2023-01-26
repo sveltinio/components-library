@@ -1,2 +1,4 @@
-export { default as IFrame } from './IFrame.svelte';
-export { default as Thumbnail } from './Thumbnail.svelte';
+import IFrame from './IFrame.svelte';
+import Thumbnail from './Thumbnail.svelte';
+
+export { IFrame, Thumbnail };

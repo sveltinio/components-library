@@ -1,1 +1,3 @@
-export { default as CodeSandbox } from './CodeSandbox.svelte';
+import CodeSandbox from './CodeSandbox.svelte';
+
+export { CodeSandbox };

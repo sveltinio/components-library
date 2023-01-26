@@ -1,1 +1,3 @@
-export { default as StackBlitz } from './StackBlitz.svelte';
+import StackBlitz from './StackBlitz.svelte';
+
+export { StackBlitz };
