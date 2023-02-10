@@ -1,20 +1,24 @@
+<script lang="ts">
+	export let size: number;
+</script>
+
 <svg
-	width="18"
-	height="18"
+	xmlns="http://www.w3.org/2000/svg"
+	width={size}
+	height={size}
 	viewBox="0 0 24 24"
 	stroke-width="1.5"
 	fill="none"
-	xmlns="http://www.w3.org/2000/svg"
->
-	<path
-		d="M21 3L15 3M21 3L12 12M21 3V9"
+	><path
+		d="M21 3h-6m6 0l-9 9m9-9v6"
 		stroke="currentColor"
+		stroke-width="1.5"
 		stroke-linecap="round"
 		stroke-linejoin="round"
-	/>
-	<path
-		d="M21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H11"
+	/><path
+		d="M21 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h6"
 		stroke="currentColor"
+		stroke-width="1.5"
 		stroke-linecap="round"
 	/>
 </svg>

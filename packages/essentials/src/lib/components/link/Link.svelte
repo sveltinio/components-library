@@ -10,6 +10,7 @@
 	export let external = false;
 	export let prefetch = false;
 	export let icon = true;
+	export let iconSize = 12;
 	export let noOpener = true;
 	export let noReferrer = true;
 
@@ -42,17 +43,16 @@
 	aria-label={label}
 	data-testid="link"
 	{...$$restProps}
-	><span class="link__content">
-		{#if label != ''}
-			{label}
-		{:else}
-			<slot />
-		{/if}
+>
+	{#if label != ''}
+		{label}
+	{:else}
+		<slot />
+	{/if}
 
-		{#if externalIcon}
-			<slot name="icon">
-				<ExternalLinkIcon />
-			</slot>
-		{/if}
-	</span>
+	{#if externalIcon}
+		<slot name="icon">
+			<ExternalLinkIcon size={iconSize} />
+		</slot>
+	{/if}
 </a>
