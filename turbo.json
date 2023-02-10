@@ -10,9 +10,7 @@
 		"lint": {
 			"dependsOn": ["format"]
 		},
-		"test": {
-			"dependsOn": ["build"]
-		},
+		"test": {},
 		"test:packages": {
 			"dependsOn": ["build:packages"],
 			"cache": false

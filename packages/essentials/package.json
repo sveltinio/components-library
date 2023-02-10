@@ -88,9 +88,9 @@
 		"minify": "cross-env NODE_ENV=production node ./scripts/css-minifier.js",
 		"postbuild": "pnpm exec publint ./dist && pnpm minify",
 		"sync": "svelte-kit sync",
-		"test": "pnpm sync && vitest run",
-		"test:coverage": "pnpm sync && vitest run --coverage",
-		"test:watch": "pnpm sync && vitest watch",
+		"test": "pnpm build && vitest run",
+		"test:coverage": "pnpm build && vitest run --coverage",
+		"test:watch": "pnpm build && vitest watch",
 		"test:a11y": "rimraf a11y-results.json && pa11y-ci"
 	},
 	"types": "index.d.ts",
