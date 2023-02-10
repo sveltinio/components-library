@@ -2,7 +2,7 @@
 	"name": "@sveltinio/services",
 	"version": "0.3.2",
 	"private": false,
-	"packageManager": "pnpm@7.25.1",
+	"packageManager": "pnpm@7.27.0",
 	"type": "module",
 	"description": "A collection of Svelte components to use GoogleFonts, GoogleAnalytics ...",
 	"author": "dev <dev@sveltin.io>",
