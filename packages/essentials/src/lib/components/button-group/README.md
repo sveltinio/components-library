@@ -37,12 +37,12 @@ The `ButtonGroup` is an accessible (WAI-ARIA Accessibility Reference [1], [2]) c
 
 #### ButtonGroupItem
 
-| Property | Type   | Required | Default     | Description                                  |
-| :------- | :----: | :------: | :---------: |:-------------------------------------------- |
-| id       | string |   yes    |             | An unique identifier for the button          |
-| label    | string |   yes    |             | Set the label for the button                 |
-| icon     | any    |    no    | `undefined` |                                              |
-| position | string |    no    | `left`      | The icon position. One of: [`left`, `right`] |
+| Property | Type   | Required | Default     | Description                                      |
+| :------- | :----: | :------: | :---------: |:------------------------------------------------ |
+| id       | string |   yes    |             | An unique identifier for the button              |
+| label    | string |   yes    |             | Set the label for the button                     |
+| icon     | any    |    no    | `undefined` |                                                  |
+| position | string |    no    | `left`      | Set the icon position. One of: [`left`, `right`] |
 
 ### Styles
 
