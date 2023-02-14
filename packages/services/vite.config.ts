@@ -13,6 +13,8 @@ const config: UserConfig = {
 		}
 	},
 	resolve: {
+		// https://github.com/vitest-dev/vitest/issues/2834#issuecomment-1427435467
+		conditions: ['browser'],
 		alias: {
 			$tests: path.resolve('tests')
 		}
