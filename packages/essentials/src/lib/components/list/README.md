@@ -35,11 +35,11 @@ The `ToggleList` component exposes a set of properties but it does not prevent y
 
 ### Functionals
 
-| Property  |  Type            | Required | Default | Description                                                                          |
+| Property  | Type             | Required | Default | Description                                                                          |
 | :-------- | :--------------: | :------: | :-----: | :----------------------------------------------------------------------------------- |
-| title     | string           | yes      |         | The title for the List                                                               |
+| title     | `string`         | yes      |         | The title for the List                                                               |
 | items     | `Array<ListItem>`| yes      |         | An array of objects with `label`, `url` and `icon` props                             |
-| full      | boolean          | no       | `false` | If true, the full size of the container is used. The icons will be placed at the end |
+| full      | `boolean`        | no       | `false` | If true, the full size of the container is used. The icons will be placed at the end |
 
 **items** is an array of [ListItem] objects:
 
@@ -54,10 +54,10 @@ export type ListItem = {
 
 ### Styles
 
-| Property |  Type   | Required |   Default   | Description                                       |
-| :------- | :-----: | :------: | :---------: | :------------------------------------------------ |
-| class    | string  |    no    |             | The css class name used to make a theme variant   |
-| styles   | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles |
+| Property | Type     | Required | Default | Description                                       |
+| :------- | :------: | :------: | :-----: | :------------------------------------------------ |
+| class    | `string` |    no    |         | The css class name used to make a theme variant   |
+| styles   | `Object` |    no    | `{}`    | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 

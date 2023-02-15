@@ -38,16 +38,16 @@ The Dropdown components set exposes a set of properties.
 
 The `Dropdown` component is the main wrapper component.
 
-| Property | Type     | Required | Default  | Description         |
-| :------- | :------: | :------: | :------: |:------------------- |
-| isOpen   | boolean  | no       |          | show/hide the items |
+| Property | Type       | Required | Default | Description         |
+| :------- | :--------: | :------: | :-----: |:------------------- |
+| isOpen   | `boolean`  | no       |         | show/hide the items |
 
 ### Dropdown - Styles
 
-| Property |  Type   | Required |   Default   | Description                                       |
-| :------- | :-----: | :------: | :---------: | :------------------------------------------------ |
-| class    | string  |    no    |             | The css class name used to make a theme variant   |
-| styles   | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles |
+| Property | Type     | Required | Default | Description                                       |
+| :------- | :------: | :------: | :-----: | :------------------------------------------------ |
+| class    | `string` |    no    |         | The css class name used to make a theme variant   |
+| styles   | `Object` |    no    | `{}`    | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
@@ -55,30 +55,30 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 The `DropdownButton` component exposes the following properties:
 
-| Property | Type    | Required | Default  | Description       |
-| :------- | :-----: | :------: | :------: |:----------------- |
-| label    | string  | yes      |          | Button text       |
-| iconSize | number  | no       | 20       | Set the icon size |
+| Property | Type      | Required | Default | Description       |
+| :------- | :-------: | :------: | :-----: |:----------------- |
+| label    | `string`  | yes      |         | Button text       |
+| iconSize | `number`  | no       | `20`    | Set the icon size |
 
 ### DropdownContent
 
 The `DropdownContent` component exposes the following properties:
 
-| Property | Type    | Required | Default  | Description       |
-| :------- | :-----: | :------: | :------: |:----------------- |
-| absolute | boolean | no       | `false`  | Button text       |
+| Property | Type      | Required | Default | Description       |
+| :------- | :-------: | :------: | :-----: |:----------------- |
+| absolute | `boolean` | no       | `false` | Button text       |
 
 ### DropdownItem
 
 The `DropdownItem` component exposes the following properties:
 
-| Property | Type    | Required | Default  | Description                                 |
-| :------- | :-----: | :------: | :------: |:------------------------------------------- |
-| label    | string  | yes      |          | Item text                                   |
-| mode     | string  | no       | `button` | Render as button or link                    |
-| href     | string  | yes      |         | The URL of the page the link goes to        |
-| prefetch | boolean | no       | `yes`    | Enable `data-sveltekit-preload-data`        |
-| target   | string  | no       | `_self`  | Specifies where to open the linked document |
+| Property | Type      | Required | Default  | Description                                 |
+| :------- | :-------: | :------: | :------: |:------------------------------------------- |
+| label    | `string`  | yes      |          | Item text                                   |
+| mode     | `string`  | no       | `button` | Render as button or link                    |
+| href     | `string`  | yes      |          | The URL of the page the link goes to        |
+| prefetch | `boolean` | no       | `yes`    | Enable `data-sveltekit-preload-data`        |
+| target   | `string`  | no       | `_self`  | Specifies where to open the linked document |
 
 ## Slots
 

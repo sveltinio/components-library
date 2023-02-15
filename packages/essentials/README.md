@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Essentials Components</h1>
+    <h1>@sveltinio/essentials</h1>
     &nbsp;
     <a href="https://www.npmjs.com/package/@sveltinio/essentials" target="_blank"><img src="https://img.shields.io/npm/v/@sveltinio/essentials.svg?style=flat" alt="sveltinio/essentials NPM version badge" /></a>
 </div>

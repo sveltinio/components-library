@@ -29,29 +29,29 @@ The `ButtonGroup` is an accessible (WAI-ARIA Accessibility Reference [1], [2]) c
 
 #### ButtonGroup
 
-| Property     | Type    | Required | Default      | Description                                                                  |
-| :----------- | :-----: | :------: | :----------: |:---------------------------------------------------------------------------- |
-| activeButton | string  |    no    | empty string | show/hide the items                                                          |
-| size         | string  |    no    | `base`       | Set the label size. One of: [`xs`, `sm`, `base`, `md`, `lg`]                 |
-| responsive   | boolean |   no     | `false`      | If true, vertical on small screen and horizontal on medium and large screens |
+| Property     | Type      | Required | Default | Description                                                                  |
+| :----------- | :-------: | :------: | :-----: |:---------------------------------------------------------------------------- |
+| activeButton | `string`  |    no    |         | Set the active button                                                        |
+| size         | `string`  |    no    | `base`  | Set the label size. One of: [`xs`, `sm`, `base`, `md`, `lg`]                 |
+| responsive   | `boolean` |    no    | `false` | If true, vertical on small screen and horizontal on medium and large screens |
 
 #### ButtonGroupItem
 
-| Property | Type   | Required | Default     | Description                                      |
-| :------- | :----: | :------: | :---------: |:------------------------------------------------ |
-| id       | string |   yes    |             | An unique identifier for the button              |
-| label    | string |   yes    |             | Set the label for the button                     |
-| icon     | any    |    no    | `undefined` |                                                  |
-| position | string |    no    | `left`      | Set the icon position. One of: [`left`, `right`] |
+| Property | Type     | Required | Default     | Description                                      |
+| :------- | :------: | :------: | :---------: |:------------------------------------------------ |
+| id       | `string` |   yes    |             | An unique identifier for the button              |
+| label    | `string` |   yes    |             | Set the label for the button                     |
+| icon     | `any`    |    no    | `undefined` |                                                  |
+| position | `string` |    no    | `left`      | Set the icon position. One of: [`left`, `right`] |
 
 ### Styles
 
 #### ButtonGroup
 
-| Property |  Type   | Required |   Default   | Description                                       |
-| :------- | :-----: | :------: | :---------: | :------------------------------------------------ |
-| class    | string  |    no    |             | The css class name used to make a theme variant   |
-| styles   | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles |
+| Property |  Type     | Required | Default | Description                                       |
+| :------- | :-------: | :------: | :-----: | :------------------------------------------------ |
+| class    | `string`  |    no    |         | The css class name used to make a theme variant   |
+| styles   | `Object`  |    no    | `{}`    | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 

@@ -23,20 +23,20 @@ The `ColorViewer` component exposes a set of properties but it does not prevent 
 
 ### Functionals
 
-| Property   |  Type   | Required | Default  | Description                                       |
-| :--------- | :-----: | :------: | :------- | :------------------------------------------------ |
-| value      | string  |    no    |          | Sets the emement's background color               |
-| labelColor | string  |    no    |          | If false, hide the color value string             |
-| showLabel  | boolean |    no    | true     | If false, hide the color value string             |
-| size       | integer |    no    | 16       | Size in pixels                                    |
-| border     | boolean |    no    | true     | If true, sets the element's border                |
+| Property   |  Type     | Required | Default | Description                                       |
+| :--------- | :-------: | :------: | :------ | :------------------------------------------------ |
+| value      | `string`  |    no    |         | Sets the emement's background color               |
+| labelColor | `string`  |    no    |         | If false, hide the color value string             |
+| showLabel  | `boolean` |    no    | `true`  | If false, hide the color value string             |
+| size       | `integer` |    no    | `16`    | Size in pixels                                    |
+| border     | `boolean` |    no    | `true`  | If true, sets the element's border                |
 
 ### Styles
 
-| Property |  Type   | Required |   Default   | Description                                       |
-| :------- | :-----: | :------: | :---------: | :------------------------------------------------ |
-| class    | string  |    no    |             | The css class name used to make a theme variant   |
-| styles   | Object  |    no    |     `{}`    | Used to pass CSS variables to apply custom styles |
+| Property |  Type     | Required | Default | Description                                       |
+| :------- | :-------: | :------: | :-----: | :------------------------------------------------ |
+| class    | `string`  |    no    |         | The css class name used to make a theme variant   |
+| styles   | `Object`  |    no    | `{}`    | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 

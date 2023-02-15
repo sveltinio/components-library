@@ -46,29 +46,29 @@ The `Button` component exposes a set of properties to allow its configuration.
 
 ### Functionals
 
-| Property      |  Type   | Required | Default       | Description                                                                              |
-| :------------ | :-----: | :------: | :-----------: | :--------------------------------------------------------------------------------------- |
-| label         | string  |    no    | Button Text   | Set the label for the button                                                             |
-| alt           | string  |    no    | `label` value | Set the `aria-label` attribute                                                           |
-| type          | string  |    no    | `default`     | Button type (primary, secondary, error, success, ...)                                    |
-| size          | string  |    no    | `base`        | Set the button size (xs, sm, base, md or lg)                                             |
-| border        | string  |    no    | `solid`       | Set the border style (solid, dashaed, dotted, ...)                                       |
-| disabled      | boolean |    no    | `false`       | If true, the `button` is unusable and un-clickable. <br/>Set `aria-disabled` accordingly |
-| outlined      | boolean |    no    | `false`       | White background button with the border                                                  |
-| rounded       | boolean |    no    | `false`       | Rounded button                                                                           |
-| circular      | boolean |    no    | `false`       | Full circular button                                                                     |
-| fullSize      | boolean |    no    | `false`       | Will take the full width of the container                                                |
-| withFocusRing | boolean |    no    | `false`       | If true, a ring will be displayed when the button has the focus                          |
-| href          | string  |    no    |               | If set, the component renders an `a` alement and link's destination                      |
-| prefetch      | boolean |    no    | `false`       | Enable data-sveltekit-prefetch for the link                                              |
-| external      | boolean |    no    | `false`       | If true, opens the linked document in a new window or tab                                |
+| Property      |  Type     | Required | Default       | Description                                                                              |
+| :------------ | :-------: | :------: | :-----------: | :--------------------------------------------------------------------------------------- |
+| label         | `string`  |    no    | `Button Text` | Set the label for the button                                                             |
+| alt           | `string`  |    no    | `label` value | Set the `aria-label` attribute                                                           |
+| type          | `string`  |    no    | `default`     | Button type (primary, secondary, error, success, ...)                                    |
+| size          | `string`  |    no    | `base`        | Set the button size (xs, sm, base, md or lg)                                             |
+| border        | `string`  |    no    | `solid`       | Set the border style (solid, dashaed, dotted, ...)                                       |
+| disabled      | `boolean` |    no    | `false`       | If true, the `button` is unusable and un-clickable. <br/>Set `aria-disabled` accordingly |
+| outlined      | `boolean` |    no    | `false`       | White background button with the border                                                  |
+| rounded       | `boolean` |    no    | `false`       | Rounded button                                                                           |
+| circular      | `boolean` |    no    | `false`       | Full circular button                                                                     |
+| fullSize      | `boolean` |    no    | `false`       | Will take the full width of the container                                                |
+| withFocusRing | `boolean` |    no    | `false`       | If true, a ring will be displayed when the button has the focus                          |
+| href          | `string`  |    no    |               | If set, the component renders an `a` alement and link's destination                      |
+| prefetch      | `boolean` |    no    | `false`       | Enable data-sveltekit-prefetch for the link                                              |
+| external      | `boolean` |    no    | `false`       | If true, opens the linked document in a new window or tab                                |
 
 ### Styles
 
-| Property |  Type   | Required |   Default   | Description                                       |
-| :------- | :-----: | :------: | :---------: | :------------------------------------------------ |
-| class    | string  |    no    |             | The css class name used to make a theme variant   |
-| styles   | Object  |    no    |  `{}`       | Used to pass CSS variables to apply custom styles |
+| Property |  Type     | Required | Default | Description                                       |
+| :------- | :-------: | :------: | :-----: | :------------------------------------------------ |
+| class    | `string`  |    no    |         | The css class name used to make a theme variant   |
+| styles   | `Object`  |    no    |  `{}`   | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
