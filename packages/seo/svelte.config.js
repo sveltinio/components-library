@@ -6,7 +6,7 @@ const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: preprocess({
-		postcss: true
+		preserve: ['ld+json']
 	}),
 
 	kit: {
@@ -14,7 +14,13 @@ const config = {
 	},
 	package: {
 		dir: 'dist',
-		emitTypes: true
+		emitTypes: true,
+		// files to not be part of the package
+		files: (filepath) => {
+			const ds = /.DS_Store/;
+			const mdFiles = /^_|\/_|\.md$/;
+			return !ds.test(filepath) && !mdFiles.test(filepath);
+		}
 	}
 };
 

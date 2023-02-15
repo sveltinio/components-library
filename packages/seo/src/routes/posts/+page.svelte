@@ -1,14 +1,20 @@
 <script lang="ts">
-	import JsonLdBreadcrumbs from '$lib/components/schemaorg/JsonLdBreadcrumbs.svelte';
-	import { JsonLdWebPage, PageMetaTags } from '$lib/index.js';
+	import {
+		JsonLdWebPage,
+		PageMetaTags,
+		JsonLdBreadcrumbs,
+		JsonLdSiteNavigationElements
+	} from '$lib/index.js';
+	import { page } from '$app/stores';
 
-	import { website, sampleArticle } from '../../data/sample.js';
+	import { website, sampleArticle, menu } from '../../data/sample.js';
 </script>
 
 <!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->
 <PageMetaTags data={sampleArticle} />
 <JsonLdWebPage data={sampleArticle} />
-<JsonLdBreadcrumbs baseURL={website.baseURL} parent="posts" current="Getting Started" />
+<JsonLdBreadcrumbs url={$page.url.href} />
+<JsonLdSiteNavigationElements baseURL={website.baseURL} data={menu} />
 <!-- END OF USAGE NOTE -->
 
 <section class="main">

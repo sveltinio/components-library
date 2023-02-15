@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {
-		JsonLdSiteNavigationElements,
+		JsonLdSiteNavigationElement,
 		JsonLdWebPage,
 		JsonLdWebSite,
 		PageMetaTags
@@ -12,7 +12,7 @@
 <!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->
 <PageMetaTags data={homePage} />
 <JsonLdWebSite data={website} />
-<JsonLdSiteNavigationElements data={website} menuData={menu} />
+<JsonLdSiteNavigationElement baseURL={website.baseURL} data={menu} />
 <JsonLdWebPage data={homePage} />
 <!-- END OF USAGE NOTE -->
 

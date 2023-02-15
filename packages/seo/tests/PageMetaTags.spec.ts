@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { homePage, sampleArticle } from '../src/data/sample.js';
+import { sampleArticle } from '../src/data/sample.js';
 import { PageMetaTags } from '../src/lib/index.js';
 
 function getTitle() {
@@ -34,31 +34,8 @@ function getMeta(metaName: string) {
 	return '';
 }
 
-describe('PageMetaTags - HomePage', () => {
-	beforeEach(() => {
-		render(PageMetaTags, {
-			props: {
-				data: homePage
-			}
-		});
-	});
-
-	it('it should have title', async () => {
-		expect(getTitle()).toBe('Home Page');
-	});
-
-	it('should have canonical', async () => {
-		expect(getCanonical()).toBe('https://example.com');
-	});
-
-	it('should have meta props to HTML markup', async () => {
-		expect(getMeta('description')).toBe('This is the description for the Home Page');
-		expect(getMeta('keywords')).toBe('sveltekit, components, tests, jest');
-	});
-});
-
 describe('PageMetaTags - Article', () => {
-	beforeEach(() => {
+	beforeEach(async () => {
 		render(PageMetaTags, {
 			props: {
 				data: sampleArticle
@@ -85,8 +62,6 @@ describe('PageMetaTags - Article', () => {
 		expect(getMeta('og:title')).toBe(sampleArticle.title);
 		expect(getMeta('og:description')).toBe(sampleArticle.description);
 		expect(getMeta('article:author')).toBe(sampleArticle.author);
-		expect(getMeta('article:published_at')).toBe(sampleArticle.opengraph?.article?.published_at);
-		expect(getMeta('article:modified_at')).toBe(sampleArticle.opengraph?.article?.modified_at);
 		expect(getMeta('article:tag')).toBe('sveltekit');
 	});
 

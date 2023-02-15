@@ -1,5 +1,5 @@
 import { OpenGraphType, TwitterCardType } from '$lib/types.js';
-import type { SEOWebPageMetadata, SEOMenuItem, SEOWebSite } from '$lib/types.js';
+import type { SEOWebPage, SEOMenuItem, SEOWebSite } from '$lib/types.js';
 
 const website: SEOWebSite = {
 	name: 'example.com',
@@ -12,23 +12,29 @@ const website: SEOWebSite = {
 	seoDescription: 'Sample enhanced text for SEO purpose',
 	favicon: 'favicon.ico',
 	copyright: 'MIT License @ 2021-present example.com',
-	keywords: 'sveltekit, components, tests, jest',
+	keywords: ['sveltekit, components, tests, jest'],
 	contactEmail: '',
 	socials: {
-		github: 'https://github.com/sveltinio'
+		github: 'https://github.com/examplecom'
 	},
-	webmaster: {
-		name: 'indaco',
-		address: 'Somewhere, World (Milky Way)',
-		contactEmail: 'github@mircoveltri.me'
+	creator: {
+		name: 'username',
+		email: 'github@example.com',
+		url: 'https://yourwebgarder.com',
+		jobTitle: 'webmaster',
+		address: {
+			city: 'City',
+			state: 'CI',
+			streetAddress: 'somewhere 101'
+		}
 	}
 };
 
-const homePage: SEOWebPageMetadata = {
+const homePage: SEOWebPage = {
 	url: website.baseURL,
 	title: 'Home Page',
 	description: 'This is the description for the Home Page',
-	keywords: 'sveltekit, components, tests, jest',
+	keywords: ['sveltekit, components, tests, jest'],
 	opengraph: {
 		type: OpenGraphType.Website
 	},
@@ -37,17 +43,18 @@ const homePage: SEOWebPageMetadata = {
 	}
 };
 
-const sampleArticle: SEOWebPageMetadata = {
-	url: website.baseURL + '/posts/' + 'getting-started',
+const sampleArticle: SEOWebPage = {
+	url: website.baseURL + '/posts/getting-started',
 	title: 'Getting Started Article',
 	description: 'This is the description for the Getting Started Article',
 	author: 'Mirco Veltri',
-	keywords: 'sveltekit, components, tests, jest',
+	keywords: ['sveltekit, components, tests, jest'],
 	opengraph: {
 		type: OpenGraphType.Article,
 		article: {
-			published_at: '23-01-2022',
-			modified_at: '24-01-2022'
+			tags: ['sveltekit'],
+			published_at: new Date('23-01-2022'),
+			modified_at: new Date('24-01-2022')
 		}
 	},
 	twitter: {

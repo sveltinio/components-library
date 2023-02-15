@@ -1,30 +1,33 @@
 import '@testing-library/jest-dom';
-import { describe, it, expect } from 'vitest';
+import { beforeEach, describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { website } from '../src/data/sample.js';
 import { JsonLdBreadcrumbs } from '../src/lib/index.js';
 
-function getScripts(scriptType: string): string {
+function getScripts(scriptType: string, dataTestId: string): string {
 	const scripts = document.getElementsByTagName('script');
 	for (let i = 0; i < scripts.length; i += 1) {
-		if (scripts[i].getAttribute('type') === scriptType) {
-			return scripts[i].innerText;
+		if (
+			scripts[i].getAttribute('type') === scriptType &&
+			scripts[i].getAttribute('data-testid') === dataTestId
+		) {
+			return scripts[i].text;
 		}
 	}
 	return '';
 }
 
+beforeEach(() => {
+	render(JsonLdBreadcrumbs, {
+		props: {
+			url: `${website.baseURL}/home`
+		}
+	});
+});
+
 describe('JsonLdBreadcrumbs', () => {
 	it('should have jsonld BreadcrumbList object with props', async () => {
-		render(JsonLdBreadcrumbs, {
-			props: {
-				baseURL: website.baseURL,
-				parent: '',
-				current: 'Home'
-			}
-		});
-
-		const jsonLdScript = getScripts('application/ld+json');
+		const jsonLdScript = getScripts('application/ld+json', 'jsonld-breadcrumbs');
 		const jsonLdString = JSON.parse(jsonLdScript);
 
 		expect(jsonLdString['@type']).toBe('BreadcrumbList');
@@ -32,32 +35,18 @@ describe('JsonLdBreadcrumbs', () => {
 	});
 
 	it('should have home element', async () => {
-		render(JsonLdBreadcrumbs, {
-			props: {
-				baseURL: website.baseURL,
-				parent: '',
-				current: 'Home'
-			}
-		});
-		const jsonLdScript = getScripts('application/ld+json');
+		const jsonLdScript = getScripts('application/ld+json', 'jsonld-breadcrumbs');
 		const jsonLdString = JSON.parse(jsonLdScript);
 
 		const homeElement = jsonLdString.itemListElement[0];
 		expect(homeElement['@type']).toBe('ListItem');
 		expect(homeElement.position).toBe(1);
 		expect(homeElement.name).toBe('Home');
-		expect(homeElement.item).toBe('https://example.com');
+		expect(homeElement.url).toBe('https://example.com');
 	});
 
 	it('should have about element', async () => {
-		render(JsonLdBreadcrumbs, {
-			props: {
-				baseURL: website.baseURL,
-				parent: '',
-				current: 'About'
-			}
-		});
-		const jsonLdScript = getScripts('application/ld+json');
+		const jsonLdScript = getScripts('application/ld+json', 'jsonld-breadcrumbs');
 		const jsonLdString = JSON.parse(jsonLdScript);
 
 		const aboutElement = jsonLdString.itemListElement[1];

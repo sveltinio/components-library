@@ -5,24 +5,18 @@ export type SEOWebSite = {
 	title: string;
 	slogan?: string;
 	description: string;
-	seoDescription: string;
-	favicon: string;
-	logo: string;
-	copyright: string;
-	keywords: string;
-	contactEmail: string;
+	seoDescription?: string;
+	favicon?: string;
+	logo?: string;
+	copyright?: string;
+	keywords?: Array<string>;
+	contactEmail?: string;
 	socials?: Socials;
-	webmaster?: WebMaster;
+	creator?: SEOPerson | SEOOrganization;
 };
 
 export type Socials = {
 	[key: string]: string;
-};
-
-export type WebMaster = {
-	name: string;
-	address: string;
-	contactEmail: string;
 };
 
 export type SEOMenuItem = {
@@ -34,22 +28,56 @@ export type SEOMenuItem = {
 	children?: Array<SEOMenuItem>;
 };
 
-export type SEOWebPageMetadata = {
+export type SEOWebPage = {
 	url: string;
 	title: string;
 	description?: string;
 	author?: string;
-	keywords?: string;
+	keywords?: Array<string>;
 	image?: string;
 	imageAlt?: string;
 	opengraph?: OpenGraph;
 	twitter?: TwitterCard;
 };
 
+export type SEOAddress = {
+	city?: string;
+	state?: string;
+	postalCode?: string;
+	streetAddress?: string;
+};
+
+export type SEOContact = {
+	name?: string;
+	jobTitle?: string;
+	email?: string;
+	telephone?: string;
+	url?: string;
+	address?: SEOAddress | string;
+};
+
+export type SEOPerson = SEOContact;
+
+export type SEOOrganization = SEOContact;
+
+/**
+ * * OpenGraph
+ */
 export enum EnumOpenGraphType {
 	Website = 'website',
 	Article = 'article',
-	Book = 'book'
+	Book = 'book',
+	Business = 'business.business',
+	Product = 'product',
+	Profile = 'profile',
+	MusicSong = 'music.song',
+	MusicAlbum = 'music.album',
+	MusicPlaylist = 'music.playlist',
+	MusicRadioStation = 'music.radio_station',
+	VideoMovie = 'video.movie',
+	VideoEpisode = 'video.episode',
+	VideoTVShow = 'video.tv_show',
+	VideoOther = 'video.other'
 }
 
 export enum EnumOpenGraphProfileGender {
@@ -60,7 +88,18 @@ export enum EnumOpenGraphProfileGender {
 export const OpenGraphType: typeof EnumOpenGraphType = {
 	Website: EnumOpenGraphType.Website,
 	Article: EnumOpenGraphType.Article,
-	Book: EnumOpenGraphType.Book
+	Book: EnumOpenGraphType.Book,
+	Business: EnumOpenGraphType.Business,
+	Product: EnumOpenGraphType.Product,
+	Profile: EnumOpenGraphType.Profile,
+	MusicSong: EnumOpenGraphType.MusicSong,
+	MusicAlbum: EnumOpenGraphType.MusicAlbum,
+	MusicPlaylist: EnumOpenGraphType.MusicPlaylist,
+	MusicRadioStation: EnumOpenGraphType.MusicRadioStation,
+	VideoMovie: EnumOpenGraphType.VideoMovie,
+	VideoEpisode: EnumOpenGraphType.VideoEpisode,
+	VideoTVShow: EnumOpenGraphType.VideoTVShow,
+	VideoOther: EnumOpenGraphType.VideoOther
 };
 
 export const OpenGraphProfileGender: typeof EnumOpenGraphProfileGender = {
@@ -72,51 +111,104 @@ export type OpenGraph = {
 	type: string;
 	article?: OpenGraphArticle;
 	book?: OpenGraphBook;
+	business?: OpenGraphBusiness;
+	product?: OpenGraphProduct;
 	profile?: OpenGraphProfile;
-	album?: OpenGraphMusicAlbum;
 	song?: OpenGraphMusicSong;
+	album?: OpenGraphMusicAlbum;
+	playlist?: OpenGraphMusicPlaylist;
+	radioStation?: OpenGraphMusicRadioStation;
+	movie?: OpenGraphVideoMovie;
+	episode?: OpenGraphVideoEpisode;
+	tvShow?: OpenGraphVideoTVShow;
 };
 
 export type OpenGraphArticle = {
-	published_at?: string;
-	modified_at?: string;
-	expiration_time?: string;
+	published_at?: Date;
+	modified_at?: Date;
+	expiration_time?: Date;
 	section?: string;
 	tags?: Array<string>;
 };
 
 export type OpenGraphBook = {
 	author: string;
-	isbn: string;
-	release_date: string;
-	tags: Array<string>;
+	isbn?: string;
+	release_date?: Date;
+	tags?: Array<string>;
+};
+
+export type OpenGraphBusiness = {
+	street_address?: string;
+	city?: string;
+	state?: string;
+	postal_code?: number;
+	country?: string;
+};
+
+export type OpenGraphProduct = {
+	plural_title?: string;
+	price?: number;
+	currency?: string;
 };
 
 export type OpenGraphProfile = {
-	first_name: string;
-	last_name: string;
-	username: string;
+	url: string;
+	first_name?: string;
+	last_name?: string;
+	username?: string;
 	gender?: EnumOpenGraphProfileGender;
 };
 
-export type OpenGraphMusicAlbum = {
-	song: OpenGraphMusicSong;
-	disc: number;
-	track: number;
-	musician: OpenGraphProfile;
-	release_data: string;
+type OpenGraphMusic = {
+	url: string;
+	disc?: number;
+	track?: number;
 };
 
-export type OpenGraphMusicSong = {
-	duration: number;
-	album: OpenGraphMusicAlbum;
-	disc: number;
-	track: number;
-	musician: Array<OpenGraphProfile>;
+export type OpenGraphMusicSong = OpenGraphMusic & {
+	duration?: number;
+	album?: Array<OpenGraphMusicAlbum>;
+	musician?: Array<OpenGraphProfile>;
+};
+
+export type OpenGraphMusicAlbum = OpenGraphMusic & {
+	songs?: Array<OpenGraphMusicSong>;
+	musicians?: Array<OpenGraphProfile>;
+	release_date?: Date;
+};
+
+export type OpenGraphMusicPlaylist = OpenGraphMusic & {
+	song?: OpenGraphMusicSong;
+	creator?: OpenGraphProfile;
+};
+
+export type OpenGraphMusicRadioStation = {
+	creator?: OpenGraphProfile;
+};
+
+type OpenGraphVideo = {
+	actor?: Array<OpenGraphProfile>;
+	actorRole?: string;
+	director?: Array<OpenGraphProfile>;
+	writer?: Array<OpenGraphProfile>;
+	duration?: number;
+	release_date?: Date;
+	tags?: Array<string>;
+};
+
+export type OpenGraphVideoMovie = OpenGraphVideo;
+
+export type OpenGraphVideoTVShow = OpenGraphVideo;
+
+export type OpenGraphVideoOther = OpenGraphVideo;
+
+export type OpenGraphVideoEpisode = OpenGraphVideo & {
+	series: OpenGraphVideoTVShow;
 };
 
 /**
- * EnumTwitterCardType
+ * * EnumTwitterCardType
  *
  * * Enumation with different TwitterCard types:
  * * https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
@@ -141,7 +233,8 @@ export const TwitterCardType: typeof EnumTwitterCardType = {
 };
 
 /**
- * TwitterCard
+ * * TwitterCard
+ *
  * @param type The card type: summary | summary_large_image | player | app
  * @param site (otional) The Twitter @username the card should be attributed to.
  * @param player (optional) A Card that can display video/audio/media
@@ -155,7 +248,8 @@ export type TwitterCard = {
 };
 
 /**
- * TwitterPlayer
+ * * TwitterPlayer
+ *
  * * https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/player-card
  * @param url HTTPS URL to iFrame player
  * @param width Width of iFrame specified in twitter:player in pixels
@@ -168,8 +262,9 @@ export type TwitterPlayer = {
 };
 
 /**
- * ITwitterApp
- *  * https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/app-card
+ * * ITwitterApp
+ *
+ * * https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/app-card
  * @param country (optional)
  * @param idIPhone String value, the numeric representation of your app ID in the App Store
  * @param idIPad String value, the numeric representation of your app ID in the App Store
@@ -181,201 +276,3 @@ export type TwitterApp = {
 	idIPad: string;
 	idGooglePlay: string;
 };
-
-interface ISchemaOrg {
-	toJsonLdObject(): Record<string, unknown>;
-}
-
-/**
- *  * JsonLdWebPage
- */
-export class JsonLdWebPage implements ISchemaOrg {
-	public title!: string;
-	public description!: string;
-	public author?: string;
-
-	toJsonLdObject(): Record<string, unknown> {
-		let resObj = undefined;
-		const obj = {
-			'@context': 'https://schema.org',
-			'@type': 'WebPage',
-			name: this.title,
-			description: this.description
-		};
-
-		if (this.author) {
-			const obj2 = {
-				author: this.author
-			};
-			resObj = { ...obj, ...obj2 };
-		} else {
-			resObj = obj;
-		}
-
-		return resObj;
-	}
-}
-
-/**
- * * JsonLdWebPageMaker
- */
-export class JsonLdWebPageMaker {
-	static make() {
-		return new JsonLdWebPage();
-	}
-
-	static makeWithValues(title: string, description: string, author?: string) {
-		const item = this.make();
-		item.title = title;
-		item.description = description;
-
-		if (author) item.author = author;
-
-		return item;
-	}
-}
-
-/**
- * * JsonLdSiteNavigationElement
- */
-
-export class JsonLdSiteNavigationElement implements ISchemaOrg {
-	public position!: number;
-	public name!: string;
-	public description!: string;
-	public url!: string;
-
-	toJsonLdObject(): Record<string, unknown> {
-		return {
-			'@type': 'SiteNavigationElement',
-			position: this.position,
-			name: this.name,
-			description: this.description,
-			url: this.url
-		};
-	}
-}
-
-/**
- *  * JsonLdSiteNavigationElementMaker
- */
-export class JsonLdSiteNavigationElementMaker {
-	static make() {
-		return new JsonLdSiteNavigationElement();
-	}
-
-	static makeWithValues(position: number, name: string, description: string, url: string) {
-		const item = this.make();
-		item.position = position;
-		item.name = name;
-		item.description = description;
-		item.url = url;
-		return item;
-	}
-}
-
-/**
- * * JsonLdSiteNavigationElementList
- */
-export class JsonLdSiteNavigationElementList implements ISchemaOrg {
-	public items!: Array<JsonLdSiteNavigationElement>;
-
-	toJsonLdObject(): Record<string, unknown> {
-		const elementListAsJsonString = Array<Record<string, unknown>>();
-		this.items.forEach((item) => {
-			elementListAsJsonString.push(item.toJsonLdObject());
-		});
-
-		return {
-			'@context': 'https://schema.org',
-			'@type': 'ItemList',
-			itemListElement: elementListAsJsonString
-		};
-	}
-}
-
-/**
- * * JsonLdSiteNavigationElementListMaker
- */
-export class JsonLdSiteNavigationElementListMaker {
-	static make() {
-		return new JsonLdSiteNavigationElementList();
-	}
-
-	static makeWithValues(items: Array<JsonLdSiteNavigationElement>) {
-		const obj = this.make();
-		obj.items = items;
-		return obj;
-	}
-}
-
-/**
- * * JsonLdBreadcrumbsItem
- */
-export class JsonLdBreadcrumbsItem implements ISchemaOrg {
-	public position!: number;
-	public name!: string;
-	public url!: string;
-
-	toJsonLdObject(): Record<string, unknown> {
-		return {
-			'@type': 'ListItem',
-			position: this.position,
-			name: this.name,
-			item: this.url
-		};
-	}
-}
-
-/**
- * * JsonLdBreadcrumbsItemMaker
- */
-export class JsonLdBreadcrumbsItemMaker {
-	static make() {
-		return new JsonLdBreadcrumbsItem();
-	}
-
-	static makeWithValues(position: number, name: string, url: string) {
-		const item = this.make();
-		item.position = position;
-		item.name = name;
-		item.url = url;
-
-		return item;
-	}
-}
-
-/**
- * * JsonLdBreadcrumbsList
- */
-export class JsonLdBreadcrumbsList implements ISchemaOrg {
-	public items!: Array<JsonLdBreadcrumbsItem>;
-
-	toJsonLdObject(): Record<string, unknown> {
-		const elementListAsJsonString = Array<Record<string, unknown>>();
-		this.items.forEach((item) => {
-			elementListAsJsonString.push(item.toJsonLdObject());
-		});
-
-		return {
-			'@context': 'https://schema.org',
-			'@type': 'BreadcrumbList',
-			itemListElement: elementListAsJsonString
-		};
-	}
-}
-
-/**
- * * JsonLdBreadcrumbsListMaker
- */
-export class JsonLdBreadcrumbsListMaker {
-	static make() {
-		return new JsonLdBreadcrumbsList();
-	}
-
-	static makeWithValues(items: Array<JsonLdBreadcrumbsItem>) {
-		const obj = this.make();
-		obj.items = items;
-		return obj;
-	}
-}

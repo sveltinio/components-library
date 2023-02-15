@@ -1,31 +1,31 @@
 import '@testing-library/jest-dom';
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { menu, website } from '../src/data/sample.js';
 import { JsonLdSiteNavigationElements } from '../src/lib/index.js';
 
-function getScripts(scriptType: string): string {
+function getScripts(scriptType: string, dataTestId: string): string {
 	const scripts = document.getElementsByTagName('script');
 	for (let i = 0; i < scripts.length; i += 1) {
-		if (scripts[i].getAttribute('type') === scriptType) {
-			return scripts[i].innerText;
+		if (
+			scripts[i].getAttribute('type') === scriptType &&
+			scripts[i].getAttribute('data-testid') === dataTestId
+		) {
+			return scripts[i].text;
 		}
 	}
 	return '';
 }
 
-beforeEach(() => {
-	render(JsonLdSiteNavigationElements, {
-		props: {
-			data: website,
-			menuData: menu
-		}
-	});
-});
-
 describe('JsonLdSiteNavigationElements', () => {
 	it('should have jsonld ItemList object with props', async () => {
-		const jsonLdScript = getScripts('application/ld+json');
+		render(JsonLdSiteNavigationElements, {
+			props: {
+				baseURL: website.baseURL,
+				data: menu
+			}
+		});
+		const jsonLdScript = getScripts('application/ld+json', 'jsonld-sitenavigationelement');
 		const jsonLdString = JSON.parse(jsonLdScript);
 
 		expect(jsonLdString['@type']).toBe('ItemList');
@@ -33,7 +33,13 @@ describe('JsonLdSiteNavigationElements', () => {
 	});
 
 	it('should have home element', async () => {
-		const jsonLdScript = getScripts('application/ld+json');
+		render(JsonLdSiteNavigationElements, {
+			props: {
+				baseURL: website.baseURL,
+				data: menu
+			}
+		});
+		const jsonLdScript = getScripts('application/ld+json', 'jsonld-sitenavigationelement');
 		const jsonLdString = JSON.parse(jsonLdScript);
 
 		const homeElement = jsonLdString.itemListElement[0];
@@ -43,7 +49,13 @@ describe('JsonLdSiteNavigationElements', () => {
 	});
 
 	it('should have about element', async () => {
-		const jsonLdScript = getScripts('application/ld+json');
+		render(JsonLdSiteNavigationElements, {
+			props: {
+				baseURL: website.baseURL,
+				data: menu
+			}
+		});
+		const jsonLdScript = getScripts('application/ld+json', 'jsonld-sitenavigationelement');
 		const jsonLdString = JSON.parse(jsonLdScript);
 
 		const aboutElement = jsonLdString.itemListElement[1];
@@ -53,7 +65,13 @@ describe('JsonLdSiteNavigationElements', () => {
 	});
 
 	it('should have element with external link', async () => {
-		const jsonLdScript = getScripts('application/ld+json');
+		render(JsonLdSiteNavigationElements, {
+			props: {
+				baseURL: website.baseURL,
+				data: menu
+			}
+		});
+		const jsonLdScript = getScripts('application/ld+json', 'jsonld-sitenavigationelement');
 		const jsonLdString = JSON.parse(jsonLdScript);
 
 		const githubElement = jsonLdString.itemListElement[2];

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { SEOWebPageMetadata } from '../../types.js';
-	import { TwitterCardType } from '../../types.js';
+	import type { SEOWebPage } from '../../../types.js';
+	import { TwitterCardType } from '../../../types.js';
 
-	export let data: SEOWebPageMetadata;
+	export let data: SEOWebPage;
 </script>
 
 <svelte:head>
