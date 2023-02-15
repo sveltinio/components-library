@@ -8,25 +8,15 @@ export const getFullScriptTagbyId = (scriptId: string): HTMLScriptElement => {
 	return new HTMLScriptElement();
 };
 
-export const getScriptTagById = (scriptId: string): boolean => {
+export function getScriptsByTestId(dataTestId: string): HTMLScriptElement | undefined {
 	const scripts = document.getElementsByTagName('script');
 	for (let i = 0; i < scripts.length; i += 1) {
-		if (scripts[i].getAttribute('id') === scriptId) {
-			return true;
+		if (scripts[i].getAttribute('data-testid') === dataTestId) {
+			return scripts[i];
 		}
 	}
-	return false;
-};
-
-export const getScriptSrcById = (scriptId: string): string | null => {
-	const scripts = document.getElementsByTagName('script');
-	for (let i = 0; i < scripts.length; i += 1) {
-		if (scripts[i].getAttribute('id') === scriptId) {
-			return scripts[i].getAttribute('src');
-		}
-	}
-	return '';
-};
+	return undefined;
+}
 
 export const getRelLinks = (): string | null => {
 	const links = document.getElementsByTagName('link');
@@ -35,7 +25,7 @@ export const getRelLinks = (): string | null => {
 			return links[i].getAttribute('href');
 		}
 	}
-	return '';
+	return null;
 };
 
 export const getGoogleFontLinks = (): Array<string> => {

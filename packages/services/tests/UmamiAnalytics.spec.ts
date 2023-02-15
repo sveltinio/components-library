@@ -1,38 +1,33 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { getFullScriptTagbyId, getScriptSrcById, getScriptTagById } from './test-utils.js';
+import { getScriptsByTestId } from './test-utils.js';
 import { UmamiAnalytics } from '../src/lib/index.js';
-import type { IUmamiTrackerSettings } from '../src/lib/types.js';
+import { umamiSample, umamiTrackerSettings } from '../src/data/sample.js';
 
 beforeEach(() => {
 	render(UmamiAnalytics, {
 		props: {
-			websiteID: 'd1e3da9d-5deb-4af7-93c1-e7aabc592d19',
-			srcURL: 'https://umami.sveltin.io/umami.js',
-			settings: <IUmamiTrackerSettings>{
-				hostURL: '',
-				autoTrack: true,
-				doNotTrack: false,
-				enableCache: false,
-				domains: ''
-			}
+			websiteID: umamiSample.websiteID,
+			srcURL: umamiSample.srcURL,
+			settings: umamiTrackerSettings
 		}
 	});
 });
 
 describe('UmamiAnalytics', () => {
 	it('should have a script tag with id umami-analytics-script', async () => {
-		expect(getScriptTagById('umami-analytics-script')).toBe(true);
+		expect(getScriptsByTestId('umami_analytics_script')).toBeTruthy();
 	});
 
 	it('should have a script src to umami instance', async () => {
-		expect(getScriptSrcById('umami-analytics-script')).toBe('https://umami.sveltin.io/umami.js');
+		const scriptTag = getScriptsByTestId('umami_analytics_script');
+		expect(scriptTag?.getAttribute('src')).toBe('https://your-umami-app.com/umami.js');
 	});
 
-	it('should have a script with async and defer to true', async () => {
-		const scriptTag = getFullScriptTagbyId('umami-analytics-script');
-		expect(scriptTag.async).toBe(true);
-		expect(scriptTag.defer).toBe(true);
+	it('should have a script with async and defer set to true', async () => {
+		const scriptTag = getScriptsByTestId('umami_analytics_script');
+		expect(scriptTag?.async).toBe(true);
+		expect(scriptTag?.defer).toBe(true);
 	});
 });

@@ -1,4 +1,4 @@
-import GoogleAnalytics from './GoogleAnalytics.svelte';
-import GoogleFonts from './GoogleFonts.svelte';
+import { GoogleAnalytics } from './analytics/index.js';
+import { GoogleFonts } from './fonts/index.js';
 
 export { GoogleAnalytics, GoogleFonts };
