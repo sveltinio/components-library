@@ -5,9 +5,9 @@
 		toKebabCase,
 		isEmptyObject,
 		isPropValueSet,
-		isScriptLoaded,
 		toID,
-		isValidURL
+		isValidURL,
+		isScriptLoaded
 	} from '../../utils.js';
 
 	/**
@@ -34,9 +34,9 @@
 	 * https://developers.facebook.com/docs/javascript/internationalization.
 	 */
 	export let langCode = 'en_US';
-	export let fbScriptVersion = '13.0';
+	export let fbScriptVersion = '16.0';
 	/**
-	 * These attributes control which post or video is embedded and how it looks and behaves.
+	 * To control how the embedded post or video look and behave.
 	 *
 	 * https://developers.facebook.com/docs/plugins/embedded-posts
 	 * https://developers.facebook.com/docs/plugins/embedded-videos
@@ -44,7 +44,8 @@
 	export let settings: IFacebookSettings = {};
 
 	let scriptLoaded = false;
-	const _id = isValidURL(id) ? toID(id) : id;
+	let fbElem: HTMLElement;
+	let _id = isValidURL(id) ? toID(id) : id;
 	let baseURL = `https://www.facebook.com/${_id}`;
 
 	const scriptID = 'facebook-lib-script';
@@ -52,15 +53,21 @@
 	const scriptNonce = 'b4hrDiHF';
 	const identifier = baseURL.substring(baseURL.lastIndexOf('/' + 1)).replace(/\//g, '');
 
+	/**
+	 * Adding the script would fail for example if the user is running
+	 * and ad blocker. This Promise can handle that case.
+	 */
 	async function addFacebookScript(id: string, src: string, nonce: string) {
 		return new Promise(() => {
 			const head = document.head || document.getElementsByTagName('head')[0];
 			const script = document.createElement('script');
 			script.id = id;
 			script.async = true;
+			script.crossOrigin = 'anonymous';
 			script.defer = true;
 			script.src = src;
 			script.nonce = nonce;
+			script.setAttribute('data-testid', 'facebook_lib_script');
 
 			head.appendChild(script);
 		});
@@ -83,12 +90,15 @@
 				scriptLoaded = true;
 			}
 			if (!isEmptyObject<IFacebookSettings | IFacebookVideoSettings>(settings)) {
-				const targetElem = document.getElementById(`facebook-${type}-${identifier}`);
-				if (targetElem) {
-					setOptionsProps(targetElem, settings);
+				if (fbElem) {
+					setOptionsProps(fbElem, settings);
 				}
 			}
+
+			scriptLoaded = true;
 		} catch (err) {
+			if (fbElem) fbElem.remove();
+
 			return;
 		}
 	});
@@ -97,20 +107,22 @@
 {#if !scriptLoaded}
 	<div data-testid="fb-root" id="fb-root" />
 {/if}
-<div data-testid="wrapper" id="wrapper" class={$$props.class} style={$$props.style}>
+<div id="wrapper" class={$$props.class} style={$$props.style} data-testid="fb_wrapper">
 	{#if type == 'post'}
 		<div
+			bind:this={fbElem}
 			id="facebook-{type}-{identifier}"
-			data-testid="fb-post"
-			class="fb-post"
 			data-href={baseURL}
+			class="fb-post"
+			data-testid="fb_post"
 		/>
 	{:else if type == 'video'}
 		<div
+			bind:this={fbElem}
 			id="facebook-{type}-{identifier}"
-			data-testid="fb-video"
-			class="fb-video"
 			data-href={baseURL}
+			class="fb-video"
+			data-testid="fb_video"
 		/>
 	{/if}
 </div>

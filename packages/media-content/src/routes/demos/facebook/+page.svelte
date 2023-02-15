@@ -4,7 +4,6 @@
 	import {
 		facebookSamplePostTwo,
 		facebookSampleVideoTwo,
-		facebookSampleVideoOne,
 		facebookSamplePostOne,
 		facebookPostSettings,
 		facebookVideoSettings
@@ -38,7 +37,7 @@
 	<div id="facebook-video-default-wrapper" class="demo-wrapper">
 		<h3 id="facebook-video-default">Facebook Video</h3>
 		<div class="preview">
-			<Facebook type="video" id={facebookSampleVideoOne} />
+			<Facebook type="video" id={facebookSampleVideoTwo} />
 		</div>
 	</div>
 

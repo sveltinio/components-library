@@ -15,9 +15,8 @@
 	const iframeURL = `https://www.slideshare.net/slideshow/embed_code/key/${id}`;
 </script>
 
-<div data-testid="wrapper" class={$$props.class} style={$$props.style}>
+<div class={$$props.class} style={$$props.style} data-testid="slideshare_wrapper">
 	<iframe
-		data-testid="iframe"
 		{title}
 		src={iframeURL}
 		{width}
@@ -28,26 +27,27 @@
 		scrolling="no"
 		style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;"
 		allowfullscreen
+		data-testid="slideshare_iframe"
 	/>
 	{#if withText}
-		<div data-testid="text-box" style="margin-bottom: 5px;">
+		<div style="margin-bottom: 5px;" data-testid="slideshare_text_box">
 			<strong>
 				<a
-					data-testid="link-to-the-video"
 					aria-label="Click to open the video on the Vimeo website"
 					href="https://www.slideshare.net/{user}/{title}"
 					target="_blank"
-					rel="noreferrer">{title}</a
+					rel="noreferrer"
+					data-testid="slideshare_link_to_the_video">{title}</a
 				>
 			</strong>
 			from
 			<strong
 				><a
-					data-testid="link-to-the-user-page"
 					aria-label="Link to the user page on Vimeo website"
 					href="https://www.slideshare.net/{user}"
 					target="_blank"
-					rel="noreferrer">{user}</a
+					rel="noreferrer"
+					data-testid="slideshare_link_to_the_user_page">{user}</a
 				></strong
 			>
 		</div>

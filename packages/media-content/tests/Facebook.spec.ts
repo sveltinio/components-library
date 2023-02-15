@@ -8,34 +8,27 @@ import {
 	facebookSampleVideoOne,
 	facebookVideoSettings
 } from '../src/data/sample.js';
-import { getFullScriptTagById, getScriptSrcById, getScriptTagById } from './test-utils.js';
+import { getScriptsByTestId } from './test-utils.js';
 
 describe('Facebook Container', () => {
-	it('should be in the document', async () => {
+	it('should be in the document with a well defined script tag', async () => {
 		const { container } = render(Facebook, {
 			props: {
 				id: facebookSamplePostOne
 			}
 		});
 		expect(container).toBeInTheDocument();
-	});
-});
 
-describe('Facebook script loader', () => {
-	it('should have a script tag with id facebook-lib-script', async () => {
-		expect(getScriptTagById('facebook-lib-script')).toBe(true);
-	});
+		const scriptTag = getScriptsByTestId('facebook_lib_script');
+		expect(scriptTag).toBeDefined();
 
-	it('should have a script tag src to the facebook lib', async () => {
-		expect(getScriptSrcById('facebook-lib-script')).toBe(
-			'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0'
+		expect(scriptTag?.getAttribute('id')).toBe('facebook-lib-script');
+		expect(scriptTag?.getAttribute('src')).toBe(
+			'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0'
 		);
-	});
-
-	it('should have a script tag with async and defer', async () => {
-		const scriptTag = getFullScriptTagById('facebook-lib-script');
-		expect(scriptTag.async).toBe(true);
-		expect(scriptTag.defer).toBe(true);
+		expect(scriptTag?.async).toBe(true);
+		expect(scriptTag?.defer).toBe(true);
+		expect(scriptTag?.crossOrigin).toBe('anonymous');
 	});
 });
 
@@ -46,10 +39,10 @@ describe('Facebook post content', () => {
 				id: facebookSamplePostOne
 			}
 		});
-		const fbPost = getByTestId('fb-post');
+		const fbPost = getByTestId('fb_post');
 		expect(fbPost).toBeDefined();
-		const wrapper = getByTestId('wrapper');
-		expect(queryByTestId(wrapper, /fb-video/i)).toBeNull();
+		const wrapper = getByTestId('fb_wrapper');
+		expect(queryByTestId(wrapper, /fb_video/i)).toBeNull();
 	});
 });
 
@@ -61,9 +54,9 @@ describe('Facebook video content', () => {
 				id: facebookSampleVideoOne
 			}
 		});
-		const fbPost = getByTestId('fb-video');
+		const fbPost = getByTestId('fb_video');
 		expect(fbPost).toBeDefined();
-		const wrapper = getByTestId('wrapper');
+		const wrapper = getByTestId('fb_wrapper');
 		expect(queryByTestId(wrapper, /fb-post/i)).toBeNull();
 	});
 });
@@ -77,7 +70,7 @@ describe('Facebook post content default props', () => {
 		});
 
 		const baseURL = `https://www.facebook.com/${facebookSamplePostOne}`;
-		const fbPost = getByTestId('fb-post');
+		const fbPost = getByTestId('fb_post');
 		expect(fbPost).toHaveClass('fb-post');
 		expect(fbPost).toHaveAttribute('data-href', baseURL);
 	});
@@ -91,7 +84,7 @@ describe('Facebook post content custom props', () => {
 				settings: facebookPostSettings
 			}
 		});
-		const fbPost = getByTestId('fb-post');
+		const fbPost = getByTestId('fb_post');
 		expect(fbPost).toHaveClass('fb-post');
 		expect(fbPost).toHaveAttribute('data-lazy', 'true');
 		expect(fbPost).toHaveAttribute('data-width', '400');
@@ -107,8 +100,9 @@ describe('Facebook video content default props', () => {
 				id: facebookSampleVideoOne
 			}
 		});
+
 		const baseURL = `https://www.facebook.com/${facebookSampleVideoOne}`;
-		const fbPost = getByTestId('fb-video');
+		const fbPost = getByTestId('fb_video');
 		expect(fbPost).toHaveClass('fb-video');
 		expect(fbPost).toHaveAttribute('data-href', baseURL);
 	});
@@ -123,7 +117,8 @@ describe('Facebook video content custom props', () => {
 				settings: facebookVideoSettings
 			}
 		});
-		const fbPost = getByTestId('fb-video');
+
+		const fbPost = getByTestId('fb_video');
 		expect(fbPost).toHaveClass('fb-video');
 		expect(fbPost).toHaveAttribute('data-allowfullscreen', 'false');
 		expect(fbPost).toHaveAttribute('data-autoplay', 'false');

@@ -29,16 +29,20 @@
 	const iframeURL = settingsString != '' ? baseURL.concat(`?${settingsString}`) : baseURL;
 </script>
 
-<div data-testid="wrapper" id="stackblitz-container-{id}" class="stackblitz-video-container">
+<div
+	id="stackblitz-container-{id}"
+	class="stackblitz-video-container"
+	data-testid="stackblitz_wrapper"
+>
 	<iframe
-		data-testid="iframe"
 		id="frame-{id}"
-		class="frame"
+		{title}
 		src={iframeURL}
 		frameborder="0"
 		allowfullscreen
 		sandbox="allow-same-origin allow-scripts"
-		{title}
+		class="frame"
+		data-testid="stackblitz_iframe"
 	/>
 </div>
 

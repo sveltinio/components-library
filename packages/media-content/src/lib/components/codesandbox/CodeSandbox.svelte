@@ -7,7 +7,7 @@
 	/** The height of the container. */
 	export let height = 400;
 	/**
-	 * These attributes control which sandbox is embedded and how it looks and behaves.
+	 * To control how the embedded sandbox looks and behaves.
 	 *
 	 * https://codesandbox.io/docs/embedding#generate-an-embed-url
 	 */
@@ -28,15 +28,20 @@
 </script>
 
 <div
-	data-testid="wrapper"
 	id="codesandbox-container-${id}"
 	class={$$props.class}
 	style:height={`${height}px`}
 	style:position="relative"
 	style:width="100%"
 	style={$$props.style}
+	data-testid="codesandbox_wrapper"
 >
-	<iframe data-testid="iframe" class="frame" title="codeSandbox-${id}" src={iframeURL} />
+	<iframe
+		src={iframeURL}
+		title="codeSandbox-${id}"
+		class="frame"
+		data-testid="codesandbox_iframe"
+	/>
 </div>
 
 <style>

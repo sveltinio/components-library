@@ -5,21 +5,27 @@
 	/** The id for the tweet to embed. */
 	export let id: string;
 	/**
-	 * These attributes control which Tweet is embedded and how it looks and behaves.
+	 * To control how the embedded tweet looks and behaves..
 	 *
 	 * https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference
 	 */
 	export let settings: ITweetSettings = {};
 
+	let wrapperElem: HTMLElement;
+
 	const scriptID = 'twitter-lib-script';
 	const targetElementID = `tweet-container-${id}`;
 	const scriptSRC = 'https://platform.twitter.com/widgets.js';
 
+	/**
+	 * Adding the script would fail for example if the user is running
+	 * and ad blocker. This Promise can handle that case.
+	 */
 	async function addTwitterWidgetScript(
 		scriptID: string,
 		scriptSRC: string,
 		id: string,
-		targetElementID: string,
+		targetElement: HTMLElement,
 		settings: ITweetSettings
 	) {
 		return new Promise(() => {
@@ -28,11 +34,10 @@
 			const script = document.createElement('script');
 			script.id = scriptID;
 			script.async = true;
-			script.setAttribute('data-testid', scriptID);
+			script.setAttribute('data-testid', 'twitter_lib_script');
 			script.src = scriptSRC;
 			script.onload = () => {
-				var tweet = document.getElementById(targetElementID);
-				window.twttr['widgets'].createTweet(id, tweet, {
+				window.twttr['widgets'].createTweet(id, targetElement, {
 					conversation: settings.conversation || 'none',
 					cards: settings.cards || 'hidden',
 					theme: settings.theme || 'light'
@@ -45,16 +50,13 @@
 
 	onMount(async () => {
 		try {
-			await addTwitterWidgetScript(scriptID, scriptSRC, id, targetElementID, settings);
+			await addTwitterWidgetScript(scriptID, scriptSRC, id, wrapperElem, settings);
 		} catch (err) {
 			console.error('tweet failure');
-			const s = window.document.getElementById(scriptID);
-			if (s) {
-				s.remove();
-			}
+			if (wrapperElem) wrapperElem.remove();
 			return;
 		}
 	});
 </script>
 
-<div data-testid={targetElementID} id={targetElementID} />
+<div bind:this={wrapperElem} id={targetElementID} data-testid={targetElementID} />

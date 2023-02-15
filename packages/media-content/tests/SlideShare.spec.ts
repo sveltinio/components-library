@@ -28,7 +28,7 @@ describe('SlideShare - wrapper dom', () => {
 			}
 		});
 
-		const wrapper = getByTestId('wrapper');
+		const wrapper = getByTestId('slideshare_wrapper');
 		expect(queryByTestId(wrapper, /text-box/i)).toBeNull();
 	});
 
@@ -40,7 +40,7 @@ describe('SlideShare - wrapper dom', () => {
 				title: slideShareSample.title
 			}
 		});
-		const textBox = getByTestId('text-box');
+		const textBox = getByTestId('slideshare_text_box');
 		expect(textBox).toBeDefined();
 	});
 
@@ -52,10 +52,10 @@ describe('SlideShare - wrapper dom', () => {
 				title: slideShareSample.title
 			}
 		});
-		const videoLink = getByTestId('link-to-the-video');
+		const videoLink = getByTestId('slideshare_link_to_the_video');
 		expect(videoLink).toHaveAccessibleName('Click to open the video on the Vimeo website');
 
-		const userPageLink = getByTestId('link-to-the-user-page');
+		const userPageLink = getByTestId('slideshare_link_to_the_user_page');
 		expect(userPageLink).toHaveAccessibleName('Link to the user page on Vimeo website');
 	});
 
@@ -67,13 +67,13 @@ describe('SlideShare - wrapper dom', () => {
 				title: slideShareSample.title
 			}
 		});
-		const videoLink = getByTestId('link-to-the-video');
+		const videoLink = getByTestId('slideshare_link_to_the_video');
 
 		expect(videoLink).toHaveAttribute(
 			'href',
 			`https://www.slideshare.net/${slideShareSample.user}/${slideShareSample.title}`
 		);
-		const userPageLink = getByTestId('link-to-the-user-page');
+		const userPageLink = getByTestId('slideshare_link_to_the_user_page');
 		expect(userPageLink).toHaveAttribute(
 			'href',
 			`https://www.slideshare.net/${slideShareSample.user}`
@@ -90,7 +90,7 @@ describe('SlideShare - iframe', () => {
 				title: slideShareSample.title
 			}
 		});
-		const iframe = getByTestId('iframe');
+		const iframe = getByTestId('slideshare_iframe');
 		expect(iframe['src']).toBeDefined();
 	});
 });

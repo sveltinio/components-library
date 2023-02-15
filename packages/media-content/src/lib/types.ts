@@ -24,6 +24,7 @@ export interface ICodePenSettings {
 	activeTabColor?: string;
 	/** Hex Color Code. */
 	activeLinkColor?: string;
+	/** Hex Color Code. */
 	linkLogoColor?: string;
 	/** Added to <iframe> of embed. */
 	class?: string;
@@ -38,55 +39,55 @@ export interface ICodeSandboxSettings {
 	/**
 	 * Automatically resize the embed to the content (only works on Medium).
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	autoresize?: boolean;
 	/**
 	 * Use CodeMirror editor instead of Monaco (decreases embed size significantly).
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	codemirror?: boolean;
 	/**
 	 * Size in percentage of editor.
 	 *
-	 * The default value is 50.
+	 * Default value: 50.
 	 */
 	editorsize?: number;
 	/**
 	 * Use eslint (increases embed size significantly).
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	eslint?: boolean;
 	/**
 	 * Start with the devtools (console) open.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	expanddevtools?: boolean;
 	/**
 	 * Hide the DevTools bar of the preview.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	hidedevtools?: boolean;
 	/**
 	 * Font size (in px) of editor.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	fontsize?: number;
 	/**
 	 * Force a full refresh of frame after every edit.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	forcerefresh?: boolean;
 	/**
 	 * Hide the navigation bar of the preview.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	hidenavigation?: boolean;
 	/**
@@ -97,14 +98,14 @@ export interface ICodeSandboxSettings {
 	/**
 	 * Which url to initially load in address bar.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	initialpath?: string;
 	/**
 	 * Which module to open by default. Multiple paths comma separated are allowed,
 	 * in that case we show them as tabs.
 	 *
-	 * The default value is entry path.
+	 * Default value: entry path.
 	 */
 	module?: string;
 	/**
@@ -117,27 +118,27 @@ export interface ICodeSandboxSettings {
 	 * Which preview window to open by default.
 	 *
 	 * Supported values are console, test or browser.
-	 * The default value is browser.
+	 * Default value: browser.
 	 */
 	previewwindow?: string;
 	/**
 	 * Only load the preview when the user says so.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	runonclick?: boolean;
 	/**
 	 * Which view to open by default.
 	 *
-	 * Supported values are editor, split or preview.
-	 * The default value is split (preview for small screens).
+	 * Supported values: editor, split and preview.
+	 * Default value: split (preview for small screens).
 	 */
 	view?: string;
 	/**
 	 * Which theme to show for the embed.
 	 *
-	 * Supported values are dark or light.
-	 * The default value is dark.
+	 * Supported values: dark and light.
+	 * Default value: dark.
 	 */
 	theme?: string;
 }
@@ -147,20 +148,20 @@ export interface IFacebookSettings {
 	/**
 	 * The browser does not render the plugin if it's not close to the viewport and might never be seen
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	lazy?: boolean;
 	/**
 	 * The width of the container.
 	 *
 	 * For Post: min. 350 pixel; max. 750 pixel. Leave empty to use fluid width.
-	 * For Videos: min. 220px. The default value is auto.
+	 * For Videos: min. 220px. Default value: auto.
 	 */
 	width?: number;
 	/**
 	 * Applied to photo post. Set to true to include the text from the Facebook post, if any.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 * */
 	showText?: boolean;
 }
@@ -170,20 +171,20 @@ export interface IFacebookVideoSettings extends IFacebookSettings {
 	/**
 	 * Allow the video to be played in fullscreen mode.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	allowfullscreen?: boolean;
 	/**
 	 * Automatically start playing the video when the page loads. The video will be played without sound (muted).
 	 * People can turn on sound via the video player controls. This setting does not apply to mobile devices.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	autoplay?: boolean;
 	/**
 	 * To show captions (if available) by default. Captions are only available on desktop.
 	 *
-	 * The default value is 0 (false).
+	 * Default value: 0 (false).
 	 */
 	showCaptions?: boolean;
 }
@@ -203,7 +204,7 @@ export interface IStackBlitzSettings {
 	/**
 	 * Which view to open by default.
 	 *
-	 * Supported values are editor or preview.
+	 * Supported values: editor and preview.
 	 */
 	view?: string;
 	/** Hide the debugging console in the editor preview. */
@@ -215,8 +216,8 @@ export interface IStackBlitzSettings {
 	/**
 	 * Which theme to show for the embed.
 	 *
-	 * Supported values are dark or light.
-	 * The default value is dark.
+	 * Supported values: dark and light.
+	 * Default value: dark.
 	 */
 	theme?: string;
 }
@@ -227,20 +228,20 @@ export interface ITweetSettings {
 	 * When set to hidden, links in a Tweet are not expanded to photo,
 	 * video, or link previews.
 	 *
-	 * Supported values are visible or hidden.
+	 * Supported values: visible and hidden.
 	 */
 	cards?: string;
 	/**
 	 * When set to none, only the cited Tweet will be displayed even if
 	 * it is in reply to another Tweet.
 	 *
-	 * Supported values are all or none.
+	 * Supported values: all and none.
 	 */
 	conversation?: string;
 	/**
 	 * When set to dark, displays Tweet with light text over a dark background.
 	 *
-	 * Supported values are dark or light.
+	 * Supported values: dark and light.
 	 */
 	theme?: string;
 }
@@ -320,7 +321,7 @@ export interface IYouTubeSettings {
 	 * This parameter specifies whether the initial video will automatically start
 	 * to play when the player loads.
 	 *
-	 * The default value is 0.
+	 * Default value: 0.
 	 */
 	autoplay?: boolean;
 
@@ -342,7 +343,7 @@ export interface IYouTubeSettings {
 	 * seen.
 	 *
 	 * Supported values are red and white.
-	 * The default value is red.
+	 * Default value: red.
 	 */
 	color?: string;
 
@@ -357,7 +358,7 @@ export interface IYouTubeSettings {
 	 * Setting the parameter's value to 1 causes the player to not respond to
 	 * keyboard controls.
 	 *
-	 * The default value is 0, which means that keyboard controls are enabled.
+	 *Default value: 0. It means keyboard controls enabled.
 	 */
 	disablekb?: boolean;
 	/**
@@ -370,7 +371,7 @@ export interface IYouTubeSettings {
 	 * Setting this parameter to 0 prevents the fullscreen button from displaying
 	 * in the player.
 	 *
-	 * The default value is 1, which causes the fullscreen button to display.
+	 * Default value: 1. It means fullscreen button in the player.
 	 */
 	fs?: boolean;
 	/**
@@ -382,7 +383,7 @@ export interface IYouTubeSettings {
 	 * Setting the parameter's value to 1 causes video annotations to be shown by default,
 	 * whereas setting to 3 causes video annotations to not be shown by default.
 	 *
-	 * The default value is 1.
+	 *Default value: 1.
 	 */
 	ivLoadPolicy?: number;
 	/** Play the video again when it reaches the end, infinitely. */
@@ -418,7 +419,7 @@ export interface IYouTubeSettings {
 	 * - 0: related videos will come from the same channel as the video that was just played.
 	 * - 1: the player does show related videos.
 	 *
-	 * The default value is 1.
+	 * Default value: 1.
 	 */
 	rel?: boolean;
 	/**

@@ -22,7 +22,7 @@ describe('StackBlitz', () => {
 				title: stackblitzSample.title
 			}
 		});
-		expect(getByTestId('wrapper')).toContainElement(getByTestId('iframe'));
+		expect(getByTestId('stackblitz_wrapper')).toContainElement(getByTestId('stackblitz_iframe'));
 	});
 
 	it('should have the iframe url defined', async () => {
@@ -32,7 +32,7 @@ describe('StackBlitz', () => {
 				title: stackblitzSample.title
 			}
 		});
-		const iframe = getByTestId('iframe');
+		const iframe = getByTestId('stackblitz_iframe');
 		expect(iframe['src']).toBeDefined();
 	});
 
@@ -43,7 +43,7 @@ describe('StackBlitz', () => {
 				title: stackblitzSample.title
 			}
 		});
-		const iframe = getByTestId('iframe');
+		const iframe = getByTestId('stackblitz_iframe');
 		console.log(iframe);
 		expect(iframe['src']).toBe('https://stackblitz.com/edit/vitejs-vite-z3ukcq');
 	});
@@ -55,7 +55,7 @@ describe('StackBlitz', () => {
 				title: stackblitzSample.title
 			}
 		});
-		expect(getByTestId('iframe')).toHaveAccessibleDescription();
+		expect(getByTestId('stackblitz_iframe')).toHaveAccessibleDescription();
 	});
 });
 
@@ -68,7 +68,7 @@ describe('StackBlitz - options', () => {
 				settings: stackblitzSettings
 			}
 		});
-		const iframe = getByTestId('iframe');
+		const iframe = getByTestId('stackblitz_iframe');
 		expect(iframe['src']).toBe(
 			'https://stackblitz.com/edit/vitejs-vite-z3ukcq?file=svelte.config.js&embed=1&theme=light&ctl=1&devtoolsheight=200'
 		);

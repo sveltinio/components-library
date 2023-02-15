@@ -3,34 +3,24 @@ import { describe, it, expect } from 'vitest';
 import { fireEvent, queryByTestId, render } from '@testing-library/svelte';
 import { Vimeo } from '../src/lib/index.js';
 import { vimeoSettings, vimeoSample } from '../src/data/sample.js';
-import { getFullScriptTagById, getScriptSrcById, getScriptTagById } from './test-utils.js';
-
-describe('Vimeo Container', () => {
-	it('should be in the document', async () => {
-		const { container } = render(Vimeo, {
-			props: {
-				id: vimeoSample.id,
-				user: vimeoSample.user,
-				title: vimeoSample.title,
-				description: vimeoSample.description
-			}
-		});
-		expect(container).toBeInTheDocument();
-	});
-});
+import { getScriptsByTestId } from './test-utils.js';
 
 describe('Vimeo script loader', () => {
-	it('should have a script tag with id vimeo-lib-script', async () => {
-		expect(getScriptTagById('vimeo-lib-script')).toBe(true);
+	render(Vimeo, {
+		props: {
+			id: vimeoSample.id,
+			user: vimeoSample.user,
+			title: vimeoSample.title,
+			description: vimeoSample.description
+		}
 	});
+	it('should have a defined async script tag with id vimeo-lib-script', async () => {
+		const scriptTag = getScriptsByTestId('vimeo_lib_script');
 
-	it('should have a script src to the vimeo player lib', async () => {
-		expect(getScriptSrcById('vimeo-lib-script')).toBe('https://player.vimeo.com/api/player.js');
-	});
-
-	it('should have a script with async true', async () => {
-		const scriptTag = getFullScriptTagById('vimeo-lib-script');
-		expect(scriptTag.async).toBe(true);
+		expect(scriptTag).toBeInTheDocument();
+		expect(scriptTag?.getAttribute('id')).toBe('vimeo-lib-script');
+		expect(scriptTag?.getAttribute('src')).toBe('https://player.vimeo.com/api/player.js');
+		expect(scriptTag?.async).toBe(true);
 	});
 });
 
@@ -46,7 +36,7 @@ describe('Vimeo video thumbnail', () => {
 		});
 		const thumbnailWrapper = getByTestId('thumbnail-wrapper');
 		expect(thumbnailWrapper).toBeInTheDocument();
-		const wrapper = getByTestId('content-section');
+		const wrapper = getByTestId('vimeo_content_section');
 		expect(queryByTestId(wrapper, /video-wrapper/i)).toBeNull();
 	});
 
@@ -104,14 +94,14 @@ describe('Vimeo click play button on thumbnail when settings are provided', () =
 			}
 		});
 
-		const wrapper = getByTestId('content-section');
+		const wrapper = getByTestId('vimeo_content_section');
 		expect(getByTestId('thumbnail-wrapper')).toBeInTheDocument();
 		expect(queryByTestId(wrapper, /video-wrapper/i)).toBeNull();
 		const playButton = getByTestId('play-button');
 		await fireEvent.click(playButton);
 
 		expect(queryByTestId(wrapper, /thumbnail-wrapper/i)).toBeNull();
-		const iframeWrapper = getByTestId('frame-wrapper');
+		const iframeWrapper = getByTestId('iframe_wrapper');
 		expect(wrapper).toContainElement(iframeWrapper);
 	});
 
@@ -179,7 +169,7 @@ describe('Vimeo - wrapper', () => {
 				}
 			}
 		});
-		expect(getByTestId('frame-wrapper')).toContainElement(getByTestId('iframe'));
+		expect(getByTestId('iframe_wrapper')).toContainElement(getByTestId('iframe'));
 	});
 });
 

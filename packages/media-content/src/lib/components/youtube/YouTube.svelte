@@ -22,7 +22,7 @@
 	/** The user who published the content. */
 	export let username = '';
 	/**
-	 * These attributes control which video is embedded and how it looks and behaves.
+	 * To control how the embedded video looks and behaves.
 	 *
 	 * https://developers.google.com/youtube/player_parameters
 	 */
@@ -126,7 +126,7 @@
 	}
 </script>
 
-<section data-testid="content-section">
+<section data-testid="youtube_content_section">
 	<svelte:component
 		this={renderedComponent}
 		{id}

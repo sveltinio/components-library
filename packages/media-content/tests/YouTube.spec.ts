@@ -33,7 +33,7 @@ describe('YouTube video thumbnail', () => {
 		});
 		const thumbnailWrapper = getByTestId('thumbnail-wrapper');
 		expect(thumbnailWrapper).toBeInTheDocument();
-		const wrapper = getByTestId('content-section');
+		const wrapper = getByTestId('youtube_content_section');
 		expect(queryByTestId(wrapper, /video-wrapper/i)).toBeNull();
 	});
 
@@ -85,14 +85,14 @@ describe('YouTube click play button on thumbnail when settings are provided', ()
 			}
 		});
 
-		const wrapper = getByTestId('content-section');
+		const wrapper = getByTestId('youtube_content_section');
 		expect(getByTestId('thumbnail-wrapper')).toBeInTheDocument();
 		expect(queryByTestId(wrapper, /video-wrapper/i)).toBeNull();
 		const playButton = getByTestId('play-button');
 		await fireEvent.click(playButton);
 
 		expect(queryByTestId(wrapper, /thumbnail-wrapper/i)).toBeNull();
-		const iframeWrapper = getByTestId('frame-wrapper');
+		const iframeWrapper = getByTestId('iframe_wrapper');
 		expect(wrapper).toContainElement(iframeWrapper);
 	});
 
@@ -160,7 +160,7 @@ describe('YouTube video with autoplay', () => {
 				settings: youtubeSampleVideoSettingsWithAutoplay
 			}
 		});
-		expect(getByTestId('frame-wrapper')).toContainElement(getByTestId('iframe'));
+		expect(getByTestId('iframe_wrapper')).toContainElement(getByTestId('iframe'));
 	});
 
 	it('should have the iframe url defined', async () => {

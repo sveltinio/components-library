@@ -22,7 +22,7 @@ describe('CodeSandbox - wrapper', () => {
 				id: { codeSandboxSampleID }
 			}
 		});
-		expect(getByTestId('wrapper')).toContainElement(getByTestId('iframe'));
+		expect(getByTestId('codesandbox_wrapper')).toContainElement(getByTestId('codesandbox_iframe'));
 	});
 });
 
@@ -33,7 +33,7 @@ describe('CodeSandbox - iframe', () => {
 				id: { codeSandboxSampleID }
 			}
 		});
-		const iframe = getByTestId('iframe');
+		const iframe = getByTestId('codesandbox_iframe');
 		expect(iframe['src']).toBeDefined();
 	});
 
@@ -43,7 +43,7 @@ describe('CodeSandbox - iframe', () => {
 				id: { codeSandboxSampleID }
 			}
 		});
-		const iframe = getByTestId('iframe');
+		const iframe = getByTestId('codesandbox_iframe');
 		expect(iframe['src']).toContain('https://codesandbox.io/embed/');
 	});
 
@@ -53,6 +53,6 @@ describe('CodeSandbox - iframe', () => {
 				id: { codeSandboxSampleID }
 			}
 		});
-		expect(getByTestId('iframe')).toHaveAccessibleDescription();
+		expect(getByTestId('codesandbox_iframe')).toHaveAccessibleDescription();
 	});
 });

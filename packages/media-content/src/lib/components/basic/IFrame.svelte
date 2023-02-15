@@ -4,27 +4,28 @@
 	export let title = '';
 </script>
 
-<div data-testid="frame-wrapper" id="frameo-container-{id}" class="frame-container">
+<div id="iframe-wrapper-{id}" class="iframe-wrapper" data-testid="iframe_wrapper">
 	<iframe
-		data-testid="iframe"
 		id="frame-{id}"
-		class="frame"
 		src={iframeURL}
+		{title}
 		allow="layout-animations 'none'; unoptimized-images 'none'; oversized-images 'none'; sync-script 'none'; sync-xhr 'none'; unsized-media 'none'; autoplay; fullscreen; picture-in-picture"
 		referrerpolicy="same-origin"
-		{title}
+		class="iframe"
+		{...$$restProps}
+		data-testid="iframe"
 	/>
 </div>
 
 <style>
-	.frame-container {
+	.iframe-wrapper {
 		position: relative;
 		width: 100%;
 		padding-bottom: calc(var(--aspect-ratio, 0.5625) * 100%);
 		height: 0;
 	}
 
-	.frame {
+	.iframe {
 		position: absolute;
 		top: 0;
 		left: 0;

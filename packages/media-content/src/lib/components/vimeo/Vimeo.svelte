@@ -20,7 +20,7 @@
 	/** The content title. */
 	export let title = '';
 	/**
-	 * These attributes control which video is embedded and how it looks and behaves.
+	 * To control how the embedded video looks and behaves..
 	 *
 	 * https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Player-parameters-overview
 	 */
@@ -30,6 +30,7 @@
 	let play = false;
 	let renderedComponent: typeof IFrame | typeof Thumbnail;
 	let props: Record<string, string>;
+
 	/** Used when settings are provided, no matter if with or without autoplay. */
 	function turnAutoplayOn() {
 		if (isPropValueSet(settings.autoplay) && !settings.autoplay) {
@@ -71,6 +72,10 @@
 		}
 	}
 
+	/**
+	 * Adding the script would fail for example if the user is running
+	 * and ad blocker. This Promise can handle that case.
+	 */
 	async function addVimeoScript(id: string, src: string) {
 		return new Promise(() => {
 			const head = document.head || document.getElementsByTagName('head')[0];
@@ -79,6 +84,7 @@
 			script.id = id;
 			script.async = true;
 			script.src = src;
+			script.setAttribute('data-testid', 'vimeo_lib_script');
 
 			head.appendChild(script);
 		});
@@ -111,7 +117,6 @@
 			return;
 		}
 	});
-
 	if (settings.autoplay) {
 		frame();
 	} else {
@@ -132,7 +137,7 @@
 	}
 </script>
 
-<section data-testid="content-section">
+<section data-testid="vimeo_content_section">
 	<svelte:component
 		this={renderedComponent}
 		{id}
