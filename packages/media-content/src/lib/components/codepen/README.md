@@ -37,17 +37,17 @@ Easily embed content from CodePen in your pages. The `CodePen` component support
 
 The `CodePen` component exposes the following properties:
 
-| Property |       Type       | Required | Default | Description                                           |
-| :------- | :--------------: | :------: | :-----: | :---------------------------------------------------- |
-| user     |      string      |   yes    |         | The user who created the pen                          |
-| id       |      string      |   yes    |         | The id(slug) for the pen to embed                     |
-| title    |      string      |   no     |         | The pen title                                         |
-| settings | ICodePenSettings |   no     |   `{}`  | To control how the Pen is embedded, looks and behaves |
+| Property | Type               | Required | Default | Description                                           |
+| :------- | :----------------: | :------: | :-----: | :---------------------------------------------------- |
+| user     | `string`           |   yes    |         | The user who created the pen                          |
+| id       | `string`           |   yes    |         | The id(slug) for the pen to embed                     |
+| title    | `string`           |   no     |         | The pen title                                         |
+| settings | `ICodePenSettings` |   no     |   `{}`  | To control how the Pen is embedded, looks and behaves |
 
 [ICodePenSettings] helps controlling how the embedded Pen looks and behaves. It defines the properties as per [Embedded Pens] documentation.
 
 ```typescript
-export interface ICodePenSettings {
+interface ICodePenSettings {
     /** html/css/js/result */
     defaultTab?: string;
     /** height in pixels. */

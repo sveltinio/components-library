@@ -38,16 +38,16 @@ Easily embed StackBlitz project in your pages. The `StackBlitz` component suppor
 
 The `StackBlitz` component exposes the following properties:
 
-| Property |        Type         | Required | Default | Description                                                |
-| :------- | :-----------------: | :------: | :-----: | :--------------------------------------------------------- |
-| id       |       string        |   yes    |         | The id for the project to embed.                           |
-| title    |       string        |    no    |         | The project title.                                         |
-| settings | IStackBlitzSettings |    no    |   `{}`  | To control how the project is embedded, looks and behaves. |
+| Property | Type                  | Required | Default | Description                                                |
+| :------- | :-------------------: | :------: | :-----: | :--------------------------------------------------------- |
+| id       | `string`              |   yes    |         | The id for the project to embed.                           |
+| title    | `string`              |    no    |         | The project title.                                         |
+| settings | `IStackBlitzSettings` |    no    |   `{}`  | To control how the project is embedded, looks and behaves. |
 
 [IStackBlitzSettings] helps controlling how the embedded project looks and behaves. It defines the properties as per [Embedded Posts] documentation.
 
 ```typescript
-export interface IStackBlitzSettings {
+interface IStackBlitzSettings {
     /** The default file to have open in the editor. */
     file?: string;
     /** Force embed view regardless of screen size. */

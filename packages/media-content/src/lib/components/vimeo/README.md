@@ -43,18 +43,18 @@ To load your pages faster, a clickable and responsive thumbnail for the video is
 
 The `Vimeo` component exposes the following properties:
 
-| Property    |      Type      | Required | Default | Description                                                                                                                   |
-| :---------- | :------------: | :------: | :-----: | :---------------------------------------------------------------------------------------------------------------------------- |
-| id          |     string     |   yes    |         | The id for the content to be embed.                                                                                           |
-| user        |     string     |    no    |         | The user who published the content. If provided, the text with a link to Vimeo just below the video player will be displayed. |
-| title       |     string     |    no    |         | The content title. If provided, the text with a link to Vimeo just below the video player will be displayed.                  |
-| description |     string     |    no    |         | The content description. If provided, the text just below the video player will be displayed.                                 |
-| settings    | IVimeoSettings |    no    |  `{}`   | To control how the video is embedded, looks and behaves.                                                                      |
+| Property    | Type             | Required | Default | Description                                                                                                                   |
+| :---------- | :--------------: | :------: | :-----: | :---------------------------------------------------------------------------------------------------------------------------- |
+| id          | `string`         |   yes    |         | The id for the content to be embed.                                                                                           |
+| user        | `string`         |    no    |         | The user who published the content. If provided, the text with a link to Vimeo just below the video player will be displayed. |
+| title       | `string`         |    no    |         | The content title. If provided, the text with a link to Vimeo just below the video player will be displayed.                  |
+| description | `string`         |    no    |         | The content description. If provided, the text just below the video player will be displayed.                                 |
+| settings    | `IVimeoSettings` |    no    |  `{}`   | To control how the video is embedded, looks and behaves.                                                                      |
 
 [IVimeoSettings] helps controlling how the embedded video looks and behaves. It defines the properties as per [Player parameters] documentation.
 
 ```typescript
-export interface IVimeoSettings {
+interface IVimeoSettings {
     /** The Vimeo player is designed to play only one Vimeo video at a time. */
     autopause?: boolean;
     /** Automatically start playback of the video. */

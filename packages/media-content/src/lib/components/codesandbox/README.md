@@ -34,16 +34,16 @@ Easily embed CodeSandbox in your pages. The `CodeSandbox` component supports all
 
 The `CodeSandbox` component exposes the following properties:
 
-| Property |         Type         | Required | Default | Description                                                |
-| :------- | :------------------: | :------: | :-----: | :--------------------------------------------------------- |
-| id       |        string        |   yes    |         | The id for the sandbox to embed.                           |
-| height   |        number        |    no    |  `400`  | The height of the container.                               |
-| settings | ICodeSandboxSettings |    no    |  `{}`   | To control how the sandbox is embedded, looks and behaves. |
+| Property | Type                   | Required | Default | Description                                                |
+| :------- | :--------------------: | :------: | :-----: | :--------------------------------------------------------- |
+| id       | `string`               |   yes    |         | The id for the sandbox to embed.                           |
+| height   | `number`               |    no    |  `400`  | The height of the container.                               |
+| settings | `ICodeSandboxSettings` |    no    |  `{}`   | To control how the sandbox is embedded, looks and behaves. |
 
 [ICodeSandboxSettings] helps controlling how the embedded Pen looks and behaves. It defines the properties as per [Embedded CodeSandbox] documentation.
 
 ```typescript
-export interface ICodeSandboxSettings {
+interface ICodeSandboxSettings {
     /**
      * Automatically resize the embed to the content (only works on Medium).
      *

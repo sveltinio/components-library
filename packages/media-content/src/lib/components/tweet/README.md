@@ -33,15 +33,15 @@ Easily embed tweets in your pages. The `Tweet` component supports all the [avail
 
 The `Tweet` component exposes the following properties:
 
-| Property |      Type      | Required | Default | Description                                              |
-| :------- | :------------: | :------: | :-----: | :------------------------------------------------------- |
-| id       |     string     |   yes    |         | The id for the tweet to embed.                           |
-| settings | ITweetSettings |    no    |   `{}`  | To control how the tweet is embedded, looks and behaves. |
+| Property | Type             | Required | Default | Description                                              |
+| :------- | :--------------: | :------: | :-----: | :------------------------------------------------------- |
+| id       | `string`         |   yes    |         | The id for the tweet to embed.                           |
+| settings | `ITweetSettings` |    no    |   `{}`  | To control how the tweet is embedded, looks and behaves. |
 
 [ITweetSettings] helps controlling how the embedded tweet looks and behaves. It defines the properties as per [Embed Tweet] documentation.
 
 ```typescript
-export interface ITweetSettings {
+interface ITweetSettings {
     /**
      * When set to hidden, links in a Tweet are not expanded to photo,
      * video, or link previews.

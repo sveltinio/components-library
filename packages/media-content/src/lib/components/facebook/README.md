@@ -67,18 +67,18 @@ Easily embed Facebook content (posts or videos) in your pages. The `Facebook` co
 
 The `Facebook` component exposes the following properties:
 
-| Property        |       Type        | Required | Default   | Description                                                                             |
-| :-------------- | :---------------: | :------: | :-------: | :-------------------------------------------------------------------------------------- |
-| type            |      string       |    no    |  `video`  | Embedded content type. Supported values are `post` or `video`.                          |
-| id              |      string       |   yes    |           | The id for the post or the video to embed.                                              |
-| langCode        |      string       |    no    |  `en_US`  | To change the language of the Embedded Video Player.                                    |
-| fbScriptVersion |      string       |    no    |  `16.0`   | The facebook script version to load. It is exposed to easily migrate to newer versions. |
-| settings        | IFacebookSettings <br/>IFacebookVideoSettings |    no    |           | To control which post or video is embedded and how it looks and behaves.                |
+| Property        | Type                | Required | Default   | Description                                                                             |
+| :-------------- | :-----------------: | :------: | :-------: | :-------------------------------------------------------------------------------------- |
+| type            | `string`            |    no    |  `video`  | Embedded content type. Supported values are `post` or `video`.                          |
+| id              | `string`            |   yes    |           | The id for the post or the video to embed.                                              |
+| langCode        | `string`            |    no    |  `en_US`  | To change the language of the Embedded Video Player.                                    |
+| fbScriptVersion | `string`            |    no    |  `16.0`   | The facebook script version to load. It is exposed to easily migrate to newer versions. |
+| settings        | `IFacebookSettings` <br/>`IFacebookVideoSettings` |    no    |           | To control which post or video is embedded and how it looks and behaves.                |
 
 [IFacebookSettings] and [IFacebookVideoSettings] help controlling how posts and videos are embedded look and behaves. It defines the properties as per [Embedded Posts] and [Embedded Video Player] documentations.
 
 ```typescript
-export interface IFacebookSettings {
+interface IFacebookSettings {
     /**
      * The browser does not render the plugin if it's not close to the viewport and might never be seen
      *

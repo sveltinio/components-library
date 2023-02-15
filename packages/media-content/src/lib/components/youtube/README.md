@@ -71,18 +71,18 @@ To load your pages faster, a clickable and responsive thumbnail for the video is
 
 The `YouTube` component exposes the following properties:
 
-| Property |       Type       | Required | Default | Description                                                                        |
-| :------- | :--------------: | :------: | :-----: | :--------------------------------------------------------------------------------- |
-| type     |      string      |    no    | `video` | Embedded content type. Supported values are `video`, `playlist` or `user_uploads`. |
-| id       |      string      |   yes    |         | The id for the video or playlist to embed.                                         |
-| title    |      string      |   yes    |         | The content title.                                                                 |
-| username |      string      |    no    |         | The user who published the content.                                                |
-| settings | IYouTubeSettings |    no    |   `{}`  | To control how the video is embedded and how it looks and behaves.                 |
+| Property | Type               | Required | Default | Description                                                                        |
+| :------- | :----------------: | :------: | :-----: | :--------------------------------------------------------------------------------- |
+| type     | `string`           |    no    | `video` | Embedded content type. Supported values are `video`, `playlist` or `user_uploads`. |
+| id       | `string`           |   yes    |         | The id for the video or playlist to embed.                                         |
+| title    | `string`           |   yes    |         | The content title.                                                                 |
+| username | `string`           |    no    |         | The user who published the content.                                                |
+| settings | `IYouTubeSettings` |    no    |   `{}`  | To control how the video is embedded and how it looks and behaves.                 |
 
 [IYouTubeSettings] helps controlling how the embedded video looks and behaves. It defines the properties as per [Player parameters] documentation.
 
 ```typescript
-export interface IYouTubeSettings {
+interface IYouTubeSettings {
     /**
      * This parameter specifies whether the initial video will automatically start
      * to play when the player loads.
