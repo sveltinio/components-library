@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/media-content",
-	"version": "0.3.7",
+	"version": "0.3.8",
 	"private": false,
 	"packageManager": "pnpm@7.27.0",
 	"type": "module",

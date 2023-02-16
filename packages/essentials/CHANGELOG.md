@@ -1,5 +1,11 @@
 # @sveltinio/essentials
 
+## 0.6.1
+
+### Patch Changes
+
+- fix package dir
+
 ## 0.6.0
 
 ### Minor Changes

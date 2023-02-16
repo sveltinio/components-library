@@ -1,5 +1,11 @@
 # @sveltinio/services
 
+## 0.3.4
+
+### Patch Changes
+
+- fix package dir
+
 ## 0.3.3
 
 ### Patch Changes

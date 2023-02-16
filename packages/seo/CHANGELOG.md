@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.3.1
+
+### Patch Changes
+
+- fix package dir
+
 ## 0.3.0
 
 ### Minor Changes

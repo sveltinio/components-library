@@ -1,5 +1,11 @@
 # @sveltinio/media-content
 
+## 0.3.8
+
+### Patch Changes
+
+- fix package dir
+
 ## 0.3.7
 
 ### Patch Changes
