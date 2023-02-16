@@ -1,5 +1,19 @@
 # @sveltinio/services
 
+## 0.3.3
+
+### Patch Changes
+
+This release is to updated the components documentation
+
+#### Refactor
+
+- consistent project structure
+
+#### Chores
+
+- deps updated
+
 ## 0.3.2
 
 ### Patch Changes
