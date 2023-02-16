@@ -1,5 +1,21 @@
 # @sveltinio/essentials
 
+## 0.6.0
+
+### Minor Changes
+
+#### Features
+
+- `iconSize` added as prop to the `Link` to set the external icon size
+
+#### Fixes
+
+- `Link` when external with icon not properly styled
+
+#### Chores
+
+- deps updated
+
 ## 0.5.2
 
 ### Patch Changes
