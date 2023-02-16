@@ -7,13 +7,32 @@
 	export let srcURL: string;
 	export let settings: IUmamiTrackerSettings = {};
 
-	let scriptElem: HTMLScriptElement;
 	let scriptID = 'umami_analytics_script';
 
-	function setScriptSettingsProps(
-		scriptElem: HTMLScriptElement,
-		settings: IUmamiTrackerSettings
-	) {
+	/**
+	 * Adding the script would fail for example if the user is running
+	 * and ad blocker. This Promise can handle that case.
+	 */
+	async function addUmamiAnalyticsScript(websiteID: string, srcURL: string, scriptID: string) {
+		return new Promise((resolve, reject) => {
+			const head = document.head || document.getElementsByTagName('head')[0];
+
+			const script = document.createElement('script');
+			script.id = scriptID;
+			script.async = true;
+			script.defer = true;
+			script.setAttribute('data-website-id', websiteID);
+			script.setAttribute('data-testid', 'umami_analytics_script');
+			script.src = srcURL;
+
+			head.appendChild(script);
+
+			script.onload = resolve;
+			script.onerror = reject;
+		});
+	}
+
+	function setScriptSettingsProps(scriptElem: HTMLElement, settings: IUmamiTrackerSettings) {
 		if (isPropValueSet(settings.hostURL))
 			scriptElem.setAttribute('data-host-url', settings.hostURL || '');
 		if (isPropValueSet(settings.autoTrack) && !settings.autoTrack)
@@ -28,30 +47,23 @@
 
 	onMount(async () => {
 		// We add the script only once even when the component rendered twice.
-		if (scriptElem || window.document.getElementById(scriptID)) return;
+		if (window.document.getElementById(scriptID)) return;
 
 		try {
+			addUmamiAnalyticsScript(websiteID, srcURL, scriptID);
+
 			if (!isEmptyObject<IUmamiTrackerSettings>(settings)) {
-				setScriptSettingsProps(scriptElem, settings);
+				const umamiScript = document.getElementById(scriptID);
+				if (umamiScript) {
+					setScriptSettingsProps(umamiScript, settings);
+				}
 			}
-			console.log(scriptElem);
 		} catch (err) {
-			console.error('umami failure: ' + err);
-			const elem = window.document.getElementById(scriptID);
-			if (elem) elem.remove;
-			return;
+			console.error('umami failure');
+			const s = window.document.getElementById(scriptID);
+			if (s) {
+				s.remove();
+			}
 		}
 	});
 </script>
-
-<svelte:head>
-	<script
-		bind:this={scriptElem}
-		id={scriptID}
-		async
-		defer
-		data-website-id={websiteID}
-		src={srcURL}
-		data-testid="umami_analytics_script"
-	></script>
-</svelte:head>
