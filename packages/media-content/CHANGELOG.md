@@ -1,5 +1,15 @@
 # @sveltinio/media-content
 
+## 0.3.7
+
+### Patch Changes
+
+This release is to updated the components documentation
+
+#### Chores
+
+- deps updated
+
 ## 0.3.6
 
 ### Patch Changes
