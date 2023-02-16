@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.3.2
+
+### Patch Changes
+
+- fix: ensure passed data is array before looping it when JS
+
 ## 0.3.1
 
 ### Patch Changes
