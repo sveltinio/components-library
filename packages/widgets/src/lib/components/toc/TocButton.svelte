@@ -25,7 +25,7 @@
 	aria-haspopup="true"
 	aria-controls="toc-list"
 	aria-expanded={isOpen}
-	data-testid="toc-btn"
+	data-testid="toc_btn"
 >
 	{#if !labelOnly}
 		<slot name="icon">

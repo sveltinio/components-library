@@ -2,7 +2,6 @@ import '@testing-library/jest-dom';
 import { it, describe, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { ResponsiveCard } from '../src/lib/index.js';
-import { CardActionSlotTest } from './slot/index.js';
 
 describe('Card', () => {
 	it('should be in the document', async () => {
@@ -35,7 +34,7 @@ describe('Card', () => {
 				href: '/welcome'
 			}
 		});
-		expect(getByTestId('card-title-link')).toContainElement(getByTestId('card-title'));
+		expect(getByTestId('card_title_link')).toContainElement(getByTestId('card_title'));
 	});
 
 	it('should have card-title defined', async () => {
@@ -46,7 +45,7 @@ describe('Card', () => {
 				href: '/welcome'
 			}
 		});
-		expect(getByTestId('card-title')).toBeDefined();
+		expect(getByTestId('card_title')).toBeDefined();
 	});
 
 	it('should have title set to specific value', async () => {
@@ -57,6 +56,6 @@ describe('Card', () => {
 				href: '/welcome'
 			}
 		});
-		expect(getByTestId('card-title').innerHTML).toBe('welcome');
+		expect(getByTestId('card_title').innerHTML).toBe('welcome');
 	});
 });

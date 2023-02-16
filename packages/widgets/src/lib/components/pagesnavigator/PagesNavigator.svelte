@@ -36,7 +36,7 @@
 	class:pagesnav__spacer--bottom={!prev.href || !next.href}
 	style={cssStyles}
 	aria-label="Pages navigation"
-	data-testid="pagesnav-main"
+	data-testid="pagesnav_main"
 >
 	{#if areRequiredDefined(prev)}
 		<Previous {prev} {next} {placeholders} {labels} {spacer}>

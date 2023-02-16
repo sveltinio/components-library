@@ -226,7 +226,7 @@
 	class="sn-w-colors sn-w-c-toc-vars sn-w-c-toc {className}"
 	style={cssStyles}
 	aria-label={label}
-	data-testid="toc-main"
+	data-testid="toc_main"
 >
 	<TocButton {label} bind:isOpen {iconOnly} {labelOnly} />
 	<TocList {data} {ordered} {isOpen} {full} prefixChar={prefix} />

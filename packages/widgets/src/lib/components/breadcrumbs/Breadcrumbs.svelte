@@ -106,7 +106,7 @@
 					href="{baseURL}/{parent.href}"
 					class="is-parent"
 					aria-label={capitalize(parent?.label)}
-					data-testid="linkToParent">{capitalize(parent?.label)}</a
+					data-testid="link_to_parent">{capitalize(parent?.label)}</a
 				>
 			</li>
 		{/each}
@@ -115,7 +115,7 @@
 				class="item is-current"
 				aria-current="page"
 				aria-label={makeTitle(current)}
-				data-testid="currentPage"
+				data-testid="current_page"
 			>
 				<span class="icon icon__divider">
 					<slot name="dividerIcon">

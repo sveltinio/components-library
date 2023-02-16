@@ -3,9 +3,9 @@
 	export let href = '';
 </script>
 
-<div class="card__title" data-testid="card-title">
+<div class="card__title" data-testid="card_title">
 	<a {href} aria-label="link to {title}"
-		><h2 data-testid="card-title-text">
+		><h2 data-testid="card_title_text">
 			{title}
 		</h2></a
 	>

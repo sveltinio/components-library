@@ -25,7 +25,7 @@
 	class:next__only={!areRequiredDefined(prev)}
 	class:next__only--with-spacer={spacer && !areRequiredDefined(prev)}
 	aria-label="link to {nextTitle}"
-	data-testid="link-to-next"
+	data-testid="link_to_next"
 >
 	<div class="content">
 		<div class="content__next">
@@ -33,7 +33,7 @@
 				<span class="content__placeholder">{capitalize(nextPlaceholderTxt)}</span>
 			{/if}
 			{#if labels}
-				<p class="content__message" data-testid="next-message-text">
+				<p class="content__message" data-testid="next_message_text">
 					{next.label}
 				</p>
 			{/if}

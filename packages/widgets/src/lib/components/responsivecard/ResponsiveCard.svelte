@@ -31,7 +31,7 @@
 <div
 	class="sn-w-colors sn-w-c-responsivecard-vars sn-w-c-responsivecard {className}"
 	style={cssStyles}
-	data-testid="responsivecard-main"
+	data-testid="responsivecard_main"
 >
 	{#if $$slots.cardImage}
 		<slot name="cardImage" />

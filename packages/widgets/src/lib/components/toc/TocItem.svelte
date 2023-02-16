@@ -4,8 +4,8 @@
 	export let prefixChar: string;
 </script>
 
-<li id="toc_item_{id}" class="list__item" role="none" data-testid="toc-item-{id}">
-	<a href="#{id}" role="menuitem" data-testid="toc-link-{id}"
+<li id="toc_item_{id}" class="list__item" role="none" data-testid="toc_item_{id}">
+	<a href="#{id}" role="menuitem" data-testid="toc_link_{id}"
 		>{#if prefixChar}{prefixChar}&nbsp;{/if}{value}</a
 	>
 </li>

@@ -5,6 +5,10 @@ import { TOC } from '../src/lib/index.js';
 import { tocEntries } from '../src/data/sample.js';
 
 describe('TOC', () => {
+	it('should have 4 items', async () => {
+		expect(tocEntries.length).toBe(4);
+	});
+
 	it('should be in the document', async () => {
 		const { container } = render(TOC, {
 			props: {
@@ -14,10 +18,6 @@ describe('TOC', () => {
 		expect(container).toBeInTheDocument();
 	});
 
-	it('should have 4 items', async () => {
-		expect(tocEntries.length).toBe(4);
-	});
-
 	it('should contain the toggle button', async () => {
 		const { getByTestId } = render(TOC, {
 			props: {
@@ -25,17 +25,17 @@ describe('TOC', () => {
 			}
 		});
 
-		expect(getByTestId('toc-main')).toContainElement(getByTestId('toc-btn'));
+		expect(getByTestId('toc_main')).toContainElement(getByTestId('toc_btn'));
 	});
 
-	it('should have a 3 list', async () => {
+	it('should have a 2 list', async () => {
 		const { getAllByTestId } = render(TOC, {
 			props: {
 				data: tocEntries
 			}
 		});
 
-		const lists = getAllByTestId('toc-list');
+		const lists = getAllByTestId('toc_list');
 		expect(lists.length).toBe(2);
 	});
 
@@ -46,12 +46,12 @@ describe('TOC', () => {
 			}
 		});
 
-		const lists = getAllByTestId('toc-list');
-		expect(lists[0]).toHaveClass('hidden');
+		const lists = getAllByTestId('toc_list');
+		expect(lists[0]).toHaveClass('list hidden');
 
-		const button = getByTestId('toc-btn');
+		const button = getByTestId('toc_btn');
 		await fireEvent.click(button);
 
-		expect(lists[0]).toHaveClass('visible');
+		expect(lists[0]).toHaveClass('list visible');
 	});
 });

@@ -36,7 +36,7 @@
 <div
 	class="sn-w-colors sn-w-c-sttb-vars sn-w-c-sttb"
 	style={cssStyles}
-	data-testid="scroll-to-top_main"
+	data-testid="scroll_to_top_main"
 >
 	<a
 		class="btn"

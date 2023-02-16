@@ -25,7 +25,7 @@
 	class:prev__only={!areRequiredDefined(next)}
 	class:prev__only--with-spacer={spacer && !areRequiredDefined(next)}
 	aria-label="link to {prevTitle}"
-	data-testid="link-to-previous"
+	data-testid="link_to_previous"
 >
 	<div class="content">
 		<!-- prevIcon slot-->
@@ -36,7 +36,7 @@
 				<span class="content__placeholder">{capitalize(prevPlaceholderTxt)}</span>
 			{/if}
 			{#if labels}
-				<p class="content__message" data-testid="previous-message-text">
+				<p class="content__message" data-testid="previous_message_text">
 					{prev.label}
 				</p>
 			{/if}

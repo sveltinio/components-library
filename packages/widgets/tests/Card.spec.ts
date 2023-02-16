@@ -35,7 +35,7 @@ describe('Card', () => {
 				href: '/welcome'
 			}
 		});
-		expect(getByTestId('card-title')).toContainElement(getByTestId('card-title-text'));
+		expect(getByTestId('card_title')).toContainElement(getByTestId('card_title_text'));
 	});
 
 	it('should have card-title-text defined', async () => {
@@ -46,7 +46,7 @@ describe('Card', () => {
 				href: '/welcome'
 			}
 		});
-		expect(getByTestId('card-title-text')).toBeDefined();
+		expect(getByTestId('card_title_text')).toBeDefined();
 	});
 
 	it('should have title and content set to specific value', async () => {
@@ -57,7 +57,7 @@ describe('Card', () => {
 				href: '/welcome'
 			}
 		});
-		expect(getByTestId('card-title-text').innerHTML).toBe('welcome');
+		expect(getByTestId('card_title_text').innerHTML).toBe('welcome');
 	});
 
 	it('should render slotted button', async () => {
@@ -65,7 +65,7 @@ describe('Card', () => {
 			props: { Component: Card }
 		});
 
-		const slot = getByTestId('card-action-link');
+		const slot = getByTestId('card_action_link');
 		expect(slot).not.toBeNull();
 		expect(slot.innerHTML).toContain('Read More');
 	});

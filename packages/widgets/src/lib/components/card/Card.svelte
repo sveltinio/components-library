@@ -26,7 +26,7 @@
 <div
 	class="sn-w-colors sn-w-c-card-vars sn-w-c-card {className}"
 	style={cssStyles}
-	data-testid="card-main"
+	data-testid="card_main"
 >
 	{#if $$slots.cardImage}
 		<slot name="cardImage" />

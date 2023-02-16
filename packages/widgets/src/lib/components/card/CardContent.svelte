@@ -3,8 +3,8 @@
 	export let lineClamp = 2;
 </script>
 
-<div class="card__content" data-testid="card-content">
-	<p style:-webkit-line-clamp={lineClamp} data-testid="card-content-text">
+<div class="card__content" data-testid="card_content">
+	<p style:-webkit-line-clamp={lineClamp} data-testid="card_content_text">
 		{content}
 	</p>
 </div>

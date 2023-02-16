@@ -21,7 +21,7 @@
 	class:hidden={!isOpen}
 	class:list--ordered={ordered}
 	role="menu"
-	data-testid="toc-list"
+	data-testid="toc_list"
 >
 	{#each data as item, idx (item.id)}
 		<TocItem id={item.id} value={item.value} {prefixChar} />

@@ -20,7 +20,7 @@ describe('Breadcrumbs', () => {
 			}
 		});
 		expect(screen.queryByText('Posts')).toBeInTheDocument();
-		const linkToParent = getByTestId('linkToParent');
+		const linkToParent = getByTestId('link_to_parent');
 		expect(linkToParent).toHaveAttribute('href', 'http://example.com/posts');
 	});
 
@@ -30,7 +30,7 @@ describe('Breadcrumbs', () => {
 				url: 'http://example.com/posts/welcome'
 			}
 		});
-		const currentPage = getByTestId('currentPage');
+		const currentPage = getByTestId('current_page');
 		expect(currentPage).toHaveTextContent('Welcome');
 	});
 

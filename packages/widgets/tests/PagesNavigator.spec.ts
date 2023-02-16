@@ -34,7 +34,7 @@ describe('PagesNavigator - Previous', () => {
 				next: nextObj
 			}
 		});
-		expect(getByTestId('link-to-previous')).toBeDefined();
+		expect(getByTestId('link_to_previous')).toBeDefined();
 	});
 
 	it('should have the link to the previous item with an accessible name (alt)', async () => {
@@ -45,7 +45,7 @@ describe('PagesNavigator - Previous', () => {
 			}
 		});
 
-		const link = getByTestId('link-to-previous');
+		const link = getByTestId('link_to_previous');
 		expect(link).toHaveAccessibleName();
 	});
 
@@ -57,7 +57,7 @@ describe('PagesNavigator - Previous', () => {
 			}
 		});
 
-		const link = getByTestId('link-to-previous');
+		const link = getByTestId('link_to_previous');
 		expect(link).toHaveAccessibleDescription();
 	});
 
@@ -68,7 +68,7 @@ describe('PagesNavigator - Previous', () => {
 				next: nextObj
 			}
 		});
-		const messageText = getByTestId('previous-message-text');
+		const messageText = getByTestId('previous_message_text');
 		expect(messageText.innerHTML).toBe('Welcome');
 	});
 
@@ -92,7 +92,7 @@ describe('PagesNavigator - Next', () => {
 				next: nextObj
 			}
 		});
-		expect(getByTestId('link-to-next')).toBeDefined();
+		expect(getByTestId('link_to_next')).toBeDefined();
 	});
 
 	it('should have the link to the next item with an accessible name (alt)', async () => {
@@ -103,7 +103,7 @@ describe('PagesNavigator - Next', () => {
 			}
 		});
 
-		const link = getByTestId('link-to-next');
+		const link = getByTestId('link_to_next');
 		expect(link).toHaveAccessibleName();
 	});
 
@@ -115,7 +115,7 @@ describe('PagesNavigator - Next', () => {
 			}
 		});
 
-		const link = getByTestId('link-to-next');
+		const link = getByTestId('link_to_next');
 		expect(link).toHaveAccessibleDescription();
 	});
 
@@ -126,7 +126,7 @@ describe('PagesNavigator - Next', () => {
 				next: nextObj
 			}
 		});
-		const messageText = getByTestId('next-message-text');
+		const messageText = getByTestId('next_message_text');
 		expect(messageText.innerHTML).toBe('Getting Started');
 	});
 
