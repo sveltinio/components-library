@@ -14,13 +14,13 @@
 	<meta property="music:release_date" content={formatDate(_date)} />
 {/if}
 
-{#if data.opengraph?.album?.musicians}
+{#if Array.isArray(data.opengraph?.album?.musicians) && data.opengraph?.album?.musicians}
 	{#each data.opengraph?.album?.musicians as musician}
 		<meta property="music:musician" content={musician.url} />
 	{/each}
 {/if}
 
-{#if data.opengraph?.album?.songs}
+{#if Array.isArray(data.opengraph?.album?.songs) && data.opengraph?.album?.songs}
 	{#each data.opengraph?.album?.songs as song}
 		<meta property="music:song" content={song.url} />
 	{/each}

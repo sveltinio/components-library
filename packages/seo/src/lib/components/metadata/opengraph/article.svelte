@@ -28,7 +28,7 @@
 	<meta property="article:section" content={data.opengraph.article.section} />
 {/if}
 
-{#if data.opengraph?.article?.tags}
+{#if Array.isArray(data.opengraph?.article?.tags) && data.opengraph?.article?.tags}
 	{@const _tags = data.opengraph?.article?.tags}
 	{#each _tags as tag}
 		<meta property="article:tag" content={tag} />

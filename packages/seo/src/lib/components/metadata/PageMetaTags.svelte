@@ -11,7 +11,7 @@
 	<link rel="canonical" href={data.url} />
 	<meta name="description" content={data.description} />
 	<meta name="generator" content="sveltin" />
-	{#if data.keywords && data.keywords.length != 0}
+	{#if Array.isArray(data.keywords) && data.keywords.length != 0}
 		<meta name="keywords" content={data.keywords.join(', ')} />
 	{/if}
 

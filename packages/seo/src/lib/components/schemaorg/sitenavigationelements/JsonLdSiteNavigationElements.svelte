@@ -9,15 +9,17 @@
 	function makeSiteNavigationElementList(data: SEOMenuItem[]): Array<SiteNavigationElement> {
 		let elementList: Array<SiteNavigationElement> = [];
 
-		data.forEach((elem: SEOMenuItem) => {
-			const item: SiteNavigationElement = {
-				'@type': 'SiteNavigationElement',
-				position: elem.weight,
-				name: elem.identifier,
-				url: elem.external ? elem.url : `${baseURL}${elem.url}`
-			};
-			elementList.push(item);
-		});
+		if (Array.isArray(data)) {
+			data.forEach((elem: SEOMenuItem) => {
+				const item: SiteNavigationElement = {
+					'@type': 'SiteNavigationElement',
+					position: elem.weight,
+					name: elem.identifier,
+					url: elem.external ? elem.url : `${baseURL}${elem.url}`
+				};
+				elementList.push(item);
+			});
+		}
 		return elementList;
 	}
 

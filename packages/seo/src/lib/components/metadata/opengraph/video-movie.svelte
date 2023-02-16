@@ -5,7 +5,7 @@
 	export let data: SEOWebPage;
 </script>
 
-{#if data.opengraph?.movie?.actor}
+{#if Array.isArray(data.opengraph?.movie?.actor) && data.opengraph?.movie?.actor}
 	{#each data.opengraph?.movie?.actor as actor}
 		<meta property="video:actor" content={actor.url} />
 	{/each}
@@ -15,13 +15,13 @@
 	<meta property="video:actor:role" content={data.opengraph.movie.actorRole} />
 {/if}
 
-{#if data.opengraph?.movie?.director}
+{#if Array.isArray(data.opengraph?.movie?.director) && data.opengraph?.movie?.director}
 	{#each data.opengraph?.movie?.director as director}
 		<meta property="video:director" content={director.url} />
 	{/each}
 {/if}
 
-{#if data.opengraph?.movie?.writer}
+{#if Array.isArray(data.opengraph?.movie?.writer) && data.opengraph?.movie?.writer}
 	{#each data.opengraph?.movie?.writer as writer}
 		<meta property="video:writer" content={writer.url} />
 	{/each}
@@ -37,7 +37,7 @@
 	<meta property="video:release_date" content={formatDate(_date)} />
 {/if}
 
-{#if data.opengraph?.movie?.tags}
+{#if Array.isArray(data.opengraph?.movie?.tags) && data.opengraph?.movie?.tags}
 	{@const _tags = data.opengraph?.movie?.tags}
 	{#each _tags as tag}
 		<meta property="video:tag" content={tag} />

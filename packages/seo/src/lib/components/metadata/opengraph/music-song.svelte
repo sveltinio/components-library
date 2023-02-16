@@ -13,7 +13,7 @@
 	<meta property="music:duration" content={_duration} />
 {/if}
 
-{#if data.opengraph?.song?.album}
+{#if Array.isArray(data.opengraph?.song?.album) && data.opengraph?.song?.album}
 	{#each data.opengraph?.song?.album as album}
 		<meta property="music:album" content={album.url} />
 	{/each}
@@ -29,7 +29,7 @@
 	<meta property="music:album:track" content={_track} />
 {/if}
 
-{#if data.opengraph?.song?.musician}
+{#if Array.isArray(data.opengraph?.song?.musician) && data.opengraph?.song?.musician}
 	{#each data.opengraph?.song?.musician as musician}
 		<meta property="music:musician" content={musician.url} />
 	{/each}

@@ -18,7 +18,7 @@
 	<meta property="book:release_date" content={formatDate(_release_date)} />
 {/if}
 
-{#if data.opengraph?.book?.tags}
+{#if Array.isArray(data.opengraph?.book?.tags) && data.opengraph?.book?.tags}
 	{@const _tags = data.opengraph?.book?.tags}
 	{#each _tags as tag}
 		<meta property="book:tag" content={tag} />

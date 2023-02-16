@@ -13,7 +13,8 @@
 	};
 
 	if (data.author) schemaOrgWebPage.author = data.author;
-	if (data.keywords && data.keywords.length != 0) schemaOrgWebPage.keywords = data.keywords;
+	if (Array.isArray(data.keywords) && data.keywords.length != 0)
+		schemaOrgWebPage.keywords = data.keywords;
 </script>
 
 <svelte:head>
