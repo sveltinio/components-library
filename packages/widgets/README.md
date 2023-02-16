@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Widgets Components</h1>
+    <h1>@sveltinio/widgets</h1>
     &nbsp;
     <a href="https://www.npmjs.com/package/@sveltinio/widgets" target="_blank"><img src="https://img.shields.io/npm/v/@sveltinio/widgets.svg?style=flat" alt="sveltinio/widgets NPM version badge" /></a>
 </div>

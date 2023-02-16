@@ -61,15 +61,15 @@ The `TOC` component exposes the following properties:
 
 ### Functionals
 
-| Property   | Type             | Required | Default           | Description                                   |
-| :--------- | :--------------: | :------: | :---------------: | :-------------------------------------------- |
-| data       | `Array<TocEntry>`|   yes    |                   | The data tree to be rendered                  |
-| label      | string           |   no     | Table of Contents | The text to be showed on the button           |
-| full       | boolean          |   no     | true              | If false, only level 1 and 2 will be rendered |
-| iconOnly   | boolean          |   no     | false             | If true, the label is not rendered            |
-| labelOnly  | boolean          |   no     | false             | If true, the icon is not rendered             |
-| prefixChar | string           |   no     | #                 | Prepend char to the list items                |
-| ordered    | boolean          |   no     | false             | If true, on ordered list will be used         |
+| Property   | Type              | Required | Default             | Description                                   |
+| :--------- | :---------------: | :------: | :-----------------: | :-------------------------------------------- |
+| data       | `Array<TocEntry>` |   yes    |                     | The data tree to be rendered                  |
+| label      | `string`          |   no     | `Table of Contents` | The text to be showed on the button           |
+| full       | `boolean`         |   no     | `true`              | If false, only level 1 and 2 will be rendered |
+| iconOnly   | `boolean`         |   no     | `false`             | If true, the label is not rendered            |
+| labelOnly  | `boolean`         |   no     | `false`             | If true, the icon is not rendered             |
+| prefixChar | `string`          |   no     | `#`                 | Prepend char to the list items                |
+| ordered    | `boolean`         |   no     | `false`             | If true, on ordered list will be used         |
 
 **data** is an array of `TocEntry` objects:
 
@@ -84,10 +84,10 @@ type TocEntry = {
 
 ### Styles
 
-| Property   | Type             | Required | Default | Description                                       |
-| :--------- | :--------------: | :------: | :-----: | :------------------------------------------------ |
-| class      | string           |   no     |         | The css class name used to make a theme variant   |
-| styles     | Object           |   no     | `{}`    | Used to pass CSS variables to apply custom styles |
+| Property   | Type     | Required | Default | Description                                       |
+| :--------- | :------: | :------: | :-----: | :------------------------------------------------ |
+| class      | `string` |   no     |         | The css class name used to make a theme variant   |
+| styles     | `Object` |   no     | `{}`    | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
