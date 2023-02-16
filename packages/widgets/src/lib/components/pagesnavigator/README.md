@@ -29,9 +29,9 @@ The `PagesNavigator` component exposes the following properties:
 | :----------- | :------------------: | :------: | :-----: | :------------------------------------------------------------- |
 | prev         | `PagesNavigatorItem` |    yes   |         |                                                                |
 | next         | `PagesNavigatorItem` |    yes   |         |                                                                |
-| placeholders |   `boolean`          |    no    |  `true` | If false, does not show the placeholders 'previous' and 'next' |
-| labels       |   `boolean`          |    no    |  `true` | If false, does not show the labels (titles)                    |
-| spacer       |   `boolean`          |    no    | `false` | If true, shows a vertical line between left and right content  |
+| placeholders | `boolean`            |    no    |  `true` | If false, does not show the placeholders 'previous' and 'next' |
+| labels       | `boolean`            |    no    |  `true` | If false, does not show the labels (titles)                    |
+| spacer       | `boolean`            |    no    | `false` | If true, shows a vertical line between left and right content  |
 
 **prev** and **next** are `PagesNavigatorItem` objects:
 
@@ -40,16 +40,16 @@ type PagesNavigatorItem = {
    label: string;
    placeholder?: string;
    href: string;
-   alt?: string;
+   title?: string;
 };
 ```
 
 ### Styles
 
-| Property     | Type                 | Required | Default | Description                                       |
-| :----------- | :------------------: | :------: | :-----: | :------------------------------------------------ |
-| class        |    string            |    no    |         | The css class name used to make a theme variant   |
-| styles       |    Object            |    no    |   `{}`  | Used to pass CSS variables to apply custom styles |
+| Property     | Type     | Required | Default | Description                                       |
+| :----------- | :------: | :------: | :-----: | :------------------------------------------------ |
+| class        | `string` |    no    |         | The css class name used to make a theme variant   |
+| styles       | `Object` |    no    |   `{}`  | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 

@@ -15,16 +15,16 @@
 	}
 
 	let nextPlaceholderTxt = next.placeholder ?? 'next';
-	let nextAltText = next.alt ?? next.label;
+	let nextTitle = next.title ?? next.label;
 </script>
 
 <a
 	href={next.href}
-	title="link to {nextAltText}"
+	title="link to {nextTitle}"
 	class="link"
 	class:next__only={!areRequiredDefined(prev)}
 	class:next__only--with-spacer={spacer && !areRequiredDefined(prev)}
-	aria-label="link to {nextAltText}"
+	aria-label="link to {nextTitle}"
 	data-testid="link-to-next"
 >
 	<div class="content">
