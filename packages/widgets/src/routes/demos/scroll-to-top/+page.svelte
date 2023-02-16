@@ -20,7 +20,7 @@
 	<div id="scroll-to-top-default-wrapper" class="demo-wrapper">
 		<h3 id="scroll-to-top-default">Complete</h3>
 		<div class="preview">
-			<ScrollToTopButton showOnPx={10} />
+			<ScrollToTopButton showOnPx={10} bounce={true} />
 		</div>
 		<h4>Sample Text</h4>
 		<p>
@@ -47,6 +47,7 @@
 				showOnPx={10}
 				iconColor="blue"
 				fillColor="red"
+				shape="square"
 				styles={customBtnStyles}
 			/>
 		</div>

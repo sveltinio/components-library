@@ -12,7 +12,6 @@
     right: var(--_right);
     padding: var(--_padding);
     margin: var(--_margin);
-    border-radius: 50%;
     transition-property: var(--_transition);
     transition-timing-function: var(--_timing-function);
     transition-duration: var(--_duration);
@@ -23,6 +22,18 @@
       outline-color: var(--_outline-color);
       outline-offset: var(--_outline-offset);
     }
+  }
+
+  & .square {
+    border-radius: 0;
+  }
+
+  & .rounded {
+    border-radius: 0.125rem;
+  }
+
+  & .circle {
+    border-radius: 50%;
   }
 
   & .hide {

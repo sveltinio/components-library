@@ -7,7 +7,8 @@
 	export let showOnPx = 400;
 	export let iconColor = '#ffffff';
 	export let fillColor = '#4b5563';
-	export let bounce = true;
+	export let shape = 'circle';
+	export let bounce = false;
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
@@ -39,8 +40,10 @@
 >
 	<a
 		class="btn"
+		class:circle={shape == 'circle'}
+		class:rounded={shape == 'rounded'}
+		class:square={shape == 'square'}
 		class:bounce
-		data-testid="bounce-btn"
 		href="#top"
 		aria-label="Back to top"
 		on:click={goTop}
@@ -48,6 +51,7 @@
 		style:background-color={fillColor}
 		class:hide={hidden}
 		class:show={!hidden}
+		data-testid="sct_btn"
 	>
 		<slot name="icon">
 			<svg
