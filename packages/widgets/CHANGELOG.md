@@ -1,5 +1,17 @@
 # @sveltinio/widgets
 
+## 0.6.0
+
+### Minor Changes
+
+#### Features
+
+- `shape` prop added to `ScrollToTopButton` component. One of: [`circle`, `square`, `rounded`]
+
+#### Chores
+
+- deps updated
+
 ## 0.5.1
 
 ### Patch Changes
