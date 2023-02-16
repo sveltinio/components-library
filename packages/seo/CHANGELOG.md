@@ -1,5 +1,25 @@
 # @sveltinio/seo
 
+## 0.3.0
+
+### Minor Changes
+
+#### Features
+
+- OpenGraph [types](https://github.com/sveltinio/components-library/blob/64eeb74d520495e31f408136dc4c78b36cf3c4d2/packages/seo/src/lib/types.ts#L88-L103) `Business`, `Product`, `Music` and `Video` added.
+
+#### Refactor
+
+`JsonLdBreadcrumbs` now has just `url` as prop.
+
+#### Documentation
+
+- documentation per component added
+
+#### Chores
+
+- deps updates
+
 ## 0.2.1
 
 ### Patch Changes
