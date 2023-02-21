@@ -21,8 +21,8 @@ Easily add metadata (title, canonical url, description, keywords) to your pages 
         opengraph: {
             type: OpenGraphType.Article,
             article: {
-                published_at: '23-01-2022',
-                modified_at: '24-01-2022'
+                published_at: new Date('23-01-2022'),
+                modified_at: new Date('24-01-2022')
             }
         },
         twitter: {
