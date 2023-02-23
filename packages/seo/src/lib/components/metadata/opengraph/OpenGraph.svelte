@@ -14,41 +14,38 @@
 	import VideoMovie from './video-movie.svelte';
 
 	export let data: SEOWebPage;
-	console.log(data.title);
 </script>
 
-<svelte:head>
-	{#if data.opengraph && data.opengraph.type}
-		<meta property="og:type" content={data.opengraph.type} />
-		<meta property="og:url" content={data.url} />
-		<meta property="og:title" content={data.title} />
-		<meta property="og:description" content={data.description} />
-		{#if data.image}
-			<meta property="og:image" content={data.image} />
-		{/if}
-
-		{#if data.opengraph.type == OpenGraphType.Article}
-			<Article {data} />
-		{:else if data.opengraph.type == OpenGraphType.Profile}
-			<Profile {data} />
-		{:else if data.opengraph.type == OpenGraphType.Book}
-			<Book {data} />
-		{:else if data.opengraph.type == OpenGraphType.Business}
-			<Business {data} />
-		{:else if data.opengraph.type == OpenGraphType.Product}
-			<Product {data} />
-		{:else if data.opengraph.type == OpenGraphType.MusicSong}
-			<MusicSong {data} />
-		{:else if data.opengraph.type == OpenGraphType.MusicAlbum}
-			<MusicAlbum {data} />
-		{:else if data.opengraph.type == OpenGraphType.MusicPlaylist}
-			<MusicPlaylist {data} />
-		{:else if data.opengraph.type == OpenGraphType.MusicRadioStation}
-			<MusicRadioStation {data} />
-		{:else if data.opengraph.type == OpenGraphType.VideoMovie || data.opengraph.type == OpenGraphType.VideoTVShow || data.opengraph.type == OpenGraphType.VideoOther}
-			<VideoMovie {data} />
-		{:else if data.opengraph.type == OpenGraphType.VideoEpisode}
-			<VideoEpisode {data} />
-		{/if}
+{#if data.opengraph && data.opengraph.type}
+	<meta property="og:type" content={data.opengraph.type} />
+	<meta property="og:url" content={data.url} />
+	<meta property="og:title" content={data.title} />
+	<meta property="og:description" content={data.description} />
+	{#if data.image}
+		<meta property="og:image" content={data.image} />
 	{/if}
-</svelte:head>
+
+	{#if data.opengraph.type == OpenGraphType.Article}
+		<Article {data} />
+	{:else if data.opengraph.type == OpenGraphType.Profile}
+		<Profile {data} />
+	{:else if data.opengraph.type == OpenGraphType.Book}
+		<Book {data} />
+	{:else if data.opengraph.type == OpenGraphType.Business}
+		<Business {data} />
+	{:else if data.opengraph.type == OpenGraphType.Product}
+		<Product {data} />
+	{:else if data.opengraph.type == OpenGraphType.MusicSong}
+		<MusicSong {data} />
+	{:else if data.opengraph.type == OpenGraphType.MusicAlbum}
+		<MusicAlbum {data} />
+	{:else if data.opengraph.type == OpenGraphType.MusicPlaylist}
+		<MusicPlaylist {data} />
+	{:else if data.opengraph.type == OpenGraphType.MusicRadioStation}
+		<MusicRadioStation {data} />
+	{:else if data.opengraph.type == OpenGraphType.VideoMovie || data.opengraph.type == OpenGraphType.VideoTVShow || data.opengraph.type == OpenGraphType.VideoOther}
+		<VideoMovie {data} />
+	{:else if data.opengraph.type == OpenGraphType.VideoEpisode}
+		<VideoEpisode {data} />
+	{/if}
+{/if}
