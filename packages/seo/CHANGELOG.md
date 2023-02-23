@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.3.3
+
+### Patch Changes
+
+- fix(PageMetaTags): duplicated `svelte:head` in `OpenGraph` and `TwitterCard`
+
 ## 0.3.2
 
 ### Patch Changes
