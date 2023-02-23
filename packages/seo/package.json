@@ -2,7 +2,7 @@
 	"name": "@sveltinio/seo",
 	"version": "0.3.2",
 	"private": false,
-	"packageManager": "pnpm@7.27.0",
+	"packageManager": "pnpm@7.27.1",
 	"type": "module",
 	"description": "A collection of type-safe SEO related Svelte components to easily add structured SEO data to pages in Svelte & SvelteKit.",
 	"author": "dev <dev@sveltin.io>",

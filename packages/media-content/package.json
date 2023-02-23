@@ -2,7 +2,7 @@
 	"name": "@sveltinio/media-content",
 	"version": "0.3.8",
 	"private": false,
-	"packageManager": "pnpm@7.27.0",
+	"packageManager": "pnpm@7.27.1",
 	"type": "module",
 	"description": "A collection of type-safe Svelte components to easily embed media contents in your Svelte and SvelteKit projects.",
 	"author": "dev <dev@sveltin.io>",
