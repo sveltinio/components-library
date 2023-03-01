@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.3.4
+
+### Patch Changes
+
+- fix(JsonLdBreadcrumbs): avoid duplicated entries when current is empty
+
 ## 0.3.3
 
 ### Patch Changes

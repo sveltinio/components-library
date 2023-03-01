@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/seo",
-	"version": "0.3.3",
+	"version": "0.3.4",
 	"private": false,
 	"packageManager": "pnpm@7.28.0",
 	"type": "module",
