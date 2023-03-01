@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"stylelint": "^14.16.1",
-		"stylelint-config-prettier": "^9.0.4",
+		"stylelint-config-prettier": "^9.0.5",
 		"stylelint-config-standard": "^29.0.0"
 	},
 	"main": "index.cjs"
