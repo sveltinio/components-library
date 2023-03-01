@@ -2,7 +2,7 @@
 	import type { ListItem, BreadcrumbList, WithContext } from 'schema-dts';
 	import { serializeJSONLdSchema, pathSegments } from '../../../utils.js';
 
-	export let url = '';
+	export let url: string;
 
 	const baseURL = new URL(url).origin;
 	const segments = pathSegments(url);
@@ -41,14 +41,15 @@
 			elements.push(parentElem);
 		});
 
-		const currentElem: ListItem = {
-			'@type': 'ListItem',
-			position: 2 + segments.length,
-			name: current,
-			url: url
-		};
-		elements.push(currentElem);
-
+		if (current != '') {
+			const currentElem: ListItem = {
+				'@type': 'ListItem',
+				position: 2 + segments.length,
+				name: current,
+				url: url
+			};
+			elements.push(currentElem);
+		}
 		return elements;
 	}
 
