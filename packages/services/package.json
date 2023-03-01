@@ -2,7 +2,7 @@
 	"name": "@sveltinio/services",
 	"version": "0.3.4",
 	"private": false,
-	"packageManager": "pnpm@7.27.1",
+	"packageManager": "pnpm@7.28.0",
 	"type": "module",
 	"description": "Type-safe Svelte components to easily use GoogleFonts, GoogleAnalytics and Umami in your Svelte and SvelteKit projects.",
 	"author": "dev <dev@sveltin.io>",
