@@ -33,7 +33,7 @@ describe('JsonLdWebSite', () => {
 		expect(jsonLdString['@id']).toBe('https://example.com/#website');
 		expect(jsonLdString.name).toBe('example.com');
 		expect(jsonLdString.url).toBe('https://example.com');
-		expect(jsonLdString.description).toBe('Sample enhanced text for SEO purpose');
+		expect(jsonLdString.description).toBe('Example.com is your perfect fit.');
 		expect(jsonLdString.inLanguage).toBe('en-GB');
 	});
 });

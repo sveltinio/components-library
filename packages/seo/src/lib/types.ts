@@ -3,9 +3,7 @@ export type SEOWebSite = {
 	baseURL: string;
 	language: string;
 	title: string;
-	slogan?: string;
 	description: string;
-	seoDescription?: string;
 	favicon?: string;
 	logo?: string;
 	copyright?: string;

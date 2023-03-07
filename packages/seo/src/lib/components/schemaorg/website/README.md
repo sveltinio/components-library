@@ -15,9 +15,7 @@
         language: 'en-GB',
         logo: 'logo.png',
         title: 'example',
-        slogan: '',
         description: 'Example.com is your perfect fit.',
-        seoDescription: 'Sample enhanced text for SEO purpose',
         favicon: 'favicon.ico',
         copyright: 'MIT License @ 2021-present example.com',
         keywords: ['sveltekit, components, tests, jest'],
@@ -86,9 +84,7 @@ type SEOWebSite = {
     baseURL: string;
     language: string;
     title: string;
-    slogan?: string;
     description: string;
-    seoDescription?: string;
     favicon?: string;
     logo?: string;
     copyright?: string;

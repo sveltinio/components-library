@@ -11,9 +11,9 @@
 		'@id': `${data.baseURL}/#website`,
 		name: data.name,
 		url: data.baseURL,
-		description: data.seoDescription != '' ? data.seoDescription : data.description,
+		description: data.description,
 		inLanguage: data.language,
-		license: data.copyright
+		license: data.copyright || ''
 	};
 
 	if (data.socials != undefined) {
