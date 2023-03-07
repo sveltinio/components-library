@@ -1,5 +1,12 @@
 # @sveltinio/seo
 
+## 0.3.5
+
+### Patch Changes
+
+- fix(JsonLdWebSite): description
+- cleanup SEOWebSite type
+
 ## 0.3.4
 
 ### Patch Changes
