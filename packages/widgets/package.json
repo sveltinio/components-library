@@ -2,7 +2,7 @@
 	"name": "@sveltinio/widgets",
 	"version": "0.6.1",
 	"private": false,
-	"packageManager": "pnpm@7.28.0",
+	"packageManager": "pnpm@7.29.0",
 	"type": "module",
 	"description": "A collection of responsive, type-safe, accessible and configurable Svelte components for cards, pages navigation, TOC (Table of Contents), ...",
 	"author": "dev <dev@sveltin.io>",
