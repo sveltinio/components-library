@@ -1,2 +1,1 @@
-import OpenGraph from './OpenGraph.svelte';
-export { OpenGraph };
+export { default as OpenGraph } from './OpenGraph.svelte';

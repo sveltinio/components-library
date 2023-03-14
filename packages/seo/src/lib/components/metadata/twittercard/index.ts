@@ -1,2 +1,1 @@
-import TwitterCard from './TwitterCard.svelte';
-export { TwitterCard };
+export { default as TwitterCard } from './TwitterCard.svelte';

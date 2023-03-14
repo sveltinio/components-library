@@ -1,2 +1,1 @@
-import JsonLdBreadcrumbs from './JsonLdBreadcrumbs.svelte';
-export { JsonLdBreadcrumbs };
+export { default as JsonLdBreadcrumbs } from './JsonLdBreadcrumbs.svelte';

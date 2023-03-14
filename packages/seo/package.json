@@ -34,7 +34,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.10.0",
-		"@sveltejs/package": "^1.0.2",
+		"@sveltejs/package": "^2.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/svelte": "^3.2.2",
@@ -60,30 +60,168 @@
 		"vitest": "^0.28.5"
 	},
 	"scripts": {
-		"build": "pnpm clean && pnpm sync && svelte-package && pnpm postbuild",
+		"build": "pnpm clean && pnpm sync && svelte-package -o dist && pnpm postbuild",
 		"check": "pnpm sync && svelte-check",
 		"check:watch": "pnpm sync && svelte-check --watch",
 		"clean": "rimraf dist",
 		"dev": "pnpm sync && vite dev",
 		"format": "prettier --plugin-search-dir=. --write .",
 		"lint": "prettier --plugin-search-dir=. --check . && eslint .",
-		"postbuild": "pnpm exec publint ./dist",
+		"postbuild": "node ../../copyPkgJson.mjs && pnpm exec publint ./dist",
 		"sync": "svelte-kit sync",
 		"test": "pnpm sync && vitest run",
 		"test:coverage": "pnpm sync && vitest run --coverage",
 		"test:watch": "pnpm sync && vitest watch"
 	},
 	"types": "index.d.ts",
-	"svelte": "index.js",
 	"sideEffects": false,
-	"publishConfig": {
-		"directory": "dist"
-	},
 	"exports": {
-		".": {
-			"types": "./types.d.ts",
-			"import": "./index.js"
+		"./package.json": "./package.json",
+		"./metadata": {
+			"types": "./components/metadata/index.d.ts",
+			"svelte": "./components/metadata/index.js",
+			"default": "./components/metadata/index.js"
 		},
-		"./dist": "./index.js"
+		"./metadata/PageMetaTags.svelte": {
+			"types": "./components/metadata/PageMetaTags.svelte.d.ts",
+			"svelte": "./components/metadata/PageMetaTags.svelte",
+			"default": "./components/metadata/PageMetaTags.svelte"
+		},
+		"./metadata/opengraph": {
+			"types": "./components/metadata/opengraph/index.d.ts",
+			"svelte": "./components/metadata/opengraph/index.js",
+			"default": "./components/metadata/opengraph/index.js"
+		},
+		"./metadata/opengraph/OpenGraph.svelte": {
+			"types": "./components/metadata/opengraph/OpenGraph.svelte.d.ts",
+			"svelte": "./components/metadata/opengraph/OpenGraph.svelte",
+			"default": "./components/metadata/opengraph/OpenGraph.svelte"
+		},
+		"./metadata/twittercard": {
+			"types": "./components/metadata/twittercard/index.d.ts",
+			"svelte": "./components/metadata/twittercard/index.js",
+			"default": "./components/metadata/twittercard/index.js"
+		},
+		"./metadata/twittercard/TwitterCard.svelte": {
+			"types": "./components/metadata/twittercard/TwitterCard.svelte.d.ts",
+			"svelte": "./components/metadata/twittercard/TwitterCard.svelte",
+			"default": "./components/metadata/twittercard/TwitterCard.svelte"
+		},
+		"./schemaorg": {
+			"types": "./components/schemaorg/index.d.ts",
+			"svelte": "./components/schemaorg/index.js",
+			"default": "./components/schemaorg/index.js"
+		},
+		"./schemaorg/breadcrumbs": {
+			"types": "./components/schemaorg/breadcrumbs/index.d.ts",
+			"svelte": "./components/schemaorg/breadcrumbs/index.js",
+			"default": "./components/schemaorg/breadcrumbs/index.js"
+		},
+		"./schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte": {
+			"types": "./components/schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte.d.ts",
+			"svelte": "./components/schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte",
+			"default": "./components/schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte"
+		},
+		"./schemaorg/sitenavigationelements": {
+			"types": "./components/schemaorg/sitenavigationelements/index.d.ts",
+			"svelte": "./components/schemaorg/sitenavigationelements/index.js",
+			"default": "./components/schemaorg/sitenavigationelements/index.js"
+		},
+		"./schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte": {
+			"types": "./components/schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte.d.ts",
+			"svelte": "./components/schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte",
+			"default": "./components/schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte"
+		},
+		"./schemaorg/webpage": {
+			"types": "./components/schemaorg/webpage/index.d.ts",
+			"svelte": "./components/schemaorg/webpage/index.js",
+			"default": "./components/schemaorg/webpage/index.js"
+		},
+		"./schemaorg/webpage/JsonLdWebPage.svelte": {
+			"types": "./components/schemaorg/webpage/JsonLdWebPage.svelte.d.ts",
+			"svelte": "./components/schemaorg/webpage/JsonLdWebPage.svelte",
+			"default": "./components/schemaorg/webpage/JsonLdWebPage.svelte"
+		},
+		"./schemaorg/website": {
+			"types": "./components/schemaorg/website/index.d.ts",
+			"svelte": "./components/schemaorg/website/index.js",
+			"default": "./components/schemaorg/website/index.js"
+		},
+		"./schemaorg/website/JsonLdWebSite.svelte": {
+			"types": "./components/schemaorg/website/JsonLdWebSite.svelte.d.ts",
+			"svelte": "./components/schemaorg/website/JsonLdWebSite.svelte",
+			"default": "./components/schemaorg/website/JsonLdWebSite.svelte"
+		},
+		".": {
+			"types": "./index.d.ts",
+			"svelte": "./index.js",
+			"default": "./index.js"
+		},
+		"./types": {
+			"types": "./types.d.ts",
+			"default": "./types.js"
+		},
+		"./utils": {
+			"types": "./utils.d.ts",
+			"default": "./utils.js"
+		}
+	},
+	"typesVersions": {
+		">4.0": {
+			"metadata": [
+				"./components/metadata/index.d.ts"
+			],
+			"metadata/PageMetaTags.svelte": [
+				"./components/metadata/PageMetaTags.svelte.d.ts"
+			],
+			"metadata/opengraph": [
+				"./components/metadata/opengraph/index.d.ts"
+			],
+			"metadata/opengraph/OpenGraph.svelte": [
+				"./components/metadata/opengraph/OpenGraph.svelte.d.ts"
+			],
+			"metadata/twittercard": [
+				"./components/metadata/twittercard/index.d.ts"
+			],
+			"metadata/twittercard/TwitterCard.svelte": [
+				"./components/metadata/twittercard/TwitterCard.svelte.d.ts"
+			],
+			"schemaorg": [
+				"./components/schemaorg/index.d.ts"
+			],
+			"schemaorg/breadcrumbs": [
+				"./components/schemaorg/breadcrumbs/index.d.ts"
+			],
+			"schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte": [
+				"./components/schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte.d.ts"
+			],
+			"schemaorg/sitenavigationelements": [
+				"./components/schemaorg/sitenavigationelements/index.d.ts"
+			],
+			"schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte": [
+				"./components/schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte.d.ts"
+			],
+			"schemaorg/webpage": [
+				"./components/schemaorg/webpage/index.d.ts"
+			],
+			"schemaorg/webpage/JsonLdWebPage.svelte": [
+				"./components/schemaorg/webpage/JsonLdWebPage.svelte.d.ts"
+			],
+			"schemaorg/website": [
+				"./components/schemaorg/website/index.d.ts"
+			],
+			"schemaorg/website/JsonLdWebSite.svelte": [
+				"./components/schemaorg/website/JsonLdWebSite.svelte.d.ts"
+			],
+			"index": [
+				"./index.d.ts"
+			],
+			"types": [
+				"./types.d.ts"
+			],
+			"utils": [
+				"./utils.d.ts"
+			]
+		}
 	}
 }

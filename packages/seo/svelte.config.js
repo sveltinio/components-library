@@ -11,16 +11,6 @@ const config = {
 
 	kit: {
 		adapter: adapter()
-	},
-	package: {
-		dir: 'dist',
-		emitTypes: true,
-		// files to not be part of the package
-		files: (filepath) => {
-			const ds = /.DS_Store/;
-			const mdFiles = /^_|\/_|\.md$/;
-			return !ds.test(filepath) && !mdFiles.test(filepath);
-		}
 	}
 };
 

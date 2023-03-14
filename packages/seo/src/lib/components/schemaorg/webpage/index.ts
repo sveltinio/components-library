@@ -1,2 +1,1 @@
-import JsonLdWebPage from './JsonLdWebPage.svelte';
-export { JsonLdWebPage };
+export { default as JsonLdWebPage } from './JsonLdWebPage.svelte';

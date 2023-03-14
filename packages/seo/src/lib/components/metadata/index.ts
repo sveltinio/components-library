@@ -1,2 +1,1 @@
-import PageMetaTags from './PageMetaTags.svelte';
-export { PageMetaTags };
+export { default as PageMetaTags } from './PageMetaTags.svelte';
