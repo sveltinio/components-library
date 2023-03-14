@@ -1,3 +1,1 @@
-import PagesNavigator from './PagesNavigator.svelte';
-
-export { PagesNavigator };
+export { default as PagesNavigator } from './PagesNavigator.svelte';

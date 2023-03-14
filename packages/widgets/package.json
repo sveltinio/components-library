@@ -34,7 +34,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.11.0",
-		"@sveltejs/package": "^1.0.2",
+		"@sveltejs/package": "^2.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/svelte": "^3.2.2",
@@ -78,20 +78,292 @@
 		"lint:styles": "stylelint \"**/styles.postcss\"",
 		"format": "prettier --plugin-search-dir=. --write .",
 		"minify": "cross-env NODE_ENV=production node ./scripts/css-minifier.js",
-		"postbuild": "pnpm exec publint ./dist && pnpm minify",
+		"postbuild": "pnpm exec publint . && pnpm minify",
 		"sync": "svelte-kit sync",
 		"test": "pnpm build && vitest run",
 		"test:coverage": "pnpm build && vitest run --coverage",
 		"test:watch": "pnpm build && vitest watch",
 		"test:a11y": "rimraf a11y-results.json && pa11y-ci"
 	},
-	"types": "index.d.ts",
-	"svelte": "index.js",
+	"svelte": "./dist/index.js",
+	"files": [
+		"dist",
+		"!**/assets",
+		"!**/*.postcss",
+		"!**/dist/components/**/*.md"
+	],
 	"exports": {
-		".": {
-			"types": "./types.d.ts",
-			"import": "./index.js"
+		"./package.json": "./package.json",
+		"./breadcrumbs": {
+			"types": "./dist/components/breadcrumbs/index.d.ts",
+			"svelte": "./dist/components/breadcrumbs/index.js",
+			"default": "./dist/components/breadcrumbs/index.js"
 		},
-		"./dist": "./index.js"
+		"./breadcrumbs/Breadcrumbs.svelte": {
+			"types": "./dist/components/breadcrumbs/Breadcrumbs.svelte.d.ts",
+			"svelte": "./dist/components/breadcrumbs/Breadcrumbs.svelte",
+			"default": "./dist/components/breadcrumbs/Breadcrumbs.svelte"
+		},
+		"./card": {
+			"types": "./dist/components/card/index.d.ts",
+			"svelte": "./dist/components/card/index.js",
+			"default": "./dist/components/card/index.js"
+		},
+		"./card/Card.svelte": {
+			"types": "./dist/components/card/Card.svelte.d.ts",
+			"svelte": "./dist/components/card/Card.svelte",
+			"default": "./dist/components/card/Card.svelte"
+		},
+		"./card/CardAction.svelte": {
+			"types": "./dist/components/card/CardAction.svelte.d.ts",
+			"svelte": "./dist/components/card/CardAction.svelte",
+			"default": "./dist/components/card/CardAction.svelte"
+		},
+		"./card/CardContent.svelte": {
+			"types": "./dist/components/card/CardContent.svelte.d.ts",
+			"svelte": "./dist/components/card/CardContent.svelte",
+			"default": "./dist/components/card/CardContent.svelte"
+		},
+		"./card/CardImage.svelte": {
+			"types": "./dist/components/card/CardImage.svelte.d.ts",
+			"svelte": "./dist/components/card/CardImage.svelte",
+			"default": "./dist/components/card/CardImage.svelte"
+		},
+		"./card/CardTitle.svelte": {
+			"types": "./dist/components/card/CardTitle.svelte.d.ts",
+			"svelte": "./dist/components/card/CardTitle.svelte",
+			"default": "./dist/components/card/CardTitle.svelte"
+		},
+		"./card/CardTitleLink.svelte": {
+			"types": "./dist/components/card/CardTitleLink.svelte.d.ts",
+			"svelte": "./dist/components/card/CardTitleLink.svelte",
+			"default": "./dist/components/card/CardTitleLink.svelte"
+		},
+		"./pagesnavigator": {
+			"types": "./dist/components/pagesnavigator/index.d.ts",
+			"svelte": "./dist/components/pagesnavigator/index.js",
+			"default": "./dist/components/pagesnavigator/index.js"
+		},
+		"./pagesnavigator/types": {
+			"types": "./dist/components/pagesnavigator/types.d.ts",
+			"default": "./dist/components/pagesnavigator/types.js"
+		},
+		"./pagesnavigator/PagesNavigator.svelte": {
+			"types": "./dist/components/pagesnavigator/PagesNavigator.svelte.d.ts",
+			"svelte": "./dist/components/pagesnavigator/PagesNavigator.svelte",
+			"default": "./dist/components/pagesnavigator/PagesNavigator.svelte"
+		},
+		"./responsivecard": {
+			"types": "./dist/components/responsivecard/index.d.ts",
+			"svelte": "./dist/components/responsivecard/index.js",
+			"default": "./dist/components/responsivecard/index.js"
+		},
+		"./responsivecard/types": {
+			"types": "./dist/components/responsivecard/types.d.ts",
+			"default": "./dist/components/responsivecard/types.js"
+		},
+		"./responsivecard/CardAction.svelte": {
+			"types": "./dist/components/responsivecard/CardAction.svelte.d.ts",
+			"svelte": "./dist/components/responsivecard/CardAction.svelte",
+			"default": "./dist/components/responsivecard/CardAction.svelte"
+		},
+		"./responsivecard/CardBadge.svelte": {
+			"types": "./dist/components/responsivecard/CardBadge.svelte.d.ts",
+			"svelte": "./dist/components/responsivecard/CardBadge.svelte",
+			"default": "./dist/components/responsivecard/CardBadge.svelte"
+		},
+		"./responsivecard/CardContent.svelte": {
+			"types": "./dist/components/responsivecard/CardContent.svelte.d.ts",
+			"svelte": "./dist/components/responsivecard/CardContent.svelte",
+			"default": "./dist/components/responsivecard/CardContent.svelte"
+		},
+		"./responsivecard/CardImage.svelte": {
+			"types": "./dist/components/responsivecard/CardImage.svelte.d.ts",
+			"svelte": "./dist/components/responsivecard/CardImage.svelte",
+			"default": "./dist/components/responsivecard/CardImage.svelte"
+		},
+		"./responsivecard/CardInfo.svelte": {
+			"types": "./dist/components/responsivecard/CardInfo.svelte.d.ts",
+			"svelte": "./dist/components/responsivecard/CardInfo.svelte",
+			"default": "./dist/components/responsivecard/CardInfo.svelte"
+		},
+		"./responsivecard/CardTitle.svelte": {
+			"types": "./dist/components/responsivecard/CardTitle.svelte.d.ts",
+			"svelte": "./dist/components/responsivecard/CardTitle.svelte",
+			"default": "./dist/components/responsivecard/CardTitle.svelte"
+		},
+		"./responsivecard/CardTitleLink.svelte": {
+			"types": "./dist/components/responsivecard/CardTitleLink.svelte.d.ts",
+			"svelte": "./dist/components/responsivecard/CardTitleLink.svelte",
+			"default": "./dist/components/responsivecard/CardTitleLink.svelte"
+		},
+		"./responsivecard/ResponsiveCard.svelte": {
+			"types": "./dist/components/responsivecard/ResponsiveCard.svelte.d.ts",
+			"svelte": "./dist/components/responsivecard/ResponsiveCard.svelte",
+			"default": "./dist/components/responsivecard/ResponsiveCard.svelte"
+		},
+		"./scroll-to-top": {
+			"types": "./dist/components/scroll-to-top/index.d.ts",
+			"svelte": "./dist/components/scroll-to-top/index.js",
+			"default": "./dist/components/scroll-to-top/index.js"
+		},
+		"./scroll-to-top/ScrollToTopButton.svelte": {
+			"types": "./dist/components/scroll-to-top/ScrollToTopButton.svelte.d.ts",
+			"svelte": "./dist/components/scroll-to-top/ScrollToTopButton.svelte",
+			"default": "./dist/components/scroll-to-top/ScrollToTopButton.svelte"
+		},
+		"./toc": {
+			"types": "./dist/components/toc/index.d.ts",
+			"svelte": "./dist/components/toc/index.js",
+			"default": "./dist/components/toc/index.js"
+		},
+		"./toc/types": {
+			"types": "./dist/components/toc/types.d.ts",
+			"default": "./dist/components/toc/types.js"
+		},
+		"./toc/TOC.svelte": {
+			"types": "./dist/components/toc/TOC.svelte.d.ts",
+			"svelte": "./dist/components/toc/TOC.svelte",
+			"default": "./dist/components/toc/TOC.svelte"
+		},
+		"./toc/TocButton.svelte": {
+			"types": "./dist/components/toc/TocButton.svelte.d.ts",
+			"svelte": "./dist/components/toc/TocButton.svelte",
+			"default": "./dist/components/toc/TocButton.svelte"
+		},
+		"./toc/TocIcon.svelte": {
+			"types": "./dist/components/toc/TocIcon.svelte.d.ts",
+			"svelte": "./dist/components/toc/TocIcon.svelte",
+			"default": "./dist/components/toc/TocIcon.svelte"
+		},
+		"./toc/TocItem.svelte": {
+			"types": "./dist/components/toc/TocItem.svelte.d.ts",
+			"svelte": "./dist/components/toc/TocItem.svelte",
+			"default": "./dist/components/toc/TocItem.svelte"
+		},
+		"./toc/TocList.svelte": {
+			"types": "./dist/components/toc/TocList.svelte.d.ts",
+			"svelte": "./dist/components/toc/TocList.svelte",
+			"default": "./dist/components/toc/TocList.svelte"
+		},
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./types": {
+			"types": "./dist/types.d.ts",
+			"default": "./dist/types.js"
+		},
+		"./utils": {
+			"types": "./dist/utils.d.ts",
+			"default": "./dist/utils.js"
+		}
+	},
+	"typesVersions": {
+		">4.0": {
+			"breadcrumbs": [
+				"./dist/components/breadcrumbs/index.d.ts"
+			],
+			"breadcrumbs/Breadcrumbs.svelte": [
+				"./dist/components/breadcrumbs/Breadcrumbs.svelte.d.ts"
+			],
+			"card": [
+				"./dist/components/card/index.d.ts"
+			],
+			"card/Card.svelte": [
+				"./dist/components/card/Card.svelte.d.ts"
+			],
+			"card/CardAction.svelte": [
+				"./dist/components/card/CardAction.svelte.d.ts"
+			],
+			"card/CardContent.svelte": [
+				"./dist/components/card/CardContent.svelte.d.ts"
+			],
+			"card/CardImage.svelte": [
+				"./dist/components/card/CardImage.svelte.d.ts"
+			],
+			"card/CardTitle.svelte": [
+				"./dist/components/card/CardTitle.svelte.d.ts"
+			],
+			"card/CardTitleLink.svelte": [
+				"./dist/components/card/CardTitleLink.svelte.d.ts"
+			],
+			"pagesnavigator": [
+				"./dist/components/pagesnavigator/index.d.ts"
+			],
+			"pagesnavigator/types": [
+				"./dist/components/pagesnavigator/types.d.ts"
+			],
+			"pagesnavigator/PagesNavigator.svelte": [
+				"./dist/components/pagesnavigator/PagesNavigator.svelte.d.ts"
+			],
+			"responsivecard": [
+				"./dist/components/responsivecard/index.d.ts"
+			],
+			"responsivecard/types": [
+				"./dist/components/responsivecard/types.d.ts"
+			],
+			"responsivecard/CardAction.svelte": [
+				"./dist/components/responsivecard/CardAction.svelte.d.ts"
+			],
+			"responsivecard/CardBadge.svelte": [
+				"./dist/components/responsivecard/CardBadge.svelte.d.ts"
+			],
+			"responsivecard/CardContent.svelte": [
+				"./dist/components/responsivecard/CardContent.svelte.d.ts"
+			],
+			"responsivecard/CardImage.svelte": [
+				"./dist/components/responsivecard/CardImage.svelte.d.ts"
+			],
+			"responsivecard/CardInfo.svelte": [
+				"./dist/components/responsivecard/CardInfo.svelte.d.ts"
+			],
+			"responsivecard/CardTitle.svelte": [
+				"./dist/components/responsivecard/CardTitle.svelte.d.ts"
+			],
+			"responsivecard/CardTitleLink.svelte": [
+				"./dist/components/responsivecard/CardTitleLink.svelte.d.ts"
+			],
+			"responsivecard/ResponsiveCard.svelte": [
+				"./dist/components/responsivecard/ResponsiveCard.svelte.d.ts"
+			],
+			"scroll-to-top": [
+				"./dist/components/scroll-to-top/index.d.ts"
+			],
+			"scroll-to-top/ScrollToTopButton.svelte": [
+				"./dist/components/scroll-to-top/ScrollToTopButton.svelte.d.ts"
+			],
+			"toc": [
+				"./dist/components/toc/index.d.ts"
+			],
+			"toc/types": [
+				"./dist/components/toc/types.d.ts"
+			],
+			"toc/TOC.svelte": [
+				"./dist/components/toc/TOC.svelte.d.ts"
+			],
+			"toc/TocButton.svelte": [
+				"./dist/components/toc/TocButton.svelte.d.ts"
+			],
+			"toc/TocIcon.svelte": [
+				"./dist/components/toc/TocIcon.svelte.d.ts"
+			],
+			"toc/TocItem.svelte": [
+				"./dist/components/toc/TocItem.svelte.d.ts"
+			],
+			"toc/TocList.svelte": [
+				"./dist/components/toc/TocList.svelte.d.ts"
+			],
+			"index": [
+				"./dist/index.d.ts"
+			],
+			"types": [
+				"./dist/types.d.ts"
+			],
+			"utils": [
+				"./dist/utils.d.ts"
+			]
+		}
 	}
 }

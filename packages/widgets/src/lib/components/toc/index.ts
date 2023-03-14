@@ -1,2 +1,1 @@
-import TOC from './TOC.svelte';
-export { TOC };
+export { default as TOC } from './TOC.svelte';

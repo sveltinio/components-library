@@ -1,30 +1,17 @@
-/** Widgets  */
-import { Breadcrumbs } from './components/breadcrumbs/index.js';
-export { Breadcrumbs };
+export { Breadcrumbs } from './components/breadcrumbs/index.js';
 
-import { Card, CardAction, CardImage } from './components/card/index.js';
-export { Card, CardAction, CardImage };
+export { Card, CardAction, CardImage } from './components/card/index.js';
 
-import {
-	ResponsiveCard,
-	ResponsiveCardImage,
-	ResponsiveCardBadge,
-	ResponsiveCardInfo,
-	ResponsiveCardAction
-} from './components/responsivecard/index.js';
 export {
 	ResponsiveCard,
 	ResponsiveCardImage,
 	ResponsiveCardBadge,
 	ResponsiveCardInfo,
 	ResponsiveCardAction
-};
+} from './components/responsivecard/index.js';
 
-import { PagesNavigator } from './components/pagesnavigator/index.js';
-export { PagesNavigator };
+export { PagesNavigator } from './components/pagesnavigator/index.js';
 
-import { ScrollToTopButton } from './components/scroll-to-top/index.js';
-export { ScrollToTopButton };
+export { ScrollToTopButton } from './components/scroll-to-top/index.js';
 
-import { TOC } from './components/toc/index.js';
-export { TOC };
+export { TOC } from './components/toc/index.js';
