@@ -1,3 +1,1 @@
-import CodePen from './CodePen.svelte';
-
-export { CodePen };
+export { default as CodePen } from './CodePen.svelte';

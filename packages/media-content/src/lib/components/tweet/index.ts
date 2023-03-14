@@ -1,3 +1,1 @@
-import Tweet from './Tweet.svelte';
-
-export { Tweet };
+export { default as Tweet } from './Tweet.svelte';

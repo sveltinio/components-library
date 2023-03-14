@@ -1,3 +1,1 @@
-import Facebook from './Facebook.svelte';
-
-export { Facebook };
+export { default as Facebook } from './Facebook.svelte';

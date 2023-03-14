@@ -44,7 +44,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.11.0",
-		"@sveltejs/package": "^1.0.2",
+		"@sveltejs/package": "^2.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/svelte": "^3.2.2",
@@ -76,19 +76,198 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir=. --check . && eslint .",
 		"format": "prettier --plugin-search-dir=. --write .",
-		"postbuild": "pnpm exec publint ./dist",
+		"postbuild": "pnpm exec publint .",
 		"sync": "svelte-kit sync",
 		"test": "pnpm sync && vitest run",
 		"test:coverage": "pnpm sync && vitest run --coverage",
 		"test:watch": "pnpm sync && vitest watch"
 	},
-	"types": "index.d.ts",
-	"svelte": "index.js",
+	"svelte": "./dist/index.js",
+	"files": [
+		"dist",
+		"!**/assets",
+		"!**/*.postcss",
+		"!**/dist/components/**/*.md"
+	],
 	"exports": {
-		".": {
-			"types": "./types.d.ts",
-			"import": "./index.js"
+		"./package.json": "./package.json",
+		"./basic": {
+			"types": "./dist/components/basic/index.d.ts",
+			"svelte": "./dist/components/basic/index.js",
+			"default": "./dist/components/basic/index.js"
 		},
-		"./dist": "./index.js"
+		"./basic/IFrame.svelte": {
+			"types": "./dist/components/basic/IFrame.svelte.d.ts",
+			"svelte": "./dist/components/basic/IFrame.svelte",
+			"default": "./dist/components/basic/IFrame.svelte"
+		},
+		"./basic/Thumbnail.svelte": {
+			"types": "./dist/components/basic/Thumbnail.svelte.d.ts",
+			"svelte": "./dist/components/basic/Thumbnail.svelte",
+			"default": "./dist/components/basic/Thumbnail.svelte"
+		},
+		"./codepen": {
+			"types": "./dist/components/codepen/index.d.ts",
+			"svelte": "./dist/components/codepen/index.js",
+			"default": "./dist/components/codepen/index.js"
+		},
+		"./codepen/CodePen.svelte": {
+			"types": "./dist/components/codepen/CodePen.svelte.d.ts",
+			"svelte": "./dist/components/codepen/CodePen.svelte",
+			"default": "./dist/components/codepen/CodePen.svelte"
+		},
+		"./codesandbox": {
+			"types": "./dist/components/codesandbox/index.d.ts",
+			"svelte": "./dist/components/codesandbox/index.js",
+			"default": "./dist/components/codesandbox/index.js"
+		},
+		"./codesandbox/CodeSandbox.svelte": {
+			"types": "./dist/components/codesandbox/CodeSandbox.svelte.d.ts",
+			"svelte": "./dist/components/codesandbox/CodeSandbox.svelte",
+			"default": "./dist/components/codesandbox/CodeSandbox.svelte"
+		},
+		"./facebook": {
+			"types": "./dist/components/facebook/index.d.ts",
+			"svelte": "./dist/components/facebook/index.js",
+			"default": "./dist/components/facebook/index.js"
+		},
+		"./facebook/Facebook.svelte": {
+			"types": "./dist/components/facebook/Facebook.svelte.d.ts",
+			"svelte": "./dist/components/facebook/Facebook.svelte",
+			"default": "./dist/components/facebook/Facebook.svelte"
+		},
+		"./slideshare": {
+			"types": "./dist/components/slideshare/index.d.ts",
+			"svelte": "./dist/components/slideshare/index.js",
+			"default": "./dist/components/slideshare/index.js"
+		},
+		"./slideshare/SlideShare.svelte": {
+			"types": "./dist/components/slideshare/SlideShare.svelte.d.ts",
+			"svelte": "./dist/components/slideshare/SlideShare.svelte",
+			"default": "./dist/components/slideshare/SlideShare.svelte"
+		},
+		"./stackblitz": {
+			"types": "./dist/components/stackblitz/index.d.ts",
+			"svelte": "./dist/components/stackblitz/index.js",
+			"default": "./dist/components/stackblitz/index.js"
+		},
+		"./stackblitz/StackBlitz.svelte": {
+			"types": "./dist/components/stackblitz/StackBlitz.svelte.d.ts",
+			"svelte": "./dist/components/stackblitz/StackBlitz.svelte",
+			"default": "./dist/components/stackblitz/StackBlitz.svelte"
+		},
+		"./tweet": {
+			"types": "./dist/components/tweet/index.d.ts",
+			"svelte": "./dist/components/tweet/index.js",
+			"default": "./dist/components/tweet/index.js"
+		},
+		"./tweet/Tweet.svelte": {
+			"types": "./dist/components/tweet/Tweet.svelte.d.ts",
+			"svelte": "./dist/components/tweet/Tweet.svelte",
+			"default": "./dist/components/tweet/Tweet.svelte"
+		},
+		"./vimeo": {
+			"types": "./dist/components/vimeo/index.d.ts",
+			"svelte": "./dist/components/vimeo/index.js",
+			"default": "./dist/components/vimeo/index.js"
+		},
+		"./vimeo/Vimeo.svelte": {
+			"types": "./dist/components/vimeo/Vimeo.svelte.d.ts",
+			"svelte": "./dist/components/vimeo/Vimeo.svelte",
+			"default": "./dist/components/vimeo/Vimeo.svelte"
+		},
+		"./youtube": {
+			"types": "./dist/components/youtube/index.d.ts",
+			"svelte": "./dist/components/youtube/index.js",
+			"default": "./dist/components/youtube/index.js"
+		},
+		"./youtube/YouTube.svelte": {
+			"types": "./dist/components/youtube/YouTube.svelte.d.ts",
+			"svelte": "./dist/components/youtube/YouTube.svelte",
+			"default": "./dist/components/youtube/YouTube.svelte"
+		},
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./types": {
+			"types": "./dist/types.d.ts",
+			"default": "./dist/types.js"
+		},
+		"./utils": {
+			"types": "./dist/utils.d.ts",
+			"default": "./dist/utils.js"
+		}
+	},
+	"typesVersions": {
+		">4.0": {
+			"basic": [
+				"./dist/components/basic/index.d.ts"
+			],
+			"basic/IFrame.svelte": [
+				"./dist/components/basic/IFrame.svelte.d.ts"
+			],
+			"basic/Thumbnail.svelte": [
+				"./dist/components/basic/Thumbnail.svelte.d.ts"
+			],
+			"codepen": [
+				"./dist/components/codepen/index.d.ts"
+			],
+			"codepen/CodePen.svelte": [
+				"./dist/components/codepen/CodePen.svelte.d.ts"
+			],
+			"codesandbox": [
+				"./dist/components/codesandbox/index.d.ts"
+			],
+			"codesandbox/CodeSandbox.svelte": [
+				"./dist/components/codesandbox/CodeSandbox.svelte.d.ts"
+			],
+			"facebook": [
+				"./dist/components/facebook/index.d.ts"
+			],
+			"facebook/Facebook.svelte": [
+				"./dist/components/facebook/Facebook.svelte.d.ts"
+			],
+			"slideshare": [
+				"./dist/components/slideshare/index.d.ts"
+			],
+			"slideshare/SlideShare.svelte": [
+				"./dist/components/slideshare/SlideShare.svelte.d.ts"
+			],
+			"stackblitz": [
+				"./dist/components/stackblitz/index.d.ts"
+			],
+			"stackblitz/StackBlitz.svelte": [
+				"./dist/components/stackblitz/StackBlitz.svelte.d.ts"
+			],
+			"tweet": [
+				"./dist/components/tweet/index.d.ts"
+			],
+			"tweet/Tweet.svelte": [
+				"./dist/components/tweet/Tweet.svelte.d.ts"
+			],
+			"vimeo": [
+				"./dist/components/vimeo/index.d.ts"
+			],
+			"vimeo/Vimeo.svelte": [
+				"./dist/components/vimeo/Vimeo.svelte.d.ts"
+			],
+			"youtube": [
+				"./dist/components/youtube/index.d.ts"
+			],
+			"youtube/YouTube.svelte": [
+				"./dist/components/youtube/YouTube.svelte.d.ts"
+			],
+			"index": [
+				"./dist/index.d.ts"
+			],
+			"types": [
+				"./dist/types.d.ts"
+			],
+			"utils": [
+				"./dist/utils.d.ts"
+			]
+		}
 	}
 }

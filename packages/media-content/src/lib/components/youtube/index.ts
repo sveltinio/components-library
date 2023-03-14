@@ -1,3 +1,1 @@
-import YouTube from './YouTube.svelte';
-
-export { YouTube };
+export { default as YouTube } from './YouTube.svelte';
