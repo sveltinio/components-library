@@ -32,7 +32,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.11.0",
-		"@sveltejs/package": "^1.0.2",
+		"@sveltejs/package": "^2.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/svelte": "^3.2.2",
@@ -43,7 +43,6 @@
 		"eslint": "^8.36.0",
 		"eslint-config-custom": "workspace:0.0.0",
 		"jsdom": "^21.1.1",
-		"micromatch": "^4.0.5",
 		"publint": "^0.1.10",
 		"rimraf": "^4.4.0",
 		"svelte-check": "^3.1.4",
@@ -61,23 +60,102 @@
 		"dev": "pnpm sync && vite dev",
 		"format": "prettier --plugin-search-dir=. --write .",
 		"lint": "prettier --plugin-search-dir=. --check . && eslint .",
-		"postbuild": "pnpm exec publint ./dist",
+		"postbuild": "pnpm exec publint .",
 		"sync": "svelte-kit sync",
 		"test": "pnpm sync && vitest run",
 		"test:coverage": "pnpm sync && vitest run --coverage",
 		"test:watch": "pnpm sync && vitest watch"
 	},
-	"types": "index.d.ts",
-	"svelte": "index.js",
-	"sideEffects": false,
-	"publishConfig": {
-		"directory": "dist"
-	},
+	"svelte": "./dist/index.js",
+	"files": [
+		"dist",
+		"!**/assets",
+		"!**/*.postcss",
+		"!**/dist/components/**/*.md"
+	],
 	"exports": {
-		".": {
-			"types": "./types.d.ts",
-			"import": "./index.js"
+		"./package.json": "./package.json",
+		"./google": {
+			"types": "./dist/components/google/index.d.ts",
+			"svelte": "./dist/components/google/index.js",
+			"default": "./dist/components/google/index.js"
 		},
-		"./dist": "./index.js"
+		"./google/analytics": {
+			"types": "./dist/components/google/analytics/index.d.ts",
+			"svelte": "./dist/components/google/analytics/index.js",
+			"default": "./dist/components/google/analytics/index.js"
+		},
+		"./google/analytics/GoogleAnalytics.svelte": {
+			"types": "./dist/components/google/analytics/GoogleAnalytics.svelte.d.ts",
+			"svelte": "./dist/components/google/analytics/GoogleAnalytics.svelte",
+			"default": "./dist/components/google/analytics/GoogleAnalytics.svelte"
+		},
+		"./google/fonts": {
+			"types": "./dist/components/google/fonts/index.d.ts",
+			"svelte": "./dist/components/google/fonts/index.js",
+			"default": "./dist/components/google/fonts/index.js"
+		},
+		"./google/fonts/GoogleFonts.svelte": {
+			"types": "./dist/components/google/fonts/GoogleFonts.svelte.d.ts",
+			"svelte": "./dist/components/google/fonts/GoogleFonts.svelte",
+			"default": "./dist/components/google/fonts/GoogleFonts.svelte"
+		},
+		"./umami": {
+			"types": "./dist/components/umami/index.d.ts",
+			"svelte": "./dist/components/umami/index.js",
+			"default": "./dist/components/umami/index.js"
+		},
+		"./umami/UmamiAnalytics.svelte": {
+			"types": "./dist/components/umami/UmamiAnalytics.svelte.d.ts",
+			"svelte": "./dist/components/umami/UmamiAnalytics.svelte",
+			"default": "./dist/components/umami/UmamiAnalytics.svelte"
+		},
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./types": {
+			"types": "./dist/types.d.ts",
+			"default": "./dist/types.js"
+		},
+		"./utils": {
+			"types": "./dist/utils.d.ts",
+			"default": "./dist/utils.js"
+		}
+	},
+	"typesVersions": {
+		">4.0": {
+			"google": [
+				"./dist/components/google/index.d.ts"
+			],
+			"google/analytics": [
+				"./dist/components/google/analytics/index.d.ts"
+			],
+			"google/analytics/GoogleAnalytics.svelte": [
+				"./dist/components/google/analytics/GoogleAnalytics.svelte.d.ts"
+			],
+			"google/fonts": [
+				"./dist/components/google/fonts/index.d.ts"
+			],
+			"google/fonts/GoogleFonts.svelte": [
+				"./dist/components/google/fonts/GoogleFonts.svelte.d.ts"
+			],
+			"umami": [
+				"./dist/components/umami/index.d.ts"
+			],
+			"umami/UmamiAnalytics.svelte": [
+				"./dist/components/umami/UmamiAnalytics.svelte.d.ts"
+			],
+			"index": [
+				"./dist/index.d.ts"
+			],
+			"types": [
+				"./dist/types.d.ts"
+			],
+			"utils": [
+				"./dist/utils.d.ts"
+			]
+		}
 	}
 }

@@ -1,2 +1,1 @@
-import GoogleAnalytics from './GoogleAnalytics.svelte';
-export { GoogleAnalytics };
+export { default as GoogleAnalytics } from './GoogleAnalytics.svelte';

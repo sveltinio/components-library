@@ -1,4 +1,2 @@
-import { GoogleAnalytics } from './analytics/index.js';
-import { GoogleFonts } from './fonts/index.js';
-
-export { GoogleAnalytics, GoogleFonts };
+export { GoogleAnalytics } from './analytics/index.js';
+export { GoogleFonts } from './fonts/index.js';

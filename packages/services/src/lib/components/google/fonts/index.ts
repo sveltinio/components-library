@@ -1,2 +1,1 @@
-import GoogleFonts from './GoogleFonts.svelte';
-export { GoogleFonts };
+export { default as GoogleFonts } from './GoogleFonts.svelte';

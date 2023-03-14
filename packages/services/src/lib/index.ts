@@ -1,4 +1,2 @@
-import { GoogleFonts, GoogleAnalytics } from './components/google/index.js';
-import { UmamiAnalytics } from './components/umami/index.js';
-
-export { GoogleFonts, GoogleAnalytics, UmamiAnalytics };
+export { GoogleFonts, GoogleAnalytics } from './components/google/index.js';
+export { UmamiAnalytics } from './components/umami/index.js';
