@@ -1,2 +1,1 @@
-import Button from './Button.svelte';
-export { Button };
+export { default as Button } from './Button.svelte';

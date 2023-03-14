@@ -1,4 +1,2 @@
-import Tabs from './Tabs.svelte';
-import Tab from './Tab.svelte';
-
-export { Tabs, Tab };
+export { default as Tabs } from './Tabs.svelte';
+export { default as Tab } from './Tab.svelte';

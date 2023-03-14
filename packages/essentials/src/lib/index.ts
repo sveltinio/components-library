@@ -1,25 +1,18 @@
-import { Button } from './components/button/index.js';
-export { Button };
+export { Button } from './components/button/index.js';
 
-import { ButtonGroup, ButtonGroupItem } from './components/button-group/index.js';
-export { ButtonGroup, ButtonGroupItem };
+export { ButtonGroup, ButtonGroupItem } from './components/button-group/index.js';
 
-import { ColorViewer } from './components/color/index.js';
-export { ColorViewer };
+export { ColorViewer } from './components/color/index.js';
 
-import { Link, ExternalLinkIcon } from './components/link/index.js';
-export { ExternalLinkIcon, Link };
+export { Link, ExternalLinkIcon } from './components/link/index.js';
 
-import {
+export {
 	Dropdown,
 	DropdownButton,
 	DropdownContent,
 	DropdownItem
 } from './components/dropdown/index.js';
-export { Dropdown, DropdownButton, DropdownContent, DropdownItem };
 
-import { Tabs, Tab } from './components/tabs/index.js';
-export { Tabs, Tab };
+export { Tabs, Tab } from './components/tabs/index.js';
 
-import { ToggleList } from './components/list/index.js';
-export { ToggleList };
+export { ToggleList } from './components/list/index.js';

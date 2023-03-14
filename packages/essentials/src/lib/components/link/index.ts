@@ -1,4 +1,2 @@
-import Link from './Link.svelte';
-import ExternalLinkIcon from './ExternalLinkIcon.svelte';
-
-export { Link, ExternalLinkIcon };
+export { default as Link } from './Link.svelte';
+export { default as ExternalLinkIcon } from './ExternalLinkIcon.svelte';
