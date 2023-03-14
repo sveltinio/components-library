@@ -2,7 +2,7 @@
 	"name": "postcss-utils",
 	"version": "0.0.0",
 	"private": true,
-	"packageManager": "pnpm@7.29.1",
+	"packageManager": "pnpm@7.29.2",
 	"license": "MIT",
 	"dependencies": {
 		"cssnano": "^5.1.15",
