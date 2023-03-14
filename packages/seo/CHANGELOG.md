@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.4.0
+
+### Minor Changes
+
+- migration to @sveltejs/package v2
+
 ## 0.3.5
 
 ### Patch Changes

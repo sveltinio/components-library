@@ -1,5 +1,11 @@
 # @sveltinio/media-content
 
+## 0.4.0
+
+### Minor Changes
+
+- migration to @sveltejs/package v2
+
 ## 0.3.8
 
 ### Patch Changes

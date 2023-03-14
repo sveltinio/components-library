@@ -1,5 +1,12 @@
 # @sveltinio/services
 
+## 0.4.0
+
+### Minor Changes
+
+- migration to @sveltejs/package v2
+- fix: move @types/gtag.js to dependencies
+
 ## 0.3.4
 
 ### Patch Changes

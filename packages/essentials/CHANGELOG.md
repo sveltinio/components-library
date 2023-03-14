@@ -1,5 +1,11 @@
 # @sveltinio/essentials
 
+## 0.7.0
+
+### Minor Changes
+
+- migration to @sveltejs/package v2
+
 ## 0.6.1
 
 ### Patch Changes
