@@ -157,17 +157,17 @@
 			"default": "./dist/components/schemaorg/website/JsonLdWebSite.svelte"
 		},
 		".": {
-			"types": "./index.d.ts",
-			"svelte": "./index.js",
-			"default": "./index.js"
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
 		},
 		"./types": {
-			"types": "./types.d.ts",
-			"default": "./types.js"
+			"types": "./dist/types.d.ts",
+			"default": "./dist/types.js"
 		},
 		"./utils": {
-			"types": "./utils.d.ts",
-			"default": "./utils.js"
+			"types": "./dist/utils.d.ts",
+			"default": "./dist/utils.js"
 		}
 	},
 	"typesVersions": {
@@ -218,13 +218,13 @@
 				"./dist/components/schemaorg/website/JsonLdWebSite.svelte.d.ts"
 			],
 			"index": [
-				"./index.d.ts"
+				"./dist/index.d.ts"
 			],
 			"types": [
-				"./types.d.ts"
+				"./dist/types.d.ts"
 			],
 			"utils": [
-				"./utils.d.ts"
+				"./dist/utils.d.ts"
 			]
 		}
 	}
