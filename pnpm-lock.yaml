@@ -10,6 +10,7 @@ importers:
       '@commitlint/config-conventional': ^17.4.4
       husky: ^8.0.3
       lint-staged: ^13.2.0
+      picocolors: ^1.0.0
       plop: ^3.1.2
       turbo: ^1.8.3
     devDependencies:
@@ -19,6 +20,7 @@ importers:
       '@commitlint/config-conventional': 17.4.4
       husky: 8.0.3
       lint-staged: 13.2.0
+      picocolors: 1.0.0
       plop: 3.1.2
       turbo: 1.8.3
 
