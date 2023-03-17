@@ -10,7 +10,7 @@ To load your pages faster, a clickable and responsive thumbnail for the video is
 
 ```html
 <script>
-    import { YouTube } from '@sveltinio/media-content';
+    import { YouTube } from '@sveltinio/media-content/youtube';
 </script>
 
 <YouTube id="uQntFkK8Z54" title="The Future of html" />
@@ -20,7 +20,7 @@ To load your pages faster, a clickable and responsive thumbnail for the video is
 
 ```html
 <script lang="ts">
-    import { YouTube } from '@sveltinio/media-content';
+    import { YouTube } from '@sveltinio/media-content/youtube';
     import type { IYouTubeSettings } from '@sveltinio/media-content/types';
 
     const ytSettings: IYouTubeSettings = {
@@ -36,7 +36,7 @@ To load your pages faster, a clickable and responsive thumbnail for the video is
 
 ```html
 <script>
-    import { YouTube } from '@sveltinio/media-content';
+    import { YouTube } from '@sveltinio/media-content/youtube';
 </script>
 
 <YouTube
@@ -50,7 +50,7 @@ To load your pages faster, a clickable and responsive thumbnail for the video is
 
 ```html
 <script lang="ts">
-    import { YouTube } from '@sveltinio/media-content';
+    import { YouTube } from '@sveltinio/media-content/youtube';
     import type { IYouTubeSettings } from '@sveltinio/media-content/types';
 
     const ytSettings: IYouTubeSettings = {

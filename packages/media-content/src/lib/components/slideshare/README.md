@@ -6,7 +6,7 @@ Easily embed SlideShare content in your pages.
 
 ```html
 <script>
-    import { SlideShare } from '@sveltinio/media-content';
+    import { SlideShare } from '@sveltinio/media-content/slideshare';
 </script>
 
 <SlideShare

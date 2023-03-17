@@ -8,7 +8,7 @@ Easily embed Facebook content (posts or videos) in your pages. The `Facebook` co
 
 ```html
 <script>
-    import { Facebook } from '@sveltinio/media-content';
+    import { Facebook } from '@sveltinio/media-content/facebook';
 </script>
 
 <Facebook slug="20531316728/posts/10154009990506729/" />
@@ -18,7 +18,7 @@ Easily embed Facebook content (posts or videos) in your pages. The `Facebook` co
 
 ```html
 <script lang="ts">
-    import { Facebook } from '@sveltinio/media-content';
+    import { Facebook } from '@sveltinio/media-content/facebook';
     import { IFacebookSettings } from '@sveltinio/media-content/types';
 
     const fbSettings: IFacebookSettings = {
@@ -35,7 +35,7 @@ Easily embed Facebook content (posts or videos) in your pages. The `Facebook` co
 
 ```html
 <script>
-    import { Facebook } from '@sveltinio/media-content';
+    import { Facebook } from '@sveltinio/media-content/facebook';
 </script>
 
 <Facebook type="video" slug="FacebookDevelopers/videos/10152454700553553/" />
@@ -45,7 +45,7 @@ Easily embed Facebook content (posts or videos) in your pages. The `Facebook` co
 
 ```html
 <script lang="ts">
-    import { Facebook } from '@sveltinio/media-content';
+    import { Facebook } from '@sveltinio/media-content/facebook';
     import { IFacebookVideoSettings } from '@sveltinio/media-content/types';
 
     const fbSettings: IFacebookVideoSettings = {

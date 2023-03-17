@@ -12,7 +12,7 @@ Easily embed StackBlitz project in your pages. The `StackBlitz` component suppor
 
 ```html
 <script>
-    import { StackBlitz } from '@sveltinio/media-content';
+    import { StackBlitz } from '@sveltinio/media-content/stackblitz';
 </script>
 
 <StackBlitz id="vitejs-vite-z3ukcq" />
@@ -22,7 +22,7 @@ Easily embed StackBlitz project in your pages. The `StackBlitz` component suppor
 
 ```html
 <script>
-    import { StackBlitz } from '@sveltinio/media-content';
+    import { StackBlitz } from '@sveltinio/media-content/stackblitz';
     import { IStackBlitzSettings } from '@sveltinio/media-content/types';
 
     const sbSettings: IStackBlitzSettings = {

@@ -8,7 +8,7 @@ Easily embed tweets in your pages. The `Tweet` component supports all the [avail
 
 ```html
 <script>
-    import { Tweet } from '@sveltinio/media-content';
+    import { Tweet } from '@sveltinio/media-content/tweet';
 </script>
 
 <Tweet id="1494008909585125381" />
@@ -18,7 +18,7 @@ Easily embed tweets in your pages. The `Tweet` component supports all the [avail
 
 ```html
 <script lang="ts">
-    import { Tweet } from '@sveltinio/media-content';
+    import { Tweet } from '@sveltinio/media-content/tweet';
     import type { ITweetSettings } from '@sveltinio/media-content/types';
 
     const tSettings: ITweetSettings = {

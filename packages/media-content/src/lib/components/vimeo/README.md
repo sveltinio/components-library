@@ -10,7 +10,7 @@ To load your pages faster, a clickable and responsive thumbnail for the video is
 
 ```html
 <script>
-    import { Vimeo } from '@sveltinio/media-content';
+    import { Vimeo } from '@sveltinio/media-content/vimeo';
 </script>
 
 <Vimeo id="692371260" user="newyorker" title="The Panola Project" />
@@ -20,7 +20,7 @@ To load your pages faster, a clickable and responsive thumbnail for the video is
 
 ```html
 <script lang="ts">
-    import { Vimeo } from '@sveltinio/media-content';
+    import { Vimeo } from '@sveltinio/media-content/vimeo';
     import type { IVimeoSettings } from '@sveltinio/media-content/types';
 
     const vSettings: IVimeoSettings = {

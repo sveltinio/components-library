@@ -8,7 +8,7 @@ Easily embed CodeSandbox in your pages. The `CodeSandbox` component supports all
 
 ```html
 <script>
-    import { CodeSandbox } from '@sveltinio/media-content';
+    import { CodeSandbox } from '@sveltinio/media-content/codesandbox';
 </script>
 
 <CodeSandbox id="j0y0vpz59" />
@@ -18,7 +18,7 @@ Easily embed CodeSandbox in your pages. The `CodeSandbox` component supports all
 
 ```html
 <script lang="ts">
-    import { CodeSandbox } from '@sveltinio/media-content';
+    import { CodeSandbox } from '@sveltinio/media-content/codesandbox';
     import type { ICodeSandboxSettings } from '@sveltinio/media-content/types';
 
     const csbSettings: ICodeSandboxSettings = {

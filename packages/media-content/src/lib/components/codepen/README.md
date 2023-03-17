@@ -8,7 +8,7 @@ Easily embed content from CodePen in your pages. The `CodePen` component support
 
 ```html
 <script>
-   import { CodePen } from '@sveltinio/media-content';
+   import { CodePen } from '@sveltinio/media-content/codepen';
 </script>
 
 <CodePen user="alipanick" id="YzZYmoJ" />
@@ -18,7 +18,7 @@ Easily embed content from CodePen in your pages. The `CodePen` component support
 
 ```html
 <script lang="ts">
-    import { CodePen } from '@sveltinio/media-content';
+    import { CodePen } from '@sveltinio/media-content/codepen';
     import type { ICodePenSettings } from '@sveltinio/media-content/types';
 
     const cpSettings: ICodePenSettings = {
