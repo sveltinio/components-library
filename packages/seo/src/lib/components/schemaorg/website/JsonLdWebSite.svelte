@@ -12,6 +12,7 @@
 		name: data.name,
 		url: data.baseURL,
 		description: data.description,
+		keywords: data.keywords || [],
 		inLanguage: data.language,
 		license: data.copyright || ''
 	};
