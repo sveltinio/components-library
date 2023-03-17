@@ -39,11 +39,11 @@
 		"url": "https://github.com/sveltinio/components-library/issues"
 	},
 	"dependencies": {
-		"svelte": "^3.56.0"
+		"svelte": "^3.57.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.11.0",
+		"@sveltejs/kit": "^1.12.0",
 		"@sveltejs/package": "^2.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"@testing-library/jest-dom": "^5.16.5",
@@ -65,8 +65,8 @@
 		"svelte-check": "^3.1.4",
 		"tslib": "^2.5.0",
 		"typescript": "^4.9.5",
-		"vite": "^4.1.4",
-		"vitest": "^0.29.2"
+		"vite": "^4.2.0",
+		"vitest": "^0.29.3"
 	},
 	"scripts": {
 		"build": "pnpm clean && pnpm sync && svelte-package && pnpm postbuild",
@@ -195,10 +195,6 @@
 		"./types": {
 			"types": "./dist/types.d.ts",
 			"default": "./dist/types.js"
-		},
-		"./utils": {
-			"types": "./dist/utils.d.ts",
-			"default": "./dist/utils.js"
 		}
 	},
 	"typesVersions": {
@@ -265,9 +261,6 @@
 			],
 			"types": [
 				"./dist/types.d.ts"
-			],
-			"utils": [
-				"./dist/utils.d.ts"
 			]
 		}
 	}
