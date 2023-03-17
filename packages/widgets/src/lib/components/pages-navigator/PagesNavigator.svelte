@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../../styles/base.css';
-	import '../../styles/components/pagesnavigator/variables.css';
-	import '../../styles/components/pagesnavigator/styles.css';
+	import '../../styles/components/pages-navigator/variables.css';
+	import '../../styles/components/pages-navigator/styles.css';
 	import type { PagesNavigatorItem } from './types.js';
 	import { stylesObjToCSSVars, isValidClassName, areRequiredDefined } from '../../utils.js';
 	import Spacer from './Spacer.svelte';
