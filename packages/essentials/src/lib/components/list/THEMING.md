@@ -43,7 +43,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/lis
 
 ```html
 <script>
-   import { ToggleList } from '@sveltinio/essentials';
+   import { ToggleList } from '@sveltinio/essentials/list';
    // sample data
    const contentForToggleList = [
       { label: 'First', url: '#first', icon: CloudUploadIcon },
@@ -87,7 +87,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/lis
 
 ```html
 <script>
-   import { ToggleList } from '@sveltinio/essentials';
+   import { ToggleList } from '@sveltinio/essentials/list';
    // sample data
    const contentForToggleList = [
       { label: 'First', url: '#first', icon: CloudUploadIcon },

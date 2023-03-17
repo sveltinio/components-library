@@ -42,7 +42,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/tab
 
 ```html
 <script lang="ts">
-    import { Tabs, Tab } from '@sveltinio/essentials';
+    import { Tabs, Tab } from '@sveltinio/essentials/tabs';
 
     const customStyles = {
         'tab-active-border-b-color': '#0084f6'
@@ -96,7 +96,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/tab
 
 ```html
 <script lang="ts">
-    import { Tabs, Tab } from '@sveltinio/essentials';
+    import { Tabs, Tab } from '@sveltinio/essentials/tabs';
     import DummyIcon from './_dummyIcon.svelte';
 </script>
 
@@ -155,7 +155,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/tab
 
 ```html
 <script lang="ts">
-    import { Tabs, Tab } from '@sveltinio/essentials';
+    import { Tabs, Tab } from '@sveltinio/essentials/tabs';
     import DummyIcon from './_dummyIcon.svelte';
 </script>
 
@@ -221,7 +221,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/tab
 
 ```html
 <script lang="ts">
-    import { Tabs, Tab } from '@sveltinio/essentials';
+    import { Tabs, Tab } from '@sveltinio/essentials/tabs';
 </script>
 
 <Tabs activeTab="2" class="pills-tabgroup" justify="center">

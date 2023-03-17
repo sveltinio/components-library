@@ -19,7 +19,7 @@ The `Tabs` component an accessible ([WAI-ARIA Accessibility Reference]) componen
 
 ```html
 <script>
-   import { Tabs, Tab } '@sveltinio/essentials';
+   import { Tabs, Tab } '@sveltinio/essentials/tabs';
    import DummyIcon from './_dummyIcon.svelte';
 </script>
 

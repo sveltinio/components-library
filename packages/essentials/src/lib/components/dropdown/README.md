@@ -17,7 +17,7 @@ It is made up by combining the `Dropdown`, `DropdownButton`, `DropdownContent`, 
       DropdownButton,
       DropdownContent
       DropdownItem
-   } from '@sveltinio/essentials';
+   } from '@sveltinio/essentials/dropdown';
 <script>
 
 <Dropdown>

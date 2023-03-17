@@ -4,13 +4,13 @@ The `ButtonGroup` is an accessible (WAI-ARIA Accessibility Reference [1], [2]) c
 
 ## Examples
 
-<img src="./assets/images/showcase.png" alt="PagesNavigator - Default Styles" />
+<img src="./assets/images/showcase.png" alt="ButtonGroup - Default Styles" />
 
 ## Usage
 
 ```html
 <script>
-   import { ButtonGroup, ButtonGroupItem } from '@sveltinio/essentials';
+   import { ButtonGroup, ButtonGroupItem } from '@sveltinio/essentials/button-group';
    function handleMessage(event) {
       console.log(event.detail.eventDetails);
    }

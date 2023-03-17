@@ -10,13 +10,11 @@ The **ToggleList** is an accessible component used to includes a toggle list wit
 
 ```html
 <script lang="ts">
-   import { ToggleList } from '@sveltinio/essentials';
+   import { ToggleList } from '@sveltinio/essentials/list';
    // Sample Icons
-   import {
-      LongArrowDownRightIcon,
-      CloudUploadIcon,
-      BellIcon
-   } from '@indaco/svelte-iconoir';
+   import { LongArrowDownRightIcon } from '@indaco/svelte-iconoir/long-arrow-down-right';
+   import { CloudUploadIcon } from '@indaco/svelte-iconoir/cloud-upload';
+   import { BellIcon } from '@indaco/svelte-iconoir/bell';
    // sample data
    const contentForToggleList = [
       { label: 'First', url: '#first', icon: CloudUploadIcon },

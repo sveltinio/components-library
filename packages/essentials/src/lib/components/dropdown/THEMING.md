@@ -48,7 +48,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/dro
       DropdownButton,
       DropdownContent,
       DropdownItem
-   } from '@sveltinio/essentials';
+   } from '@sveltinio/essentials/dropdown';
 
    const myStyles = {
       'btn-color': '#ecfeff',
@@ -93,7 +93,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/dro
       DropdownButton,
       DropdownContent,
       DropdownItem
-   } from '@sveltinio/essentials';
+   } from '@sveltinio/essentials/dropdown';
 </script>
 
 <Dropdown class="my-dropdown">

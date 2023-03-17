@@ -10,7 +10,7 @@ A simple utility component to render a colorful circle with the label set to the
 
 ```html
 <script>
-   import { ColorViewer } from '@sveltinio/essentials';
+   import { ColorViewer } from '@sveltinio/essentials/color';
 <script>
 
 <ColorViewer value="#FF5577" />

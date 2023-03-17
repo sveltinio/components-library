@@ -7,7 +7,7 @@ The `Link` component defines a hyperlink used to link an internal or external re
 ```html
 <script>
    import { base } from '$app/paths';
-   import { Link } from '@sveltinio/essentials';
+   import { Link } from '@sveltinio/essentials/link';
    import DummyIcon from './DummyIcon.svelte';
 </script>
 

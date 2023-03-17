@@ -35,8 +35,8 @@
 		</div>
 	</div>
 
-	<div id="external-link-slot" class="demo-wrapper">
-		<h3>External w/ label text w/o icon</h3>
+	<div id="external-link-slot-with-icon-size" class="demo-wrapper">
+		<h3>External w/ label text w/ icon size</h3>
 		<div class="preview">
 			<Link href="https://sveltin.io" label="sveltin.io" external iconSize={12} />
 		</div>

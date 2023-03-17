@@ -19,8 +19,9 @@ It supports different:
 
 ```html
 <script>
-   import { Button } from '@sveltinio/essentials'
-   import { MailIcon, PlusIcon } from '@indaco/svelte-iconoir';
+   import { Button } from '@sveltinio/essentials/button'
+   import { MailIcon } from '@indaco/svelte-iconoir/main';
+   import { PlusIcon } from '@indaco/svelte-iconoir/plus';
 
    const handleButtonClick = (event) => {
       alert('button clicked on:' + event.detail.eventDetails);

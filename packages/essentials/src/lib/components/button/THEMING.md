@@ -25,7 +25,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
 
 ```html
 <script>
-   import { Button } from '@sveltinio/essentials';
+   import { Button } from '@sveltinio/essentials/button';
 
    const myStyles = {
       color: "rgb(54 83 20)",
@@ -63,7 +63,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
 
 ```html
 <script>
-   import { Button } from '@sveltinio/essentials';
+   import { Button } from '@sveltinio/essentials/button';
 </script>
 
 <Button label="My Primary Button" type="primary" rounded class="my-primary-btn" />

@@ -27,7 +27,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
 
 ```html
 <script>
-   import { ButtonGroup, ButtonGroupItem } from '@sveltinio/essentials';
+   import { ButtonGroup, ButtonGroupItem } from '@sveltinio/essentials/button-group';
 
    function handleMessage(event: CustomEvent) {
       console.log(event.detail);
@@ -74,7 +74,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
 
 ```html
 <script>
-   import { ButtonGroup, ButtonGroupItem } from '@sveltinio/essentials';
+   import { ButtonGroup, ButtonGroupItem } from '@sveltinio/essentials/button-group';
 </script>
 
 <ButtonGroup class="my-btngroup">

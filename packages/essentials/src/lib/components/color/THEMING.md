@@ -21,7 +21,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/col
 
 ```html
 <script>
-   import { ColorViewer } from '@sveltinio/essentials';
+   import { ColorViewer } from '@sveltinio/essentials/color';
 
    const myStyles = {
       'border-color': '#075985',
@@ -45,7 +45,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/col
 
 ```html
 <script>
-   import { ColorViewer } from '@sveltinio/essentials';
+   import { ColorViewer } from '@sveltinio/essentials/color';
 </script>
 
 <ColorViewer value="#22d3ee" border class="preview-color" />
