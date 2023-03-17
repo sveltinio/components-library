@@ -17,6 +17,6 @@
 	});
 </script>
 
-<ul id="menu-list" class="list {visibility}" class:list--absolute={absolute} role="menu">
+<ul id="menu-list" class="list {visibility}" class:list--absolute={absolute}>
 	<slot />
 </ul>
