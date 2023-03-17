@@ -1,6 +1,12 @@
 <div align="center">
     <h1>@sveltinio/seo</h1>
-    <a href="https://www.npmjs.com/package/@sveltinio/seo" target="_blank"><img src="https://img.shields.io/npm/v/@sveltinio/seo.svg?style=flat" alt="sveltinio/seo NPM version badge" /></a>
+    <a href="https://github.com/sveltinio/components-library/blob/main/LICENSE" target="_blank">
+        <img src="https://img.shields.io/badge/license-mit-blue?style=flat-square&logo=none" alt="license" />
+    </a>
+    &nbsp;
+    <a href="https://www.npmjs.com/package/@sveltinio/seo" target="_blank">
+        <img src="https://img.shields.io/npm/v/@sveltinio/seo.svg?style=flat" alt="sveltinio/seo NPM version badge" />
+    </a>
 </div>
 
 ## Description

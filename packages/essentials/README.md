@@ -1,7 +1,12 @@
 <div align="center">
     <h1>@sveltinio/essentials</h1>
+    <a href="https://github.com/sveltinio/components-library/blob/main/LICENSE" target="_blank">
+        <img src="https://img.shields.io/badge/license-mit-blue?style=flat-square&logo=none" alt="license" />
+    </a>
     &nbsp;
-    <a href="https://www.npmjs.com/package/@sveltinio/essentials" target="_blank"><img src="https://img.shields.io/npm/v/@sveltinio/essentials.svg?style=flat" alt="sveltinio/essentials NPM version badge" /></a>
+    <a href="https://www.npmjs.com/package/@sveltinio/essentials" target="_blank">
+        <img src="https://img.shields.io/npm/v/@sveltinio/essentials.svg?style=flat" alt="sveltinio/essentials NPM version badge" />
+    </a>
 </div>
 
 ## Description
