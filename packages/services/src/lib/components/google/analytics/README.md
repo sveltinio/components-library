@@ -6,7 +6,7 @@ Type-safe Svelte component to easily use Google Analytics in your Svelte and Sve
 
 ```html
 <script>
-   import { GoogleAnalytics } from '@sveltinio/services';
+   import { GoogleAnalytics } from '@sveltinio/services/google';
 </script>
 
 <GoogleAnalytics propertyID="your_ga_property_id" />

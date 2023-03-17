@@ -8,7 +8,7 @@ Type-safe Svelte component to easily use Umami in your Svelte and SvelteKit page
 
 ```html
 <script>
-    import { UmamiAnalytics } from '@sveltinio/services';
+    import { UmamiAnalytics } from '@sveltinio/services/umami';
 </script>
 
 <UmamiAnalytics
@@ -21,7 +21,7 @@ Type-safe Svelte component to easily use Umami in your Svelte and SvelteKit page
 
 ```html
 <script lang="ts">
-    import { UmamiAnalytics } from '@sveltinio/services';
+    import { UmamiAnalytics } from '@sveltinio/services/umami';
     import type { IUmamiTrackerSettings } from '@sveltinio/services/types';
 
     // Umami tracker configurations: https://umami.is/docs/tracker-config

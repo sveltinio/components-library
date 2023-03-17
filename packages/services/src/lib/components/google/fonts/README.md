@@ -6,7 +6,7 @@ Type-safe Svelte component to easily use Google Fonts in your Svelte and SvelteK
 
 ```html
 <script lang="ts">
-    import { GoogleFonts } from '@sveltinio/services';
+    import { GoogleFonts } from '@sveltinio/services/google';
     import type { IGoogleFont } from '@sveltinio/services/types';
 
     const googleFonts: Array<IGoogleFont> = [
