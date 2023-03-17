@@ -47,7 +47,7 @@ Free and open-source software under the [MIT License](LICENSE)
 
 [Breadcrumbs]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/breadcrumbs/
 [Card]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/card/
-[PagesNavigator]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/pagesnavigator/
-[ResponsiveCard]:  https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/responsivecard/
+[PagesNavigator]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/pages-navigator/
+[ResponsiveCard]:  https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/responsive-card/
 [ScrollToTopButton]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/scroll-to-top/
 [TOC]: https://github.com/sveltinio/components-library/blob/main/packages/widgets/src/lib/components/toc/
