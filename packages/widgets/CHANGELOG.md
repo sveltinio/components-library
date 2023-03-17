@@ -1,5 +1,13 @@
 # @sveltinio/widgets
 
+## 0.7.1
+
+### Patch Changes
+
+- fix: remove utils.js from the exports map on package.json
+- chore: deps updated
+- docs: updated to reflect changes on how to properly import and use the components
+
 ## 0.7.0
 
 ### Minor Changes

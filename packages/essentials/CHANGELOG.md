@@ -1,5 +1,14 @@
 # @sveltinio/essentials
 
+## 0.7.1
+
+### Patch Changes
+
+- fix(dropdown/DropdownContent.svelte): A11Y non-interactive element <ul> cannot have interactive role 'menu'
+- fix: remove utils.js from the exports map on package.json
+- chore: deps updated
+- docs: updated to reflect changes on how to properly import and use the components
+
 ## 0.7.0
 
 ### Minor Changes
