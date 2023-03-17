@@ -29,11 +29,11 @@
 		"url": "https://github.com/sveltinio/components-library/issues"
 	},
 	"dependencies": {
-		"svelte": "^3.56.0"
+		"svelte": "^3.57.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.11.0",
+		"@sveltejs/kit": "^1.12.0",
 		"@sveltejs/package": "^2.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"@testing-library/jest-dom": "^5.16.5",
@@ -63,8 +63,8 @@
 		"svelte-check": "^3.1.4",
 		"tslib": "^2.5.0",
 		"typescript": "^4.9.5",
-		"vite": "^4.1.4",
-		"vitest": "^0.29.2"
+		"vite": "^4.2.0",
+		"vitest": "^0.29.3"
 	},
 	"scripts": {
 		"build": "pnpm clean && pnpm sync && pnpm build:css && svelte-package && pnpm postbuild",
@@ -140,68 +140,68 @@
 			"svelte": "./dist/components/card/CardTitleLink.svelte",
 			"default": "./dist/components/card/CardTitleLink.svelte"
 		},
-		"./pagesnavigator": {
-			"types": "./dist/components/pagesnavigator/index.d.ts",
-			"svelte": "./dist/components/pagesnavigator/index.js",
-			"default": "./dist/components/pagesnavigator/index.js"
+		"./pages-navigator": {
+			"types": "./dist/components/pages-navigator/index.d.ts",
+			"svelte": "./dist/components/pages-navigator/index.js",
+			"default": "./dist/components/pages-navigator/index.js"
 		},
-		"./pagesnavigator/types": {
-			"types": "./dist/components/pagesnavigator/types.d.ts",
-			"default": "./dist/components/pagesnavigator/types.js"
+		"./pages-navigator/types": {
+			"types": "./dist/components/pages-navigator/types.d.ts",
+			"default": "./dist/components/pages-navigator/types.js"
 		},
-		"./pagesnavigator/PagesNavigator.svelte": {
-			"types": "./dist/components/pagesnavigator/PagesNavigator.svelte.d.ts",
-			"svelte": "./dist/components/pagesnavigator/PagesNavigator.svelte",
-			"default": "./dist/components/pagesnavigator/PagesNavigator.svelte"
+		"./pages-navigator/PagesNavigator.svelte": {
+			"types": "./dist/components/pages-navigator/PagesNavigator.svelte.d.ts",
+			"svelte": "./dist/components/pages-navigator/PagesNavigator.svelte",
+			"default": "./dist/components/pages-navigator/PagesNavigator.svelte"
 		},
-		"./responsivecard": {
-			"types": "./dist/components/responsivecard/index.d.ts",
-			"svelte": "./dist/components/responsivecard/index.js",
-			"default": "./dist/components/responsivecard/index.js"
+		"./responsive-card": {
+			"types": "./dist/components/responsive-card/index.d.ts",
+			"svelte": "./dist/components/responsive-card/index.js",
+			"default": "./dist/components/responsive-card/index.js"
 		},
-		"./responsivecard/types": {
-			"types": "./dist/components/responsivecard/types.d.ts",
-			"default": "./dist/components/responsivecard/types.js"
+		"./responsive-card/types": {
+			"types": "./dist/components/responsive-card/types.d.ts",
+			"default": "./dist/components/responsive-card/types.js"
 		},
-		"./responsivecard/CardAction.svelte": {
-			"types": "./dist/components/responsivecard/CardAction.svelte.d.ts",
-			"svelte": "./dist/components/responsivecard/CardAction.svelte",
-			"default": "./dist/components/responsivecard/CardAction.svelte"
+		"./responsive-card/CardAction.svelte": {
+			"types": "./dist/components/responsive-card/CardAction.svelte.d.ts",
+			"svelte": "./dist/components/responsive-card/CardAction.svelte",
+			"default": "./dist/components/responsive-card/CardAction.svelte"
 		},
-		"./responsivecard/CardBadge.svelte": {
-			"types": "./dist/components/responsivecard/CardBadge.svelte.d.ts",
-			"svelte": "./dist/components/responsivecard/CardBadge.svelte",
-			"default": "./dist/components/responsivecard/CardBadge.svelte"
+		"./responsive-card/CardBadge.svelte": {
+			"types": "./dist/components/responsive-card/CardBadge.svelte.d.ts",
+			"svelte": "./dist/components/responsive-card/CardBadge.svelte",
+			"default": "./dist/components/responsive-card/CardBadge.svelte"
 		},
-		"./responsivecard/CardContent.svelte": {
-			"types": "./dist/components/responsivecard/CardContent.svelte.d.ts",
-			"svelte": "./dist/components/responsivecard/CardContent.svelte",
-			"default": "./dist/components/responsivecard/CardContent.svelte"
+		"./responsive-card/CardContent.svelte": {
+			"types": "./dist/components/responsive-card/CardContent.svelte.d.ts",
+			"svelte": "./dist/components/responsive-card/CardContent.svelte",
+			"default": "./dist/components/responsive-card/CardContent.svelte"
 		},
-		"./responsivecard/CardImage.svelte": {
-			"types": "./dist/components/responsivecard/CardImage.svelte.d.ts",
-			"svelte": "./dist/components/responsivecard/CardImage.svelte",
-			"default": "./dist/components/responsivecard/CardImage.svelte"
+		"./responsive-card/CardImage.svelte": {
+			"types": "./dist/components/responsive-card/CardImage.svelte.d.ts",
+			"svelte": "./dist/components/responsive-card/CardImage.svelte",
+			"default": "./dist/components/responsive-card/CardImage.svelte"
 		},
-		"./responsivecard/CardInfo.svelte": {
-			"types": "./dist/components/responsivecard/CardInfo.svelte.d.ts",
-			"svelte": "./dist/components/responsivecard/CardInfo.svelte",
-			"default": "./dist/components/responsivecard/CardInfo.svelte"
+		"./responsive-card/CardInfo.svelte": {
+			"types": "./dist/components/responsive-card/CardInfo.svelte.d.ts",
+			"svelte": "./dist/components/responsive-card/CardInfo.svelte",
+			"default": "./dist/components/responsive-card/CardInfo.svelte"
 		},
-		"./responsivecard/CardTitle.svelte": {
-			"types": "./dist/components/responsivecard/CardTitle.svelte.d.ts",
-			"svelte": "./dist/components/responsivecard/CardTitle.svelte",
-			"default": "./dist/components/responsivecard/CardTitle.svelte"
+		"./responsive-card/CardTitle.svelte": {
+			"types": "./dist/components/responsive-card/CardTitle.svelte.d.ts",
+			"svelte": "./dist/components/responsive-card/CardTitle.svelte",
+			"default": "./dist/components/responsive-card/CardTitle.svelte"
 		},
-		"./responsivecard/CardTitleLink.svelte": {
-			"types": "./dist/components/responsivecard/CardTitleLink.svelte.d.ts",
-			"svelte": "./dist/components/responsivecard/CardTitleLink.svelte",
-			"default": "./dist/components/responsivecard/CardTitleLink.svelte"
+		"./responsive-card/CardTitleLink.svelte": {
+			"types": "./dist/components/responsive-card/CardTitleLink.svelte.d.ts",
+			"svelte": "./dist/components/responsive-card/CardTitleLink.svelte",
+			"default": "./dist/components/responsive-card/CardTitleLink.svelte"
 		},
-		"./responsivecard/ResponsiveCard.svelte": {
-			"types": "./dist/components/responsivecard/ResponsiveCard.svelte.d.ts",
-			"svelte": "./dist/components/responsivecard/ResponsiveCard.svelte",
-			"default": "./dist/components/responsivecard/ResponsiveCard.svelte"
+		"./responsive-card/ResponsiveCard.svelte": {
+			"types": "./dist/components/responsive-card/ResponsiveCard.svelte.d.ts",
+			"svelte": "./dist/components/responsive-card/ResponsiveCard.svelte",
+			"default": "./dist/components/responsive-card/ResponsiveCard.svelte"
 		},
 		"./scroll-to-top": {
 			"types": "./dist/components/scroll-to-top/index.d.ts",
@@ -255,10 +255,6 @@
 		"./types": {
 			"types": "./dist/types.d.ts",
 			"default": "./dist/types.js"
-		},
-		"./utils": {
-			"types": "./dist/utils.d.ts",
-			"default": "./dist/utils.js"
 		}
 	},
 	"typesVersions": {
@@ -290,44 +286,44 @@
 			"card/CardTitleLink.svelte": [
 				"./dist/components/card/CardTitleLink.svelte.d.ts"
 			],
-			"pagesnavigator": [
-				"./dist/components/pagesnavigator/index.d.ts"
+			"pages-navigator": [
+				"./dist/components/pages-navigator/index.d.ts"
 			],
-			"pagesnavigator/types": [
-				"./dist/components/pagesnavigator/types.d.ts"
+			"pages-navigator/types": [
+				"./dist/components/pages-navigator/types.d.ts"
 			],
-			"pagesnavigator/PagesNavigator.svelte": [
-				"./dist/components/pagesnavigator/PagesNavigator.svelte.d.ts"
+			"pages-navigator/PagesNavigator.svelte": [
+				"./dist/components/pages-navigator/PagesNavigator.svelte.d.ts"
 			],
-			"responsivecard": [
-				"./dist/components/responsivecard/index.d.ts"
+			"responsive-card": [
+				"./dist/components/responsive-card/index.d.ts"
 			],
-			"responsivecard/types": [
-				"./dist/components/responsivecard/types.d.ts"
+			"responsive-card/types": [
+				"./dist/components/responsive-card/types.d.ts"
 			],
-			"responsivecard/CardAction.svelte": [
-				"./dist/components/responsivecard/CardAction.svelte.d.ts"
+			"responsive-card/CardAction.svelte": [
+				"./dist/components/responsive-card/CardAction.svelte.d.ts"
 			],
-			"responsivecard/CardBadge.svelte": [
-				"./dist/components/responsivecard/CardBadge.svelte.d.ts"
+			"responsive-card/CardBadge.svelte": [
+				"./dist/components/responsive-card/CardBadge.svelte.d.ts"
 			],
-			"responsivecard/CardContent.svelte": [
-				"./dist/components/responsivecard/CardContent.svelte.d.ts"
+			"responsive-card/CardContent.svelte": [
+				"./dist/components/responsive-card/CardContent.svelte.d.ts"
 			],
-			"responsivecard/CardImage.svelte": [
-				"./dist/components/responsivecard/CardImage.svelte.d.ts"
+			"responsive-card/CardImage.svelte": [
+				"./dist/components/responsive-card/CardImage.svelte.d.ts"
 			],
-			"responsivecard/CardInfo.svelte": [
-				"./dist/components/responsivecard/CardInfo.svelte.d.ts"
+			"responsive-card/CardInfo.svelte": [
+				"./dist/components/responsive-card/CardInfo.svelte.d.ts"
 			],
-			"responsivecard/CardTitle.svelte": [
-				"./dist/components/responsivecard/CardTitle.svelte.d.ts"
+			"responsive-card/CardTitle.svelte": [
+				"./dist/components/responsive-card/CardTitle.svelte.d.ts"
 			],
-			"responsivecard/CardTitleLink.svelte": [
-				"./dist/components/responsivecard/CardTitleLink.svelte.d.ts"
+			"responsive-card/CardTitleLink.svelte": [
+				"./dist/components/responsive-card/CardTitleLink.svelte.d.ts"
 			],
-			"responsivecard/ResponsiveCard.svelte": [
-				"./dist/components/responsivecard/ResponsiveCard.svelte.d.ts"
+			"responsive-card/ResponsiveCard.svelte": [
+				"./dist/components/responsive-card/ResponsiveCard.svelte.d.ts"
 			],
 			"scroll-to-top": [
 				"./dist/components/scroll-to-top/index.d.ts"
@@ -361,9 +357,6 @@
 			],
 			"types": [
 				"./dist/types.d.ts"
-			],
-			"utils": [
-				"./dist/utils.d.ts"
 			]
 		}
 	}

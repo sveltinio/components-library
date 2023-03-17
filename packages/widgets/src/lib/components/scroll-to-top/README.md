@@ -4,7 +4,7 @@ ScrollToTopButton components helps to scroll to the top of the page.
 
 ## Usage
 
-Ensure to have `id="top"` set on the `body` tag or the main wrapper
+> Ensure to have `id="top"` set on the `body` tag or the main wrapper:
 
 ```html
 <body id="top">
@@ -14,7 +14,7 @@ Ensure to have `id="top"` set on the `body` tag or the main wrapper
 
 ```html
 <script lang="ts">
-   import { ScrollToTopButton } from '@sveltinio/widgets';
+   import { ScrollToTopButton } from '@sveltinio/widgets/scroll-to-top';
    import DummyIcon from '../_DummyIcon.svelte';
 </script>
 

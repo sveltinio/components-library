@@ -17,7 +17,7 @@ import {
     ResponsiveCardBadge,
     ResponsiveCardInfo,
     ResponsiveCardAction
-} from '@sveltinio/widgets';
+} from '@sveltinio/widgets/responsive-card';
 
 <ResponsiveCard
     title="The microphone and the voice"

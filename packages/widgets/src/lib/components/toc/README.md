@@ -20,7 +20,7 @@ Responsive and accessible ([WAI-ARIA Accessibility Reference]) Table of contents
 
 ```html
 <script>
-    import { TOC } from '@sveltinio/widgets';
+    import { TOC } from '@sveltinio/widgets/toc';
 </script>
 
 <TOC data={tocEntries} />
@@ -49,7 +49,7 @@ export default {
 ```html
 <!-- +page.svx -->
 <script>
-    import { TOC } from '@sveltinio/widgets';
+    import { TOC } from '@sveltinio/widgets/toc';
 </script>
 
 <TOC data={headings} />

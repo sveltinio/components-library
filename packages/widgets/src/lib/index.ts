@@ -8,9 +8,9 @@ export {
 	ResponsiveCardBadge,
 	ResponsiveCardInfo,
 	ResponsiveCardAction
-} from './components/responsivecard/index.js';
+} from './components/responsive-card/index.js';
 
-export { PagesNavigator } from './components/pagesnavigator/index.js';
+export { PagesNavigator } from './components/pages-navigator/index.js';
 
 export { ScrollToTopButton } from './components/scroll-to-top/index.js';
 

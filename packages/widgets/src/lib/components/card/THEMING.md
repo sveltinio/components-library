@@ -43,7 +43,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/car
 
 ```html
 <script>
-    import { PagesNavigator } from '@sveltinio/widgets';
+    import { PagesNavigator } from '@sveltinio/widgets/card';
 
     const prevObj = { label: 'prev title', href: 'link_previous_slug' };
     const nextObj = { label: 'next title', href: 'link_next_slug' }
@@ -71,7 +71,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/car
 
 ```html
 <script>
-    import { PagesNavigator } from '@sveltinio/widgets';
+    import { PagesNavigator } from '@sveltinio/widgets/card';
 
     const prevObj = { label: 'prev title', href: 'link_previous_slug' };
     const nextObj = { label: 'next title', href: 'link_next_slug' }
@@ -133,7 +133,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/car
 
 ```html
 <script>
-    import { PagesNavigator } from '@sveltinio/widgets';
+    import { PagesNavigator } from '@sveltinio/widgets/card';
 
     const prevObj = { label: 'prev title', href: 'link_previous_slug' };
     const nextObj = { label: 'next title', href: 'link_next_slug' }

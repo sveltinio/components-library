@@ -80,7 +80,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/toc
 
 ```html
 <script>
-    import { TOC } from '@sveltinio/widgets';
+    import { TOC } from '@sveltinio/widgets/toc';
 </script>
 
 <TOC data={tocEntries} class="toc-violet-theme" prefixChar="*" />

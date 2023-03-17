@@ -17,7 +17,7 @@ The `Card` component is used to group and display content in a easily readable w
 ```html
 <script>
    import { base } from '$app/paths';
-   import { Card, CardImage, CardAction } from '@sveltinio/widgets';
+   import { Card, CardImage, CardAction } from '@sveltinio/widgets/card';
 </script>
 
 <Card title="The microphone and the voice" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt...">

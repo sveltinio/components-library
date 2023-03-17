@@ -11,7 +11,7 @@ Breadcrumbs is an accessible ([WAI-ARIA Accessibility Reference]) component help
 ```html
 <script>
     import { page } from '$app/stores';
-    import { Breadcrumbs } from '@sveltinio/widgets';
+    import { Breadcrumbs } from '@sveltinio/widgets/breadcrumbs';
 <script>
 
 <Breadcrumbs url="http://example.com/blog/posts/welcome" />

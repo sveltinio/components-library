@@ -21,7 +21,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/bre
 
 ```html
 <script lang="ts">
-    import { Breadcrumbs } from '@sveltinio/widgets';
+    import { Breadcrumbs } from '@sveltinio/widgets/breadcrumbs';
 
     const customStyles = {
         'icon-color': '#6d28d9',
@@ -52,7 +52,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/bre
 
 ```html
 <script lang="ts">
-    import { Breadcrumbs } from '@sveltinio/widgets';
+    import { Breadcrumbs } from '@sveltinio/widgets/breadcrumbs';
 </script>
 
 <Breadcrumbs url="http://example.com/blog/posts/welcome" class="breadcrumbs-purple"/>

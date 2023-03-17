@@ -40,7 +40,7 @@ export class ResourceContentUtils {
 import type { TocEntry } from './components/toc/types.js';
 export type { TocEntry };
 
-import type { PagesNavigatorItem } from './components/pagesnavigator/types.js';
+import type { PagesNavigatorItem } from './components/pages-navigator/types.js';
 export type { PagesNavigatorItem };
 
 export type YAMLFrontmatter = {
@@ -56,5 +56,5 @@ export type YAMLFrontmatter = {
 	[key: string]: string | undefined | Array<TocEntry> | boolean;
 };
 
-import type { CardBadge } from './components/responsivecard/types.js';
+import type { CardBadge } from './components/responsive-card/types.js';
 export type { CardBadge };
