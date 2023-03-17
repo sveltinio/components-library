@@ -8,7 +8,7 @@ A [BreadcrumbList] is an ItemList consisting of a chain of linked Web pages, typ
 
 ```html
 <script>
-    import { JsonLdBreadcrumbs } from '@sveltinio/seo';
+    import { JsonLdBreadcrumbs } from '@sveltinio/seo/schemaorg';
 
     <JsonLdBreadcrumbs url="https://example.com/blog/welcome" />
 </script>
@@ -49,7 +49,7 @@ A [BreadcrumbList] is an ItemList consisting of a chain of linked Web pages, typ
 ```html
 <script>
     import { page } from '$app/stores';
-    import { JsonLdBreadcrumbs } from '@sveltinio/seo';
+    import { JsonLdBreadcrumbs } from '@sveltinio/seo/schemaorg';
 
     <JsonLdBreadcrumbs url={$page.url.href} />
 </script>

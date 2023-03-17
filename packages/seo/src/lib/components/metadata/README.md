@@ -10,14 +10,14 @@ Easily add metadata (title, canonical url, description, keywords) to your pages 
 <script lang="ts">
     import type { SEOWebPageMetadata } from '@sveltinio/seo/types';
     import { OpenGraphType, TwitterCardType } from '@sveltinio/seo/types';
-    import { PageMetaTags } from '@sveltinio/seo';
+    import { PageMetaTags } from '@sveltinio/seo/metadata';
 
     const sampleArticle: SEOWebPageMetadata = {
         url: 'https://example.com/posts/getting-started',
         title: 'Getting Started Article',
         description: 'This is the description for the Getting Started Article',
         author: 'Your Name',
-        keywords: 'sveltekit, components, tests, jest',
+        keywords: ['sveltekit', 'components', 'tests', 'jest'],
         opengraph: {
             type: OpenGraphType.Article,
             article: {
@@ -32,7 +32,7 @@ Easily add metadata (title, canonical url, description, keywords) to your pages 
 };
 <script>
 
-<PageMetaTags data={myPage} />
+<PageMetaTags data={sampleArticle} />
 ```
 
 ### Music Album Example
@@ -41,7 +41,7 @@ Easily add metadata (title, canonical url, description, keywords) to your pages 
 <script>
     import type { SEOWebPageMetadata } from '@sveltinio/seo/types';
     import { OpenGraphType } from '@sveltinio/seo/types';
-    import { PageMetaTags } from '@sveltinio/seo';
+    import { PageMetaTags } from '@sveltinio/seo/metadata';
 
     const sampleMusicAlbum: SEOWebPageMetadata = {
         url: 'https://www.dgmlive.com/',
@@ -90,7 +90,7 @@ type SEOWebPage = {
     title: string;
     description?: string;
     author?: string;
-    keywords?: string;
+    keywords?: Array<string>;
     image?: string;
     imageAlt?: string;
     opengraph?: OpenGraph;

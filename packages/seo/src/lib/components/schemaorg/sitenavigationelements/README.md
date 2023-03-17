@@ -7,7 +7,7 @@
 ```html
 <script lang="ts">
     import type { SEOMenuItem } from '@sveltinio/seo/types.js';
-    import { JsonLdSiteNavigationElement } from '@sveltinio/seo';
+    import { JsonLdSiteNavigationElement } from '@sveltinio/seo/schemaorg';
 
     const menu: Array<SEOMenuItem> = [
     {

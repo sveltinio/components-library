@@ -7,7 +7,7 @@
 ```html
 <script lang="ts">
     import type { SEOWebPage } from '@sveltinio/seotypes.js';
-    import { JsonLdWebPage } from '@sveltinio/seo';
+    import { JsonLdWebPage } from '@sveltinio/seo/schemaorg';
 
     const pageData: SEOWebPage = {
         url: website.baseURL,

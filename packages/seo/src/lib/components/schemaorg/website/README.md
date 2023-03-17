@@ -7,7 +7,7 @@
 ```html
 <script lang="ts">
     import type { SEOWebSite } from '@sveltinio/seotypes.js';
-    import { JsonLdWebSite } from '@sveltinio/seo';
+    import { JsonLdWebSite } from '@sveltinio/seo/schemaorg';
 
     const siteData: SEOWebSite = {
         name: 'example.com',
@@ -18,7 +18,7 @@
         description: 'Example.com is your perfect fit.',
         favicon: 'favicon.ico',
         copyright: 'MIT License @ 2021-present example.com',
-        keywords: ['sveltekit, components, tests, jest'],
+        keywords: ['sveltekit, components, tests, vitest'],
         contactEmail: '',
         socials: {
           github: 'https://github.com/examplecom'
@@ -49,7 +49,10 @@
   "@id": "https://example.com/#website",
   "name": "example.com",
   "url": "https://example.com",
-  "description": "Sample enhanced text for SEO purpose",
+  "description": "Example.com is your perfect fit.",
+  "keywords": [
+    "sveltekit, components, tests, vitest"
+  ],
   "inLanguage": "en-GB",
   "license": "MIT License @ 2021-present example.com",
   "sameAs": [
