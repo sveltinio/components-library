@@ -49,9 +49,9 @@ The `Breadcrumbs` component exposes the following properties:
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
-Please, refer to the [Design Rules] document to better understand how the component has been designed and how to customize the styles.
+The two component properties `styles` and `class` are the ones allowing you to customize the component appearence.
 
-The CSS variables are defined in the [variables.css](./variables.css) file.
+Read more [here](./THEMING.md)
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
