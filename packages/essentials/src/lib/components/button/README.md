@@ -69,7 +69,7 @@ The `Button` component exposes a set of properties to allow its configuration.
 | Property |  Type     | Required | Default | Description                                       |
 | :------- | :-------: | :------: | :-----: | :------------------------------------------------ |
 | class    | `string`  |    no    |         | The css class name used to make a theme variant   |
-| styles   | `Object`  |    no    |  `{}`   | Used to pass CSS variables to apply custom styles |
+| styles   | `object`  |    no    |  `{}`   | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
