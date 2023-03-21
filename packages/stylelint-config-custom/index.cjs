@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+	extends: ['stylelint-config-standard'],
 	ignoreFiles: ['**/app.postcss'],
 	rules: {
 		'annotation-no-unknown': true,
@@ -16,6 +16,7 @@ module.exports = {
 			}
 		],
 		'declaration-block-no-shorthand-property-overrides': true,
+		'declaration-property-value-no-unknown': true,
 		'font-family-no-duplicate-names': true,
 		'font-family-no-missing-generic-family-keyword': true,
 		'function-calc-no-unspaced-operator': true,
