@@ -10,7 +10,7 @@
 		"postcss": "^8.4.21",
 		"postcss-cli": "^10.1.0",
 		"postcss-preset-env": "^8.0.1",
-		"stylelint": "^15.2.0"
+		"stylelint": "^15.3.0"
 	},
 	"main": "index.cjs",
 	"exports": {
