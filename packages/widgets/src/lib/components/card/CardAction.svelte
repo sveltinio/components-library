@@ -1,9 +1,15 @@
 <script lang="ts">
 	export let label = 'Read More';
-	export let href = '';
+	export let href: string;
+	export let prefetch: true | '' | 'hover' | 'off' | 'tap' | null | undefined = 'off';
 </script>
 
-<a class="card__actions" {href} aria-label="{label} link" data-testid="card_action_link"
+<a
+	class="card__actions"
+	data-sveltekit-preload-data={prefetch}
+	{href}
+	aria-label="{label} link"
+	data-testid="card_action_link"
 	>{label}
 	<slot name="btn-icon">
 		<svg
