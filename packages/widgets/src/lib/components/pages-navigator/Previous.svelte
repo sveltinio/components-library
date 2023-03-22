@@ -7,6 +7,7 @@
 	export let placeholders: boolean;
 	export let labels: boolean;
 	export let spacer: boolean;
+	export let prefetch: true | '' | 'hover' | 'off' | 'tap' | null | undefined;
 
 	// ensure to show the labels at least
 	if (!placeholders && !labels) {
@@ -19,6 +20,7 @@
 </script>
 
 <a
+	data-sveltekit-preload-data={prefetch}
 	href={prev.href}
 	title="link to {prevTitle}"
 	class="link"

@@ -13,6 +13,7 @@
 	export let placeholders = true;
 	export let labels = true;
 	export let spacer = false;
+	export let prefetch: true | '' | 'hover' | 'off' | 'tap' | null | undefined = 'off';
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
@@ -39,7 +40,7 @@
 	data-testid="pagesnav_main"
 >
 	{#if areRequiredDefined(prev)}
-		<Previous {prev} {next} {placeholders} {labels} {spacer}>
+		<Previous {prefetch} {prev} {next} {placeholders} {labels} {spacer}>
 			<slot name="prevIcon">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +68,7 @@
 	{/if}
 
 	{#if areRequiredDefined(next)}
-		<Next {prev} {next} {placeholders} {labels} {spacer}>
+		<Next {prefetch} {prev} {next} {placeholders} {labels} {spacer}>
 			<slot name="nextIcon">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
