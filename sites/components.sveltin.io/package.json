@@ -27,7 +27,6 @@
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/line-clamp": "^0.4.2",
 		"@tailwindcss/typography": "^0.5.9",
-		"@types/gtag.js": "^0.0.11",
 		"@types/lodash-es": "^4.17.7",
 		"@types/node": "^18.15.5",
 		"@typescript-eslint/eslint-plugin": "^5.56.0",
