@@ -44,6 +44,9 @@ The CSS variables are defined in the [variables.css](../../styles/components/lis
 ```html
 <script>
    import { ToggleList } from '@sveltinio/essentials/list';
+   // sample icons
+   import { CloudUploadIcon } from '@indaco/svelte-iconoir/cloud-upload';
+   import { BellIcon } from '@indaco/svelte-iconoir/bell';
    // sample data
    const contentForToggleList = [
       { label: 'First', url: '#first', icon: CloudUploadIcon },

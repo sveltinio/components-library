@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { MailIcon } from '@indaco/svelte-iconoir/icons/MailIcon';
-	import { PlusIcon } from '@indaco/svelte-iconoir/icons/PlusIcon';
+	import { MailIcon } from '@indaco/svelte-iconoir/mail';
+	import { PlusIcon } from '@indaco/svelte-iconoir/plus';
 	import { Button } from '$lib/index.js';
 
 	const handleButtonClick = (event: any) => {
