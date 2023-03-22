@@ -13,6 +13,7 @@
 	export let lineClamp = 4;
 	export let href = '';
 	export let titleLink = true;
+	export let prefetch: true | '' | 'hover' | 'off' | 'tap' | null | undefined = 'off';
 
 	export let styles = {};
 	const cssStyles = stylesObjToCSSVars(styles);
@@ -45,7 +46,7 @@
 		{#if $$slots.cardAction && !titleLink}
 			<CardTitle {title} />
 		{:else}
-			<CardTitleLink {title} {href} />
+			<CardTitleLink {prefetch} {href} {title} />
 		{/if}
 
 		<CardContent {content} {lineClamp} />

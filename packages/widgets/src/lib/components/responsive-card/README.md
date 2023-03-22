@@ -45,20 +45,21 @@ The `ResponsiveCard` component exposes the following properties:
 
 ### Functionals
 
-| Property    | Type      | Required | Default | Description                                                 |
-| :---------- | :-------: | :------: | :-----: | :---------------------------------------------------------- |
-| `title`     | `string`  |   yes    |         | The card title text                                         |
-| `content`   | `string`  |   yes    |         | The card content text                                       |
-| `href`      | `string`  |    no    |         | If set, the title is a link to the href                     |
-| `lineClamp` | `number`  |    no    | `4`     | The number of lines after which the content will be clamped |
-| `titleLink` | `boolean` |    no    | `true`  | if true, the title is rendered a link to the content too    |
+| Property  | Type      | Required | Default | Description                                                 |
+| :-------- | :-------: | :------: | :-----: | :---------------------------------------------------------- |
+| titl`     | `string`  |   yes    |         | The card title text                                         |
+| content   | `string`  |   yes    |         | The card content text                                       |
+| href      | `string`  |    no    |         | If set, the title is a link to the href                     |
+| lineClamp | `number`  |    no    | `4`     | The number of lines after which the content will be clamped |
+| titleLink | `boolean` |    no    | `true`  | if true, the title is rendered a link to the content too    |
+| prefetch  |           |    no    | `off`   | Set `data-sveltekit-preload-data` link option               |
 
 ### Styles
 
-| Property    | Type     | Required | Default | Description                                                 |
-| :---------- | :------: | :------: | :-----: | :---------------------------------------------------------- |
-| `class`     | `string` |    no    |         | The css class name used to make a theme variant             |
-| `styles`    | `Object` |    no    |   `{}`  | Used to pass CSS variables to apply custom styles           |
+| Property  | Type     | Required | Default | Description                                                 |
+| :-------- | :------: | :------: | :-----: | :---------------------------------------------------------- |
+| class     | `string` |    no    |         | The css class name used to make a theme variant             |
+| styles    | `object` |    no    |   `{}`  | Used to pass CSS variables to apply custom styles           |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
@@ -68,6 +69,7 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 | :----------- | :-----: | :------: |
 | `cardImage`  | ✗       |    ✗     |
 | `cardBadge`  | ✗       |    ✗     |
+| `cardInfo`   | ✗       |    ✗     |
 | `cardAction` | ✗       |    ✗     |
 
 ## Theming
