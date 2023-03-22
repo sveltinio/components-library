@@ -46,7 +46,7 @@ The `ScrollToTopButton` component exposes the following properties:
 
 | Property  | Type     | Required | Default | Description                                       |
 | :-------- | :------: | :------: | :-----: | :------------------------------------------------ |
-| styles    | `Object` |    no    |   `{}`  | Used to pass CSS variables to apply custom styles |
+| styles    | `object` |    no    |   `{}`  | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 

@@ -36,7 +36,7 @@ The `Breadcrumbs` component exposes the following properties:
 | Property    | Type      | Required | Default | Description                                         |
 | :---------- | :-------: | :------: | :-----: | :-------------------------------------------------- |
 | class       | `string`  |    no    |         | The css class name used to make a theme variant     |
-| styles      | `Object`  |    no    | `{}`    | Used to pass CSS variables to apply custom styles   |
+| styles      | `object`  |    no    | `{}`    | Used to pass CSS variables to apply custom styles   |
 
 ## Slots
 
