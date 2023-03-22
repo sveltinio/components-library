@@ -19,7 +19,7 @@
 		"@sveltinio/widgets": "workspace:../../packages/widgets/dist"
 	},
 	"devDependencies": {
-		"@indaco/svelte-iconoir": "^3.3.1",
+		"@indaco/svelte-iconoir": "^4.0.0",
 		"@sveltejs/adapter-static": "2.0.1",
 		"@sveltejs/kit": "1.9.1",
 		"@sveltinio/remark-headings": "^1.0.1",
