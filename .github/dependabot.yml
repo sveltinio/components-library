@@ -62,6 +62,13 @@ updates:
     labels:
       - 'packages'
       - 'deps'
+  - package-ecosystem: 'npm'
+    directory: '/sites/components.sveltin.io'
+    schedule:
+      interval: 'weekly'
+    labels:
+      - 'sites'
+      - 'deps'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
