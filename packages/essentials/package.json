@@ -38,7 +38,7 @@
 		"svelte": "^3.57.0"
 	},
 	"devDependencies": {
-		"@indaco/svelte-iconoir": "^3.3.1",
+		"@indaco/svelte-iconoir": "^4.0.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.13.0",
 		"@sveltejs/package": "^2.0.2",
