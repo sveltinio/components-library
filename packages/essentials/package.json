@@ -2,7 +2,7 @@
 	"name": "@sveltinio/essentials",
 	"version": "0.7.1",
 	"private": false,
-	"packageManager": "pnpm@7.29.2",
+	"packageManager": "pnpm@7.30.0",
 	"type": "module",
 	"description": "A collection of essentials, type-safe, accessible and configurable Svelte components.",
 	"author": "dev <dev@sveltin.io>",
