@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { Breadcrumbs } from '$lib/index.js';
 
 	const customStyles = {
@@ -21,10 +20,17 @@
 		<a class="btn-back" href="/demos">← Return To The Demos</a>
 	</div>
 
-	<div id="breadcrumbs-default-wrapper" class="demo-wrapper">
-		<h3 id="buttons-variants">Defaults</h3>
+	<div id="breadcrumbs-home-wrapper" class="demo-wrapper">
+		<h3 id="default-home">Home</h3>
 		<div class="preview">
-			<Breadcrumbs url={$page.url.href} />
+			<Breadcrumbs url="http://example.com" />
+		</div>
+	</div>
+
+	<div id="breadcrumbs-default-wrapper" class="demo-wrapper">
+		<h3 id="breadcrumbs-default">Defaults</h3>
+		<div class="preview">
+			<Breadcrumbs url="http://example.com/projects/" />
 		</div>
 	</div>
 
@@ -53,7 +59,7 @@
 		<h3 id="breadcrumbs-custom-icon">Custom Divider Icon</h3>
 		<div class="preview">
 			<Breadcrumbs url="http://example.com/projects/music/prog">
-				><svg
+				<svg
 					slot="dividerIcon"
 					xmlns="http://www.w3.org/2000/svg"
 					width="20px"
@@ -76,7 +82,7 @@
 	<div id="breadcrumbs-theming-with-prop-wrapper" class="demo-wrapper">
 		<h3 id="breadcrumbs-theming-with-prop">Custom Styles with prop</h3>
 		<div class="preview">
-			<Breadcrumbs url={$page.url.href} styles={customStyles} />
+			<Breadcrumbs url="http://example.com/projects/" styles={customStyles} />
 		</div>
 	</div>
 </section>

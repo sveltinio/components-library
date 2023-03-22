@@ -110,7 +110,7 @@
 				>
 			</li>
 		{/each}
-		{#if showCurrent}
+		{#if showCurrent && current != ''}
 			<li
 				class="item is-current"
 				aria-current="page"
