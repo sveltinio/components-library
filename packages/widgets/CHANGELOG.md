@@ -1,5 +1,15 @@
 # @sveltinio/widgets
 
+## 0.7.2
+
+### Patch Changes
+
+- patch(**card**): add `prefetch` as prop to set `data-sveltekit-preload-data` on links
+- patch(**pages-navigator**): add `prefetch` as prop to set `data-sveltekit-preload-data` on links
+- pathc(**responsive-card**): add `prefetch` as prop to set `data-sveltekit-preload-data` on links
+- chore: deps updated
+- docs: READMEs updated
+
 ## 0.7.1
 
 ### Patch Changes
