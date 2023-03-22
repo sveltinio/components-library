@@ -1,5 +1,11 @@
 # @sveltinio/widgets
 
+## 0.7.3
+
+### Patch Changes
+
+- fix(**breadcrumbs**): separator visible also when url origin (home) only
+
 ## 0.7.2
 
 ### Patch Changes
