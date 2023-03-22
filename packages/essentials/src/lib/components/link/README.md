@@ -33,7 +33,7 @@ The `Link` component exposes a set of properties but it does not prevent you to 
 | label      | `string`  |    no    |          | The text to display and used for the `aria-label` prop too          |
 | href       | `string`  |   yes    |          | The URL of the page the link goes to                                |
 | external   | `boolean` |    no    | `false   | If external, an icon will be apped next to the right of the label   |
-| prefetch   | `boolean` |    no    | `false   | Enable `data-sveltekit-preload-data` when not an external link      |
+| `prefetch` |           |    no    | `off`    | Set `data-sveltekit-preload-data` when not an external link         |
 | icon       | `boolean` |    no    | `true`   | Shows an icon next right to the label when external is true         |
 | iconSize   | `number`  |    no    | `12`     | if `external` & `icon` are `true`, sets the external icon size      |
 | noOpenener | `boolean` |    no    | `true`   | Go to the linked resource without granting the new browsing context |
