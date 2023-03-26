@@ -1,18 +1,25 @@
 # @sveltinio/widgets
 
+## 0.7.4
+
+### Patch Changes
+
+- **breadcrumbs**: add `showRootOnly` boolean prop to show/hide root icon when base url only.
+- chore: deps updated
+
 ## 0.7.3
 
 ### Patch Changes
 
-- fix(**breadcrumbs**): separator visible also when url origin (home) only
+- fix(**breadcrumbs**): hide separator when base url only
 
 ## 0.7.2
 
 ### Patch Changes
 
-- patch(**card**): add `prefetch` as prop to set `data-sveltekit-preload-data` on links
-- patch(**pages-navigator**): add `prefetch` as prop to set `data-sveltekit-preload-data` on links
-- pathc(**responsive-card**): add `prefetch` as prop to set `data-sveltekit-preload-data` on links
+- **card**: add `prefetch` as prop to set `data-sveltekit-preload-data` on links
+-**pages-navigator**: add `prefetch` as prop to set `data-sveltekit-preload-data` on links
+- **responsive-card**: add `prefetch` as prop to set `data-sveltekit-preload-data` on links
 - chore: deps updated
 - docs: READMEs updated
 
