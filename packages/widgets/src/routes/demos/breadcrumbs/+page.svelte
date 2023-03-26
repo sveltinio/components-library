@@ -20,10 +20,17 @@
 		<a class="btn-back" href="/demos">← Return To The Demos</a>
 	</div>
 
-	<div id="breadcrumbs-home-wrapper" class="demo-wrapper">
-		<h3 id="default-home">Home</h3>
+	<div id="breadcrumbs-hide-root-only-wrapper" class="demo-wrapper">
+		<h3 id="default-hide-root-only">Hide Root only</h3>
 		<div class="preview">
 			<Breadcrumbs url="http://example.com" />
+		</div>
+	</div>
+
+	<div id="breadcrumbs-show-root-only-wrapper" class="demo-wrapper">
+		<h3 id="default-show-root-only">Show Root only</h3>
+		<div class="preview">
+			<Breadcrumbs url="http://example.com" showRootOnly />
 		</div>
 	</div>
 

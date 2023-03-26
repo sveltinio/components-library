@@ -26,10 +26,11 @@ The `Breadcrumbs` component exposes the following properties:
 
 ### Functionals
 
-| Property    | Type      | Required | Default | Description                                         |
-| :---------- | :-------: | :------: | :-----: | :-------------------------------------------------- |
-| url         | `string`  |    yes   |         | An absolute or relative URL string                  |
-| showCurrent | `boolean` |    no    | `true`  | If false, the current item it not on the bradcrumbs |
+| Property     | Type      | Required | Default | Description                                         |
+| :----------- | :-------: | :------: | :-----: | :-------------------------------------------------- |
+| url          | `string`  |    yes   |         | An absolute or relative URL string                  |
+| showRootOnly | `boolean` |    no    | `false` | if true, shows the root icon when base url only     |
+| showCurrent  | `boolean` |    no    | `true`  | If false, the current item it not on the bradcrumbs |
 
 ### Styles
 
