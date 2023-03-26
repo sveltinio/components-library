@@ -9,7 +9,7 @@
 		"cssnano-preset-advanced": "^5.3.10",
 		"postcss": "^8.4.21",
 		"postcss-cli": "^10.1.0",
-		"postcss-preset-env": "^8.0.1",
+		"postcss-preset-env": "^8.1.0",
 		"stylelint": "^15.3.0"
 	},
 	"main": "index.cjs",
