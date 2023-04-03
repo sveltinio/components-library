@@ -5,8 +5,8 @@
 	"packageManager": "pnpm@7.30.3",
 	"license": "MIT",
 	"dependencies": {
-		"cssnano": "^5.1.15",
-		"cssnano-preset-advanced": "^5.3.10",
+		"cssnano": "^6.0.0",
+		"cssnano-preset-advanced": "^6.0.0",
 		"postcss": "^8.4.21",
 		"postcss-cli": "^10.1.0",
 		"postcss-preset-env": "^8.1.0",
