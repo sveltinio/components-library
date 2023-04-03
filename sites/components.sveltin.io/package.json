@@ -2,7 +2,7 @@
 	"name": "components.sveltin.io",
 	"version": "0.1.0",
 	"type": "module",
-	"packageManager": "pnpm@7.28.0",
+	"packageManager": "pnpm@8.1.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/sveltinio/components-library",
@@ -21,7 +21,7 @@
 	"devDependencies": {
 		"@indaco/svelte-iconoir": "^4.1.1",
 		"@sveltejs/adapter-static": "2.0.1",
-		"@sveltejs/kit": "1.13.0",
+		"@sveltejs/kit": "1.15.0",
 		"@sveltinio/remark-headings": "^1.0.1",
 		"@sveltinio/ts-utils": "0.4.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
@@ -32,7 +32,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.57.0",
 		"@typescript-eslint/parser": "^5.57.0",
 		"autoprefixer": "^10.4.14",
-		"cssnano": "^5.1.15",
+		"cssnano": "^6.0.0",
 		"eslint": "^8.37.0",
 		"eslint-config-custom": "workspace:*",
 		"install": "^0.13.0",
