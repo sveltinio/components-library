@@ -8,7 +8,7 @@
 	export let label = '';
 	export let href: string;
 	export let external = false;
-	export let prefetch = false;
+	export let prefetch: true | '' | 'hover' | 'off' | 'tap' | null | undefined = 'off';
 	export let icon = true;
 	export let iconSize = 12;
 	export let noOpener = true;
@@ -21,8 +21,9 @@
 	if (noOpener) relOptions.push('noopener');
 	if (noReferrer) relOptions.push('noreferrer');
 
-	const prefetchValue: true | '' | 'hover' | 'off' | 'tap' | null | undefined =
-		prefetch && !external ? `hover` : `off`;
+	const prefetchValue: true | '' | 'hover' | 'off' | 'tap' | null | undefined = !external
+		? prefetch
+		: 'off';
 	const target = external ? '_blank' : '_self';
 	const externalIcon = external && icon ? true : false;
 

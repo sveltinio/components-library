@@ -1,5 +1,13 @@
 # @sveltinio/essentials
 
+## 0.7.2
+
+### Patch Changes
+
+- refactor(**link**): `prefetch` as prop to set `data-sveltekit-preload-data` on links
+- chore: deps updated
+- docs(link/README): updated
+
 ## 0.7.1
 
 ### Patch Changes

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
+	import type { ComponentType, SvelteComponentTyped } from 'svelte';
 	import { contentForToggleList } from '../../src/data/sample.js';
-	import { LongArrowDownRightIcon } from '@indaco/svelte-iconoir/icons/LongArrowDownRightIcon';
-	import { LongArrowRightUpIcon } from '@indaco/svelte-iconoir/icons/LongArrowRightUpIcon';
+	import { LongArrowDownRightIcon } from '@indaco/svelte-iconoir/long-arrow-down-right';
+	import { LongArrowRightUpIcon } from '@indaco/svelte-iconoir/long-arrow-right-up';
 
-	export let Component: SvelteComponent;
+	export let Component: ComponentType<SvelteComponentTyped>;
 </script>
 
 <svelte:component this={Component} items={contentForToggleList}>

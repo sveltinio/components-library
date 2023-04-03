@@ -3,10 +3,10 @@
 	import { page } from '$app/stores';
 	//Icons
 	/*
-	import { LongArrowDownRightIcon } from '@indaco/svelte-iconoir/icons/LongArrowDownRightIcon';
-	import { BellIcon } from '@indaco/svelte-iconoir/icons/BellIcon';
-	import { MovieIcon } from '@indaco/svelte-iconoir/icons/MovieIcon';
-	import { Music1Icon } from '@indaco/svelte-iconoir/icons/Music1Icon';
+	import { LongArrowDownRightIcon } from '@indaco/svelte-iconoir/long-arrow-down-right';
+	import { BellIcon } from '@indaco/svelte-iconoir/bell';
+	import { MovieIcon } from '@indaco/svelte-iconoir/movie';
+	import { Music1Icon } from '@indaco/svelte-iconoir/music1';
 	*/
 
 	// sample data

@@ -1,3 +1,3 @@
-# sveltekit-static-starter
+# components.sveltin.io
 
-Starter app used by Sveltin CLI to generate a new project.
+> not ready yet

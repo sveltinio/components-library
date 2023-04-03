@@ -2,12 +2,12 @@
 	"name": "stylelint-config-custom",
 	"version": "0.0.0",
 	"private": true,
-	"packageManager": "pnpm@7.30.0",
+	"packageManager": "pnpm@8.1.0",
 	"type": "module",
 	"license": "MIT",
 	"dependencies": {
-		"stylelint": "^15.3.0",
-		"stylelint-config-standard": "^31.0.0"
+		"stylelint": "^15.4.0",
+		"stylelint-config-standard": "^32.0.0"
 	},
 	"main": "index.cjs"
 }
