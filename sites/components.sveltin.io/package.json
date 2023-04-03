@@ -22,7 +22,7 @@
 		"@indaco/svelte-iconoir": "^4.0.0",
 		"@sveltejs/adapter-static": "2.0.1",
 		"@sveltejs/kit": "1.13.0",
-		"@sveltinio/ts-utils": "0.2.0",
+		"@sveltinio/ts-utils": "0.4.0",
 		"@sveltinio/remark-headings": "^1.0.1",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/line-clamp": "^0.4.2",
