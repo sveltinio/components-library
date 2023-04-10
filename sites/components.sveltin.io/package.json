@@ -51,7 +51,7 @@
 		"rehype-external-links": "^2.0.1",
 		"rehype-slug": "^5.1.0",
 		"remark-emoji": "^3.1.1",
-		"rimraf": "^4.4.1",
+		"rimraf": "^5.0.0",
 		"svelte": "^3.58.0",
 		"svelte-check": "^3.1.4",
 		"svelte-preprocess": "^5.0.3",
