@@ -20,8 +20,8 @@
 	},
 	"devDependencies": {
 		"@indaco/svelte-iconoir": "^4.2.0",
-		"@sveltejs/adapter-static": "2.0.1",
-		"@sveltejs/kit": "1.15.0",
+		"@sveltejs/adapter-static": "2.0.2",
+		"@sveltejs/kit": "1.15.3",
 		"@sveltinio/remark-headings": "^1.0.1",
 		"@sveltinio/ts-utils": "0.4.1",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
