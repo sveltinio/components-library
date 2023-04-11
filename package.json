@@ -2,7 +2,7 @@
 	"name": "components-library",
 	"version": "0.2.0",
 	"private": true,
-	"packageManager": "pnpm@7.30.3",
+	"packageManager": "pnpm@8.2.0",
 	"workspaces": [
 		"packages/*",
 		"sites/*"
