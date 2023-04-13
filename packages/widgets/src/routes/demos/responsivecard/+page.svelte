@@ -47,11 +47,7 @@
 				title={contentItem_2.metadata.title}
 				content={contentItem_2.metadata.headline ?? ''}
 			>
-				<ResponsiveCardImage
-					slot="cardImage"
-					src={item_2_CoverImgPath}
-					alt="microphone photo"
-				/>
+				<ResponsiveCardImage slot="cardImage" src={item_2_CoverImgPath} alt="microphone photo" />
 				<ResponsiveCardBadge
 					slot="cardBadge"
 					data={{
@@ -119,6 +115,35 @@
 				<ResponsiveCardAction
 					slot="cardAction"
 					href={ResourceContentUtils.getURL(base, contentItem_1)}
+				/>
+			</ResponsiveCard>
+		</div>
+	</div>
+
+	<div id="responsivecard-theming-wrapper" class="demo-wrapper">
+		<h3 id="responsivecard-theming">Theming</h3>
+		<div class="preview">
+			<ResponsiveCard
+				title={contentItem_2.metadata.title}
+				content={contentItem_2.metadata.headline ?? ''}
+				styles={{
+					'bg-color': 'rgb(224 231 255)',
+					'border-color': 'rgb(99 102 241)',
+					'border-radius': '0',
+					'btn-color': 'rgb(238 242 255)',
+					'btn-bg-color': 'rgb(67 56 202)',
+					'btn-bg-color-hover': 'rgb(79 70 229)'
+				}}
+			>
+				<ResponsiveCardInfo
+					slot="cardInfo"
+					author={contentItem_2.metadata.author ?? ''}
+					date={contentItem_2.metadata.created_at ?? ''}
+					showAvatar={false}
+				/>
+				<ResponsiveCardAction
+					slot="cardAction"
+					href={ResourceContentUtils.getURL(base, contentItem_2)}
 				/>
 			</ResponsiveCard>
 		</div>

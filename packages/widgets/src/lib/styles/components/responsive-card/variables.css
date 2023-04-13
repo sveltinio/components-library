@@ -12,10 +12,10 @@
   --_pl: var(--pl, 0rem);
   --_gap: var(--gap, 0.5rem);
   --_bg-color: var(--bg-color, var(--white));
-  --_border-width: var(--border-width, 0);
+  --_border-width: var(--border-width, 1px);
   --_border-style: var(--border-style, solid);
   --_border-color: var(--border-color, transparent);
-  --_border-radius: var(--border-radius, 0.8rem);
+  --_border-radius: var(--border-radius, 0.5rem);
   --_shadow-color: var(--shadow-color, var(--slate-200));
 
   /* - body: md breakpoint (min-width: 768px) */
@@ -23,16 +23,16 @@
   --_max-width-md: var(--max-width-md, 48rem);
 
   /* * image (css class name: card__image)         */
-  --_img-border-tl-radius: var(--img-border-tl-radius, 0.8rem);
-  --_img-border-tr-radius: var(--img-border-tr-radius, 0.8rem);
+  --_img-border-tl-radius: var(--img-border-tl-radius, 0.5rem);
+  --_img-border-tr-radius: var(--img-border-tr-radius, 0.5rem);
   --_img-border-bl-radius: var(--img-border-bl-radius, 0rem);
   --_img-border-br-radius: var(--img-border-br-radius, 0rem);
 
   /* - body: md breakpoint (min-width: 768px) */
-  --_img-border-tl-radius-md: var(--img-border-tl-radius-md, 0.8rem);
-  --_img-border-tr-radius-md: var(--img-border-tr-radius-md, 0rem);
-  --_img-border-bl-radius-md: var(--img-border-bl-radius-md, 0.8rem);
-  --_img-border-br-radius-md: var(--img-border-br-radius-md, 0rem);
+  --_img-border-tl-radius-md: var(--img-border-tl-radius-md, var(--_img-border-tl-radius));
+  --_img-border-tr-radius-md: var(--img-border-tr-radius-md, var(--_img-border-tr-radius));
+  --_img-border-bl-radius-md: var(--img-border-bl-radius-md, var(--_img-border-bl-radius));
+  --_img-border-br-radius-md: var(--img-border-br-radius-md, var(--_img-border-br-radius));
 
   /* * body (css class name: card__wrapper) */
   --_wrapper-gap: var(--wrapper-gap, 0.5rem);
@@ -50,10 +50,10 @@
   /* * title (css class name: card__wrapper > h2)  */
   --_title-color: var(--title-color, var(--slate-600));
   --_title-font-size: var(--title-font-size, 1.2rem);
-  --_title-font-weight: var(--title-font-weight, 700);
+  --_title-font-weight: var(--title-font-weight, 600);
   --_title-text-decoration: var(--_title-text-decoration, none);
   --_title-line-height: var(--title-line-height, 1.4rem);
-  --_title-letter-spacing: var(--title-letter-spacing, 0em);
+  --_title-letter-spacing: var(--title-letter-spacing, -0.025em);
   --_title-mt: var(--title-mt, 0.5rem);
   --_title-mr: var(--title-mr, 0rem);
   --_title-mb: var(--title-mb, 0rem);
@@ -76,9 +76,9 @@
   --_content-pb: var(--content-pb, 0.5rem);
   --_content-pl: var(--content-pl, 0);
   --_content-color: var(--content-color, var(--slate-600));
-  --_content-font-size: var(--content-font-size, 0.9rem);
+  --_content-font-size: var(--content-font-size, 1rem);
   --_content-font-weight: var(--content-font-weight, 400);
-  --_content-line-height: var(--content-line-height, 1.5rem);
+  --_content-line-height: var(--content-line-height, 1.25rem);
   --_content-letter-spacing: var(--content-letter-spacing, 0em);
   --_content-text-align: var(--content-text-align, left);
 
@@ -91,7 +91,7 @@
 
   /* * footer (css class name: card__footer)       */
   --_footer-gap: var(--footer-gap, 1.25rem);
-  --_footer-mt: var(--footer-mt, 1rem);
+  --_footer-mt: var(--footer-mt, 0.375rem);
   --_footer-align-items: var(--foter-align-items, flex-start);
   --_footer-justify-content: var(--footer-justify-content, space-between);
 
@@ -101,9 +101,9 @@
 
   /* * info (css class name: card__info)           */
   --_info-color: var(--info-color, var(--slate-500));
-  --_info-font-size: var(--info-font-size, 0.9rem);
+  --_info-font-size: var(--info-font-size, 0.875rem);
   --_info-font-weight: var(--info-font-weight, 500);
-  --_info-line-height: var(--info-line-height, 1.5rem);
+  --_info-line-height: var(--info-line-height, 1.25rem);
   --_info-letter-spacing: var(--info-letter-spacing, 0em);
   --_info-text-align: var(--info-text-align, left);
 
@@ -113,15 +113,16 @@
   --_avatar-border-radius: var(--avatar-border-radius, 50%);
 
   --_author-color: var(--author-color, var(--slate-600));
-  --_author-font-weight: var(--author-font-weight, bold);
+  --_author-font-weight: var(--author-font-weight, 600);
 
-  --_date-color: var(--date-color, var(--slate-600));
+  --_date-color: var(--date-color, var(--slate-400));
 
   /* * button link (css class name: card__actions) */
   --_btn-color: var(--btn-color, var(--slate-800));
-  --_btn-font-size: var(--btn-font-size, 0.9rem);
+  --_btn-color-hover: var(--btn-color-hover, var(--_btn-color));
+  --_btn-font-size: var(--btn-font-size, 0.875rem);
   --_btn-font-weight: var(--btn-font-weight, 500);
-  --_btn-line-height: var(--btn-line-height, 1rem);
+  --_btn-line-height: var(--btn-line-height, 1.25rem);
   --_btn-letter-spacing: var(--btn-letter-spacing, 0);
   --_btn-width: var(--btn-width, 100%);
   --_btn-gap: var(--btn-gap, 0.25rem);
@@ -129,12 +130,16 @@
   --_btn-pr: var(--btn-pr, 0.5rem);
   --_btn-pb: var(--btn-pb, 0.5rem);
   --_btn-pl: var(--btn-pl, 0.5rem);
-  --_btn-border-width: var(--btn-border-width, 0);
+  --_btn-border-width: var(--btn-border-width, 1px);
+  --_btn-border-width-hover: var(--btn-border-width-hover, var(--_btn-border-width));
   --_btn-border-style: var(--btn-border-style, solid);
+  --_btn-border-style-hover: var(--btn-border-style-hover, var(--_btn-border-style));
   --_btn-border-color: var(--btn-border-color, transparent);
+  --_btn-border-color-hover: var(--btn-border-color-hover, var(--_btn-border-color));
   --_btn-border-radius: var(--btn-border-radius, 0.375rem);
+  --_btn-border-radius-hover: var(--btn-border-radius-hover, var(--_btn-border-radius));
   --_btn-bg-color: var(--btn-bg-color, var(--slate-100));
-  --_btn-bg-color-hover: var(--btn-bg-color-hover, var(--slate-200));
+  --_btn-bg-color-hover: var(--btn-bg-color-hover, var(--_btn-bg-color));
 
   /* - body: md breakpoint (min-width: 768px) */
   --_btn-width-md: var(--btn-width-md, auto);
