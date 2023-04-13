@@ -143,6 +143,9 @@ importers:
       prettier:
         specifier: ^2.8.7
         version: 2.8.7
+      prettier-plugin-svelte:
+        specifier: ^2.10.0
+        version: 2.10.0(prettier@2.8.7)(svelte@3.58.0)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -234,6 +237,9 @@ importers:
       prettier:
         specifier: ^2.8.7
         version: 2.8.7
+      prettier-plugin-svelte:
+        specifier: ^2.10.0
+        version: 2.10.0(prettier@2.8.7)(svelte@3.58.0)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -340,6 +346,9 @@ importers:
       prettier:
         specifier: ^2.8.7
         version: 2.8.7
+      prettier-plugin-svelte:
+        specifier: ^2.10.0
+        version: 2.10.0(prettier@2.8.7)(svelte@3.58.0)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -413,6 +422,9 @@ importers:
       prettier:
         specifier: ^2.8.7
         version: 2.8.7
+      prettier-plugin-svelte:
+        specifier: ^2.10.0
+        version: 2.10.0(prettier@2.8.7)(svelte@3.58.0)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -525,6 +537,9 @@ importers:
       prettier:
         specifier: ^2.8.7
         version: 2.8.7
+      prettier-plugin-svelte:
+        specifier: ^2.10.0
+        version: 2.10.0(prettier@2.8.7)(svelte@3.58.0)
       publint:
         specifier: ^0.1.11
         version: 0.1.11

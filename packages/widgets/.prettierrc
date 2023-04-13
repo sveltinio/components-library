@@ -4,11 +4,14 @@
 	"trailingComma": "none",
 	"printWidth": 100,
 	"bracketSpacing": true,
+	"plugins": ["prettier-plugin-svelte"],
+	"pluginSearchDirs": ["."],
 	"overrides": [
 		{
 			"files": ["*.svelte"],
 			"options": {
-				"bracketSameLine": false
+				"bracketSameLine": false,
+				"parser": "svelte"
 			}
 		},
 		{
