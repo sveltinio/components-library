@@ -36,7 +36,8 @@
 		stroke="currentColor"
 		stroke-linecap="round"
 		stroke-linejoin="round"
-	/> <path d="M8 12L20 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+	/>
+	<path d="M8 12L20 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
 	<path
 		d="M8 18L20 18"
 		stroke="currentColor"

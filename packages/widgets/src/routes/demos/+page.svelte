@@ -19,8 +19,7 @@
 		},
 		{
 			name: 'ResponsiveCard',
-			headline:
-				'Display content vertically on small screen and horizontally on large screen.',
+			headline: 'Display content vertically on small screen and horizontally on large screen',
 			url: 'demos/responsivecard'
 		},
 		{
