@@ -138,8 +138,8 @@
   --_btn-border-color-hover: var(--btn-border-color-hover, var(--_btn-border-color));
   --_btn-border-radius: var(--btn-border-radius, 0.375rem);
   --_btn-border-radius-hover: var(--btn-border-radius-hover, var(--_btn-border-radius));
-  --_btn-bg-color: var(--btn-bg-color, var(--slate-100));
-  --_btn-bg-color-hover: var(--btn-bg-color-hover, var(--_btn-bg-color));
+  --_btn-bg-color: var(--btn-bg-color, var(--slate-50));
+  --_btn-bg-color-hover: var(--btn-bg-color-hover, var(--slate-100));
 
   /* - body: md breakpoint (min-width: 768px) */
   --_btn-width-md: var(--btn-width-md, auto);

@@ -47,7 +47,11 @@
 				title={contentItem_2.metadata.title}
 				content={contentItem_2.metadata.headline ?? ''}
 			>
-				<ResponsiveCardImage slot="cardImage" src={item_2_CoverImgPath} alt="microphone photo" />
+				<ResponsiveCardImage
+					slot="cardImage"
+					src={item_2_CoverImgPath}
+					alt="microphone photo"
+				/>
 				<ResponsiveCardBadge
 					slot="cardBadge"
 					data={{
@@ -126,6 +130,7 @@
 			<ResponsiveCard
 				title={contentItem_2.metadata.title}
 				content={contentItem_2.metadata.headline ?? ''}
+				lineClamp={3}
 				styles={{
 					'bg-color': 'rgb(224 231 255)',
 					'border-color': 'rgb(99 102 241)',
