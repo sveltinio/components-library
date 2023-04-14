@@ -91,8 +91,8 @@
 
   & .card__footer {
     display: inline-flex;
-    align-items: center;
-    justify-content: var(--_footer-justify);
+    justify-content: var(--_footer-justify-content);
+    align-items: var(--_footer-align-content);
     padding-top: var(--_footer-pt);
     padding-right: var(--_footer-pr);
     padding-bottom: var(--_footer-pb);
@@ -105,6 +105,7 @@
       justify-content: center;
       gap: var(--_btn-gap);
 
+      color: var(--_btn-color);
       font-size: var(--_btn-font-size);
       font-weight: var(--_btn-font-weight);
       line-height: var(--_btn-line-height);
@@ -122,11 +123,15 @@
       border-radius: var(--_btn-border-radius);
 
       &:hover {
+        color: var(--_btn-color-hover);
         background-color: var(--_btn-bg-color-hover);
+        border-width: var(--_btn-border-width-hover);
+        border-style: var(--_btn-border-style-hover);
+        border-color: var(--_btn-border-color-hover);
+        border-radius: var(--_btn-border-radius-hover);
       }
 
       & a {
-        color: var(--_btn-color);
         text-decoration: none;
       }
     }
