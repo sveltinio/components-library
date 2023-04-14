@@ -70,10 +70,10 @@ importers:
         version: 4.2.0
       '@sveltejs/adapter-auto':
         specifier: ^2.0.0
-        version: 2.0.0(@sveltejs/kit@1.15.4)
+        version: 2.0.0(@sveltejs/kit@1.15.5)
       '@sveltejs/kit':
-        specifier: ^1.15.4
-        version: 1.15.4(svelte@3.58.0)(vite@4.2.1)
+        specifier: ^1.15.5
+        version: 1.15.5(svelte@3.58.0)(vite@4.2.1)
       '@sveltejs/package':
         specifier: ^2.0.2
         version: 2.0.2(svelte@3.58.0)(typescript@5.0.4)
@@ -182,10 +182,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.0.0
-        version: 2.0.0(@sveltejs/kit@1.15.4)
+        version: 2.0.0(@sveltejs/kit@1.15.5)
       '@sveltejs/kit':
-        specifier: ^1.15.4
-        version: 1.15.4(svelte@3.58.0)(vite@4.2.1)
+        specifier: ^1.15.5
+        version: 1.15.5(svelte@3.58.0)(vite@4.2.1)
       '@sveltejs/package':
         specifier: ^2.0.2
         version: 2.0.2(svelte@3.58.0)(typescript@5.0.4)
@@ -294,10 +294,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.0.0
-        version: 2.0.0(@sveltejs/kit@1.15.4)
+        version: 2.0.0(@sveltejs/kit@1.15.5)
       '@sveltejs/kit':
-        specifier: ^1.15.4
-        version: 1.15.4(svelte@3.58.0)(vite@4.2.1)
+        specifier: ^1.15.5
+        version: 1.15.5(svelte@3.58.0)(vite@4.2.1)
       '@sveltejs/package':
         specifier: ^2.0.2
         version: 2.0.2(svelte@3.58.0)(typescript@5.0.4)
@@ -385,10 +385,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.0.0
-        version: 2.0.0(@sveltejs/kit@1.15.4)
+        version: 2.0.0(@sveltejs/kit@1.15.5)
       '@sveltejs/kit':
-        specifier: ^1.15.4
-        version: 1.15.4(svelte@3.58.0)(vite@4.2.1)
+        specifier: ^1.15.5
+        version: 1.15.5(svelte@3.58.0)(vite@4.2.1)
       '@sveltejs/package':
         specifier: ^2.0.2
         version: 2.0.2(svelte@3.58.0)(typescript@5.0.4)
@@ -467,10 +467,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.0.0
-        version: 2.0.0(@sveltejs/kit@1.15.4)
+        version: 2.0.0(@sveltejs/kit@1.15.5)
       '@sveltejs/kit':
-        specifier: ^1.15.4
-        version: 1.15.4(svelte@3.58.0)(vite@4.2.1)
+        specifier: ^1.15.5
+        version: 1.15.5(svelte@3.58.0)(vite@4.2.1)
       '@sveltejs/package':
         specifier: ^2.0.2
         version: 2.0.2(svelte@3.58.0)(typescript@5.0.4)
@@ -1770,12 +1770,12 @@ packages:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
     dev: true
 
-  /@sveltejs/adapter-auto@2.0.0(@sveltejs/kit@1.15.4):
+  /@sveltejs/adapter-auto@2.0.0(@sveltejs/kit@1.15.5):
     resolution: {integrity: sha512-b+gkHFZgD771kgV3aO4avHFd7y1zhmMYy9i6xOK7m/rwmwaRO8gnF5zBc0Rgca80B2PMU1bKNxyBTHA14OzUAQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.15.4(svelte@3.58.0)(vite@4.2.1)
+      '@sveltejs/kit': 1.15.5(svelte@3.58.0)(vite@4.2.1)
       import-meta-resolve: 2.2.2
     dev: true
 
@@ -1789,6 +1789,34 @@ packages:
 
   /@sveltejs/kit@1.15.4(svelte@3.58.0)(vite@4.2.1):
     resolution: {integrity: sha512-m+Tid9nbtFawmiu85lDlal0AQ7UeuV48UsuKMe06QLr3ntMQSUzIPqyswNRZqFrar6NhVTUXQ0aO61M3U4MWpQ==}
+    engines: {node: ^16.14 || >=18}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      svelte: ^3.54.0
+      vite: ^4.0.0
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 2.0.4(svelte@3.58.0)(vite@4.2.1)
+      '@types/cookie': 0.5.1
+      cookie: 0.5.0
+      devalue: 4.3.0
+      esm-env: 1.0.0
+      kleur: 4.1.5
+      magic-string: 0.30.0
+      mime: 3.0.0
+      sade: 1.8.1
+      set-cookie-parser: 2.6.0
+      sirv: 2.0.2
+      svelte: 3.58.0
+      tiny-glob: 0.2.9
+      undici: 5.20.0
+      vite: 4.2.1(@types/node@18.15.11)
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@sveltejs/kit@1.15.5(svelte@3.58.0)(vite@4.2.1):
+    resolution: {integrity: sha512-NyNtgIJBNo3AXMkl0iN10VrKgQS6VM6E+rcqZnZMn12dOo7SwFflj1du0ZgXNCZ1tx6VuEpSz9+FpPjswr4gEg==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -2646,7 +2674,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001478
-      electron-to-chromium: 1.4.361
+      electron-to-chromium: 1.4.363
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
 
@@ -3581,7 +3609,7 @@ packages:
     dependencies:
       domelementtype: 2.3.0
       domhandler: 5.0.3
-      entities: 4.4.0
+      entities: 4.5.0
 
   /domelementtype@2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
@@ -3639,8 +3667,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.4.361:
-    resolution: {integrity: sha512-VocVwjPp05HUXzf3xmL0boRn5b0iyqC7amtDww84Jb1QJNPBc7F69gJyEeXRoriLBC4a5pSyckdllrXAg4mmRA==}
+  /electron-to-chromium@1.4.363:
+    resolution: {integrity: sha512-ReX5qgmSU7ybhzMuMdlJAdYnRhT90UB3k9M05O5nF5WH3wR5wgdJjXw0uDeFyKNhmglmQiOxkAbzrP0hMKM59g==}
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -3670,8 +3698,8 @@ packages:
     resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
     dev: true
 
-  /entities@4.4.0:
-    resolution: {integrity: sha512-oYp7156SP8LkeGD0GF85ad1X9Ai79WtRsZ2gxJqtBuzH+98YUV6jkHEKlZkMbcrjJjIVJNIDP/3WL9wQkoPbWA==}
+  /entities@4.5.0:
+    resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
 
   /envinfo@7.8.1:
@@ -4648,7 +4676,7 @@ packages:
       domelementtype: 2.3.0
       domhandler: 5.0.3
       domutils: 3.0.1
-      entities: 4.4.0
+      entities: 4.5.0
     dev: true
 
   /http-proxy-agent@5.0.0:
@@ -5509,8 +5537,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /lru-cache@9.0.1:
-    resolution: {integrity: sha512-C8QsKIN1UIXeOs3iWmiZ1lQY+EnKDojWd37fXy1aSbJvH4iSma1uy2OWuoB3m4SYRli5+CUjDv3Dij5DVoetmg==}
+  /lru-cache@9.0.2:
+    resolution: {integrity: sha512-7zYMKApzQ9qQE13xQUzbXVY3p2C5lh+9V+bs8M9fRf1TF59id+8jkljRWtIPfBfNP4yQAol5cqh/e8clxatdXw==}
     engines: {node: 14 || >=16.14}
     dev: true
 
@@ -6312,7 +6340,7 @@ packages:
   /parse5@7.1.2:
     resolution: {integrity: sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==}
     dependencies:
-      entities: 4.4.0
+      entities: 4.5.0
     dev: true
 
   /pascal-case@3.1.2:
@@ -6366,7 +6394,7 @@ packages:
     resolution: {integrity: sha512-Qp/9IHkdNiXJ3/Kon++At2nVpnhRiPq/aSvQN+H3U1WZbvNRK0RIQK/o4HMqPoXjpuGJUEWpHSs6Mnjxqh3TQg==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
-      lru-cache: 9.0.1
+      lru-cache: 9.0.2
       minipass: 5.0.0
     dev: true
 
