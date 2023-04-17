@@ -23,7 +23,7 @@
 		"@sveltejs/adapter-static": "2.0.2",
 		"@sveltejs/kit": "1.15.3",
 		"@sveltinio/remark-headings": "^1.0.1",
-		"@sveltinio/ts-utils": "0.4.1",
+		"@sveltinio/ts-utils": "0.5.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/line-clamp": "^0.4.4",
 		"@tailwindcss/typography": "^0.5.9",
