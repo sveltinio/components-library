@@ -133,6 +133,8 @@
 				lineClamp={3}
 				styles={{
 					'bg-color': 'rgb(224 231 255)',
+					'border-width': '2px',
+					'border-style': 'dashed',
 					'border-color': 'rgb(99 102 241)',
 					'border-radius': '0',
 					'btn-color': 'rgb(238 242 255)',

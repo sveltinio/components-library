@@ -2,7 +2,8 @@
 	import '../../styles/base.css';
 	import '../../styles/components/card/variables.css';
 	import '../../styles/components/card/styles.css';
-	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 	import CardContent from './CardContent.svelte';
 	import CardTitle from './CardTitle.svelte';
 	import CardTitleLink from './CardTitleLink.svelte';
@@ -15,18 +16,22 @@
 	export let prefetch: true | '' | 'hover' | 'off' | 'tap' | null | undefined = 'off';
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
 
+	/** ********************************************** **/
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', ['sn-w-colors', 'sn-w-c-card-vars', 'sn-w-c-card'])
-		? (className = $$props.class)
-		: (className = '');
+	$: contains(['sn-w-colors', 'sn-w-c-card-vars', 'sn-w-c-card'], $$props.class ?? '')
+		? (className = '')
+		: (className = $$props.class);
 </script>
 
 <div
 	class="sn-w-colors sn-w-c-card-vars sn-w-c-card {className}"
-	style={cssStyles}
+	style={cssStyles.value}
 	data-testid="card_main"
 >
 	{#if $$slots.cardImage}

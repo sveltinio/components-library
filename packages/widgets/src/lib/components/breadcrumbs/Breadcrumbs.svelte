@@ -2,13 +2,11 @@
 	import '../../styles/base.css';
 	import '../../styles/components/breadcrumbs/variables.css';
 	import '../../styles/components/breadcrumbs/styles.css';
-	import {
-		pathSegments,
-		stylesObjToCSSVars,
-		isValidClassName,
-		capitalize,
-		makeTitle
-	} from '../../utils.js';
+	import { isEmpty } from '@sveltinio/ts-utils/is';
+	import { capitalize, toTitle } from '@sveltinio/ts-utils/strings';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { pathSegments } from '@sveltinio/ts-utils/urls';
+	import { contains } from '@sveltinio/ts-utils/collections';
 
 	export let url = '';
 	export let showRootOnly = false;
@@ -16,42 +14,46 @@
 
 	const baseURL = new URL(url).origin;
 	const segments = pathSegments(url);
-	const current = segments.pop() || '';
+	if (segments.isErr()) {
+		throw new Error(segments.error.message);
+	}
 
-	const parents =
-		segments.map((segment, segmentIndex) => {
-			const previousParts = segments.slice(0, segmentIndex);
-			return {
-				label: segment,
-				href:
-					previousParts?.length > 0
-						? `${previousParts?.join('/')}/${segment}`
-						: `${segment}`
-			};
-		}) || [];
+	const segmentsValues = segments.value;
+	const current = segmentsValues.pop() || '';
+	const parents = segmentsValues.map((segment, segmentIndex) => {
+		const previousParts = segmentsValues.slice(0, segmentIndex);
+		return {
+			label: segment,
+			href:
+				previousParts?.length > 0 ? `${previousParts?.join('/')}/${segment}` : `${segment}`
+		};
+	});
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
 
+	/** ********************************************** **/
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', [
-		'sn-w-colors',
-		'sn-w-c-breadcrumbs-vars',
-		'sn-w-c-breadcrumbs'
-	])
-		? (className = $$props.class)
-		: (className = '');
+	$: contains(
+		['sn-w-colors', 'sn-w-c-breadcrumbs-vars', 'sn-w-c-breadcrumbs'],
+		$$props.class ?? ''
+	)
+		? (className = '')
+		: (className = $$props.class);
 </script>
 
 <nav
 	class="sn-w-colors sn-w-c-breadcrumbs-vars sn-w-c-breadcrumbs {className}"
-	style={cssStyles}
+	style={cssStyles.value}
 	aria-label="Breadcrumb"
 	data-testid="breadcrumbs_main"
 >
 	<ol class="list">
-		{#if current != '' || showRootOnly}
+		{#if !isEmpty(current) || showRootOnly}
 			<li class="item">
 				<a href={baseURL} aria-label="Home, top level page">
 					<slot name="baseIcon">
@@ -84,6 +86,7 @@
 			</li>
 		{/if}
 		{#each parents as parent}
+			{@const arialLabelTxt = capitalize(parent?.label).unwrapOr('')}
 			<li class="item">
 				<span class="icon icon__divider">
 					<slot name="dividerIcon">
@@ -108,16 +111,17 @@
 				<a
 					href="{baseURL}/{parent.href}"
 					class="is-parent"
-					aria-label={capitalize(parent?.label)}
-					data-testid="link_to_parent">{capitalize(parent?.label)}</a
+					aria-label={arialLabelTxt}
+					data-testid="link_to_parent">{arialLabelTxt}</a
 				>
 			</li>
 		{/each}
-		{#if showCurrent && current != ''}
+		{#if showCurrent && !isEmpty(current)}
+			{@const currentTitleTxt = toTitle(current).unwrapOr('')}
 			<li
 				class="item is-current"
 				aria-current="page"
-				aria-label={makeTitle(current)}
+				aria-label={currentTitleTxt}
 				data-testid="current_page"
 			>
 				<span class="icon icon__divider">
@@ -140,7 +144,7 @@
 						</svg>
 					</slot>
 				</span>
-				{makeTitle(current)}
+				{currentTitleTxt}
 			</li>
 		{/if}
 	</ol>

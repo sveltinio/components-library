@@ -3,7 +3,8 @@
 	import '../../styles/components/pages-navigator/variables.css';
 	import '../../styles/components/pages-navigator/styles.css';
 	import type { PagesNavigatorItem } from './types.js';
-	import { stylesObjToCSSVars, isValidClassName, areRequiredDefined } from '../../utils.js';
+	import { mapToCssVars, hasProperties } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 	import Spacer from './Spacer.svelte';
 	import Previous from './Previous.svelte';
 	import Next from './Next.svelte';
@@ -16,7 +17,10 @@
 	export let prefetch: true | '' | 'hover' | 'off' | 'tap' | null | undefined = 'off';
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
 
 	// ensure to show the labels at least
 	if (!placeholders && !labels) {
@@ -24,22 +28,24 @@
 		labels = true;
 	}
 
+	const mandatoryKeys = ['label', 'href'];
+
 	/** ********************************************** **/
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', ['sn-w-colors', 'sn-w-c-card-vars', 'sn-w-c-card'])
-		? (className = $$props.class)
-		: (className = '');
+	$: contains(['sn-w-colors', 'sn-w-c-card-vars', 'sn-w-c-card'], $$props.class ?? '')
+		? (className = '')
+		: (className = $$props.class);
 </script>
 
 <nav
 	class="sn-w-colors sn-w-c-pagesnav-vars sn-w-c-pagesnav {className}"
 	class:pagesnav__spacer--bottom={!prev.href || !next.href}
-	style={cssStyles}
+	style={cssStyles.value}
 	aria-label="Pages navigation"
 	data-testid="pagesnav_main"
 >
-	{#if areRequiredDefined(prev)}
+	{#if hasProperties(prev, mandatoryKeys).unwrapOr(false)}
 		<Previous {prefetch} {prev} {next} {placeholders} {labels} {spacer}>
 			<slot name="prevIcon">
 				<svg
@@ -67,7 +73,7 @@
 		<Spacer {spacer} {prev} {next} />
 	{/if}
 
-	{#if areRequiredDefined(next)}
+	{#if hasProperties(next, mandatoryKeys).unwrapOr(false)}
 		<Next {prefetch} {prev} {next} {placeholders} {labels} {spacer}>
 			<slot name="nextIcon">
 				<svg

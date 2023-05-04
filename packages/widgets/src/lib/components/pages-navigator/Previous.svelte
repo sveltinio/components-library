@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { PagesNavigatorItem } from './types.js';
-	import { capitalize, areRequiredDefined } from '../../utils.js';
+	import { isDefined } from '@sveltinio/ts-utils/is';
+	import { hasProperties } from '@sveltinio/ts-utils/objects';
+	import { capitalize } from '@sveltinio/ts-utils/strings';
 
 	export let prev: PagesNavigatorItem;
 	export let next: PagesNavigatorItem;
@@ -15,8 +17,23 @@
 		labels = true;
 	}
 
-	let prevPlaceholderTxt = prev.placeholder ?? 'prev';
 	let prevTitle = prev.title ?? prev.label;
+
+	const placeholderTxt = () => {
+		return isDefined(prev.placeholder)
+			? capitalize(prev.placeholder)
+					.map((v) => v)
+					.mapErr((e) => {
+						throw new Error(e.message);
+					})
+			: 'Prev';
+	};
+
+	const isPrevOnly = hasProperties(next, ['label', 'href'])
+		.map((v) => v)
+		.mapErr((e) => {
+			throw new Error(e.message);
+		});
 </script>
 
 <a
@@ -24,8 +41,8 @@
 	href={prev.href}
 	title="link to {prevTitle}"
 	class="link"
-	class:prev__only={!areRequiredDefined(next)}
-	class:prev__only--with-spacer={spacer && !areRequiredDefined(next)}
+	class:prev__only={!isPrevOnly}
+	class:prev__only--with-spacer={spacer && !isPrevOnly}
 	aria-label="link to {prevTitle}"
 	data-testid="link_to_previous"
 >
@@ -35,7 +52,7 @@
 
 		<div class="content__previous">
 			{#if placeholders}
-				<span class="content__placeholder">{capitalize(prevPlaceholderTxt)}</span>
+				<span class="content__placeholder">{placeholderTxt()}</span>
 			{/if}
 			{#if labels}
 				<p class="content__message" data-testid="previous_message_text">

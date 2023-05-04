@@ -2,7 +2,8 @@
 	import '../../styles/base.css';
 	import '../../styles/components/scroll-to-top/variables.css';
 	import '../../styles/components/scroll-to-top/styles.css';
-	import { stylesObjToCSSVars } from '../../utils.js';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 
 	export let showOnPx = 400;
 	export let iconColor = '#ffffff';
@@ -11,7 +12,10 @@
 	export let bounce = false;
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
 
 	let hidden = true;
 
@@ -29,13 +33,20 @@
 		}
 		hidden = scrollContainer().scrollTop > showOnPx ? false : true;
 	}
+
+	/** ********************************************** **/
+	$: className = '';
+	// avoid hacking default class names
+	$: contains(['sn-w-colors', 'sn-w-c-sttb-vars', 'sn-w-c-sttb'], $$props.class ?? '')
+		? (className = '')
+		: (className = $$props.class);
 </script>
 
 <svelte:window on:scroll={handleOnScroll} />
 
 <div
-	class="sn-w-colors sn-w-c-sttb-vars sn-w-c-sttb"
-	style={cssStyles}
+	class="sn-w-colors sn-w-c-sttb-vars sn-w-c-sttb {className}"
+	style={cssStyles.value}
 	data-testid="scroll_to_top_main"
 >
 	<a

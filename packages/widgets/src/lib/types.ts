@@ -4,17 +4,6 @@ export type ResourceContent = {
 	html?: string;
 };
 
-export class ResourceContentFactory {
-	static make(resource: string, metadata: YAMLFrontmatter, html?: string): ResourceContent {
-		const item: ResourceContent = {
-			resource: resource,
-			metadata: metadata,
-			html: html
-		};
-		return item;
-	}
-}
-
 export class ResourceContentUtils {
 	static getCoverPath(resourcesFolder: string, item: ResourceContent): string {
 		if (item.metadata && item.metadata.cover != undefined) {
@@ -58,3 +47,21 @@ export type YAMLFrontmatter = {
 
 import type { CardBadge } from './components/responsive-card/types.js';
 export type { CardBadge };
+
+export type breakpoints = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
+export type visibleAtBreakpoints = {
+	xs?: boolean;
+	sm?: boolean;
+	md?: boolean;
+	lg?: boolean;
+	xl?: boolean;
+};
+
+export type cssClasses = {
+	xs?: string[];
+	sm?: string[];
+	md?: string[];
+	lg?: string[];
+	xl?: string[];
+};

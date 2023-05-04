@@ -4,7 +4,8 @@
 	import '../../styles/components/toc/styles.css';
 	import { onMount, tick } from 'svelte';
 	import type { TocEntry } from './types.js';
-	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 	import TocList from './TocList.svelte';
 	import TocButton from './TocButton.svelte';
 
@@ -18,7 +19,10 @@
 	export let ordered = false;
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
 
 	const toggleOpen = () => (isOpen = !isOpen);
 
@@ -186,9 +190,9 @@
 	/** ********************************************** **/
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', ['sn-w-colors', 'sn-w-c-toc-vars', 'sn-w-c-toc'])
-		? (className = $$props.class)
-		: (className = '');
+	$: contains(['sn-w-colors', 'sn-w-c-toc-vars', 'sn-w-c-toc'], $$props.class ?? '')
+		? (className = '')
+		: (className = $$props.class);
 
 	/** ********************************************** **/
 
@@ -224,7 +228,7 @@
 <nav
 	bind:this={mainElem}
 	class="sn-w-colors sn-w-c-toc-vars sn-w-c-toc {className}"
-	style={cssStyles}
+	style={cssStyles.value}
 	aria-label={label}
 	data-testid="toc_main"
 >
