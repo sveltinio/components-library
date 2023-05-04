@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { IUmamiTrackerSettings } from '../../types.js';
-	import { isEmptyObject, isPropValueSet } from '../../utils.js';
+	import { isEmpty } from '@sveltinio/ts-utils/is';
 
 	export let websiteID: string;
 	export let srcURL: string;
@@ -33,15 +33,15 @@
 	}
 
 	function setScriptSettingsProps(scriptElem: HTMLElement, settings: IUmamiTrackerSettings) {
-		if (isPropValueSet(settings.hostURL))
+		if (!isEmpty(settings.hostURL))
 			scriptElem.setAttribute('data-host-url', settings.hostURL || '');
-		if (isPropValueSet(settings.autoTrack) && !settings.autoTrack)
+		if (!isEmpty(settings.autoTrack) && !settings.autoTrack)
 			scriptElem.setAttribute('data-auto-track', 'false');
-		if (isPropValueSet(settings.doNotTrack) && settings.doNotTrack)
+		if (!isEmpty(settings.doNotTrack) && settings.doNotTrack)
 			scriptElem.setAttribute('data-do-not-track', 'true');
-		if (isPropValueSet(settings.enableCache) && settings.enableCache)
+		if (!isEmpty(settings.enableCache) && settings.enableCache)
 			scriptElem.setAttribute('data-cache', 'true');
-		if (isPropValueSet(settings.domains))
+		if (!isEmpty(settings.domains))
 			scriptElem.setAttribute('data-domains', settings.domains || '');
 	}
 
@@ -52,7 +52,7 @@
 		try {
 			addUmamiAnalyticsScript(websiteID, srcURL, scriptID);
 
-			if (!isEmptyObject<IUmamiTrackerSettings>(settings)) {
+			if (!isEmpty<IUmamiTrackerSettings>(settings)) {
 				const umamiScript = document.getElementById(scriptID);
 				if (umamiScript) {
 					setScriptSettingsProps(umamiScript, settings);
