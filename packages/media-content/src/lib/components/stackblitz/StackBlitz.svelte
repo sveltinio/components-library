@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { camelToKebab } from '@sveltinio/ts-utils/strings';
 	import type { IStackBlitzSettings } from '../../types.js';
-	import { makeSettingsString, toKebabCase } from '../../utils.js';
+	import { makeSettingsString } from '../../utils.js';
 
 	/** The id for the project to embed. */
 	export let id: string;
@@ -20,7 +21,10 @@
 				return `${key}=${String(value)}`;
 			default:
 				// default behaviour
-				return `${toKebabCase(key)}=${value}`;
+				return camelToKebab(key).match(
+					(s) => `${s}=${value}`,
+					(e) => `${e.message}`
+				);
 		}
 	}
 

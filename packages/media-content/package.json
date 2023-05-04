@@ -42,33 +42,35 @@
 		"svelte": "^3.58.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.15.5",
+		"@sveltejs/adapter-auto": "^2.0.1",
+		"@sveltejs/kit": "^1.16.0",
 		"@sveltejs/package": "^2.0.2",
-		"@sveltejs/vite-plugin-svelte": "^2.0.4",
+		"@sveltejs/vite-plugin-svelte": "^2.1.1",
+		"@sveltinio/ts-utils": "^0.6.0",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/svelte": "^3.2.2",
-		"@types/jest": "^29.5.0",
-		"@typescript-eslint/eslint-plugin": "^5.58.0",
-		"@typescript-eslint/parser": "^5.58.0",
+		"@types/jest": "^29.5.1",
+		"@typescript-eslint/eslint-plugin": "^5.59.2",
+		"@typescript-eslint/parser": "^5.59.2",
+		"@vitest/coverage-c8": "^0.31.0",
 		"c8": "^7.13.0",
-		"eslint": "^8.38.0",
+		"eslint": "^8.39.0",
 		"eslint-config-custom": "workspace:*",
-		"jsdom": "^21.1.1",
-		"postcss": "^8.4.21",
+		"jsdom": "^22.0.0",
+		"postcss": "^8.4.23",
 		"postcss-cli": "^10.1.0",
 		"postcss-load-config": "^4.0.1",
-		"postcss-preset-env": "^8.3.1",
+		"postcss-preset-env": "^8.3.2",
 		"postcss-utils": "workspace:*",
-		"prettier": "^2.8.7",
+		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.0",
 		"publint": "^0.1.11",
 		"rimraf": "^5.0.0",
-		"svelte-check": "^3.2.0",
+		"svelte-check": "^3.3.0",
 		"tslib": "^2.5.0",
 		"typescript": "^5.0.4",
-		"vite": "^4.2.1",
-		"vitest": "^0.30.1"
+		"vite": "^4.3.4",
+		"vitest": "^0.31.0"
 	},
 	"scripts": {
 		"build": "pnpm clean && pnpm sync && svelte-package && pnpm postbuild",
@@ -99,12 +101,12 @@
 			"svelte": "./dist/components/basic/index.js",
 			"default": "./dist/components/basic/index.js"
 		},
-		"./basic/IFrame.svelte": {
+		"./components/IFrame.svelte": {
 			"types": "./dist/components/basic/IFrame.svelte.d.ts",
 			"svelte": "./dist/components/basic/IFrame.svelte",
 			"default": "./dist/components/basic/IFrame.svelte"
 		},
-		"./basic/Thumbnail.svelte": {
+		"./components/Thumbnail.svelte": {
 			"types": "./dist/components/basic/Thumbnail.svelte.d.ts",
 			"svelte": "./dist/components/basic/Thumbnail.svelte",
 			"default": "./dist/components/basic/Thumbnail.svelte"
@@ -114,7 +116,7 @@
 			"svelte": "./dist/components/codepen/index.js",
 			"default": "./dist/components/codepen/index.js"
 		},
-		"./codepen/CodePen.svelte": {
+		"./components/CodePen.svelte": {
 			"types": "./dist/components/codepen/CodePen.svelte.d.ts",
 			"svelte": "./dist/components/codepen/CodePen.svelte",
 			"default": "./dist/components/codepen/CodePen.svelte"
@@ -124,7 +126,7 @@
 			"svelte": "./dist/components/codesandbox/index.js",
 			"default": "./dist/components/codesandbox/index.js"
 		},
-		"./codesandbox/CodeSandbox.svelte": {
+		"./components/CodeSandbox.svelte": {
 			"types": "./dist/components/codesandbox/CodeSandbox.svelte.d.ts",
 			"svelte": "./dist/components/codesandbox/CodeSandbox.svelte",
 			"default": "./dist/components/codesandbox/CodeSandbox.svelte"
@@ -134,7 +136,7 @@
 			"svelte": "./dist/components/facebook/index.js",
 			"default": "./dist/components/facebook/index.js"
 		},
-		"./facebook/Facebook.svelte": {
+		"./components/Facebook.svelte": {
 			"types": "./dist/components/facebook/Facebook.svelte.d.ts",
 			"svelte": "./dist/components/facebook/Facebook.svelte",
 			"default": "./dist/components/facebook/Facebook.svelte"
@@ -144,7 +146,7 @@
 			"svelte": "./dist/components/slideshare/index.js",
 			"default": "./dist/components/slideshare/index.js"
 		},
-		"./slideshare/SlideShare.svelte": {
+		"./components/SlideShare.svelte": {
 			"types": "./dist/components/slideshare/SlideShare.svelte.d.ts",
 			"svelte": "./dist/components/slideshare/SlideShare.svelte",
 			"default": "./dist/components/slideshare/SlideShare.svelte"
@@ -154,7 +156,7 @@
 			"svelte": "./dist/components/stackblitz/index.js",
 			"default": "./dist/components/stackblitz/index.js"
 		},
-		"./stackblitz/StackBlitz.svelte": {
+		"./components/StackBlitz.svelte": {
 			"types": "./dist/components/stackblitz/StackBlitz.svelte.d.ts",
 			"svelte": "./dist/components/stackblitz/StackBlitz.svelte",
 			"default": "./dist/components/stackblitz/StackBlitz.svelte"
@@ -164,7 +166,7 @@
 			"svelte": "./dist/components/tweet/index.js",
 			"default": "./dist/components/tweet/index.js"
 		},
-		"./tweet/Tweet.svelte": {
+		"./components/Tweet.svelte": {
 			"types": "./dist/components/tweet/Tweet.svelte.d.ts",
 			"svelte": "./dist/components/tweet/Tweet.svelte",
 			"default": "./dist/components/tweet/Tweet.svelte"
@@ -174,7 +176,7 @@
 			"svelte": "./dist/components/vimeo/index.js",
 			"default": "./dist/components/vimeo/index.js"
 		},
-		"./vimeo/Vimeo.svelte": {
+		"./components/Vimeo.svelte": {
 			"types": "./dist/components/vimeo/Vimeo.svelte.d.ts",
 			"svelte": "./dist/components/vimeo/Vimeo.svelte",
 			"default": "./dist/components/vimeo/Vimeo.svelte"
@@ -184,7 +186,7 @@
 			"svelte": "./dist/components/youtube/index.js",
 			"default": "./dist/components/youtube/index.js"
 		},
-		"./youtube/YouTube.svelte": {
+		"./components/YouTube.svelte": {
 			"types": "./dist/components/youtube/YouTube.svelte.d.ts",
 			"svelte": "./dist/components/youtube/YouTube.svelte",
 			"default": "./dist/components/youtube/YouTube.svelte"
@@ -204,58 +206,58 @@
 			"basic": [
 				"./dist/components/basic/index.d.ts"
 			],
-			"basic/IFrame.svelte": [
+			"components/IFrame.svelte": [
 				"./dist/components/basic/IFrame.svelte.d.ts"
 			],
-			"basic/Thumbnail.svelte": [
+			"components/Thumbnail.svelte": [
 				"./dist/components/basic/Thumbnail.svelte.d.ts"
 			],
 			"codepen": [
 				"./dist/components/codepen/index.d.ts"
 			],
-			"codepen/CodePen.svelte": [
+			"components/CodePen.svelte": [
 				"./dist/components/codepen/CodePen.svelte.d.ts"
 			],
 			"codesandbox": [
 				"./dist/components/codesandbox/index.d.ts"
 			],
-			"codesandbox/CodeSandbox.svelte": [
+			"components/CodeSandbox.svelte": [
 				"./dist/components/codesandbox/CodeSandbox.svelte.d.ts"
 			],
 			"facebook": [
 				"./dist/components/facebook/index.d.ts"
 			],
-			"facebook/Facebook.svelte": [
+			"components/Facebook.svelte": [
 				"./dist/components/facebook/Facebook.svelte.d.ts"
 			],
 			"slideshare": [
 				"./dist/components/slideshare/index.d.ts"
 			],
-			"slideshare/SlideShare.svelte": [
+			"components/SlideShare.svelte": [
 				"./dist/components/slideshare/SlideShare.svelte.d.ts"
 			],
 			"stackblitz": [
 				"./dist/components/stackblitz/index.d.ts"
 			],
-			"stackblitz/StackBlitz.svelte": [
+			"components/StackBlitz.svelte": [
 				"./dist/components/stackblitz/StackBlitz.svelte.d.ts"
 			],
 			"tweet": [
 				"./dist/components/tweet/index.d.ts"
 			],
-			"tweet/Tweet.svelte": [
+			"components/Tweet.svelte": [
 				"./dist/components/tweet/Tweet.svelte.d.ts"
 			],
 			"vimeo": [
 				"./dist/components/vimeo/index.d.ts"
 			],
-			"vimeo/Vimeo.svelte": [
+			"components/Vimeo.svelte": [
 				"./dist/components/vimeo/Vimeo.svelte.d.ts"
 			],
 			"youtube": [
 				"./dist/components/youtube/index.d.ts"
 			],
-			"youtube/YouTube.svelte": [
+			"components/YouTube.svelte": [
 				"./dist/components/youtube/YouTube.svelte.d.ts"
 			],
 			"index": [

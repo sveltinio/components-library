@@ -1,186 +1,25 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
-import type { IVimeoSettings, ICodeSandboxSettings, ICodePenSettings } from '../src/lib/types.js';
-import {
-	isEmptyObject,
-	isValidValue,
-	isValidHex,
-	getHexValue,
-	toKebabCase,
-	toSnakeCase,
-	makeSettingsString,
-	isPropValueSet,
-	isScriptLoaded,
-	isCommaSepareted,
-	toCommaSepareted,
-	isValidURL,
-	toID,
-	removeFirstOccurrence
-} from '../src/lib/utils.js';
+import { isHex, getHexValue } from '@sveltinio/ts-utils/colors';
+import { contains } from '@sveltinio/ts-utils/collections';
+import type { IVimeoSettings, ICodeSandboxSettings } from '../src/lib/types.js';
+import { makeSettingsString, isScriptLoaded, toID } from '../src/lib/utils.js';
 import { getFullScriptTagById } from './test-utils.js';
 
-describe('isEmptyObject ', () => {
-	it('should be an empty object', async () => {
-		const obj: Record<string, string> = {};
-		expect(isEmptyObject<Record<string, string>>(obj)).toBe(true);
-	});
-
-	it('should be a non empty object', async () => {
-		const obj: Record<string, string> = {
-			user: 'userone',
-			slug: 'slugone'
-		};
-		expect(isEmptyObject<Record<string, string>>(obj)).toBe(false);
-	});
-});
-
-describe('isValidValue ', () => {
-	it('should be included into the collection', async () => {
-		const strCollection = ['first', 'second', 'third'];
-		expect(isValidValue<string>('first', strCollection)).toBe(true);
-		expect(isValidValue<string>('second', strCollection)).toBe(true);
-
-		const numbers = [1, 2, 3];
-		expect(isValidValue<number>(1, numbers)).toBe(true);
-		expect(isValidValue<number>(2, numbers)).toBe(true);
-	});
-
-	it('should note be includes into the collection', async () => {
-		const collection = ['first', 'second', 'third'];
-		expect(isValidValue<string>('fourth', collection)).toBe(false);
-
-		const numbers = [1, 2, 3];
-		expect(isValidValue<number>(4, numbers)).toBe(false);
-	});
-});
-
-describe('isPropValueSet', () => {
-	it('should be true', async () => {
-		const obj: ICodePenSettings = {
-			preview: false,
-			borderColor: '',
-			height: 0
-		};
-
-		Object.values(obj).map((val) => {
-			switch (typeof val) {
-				case 'boolean':
-					expect(isPropValueSet(val)).toBe(true);
-					break;
-				case 'string':
-					expect(isPropValueSet(val)).toBe(false);
-					break;
-				case 'number':
-					expect(isPropValueSet(val)).toBe(false);
-					break;
-				default:
-					break;
-			}
-		});
-	});
-});
-
-describe('comma separated list', () => {
-	it('should be a valid comma separted list', async () => {
-		expect(isCommaSepareted('one,')).toBe(true);
-		expect(isCommaSepareted('one, two')).toBe(true);
-		expect(isCommaSepareted('one, two, three')).toBe(true);
-	});
-
-	it('should be a invalid comma separted list', async () => {
-		expect(isCommaSepareted('one')).toBe(false);
-		expect(isCommaSepareted('one two three')).toBe(false);
-	});
-});
-
-describe('to comma separated string', () => {
-	it('should be a valid comma separted list', async () => {
-		expect(toCommaSepareted('one two')).toBe('one,two');
-		expect(toCommaSepareted('one;two')).toBe('one,two');
-	});
-});
-
-describe('remove first Occurrence', () => {
-	it('should return the string without the initial /', async () => {
-		expect(removeFirstOccurrence('/20531316728/posts/10154009990506729/', '/')).toBe(
-			'20531316728/posts/10154009990506729/'
-		);
-	});
-
-	it('should return the string as it is', async () => {
-		expect(removeFirstOccurrence('/20531316728/posts/10154009990506729/', '$')).toBe(
-			'/20531316728/posts/10154009990506729/'
-		);
-	});
-});
-
 describe('urls', () => {
-	it('should be a valid URL', async () => {
-		const url = 'https://www.facebook.com/20531316728/posts/10154009990506729/';
-		expect(isValidURL(url)).toBe(true);
-	});
-
-	it('should not be a valid url', async () => {
-		const url = 'http://www.facebook/20531316728/posts/10154009990506729/';
-		expect(isValidURL(url)).toBe(false);
-	});
-
 	it('should get the last part of a URL without the first /', async () => {
 		const url = 'http://www.facebook.com/20531316728/posts/10154009990506729/';
 		expect(toID(url)).toBe('20531316728/posts/10154009990506729/');
 	});
 
 	it('should return not_a_valid_url trying to get the last part of a URL', async () => {
-		const url = 'http://www.facebook/20531316728/posts/10154009990506729/';
+		const url = '20531316728/posts/10154009990506729/';
 		expect(toID(url)).toBe('not_a_valid_url');
 	});
 });
 
-describe('hex colors ', () => {
-	it('should be a valid hex color', async () => {
-		expect(isValidHex('#ff0000')).toBe(true);
-		expect(isValidHex('#fff')).toBe(true);
-	});
-
-	it('should be an invalid hex color', async () => {
-		expect(isValidHex('ff0000')).toBe(false);
-	});
-
-	it('should give me back the hex string from a valid hex color string', async () => {
-		expect(getHexValue('#ff0000')).toBe('ff0000');
-	});
-
-	it('should give me back not_a_valid_hex_color from a invalid hex color string', async () => {
-		expect(getHexValue('ff0000')).toBe('not_a_valid_hex_color');
-	});
-});
-
-describe('toKebabCase ', () => {
-	it('should be a true', async () => {
-		expect(toKebabCase('borderColor')).toBe('border-color');
-		expect(toKebabCase('gettingStarted')).toBe('getting-started');
-		expect(toKebabCase('tabLinkColor')).toBe('tab-link-color');
-	});
-
-	it('should be false', async () => {
-		expect(toKebabCase('borderColor')).not.toBe('border_color');
-	});
-});
-
-describe('toSnakeCase ', () => {
-	it('should be a true', async () => {
-		expect(toSnakeCase('borderColor')).toBe('border_color');
-		expect(toSnakeCase('gettingStarted')).toBe('getting_started');
-		expect(toSnakeCase('tabLinkColor')).toBe('tab_link_color');
-	});
-
-	it('should be false', async () => {
-		expect(toKebabCase('borderColor')).not.toBe('border_color');
-	});
-});
-
-describe('buildOptionsString', () => {
-	it('should build the standard query params string', async () => {
+describe('makeSettingsString', () => {
+	it('should make the standard query params string', async () => {
 		const options: ICodeSandboxSettings = {
 			hidedevtools: true,
 			theme: 'light',
@@ -209,9 +48,14 @@ describe('buildOptionsString', () => {
 					return `${key}=${String(value)}`;
 				default:
 					if (key == 'quality') {
-						return isValidValue<string>(value, qualityOptions) ? `${key}=${value}` : `${key}=auto`;
+						return contains<string>(qualityOptions, value) ? `${key}=${value}` : `${key}=auto`;
 					} else if (key == 'color') {
-						return isValidHex(value) ? `${key}=${getHexValue(value)}` : `${key}=ffffff`;
+						const hex = getHexValue(value);
+						let hexValue = '';
+						if (hex.isOk()) {
+							hexValue = hex.value;
+						}
+						return isHex(value) ? `${key}=${hexValue}` : `${key}=ffffff`;
 					} else {
 						return `${key}=${value}`;
 					}
@@ -239,9 +83,14 @@ describe('buildOptionsString', () => {
 					return `${key}=${String(value)}`;
 				default:
 					if (key == 'quality') {
-						return isValidValue<string>(value, qualityOptions) ? `${key}=${value}` : `${key}=auto`;
+						return contains<string>(qualityOptions, value) ? `${key}=${value}` : `${key}=auto`;
 					} else if (key == 'color') {
-						return isValidHex(value) ? `${key}=${getHexValue(value)}` : `${key}=ffffff`;
+						const hex = getHexValue(value);
+						let hexValue = '';
+						if (hex.isOk()) {
+							hexValue = hex.value;
+						}
+						return isHex(value) ? `${key}=${hexValue}` : `${key}=ffffff`;
 					} else {
 						return `${key}=${value}`;
 					}

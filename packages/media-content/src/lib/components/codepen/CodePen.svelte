@@ -1,14 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { isBool, isEmpty } from '@sveltinio/ts-utils/is';
+	import { contains } from '@sveltinio/ts-utils/collections';
+	import { isHex } from '@sveltinio/ts-utils/colors';
+	import { camelToKebab } from '@sveltinio/ts-utils/strings';
 	import type { ICodePenSettings } from '../../types.js';
-	import {
-		toKebabCase,
-		isValidValue,
-		isEmptyObject,
-		isValidHex,
-		isPropValueSet,
-		isScriptLoaded
-	} from '../../utils.js';
+	import { isScriptLoaded } from '../../utils.js';
 
 	/** The user who created the pen. */
 	export let user: string;
@@ -59,15 +56,23 @@
 	async function setOptionsProps(elem: HTMLElement, opts: ICodePenSettings) {
 		const [colorsProps, otherProps] = Object.entries(opts).reduce(
 			(result, element) => {
-				result[isValidValue<string>(element[0], colorPropsList) ? 0 : 1].push(element);
+				result[contains(element, colorPropsList) ? 0 : 1].push(element);
 				return result;
 			},
 			[[], []]
 		);
 
 		Object.entries(Object.fromEntries(colorsProps)).map(([key, val]) => {
-			if (isPropValueSet(val) && isValidHex(val)) {
-				elem.setAttribute('data-' + toKebabCase(key), val);
+			if (!isEmpty(val) && isHex(val)) {
+				console.log(val);
+				const dataStr = camelToKebab(key).match(
+					(s) => `data-${s}`,
+					(e) => `${e.message}`
+				);
+
+				console.log(dataStr);
+
+				elem.setAttribute(dataStr, String(val));
 			} else {
 				console.error(key + ' is not a valid hex color');
 				return;
@@ -75,8 +80,13 @@
 		});
 
 		Object.entries(Object.fromEntries(otherProps)).map(([key, val]) => {
-			if (isPropValueSet(val)) {
-				elem.setAttribute('data-' + toKebabCase(key), val);
+			if (isBool(val) || !isEmpty(val)) {
+				const dataStr = camelToKebab(key).match(
+					(s) => `data-${s}`,
+					(e) => `${e.message}`
+				);
+
+				elem.setAttribute(dataStr, String(val));
 			} else {
 				return;
 			}
@@ -88,7 +98,7 @@
 			if (!isScriptLoaded(scriptSRC)) {
 				addCodepenScript(scriptID, scriptSRC);
 			}
-			if (!isEmptyObject<ICodePenSettings>(settings)) {
+			if (!isEmpty<ICodePenSettings>(settings)) {
 				if (targetElem) setOptionsProps(targetElem, settings);
 			}
 		} catch (err) {
@@ -109,11 +119,11 @@
 		bind:this={targetElem}
 		id="codepen-{user}-{id}"
 		class="codepen"
-		data-height={isPropValueSet(settings.height) ? String(settings.height) : '400'}
-		data-default-tab={isPropValueSet(settings.defaultTab) ? settings.defaultTab : 'html,result'}
+		data-height={!isEmpty(settings.height) ? String(settings.height) : '400'}
+		data-default-tab={!isEmpty(settings.defaultTab) ? settings.defaultTab : 'html,result'}
 		data-slug-hash={id}
 		data-user={user}
-		style:height={isPropValueSet(settings.height) ? String(settings.height) + 'px' : '400px'}
+		style:height={!isEmpty(settings.height) ? String(settings.height) + 'px' : '400px'}
 		style="box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
 		data-testid="codepen_p_wrapper"
 	>

@@ -1,14 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { isEmpty, isDefined } from '@sveltinio/ts-utils/is';
+	import { camelToKebab } from '@sveltinio/ts-utils/strings';
+	import { isUrl } from '@sveltinio/ts-utils/urls';
 	import type { IFacebookSettings, IFacebookVideoSettings } from '../../types.js';
-	import {
-		toKebabCase,
-		isEmptyObject,
-		isPropValueSet,
-		toID,
-		isValidURL,
-		isScriptLoaded
-	} from '../../utils.js';
+	import { toID, isScriptLoaded } from '../../utils.js';
 
 	/**
 	 * Embedded content type.
@@ -45,7 +41,7 @@
 
 	let scriptLoaded = false;
 	let fbElem: HTMLElement;
-	let _id = isValidURL(id) ? toID(id) : id;
+	let _id = isUrl(id) ? toID(id) : id;
 	let baseURL = `https://www.facebook.com/${_id}`;
 
 	const scriptID = 'facebook-lib-script';
@@ -72,13 +68,18 @@
 			head.appendChild(script);
 		});
 	}
+
 	async function setOptionsProps(
 		elem: HTMLElement,
 		opts: IFacebookSettings | IFacebookVideoSettings
 	) {
 		Object.entries(opts).map(([key, val]) => {
-			if (isPropValueSet(val)) {
-				elem.setAttribute('data-' + toKebabCase(key), String(val));
+			if (isDefined(val)) {
+				const dataStr = camelToKebab(key).match(
+					(s) => `data-${s}`,
+					(e) => `${e.message}`
+				);
+				elem.setAttribute(dataStr, String(val));
 			}
 		});
 	}
@@ -89,7 +90,8 @@
 				addFacebookScript(scriptID, scriptSRC, scriptNonce);
 				scriptLoaded = true;
 			}
-			if (!isEmptyObject<IFacebookSettings | IFacebookVideoSettings>(settings)) {
+
+			if (isDefined(settings) && !isEmpty(settings)) {
 				if (fbElem) {
 					setOptionsProps(fbElem, settings);
 				}

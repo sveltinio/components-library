@@ -1,13 +1,9 @@
 <script lang="ts">
 	import type { IYouTubeSettings } from '../../types.js';
-	import {
-		isCommaSepareted,
-		toCommaSepareted,
-		makeSettingsString,
-		toSnakeCase,
-		isPropValueSet
-	} from '../../utils.js';
+	import { makeSettingsString } from '../../utils.js';
 	import { IFrame, Thumbnail } from '../basic/index.js';
+	import { isDefined } from '@sveltinio/ts-utils/is';
+	import { isCommaSepareted, toCommaSepareted, camelToSnake } from '@sveltinio/ts-utils/strings';
 	/**
 	 * Embedded content type.
 	 *
@@ -31,7 +27,7 @@
 	let iframeURL = '';
 	let play = false;
 	let renderedComponent: typeof IFrame | typeof Thumbnail;
-	let props: Record<string, string>;
+	let props: Record<PropertyKey, string>;
 
 	function makeBaseURL(contentType: string, id: string, username: string): string {
 		switch (contentType) {
@@ -48,6 +44,11 @@
 	}
 
 	function matchersCallback(key: string, value: string): string {
+		const dataStr = camelToSnake(key).match(
+			(s) => s,
+			(e) => `${e.message}`
+		);
+
 		switch (typeof value) {
 			case 'boolean':
 				// To loop a single video
@@ -60,19 +61,19 @@
 			default:
 				if (key === 'playlist') {
 					if (!isCommaSepareted(value)) {
-						return `${toSnakeCase(key)}=${toCommaSepareted(value)}`;
+						return `${dataStr}=${toCommaSepareted(value).map((v) => v)}`;
 					} else {
-						return `${toSnakeCase(key)}=${value}`;
+						return `${dataStr}=${value}`;
 					}
 				}
 				// default behaviour
-				return `${toSnakeCase(key)}=${value}`;
+				return `${dataStr}=${value}`;
 		}
 	}
 
 	/** Used when settings are provided, no matter if with or without autoplay. */
 	function turnAutoplayOn() {
-		if (isPropValueSet(settings.autoplay) && !settings.autoplay) {
+		if (isDefined(settings.autoplay) && !settings.autoplay) {
 			iframeURL = iframeURL.replace('autoplay=0', 'autoplay=1').concat('&mute=1');
 		} else {
 			iframeURL = iframeURL.concat('&autoplay=1&mute=1');

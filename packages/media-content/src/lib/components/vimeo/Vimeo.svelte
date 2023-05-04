@@ -1,15 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { isEmpty } from '@sveltinio/ts-utils/is';
+	import { isHex, getHexValue } from '@sveltinio/ts-utils/colors';
+	import { contains } from '@sveltinio/ts-utils/collections';
 	import type { IVimeoSettings } from '../../types.js';
 	import { IFrame, Thumbnail } from '../basic/index.js';
-	import {
-		makeSettingsString,
-		getHexValue,
-		isScriptLoaded,
-		isValidHex,
-		isValidValue,
-		isPropValueSet
-	} from '../../utils.js';
+	import { makeSettingsString, isScriptLoaded } from '../../utils.js';
 
 	/** The id for the video to embed. */
 	export let id: string;
@@ -29,11 +25,11 @@
 	let iframeURL = '';
 	let play = false;
 	let renderedComponent: typeof IFrame | typeof Thumbnail;
-	let props: Record<string, string>;
+	let props: Record<PropertyKey, string>;
 
 	/** Used when settings are provided, no matter if with or without autoplay. */
 	function turnAutoplayOn() {
-		if (isPropValueSet(settings.autoplay) && !settings.autoplay) {
+		if (!isEmpty(settings.autoplay) && !settings.autoplay) {
 			iframeURL = iframeURL.replace('autoplay=0', 'autoplay=1').concat('&mute=1');
 		} else {
 			iframeURL = iframeURL.concat('&autoplay=1&mute=1');
@@ -61,11 +57,11 @@
 				return `${key}=${String(value)}`;
 			default:
 				if (key == 'quality') {
-					return isValidValue<string>(value, validQualityValues)
-						? `${key}=${value}`
-						: `${key}=auto`;
+					return contains(validQualityValues, value) ? `${key}=${value}` : `${key}=auto`;
 				} else if (key == 'color') {
-					return isValidHex(value) ? `${key}=${getHexValue(value)}` : `${key}=ffffff`;
+					return isHex(value)
+						? `${key}=${getHexValue(value).map((v) => v)}`
+						: `${key}=ffffff`;
 				} else {
 					return `${key}=${value}`;
 				}

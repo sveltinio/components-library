@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { ICodeSandboxSettings } from '../../types.js';
-	import { isCommaSepareted, makeSettingsString, toCommaSepareted } from '../../utils.js';
+	import { makeSettingsString } from '../../utils.js';
+	import { isCommaSepareted, toCommaSepareted } from '@sveltinio/ts-utils/strings';
 
 	/** The id for the sandbox to embed. */
 	export let id: string;
@@ -16,7 +17,7 @@
 	function matchersCallback(key: string, value: string): string {
 		if (key === 'highlights' || key === 'module') {
 			if (!isCommaSepareted(value)) {
-				return `${key}=${toCommaSepareted(value)}`;
+				return `${key}=${toCommaSepareted(value).map((v) => v)}`;
 			}
 		}
 		return `${key}=${value}`;
