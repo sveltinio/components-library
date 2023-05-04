@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { SEOWebPage } from '../../../types.js';
-	import { formatDate } from '../../../utils.js';
+	import { formatDateISO } from '@sveltinio/ts-utils/dates';
 
 	export let data: SEOWebPage;
 </script>
@@ -15,7 +15,7 @@
 
 {#if data.opengraph?.book?.release_date}
 	{@const _release_date = data.opengraph.book.release_date}
-	<meta property="book:release_date" content={formatDate(_release_date)} />
+	<meta property="book:release_date" content={formatDateISO(_release_date).unwrapOr('')} />
 {/if}
 
 {#if Array.isArray(data.opengraph?.book?.tags) && data.opengraph?.book?.tags}

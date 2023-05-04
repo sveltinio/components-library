@@ -1,4 +1,5 @@
 module.exports = {
 	root: true,
-	extends: ['custom']
+	extends: ['custom'],
+	rules: { 'svelte/no-at-html-tags': 'off' }
 };

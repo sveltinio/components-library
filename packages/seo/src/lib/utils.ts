@@ -11,11 +11,5 @@ export function serializeJSONLdSchema(thing: Schema, dataTestId: string) {
 	)}</script>`;
 }
 
-export const pathSegments = (url: string): Array<string> =>
-	new URL(url).pathname.split('/').filter((part) => part?.trim() !== '');
-
-export const formatDate = (date: Date): string =>
-	date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-
 export const isSEOPerson = (contact: SEOContact): contact is SEOPerson =>
 	contact.jobTitle != undefined && contact.jobTitle != '';
