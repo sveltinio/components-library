@@ -2,7 +2,8 @@
 	import '../../styles/base.css';
 	import '../../styles/components/color/variables.css';
 	import '../../styles/components/color/styles.css';
-	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 
 	export let value: string;
 	export let size = 24;
@@ -11,22 +12,24 @@
 	export let showLabel = true;
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
+
+	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-colorviewer-vars', 'sn-e-c-colorviewer'];
+	const cssClassesArray = String($$props.class).split(' ');
 
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', [
-		'sn-e-colors',
-		'sn-e-c-colorviewer-vars',
-		'sn-e-c-colorviewer'
-	])
-		? (className = $$props.class)
-		: (className = '');
+	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
+		? (className = '')
+		: (className = $$props.class);
 </script>
 
 <div
 	class="sn-e-colors sn-e-c-colorviewer-vars sn-e-c-colorviewer {className}"
-	style={cssStyles}
+	style={cssStyles.value}
 	style:color={labelColor != '' ? labelColor : 'currentColor'}
 >
 	<div

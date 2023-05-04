@@ -3,7 +3,8 @@
 	import '../../styles/components/list/variables.css';
 	import '../../styles/components/list/styles.css';
 	import { onMount, tick } from 'svelte';
-	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 	import type { ListItem } from './types';
 
 	import ToggleButton from './ToggleButton.svelte';
@@ -14,7 +15,10 @@
 	export let full = false;
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
 
 	let isOpen = false;
 	const toggleExpand = () => (isOpen = !isOpen);
@@ -157,15 +161,14 @@
 	}
 	/** ********************************************** **/
 
+	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-togglelist-vars', 'sn-e-c-togglelist'];
+	const cssClassesArray = String($$props.class).split(' ');
+
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', [
-		'sn-e-colors',
-		'sn-e-c-togglelist-vars',
-		'sn-e-c-togglelist'
-	])
-		? (className = $$props.class)
-		: (className = '');
+	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
+		? (className = '')
+		: (className = $$props.class);
 
 	/** ********************************************** **/
 
@@ -199,7 +202,7 @@
 <div
 	bind:this={mainElem}
 	class="sn-e-colors sn-e-c-togglelist-vars sn-e-c-togglelist {className}"
-	style={cssStyles}
+	style={cssStyles.value}
 	data-testid="list_wrapper"
 >
 	<ToggleButton bind:isOpen {title} {full}>

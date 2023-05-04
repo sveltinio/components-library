@@ -4,14 +4,19 @@
 	import '../../styles/components/dropdown/styles.css';
 	import { onMount, tick, setContext } from 'svelte';
 	import { writable, get } from 'svelte/store';
-	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 	import type { DropdownContext } from './types.js';
 	import { clickOutside } from './actions.js';
 
 	export let isOpen = false;
-	export let styles = {};
 
-	const cssStyles = stylesObjToCSSVars(styles);
+	export let styles = {};
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
+
 	const initialState = writable(isOpen);
 	const ctx: DropdownContext = {
 		value: initialState,
@@ -191,17 +196,14 @@
 	}
 	/** ********************************************** **/
 
-	$: initialState.set(isOpen);
-	$: isOpen = $initialState;
+	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-dropdown-vars', 'sn-e-c-dropdown'];
+	const cssClassesArray = String($$props.class).split(' ');
+
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', [
-		'sn-e-colors',
-		'sn-e-c-dropdown-vars',
-		'sn-e-c-dropdown'
-	])
-		? (className = $$props.class)
-		: (className = '');
+	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
+		? (className = '')
+		: (className = $$props.class);
 
 	/** ********************************************** **/
 
@@ -235,7 +237,7 @@
 <div
 	bind:this={mainElem}
 	class="sn-e-colors sn-e-c-dropdown-vars sn-e-c-dropdown {className}"
-	style={cssStyles}
+	style={cssStyles.value}
 	use:clickOutside={() => {
 		ctx.setValue(false);
 		isOpen = false;

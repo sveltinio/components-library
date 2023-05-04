@@ -3,7 +3,8 @@
 	import '../../styles/components/link/variables.css';
 	import '../../styles/components/link/styles.css';
 	import { ExternalLinkIcon } from './index.js';
-	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 
 	export let label = '';
 	export let href: string;
@@ -15,7 +16,10 @@
 	export let noReferrer = true;
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
 
 	let relOptions = ['external'];
 	if (noOpener) relOptions.push('noopener');
@@ -27,11 +31,14 @@
 	const target = external ? '_blank' : '_self';
 	const externalIcon = external && icon ? true : false;
 
+	const reservedCssClasses = ['sn-e-c-link-vars', 'sn-e-c-link'];
+	const cssClassesArray = String($$props.class).split(' ');
+
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', ['sn-e-c-link-vars', 'sn-e-c-link'])
-		? (className = $$props.class)
-		: (className = '');
+	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
+		? (className = '')
+		: (className = $$props.class);
 </script>
 
 <a
@@ -40,7 +47,7 @@
 	{target}
 	data-sveltekit-preload-data={prefetchValue}
 	class="sn-e-c-link-vars sn-e-c-link {className}"
-	style={cssStyles}
+	style={cssStyles.value}
 	aria-label={label}
 	data-testid="link"
 	{...$$restProps}

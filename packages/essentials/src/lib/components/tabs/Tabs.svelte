@@ -4,7 +4,8 @@
 	import '../../styles/components/tabs/styles.css';
 	import { onMount, setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 	import type { TabItem, TabsContext } from './types.js';
 
 	export let activeTab = '1';
@@ -13,23 +14,27 @@
 	export let bordered = false;
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
 
 	let activeTabStore = writable(activeTab);
 	let tabs: Array<TabItem> = [];
+	let _tabs: Array<TabItem> = [];
 
 	const ctx: TabsContext = {
 		activeTab: activeTabStore,
 		setActiveTab: (_value) => activeTabStore.set(_value),
 		registerTab: (id: string, label: string, icon: any) => {
-			tabs.push({ id, label, icon });
-			tabs = tabs;
+			_tabs.push({ id, label, icon });
+			tabs = _tabs;
 		},
 		unregisterTab(id: string) {
-			const tabIndex = tabs.findIndex((tab) => tab.id === id);
+			const tabIndex = _tabs.findIndex((tab) => tab.id === id);
 			if (tabIndex > -1) {
-				tabs.splice(tabIndex, 1);
-				tabs = tabs;
+				_tabs.splice(tabIndex, 1);
+				tabs = _tabs;
 			}
 		}
 	};
@@ -115,11 +120,14 @@
 	}
 	/** ********************************************** **/
 
+	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-tabs-vars', 'sn-e-c-tabs'];
+	const cssClassesArray = String($$props.class).split(' ');
+
 	$: className = '';
 	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', ['sn-e-colors', 'sn-e-c-tabs-vars', 'sn-e-c-tabs'])
-		? (className = $$props.class)
-		: (className = '');
+	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
+		? (className = '')
+		: (className = $$props.class);
 	$: activeTab = $activeTabStore;
 	$: activeClass = (id: string): boolean => activeTab == id;
 
@@ -143,7 +151,7 @@
 	});
 </script>
 
-<div class="sn-e-colors sn-e-c-tabs-vars sn-e-c-tabs {className}" style={cssStyles}>
+<div class="sn-e-colors sn-e-c-tabs-vars sn-e-c-tabs {className}" style={cssStyles.value}>
 	<div
 		bind:this={mainElem}
 		class="tabs__group tabs__group--justify-{justify}"

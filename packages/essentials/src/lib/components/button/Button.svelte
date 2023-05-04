@@ -3,7 +3,8 @@
 	import '../../styles/components/button/variables.css';
 	import '../../styles/components/button/styles.css';
 	import { createEventDispatcher } from 'svelte';
-	import { stylesObjToCSSVars, isValidClassName } from '../../utils.js';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { contains } from '@sveltinio/ts-utils/collections';
 
 	export let label = 'Button Text';
 	export let alt = '';
@@ -21,7 +22,10 @@
 	export let external = false;
 
 	export let styles = {};
-	const cssStyles = stylesObjToCSSVars(styles);
+	const cssStyles = mapToCssVars(styles);
+	if (cssStyles.isErr()) {
+		throw new Error(cssStyles.error.message);
+	}
 
 	const dispatch = createEventDispatcher();
 	function clickDispatcher(e: MouseEvent) {
@@ -36,16 +40,18 @@
 		}
 	}
 
+	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-btn-vars', 'sn-e-c-btn'];
+	const cssClassesArray = String($$props.class).split(' ');
+
+	$: className = '';
+	// avoid hacking default class names
+	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
+		? (className = '')
+		: (className = $$props.class);
 	$: _alt = alt != '' ? alt : label;
 	$: _ariaDisabled = disabled ? true : false;
 	$: outlinedClass = outlined ? `btn--outlined btn--${type}-outlined` : `btn--${type}`;
 	$: focusClass = withFocusRing ? `btn--focus btn--${type}-focus` : '';
-
-	$: className = '';
-	// avoid hacking default class names
-	$: isValidClassName($$props.class ?? '', ['sn-e-colors', 'sn-e-c-btn-vars', 'sn-e-c-btn'])
-		? (className = $$props.class)
-		: (className = '');
 </script>
 
 {#if href != '' && !disabled}
@@ -62,7 +68,7 @@
 		class:btn--full={fullSize}
 		class:btn--rounded={rounded}
 		class:btn--circle={circle}
-		style={cssStyles}
+		style={cssStyles.value}
 		aria-label={_alt}
 		data-testid="btn"
 		title={_alt}
@@ -91,7 +97,7 @@
 		class:btn--rounded={rounded}
 		class:btn--circle={circle}
 		{disabled}
-		style={cssStyles}
+		style={cssStyles.isOk() ? cssStyles.value : ''}
 		aria-label={_alt}
 		aria-disabled={_ariaDisabled}
 		data-testid="btn"

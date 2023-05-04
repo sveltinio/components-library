@@ -161,4 +161,18 @@
 			<Button label="My Primary Button" type="primary" rounded class="my-primary-btn" />
 		</div>
 	</div>
+
+	<div id="buttons-theming-with-reserved-css-class-wrapper" class="demo-wrapper">
+		<h3 id="buttons-theming-with-reserved-css-class">
+			Custom Styles not applied due to reserved CSS Class name
+		</h3>
+		<div class="preview">
+			<Button
+				label="My Primary Button"
+				type="primary"
+				rounded
+				class="my-primary-btn sn-e-c-btn"
+			/>
+		</div>
+	</div>
 </section>
