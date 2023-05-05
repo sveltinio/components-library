@@ -31,9 +31,12 @@
 	const mandatoryKeys = ['label', 'href'];
 
 	/** ********************************************** **/
+	const reservedCssClasses = ['sn-w-colors sn-w-c-pagesnav-vars sn-w-c-pagesnav'];
+	const cssClassesArray = String($$props.class).split(' ');
+
 	$: className = '';
 	// avoid hacking default class names
-	$: contains(['sn-w-colors', 'sn-w-c-card-vars', 'sn-w-c-card'], $$props.class ?? '')
+	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
 		? (className = '')
 		: (className = $$props.class);
 </script>

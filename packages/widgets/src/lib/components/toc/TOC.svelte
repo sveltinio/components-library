@@ -188,9 +188,12 @@
 	}
 
 	/** ********************************************** **/
+	const reservedCssClasses = ['sn-w-colors', 'sn-w-c-toc-vars', 'sn-w-c-toc'];
+	const cssClassesArray = String($$props.class).split(' ');
+
 	$: className = '';
 	// avoid hacking default class names
-	$: contains(['sn-w-colors', 'sn-w-c-toc-vars', 'sn-w-c-toc'], $$props.class ?? '')
+	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
 		? (className = '')
 		: (className = $$props.class);
 

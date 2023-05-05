@@ -23,12 +23,16 @@
 	}
 
 	/** ********************************************** **/
+	const reservedCssClasses = [
+		'sn-w-colors',
+		'sn-w-c-sw__responsivecard-vars',
+		'sn-w-c-sw__responsivecard'
+	];
+	const cssClassesArray = String($$props.class).split(' ');
+
 	$: className = '';
 	// avoid hacking default class names
-	$: contains(
-		['sn-w-colors', 'sn-w-c-sw__responsivecard-vars', 'sn-w-c-sw__responsivecard'],
-		$$props.class ?? ''
-	)
+	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
 		? (className = '')
 		: (className = $$props.class);
 </script>
