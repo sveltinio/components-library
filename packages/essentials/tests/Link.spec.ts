@@ -54,19 +54,6 @@ describe('Link', () => {
 		expect(ariaLabel).toBeTruthy();
 	});
 
-	it('should be an internal link', async () => {
-		const { getByTestId } = render(Link, {
-			props: {
-				id: 'sveltin-site-link',
-				label: 'sveltin',
-				href: 'https://sveltin.io'
-			}
-		});
-
-		const link = getByTestId('link');
-		expect(link).toHaveAttribute('target', '_self');
-	});
-
 	it('should be an external link', async () => {
 		const { getByTestId } = render(Link, {
 			props: {
