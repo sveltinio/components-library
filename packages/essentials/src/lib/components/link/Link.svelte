@@ -5,6 +5,7 @@
 	import { ExternalLinkIcon } from './index.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { contains } from '@sveltinio/ts-utils/collections';
+	import { onMount } from 'svelte';
 
 	export let label = '';
 	export let href: string;
@@ -21,14 +22,11 @@
 		throw new Error(cssStyles.error.message);
 	}
 
-	let relOptions = ['external'];
-	if (noOpener) relOptions.push('noopener');
-	if (noReferrer) relOptions.push('noreferrer');
+	let aElem: HTMLElement;
 
 	const prefetchValue: true | '' | 'hover' | 'off' | 'tap' | null | undefined = !external
 		? prefetch
 		: 'off';
-	const target = external ? '_blank' : '_self';
 	const externalIcon = external && icon ? true : false;
 
 	const reservedCssClasses = ['sn-e-c-link-vars', 'sn-e-c-link'];
@@ -39,12 +37,22 @@
 	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
 		? (className = '')
 		: (className = $$props.class);
+
+	onMount(() => {
+		if (external) {
+			aElem.setAttribute('target', '_blank');
+
+			let relOptions = ['external'];
+			if (noOpener) relOptions.push('noopener');
+			if (noReferrer) relOptions.push('noreferrer');
+			aElem.setAttribute('rel', relOptions.join(' '));
+		}
+	});
 </script>
 
 <a
+	bind:this={aElem}
 	{href}
-	rel={relOptions.join(' ')}
-	{target}
 	data-sveltekit-preload-data={prefetchValue}
 	class="sn-e-c-link-vars sn-e-c-link {className}"
 	style={cssStyles.value}

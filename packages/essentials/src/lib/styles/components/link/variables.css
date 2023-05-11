@@ -1,7 +1,7 @@
 .sn-e-c-link-vars {
   /* * main (css class name: sn-e-c-link) * */
   --_text-decoration: var(--text-decoration, none);
-  --_text-decoration-hover: var(--text-decoration-hover, underline);
+  --_text-decoration-hover: var(--text-decoration-hover, none);
 
   --_icon-gap: var(--icon-gap, 0.25rem);
 }
