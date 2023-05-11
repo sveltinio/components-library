@@ -2,14 +2,20 @@
 	import { {{properCase name}} } from '$lib/index.js';
 </script>
 
-<section class="main">
-	<h1><tt>@{{packageName}}/{{properCase name}}</tt></h1>
+<div class="header" role="main">
+	<h1>@{{packageName}}</h1>
+	<h2>{{properCase name}}</h2>
+</div>
 
-	<h2><tt>{{properCase name}}</tt></h2>
-
-	<div id="{{kebabCase name}}" class="container">
-		<{{properCase name}} />
+<section role="contentinfo">
+	<div class="actions">
+		<a class="btn-back" href="/demos">← Return To The Demos</a>
 	</div>
 
-
+	<div id="{{kebabCase name}}-default-wrapper" class="demo-wrapper">
+		<h3 id="{{kebabCase name}}-default">Complete</h3>
+		<div class="preview">
+			<{{properCase name}} />
+		</div>
+	</div>
 </section>
