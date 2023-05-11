@@ -87,3 +87,6 @@ dist
 # Turbo
 .turbo
 
+# Yalc
+.yalc
+yalc.lock
