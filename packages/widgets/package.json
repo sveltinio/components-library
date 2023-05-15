@@ -36,7 +36,7 @@
 		"@sveltejs/kit": "^1.16.2",
 		"@sveltejs/package": "^2.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.2.0",
-		"@sveltinio/ts-utils": "^0.7.0",
+		"@sveltinio/ts-utils": "^0.8.0",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/svelte": "^3.2.2",
 		"@typescript-eslint/eslint-plugin": "^5.59.2",
