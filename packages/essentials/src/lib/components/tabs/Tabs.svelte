@@ -2,11 +2,11 @@
 	import '../../styles/base.css';
 	import '../../styles/components/tabs/variables.css';
 	import '../../styles/components/tabs/styles.css';
+	import type { TabItem, TabsContext } from './types.js';
 	import { onMount, setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { contains } from '@sveltinio/ts-utils/collections';
-	import type { TabItem, TabsContext } from './types.js';
+	import { retrieveCssClassNames } from '$lib/utils';
 
 	export let activeTab = '1';
 	export let size = 'base';
@@ -44,6 +44,10 @@
 	let tabsList: Array<HTMLElement> = [];
 	let firstTab: HTMLElement;
 	let lastTab: HTMLElement;
+
+	// avoid hacking reserved css class names
+	const reservedNames = ['sn-e-colors', 'sn-e-c-tabs-vars', 'sn-e-c-tabs'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 
 	/** ********************************************** **/
 	/** Accessibility: Mouse and Keyborad interactions **/
@@ -118,16 +122,7 @@
 				break;
 		}
 	}
-	/** ********************************************** **/
 
-	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-tabs-vars', 'sn-e-c-tabs'];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
 	$: activeTab = $activeTabStore;
 	$: activeClass = (id: string): boolean => activeTab == id;
 
@@ -151,7 +146,7 @@
 	});
 </script>
 
-<div class="sn-e-colors sn-e-c-tabs-vars sn-e-c-tabs {className}" style={cssStyles.value}>
+<div class="sn-e-colors sn-e-c-tabs-vars sn-e-c-tabs {cssClasses}" style={cssStyles.value}>
 	<div
 		bind:this={mainElem}
 		class="tabs__group tabs__group--justify-{justify}"

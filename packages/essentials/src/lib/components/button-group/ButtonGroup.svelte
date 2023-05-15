@@ -2,11 +2,11 @@
 	import '../../styles/base.css';
 	import '../../styles/components/button-group/variables.css';
 	import '../../styles/components/button-group/styles.css';
+	import type { ButtonGroupItemType, ButtonGroupContext } from './types.js';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { contains } from '@sveltinio/ts-utils/collections';
-	import type { ButtonGroupItemType, ButtonGroupContext } from './types.js';
+	import { retrieveCssClassNames } from '$lib/utils';
 
 	export let activeButton = '';
 	export let size = 'base';
@@ -20,6 +20,10 @@
 
 	let buttons: Array<ButtonGroupItemType> = [];
 	let activeButtonsGroupStore = writable(activeButton);
+
+	// avoid hacking reserved css class names
+	const reservedNames = ['sn-e-colors', 'sn-e-c-btngroup-vars', 'sn-e-c-btngroup'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 
 	const ctx: ButtonGroupContext = {
 		activeButton: activeButtonsGroupStore,
@@ -35,19 +39,10 @@
 		}
 	};
 	setContext('ButtonGroup', ctx);
-
-	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-btngroup-vars', 'sn-e-c-btngroup'];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
 </script>
 
 <div
-	class="sn-e-colors sn-e-c-btngroup-vars sn-e-c-btngroup size--{size} {className}"
+	class="sn-e-colors sn-e-c-btngroup-vars sn-e-c-btngroup size--{size} {cssClasses}"
 	class:sn-e-c-btngroup--responsive={responsive}
 	style={cssStyles.value}
 	role="group"

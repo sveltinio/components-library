@@ -2,12 +2,12 @@
 	import '../../styles/base.css';
 	import '../../styles/components/dropdown/variables.css';
 	import '../../styles/components/dropdown/styles.css';
+	import type { DropdownContext } from './types.js';
 	import { onMount, tick, setContext } from 'svelte';
 	import { writable, get } from 'svelte/store';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { contains } from '@sveltinio/ts-utils/collections';
-	import type { DropdownContext } from './types.js';
 	import { clickOutside } from './actions.js';
+	import { retrieveCssClassNames } from '$lib/utils';
 
 	export let isOpen = false;
 
@@ -30,6 +30,10 @@
 	let firstMenuItem: HTMLLinkElement;
 	let lastMenuItem: HTMLLinkElement;
 	let firstChars: Array<string> = [];
+
+	// avoid hacking reserved css class names
+	const reservedNames = ['sn-e-colors', 'sn-e-c-dropdown-vars', 'sn-e-c-dropdown'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 
 	/** ********************************************** **/
 	/** Accessibility: Mouse and Keyboard interactions **/
@@ -196,17 +200,6 @@
 	}
 	/** ********************************************** **/
 
-	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-dropdown-vars', 'sn-e-c-dropdown'];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
-
-	/** ********************************************** **/
-
 	onMount(() => {
 		menuBtn = mainElem.querySelector('button') as HTMLButtonElement;
 		if (menuBtn) {
@@ -236,7 +229,7 @@
 
 <div
 	bind:this={mainElem}
-	class="sn-e-colors sn-e-c-dropdown-vars sn-e-c-dropdown {className}"
+	class="sn-e-colors sn-e-c-dropdown-vars sn-e-c-dropdown {cssClasses}"
 	style={cssStyles.value}
 	use:clickOutside={() => {
 		ctx.setValue(false);

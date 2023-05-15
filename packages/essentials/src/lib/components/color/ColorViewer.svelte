@@ -3,7 +3,7 @@
 	import '../../styles/components/color/variables.css';
 	import '../../styles/components/color/styles.css';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { contains } from '@sveltinio/ts-utils/collections';
+	import { retrieveCssClassNames } from '$lib/utils';
 
 	export let value: string;
 	export let size = 24;
@@ -17,18 +17,13 @@
 		throw new Error(cssStyles.error.message);
 	}
 
-	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-colorviewer-vars', 'sn-e-c-colorviewer'];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
+	// avoid hacking reserved css class names
+	const reservedNames = ['sn-e-colors', 'sn-e-c-colorviewer-vars', 'sn-e-c-colorviewer'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 </script>
 
 <div
-	class="sn-e-colors sn-e-c-colorviewer-vars sn-e-c-colorviewer {className}"
+	class="sn-e-colors sn-e-c-colorviewer-vars sn-e-c-colorviewer {cssClasses}"
 	style={cssStyles.value}
 	style:color={labelColor != '' ? labelColor : 'currentColor'}
 >

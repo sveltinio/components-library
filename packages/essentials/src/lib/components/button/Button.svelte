@@ -4,7 +4,7 @@
 	import '../../styles/components/button/styles.css';
 	import { createEventDispatcher } from 'svelte';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { contains } from '@sveltinio/ts-utils/collections';
+	import { retrieveCssClassNames } from '$lib/utils';
 
 	export let label = 'Button Text';
 	export let alt = '';
@@ -22,17 +22,23 @@
 	export let external = false;
 
 	export let styles = {};
+
+	let htmlElem: HTMLElement;
+
 	const cssStyles = mapToCssVars(styles);
 	if (cssStyles.isErr()) {
 		throw new Error(cssStyles.error.message);
 	}
+
+	// avoid hacking reserved css class names
+	const reservedNames = ['sn-e-colors', 'sn-e-c-btn-vars', 'sn-e-c-btn'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 
 	const dispatch = createEventDispatcher();
 	function clickDispatcher(e: MouseEvent) {
 		dispatch('click', { eventDetails: e });
 	}
 
-	let htmlElem: HTMLElement;
 	function keydownHandler(e: KeyboardEvent) {
 		if (['Enter', 'Space'].includes(e.code)) {
 			e.preventDefault();
@@ -40,14 +46,6 @@
 		}
 	}
 
-	const reservedCssClasses = ['sn-e-colors', 'sn-e-c-btn-vars', 'sn-e-c-btn'];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
 	$: _alt = alt != '' ? alt : label;
 	$: _ariaDisabled = disabled ? true : false;
 	$: outlinedClass = outlined ? `btn--outlined btn--${type}-outlined` : `btn--${type}`;
@@ -64,7 +62,7 @@
 		{href}
 		target={external ? '_blank' : '_self'}
 		data-sveltekit-preload-data={prefetch ? 'hover' : ''}
-		class="sn-e-colors sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {className}"
+		class="sn-e-colors sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {cssClasses}"
 		class:btn--full={fullSize}
 		class:btn--rounded={rounded}
 		class:btn--circle={circle}
@@ -92,7 +90,7 @@
 		bind:this={htmlElem}
 		on:click={clickDispatcher}
 		on:keydown={keydownHandler}
-		class="sn-e-colors sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {className}"
+		class="sn-e-colors sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {cssClasses}"
 		class:btn--full={fullSize}
 		class:btn--rounded={rounded}
 		class:btn--circle={circle}

@@ -4,8 +4,8 @@
 	import '../../styles/components/link/styles.css';
 	import { ExternalLinkIcon } from './index.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { contains } from '@sveltinio/ts-utils/collections';
 	import { onMount } from 'svelte';
+	import { retrieveCssClassNames } from '$lib/utils';
 
 	export let label = '';
 	export let href: string;
@@ -29,14 +29,9 @@
 		: 'off';
 	const externalIcon = external && icon ? true : false;
 
-	const reservedCssClasses = ['sn-e-c-link-vars', 'sn-e-c-link'];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
+	// avoid hacking reserved css class names
+	const reservedNames = ['sn-e-c-link-vars', 'sn-e-c-link'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 
 	onMount(() => {
 		if (external) {
@@ -54,7 +49,7 @@
 	bind:this={aElem}
 	{href}
 	data-sveltekit-preload-data={prefetchValue}
-	class="sn-e-c-link-vars sn-e-c-link {className}"
+	class="sn-e-c-link-vars sn-e-c-link {cssClasses}"
 	style={cssStyles.value}
 	aria-label={label}
 	data-testid="link"
