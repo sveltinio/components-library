@@ -56,6 +56,7 @@
 	<a
 		tabindex="0"
 		role="button"
+		title={_alt}
 		bind:this={htmlElem}
 		on:click
 		on:keydown={keydownHandler}
@@ -69,7 +70,7 @@
 		style={cssStyles.value}
 		aria-label={_alt}
 		data-testid="btn"
-		title={_alt}
+		{...$$restProps}
 	>
 		{#if $$slots.leftIcon}
 			<span class="btn__icon">
@@ -99,6 +100,7 @@
 		aria-label={_alt}
 		aria-disabled={_ariaDisabled}
 		data-testid="btn"
+		{...$$restProps}
 	>
 		{#if $$slots.leftIcon}
 			<span class="btn__icon">
