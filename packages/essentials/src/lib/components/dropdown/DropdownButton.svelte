@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { Button } from '../button/index.js';
 	export let label: string;
 	export let iconSize = 20;
 </script>
 
-<button id="menubutton" class="btn" aria-haspopup="true" aria-controls="menu-list"
-	>{label}
+<Button id="menubutton" class="btn" aria-haspopup="true" aria-controls="menu-list">
+	{label}
 
 	<span class="btn__icon">
 		<slot name="btnIcon">
@@ -25,5 +26,5 @@
 				/>
 			</svg>
 		</slot>
-	</span></button
->
+	</span>
+</Button>
