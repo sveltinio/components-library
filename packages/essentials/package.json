@@ -153,10 +153,6 @@
 			"types": "./dist/components/dropdown/types.d.ts",
 			"default": "./dist/components/dropdown/types.js"
 		},
-		"./dropdown/actions": {
-			"types": "./dist/components/dropdown/actions.d.ts",
-			"default": "./dist/components/dropdown/actions.js"
-		},
 		"./components/Dropdown.svelte": {
 			"types": "./dist/components/dropdown/Dropdown.svelte.d.ts",
 			"svelte": "./dist/components/dropdown/Dropdown.svelte",
@@ -249,6 +245,10 @@
 			"svelte": "./dist/index.js",
 			"default": "./dist/index.js"
 		},
+		"./actions": {
+			"types": "./dist/actions.d.ts",
+			"default": "./dist/actions.js"
+		},
 		"./types": {
 			"types": "./dist/types.d.ts",
 			"default": "./dist/types.js"
@@ -285,9 +285,6 @@
 			],
 			"dropdown/types": [
 				"./dist/components/dropdown/types.d.ts"
-			],
-			"dropdown/actions": [
-				"./dist/components/dropdown/actions.d.ts"
 			],
 			"components/Dropdown.svelte": [
 				"./dist/components/dropdown/Dropdown.svelte.d.ts"
@@ -345,6 +342,9 @@
 			],
 			"index": [
 				"./index.d.ts"
+			],
+			"actions": [
+				"./actions.d.ts"
 			],
 			"types": [
 				"./types.d.ts"
