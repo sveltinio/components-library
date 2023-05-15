@@ -24,7 +24,7 @@ export const keysBinding: Action<HTMLElement, KeysBindingOptions> = (node, optio
 		node.setAttribute('aria-expanded', 'true');
 		node.focus();
 
-		const menuBtn = node.getElementsByClassName('btn')[0];
+		const menuBtn = node.querySelector('button');
 		if (menuBtn) {
 			menuBtn.firstElementChild?.classList.remove('rotate0');
 			menuBtn.firstElementChild?.classList.add('rotate180');
@@ -38,7 +38,7 @@ export const keysBinding: Action<HTMLElement, KeysBindingOptions> = (node, optio
 		node.removeAttribute('aria-expanded');
 		node.focus();
 
-		const menuBtn = node.getElementsByClassName('btn')[0];
+		const menuBtn = node.querySelector('button');
 		if (menuBtn) {
 			menuBtn.firstElementChild?.classList.remove('rotate180');
 			menuBtn.firstElementChild?.classList.add('rotate0');
@@ -193,7 +193,8 @@ export const keysBinding: Action<HTMLElement, KeysBindingOptions> = (node, optio
 	};
 
 	const onMenuItemMouseOver = (e: MouseEvent) => {
-		(e.currentTarget as HTMLHtmlElement).focus();
+		const target = e.currentTarget as HTMLElement;
+		setFocusOnItem(target);
 	};
 
 	if (options?.enabled) node.addEventListener('click', onButtonClick);

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { activeAction } from './action.js';
+	import { active } from '$lib/actions.js';
 	import type { ListItem } from './types';
 
 	export let id: number;
@@ -25,7 +25,7 @@
 		{target}
 		data-sveltekit-preload-data={prefetchValue}
 		class="item__link"
-		use:activeAction
+		use:active
 		role="menuitem"
 		data-testid="item_link_{id}"
 	>

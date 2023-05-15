@@ -24,3 +24,37 @@ export const clickOutside: Action<HTMLElement, ClickOutsideConfig> = (node, conf
 		}
 	};
 };
+
+export interface ActiveOptions {
+	enabled: boolean;
+	className: string;
+}
+
+export const active: Action<HTMLElement, ActiveOptions> = (
+	node,
+	options = { enabled: true, className: 'is-active' }
+) => {
+	addActiveClass(node, options.className);
+
+	return {
+		update: (params) => {
+			if (params.enabled) addActiveClass(node, params.className);
+		},
+		destroy: () => node.classList.remove(options.className)
+	};
+};
+
+function isActive(href: string): boolean {
+	const { hash, pathname, search } = new URL(location.href);
+	const path = pathname + search + hash;
+	return path.includes(href);
+}
+
+function addActiveClass(node: HTMLElement, className: string): void {
+	const parentElement = node.parentElement;
+	if (isActive(node.getAttribute('href') || '')) {
+		parentElement?.classList.add(className);
+	} else {
+		parentElement?.classList.remove(className);
+	}
+}

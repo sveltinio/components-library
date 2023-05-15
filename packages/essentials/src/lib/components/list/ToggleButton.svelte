@@ -1,7 +1,13 @@
 <script lang="ts">
+	import type { ToggleListContext } from './types.js';
+	import { getContext } from 'svelte';
+
+	const ctx: ToggleListContext = getContext('SNE_ToggleList');
+	let value = ctx.value;
+
 	export let title: string;
 	export let full: boolean;
-	export let isOpen: boolean;
+	$: isOpen = $value;
 </script>
 
 <button

@@ -2,8 +2,10 @@
 	import '../../styles/base.css';
 	import '../../styles/components/list/variables.css';
 	import '../../styles/components/list/styles.css';
-	import type { ListItem } from './types';
-	import { onMount, tick } from 'svelte';
+	import type { ListItem, ToggleListContext } from './types';
+	import { setContext } from 'svelte';
+	import { writable } from 'svelte/store';
+	import { keysBinding } from './keysbinding';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils';
 	import ToggleButton from './ToggleButton.svelte';
@@ -20,184 +22,26 @@
 	}
 
 	let isOpen = false;
-	const toggleExpand = () => (isOpen = !isOpen);
 
-	let mainElem: HTMLElement;
-	let toggleBtn: HTMLElement;
-	let listItems: Array<HTMLLIElement> = [];
-	let menuItemNodes: Array<HTMLLinkElement> = [];
-	let firstMenuItem: HTMLLinkElement;
-	let lastMenuItem: HTMLLinkElement;
+	const initialState = writable(isOpen);
+	const ctx: ToggleListContext = {
+		value: initialState,
+		setValue: (_value) => initialState.set(_value)
+	};
+	setContext('SNE_ToggleList', ctx);
 
 	// avoid hacking reserved css class names
 	const reservedNames = ['sn-e-colors', 'sn-e-c-togglelist-vars', 'sn-e-c-togglelist'];
 	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
-
-	/** ********************************************** **/
-	/** Accessibility: Mouse and Keyboard interactions **/
-	/** ********************************************** **/
-	const openMenu = () => (isOpen = true);
-	const closeMenu = () => (isOpen = false);
-
-	const addCSSClass = (item: HTMLElement, className: string) => item.classList.add(className);
-
-	const removeCSSClass = (item: HTMLElement, className: string) =>
-		item.classList.remove(className);
-
-	const restoreDefaultListItemsClasses = () => {
-		listItems.forEach((li) => removeCSSClass(li, 'focus'));
-	};
-
-	const setFocusOnItem = (item: HTMLElement) => {
-		menuItemNodes.forEach(async (itemNode) => {
-			if (itemNode === item) {
-				itemNode.tabIndex = 0;
-				await tick();
-				const parentElement = itemNode.parentElement;
-				if (parentElement) addCSSClass(parentElement, 'focus');
-
-				itemNode.focus();
-			} else {
-				itemNode.tabIndex = -1;
-			}
-		});
-	};
-
-	const setFocusOnFirstItem = () => setFocusOnItem(firstMenuItem);
-
-	const setFocusOnLastItem = () => setFocusOnItem(lastMenuItem);
-
-	const setFocusOnPreviousItem = (currentMenuItem: HTMLLinkElement) => {
-		let newMenuitem, index;
-		restoreDefaultListItemsClasses();
-
-		if (currentMenuItem === firstMenuItem) {
-			newMenuitem = firstMenuItem;
-		} else {
-			index = menuItemNodes.indexOf(currentMenuItem);
-			newMenuitem = menuItemNodes[index - 1];
-		}
-
-		setFocusOnItem(newMenuitem);
-		return newMenuitem;
-	};
-
-	const setFocusOnNextItem = (currentMenuItem: HTMLLinkElement) => {
-		let newMenuitem, index;
-		restoreDefaultListItemsClasses();
-
-		if (currentMenuItem === lastMenuItem) {
-			newMenuitem = lastMenuItem;
-		} else {
-			index = menuItemNodes.indexOf(currentMenuItem);
-			newMenuitem = menuItemNodes[index + 1];
-		}
-
-		setFocusOnItem(newMenuitem);
-		return newMenuitem;
-	};
-
-	/** Event handlers **/
-	function onButtonClick(e: MouseEvent): void {
-		e.stopPropagation();
-		e.preventDefault();
-		toggleExpand();
-	}
-
-	function onButtonKeydown(e: KeyboardEvent): void {
-		e.stopPropagation();
-		e.preventDefault();
-		switch (e.code) {
-			case 'Space':
-			case 'Enter':
-				toggleExpand();
-				if (isOpen) setFocusOnFirstItem();
-				break;
-			case 'Esc':
-			case 'Escape':
-				toggleExpand();
-				if (!isOpen) toggleBtn.focus();
-				break;
-			case 'Tab':
-				if (isOpen) closeMenu();
-				toggleBtn.blur();
-		}
-	}
-
-	function onMenuItemKeydown(e: KeyboardEvent): void {
-		e.stopPropagation();
-		e.preventDefault();
-		const target = e.currentTarget as HTMLLinkElement;
-
-		switch (e.code) {
-			case 'Space':
-			case 'Enter':
-				if (isOpen) {
-					closeMenu();
-					toggleBtn.focus();
-				} else {
-					openMenu();
-				}
-				break;
-			case 'Esc':
-			case 'Escape':
-				closeMenu();
-				toggleBtn.focus();
-				break;
-			case 'Up':
-			case 'ArrowUp':
-				setFocusOnPreviousItem(target);
-				break;
-			case 'Down':
-			case 'ArrowDown':
-				setFocusOnNextItem(target);
-				break;
-			case 'Home':
-			case 'PageUp':
-				setFocusOnFirstItem();
-				break;
-			case 'End':
-			case 'PageDown':
-				setFocusOnLastItem();
-				break;
-		}
-	}
-	/** ********************************************** **/
-
-	onMount(() => {
-		toggleBtn = mainElem.querySelector('button') as HTMLButtonElement;
-		if (toggleBtn) {
-			toggleBtn.addEventListener('click', onButtonClick);
-			toggleBtn.addEventListener('keydown', onButtonKeydown);
-		}
-
-		Array.from(document.querySelectorAll('li.list__item')).forEach((li) => {
-			listItems.push(li as HTMLLIElement);
-		});
-
-		const nodes = document.querySelectorAll('[role="menuitem"');
-		Array.from(nodes).forEach((node) => {
-			const menuitem = node as HTMLLinkElement;
-			menuItemNodes.push(menuitem);
-
-			menuitem.tabIndex = -1;
-			menuitem.addEventListener('keydown', onMenuItemKeydown);
-
-			if (!firstMenuItem) {
-				firstMenuItem = menuitem;
-			}
-			lastMenuItem = menuitem;
-		});
-	});
 </script>
 
 <div
-	bind:this={mainElem}
 	class="sn-e-colors sn-e-c-togglelist-vars sn-e-c-togglelist {cssClasses}"
 	style={cssStyles.value}
+	use:keysBinding={{ enabled: true, isOpen, ctx }}
 	data-testid="list_wrapper"
 >
-	<ToggleButton bind:isOpen {title} {full}>
+	<ToggleButton {title} {full}>
 		<slot name="leftSideIcon" slot="leftSideIcon" />
 		<slot name="rightSideIcon" slot="rightSideIcon">
 			<svg
@@ -220,5 +64,5 @@
 		</slot>
 	</ToggleButton>
 
-	<List bind:isOpen {items} />
+	<List {items} />
 </div>
