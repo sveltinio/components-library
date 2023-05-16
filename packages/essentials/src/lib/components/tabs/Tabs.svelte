@@ -7,6 +7,7 @@
 	import { writable } from 'svelte/store';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils';
+	import { a11yKeyboardAction } from './a11yKeyboard.js';
 
 	export let activeTab = '1';
 	export let size = 'base';
@@ -20,6 +21,7 @@
 	}
 
 	let activeTabStore = writable(activeTab);
+	let mainElem: HTMLElement;
 	let tabs: Array<TabItem> = [];
 	let _tabs: Array<TabItem> = [];
 
@@ -40,109 +42,15 @@
 	};
 	setContext('SNE_Tabs', ctx);
 
-	let mainElem: HTMLElement;
-	let tabsList: Array<HTMLElement> = [];
-	let firstTab: HTMLElement;
-	let lastTab: HTMLElement;
-
 	// avoid hacking reserved css class names
 	const reservedNames = ['sn-e-colors', 'sn-e-c-tabs-vars', 'sn-e-c-tabs'];
 	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 
-	/** ********************************************** **/
-	/** Accessibility: Mouse and Keyborad interactions **/
-	/** ********************************************** **/
-	const setActiveTab = (tab: HTMLElement) => {
-		const index = tabsList.indexOf(tab) + 1;
-
-		ctx.setActiveTab(String(index));
-		activeTab = String(index);
-	};
-
-	const setFocusOnTab = (tab: HTMLElement) => {
-		tab.focus();
-	};
-
-	const setFocusOnPreviousTab = (currentTab: HTMLElement) => {
-		if (currentTab === firstTab) {
-			setFocusOnTab(lastTab);
-		} else {
-			const index = tabsList.indexOf(currentTab);
-			setFocusOnTab(tabsList[index - 1]);
-		}
-	};
-
-	const setFocusOnNextTab = (currentTab: HTMLElement) => {
-		if (currentTab === lastTab) {
-			setFocusOnTab(firstTab);
-		} else {
-			const index = tabsList.indexOf(currentTab);
-			setFocusOnTab(tabsList[index + 1]);
-		}
-	};
-
-	/** Event handlers **/
-	function onTabClick(e: MouseEvent): void {
-		e.stopPropagation();
-		e.preventDefault();
-		const currentTab = e.target as HTMLElement;
-		const currentTabId = currentTab.getAttribute('id') || activeTab;
-		ctx.setActiveTab(currentTabId);
-		activeTab = currentTabId;
-	}
-
-	function onTabKeydown(e: KeyboardEvent): void {
-		e.stopPropagation();
-		e.preventDefault();
-		const target = e.currentTarget as HTMLButtonElement;
-
-		switch (e.code) {
-			case 'Enter':
-			case 'Space':
-				setActiveTab(target);
-				break;
-			case 'Esc':
-			case 'Escape':
-				target.blur();
-				break;
-			case 'Left':
-			case 'ArrowLeft':
-				setFocusOnPreviousTab(target);
-				break;
-			case 'Tab':
-			case 'Right':
-			case 'ArrowRight':
-				setFocusOnNextTab(target);
-				break;
-			case 'Home':
-			case 'PageUp':
-				break;
-			case 'End':
-			case 'PageDown':
-				break;
-		}
-	}
-
 	$: activeTab = $activeTabStore;
 	$: activeClass = (id: string): boolean => activeTab == id;
 
-	/** ********************************************** **/
-
 	onMount(() => {
-		const tabNodes = mainElem.querySelectorAll('[role="tab"]');
-
-		Array.from(tabNodes).forEach((node) => {
-			const tab = node as HTMLElement;
-			tabsList.push(tab);
-
-			tab.addEventListener('keydown', onTabKeydown);
-			tab.addEventListener('click', onTabClick);
-
-			if (!firstTab) {
-				firstTab = tab;
-			}
-			lastTab = tab;
-		});
+		a11yKeyboardAction(mainElem, { enabled: true, activeTab, ctx });
 	});
 </script>
 
