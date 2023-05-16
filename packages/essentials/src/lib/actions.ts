@@ -1,11 +1,11 @@
 import type { Action } from 'svelte/action';
 
-export interface ClickOutsideConfig {
+export interface ClickOutsideActionConfig {
 	enabled: boolean;
 	cb?: (node: HTMLElement) => void;
 }
 
-export const clickOutside: Action<HTMLElement, ClickOutsideConfig> = (node, config) => {
+export const clickOutsideAction: Action<HTMLElement, ClickOutsideActionConfig> = (node, config) => {
 	function eventHandler(event: MouseEvent) {
 		const target = event.target as Node;
 		if (node && !node.contains(target) && !event.defaultPrevented) {
@@ -25,12 +25,12 @@ export const clickOutside: Action<HTMLElement, ClickOutsideConfig> = (node, conf
 	};
 };
 
-export interface ActiveOptions {
+export interface ActiveActionOptions {
 	enabled: boolean;
 	className: string;
 }
 
-export const active: Action<HTMLElement, ActiveOptions> = (
+export const activeAction: Action<HTMLElement, ActiveActionOptions> = (
 	node,
 	options = { enabled: true, className: 'is-active' }
 ) => {

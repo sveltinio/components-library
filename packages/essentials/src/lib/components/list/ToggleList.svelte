@@ -5,7 +5,7 @@
 	import type { ListItem, ToggleListContext } from './types';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { keysBinding } from './keysbinding';
+	import { a11yKeyboardAction } from './a11yKeyboard.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils';
 	import ToggleButton from './ToggleButton.svelte';
@@ -38,7 +38,7 @@
 <div
 	class="sn-e-colors sn-e-c-togglelist-vars sn-e-c-togglelist {cssClasses}"
 	style={cssStyles.value}
-	use:keysBinding={{ enabled: true, isOpen, ctx }}
+	use:a11yKeyboardAction={{ enabled: true, isOpen, ctx }}
 	data-testid="list_wrapper"
 >
 	<ToggleButton {title} {full}>

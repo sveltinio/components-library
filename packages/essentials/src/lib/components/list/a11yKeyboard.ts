@@ -2,7 +2,7 @@ import { tick } from 'svelte';
 import type { Action } from 'svelte/action';
 import type { ToggleListContext } from './types';
 
-interface KeysBindingOptions {
+interface A11yKeyboardActionOptions {
 	enabled: boolean;
 	isOpen?: boolean;
 	ctx?: ToggleListContext;
@@ -16,7 +16,10 @@ const resetDefaultCssClasses = (items: HTMLLIElement[]) => {
 	items.forEach((item) => removeCssClass(item, 'focus'));
 };
 
-export const keysBinding: Action<HTMLElement, KeysBindingOptions> = (node, options) => {
+export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> = (
+	node,
+	options
+) => {
 	const { isOpen, ctx } = options || {};
 
 	let open = isOpen;
