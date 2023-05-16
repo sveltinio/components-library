@@ -55,7 +55,7 @@ The `Tabs` and `Tab` components expose a set of properties.
 ### Tabs - Functionals
 
 | Property  | Type     | Required | Default | Description                                                     |
-| :-------- | :--  --: | :------: | :-----: | :-------------------------------------------------------------- |
+| :-------- | :------: | :------: | :-----: | :-------------------------------------------------------------- |
 | activeTab | `string` |    no    | `1`     | The tab to be active (selected) at the startup                  |
 | size      | `string` |    no    | `base`  | Set the tab title size. One of [`xs`, `sm`, `base`, `md`, `lg`] |
 | justify   | `string` |    no    | `start` | Where to pack the tabs. One of [`start`, `center`, `end`]       |
