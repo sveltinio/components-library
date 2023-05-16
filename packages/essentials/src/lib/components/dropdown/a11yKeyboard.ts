@@ -3,13 +3,16 @@ import type { DropdownContext } from './types';
 import { get } from 'svelte/store';
 import { tick } from 'svelte';
 
-interface KeysBindingOptions {
+interface A11yKeyboardActionOptions {
 	enabled: boolean;
 	isOpen?: boolean;
 	ctx?: DropdownContext;
 }
 
-export const keysBinding: Action<HTMLElement, KeysBindingOptions> = (node, options) => {
+export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> = (
+	node,
+	options
+) => {
 	const { ctx, isOpen } = options || {};
 	let open = isOpen;
 

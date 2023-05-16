@@ -5,8 +5,8 @@
 	import type { DropdownContext } from './types.js';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { clickOutside } from '$lib/actions.js';
-	import { keysBinding } from './keysbinding.js';
+	import { clickOutsideAction } from '$lib/actions.js';
+	import { a11yKeyboardAction } from './a11yKeyboard.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils';
 
@@ -33,8 +33,8 @@
 <div
 	class="sn-e-colors sn-e-c-dropdown-vars sn-e-c-dropdown {cssClasses}"
 	style={cssStyles.value}
-	use:keysBinding={{ enabled: true, isOpen, ctx }}
-	use:clickOutside={{
+	use:a11yKeyboardAction={{ enabled: true, isOpen, ctx }}
+	use:clickOutsideAction={{
 		enabled: true,
 		cb: () => {
 			ctx.setValue(false);
