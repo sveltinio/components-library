@@ -25,29 +25,21 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	let open = isOpen;
 	let firstMenuItem: HTMLLinkElement;
 	let lastMenuItem: HTMLLinkElement;
-
 	const listItems: HTMLLIElement[] = [];
-	const toggleBtn = node.querySelector('button.btn') as HTMLButtonElement;
 
 	const toggleExpand = () => {
 		open = !open;
-		if (ctx) {
-			ctx.setValue(open);
-		}
+		ctx?.setValue(open);
 	};
 
 	const openMenu = () => {
 		open = true;
-		if (ctx) {
-			ctx.setValue(open);
-		}
+		ctx?.setValue(open);
 	};
 
 	const closeMenu = () => {
 		open = false;
-		if (ctx) {
-			ctx.setValue(open);
-		}
+		ctx?.setValue(open);
 	};
 
 	const setFocusOnItem = (item: HTMLElement) => {
@@ -170,6 +162,7 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 		setFocusOnItem(target);
 	};
 
+	const toggleBtn = node.querySelector('button.btn') as HTMLButtonElement;
 	if (options?.enabled) toggleBtn.addEventListener('click', onButtonClick);
 	if (options?.enabled) toggleBtn.addEventListener('keydown', onButtonKeydown);
 

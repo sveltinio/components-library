@@ -5,7 +5,7 @@
 	import type { ListItem, ToggleListContext } from './types';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { a11yKeyboardAction } from './a11yKeyboard.js';
+	import { a11yKeyboardAction } from './a11y-keyboard.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils';
 	import ToggleButton from './ToggleButton.svelte';
