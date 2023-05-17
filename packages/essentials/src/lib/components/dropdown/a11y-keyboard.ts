@@ -21,9 +21,8 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	const firstChars: Array<string> = [];
 
 	const openMenu = () => {
-		if (ctx) {
-			ctx.setValue(true);
-		}
+		ctx?.setValue(true);
+
 		node.setAttribute('aria-expanded', 'true');
 		node.focus();
 
@@ -35,9 +34,8 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	};
 
 	const closeMenu = () => {
-		if (ctx) {
-			ctx.setValue(false);
-		}
+		ctx?.setValue(false);
+
 		node.removeAttribute('aria-expanded');
 		node.focus();
 

@@ -6,7 +6,7 @@
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { clickOutsideAction } from '$lib/actions.js';
-	import { a11yKeyboardAction } from './a11yKeyboard.js';
+	import { a11yKeyboardAction } from './a11y-keyboard.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils';
 
