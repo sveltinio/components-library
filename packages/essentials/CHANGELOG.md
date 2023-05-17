@@ -1,5 +1,18 @@
 # @sveltinio/essentials
 
+## 0.7.3
+
+### Patch Changes
+
+- fix(**button**): allow additional props with `restProps`
+- fix(**buttongroup): declaration-property-value-no-unknown
+- fix(**link**): rel and target attributes when external
+- refactor: use svelte action for keyboard interaction in `Dropdown`, `ToggleList` and `Tabs`
+- style(color): set `aspect-ratio: 1;`
+- chore: dev deps updated
+- docs(**tabs**): fix typo in markdown table for properties
+- docs: add Keyboard Interaction section for each component in the package
+
 ## 0.7.2
 
 ### Patch Changes
