@@ -2,6 +2,7 @@
 	export let altText = 'list icon';
 	export let size = '1.5em';
 	export let color = '';
+
 	$: fillColor = color != '' ? color : 'none';
 </script>
 

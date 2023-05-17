@@ -1,16 +1,21 @@
 <script lang="ts">
-	import type { TocEntry } from './types.js';
+	import type { TocEntry, TocContext } from './types.js';
+	import { getContext } from 'svelte';
 	import TocItem from './TocItem.svelte';
 
 	export let data: Array<TocEntry>;
-	export let isOpen = false;
 	export let full = false;
 	export let ordered: boolean;
 	export let prefixChar: string;
 	// mainly used to assign an unique id to recursive lists
 	export let id = '';
 
+	const ctx: TocContext = getContext('SNE_Toc');
+	let value = ctx.value;
+
 	let listType = ordered ? 'ol' : 'ul';
+
+	$: isOpen = $value;
 </script>
 
 <svelte:element
@@ -29,7 +34,6 @@
 			<svelte:self
 				data={item.children}
 				bind:ordered
-				bind:isOpen
 				bind:full
 				id="{idx}-nested"
 				{prefixChar}

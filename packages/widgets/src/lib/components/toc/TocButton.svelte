@@ -1,14 +1,21 @@
 <script lang="ts">
+	import type { TocContext } from './types';
 	import { onMount } from 'svelte';
+	import { getContext } from 'svelte';
+	import { Button } from '@sveltinio/essentials/button';
 	import TocIcon from './TocIcon.svelte';
+
+	const ctx: TocContext = getContext('SNE_Toc');
+	let value = ctx.value;
 
 	export let label: string;
 	export let iconOnly: boolean;
 	export let labelOnly: boolean;
-	export let isOpen: boolean;
 
 	// @media (min-width: 640px)
 	let breakpoint = 640;
+
+	$: isOpen = $value;
 	$: innerWidth = 0;
 	$: isMobile = innerWidth <= breakpoint ? true : false;
 
@@ -19,7 +26,7 @@
 
 <svelte:window bind:innerWidth />
 
-<button
+<Button
 	class="btn"
 	aria-label={label}
 	aria-haspopup="true"
@@ -36,4 +43,4 @@
 	{#if !iconOnly && !isMobile}
 		<span>{label}</span>
 	{/if}
-</button>
+</Button>
