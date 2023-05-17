@@ -7,7 +7,7 @@
 	import { writable } from 'svelte/store';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils';
-	import { a11yKeyboardAction } from './a11yKeyboard.js';
+	import { a11yKeyboardAction } from './a11y-keyboard.js';
 
 	export let activeTab = '1';
 	export let size = 'base';
@@ -90,6 +90,7 @@
 		class:tab__panel--bordered={bordered}
 		role="tabpanel"
 		aria-labelledby={activeTab}
+		aria-current="page"
 		data-testid="tab_panel-{activeTab}"
 	>
 		<slot />
