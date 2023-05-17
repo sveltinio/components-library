@@ -7,8 +7,6 @@ const config = {
 	server: {
 		port: 3005,
 		fs: {
-			// Allow serving files from one level up to the project root
-			// Alternatevaly set server.fs.strict to false
 			allow: ['..']
 		}
 	},
@@ -24,7 +22,11 @@ const config = {
 		globals: true,
 		reporters: ['dot'],
 		silent: true,
-		environment: 'jsdom'
+		environment: 'jsdom',
+		deps: {
+			// https://github.com/vitest-dev/vitest/issues/3191
+			inline: [/essentials\/dist/]
+		}
 	},
 	ssr: { noExternal: ['@indaco/svelte-iconoir/**'] }
 };
