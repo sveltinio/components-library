@@ -3,8 +3,8 @@
 	import '../../styles/components/responsive-card/variables.css';
 	import '../../styles/components/responsive-card/styles.css';
 	import '../../styles/components/responsive-card/badge.css';
+	import { retrieveCssClassNames } from '$lib/utils';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { contains } from '@sveltinio/ts-utils/collections';
 	import CardTitle from './CardTitle.svelte';
 	import CardTitleLink from './CardTitleLink.svelte';
 	import CardContent from './CardContent.svelte';
@@ -22,23 +22,13 @@
 		throw new Error(cssStyles.error.message);
 	}
 
-	/** ********************************************** **/
-	const reservedCssClasses = [
-		'sn-w-colors',
-		'sn-w-c-sw__responsivecard-vars',
-		'sn-w-c-sw__responsivecard'
-	];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
+	// avoid hacking reserverd css classes
+	const reservedNames = ['sn-w-colors', 'sn-w-c-responsivecard-vars', 'sn-w-c-responsivecard'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 </script>
 
 <div
-	class="sn-w-colors sn-w-c-responsivecard-vars sn-w-c-responsivecard {className}"
+	class="sn-w-colors sn-w-c-responsivecard-vars sn-w-c-responsivecard {cssClasses}"
 	style={cssStyles.value}
 	data-testid="responsivecard_main"
 >

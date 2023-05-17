@@ -3,8 +3,8 @@
 	import '../../styles/components/pages-navigator/variables.css';
 	import '../../styles/components/pages-navigator/styles.css';
 	import type { PagesNavigatorItem } from './types.js';
+	import { retrieveCssClassNames } from '$lib/utils';
 	import { mapToCssVars, hasProperties } from '@sveltinio/ts-utils/objects';
-	import { contains } from '@sveltinio/ts-utils/collections';
 	import Spacer from './Spacer.svelte';
 	import Previous from './Previous.svelte';
 	import Next from './Next.svelte';
@@ -30,19 +30,13 @@
 
 	const mandatoryKeys = ['label', 'href'];
 
-	/** ********************************************** **/
-	const reservedCssClasses = ['sn-w-colors sn-w-c-pagesnav-vars sn-w-c-pagesnav'];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
+	// avoid hacking reserverd css classes
+	const reservedNames = ['sn-w-colors sn-w-c-pagesnav-vars sn-w-c-pagesnav'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 </script>
 
 <nav
-	class="sn-w-colors sn-w-c-pagesnav-vars sn-w-c-pagesnav {className}"
+	class="sn-w-colors sn-w-c-pagesnav-vars sn-w-c-pagesnav {cssClasses}"
 	class:pagesnav__spacer--bottom={!prev.href || !next.href}
 	style={cssStyles.value}
 	aria-label="Pages navigation"

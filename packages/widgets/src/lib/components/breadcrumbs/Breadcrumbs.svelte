@@ -2,11 +2,11 @@
 	import '../../styles/base.css';
 	import '../../styles/components/breadcrumbs/variables.css';
 	import '../../styles/components/breadcrumbs/styles.css';
+	import { retrieveCssClassNames } from '$lib/utils';
 	import { isEmpty } from '@sveltinio/ts-utils/is';
 	import { capitalize, toTitle } from '@sveltinio/ts-utils/strings';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { pathSegments } from '@sveltinio/ts-utils/urls';
-	import { contains } from '@sveltinio/ts-utils/collections';
 
 	export let url = '';
 	export let showRootOnly = false;
@@ -35,19 +35,13 @@
 		throw new Error(cssStyles.error.message);
 	}
 
-	/** ********************************************** **/
-	const reservedCssClasses = ['sn-w-colors', 'sn-w-c-breadcrumbs-vars', 'sn-w-c-breadcrumbs'];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
+	// avoid hacking reserverd css classes
+	const reservedNames = ['sn-w-colors', 'sn-w-c-breadcrumbs-vars', 'sn-w-c-breadcrumbs'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 </script>
 
 <nav
-	class="sn-w-colors sn-w-c-breadcrumbs-vars sn-w-c-breadcrumbs {className}"
+	class="sn-w-colors sn-w-c-breadcrumbs-vars sn-w-c-breadcrumbs {cssClasses}"
 	style={cssStyles.value}
 	aria-label="Breadcrumb"
 	data-testid="breadcrumbs_main"

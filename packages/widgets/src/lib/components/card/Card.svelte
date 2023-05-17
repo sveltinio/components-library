@@ -2,8 +2,8 @@
 	import '../../styles/base.css';
 	import '../../styles/components/card/variables.css';
 	import '../../styles/components/card/styles.css';
+	import { retrieveCssClassNames } from '$lib/utils';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { contains } from '@sveltinio/ts-utils/collections';
 	import CardContent from './CardContent.svelte';
 	import CardTitle from './CardTitle.svelte';
 	import CardTitleLink from './CardTitleLink.svelte';
@@ -21,19 +21,13 @@
 		throw new Error(cssStyles.error.message);
 	}
 
-	/** ********************************************** **/
-	const reservedCssClasses = ['sn-w-colors', 'sn-w-c-card-vars', 'sn-w-c-card'];
-	const cssClassesArray = String($$props.class).split(' ');
-
-	$: className = '';
-	// avoid hacking default class names
-	$: cssClassesArray.some((v) => contains(reservedCssClasses, v))
-		? (className = '')
-		: (className = $$props.class);
+	// avoid hacking reserverd css classes
+	const reservedNames = ['sn-w-colors', 'sn-w-c-card-vars', 'sn-w-c-card'];
+	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 </script>
 
 <div
-	class="sn-w-colors sn-w-c-card-vars sn-w-c-card {className}"
+	class="sn-w-colors sn-w-c-card-vars sn-w-c-card {cssClasses}"
 	style={cssStyles.value}
 	data-testid="card_main"
 >
