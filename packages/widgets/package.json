@@ -146,11 +146,6 @@
 			"svelte": "./dist/components/card/CardTitleLink.svelte",
 			"default": "./dist/components/card/CardTitleLink.svelte"
 		},
-		"./navbar": {
-			"types": "./dist/components/navbar/index.d.ts",
-			"svelte": "./dist/components/navbar/index.js",
-			"default": "./dist/components/navbar/index.js"
-		},
 		"./pages-navigator": {
 			"types": "./dist/components/pages-navigator/index.d.ts",
 			"svelte": "./dist/components/pages-navigator/index.js",
