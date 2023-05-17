@@ -12,3 +12,7 @@ The two component properties `styles` and `class` are the ones allowing you to c
 ## CSS Variables
 
 The CSS variables are defined in the [variables.css](../../styles/components/scroll-to-top/variables.css) file.
+
+<!-- Resources -->
+[style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
+[Design Rules]: https://github.com/sveltinio/components-library/blob/main/docs/design-rules.md
