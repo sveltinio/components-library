@@ -1,6 +1,8 @@
 # Tabs
 
-The `Tabs` component an accessible ([WAI-ARIA Accessibility Reference]) component that display one panel of content at a time. It supports different variants and sizes:
+The `Tabs` component an accessible Svelte component implementing the [WAI-ARIA Tabs Pattern] to display one panel of content at a time.
+
+It supports different variants and sizes:
 
 - **types**: `default`, `bordered`
 - **sizes**: `xs`, `sm`, `base` (default), `md`, `lg` and `full`
@@ -84,6 +86,10 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 | :--- | :-----: | :------: | :-------------- |
 |      | ✓       |    ✗     | `Tab` component |
 
+## Keyboard Interaction
+
+See the [Keyboard Interaction] section for the [WAI-ARIA Tabs Pattern].
+
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
@@ -93,5 +99,6 @@ The two component properties `styles` and `class` are the ones allowing you to c
 Read more [here](./THEMING.md)
 
 <!-- Resources -->
+[WAI-ARIA Tabs Pattern]: https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/
+[Keyboard Interaction]: https://www.w3.org/WAI/ARIA/apg/patterns/tabs/#keyboardinteraction
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
-[WAI-ARIA Accessibility Reference]: https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/

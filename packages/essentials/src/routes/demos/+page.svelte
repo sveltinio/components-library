@@ -5,37 +5,41 @@
 		{
 			name: 'Button',
 			headline:
-				'Interactive and accessible component activated by a user to perform an action',
+				'Interactive and accessible widget component activated by a user to perform an action.',
 			url: 'demos/button'
 		},
 		{
 			name: 'ButtonGroup',
-			headline: 'Accessible component as a container for grouping a set of buttons.',
+			headline: 'Accessible widget as a container for grouping a set of buttons.',
 			url: 'demos/button-group'
 		},
 		{
 			name: 'ColorViewer',
-			headline: 'Render a colorful circle with the label set to the color value.',
+			headline:
+				'A widget component to render a colorful circle with the label set to the color value.',
 			url: 'demos/color'
 		},
 		{
 			name: 'Dropdown',
-			headline: 'Open a menu when the button is clicked and displays a menu of link targets.',
+			headline:
+				'A widget component as menu button that opens a menu of items that behave as links.',
 			url: 'demos/dropdown'
 		},
 		{
 			name: 'Link',
-			headline: 'Provide an interactive reference to a resource either external or local.',
+			headline:
+				'A widget component providing an interactive reference to a resource (external or local).',
 			url: 'demos/link'
 		},
 		{
-			name: 'List',
-			headline: 'Presents a list of options and allows a user to select one them.',
+			name: 'ToggleList',
+			headline:
+				'A widget component that enables content to be either collapsed or expanded .',
 			url: 'demos/list'
 		},
 		{
 			name: 'Tabs',
-			headline: 'A set of tab elements and their associated tab panels.',
+			headline: 'A widget component to display one panel of content at a time.',
 			url: 'demos/tabs'
 		}
 	];

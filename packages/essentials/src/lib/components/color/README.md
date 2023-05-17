@@ -1,6 +1,6 @@
 # ColorViewer
 
-A simple utility component to render a colorful circle with the label set to the color value.
+A widget to render a colorful circle with the label set to the color value.
 
 ## Examples
 

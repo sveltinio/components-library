@@ -1,6 +1,6 @@
 # Link
 
-The `Link` component defines a hyperlink used to link an internal or external resource. It accepts and render any child component using the **Svelte slot**.
+The `Link` is an accessible Svelte component implementing the [WAI-ARIA Link Pattern]. It provides an interactive reference to an internal or external resource. It accepts and render any child component using the **Svelte slot**.
 
 ## Examples
 
@@ -45,6 +45,10 @@ The `Link` component exposes a set of properties but it does not prevent you to 
 | :----- | :-----: | :------: |
 | `icon` | ✗       |    ✓     |
 
+## Keyboard Interaction
+
+See the [Keyboard Interaction] section for the [WAI-ARIA Link Pattern].
+
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
@@ -52,4 +56,6 @@ To simplify custom styles on the component we used the built-in solution for com
 The CSS variables are defined in the [variables.css](./variables.css) file.
 
 <!-- Resources -->
+[WAI-ARIA Link Pattern]: https://www.w3.org/WAI/ARIA/apg/patterns/link/
+[Keyboard Interaction]: https://www.w3.org/WAI/ARIA/apg/patterns/link/#keyboardinteraction
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props

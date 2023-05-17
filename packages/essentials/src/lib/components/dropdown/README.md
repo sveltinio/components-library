@@ -1,6 +1,6 @@
 # Dropdown
 
-The `Dropdown` is an accessible ([WAI-ARIA Accessibility Reference]) menu button component acting as navigation menu button that opens a menu of items that behave as links.
+The `Dropdown` is an accessible Svelte component implementing the [WAI-ARIA Menu Button Pattern]. It acts as navigation menu button that opens a menu of items that behave as links.
 
 It is made up by combining the `Dropdown`, `DropdownButton`, `DropdownContent`, and `DropdownItem` components.
 
@@ -86,6 +86,10 @@ The `DropdownItem` component exposes the following properties:
 | :-------- | :-----: | :------: |
 | `btnIcon` | ✗       |    ✓     |
 
+## Keyboard Interaction
+
+See the [Keyboard Interaction] section for the [WAI-ARIA Menu Button Pattern].
+
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
@@ -95,5 +99,6 @@ The two component properties `styles` and `class` are the ones allowing you to c
 Read more [here](./THEMING.md)
 
 <!-- Resources -->
+[WAI-ARIA Menu Button Pattern]: https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/
+[Keyboard Interaction]: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/#keyboardinteraction
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
-[WAI-ARIA Accessibility Reference]: https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/

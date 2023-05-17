@@ -1,6 +1,6 @@
 # ToggleList
 
-The **ToggleList** is an accessible component used to includes a toggle list within the page.
+The **ToggleList** is an accessible Svelte component implementint the [WAI-ARIA Disclosure (Show/Hide) Pattern] and used to enables content to be either collapsed (hidden) or expanded (visible).
 
 ## Examples
 
@@ -66,6 +66,10 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 | `leftSideIcon`  | ✗       |    ✗     |
 | `rightSideIcon` | ✗       |    ✓     |
 
+## Keyboard Interaction
+
+See the [Keyboard Interaction] section for the [WAI-ARIA Disclosure (Show/Hide) Pattern].
+
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
@@ -75,5 +79,7 @@ The two component properties `styles` and `class` are the ones allowing you to c
 Read more [here](./THEMING.md)
 
 <!-- Resources -->
-[style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
+[WAI-ARIA Disclosure (Show/Hide) Pattern]: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/
 [ListItem]: https://github.com/sveltinio/components-library/blob/358ffd124face5e321b67b528260ee646c60fc30/packages/essentials/src/lib/components/list/types.ts#L1
+[Keyboard Interaction]: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/#kbd_label
+[style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props

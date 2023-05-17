@@ -1,6 +1,6 @@
 # Button
 
-The `Button` is an interactive and accessible ([WAI-ARIA Accessibility Reference]) component activated by a user to perform an action. It can be a pure `button` or a link `a`.
+The `Button` is an interactive and accessible Svelte component implementing the [WAI-ARIA Button Pattern] and enabling users to trigger an action. It can be a pure `button` or a link `a`.
 
 It supports different:
 
@@ -87,6 +87,10 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 | `on:click`   | dispatched | `<button>`             |                  | `{ event }`       | Activates the button |
 | `on:keydown` | dispatched | `<a>` <br/> `<button>` | `Enter`, `Space` | <br/> `{ event }` | Activates the button |
 
+## Keyboard Interaction
+
+See the [Keyboard Interaction] section for the [WAI-ARIA Button Pattern].
+
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
@@ -96,5 +100,6 @@ The two component properties `styles` and `class` are the ones allowing you to c
 Read more [here](./THEMING.md)
 
 <!-- Resources -->
+[WAI-ARIA Button Pattern]: https://www.w3.org/WAI/ARIA/apg/patterns/button/
+[Keyboard Interaction]: https://www.w3.org/WAI/ARIA/apg/patterns/button/#keyboardinteraction
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
-[WAI-ARIA Accessibility Reference]: https://www.w3.org/WAI/ARIA/apg/patterns/button/

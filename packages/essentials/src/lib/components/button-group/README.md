@@ -1,6 +1,6 @@
 # ButtonGroup
 
-The `ButtonGroup` is an accessible (WAI-ARIA Accessibility Reference [1], [2]) component as a container for grouping a set of buttons.
+The `ButtonGroup` is an accessible widget as a container for grouping a set of buttons where buttons implement the [WAI-ARIA Button Pattern].
 
 ## Examples
 
@@ -72,6 +72,10 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 | `on:click`   | dispatched | `<button>` |                  | `{ event }` | Activates the button |
 | `on:keydown` | dispatched | `<button>` | `Enter`, `Space` | `{ event }` | Activates the button |
 
+## Keyboard Interaction
+
+See the [Keyboard Interaction] section for the [WAI-ARIA Button Pattern].
+
 ## Theming
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
@@ -81,6 +85,6 @@ The two component properties `styles` and `class` are the ones allowing you to c
 Read more [here](./THEMING.md)
 
 <!-- Resources -->
+[WAI-ARIA Button Pattern]: https://www.w3.org/WAI/ARIA/apg/patterns/button/
+[Keyboard Interaction]: https://www.w3.org/WAI/ARIA/apg/patterns/button/#keyboardinteraction
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props
-[1]: https://www.w3.org/WAI/ARIA/apg/patterns/button/
-[2]: https://www.w3.org/WAI/ARIA/apg/example-index/radio/radio
