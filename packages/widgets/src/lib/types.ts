@@ -1,3 +1,18 @@
+export type BreakpointMatch = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+
+export type Screens = {
+	[key in BreakpointMatch]: {
+		min: string;
+		max?: string;
+	};
+};
+
+export type BreakpointsQueries = {
+	[key in keyof Screens]?: boolean;
+};
+
+export type CSSPositionMatch = 'relative' | 'fixed' | 'sticky';
+
 export type ResourceContent = {
 	resource: string;
 	metadata: YAMLFrontmatter;
@@ -47,21 +62,3 @@ export type YAMLFrontmatter = {
 
 import type { CardBadge } from './components/responsive-card/types.js';
 export type { CardBadge };
-
-export type breakpoints = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-
-export type visibleAtBreakpoints = {
-	xs?: boolean;
-	sm?: boolean;
-	md?: boolean;
-	lg?: boolean;
-	xl?: boolean;
-};
-
-export type cssClasses = {
-	xs?: string[];
-	sm?: string[];
-	md?: string[];
-	lg?: string[];
-	xl?: string[];
-};
