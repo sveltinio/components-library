@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- fix(**list): external link handler
+- fix(**list**): external link handler
 - chore(**list**): remove `console.log` call
 - chore: dev deps updated
 - docs(**tabs**): fix typo in README.md
