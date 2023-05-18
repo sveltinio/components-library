@@ -63,7 +63,6 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	const setFocusOnLastItem = () => setFocusOnItem(lastMenuItem);
 
 	const setFocusOnPreviousItem = (currentMenuItem: HTMLLinkElement) => {
-		console.log(currentMenuItem);
 		let newMenuitem, index;
 		resetDefaultCssClasses(listItems);
 
