@@ -1,6 +1,6 @@
 # Tabs
 
-The `Tabs` component an accessible Svelte component implementing the [WAI-ARIA Tabs Pattern] to display one panel of content at a time.
+The `Tabs` component is an accessible Svelte component implementing the [WAI-ARIA Tabs Pattern] to display one panel of content at a time.
 
 It supports different variants and sizes:
 
