@@ -1,11 +1,20 @@
 # @sveltinio/essentials
 
+## 0.7.4
+
+### Patch Changes
+
+- fix(**list): external link handler
+- chore(**list**): remove `console.log` call
+- chore: dev deps updated
+- docs(**tabs**): fix typo in README.md
+
 ## 0.7.3
 
 ### Patch Changes
 
 - fix(**button**): allow additional props with `restProps`
-- fix(**buttongroup): declaration-property-value-no-unknown
+- fix(**buttongroup**): declaration-property-value-no-unknown
 - fix(**link**): rel and target attributes when external
 - refactor: use svelte action for keyboard interaction in `Dropdown`, `ToggleList` and `Tabs`
 - style(color): set `aspect-ratio: 1;`
@@ -18,8 +27,8 @@
 ### Patch Changes
 
 - refactor(**link**): `prefetch` as prop to set `data-sveltekit-preload-data` on links
-- chore: deps updated
-- docs(link/README): updated
+- chore: dev deps updated
+- docs(**link**): update README
 
 ## 0.7.1
 
@@ -27,7 +36,7 @@
 
 - fix(dropdown/DropdownContent.svelte): A11Y non-interactive element <ul> cannot have interactive role 'menu'
 - fix: remove utils.js from the exports map on package.json
-- chore: deps updated
+- chore: dev deps updated
 - docs: updated to reflect changes on how to properly import and use the components
 
 ## 0.7.0
