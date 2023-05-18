@@ -7,7 +7,6 @@
 	export let item: ListItem;
 	export let iconSize = '20px';
 
-	export let external: boolean;
 	export let prefetch = false;
 	export let noOpener = true;
 	export let noReferrer = true;
@@ -23,7 +22,7 @@
 	const target = item.external ? '_blank' : '_self';
 
 	onMount(() => {
-		if (external) {
+		if (item.external) {
 			aElem.setAttribute('target', '_blank');
 
 			let relOptions = ['external'];
