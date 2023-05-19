@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PagesNavigatorItem } from './types.js';
+	import type { PagesNavigatorItem } from '../types.js';
 
 	export let prev: PagesNavigatorItem;
 	export let next: PagesNavigatorItem;

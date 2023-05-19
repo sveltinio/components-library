@@ -5,9 +5,7 @@
 	import type { PagesNavigatorItem } from './types.js';
 	import { retrieveCssClassNames } from '$lib/utils';
 	import { mapToCssVars, hasProperties } from '@sveltinio/ts-utils/objects';
-	import Spacer from './Spacer.svelte';
-	import Previous from './Previous.svelte';
-	import Next from './Next.svelte';
+	import { Next, Previous, Spacer } from './partials/index.js';
 
 	export let prev: PagesNavigatorItem;
 	export let next: PagesNavigatorItem;

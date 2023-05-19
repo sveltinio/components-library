@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PagesNavigatorItem } from './types.js';
+	import type { PagesNavigatorItem } from '../types.js';
 	import { isDefined } from '@sveltinio/ts-utils/is';
 	import { hasProperties } from '@sveltinio/ts-utils/objects';
 	import { capitalize } from '@sveltinio/ts-utils/strings';
@@ -17,19 +17,19 @@
 		labels = true;
 	}
 
-	let nextTitle = next.title ?? next.label;
+	let prevTitle = prev.title ?? prev.label;
 
 	const placeholderTxt = () => {
-		return isDefined(next.placeholder)
-			? capitalize(next.placeholder)
+		return isDefined(prev.placeholder)
+			? capitalize(prev.placeholder)
 					.map((v) => v)
 					.mapErr((e) => {
 						throw new Error(e.message);
 					})
-			: 'Next';
+			: 'Prev';
 	};
 
-	const isNextOnly = hasProperties(prev, ['label', 'href'])
+	const isPrevOnly = hasProperties(next, ['label', 'href'])
 		.map((v) => v)
 		.mapErr((e) => {
 			throw new Error(e.message);
@@ -38,26 +38,27 @@
 
 <a
 	data-sveltekit-preload-data={prefetch}
-	href={next.href}
-	title="link to {nextTitle}"
+	href={prev.href}
+	title="link to {prevTitle}"
 	class="link"
-	class:next__only={!isNextOnly}
-	class:next__only--with-spacer={spacer && !isNextOnly}
-	aria-label="link to {nextTitle}"
-	data-testid="link_to_next"
+	class:prev__only={!isPrevOnly}
+	class:prev__only--with-spacer={spacer && !isPrevOnly}
+	aria-label="link to {prevTitle}"
+	data-testid="link_to_previous"
 >
 	<div class="content">
-		<div class="content__next">
+		<!-- prevIcon slot-->
+		<slot />
+
+		<div class="content__previous">
 			{#if placeholders}
 				<span class="content__placeholder">{placeholderTxt()}</span>
 			{/if}
 			{#if labels}
-				<p class="content__message" data-testid="next_message_text">
-					{next.label}
+				<p class="content__message" data-testid="previous_message_text">
+					{prev.label}
 				</p>
 			{/if}
 		</div>
-		<!-- nextIcon slot-->
-		<slot />
 	</div>
 </a>
