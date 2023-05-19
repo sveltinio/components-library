@@ -21,6 +21,8 @@
 	export let prefetch = false;
 	export let external = false;
 
+	const className: string | undefined = undefined;
+	export { className as class };
 	export let styles = {};
 
 	let htmlElem: HTMLElement;
