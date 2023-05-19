@@ -29,7 +29,7 @@
 		"url": "https://github.com/sveltinio/components-library/issues"
 	},
 	"dependencies": {
-		"@sveltinio/essentials": "workspace:^",
+		"@sveltinio/essentials": "^0.7.6",
 		"@sveltinio/ts-utils": "^0.8.0",
 		"svelte": "^3.59.1"
 	},
