@@ -17,7 +17,7 @@
 
 <section role="contentinfo">
 	<div class="actions">
-		<a class="btn-back" href="/demos">← Return To The Demos</a>
+		<a class="btn-back" href="/">← Back to the Demos page</a>
 	</div>
 
 	<div id="youtube-default-wrapper" class="demo-wrapper">

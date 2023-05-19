@@ -13,6 +13,10 @@
 
 A collection of type-safe Svelte components to easily embed media contents in your Svelte and SvelteKit projects.
 
+## Demos
+
+You can see live demos [here](https://www.sveltelab.dev/h57nt8jpieokw1n) or if you clone the repos by running `pnpm dev`
+
 ### Components List
 
 - [CodePen]
@@ -35,12 +39,6 @@ npm install @sveltinio/media-content
 
 # yarn
 yarn add @sveltinio/media-content
-```
-
-## Demos
-
-```bash
-pnpm dev
 ```
 
 ## License
