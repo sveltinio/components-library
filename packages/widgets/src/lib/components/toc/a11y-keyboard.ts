@@ -1,6 +1,7 @@
 import { tick } from 'svelte';
 import type { Action } from 'svelte/action';
 import type { TocContext } from './types';
+import { isChar } from '$lib/utils.js';
 
 export type A11yKeyboardActionOptions = {
 	enabled: boolean;
@@ -93,9 +94,13 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 		// Check remaining items
 		index = firstChars.indexOf(c, start);
 		// If not in remaining, check from beginning
-		if (index === -1) index = firstChars.indexOf(c, 0);
+		if (index === -1) {
+			index = firstChars.indexOf(c, 0);
+		}
 		// Found
-		if (index > -1) setFocusOnItem(tocItemNodes[index]);
+		if (index > -1) {
+			setFocusOnItem(tocItemNodes[index]);
+		}
 	};
 
 	/** Event handlers **/
@@ -133,11 +138,6 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 		e.stopPropagation();
 		e.preventDefault();
 		const target = e.currentTarget as HTMLLinkElement;
-
-		const isChar = (txt: string): boolean => {
-			const charsRegex = /\S/;
-			return txt.length === 1 && charsRegex.test(txt);
-		};
 
 		if (e.shiftKey) {
 			if (isChar(e.key)) {
@@ -180,7 +180,7 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	};
 
 	const onTOCItemMouseOver = (e: MouseEvent) => {
-		const target = e.currentTarget as HTMLHtmlElement;
+		const target = e.currentTarget as HTMLElement;
 		target.focus();
 	};
 
@@ -211,9 +211,14 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	return {
 		update(params) {
 			if (params.enabled) {
-				console.log('enabled');
+				//
 			}
 		},
-		destroy() {}
+		destroy() {
+			itemNodes.forEach((item) => {
+				item.removeEventListener('keydown', onTOCItemKeydown);
+				item.removeEventListener('mouseover', onTOCItemMouseOver);
+			});
+		}
 	};
 };

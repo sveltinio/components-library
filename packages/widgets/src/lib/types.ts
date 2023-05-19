@@ -19,28 +19,6 @@ export type ResourceContent = {
 	html?: string;
 };
 
-export class ResourceContentUtils {
-	static getCoverPath(resourcesFolder: string, item: ResourceContent): string {
-		if (item.metadata && item.metadata.cover != undefined) {
-			return `${resourcesFolder}/${item.resource}/${item.metadata.slug}/${item.metadata.cover}`;
-		}
-		return '';
-	}
-
-	static getURL(base: string, item: ResourceContent): string {
-		return `${base}/${item.resource}/${item.metadata.slug}`;
-	}
-
-	static getMetadataURL(
-		base: string,
-		resourceName: string,
-		mdName: string,
-		mdValue: string
-	): string {
-		return `${base}/${resourceName}/${mdName}/${mdValue}`;
-	}
-}
-
 import type { TocEntry } from './components/toc/types.js';
 export type { TocEntry };
 
@@ -62,3 +40,6 @@ export type YAMLFrontmatter = {
 
 import type { CardBadge } from './components/responsive-card/types.js';
 export type { CardBadge };
+
+import type { MenuBarItem } from './components/menubar/types.js';
+export { MenuBarItem };

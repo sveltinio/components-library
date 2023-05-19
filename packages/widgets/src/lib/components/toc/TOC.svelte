@@ -3,14 +3,13 @@
 	import '../../styles/components/toc/variables.css';
 	import '../../styles/components/toc/styles.css';
 	import type { TocContext, TocEntry } from './types.js';
-	import { retrieveCssClassNames } from '$lib/utils';
-	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import TocList from './TocList.svelte';
-	import TocButton from './TocButton.svelte';
-	import { clickOutsideAction } from '$lib/actions.js';
-	import { a11yKeyboardAction } from './a11y-keyboard.js';
 	import { writable } from 'svelte/store';
 	import { setContext } from 'svelte';
+	import { retrieveCssClassNames } from '$lib/utils';
+	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
+	import { TocButton, TocList } from './partials/index.js';
+	import { clickOutsideAction } from '$lib/actions.js';
+	import { a11yKeyboardAction } from './a11y-keyboard.js';
 
 	export let data: Array<TocEntry>;
 	export let label = 'Table of Contents';

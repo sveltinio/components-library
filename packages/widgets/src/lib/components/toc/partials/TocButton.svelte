@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { TocContext } from './types';
+	import type { TocContext } from '../types';
 	import { onMount } from 'svelte';
 	import { getContext } from 'svelte';
 	import { Button } from '@sveltinio/essentials/button';
-	import TocIcon from './TocIcon.svelte';
+	import { TocIcon } from './index.js';
 
 	const ctx: TocContext = getContext('SNE_Toc');
 	let value = ctx.value;

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { TocEntry, TocContext } from './types.js';
+	import type { TocEntry, TocContext } from '../types.js';
 	import { getContext } from 'svelte';
-	import TocItem from './TocItem.svelte';
+	import { TocItem } from './index.js';
 
 	export let data: Array<TocEntry>;
 	export let full = false;
