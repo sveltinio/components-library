@@ -183,11 +183,6 @@
 			"svelte": "./dist/components/link/Link.svelte",
 			"default": "./dist/components/link/Link.svelte"
 		},
-		"./components/ExternalLinkIcon.svelte": {
-			"types": "./dist/components/link/ExternalLinkIcon.svelte.d.ts",
-			"svelte": "./dist/components/link/ExternalLinkIcon.svelte",
-			"default": "./dist/components/link/ExternalLinkIcon.svelte"
-		},
 		"./list": {
 			"types": "./dist/components/list/index.d.ts",
 			"svelte": "./dist/components/list/index.js",
@@ -196,21 +191,6 @@
 		"./list/types": {
 			"types": "./dist/components/list/types.d.ts",
 			"default": "./dist/components/list/types.js"
-		},
-		"./components/Item.svelte": {
-			"types": "./dist/components/list/Item.svelte.d.ts",
-			"svelte": "./dist/components/list/Item.svelte",
-			"default": "./dist/components/list/Item.svelte"
-		},
-		"./components/List.svelte": {
-			"types": "./dist/components/list/List.svelte.d.ts",
-			"svelte": "./dist/components/list/List.svelte",
-			"default": "./dist/components/list/List.svelte"
-		},
-		"./components/ToggleButton.svelte": {
-			"types": "./dist/components/list/ToggleButton.svelte.d.ts",
-			"svelte": "./dist/components/list/ToggleButton.svelte",
-			"default": "./dist/components/list/ToggleButton.svelte"
 		},
 		"./components/ToggleList.svelte": {
 			"types": "./dist/components/list/ToggleList.svelte.d.ts",
