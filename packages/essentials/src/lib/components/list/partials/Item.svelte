@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { activeAction } from '$lib/actions.js';
 	import { onMount } from 'svelte';
-	import type { ListItem } from './types';
+	import type { ListItem } from '../types.js';
 
 	export let id: number;
 	export let item: ListItem;

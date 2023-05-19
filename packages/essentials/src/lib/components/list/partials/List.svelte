@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
-	import Item from './Item.svelte';
-	import type { ListItem, ToggleListContext } from './types.js';
+	import { Item } from './index.js';
+	import type { ListItem, ToggleListContext } from '../types.js';
 
 	const ctx: ToggleListContext = getContext('SNE_ToggleList');
 	let value = ctx.value;

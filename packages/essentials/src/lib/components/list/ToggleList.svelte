@@ -8,8 +8,7 @@
 	import { a11yKeyboardAction } from './a11y-keyboard.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils';
-	import ToggleButton from './ToggleButton.svelte';
-	import List from './List.svelte';
+	import { ToggleButton, List } from './partials/index.js';
 
 	export let title: string;
 	export let items: Array<ListItem>;

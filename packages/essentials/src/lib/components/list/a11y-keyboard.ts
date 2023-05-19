@@ -1,20 +1,13 @@
 import { tick } from 'svelte';
 import type { Action } from 'svelte/action';
 import type { ToggleListContext } from './types';
+import { addCssClass, resetFocusClass } from '$lib/utils.js';
 
 interface A11yKeyboardActionOptions {
 	enabled: boolean;
 	isOpen?: boolean;
 	ctx?: ToggleListContext;
 }
-
-const addCssClass = (item: HTMLElement, className: string) => item.classList.add(className);
-
-const removeCssClass = (item: HTMLElement, className: string) => item.classList.remove(className);
-
-const resetDefaultCssClasses = (items: HTMLLIElement[]) => {
-	items.forEach((item) => removeCssClass(item, 'focus'));
-};
 
 export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> = (
 	node,
@@ -44,7 +37,7 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 
 	const setFocusOnItem = (item: HTMLElement) => {
 		menuItemNodes.forEach(async (itemNode) => {
-			resetDefaultCssClasses(listItems);
+			resetFocusClass(listItems);
 			if (itemNode === item) {
 				itemNode.tabIndex = 0;
 				await tick();
@@ -64,7 +57,7 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 
 	const setFocusOnPreviousItem = (currentMenuItem: HTMLLinkElement) => {
 		let newMenuitem, index;
-		resetDefaultCssClasses(listItems);
+		resetFocusClass(listItems);
 
 		if (currentMenuItem === firstMenuItem) {
 			newMenuitem = firstMenuItem;
@@ -79,7 +72,7 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 
 	const setFocusOnNextItem = (currentMenuItem: HTMLLinkElement) => {
 		let newMenuitem, index;
-		resetDefaultCssClasses(listItems);
+		resetFocusClass(listItems);
 
 		if (currentMenuItem === lastMenuItem) {
 			newMenuitem = lastMenuItem;
