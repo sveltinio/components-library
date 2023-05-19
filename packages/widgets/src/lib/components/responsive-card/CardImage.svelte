@@ -1,16 +1,10 @@
 <script lang="ts">
 	import type { BreakpointsQueries, BreakpointMatch } from '../../types.js';
-	import {
-		isXSmallScreen,
-		isSmallScreen,
-		isMediumScreen,
-		isLargeScreen,
-		isXLargeScreen,
-		isXXLargeScreen
-	} from '../../utils.js';
+	import { onMount } from 'svelte';
+	import { BreakpointChecker } from '../../utils.js';
 	import { isImage, filename } from '@sveltinio/ts-utils/paths';
 	import { merge, getPropertyValue } from '@sveltinio/ts-utils/objects';
-	import { onMount } from 'svelte';
+	import { isUrl } from '@sveltinio/ts-utils/urls';
 
 	export let src: string;
 	export let alt: string;
@@ -20,6 +14,8 @@
 	let titleTxt = title == '' ? alt : title;
 	let innerWidth = 0;
 
+	const bpChecker = new BreakpointChecker();
+
 	const defaultVisibility: BreakpointsQueries = {
 		xs: false,
 		sm: false,
@@ -28,7 +24,6 @@
 		xl: true,
 		'2xl': true
 	};
-
 	const _visibility = merge(defaultVisibility, setVisibility);
 
 	const isVisibleOnXSmallScreen = () => isVisibleOn('xs');
@@ -47,28 +42,28 @@
 
 <svelte:window bind:innerWidth />
 
-{#if isImage(filename(src).unwrapOr(''))}
-	{#if isXSmallScreen(innerWidth) && isVisibleOnXSmallScreen()}
+{#if isUrl(src) || isImage(filename(src).unwrapOr(''))}
+	{#if bpChecker.isXSmallScreen(innerWidth) && isVisibleOnXSmallScreen()}
 		<div class="card__image">
 			<img {src} {alt} title={titleTxt} aria-label={alt} />
 		</div>
-	{:else if isSmallScreen(innerWidth) && isVisibleOnSmallScreen()}
+	{:else if bpChecker.isSmallScreen(innerWidth) && isVisibleOnSmallScreen()}
 		<div class="card__image">
 			<img {src} {alt} title={titleTxt} aria-label={alt} />
 		</div>
-	{:else if isMediumScreen(innerWidth) && isVisibleOnMediumScreen()}
+	{:else if bpChecker.isMediumScreen(innerWidth) && isVisibleOnMediumScreen()}
 		<div class="card__image">
 			<img {src} {alt} title={titleTxt} aria-label={alt} />
 		</div>
-	{:else if isLargeScreen(innerWidth) && isVisibleOnLargeScreen()}
+	{:else if bpChecker.isLargeScreen(innerWidth) && isVisibleOnLargeScreen()}
 		<div class="card__image">
 			<img {src} {alt} title={titleTxt} aria-label={alt} />
 		</div>
-	{:else if isXLargeScreen(innerWidth) && isVisibleOnXLargeScreen()}
+	{:else if bpChecker.isXLargeScreen(innerWidth) && isVisibleOnXLargeScreen()}
 		<div class="card__image">
 			<img {src} {alt} title={titleTxt} aria-label={alt} />
 		</div>
-	{:else if isXXLargeScreen(innerWidth) && isVisibleOnXXLargeScreen()}
+	{:else if bpChecker.isXXLargeScreen(innerWidth) && isVisibleOnXXLargeScreen()}
 		<div class="card__image">
 			<img {src} {alt} title={titleTxt} aria-label={alt} />
 		</div>
