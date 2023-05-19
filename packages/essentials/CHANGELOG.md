@@ -1,5 +1,11 @@
 # @sveltinio/essentials
 
+## 0.7.5
+
+### Patch Changes
+
+- fix: `@sveltinio/ts-utils` set as dependency
+
 ## 0.7.4
 
 ### Patch Changes
