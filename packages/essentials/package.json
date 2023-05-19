@@ -295,12 +295,6 @@
 			"list/action": [
 				"./dist/components/list/action.d.ts"
 			],
-			"components/List.svelte": [
-				"./dist/components/list/List.svelte.d.ts"
-			],
-			"licomponentsst/ToggleButton.svelte": [
-				"./dist/components/list/ToggleButton.svelte.d.ts"
-			],
 			"components/ToggleList.svelte": [
 				"./dist/components/list/ToggleList.svelte.d.ts"
 			],
