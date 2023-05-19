@@ -1,5 +1,11 @@
 # @sveltinio/essentials
 
+## 0.7.7
+
+### Patch Changes
+
+- fix(**package.json**): cleanup 'typesVersions'
+
 ## 0.7.6
 
 ### Patch Changes
