@@ -1,5 +1,19 @@
 # @sveltinio/widgets
 
+## 0.7.5
+
+### Patch Changes
+
+- fix(**card**): check if `src` prop in `CardImage` is a valid URL or an image file
+- fix(**reponsive-card**): check if `src` prop in `CardImage` is a valid URL or an image file
+- fix: add `@sveltinio/ts-utils` as dependency
+- fix: remove useless entries from the exports map
+- refactor(**toc**): restructure the component folder and move utilities functions to `utils.ts`
+- refactor(**pages-navigator**): restructure the component folder
+- docs(**README.md**): add link to the [demos](https://www.sveltelab.dev/sw6o1z34sn9bn75) on SvelteLab
+- chore: update routes folder structure
+- chore: dev deps updated
+
 ## 0.7.4
 
 ### Patch Changes
@@ -18,9 +32,9 @@
 ### Patch Changes
 
 - **card**: add `prefetch` as prop to set `data-sveltekit-preload-data` on links
--**pages-navigator**: add `prefetch` as prop to set `data-sveltekit-preload-data` on links
+- **pages-navigator**: add `prefetch` as prop to set `data-sveltekit-preload-data` on links
 - **responsive-card**: add `prefetch` as prop to set `data-sveltekit-preload-data` on links
-- chore: deps updated
+- chore: dev deps updated
 - docs: READMEs updated
 
 ## 0.7.1
