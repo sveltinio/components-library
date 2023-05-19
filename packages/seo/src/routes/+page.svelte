@@ -16,9 +16,13 @@
 <JsonLdWebPage data={homePage} />
 <!-- END OF USAGE NOTE -->
 
-<section class="main">
-	<h1><tt>@sveltinio/seo</tt></h1>
-	<section class="container">
-		<h3>Inspect the head of the webpage</h3>
-	</section>
-</section>
+<div class="header">
+	<h1>@sveltinio/seo</h1>
+	<h2>Demos</h2>
+	<h3>Inspect the head of the webpage</h3>
+	<ul>
+		<li>Google Fonts</li>
+		<li>Google Analytics</li>
+		<li>Umami Analytics</li>
+	</ul>
+</div>
