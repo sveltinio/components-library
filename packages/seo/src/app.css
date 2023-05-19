@@ -1,0 +1,233 @@
+section {
+  margin: 3rem;
+}
+
+.header {
+  margin: 3rem;
+  color: hsl(215.3, 25%, 26.7%); /* slate-700 */
+  line-height: 1.5rem;
+}
+
+.header h1 {
+  font-family: "Bitter", sans-serif;
+  font-size: 2.25rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.1rem;
+  margin: 1em 0 0.5em 0;
+}
+
+.header h2 {
+  font-family: "Baloo Bhai", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 1.5rem;
+  margin: 1em 0 1.5em;
+}
+
+.header p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.header a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+.actions {
+  padding: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-back {
+  position: relative;
+  padding: 0.5rem;
+  background-color: #d9f99d;
+  color: #365314;
+  border-radius: 0.25rem;
+}
+
+/* Used on the main demo page */
+.demos-grid {
+  max-width: 1280px;
+  padding: 2.5rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.demo-card {
+  position: relative;
+  max-width: 24rem;
+  padding: 0.125rem;
+
+  border-radius: 0.5rem;
+  background: linear-gradient(to top right, #5eead4, #93c5fd);
+  box-shadow: 0 1px 3px 0 hsla(0, 0%, 0%, 0.1), 0 1px 2px -1px hsla(0, 0%, 0%, 0.1);
+}
+
+.demo-card h2 {
+  font-family: "Baloo Bhai", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.demo-card p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 1rem 0;
+}
+
+.demo-card a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+
+  display: flex;
+  color: hsl(215.3, 25%, 26.7%); /* slate-700 */
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: hsl(0, 0%, 100%); /* white */
+  padding: 1.75rem;
+  border-radius: 0.375rem;
+}
+
+.demo-card a:hover {
+  cursor: pointer;
+  background-color: hsl(210, 40%, 98%); /* slate-50 */
+}
+
+/* Used on the single component demo page */
+.demo-wrapper h3,
+.demo-content h3 {
+  padding: 0;
+  margin: 2rem 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.375rem;
+  color: hsl(215.3, 19.3%, 34.5%); /* slate-600 */
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+.demo-wrapper p,
+.demo-content p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.demo-wrapper .preview,
+.demo-content .preview {
+  display: flex;
+  width: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.demo-wrapper .column,
+.demo-content .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.demo-content {
+  margin: 2rem 0;
+}
+
+.demo-content h2 {
+  font-family: "Baloo Bhai", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* used to showcase how to use a css class for theming the pagesnavigator component */
+.pagesnav-orange {
+  --max-width: 80rem;
+  --bg-color: #fbbf24;
+  --border-t-color: #b45309;
+  --border-r-color: #b45309;
+  --border-b-color: #b45309;
+  --border-l-color: #b45309;
+  --border-tl-radius: 1rem;
+  --border-br-radius: 1rem;
+  --link-border-color: transparent;
+  --link-bg-color: transparent;
+  --link-bg-color-hover: transparent;
+  --content-bg-color-hover: #fcd34d;
+  --content-border-color: transparent;
+  --content-border-color-hover: #f59e0b;
+  --content-ml: 4px;
+  --content-mr: 4px;
+  --placeholder-color: #92400e;
+  --message-color: #92400e;
+  --icon-color: #92400e;
+}
+
+.toc-violet-theme {
+  --text-transform: uppercase;
+  --bg-color: #7c3aed; /* violet-600 */
+  --border-width: 2px;
+  --border-style: dashed;
+  --border-color: #c084fc; /* violet-400 */
+  --border-radius: 0px;
+  /* btn */
+  --btn-color: white;
+  --btn-bg-color: none;
+  --btn-bg-color-hover: #5b21b6; /* violet-800 */
+  --btn-pt: 0.375rem; /* 6px */
+  --btn-pr: 0.625rem; /* 8px */
+  --btn-pb: 0.375rem; /* 6px */
+  --btn-pl: 0.625rem; /* 8px */
+  /* list */
+  --list-style-type: none;
+  --list-width: var(--list-width, 100%);
+  --list-bg-color-hover: #c4b5fd; /* violet-300 */
+  --list-pt: 10px;
+  --list-pr: 0;
+  --list-pb: 0;
+  --list-pl: 20px;
+  /* item */
+  --item-color: white; /* slate-700 */
+  --item-text-decoration: none;
+  --item-text-decoration-hov: none;
+  --item-bg-color-hover: rgb(226, 232, 240); /* slate-200 */
+  --item-pt: 0.25rem;
+  --item-pr: 0.25rem;
+  --item-pb: 0.25rem;
+  --item-pl: 0.25rem;
+}
+
+.breadcrumbs-purple {
+  --icon-color: #8b5cf6;
+  --icon-color-hover: #4338ca;
+  --parent-color: #8b5cf6;
+  --parent-color-hover: #4338ca;
+  --current-color: #4338ca;
+}

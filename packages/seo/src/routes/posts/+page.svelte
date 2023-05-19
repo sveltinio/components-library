@@ -17,10 +17,8 @@
 <JsonLdSiteNavigationElements baseURL={website.baseURL} data={menu} />
 <!-- END OF USAGE NOTE -->
 
-<section class="main">
-	<h1><tt>@sveltinio/seo</tt></h1>
-	<h2><tt>Sample Article</tt></h2>
-	<section class="container">
-		<h3>Inspect the head of the webpage</h3>
-	</section>
-</section>
+<div class="header">
+	<h1>@sveltinio/seo</h1>
+	<h2>Sample Article</h2>
+	<h3>Inspect the head of the webpage</h3>
+</div>

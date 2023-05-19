@@ -13,6 +13,10 @@
 
 A collection of types SEO related Svelte components to easily add structured SEO data to pages in Svelte & SvelteKit.
 
+## Demos
+
+You can see live demos [here](https://www.sveltelab.dev/1omlyex216bwf75) or if you clone the repos by running `pnpm dev`
+
 ## Components List
 
 ### Metadata
@@ -37,12 +41,6 @@ npm install @sveltinio/seo
 
 # yarn
 yarn add @sveltinio/seo
-```
-
-## Demos
-
-```bash
-pnpm dev
 ```
 
 ## License
