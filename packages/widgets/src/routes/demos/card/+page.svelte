@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { assets, base } from '$app/paths';
+	import { base } from '$app/paths';
 	import { Card, CardAction, CardImage } from '$lib/index.js';
 	import { contentItem_1, contentItem_2, contentItem_3 } from '../../../data/sample.js';
 </script>
@@ -11,7 +11,7 @@
 
 <section role="contentinfo">
 	<div class="actions">
-		<a class="btn-back" href="/demos">← Return To The Demos</a>
+		<a class="btn-back" href="/">← Back to the Demos page</a>
 	</div>
 
 	<div id="card-basic-wrapper" class="demo-wrapper">
@@ -50,8 +50,7 @@
 				<CardImage
 					slot="cardImage"
 					alt={contentItem_3.metadata.title}
-					src="{assets}/resources/{contentItem_3.resource}/{contentItem_3.metadata
-						.slug}/{contentItem_3.metadata.cover}"
+					src="https://placeimg.com/400/400/any"
 				/>
 				<CardAction
 					slot="cardAction"

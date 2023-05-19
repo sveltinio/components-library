@@ -13,6 +13,10 @@
 
 A collection of responsive, type-safe, accessible and configurable Svelte components for cards, pages navigation, TOC (Table of Contents) ...
 
+## Demos
+
+You can see live demos [here](https://www.sveltelab.dev/sw6o1z34sn9bn75) or if you clone the repos by running `pnpm dev`
+
 ## Components List
 
 - [Breadcrumbs]
@@ -33,12 +37,6 @@ npm install @sveltinio/widgets
 
 # yarn
 yarn add @sveltinio/widgets
-```
-
-## Demos
-
-```bash
-pnpm dev
 ```
 
 ## License

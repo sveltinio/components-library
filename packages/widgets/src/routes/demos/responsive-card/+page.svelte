@@ -7,22 +7,9 @@
 		ResponsiveCardInfo,
 		ResponsiveCardAction
 	} from '$lib/index.js';
-	import { ResourceContentUtils } from '$lib/types.js';
+	import { getMetadataURL, getURL } from '$lib/utils.js';
 
 	import { contentItem_1, contentItem_2 } from '../../../data/sample.js';
-
-	/* the resources folder name within the static folder */
-	const resourcesFolder = 'resources';
-
-	const item_1_CoverImgPath = `${base}/${ResourceContentUtils.getCoverPath(
-		resourcesFolder,
-		contentItem_1
-	)}`;
-
-	const item_2_CoverImgPath = `${base}/${ResourceContentUtils.getCoverPath(
-		resourcesFolder,
-		contentItem_2
-	)}`;
 </script>
 
 <div class="header" role="main">
@@ -30,14 +17,9 @@
 	<h2>ResponsiveCard</h2>
 </div>
 
-<!--
-	https://source.unsplash.com/600x400/?music
-	https://placeimg.com/400/400/any
--->
-
 <section role="contentinfo">
 	<div class="actions">
-		<a class="btn-back" href="/demos">← Return To The Demos</a>
+		<a class="btn-back" href="/">← Back to the Demos page</a>
 	</div>
 
 	<div id="responsivecard-complete-wrapper" class="demo-wrapper">
@@ -49,15 +31,15 @@
 			>
 				<ResponsiveCardImage
 					slot="cardImage"
-					src={item_2_CoverImgPath}
-					alt="microphone photo"
+					src="https://placeimg.com/400/400/any"
+					alt="any photo"
 				/>
 				<ResponsiveCardBadge
 					slot="cardBadge"
 					data={{
 						value: String(contentItem_2.metadata.category),
 						color: 'blue',
-						url: ResourceContentUtils.getMetadataURL(
+						url: getMetadataURL(
 							base,
 							contentItem_2.resource,
 							'category',
@@ -71,10 +53,7 @@
 					date={contentItem_2.metadata.created_at ?? ''}
 					showAvatar={false}
 				/>
-				<ResponsiveCardAction
-					slot="cardAction"
-					href={ResourceContentUtils.getURL(base, contentItem_2)}
-				/>
+				<ResponsiveCardAction slot="cardAction" href={getURL(base, contentItem_2)} />
 			</ResponsiveCard>
 		</div>
 	</div>
@@ -86,13 +65,17 @@
 				title={contentItem_1.metadata.title}
 				content={contentItem_1.metadata.headline ?? ''}
 			>
-				<ResponsiveCardImage slot="cardImage" src={item_1_CoverImgPath} alt="viola photo" />
+				<ResponsiveCardImage
+					slot="cardImage"
+					src="https://source.unsplash.com/600x400/?music"
+					alt="music photo"
+				/>
 				<ResponsiveCardBadge
 					slot="cardBadge"
 					data={{
 						value: String(contentItem_1.metadata.category),
 						color: 'red',
-						url: ResourceContentUtils.getMetadataURL(
+						url: getMetadataURL(
 							base,
 							contentItem_1.resource,
 							'category',
@@ -116,10 +99,7 @@
 				title={contentItem_1.metadata.title}
 				content={contentItem_1.metadata.headline ?? ''}
 			>
-				<ResponsiveCardAction
-					slot="cardAction"
-					href={ResourceContentUtils.getURL(base, contentItem_1)}
-				/>
+				<ResponsiveCardAction slot="cardAction" href={getURL(base, contentItem_1)} />
 			</ResponsiveCard>
 		</div>
 	</div>
@@ -148,10 +128,7 @@
 					date={contentItem_2.metadata.created_at ?? ''}
 					showAvatar={false}
 				/>
-				<ResponsiveCardAction
-					slot="cardAction"
-					href={ResourceContentUtils.getURL(base, contentItem_2)}
-				/>
+				<ResponsiveCardAction slot="cardAction" href={getURL(base, contentItem_2)} />
 			</ResponsiveCard>
 		</div>
 	</div>

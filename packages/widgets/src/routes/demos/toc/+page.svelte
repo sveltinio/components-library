@@ -10,11 +10,10 @@
 
 <section role="contentinfo">
 	<div class="actions">
-		<a class="btn-back" href="/demos">← Return To The Demos</a>
+		<a class="btn-back" href="/">← Back to the Demos page</a>
 	</div>
 
 	<div id="toc-default-wrapper" class="demo-wrapper">
-		<!--<h3 id="toc-default">Default</h3> --->
 		<div class="preview">
 			<TOC data={tocEntries} />
 		</div>
