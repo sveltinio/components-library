@@ -1,5 +1,12 @@
 # @sveltinio/seo
 
+## 0.4.2
+
+### Patch Changes
+
+- refactor: use `@sveltinio/ts-utils`
+- chore: dev deps updated
+
 ## 0.4.1
 
 ### Patch Changes
