@@ -1,5 +1,12 @@
 # @sveltinio/essentials
 
+## 0.7.6
+
+### Patch Changes
+
+- fix: remove useless entries from the exports map
+- refactor(**list**): restructure the component folder and move utilities functions to `utils.ts`
+
 ## 0.7.5
 
 ### Patch Changes
