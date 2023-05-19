@@ -35,8 +35,8 @@
 		"url": "https://github.com/sveltinio/components-library/issues"
 	},
 	"dependencies": {
-		"svelte": "^3.59.1",
-		"@sveltinio/ts-utils": "^0.8.0"
+		"@sveltinio/ts-utils": "^0.8.0",
+		"svelte": "^3.59.1"
 	},
 	"devDependencies": {
 		"@indaco/svelte-iconoir": "^4.3.0",
