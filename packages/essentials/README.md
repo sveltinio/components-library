@@ -13,6 +13,10 @@
 
 A collection of _essentials_, type-safe, accessible and configurable Svelte components.
 
+## Demos
+
+You can see live demos [here](https://www.sveltelab.dev/fe9w6pw2qs8sgm9) or if you clone the repos by running `pnpm dev`
+
 ## Components List
 
 - [Button]
@@ -34,12 +38,6 @@ npm install @sveltinio/essentials
 
 # yarn
 yarn add @sveltinio/essentials
-```
-
-## Demos
-
-```bash
-pnpm dev
 ```
 
 ## License
