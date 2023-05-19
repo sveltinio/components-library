@@ -13,6 +13,10 @@
 
 Type-safe Svelte components to easily use GoogleFonts, GoogleAnalytics and Umami in your Svelte and SvelteKit projects.
 
+## Demos
+
+You can see live demos [here](https://www.sveltelab.dev/mu01l23m3291k52) or if you clone the repos by running `pnpm dev`
+
 ## Components List
 
 - [GoogleFonts]
@@ -30,12 +34,6 @@ npm install @sveltinio/services
 
 # yarn
 yarn add @sveltinio/services
-```
-
-## Demos
-
-```bash
-pnpm dev
 ```
 
 ## License

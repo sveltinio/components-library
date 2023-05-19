@@ -1,128 +1,172 @@
-/* CSS RESET by https://www.joshwcomeau.com/css/custom-css-reset/ */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-* {
-	margin: 0;
-}
-
-html,
 body {
-	height: 100%;
+	background-color: #ffffff;
 }
 
-body {
-	line-height: 1.5;
+section {
+	margin: 3rem;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-	display: block;
-	max-width: 100%;
+.header {
+	margin: 3rem;
+	color: hsl(215.3, 25%, 26.7%); /* slate-700 */
+	line-height: 1.5rem;
 }
 
-input,
-button,
-textarea,
-select {
-	font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	overflow-wrap: break-word;
-}
-
-#root,
-#__next {
-	isolation: isolate;
-}
-
-/* END OF CSS RESET by */
-
-html {
-	scroll-behavior: smooth;
-}
-
-body {
-	background-color: #f8fafc /* slate-50 */;
-	margin: 2rem;
-}
-
-.container {
-	margin: 1.5rem 0;
-	padding: 1.5rem 2rem;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: rgb(203 213 225);
-}
-
-.main h1 {
-	margin: 1em 0 0.5em 0;
-	color: #343434;
+.header h1 {
+	font-family: 'Bitter', sans-serif;
+	font-size: 2.25rem;
 	font-weight: normal;
-	font-family: 'Ultra', sans-serif;
-	font-size: 36px;
-	line-height: 42px;
-	text-transform: uppercase;
-}
-
-.main h2 {
+	font-style: normal;
+	line-height: 1.1rem;
 	margin: 1em 0 0.5em 0;
-	color: #343434;
-	font-weight: normal;
-	font-size: 30px;
-	line-height: 40px;
-	font-family: 'Orienta', sans-serif;
 }
 
-.main h3 {
+.header h2 {
+	font-family: 'Baloo Bhai', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 2.5rem;
+	line-height: 1.5rem;
+	margin: 1em 0 1.5em;
+}
+
+.header p {
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+
+.header a {
+	-webkit-text-decoration: none;
+	text-decoration: none;
+	color: inherit;
+}
+
+.actions {
+	padding: 0.75rem 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #e2e8f0;
+}
+
+.btn-back {
 	position: relative;
-	color: #343434;
-	font-size: 22px;
-	line-height: 40px;
-	font-weight: normal;
-	text-transform: uppercase;
-	font-family: 'Orienta', sans-serif;
-	letter-spacing: 1px;
-	font-style: italic;
-	margin: 1em 0 0.5em 0;
+	padding: 0.5rem;
+	background-color: #d9f99d;
+	color: #365314;
+	border-radius: 0.25rem;
 }
 
-.main h4 {
+/* Used on the main demo page */
+.demos-grid {
+	max-width: 1280px;
+	padding: 2.5rem;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	place-items: center;
+	grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+	grid-gap: 1rem;
+	gap: 1rem;
+}
+
+.demo-card {
 	position: relative;
-	padding: 0 0 0 20px;
-	margin: 2em 0 1em 0;
-	color: #343434;
-	font-size: 18px;
-	line-height: 20px;
+	max-width: 24rem;
+	padding: 0.125rem;
+
+	border-radius: 0.5rem;
+	background: linear-gradient(to top right, #5eead4, #93c5fd);
+	box-shadow: 0 1px 3px 0 hsla(0, 0%, 0%, 0.1), 0 1px 2px -1px hsla(0, 0%, 0%, 0.1);
+}
+
+.demo-card h2 {
+	font-family: 'Baloo Bhai', sans-serif;
 	font-weight: normal;
-	font-family: 'Orienta', sans-serif;
+	font-style: normal;
+	font-size: 2rem;
+	line-height: 1.5rem;
+	margin: 0.5rem 0;
+}
+
+.demo-card p {
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	margin: 1rem 0;
+}
+
+.demo-card a {
+	-webkit-text-decoration: none;
+	text-decoration: none;
+
+	display: flex;
+	color: hsl(215.3, 25%, 26.7%); /* slate-700 */
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: hsl(0, 0%, 100%); /* white */
+	padding: 1.75rem;
+	border-radius: 0.375rem;
+}
+
+.demo-card a:hover {
+	cursor: pointer;
+	background-color: hsl(210, 40%, 98%); /* slate-50 */
+}
+
+/* Used on the single component demo page */
+.demo-wrapper h3,
+.demo-content h3 {
+	padding: 0;
+	margin: 2rem 0;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.375rem;
+	color: hsl(215.3, 19.3%, 34.5%); /* slate-600 */
+	line-height: 1.5rem;
 	text-transform: uppercase;
 }
-
-.main h4:after {
-	position: absolute;
-	content: '';
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 5px;
-	border-radius: 2px;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.3);
+.demo-wrapper p,
+.demo-content p {
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+.demo-wrapper .preview,
+.demo-content .preview {
+	display: flex;
+	width: auto;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 0.75rem;
+	margin: 1rem 0;
+}
+.demo-wrapper .column,
+.demo-content .column {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 0.75rem;
 }
 
-.main h4:after {
-	background: rgb(14 116 144);
+.demo-content {
+	margin: 2rem 0;
+}
+
+.demo-content h2 {
+	font-family: 'Baloo Bhai', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 2rem;
+	line-height: 1.5rem;
+	margin: 1rem 0;
 }

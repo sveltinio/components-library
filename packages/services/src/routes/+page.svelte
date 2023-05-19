@@ -17,19 +17,13 @@
 	settings={umamiTrackerSettings}
 />
 
-<section class="main">
-	<hgroup>
-		<h1><tt>@sveltinio/services</tt></h1>
-		<h2><tt>Demos</tt></h2>
-
-		<section class="container">
-			<h3>Inspect the head of the webpage</h3>
-			<h4>You should see tags for:</h4>
-			<ul>
-				<li>Google Fonts</li>
-				<li>Google Analytics</li>
-				<li>Umami Analytics</li>
-			</ul>
-		</section>
-	</hgroup>
-</section>
+<div class="header">
+	<h1>@sveltinio/services</h1>
+	<h2>Demos</h2>
+	<h3>Inspect the head of the webpage</h3>
+	<ul>
+		<li>Google Fonts</li>
+		<li>Google Analytics</li>
+		<li>Umami Analytics</li>
+	</ul>
+</div>
