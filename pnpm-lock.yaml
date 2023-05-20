@@ -356,8 +356,8 @@ importers:
         specifier: ^0.1.12
         version: 0.1.12
       rimraf:
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: ^5.0.1
+        version: 5.0.1
       svelte-check:
         specifier: ^3.3.2
         version: 3.3.2(postcss-load-config@4.0.1)(postcss@8.4.23)(svelte@3.59.1)
@@ -4354,18 +4354,6 @@ packages:
       is-glob: 4.0.3
     dev: true
 
-  /glob@10.2.4:
-    resolution: {integrity: sha512-fDboBse/sl1oXSLhIp0FcCJgzW9KmhC/q8ULTKC82zc+DL3TL7FNb8qlt5qqXN53MsKEUSIcb+7DLmEygOE5Yw==}
-    engines: {node: '>=16 || 14 >=14.17'}
-    hasBin: true
-    dependencies:
-      foreground-child: 3.1.1
-      jackspeak: 2.2.0
-      minimatch: 9.0.0
-      minipass: 6.0.1
-      path-scurry: 1.9.1
-    dev: true
-
   /glob@10.2.5:
     resolution: {integrity: sha512-Gj+dFYPZ5hc5dazjXzB0iHg2jKWJZYMjITXYPBRQ/xc2Buw7H0BINknRTwURJ6IC6MEFpYbLvtgVb3qD+DwyuA==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -5775,11 +5763,6 @@ packages:
 
   /minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
-    dev: true
-
-  /minipass@6.0.1:
-    resolution: {integrity: sha512-Tenl5QPpgozlOGBiveNYHg2f6y+VpxsXRoIHFUVJuSmTonXRAE6q9b8Mp/O46762/2AlW4ye4Nkyvx0fgWDKbw==}
-    engines: {node: '>=16 || 14 >=14.17'}
     dev: true
 
   /minipass@6.0.2:
@@ -7633,14 +7616,6 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
-
-  /rimraf@5.0.0:
-    resolution: {integrity: sha512-Jf9llaP+RvaEVS5nPShYFhtXIrb3LRKP281ib3So0KkeZKo2wIKyq0Re7TOSwanasA423PSr6CCIL4bP6T040g==}
-    engines: {node: '>=14'}
-    hasBin: true
-    dependencies:
-      glob: 10.2.4
-    dev: true
 
   /rimraf@5.0.1:
     resolution: {integrity: sha512-OfFZdwtd3lZ+XZzYP/6gTACubwFcHdLRqS9UX3UwpU2dnGQYkPFISRwvM3w9IiB2w7bW5qGo/uAwE4SmXXSKvg==}
