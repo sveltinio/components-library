@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { BreakpointsQueries, BreakpointMatch } from '../../types.js';
 	import { onMount } from 'svelte';
-	import { BreakpointChecker } from '../../utils.js';
+	import { BreakpointChecker } from '../../classes.js';
 	import { isImage, filename } from '@sveltinio/ts-utils/paths';
 	import { merge, getPropertyValue } from '@sveltinio/ts-utils/objects';
 	import { isUrl } from '@sveltinio/ts-utils/urls';
