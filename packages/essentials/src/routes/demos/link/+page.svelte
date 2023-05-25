@@ -21,6 +21,16 @@
 		</div>
 	</div>
 
+	<div id="internal-link-icon" class="demo-wrapper">
+		<h3>Internal Link w/ leftIcon</h3>
+		<div class="preview">
+			<Link href="{base}/contact">
+				<DummyIcon slot="leftIcon" />
+				Contact
+			</Link>
+		</div>
+	</div>
+
 	<div id="external-link" class="demo-wrapper">
 		<h3>External Link</h3>
 		<div class="preview">
@@ -29,16 +39,18 @@
 	</div>
 
 	<div id="external-link-slot" class="demo-wrapper">
-		<h3>External w/ label text w/o icon</h3>
+		<h3>External w/ label text w/o external icon</h3>
 		<div class="preview">
-			<Link href="https://sveltin.io" label="sveltin.io" external icon={false} />
+			<Link href="https://sveltin.io" label="sveltin.io" external externalIcon={false}>
+				<span slot="leftIcon">'✈'</span>
+			</Link>
 		</div>
 	</div>
 
 	<div id="external-link-slot-with-icon-size" class="demo-wrapper">
-		<h3>External w/ label text w/ icon size</h3>
+		<h3>External w/ label text w/ external icon size</h3>
 		<div class="preview">
-			<Link href="https://sveltin.io" label="sveltin.io" external iconSize={12} />
+			<Link href="https://sveltin.io" label="sveltin.io" external externalIconSize={12} />
 		</div>
 	</div>
 
@@ -46,7 +58,7 @@
 		<h3>external with custom icon</h3>
 		<div class="preview">
 			<Link href="https://sveltin.io" external>
-				Homepage <DummyIcon slot="icon" />
+				Homepage <DummyIcon slot="rightIcon" />
 			</Link>
 		</div>
 	</div>

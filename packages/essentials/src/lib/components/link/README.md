@@ -11,14 +11,29 @@ The `Link` is an accessible Svelte component implementing the [WAI-ARIA Link Pat
    import DummyIcon from './DummyIcon.svelte';
 </script>
 
+<!-- same result -->
 <Link href="{base}/contact">Contact</Link>
+<Link href="{base}/contact" label="Contact" />
 
-<Link href="https://sveltin.io" external iconSize={14}>sveltin</Link>
+<!-- left icon -->
+<Link href="{base}/contact" label="Contact">
+   <DummyIcon slot="leftIcon" />
+</Link>
 
-<Link href="https://sveltin.io" label="sveltin.io" external icon={false}  />
+<Link href="{base}/contact">
+   <DummyIcon slot="leftIcon" />
+   Contact
+</Link>
 
+<!-- external link without the right icon -->
+<Link href="https://sveltin.io" label="sveltin.io" external externalIcon={false} />
+
+<!-- set the right icon size -->
+<Link href="https://sveltin.io" external externalIconSize={14}>sveltin</Link>
+
+<!-- set a custom icon for the external link -->
 <Link href="https://sveltin.io" external>
-   <DummyIcon slot="icon" />
+   <DummyIcon slot="rightIcon" />
 </Link>
 ```
 
@@ -28,22 +43,23 @@ The `Link` is an accessible Svelte component implementing the [WAI-ARIA Link Pat
 
 The `Link` component exposes a set of properties but it does not prevent you to pass any additional props.
 
-| Property   | Type      | Required | Default  | Description                                                         |
-| :--------- | :-------: | :------: | :------- | :------------------------------------------------------------------ |
-| label      | `string`  |    no    |          | The text to display and used for the `aria-label` prop too          |
-| href       | `string`  |   yes    |          | The URL of the page the link goes to                                |
-| external   | `boolean` |    no    | `false   | If external, an icon will be apped next to the right of the label   |
-| `prefetch` |           |    no    | `off`    | Set `data-sveltekit-preload-data` when not an external link         |
-| icon       | `boolean` |    no    | `true`   | Shows an icon next right to the label when external is true         |
-| iconSize   | `number`  |    no    | `12`     | if `external` & `icon` are `true`, sets the external icon size      |
-| noOpenener | `boolean` |    no    | `true`   | Go to the linked resource without granting the new browsing context |
-| noReferrer | `boolean` |    no    | `true`   | Prevent passing the referrer information to the target website      |
+| Property         | Type      | Required | Default  | Description                                                         |
+| :--------------- | :-------: | :------: | :------- | :------------------------------------------------------------------ |
+| label            | `string`  |    no    |          | The text to display and used for the `aria-label` prop too          |
+| href             | `string`  |   yes    |          | The URL of the page the link goes to                                |
+| prefetch         |           |    no    | `off`    | Set `data-sveltekit-preload-data` when not an external link         |
+| external         | `boolean` |    no    | `false   | If external, an icon will be apped next to the right of the label   |
+| externalIcon     | `boolean` |    no    | `true`   | Shows an icon next right to the label when external is true         |
+| externalIconSize | `number`  |    no    | `12`     | if `external` & `icon` are `true`, sets the external icon size      |
+| noOpenener       | `boolean` |    no    | `true`   | Go to the linked resource without granting the new browsing context |
+| noReferrer       | `boolean` |    no    | `true`   | Prevent passing the referrer information to the target website      |
 
 ## Slots
 
-| Name   | Default | Fallback |
-| :----- | :-----: | :------: |
-| `icon` | ✗       |    ✓     |
+| Name        | Default | Fallback |
+| :---------- | :-----: | :------: |
+| `leftIcon`  | ✗       |    ✗     |
+| `rightIcon` | ✗       |    ✓     |
 
 ## Keyboard Interaction
 
