@@ -30,7 +30,9 @@
 	},
 	"dependencies": {
 		"@sveltinio/essentials": "^0.7.8",
-		"@sveltinio/ts-utils": "^0.8.0",
+		"@sveltinio/ts-utils": "^0.8.0"
+	},
+	"peerDependencies": {
 		"svelte": "^3.59.1"
 	},
 	"devDependencies": {
@@ -95,9 +97,11 @@
 	"svelte": "./dist/index.js",
 	"files": [
 		"dist",
-		"!**/assets",
-		"!**/*.postcss",
-		"!**/dist/components/**/*.md"
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*",
+		"!dist/**/*.md",
+		"!dist/**/assets",
+		"!dist/**/*.postcss"
 	],
 	"exports": {
 		"./package.json": "./package.json",
