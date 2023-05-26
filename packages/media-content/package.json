@@ -39,7 +39,9 @@
 		"url": "https://github.com/sveltinio/components-library/issues"
 	},
 	"dependencies": {
-		"@sveltinio/ts-utils": "^0.8.0",
+		"@sveltinio/ts-utils": "^0.8.0"
+	},
+	"peerDependencies": {
 		"svelte": "^3.59.1"
 	},
 	"devDependencies": {

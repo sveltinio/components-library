@@ -29,7 +29,9 @@
 	},
 	"dependencies": {
 		"@sveltinio/ts-utils": "^0.8.0",
-		"schema-dts": "^1.1.2",
+		"schema-dts": "^1.1.2"
+	},
+	"peerDependencies": {
 		"svelte": "^3.59.1"
 	},
 	"devDependencies": {
