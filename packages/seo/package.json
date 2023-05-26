@@ -77,9 +77,9 @@
 	"svelte": "./dist/index.js",
 	"files": [
 		"dist",
-		"!**/assets",
-		"!**/*.postcss",
-		"!**/dist/components/**/*.md"
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*",
+		"!dist/**/*.md"
 	],
 	"exports": {
 		"./package.json": "./package.json",

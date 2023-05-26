@@ -104,9 +104,9 @@
 		"dist",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*",
-		"!**/assets",
-		"!**/*.postcss",
-		"!**/dist/components/**/*.md"
+		"!dist/**/*.md",
+		"!dist/**/assets",
+		"!dist/**/*.postcss"
 	],
 	"exports": {
 		"./package.json": "./package.json",
