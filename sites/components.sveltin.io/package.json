@@ -40,7 +40,7 @@
 		"mdsvex": "^0.10.6",
 		"mdsvex-relative-images": "^1.0.3",
 		"mdsvexamples": "^0.3.3",
-		"postcss": "^8.4.23",
+		"postcss": "^8.4.24",
 		"postcss-import": "^15.1.0",
 		"postcss-load-config": "^4.0.1",
 		"postcss-nested": "^6.0.1",
