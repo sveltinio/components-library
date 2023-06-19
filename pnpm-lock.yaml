@@ -96,8 +96,8 @@ importers:
         specifier: ^5.59.7
         version: 5.59.7(eslint@8.41.0)(typescript@5.0.4)
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.32.2
+        version: 0.32.2(vitest@0.31.1)
       axe-core:
         specifier: ^4.7.1
         version: 4.7.1
@@ -217,8 +217,8 @@ importers:
         specifier: ^5.59.7
         version: 5.59.7(eslint@8.41.0)(typescript@5.0.4)
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.32.2
+        version: 0.32.2(vitest@0.31.1)
       c8:
         specifier: ^7.13.0
         version: 7.13.0
@@ -332,8 +332,8 @@ importers:
         specifier: ^5.59.7
         version: 5.59.7(eslint@8.41.0)(typescript@5.0.4)
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.32.2
+        version: 0.32.2(vitest@0.31.1)
       c8:
         specifier: ^7.13.0
         version: 7.13.0
@@ -414,8 +414,8 @@ importers:
         specifier: ^5.59.7
         version: 5.59.7(eslint@8.41.0)(typescript@5.0.4)
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.32.2
+        version: 0.32.2(vitest@0.31.1)
       c8:
         specifier: ^7.13.0
         version: 7.13.0
@@ -490,7 +490,7 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2(svelte@3.59.1)(typescript@5.0.4)
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^2.3.0
+        specifier: ^2.2.0
         version: 2.3.0(svelte@3.59.1)(vite@4.3.8)
       '@testing-library/jest-dom':
         specifier: ^5.16.5
@@ -499,14 +499,14 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(svelte@3.59.1)
       '@typescript-eslint/eslint-plugin':
-        specifier: ^5.59.7
+        specifier: ^5.59.6
         version: 5.59.7(@typescript-eslint/parser@5.59.7)(eslint@8.41.0)(typescript@5.0.4)
       '@typescript-eslint/parser':
-        specifier: ^5.59.7
+        specifier: ^5.59.6
         version: 5.59.7(eslint@8.41.0)(typescript@5.0.4)
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.32.2
+        version: 0.32.2(vitest@0.31.1)
       axe-core:
         specifier: ^4.7.1
         version: 4.7.1
@@ -2338,8 +2338,8 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: true
 
-  /@vitest/coverage-c8@0.31.1(vitest@0.31.1):
-    resolution: {integrity: sha512-6TkjQpmgYez7e3dbAUoYdRXxWN81BojCmUILJwgCy39uZFG33DsQ0rSRSZC9beAEdCZTpxR63nOvd9hxDQcJ0g==}
+  /@vitest/coverage-c8@0.32.2(vitest@0.31.1):
+    resolution: {integrity: sha512-z07kMTN6e4t1jDY4XXU6W1LxCb3V5Rw7KAZId4VM6BCIGLGz1QqwH9UWYWv7LemqQVnARl5CwaDDwVrkcYgwPg==}
     peerDependencies:
       vitest: '>=0.30.0 <1'
     dependencies:
