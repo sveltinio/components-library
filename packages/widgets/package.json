@@ -70,7 +70,7 @@
 		"tslib": "^2.5.2",
 		"typescript": "^5.0.4",
 		"vite": "^4.3.8",
-		"vitest": "^0.31.1"
+		"vitest": "^0.32.4"
 	},
 	"scripts": {
 		"build": "pnpm clean && pnpm build:css && pnpm build:deps && pnpm postbuild",
