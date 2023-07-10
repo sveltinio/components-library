@@ -64,7 +64,7 @@
 		"postcss-load-config": "^4.0.1",
 		"postcss-preset-env": "^8.4.1",
 		"postcss-utils": "workspace:*",
-		"prettier": "^2.8.8",
+		"prettier": "^3.0.0",
 		"prettier-plugin-svelte": "^2.10.0",
 		"publint": "^0.1.12",
 		"rimraf": "^5.0.1",
