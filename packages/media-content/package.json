@@ -59,7 +59,7 @@
 		"eslint": "^8.41.0",
 		"eslint-config-custom": "workspace:*",
 		"jsdom": "^22.0.0",
-		"postcss": "^8.4.23",
+		"postcss": "^8.4.26",
 		"postcss-cli": "^10.1.0",
 		"postcss-load-config": "^4.0.1",
 		"postcss-preset-env": "^8.4.1",
