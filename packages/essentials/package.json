@@ -65,7 +65,7 @@
 		"postcss": "^8.4.23",
 		"postcss-cli": "^10.1.0",
 		"postcss-load-config": "^4.0.1",
-		"postcss-preset-env": "^8.4.1",
+		"postcss-preset-env": "^9.1.1",
 		"postcss-utils": "workspace:*",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.0",
