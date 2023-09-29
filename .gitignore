@@ -84,9 +84,6 @@ dist
 .env.*
 !.env.example
 
-# Turbo
-.turbo
-
 # Yalc
 .yalc
 yalc.lock

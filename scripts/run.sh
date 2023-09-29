@@ -24,25 +24,25 @@ then
     source clean_all.sh
 else
     echo "Choose the $(blue_text 'package'):"
-
+    
     PACKAGE=$(gum choose "essentials" "media-content" "seo" "services" "widgets")
-
+    
     echo "Selected package: $(emerald_text ${PACKAGE})"
     echo ""
-
+    
     if [[ $ACTION == "update" ]]
     then
         pnpm $ACTION --filter="@sveltinio/${PACKAGE}"
     elif [[ $ACTION == "test" ]]
     then
         # run test
-        pnpm turbo test --filter="@sveltinio/${PACKAGE}" --force
+        pnpm --filter="@sveltinio/${PACKAGE}" test
     elif [[ $ACTION == "yalc" ]]
     then
         cd "../packages/$PACKAGE/dist"
         yalc publish
     else
         # run the action
-        pnpm turbo $ACTION --filter="@sveltinio/${PACKAGE}"
+        pnpm --filter="@sveltinio/${PACKAGE}" $ACTION
     fi
 fi

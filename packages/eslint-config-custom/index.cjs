@@ -3,7 +3,6 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:svelte/recommended',
-		'turbo',
 		'prettier'
 	],
 	parser: '@typescript-eslint/parser',
