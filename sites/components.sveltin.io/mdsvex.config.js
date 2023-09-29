@@ -2,7 +2,6 @@ import { defineMDSveXConfig as defineConfig } from 'mdsvex';
 import relativeImages from 'mdsvex-relative-images';
 
 import emoji from 'remark-emoji';
-import remarkSlug from 'remark-slug';
 import remarkExternalLinks from 'remark-external-links';
 import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
@@ -15,7 +14,6 @@ const mdsvexConfig = defineConfig({
 		dashes: 'oldschool'
 	},
 	remarkPlugins: [
-		remarkSlug,
 		headings,
 		emoji,
 		[
