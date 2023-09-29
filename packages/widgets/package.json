@@ -72,7 +72,7 @@
 		"vitest": "^0.34.6"
 	},
 	"scripts": {
-		"build": "pnpm clean && pnpm build:css && pnpm build:deps && pnpm postbuild",
+		"build": "pnpm clean && pnpm build:css && pnpm build:deps && pnpm sync && pnpm postbuild",
 		"build:deps": "pnpm --filter='@sveltinio/essentials' run build",
 		"build:css": "cross-env NODE_ENV=production node ./scripts/postcss-process.js",
 		"check": "pnpm sync && svelte-check",
