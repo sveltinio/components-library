@@ -1,5 +1,12 @@
 # @sveltinio/widgets
 
+## 0.7.7
+
+### Patch Changes
+
+- fix: missing exports. Closes #254
+- chore: dev deps updated
+
 ## 0.7.6
 
 ### Patch Changes
