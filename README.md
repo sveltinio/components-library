@@ -4,7 +4,7 @@
 
 ### Intro
 
-This repo is a "mono-repo" using [pnpm workspaces](https://pnpm.io/workspaces) for managing the packages and [Turborepo](https://turborepo.org/) as build system with pipelines.
+This repo is a "mono-repo" based on [pnpm workspaces](https://pnpm.io/workspaces) for managing the packages.
 
 Each package has its own folder and README in the `/packages` directory. All package bundles are handled with the same command: `pnpm package`
 
