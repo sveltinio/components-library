@@ -2,7 +2,7 @@
 	"name": "components-library",
 	"version": "0.2.0",
 	"private": true,
-	"packageManager": "pnpm@8.5.1",
+	"packageManager": "pnpm@8.8.0",
 	"workspaces": [
 		"packages/*",
 		"sites/*"
@@ -12,17 +12,15 @@
 		"node": ">=16.0.0"
 	},
 	"scripts": {
-		"dev": "turbo run dev",
-		"demo": "turbo run demo",
-		"test": "turbo run test --concurrency=1 --force",
-		"test:packages": "turbo run test --filter='@sveltinio/*' --concurrency=1 --force",
+		"dev": "pnpm --filter='@sveltinio/*' dev",
+		"test:packages": "pnpm --filter='@sveltinio/*' test",
 		"build": "pnpm clean && pnpm build:packages && pnpm build:sites",
-		"build:packages": "turbo run build --filter='@sveltinio/*' --concurrency=1 --force",
-		"build:sites": "turbo run build --filter='components.sveltin.io'",
-		"format": "turbo run format",
-		"lint": "turbo run lint",
-		"check": "turbo run check",
-		"clean": "turbo run clean",
+		"build:packages": "pnpm --filter='@sveltinio/*' build",
+		"build:sites": "pnpm --filter='components.sveltin.io' build",
+		"format": "pnpm --filter='@sveltinio/*' format",
+		"lint": "pnpm --filter='@sveltinio/*' lint",
+		"check": "pnpm --filter='@sveltinio/*' check",
+		"clean": "pnpm --filter='@sveltinio/*' clean",
 		"prepare": "husky install",
 		"plop": "plop",
 		"release": "pnpm -r publish packages  --access public",
@@ -30,13 +28,12 @@
 	},
 	"devDependencies": {
 		"@changesets/changelog-git": "^0.1.14",
-		"@changesets/cli": "^2.26.1",
-		"@commitlint/cli": "^17.6.3",
-		"@commitlint/config-conventional": "^17.6.3",
+		"@changesets/cli": "^2.26.2",
+		"@commitlint/cli": "^17.7.2",
+		"@commitlint/config-conventional": "^17.7.0",
 		"husky": "^8.0.3",
-		"lint-staged": "^13.2.2",
+		"lint-staged": "^14.0.1",
 		"picocolors": "^1.0.0",
-		"plop": "^3.1.2",
-		"turbo": "^1.9.9"
+		"plop": "^3.1.2"
 	}
 }
