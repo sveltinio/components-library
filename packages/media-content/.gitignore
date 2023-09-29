@@ -84,8 +84,5 @@ $RECYCLE.BIN/
 .env.*
 !.env.example
 
-# Turborepo
-.turbo
-
 # Jest
 coverage/
