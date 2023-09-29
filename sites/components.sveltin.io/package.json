@@ -25,7 +25,6 @@
 		"@sveltinio/remark-headings": "^1.0.3",
 		"@sveltinio/ts-utils": "^0.8.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@tailwindcss/line-clamp": "^0.4.4",
 		"@tailwindcss/typography": "^0.5.10",
 		"@types/lodash-es": "^4.17.9",
 		"@types/node": "18.16.13",

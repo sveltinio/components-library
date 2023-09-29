@@ -4,7 +4,6 @@ const config = {
 	content: ['./src/routes/*.{html,svelte,js,ts}', './themes/**/*.{html,svelte,js,ts}'],
 	plugins: [
 		require('@tailwindcss/typography'),
-		require('@tailwindcss/line-clamp'),
 		require('@tailwindcss/aspect-ratio'),
 		plugin(function ({ addVariant, e, postcss }) {
 			addVariant('firefox', ({ container, separator }) => {
