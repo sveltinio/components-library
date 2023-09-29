@@ -24,8 +24,9 @@ const config = {
 		silent: true,
 		environment: 'jsdom',
 		deps: {
-			// https://github.com/vitest-dev/vitest/issues/3191
-			inline: [/essentials\/dist/]
+			// [Unknown file extension ".svelte" when importing Svelte files](https://github.com/vitest-dev/vitest/issues/3191)
+			// [Deprecate deps.inline in favour of deps.optimizer](https://github.com/vitest-dev/vitest/issues/3521)
+			optimizer: [/essentials\/dist/]
 		}
 	},
 	ssr: { noExternal: ['@indaco/svelte-iconoir/**'] }
