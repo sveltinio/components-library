@@ -1,4 +1,4 @@
 {
 	"packages/**/*.{js, ts, svelte}": ["prettier --check", "eslint --fix"],
-	"*.json": ["prettier --write --plugin-search-dir=. ."]
+	"*.json": ["prettier --write ."]
 }
