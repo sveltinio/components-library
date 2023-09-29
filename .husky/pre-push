@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pnpm --filter="@sveltinio/*" lint && pnpm test:packages
+pnpm --filter="@sveltinio/*" format && pnpm --filter="@sveltinio/*" lint && pnpm test:packages
