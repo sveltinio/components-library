@@ -28,6 +28,7 @@ jobs:
           version: 8
 
       - run: pnpm install --no-frozen-lockfile
+      - run: pnpm format
       - run: pnpm lint
   test:
     runs-on: ubuntu-latest
