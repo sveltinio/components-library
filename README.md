@@ -66,10 +66,6 @@ pnpm plop
 pnpm build:packages
 ```
 
-### Build the website
-
-> not ready yet!
-
 ```bash
 pnpm build:sites
 ```
