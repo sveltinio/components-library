@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/essentials",
-	"version": "0.7.8",
+	"version": "0.7.9",
 	"private": false,
 	"packageManager": "pnpm@8.8.0",
 	"type": "module",

@@ -1,5 +1,11 @@
 # @sveltinio/essentials
 
+## 0.7.9
+
+### Patch Changes
+
+- add support to svelte 4
+
 ## 0.7.8
 
 ### Patch Changes
