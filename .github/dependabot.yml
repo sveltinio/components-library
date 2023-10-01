@@ -3,68 +3,68 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'deps'
   - package-ecosystem: 'npm'
     directory: '/packages/eslint-config-custom'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'packages'
       - 'deps'
   - package-ecosystem: 'npm'
     directory: '/packages/essentials'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'packages'
       - 'deps'
   - package-ecosystem: 'npm'
     directory: '/packages/media-content'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'packages'
       - 'deps'
   - package-ecosystem: 'npm'
     directory: '/packages/postcss-utils'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'packages'
       - 'deps'
   - package-ecosystem: 'npm'
     directory: '/packages/seo'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'packages'
       - 'deps'
   - package-ecosystem: 'npm'
     directory: '/packages/services'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'packages'
       - 'deps'
   - package-ecosystem: 'npm'
     directory: '/packages/stylelint-config-custom'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'packages'
       - 'deps'
   - package-ecosystem: 'npm'
     directory: '/packages/widgets'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'packages'
       - 'deps'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     labels:
       - 'gh-actions'
