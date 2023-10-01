@@ -1,5 +1,11 @@
 # @sveltinio/widgets
 
+## 0.7.8
+
+### Patch Changes
+
+- bump `@sveltinio/essentials` to `v0.7.9` with svelte 4 support
+
 ## 0.7.7
 
 ### Patch Changes

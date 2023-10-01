@@ -457,7 +457,7 @@ importers:
   packages/widgets:
     dependencies:
       '@sveltinio/essentials':
-        specifier: ^0.7.8
+        specifier: ^0.7.9
         version: link:../essentials
       '@sveltinio/ts-utils':
         specifier: ^0.8.0
