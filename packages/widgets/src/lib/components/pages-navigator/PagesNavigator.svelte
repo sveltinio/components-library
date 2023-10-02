@@ -4,6 +4,7 @@
 	import '../../styles/components/pages-navigator/styles.css';
 	import type { PagesNavigatorItem } from './types.js';
 	import { retrieveCssClassNames } from '$lib/utils';
+	import { isDefined } from '@sveltinio/ts-utils/is';
 	import { mapToCssVars, hasProperties } from '@sveltinio/ts-utils/objects';
 	import { Next, Previous, Spacer } from './partials/index.js';
 
@@ -31,6 +32,14 @@
 	// avoid hacking reserverd css classes
 	const reservedNames = ['sn-w-colors sn-w-c-pagesnav-vars sn-w-c-pagesnav'];
 	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
+
+	const isItemValid = (item: PagesNavigatorItem, mandatoryKeys: string[]): boolean => {
+		return (
+			isDefined(item.href) &&
+			!item.href.includes('undefined') &&
+			hasProperties(item, mandatoryKeys).unwrapOr(false)
+		);
+	};
 </script>
 
 <nav
@@ -40,7 +49,7 @@
 	aria-label="Pages navigation"
 	data-testid="pagesnav_main"
 >
-	{#if hasProperties(prev, mandatoryKeys).unwrapOr(false)}
+	{#if isItemValid(prev, mandatoryKeys)}
 		<Previous {prefetch} {prev} {next} {placeholders} {labels} {spacer}>
 			<slot name="prevIcon">
 				<svg
@@ -68,7 +77,7 @@
 		<Spacer {spacer} {prev} {next} />
 	{/if}
 
-	{#if hasProperties(next, mandatoryKeys).unwrapOr(false)}
+	{#if isItemValid(next, mandatoryKeys)}
 		<Next {prefetch} {prev} {next} {placeholders} {labels} {spacer}>
 			<slot name="nextIcon">
 				<svg

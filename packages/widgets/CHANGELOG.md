@@ -1,5 +1,12 @@
 # @sveltinio/widgets
 
+## 0.7.9
+
+### Patch Changes
+
+- fix(**pages-navigator**): closes #270
+- fix(**pages-navigator**): css class for Spacer component
+
 ## 0.7.8
 
 ### Patch Changes
