@@ -55,6 +55,7 @@
 		"cross-env": "^7.0.3",
 		"cssnano": "^6.0.1",
 		"cssnano-preset-advanced": "^6.0.1",
+		"chokidar-cli": "^3.0.0",
 		"eslint": "^8.50.0",
 		"eslint-config-custom": "workspace:*",
 		"jsdom": "^22.1.0",
@@ -96,7 +97,8 @@
 		"test": "pnpm build && vitest run",
 		"test:coverage": "pnpm build && vitest run --coverage",
 		"test:watch": "pnpm build && vitest watch",
-		"test:a11y": "rimraf a11y-results.json && pa11y-ci"
+		"test:a11y": "rimraf a11y-results.json && pa11y-ci",
+		"watch:css": "chokidar './src/lib/**/*.postcss' -c 'pnpm dev:css'"
 	},
 	"svelte": "./dist/index.js",
 	"files": [
@@ -312,6 +314,12 @@
 			],
 			"components/Tabs.svelte": [
 				"./dist/components/tabs/Tabs.svelte.d.ts"
+			],
+			"theme-switch": [
+				"./dist/components/theme-switch/index.d.ts"
+			],
+			"components/ThemeSwith": [
+				"./dist/components/theme-switch/ThemeSwitch.svelte.d.ts"
 			],
 			"index": [
 				"./index.d.ts"
