@@ -1,27 +1,27 @@
 @charset "UTF-8";
 
 /* stylelint-disable declaration-empty-line-before */
+@layer components {
+  .sn-e-c-colorviewer {
+    display: flex;
+    align-items: center;
+    gap: var(--gap, 0.5rem);
+    font-size: var(--font-size, var(--font-size-1));
+    font-weight: var(--font-weight, var(--font-weight-5));
+    line-height: var(--line-height, var(--font-lineheight-1));
+    letter-spacing: var(--letter-spacing, var(--font-letterspacing-0));
 
-.sn-e-c-colorviewer {
-  display: flex;
-  align-items: center;
-  gap: var(--_gap);
-  font-size: var(--_font-size);
-  font-weight: var(--_font-weight);
-  line-height: var(--_line-height);
-  letter-spacing: var(--_letter-spacing);
-  color: var(--_color);
+    & .color--preview {
+      border-width: var(--border-width, var(--border-size-1));
+      border-style: var(--border-style, solid);
+      border-color: var(--border-color, transparent);
+      aspect-ratio: var(--ratio-square);
+      border-radius: var(--radius-round);
+      flex-shrink: 0;
+    }
 
-  & .color--preview {
-    border-width: var(--_border-width);
-    border-style: var(--_border-style);
-    border-color: var(--_border-color);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  & .border {
-    --_border-color: var(--border-color, var(--slate-200));
+    & .border {
+      --_border-color: var(--border-color, var(--gray-3));
+    }
   }
 }
