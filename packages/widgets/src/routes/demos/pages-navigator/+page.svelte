@@ -13,6 +13,15 @@
 		href: `/${next.resource}/${next.metadata.slug}`
 	};
 
+	const prevObj2: PagesNavigatorItem = {
+		label: previous.metadata.title,
+		href: '/posts/undefined'
+	};
+
+	const nextObj2: PagesNavigatorItem = {
+		label: next.metadata.title,
+		href: `/${next.resource}/${next.metadata.slug}`
+	};
 	/*
 	const customStyles_1 = {
 		'border-t-width': '2px',
@@ -72,6 +81,12 @@
 		</div>
 	</div>
 
+	<div id="pagesnavigator-undefined-href-wrapper" class="demo-wrapper">
+		<h3 id="pagesnavigator-undefined-href">Undefined href</h3>
+		<div class="preview">
+			<PagesNavigator prev={prevObj2} next={nextObj2} />
+		</div>
+	</div>
 	<!--
 	<div id="pagesnavigator-custom-icons-wrapper" class="demo-wrapper">
 		<h3 id="pagesnavigator-custom-icons">Custom Icons</h3>
@@ -138,6 +153,5 @@
 			<PagesNavigator prev={prevObj} next={nextObj} class="pagesnav-orange" />
 		</div>
 	</div>
-
 	-->
 </section>
