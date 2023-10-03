@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { ButtonGroup, ButtonGroupItem } from '$lib/index.js';
-	//import DummyIcon from '../_dummyIcon.svelte';
+	import DummyIcon from '../_dummyIcon.svelte';
 	function handleMessage(event: CustomEvent) {
 		console.log(event.detail.eventDetails);
 	}
 
-	/*
 	const customStyles = {
 		color: '#134e4a',
 		pl: '1.25rem',
@@ -17,7 +16,6 @@
 		'active-bg-color': '#2dd4bf',
 		'active-border-color': '#5eead4'
 	};
-	*/
 </script>
 
 <div class="header" role="main">
@@ -41,7 +39,6 @@
 		</div>
 	</div>
 
-	<!--To avoid a11y errors due to duplicated ids. Uncomment to see other examples.
 	<div id="buttongroup-left-icon-wrapper" class="demo-wrapper">
 		<h3 id="buttongroup-left-icon">Left Icon</h3>
 		<div class="preview">
@@ -162,5 +159,4 @@
 			<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
 		</ButtonGroup>
 	</div>
-	-->
 </section>

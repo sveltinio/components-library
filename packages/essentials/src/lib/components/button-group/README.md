@@ -29,11 +29,12 @@ The `ButtonGroup` is an accessible widget as a container for grouping a set of b
 
 #### ButtonGroup
 
-| Property     | Type      | Required | Default | Description                                                                  |
-| :----------- | :-------: | :------: | :-----: |:---------------------------------------------------------------------------- |
-| activeButton | `string`  |    no    |         | Set the active button                                                        |
-| size         | `string`  |    no    | `base`  | Set the label size. One of: [`xs`, `sm`, `base`, `md`, `lg`]                 |
-| responsive   | `boolean` |    no    | `false` | If true, vertical on small screen and horizontal on medium and large screens |
+| Property     | Type      | Required | Default   | Description                                                                  |
+| :----------- | :-------: | :------: | :-------: |:---------------------------------------------------------------------------- |
+| activeButton | `string`  |    no    |           | Set the active button                                                        |
+| size         | `string`  |    no    | `base`    | Set the label size. One of: `['xs', 'sm', 'base', 'lg', 'xl']`               |
+| shape        | `string`  |    no    | `rounded` | Set the button shape. One of `['rounded', 'pills', 'flat']`                  |
+| responsive   | `boolean` |    no    | `false`   | If true, vertical on small screen and horizontal on medium and large screens |
 
 #### ButtonGroupItem
 
@@ -67,10 +68,14 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 ### ButtonGroupItem
 
-| Name         |  Type      | Element    | Keyboard         | Response    | Description          |
-| :----------- | :--------: | :--------: | :--------------: | :---------- | :------------------- |
-| `on:click`   | dispatched | `<button>` |                  | `{ event }` | Activates the button |
-| `on:keydown` | dispatched | `<button>` | `Enter`, `Space` | `{ event }` | Activates the button |
+| Name            |  Type      |
+| :-------------- | :--------: |
+| `on:click`      | dispatched |
+| `on:change`     | forwarded  |
+| `on:keyup`      | forwarded  |
+| `on:keydown`    | forwarded  |
+| `on:mouseenter` | forwarded  |
+| `on:mouseleave` | forwarded  |
 
 ## Keyboard Interaction
 

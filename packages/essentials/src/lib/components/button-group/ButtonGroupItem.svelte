@@ -8,9 +8,16 @@
 	export let position = 'left';
 
 	const ctx: ButtonGroupContext = getContext('ButtonGroup');
-	let value = ctx.activeButton;
+	let _active = ctx.activeButton;
+	let _size = ctx.size;
+	let _shape = ctx.shape;
 
 	ctx.registerButton(id, icon);
+
+	$: active = $_active;
+	$: console.log(active);
+	$: size = $_size;
+	$: shape = $_shape;
 
 	const dispatch = createEventDispatcher();
 	const clickDispatcher = (e: MouseEvent) => {
@@ -18,31 +25,24 @@
 		dispatch('click', { eventDetails: e });
 	};
 
-	let htmlElem: HTMLElement;
-	function keydownHandler(e: KeyboardEvent) {
-		if (['Enter', 'Space'].includes(e.code)) {
-			e.preventDefault();
-			ctx.setActiveButton(id);
-			htmlElem.click();
-		}
-	}
-
-	$: activeButton = $value;
-
 	onDestroy(() => {
 		ctx.unregisterButton(id);
 	});
 </script>
 
 <button
-	bind:this={htmlElem}
 	id="btn-{label}-{id}"
-	on:click={clickDispatcher}
-	on:keydown={keydownHandler}
-	class="btngroup__item"
-	class:is-active={activeButton === id}
+	class:is-active={active === id}
 	aria-label={label}
+	data-size={size}
+	data-shape={shape}
 	data-testid="btn-{id}"
+	on:click={clickDispatcher}
+	on:change
+	on:keydown
+	on:keyup
+	on:mouseenter
+	on:mouseleave
 >
 	{#if icon && position == 'left'}
 		<svelte:component this={icon} />

@@ -5,162 +5,214 @@
 @custom-media --viewport-medium (min-width: 768px);
 @custom-media --viewport-large (min-width: 1024px);
 
-.sn-e-c-btngroup {
-  position: relative;
-  isolation: isolate;
-  display: inline-flex;
-  border-radius: 0.375rem; /* 6px */
-
-  &::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-  & .btngroup__item {
+@layer components {
+  .sn-e-c-btngroup {
     position: relative;
+    isolation: isolate;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    gap: var(--_gap);
 
-    min-height: var(--_min-height);
-    height: var(--_height);
+    &::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
 
-    padding-top: var(--_pt);
-    padding-right: var(--_pr);
-    padding-bottom: var(--_pb);
-    padding-left: var(--_pl);
-    color: var(--_color);
-    font-size: var(--_font-size);
-    font-weight: var(--_font-weight);
-    line-height: var(--_line-height);
-    letter-spacing: var(--_letter-spacing);
-    text-decoration: var(--_text-decoration);
-    background-color: var(--_bg-color);
-    border-color: var(--_border-color);
-    border-style: var(--_border-style);
-    border-width: var(--_border-width);
-    border-radius: var(--_border-radius);
+    & button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      gap: var(--gap, var(--size-1));
+      padding: var(--py, var(--size-2)) var(--px, var(--size-3));
 
-    &:first-child {
-      border-top-left-radius: inherit;
-      border-top-right-radius: inherit;
+      color: var(--color, var(--gray-8));
+      text-decoration: var(--text-decoration, none);
+      background-color: var(--bg-color, var(--white));
+      border-color: var(--border-color, var(--gray-2));
+      border-style: var(--border-style, solid);
+      border-width: var(--border-width, 1px);
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-    }
-
-    &:not(:first-child) {
-      border-left-width: 0; /* Prevent double borders */
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
 
-    &:last-child {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-left-radius: inherit;
-      border-bottom-right-radius: inherit;
-    }
+      &:hover {
+        background-color: var(--bg-color-hover, var(--gray-1));
+      }
 
-    &:hover {
-      background-color: var(--_bg-color-hover);
-    }
+      &:focus {
+        outline-width: var(--ring-width, 1px);
+        outline-style: var(--ring-style, solid);
+        outline-offset: var(--ring-offset, 0px);
+        outline-color: var(--ring-color, var(--gray-2));
+      }
 
-    &:focus {
-      outline-width: var(--_ring-width);
-      outline-style: var(--_ring-style);
-      outline-offset: var(--_ring-offset);
-      outline-color: var(--_ring-color);
-    }
-  }
+      /* * Sizes (component prop "size")     */
+      /*- xs -*/
+      &[data-size="xs"] {
+        min-height: var(--min-height-xs, var(--size-7));
+        height: var(--height-xs, var(--size-7));
+        font-size: var(--font-size-xs, var(--font-size-0));
+        font-weight: var(--font-weight, var(--font-weight-4));
+        line-height: var(--line-height-xs, var(--font-lineheight-00));
+        letter-spacing: var(--letter-spacing-xs, var(--font-letterspacing-0));
+      }
 
-  & .is-active:where(.btngroup__item) {
-    color: var(--_active-color);
-    border-color: var(--_active-border-color);
-    border-style: var(--_active-border-style);
-    border-width: var(--_active-border-width);
-    background-color: var(--_active-bg-color);
-  }
+      /*- sm -*/
+      &[data-size="sm"] {
+        min-height: var(--min-height-sm, var(--size-7));
+        height: var(--height-sm, var(--size-7));
+        font-size: var(--font-size-sm, calc(var(--font-size-0) + 0.1) rem);
+        font-weight: var(--font-weight, var(--font-weight-4));
+        line-height: var(--line-height-sm, var(--font-lineheight-1));
+        letter-spacing: var(--letter-spacing-sm, var(--font-letterspacing-1));
+      }
 
-  /** lg breakpoint */
-  @media (--viewport-medium) {
-    & {
-      & .btngroup__item {
+      /*- base -*/
+      &[data-size="base"] {
+        min-height: var(--min-height-base, var(--size-8));
+        height: var(--height-base, var(--size-8));
+        font-size: var(--font-size-base, var(--font-size-1));
+        font-weight: var(--font-weight, var(--font-weight-4));
+        line-height: var(--line-height-base, var(--font-lineheight-2));
+        letter-spacing: var(--letter-spacing-base, var(--font-letterspacing-1));
+      }
+
+      /*- lg -*/
+      &[data-size="lg"] {
+        min-height: var(--min-height-lg, var(--size-8));
+        height: var(--height-lg, var(--size-8));
+        font-size: var(--font-size-lg, var(--font-size-2));
+        font-weight: var(--font-weight, var(--font-weight-5));
+        line-height: var(--line-height-lg, var(--font-lineheight-4));
+        letter-spacing: var(--letter-spacing-lg, var(--_letter-spacing-base));
+      }
+
+      /*- xl -*/
+      &[data-size="xl"] {
+        min-height: var(--min-height-xl, var(--size-8));
+        height: var(--height-xl, var(--size-8));
+        font-size: var(--font-size-xl, var(--font-size-3));
+        font-weight: var(--font-weight, var(--font-weight-5));
+        line-height: var(--line-height-xl, var(--font-lineheight-4));
+        letter-spacing: var(--letter-spacing-xl, var(--_letter-spacing-lg));
+      }
+
+      /* * Shapes (component prop "shape")   * */
+      /* - flat - */
+      &[data-shape="flat"] {
+        border-radius: var(--radius-0);
+      }
+
+      /* - rounded - */
+      &[data-shape="rounded"] {
         &:first-child {
-          border-top-right-radius: 0;
-          border-top-left-radius: inherit;
-          border-bottom-left-radius: inherit;
-          border-bottom-right-radius: 0;
+          border-top-left-radius: var(--radius-2);
+          border-top-right-radius: var(--radius-2);
         }
 
         &:last-child {
-          border-top-right-radius: 0;
-          border-top-right-radius: inherit;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: inherit;
+          border-bottom-left-radius: var(--radius-2);
+          border-bottom-right-radius: var(--radius-2);
+        }
+      }
+
+      /* - pill - */
+      &[data-shape="pill"] {
+        &:first-child {
+          border-top-left-radius: var(--radius-4);
+          border-top-right-radius: var(--radius-4);
+        }
+
+        &:last-child {
+          border-bottom-left-radius: var(--radius-4);
+          border-bottom-right-radius: var(--radius-4);
+        }
+      }
+
+      &[data-shape="flat"],
+      &[data-shape="rounded"],
+      &[data-shape="pill"] {
+        &:not(:first-child, :last-child) {
+          border-top-width: 0; /* Prevent double borders */
+          border-bottom-width: 0; /* Prevent double borders */
+        }
+      }
+    }
+
+    & .is-active:where(button) {
+      color: var(--active-color, var(--gray-9));
+      border-color: var(--active-border-color, var(--gray-2));
+      border-style: var(--active-border-style, solid);
+      background-color: var(--active-bg-color, var(--gray-0));
+    }
+
+    /** lg breakpoint */
+    @media (--viewport-medium) {
+      & {
+        & button {
+          &[data-shape="rounded"],
+          &[data-shape="pill"] {
+            &:first-child,
+            &:last-child {
+              border-top-right-radius: 0;
+            }
+          }
+
+          &[data-shape="flat"],
+          &[data-shape="rounded"],
+          &[data-shape="pill"] {
+            &:not(:first-child, :last-child) {
+              border-left-width: 0; /* Prevent double borders */
+              border-right-width: 0; /* Prevent double borders */
+              border-top-width: 1px;
+              border-bottom-width: 1px;
+            }
+          }
+
+          /* - rounded - */
+          &[data-shape="rounded"] {
+            &:first-child {
+              border-top-left-radius: var(--radius-2);
+              border-bottom-left-radius: var(--radius-2);
+              border-bottom-right-radius: 0;
+            }
+
+            &:last-child {
+              border-top-right-radius: var(--radius-2);
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: var(--radius-2);
+            }
+          }
+
+          /* - pill - */
+          &[data-shape="pill"] {
+            &:first-child {
+              border-top-left-radius: var(--radius-5);
+              border-bottom-left-radius: var(--radius-5);
+              border-bottom-right-radius: 0;
+            }
+
+            &:last-child {
+              border-top-right-radius: var(--radius-5);
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: var(--radius-5);
+            }
+          }
         }
       }
     }
   }
-}
 
-.sn-e-c-btngroup--responsive {
-  flex-direction: column;
+  .sn-e-c-btngroup--responsive {
+    flex-direction: column;
 
-  /** lg breakpoint */
-  @media (--viewport-medium) {
-    & {
-      flex-direction: row;
+    /** lg breakpoint */
+    @media (--viewport-medium) {
+      & {
+        flex-direction: row;
+      }
     }
   }
-}
-
-/* * Sizes (component prop "size")     */
-.size--xs:where(.sn-e-c-btngroup) {
-  --_min-height: var(--_min-height-xs);
-  --_height: var(--_height-xs);
-  --_font-size: var(--_font-size-xs);
-  --_font-weight: var(--_font-weight-xs);
-  --_line-height: var(--_line-height-xs);
-  --_letter-spacing: var(--_letter-spacing-xs);
-}
-
-.size--sm:where(.sn-e-c-btngroup) {
-  --_min-height: var(--_min-height-sm);
-  --_height: var(--_height-sm);
-  --_font-size: var(--_font-size-sm);
-  --_font-weight: var(--_font-weight-sm);
-  --_line-height: var(--_line-height-sm);
-  --_letter-spacing: var(--_letter-spacing-sm);
-}
-
-.size--base:where(.sn-e-c-btngroup) {
-  --_min-height: var(--_min-height-base);
-  --_height: var(--_height-base);
-  --_font-size: var(--_font-size-base);
-  --_font-weight: var(--_font-weight-base);
-  --_line-height: var(--_line-height-base);
-  --_letter-spacing: var(--_letter-spacing-base);
-}
-
-.size--lg:where(.sn-e-c-btngroup) {
-  --_min-height: var(--_min-height-lg);
-  --_height: var(--_height-lg);
-  --_font-size: var(--_font-size-lg);
-  --_font-weight: var(--_font-weight-lg);
-  --_line-height: var(--_line-height-lg);
-  --_letter-spacing: var(--_letter-spacing-lg);
-}
-
-.size--xl:where(.sn-e-c-btngroup) {
-  --_min-height: var(--_min-height-xl);
-  --_height: var(--_height-xl);
-  --_font-size: var(--_font-size-xl);
-  --_font-weight: var(--_font-weight-xl);
-  --_line-height: var(--_line-height-xl);
-  --_letter-spacing: var(--_letter-spacing-xl);
 }
