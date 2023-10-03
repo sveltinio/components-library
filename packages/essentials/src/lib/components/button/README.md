@@ -5,7 +5,7 @@ The `Button` is an interactive and accessible Svelte component implementing the 
 It supports different:
 
 - **variants**: `default`, `primary`, `secondary`, `info`, `error`, `success`, `warning`, `ghost` and `neutral`
-- **sizes**: `xs`, `sm`, `base` (default), `lg` and `xl`
+- **sizes**: `xs`, `sm`, `base` (default), `lg`, `xl` and `full`
 - **styles**: filled (default), `outlined`
 - **shapes**: `rounded` (default), `pills`, `circle` and `flat`
 - **focus**: with or without the focus ring
@@ -52,8 +52,8 @@ The `Button` component exposes a set of properties to allow its configuration.
 | label         | `string`  |    no    | `undefined`   | Set the label for the button                                                             |
 | alt           | `string`  |    no    | `label` value | Set the `aria-label` attribute                                                           |
 | variant       | `string`  |    no    | `default`     | Button type (primary, secondary, error, success, ...)                                    |
-| size          | `string`  |    no    | `base`        | Set the button size. One of `['xs', 'sm', 'base', 'lg' and 'xl']                         |
-| border        | `string`  |    no    | `none`        | Set the border style. One of `['solid', 'dashed', 'dotted', ...]`                         |
+| size          | `string`  |    no    | `base`        | Set the button size. One of `['xs', 'sm', 'base', 'lg', 'xl', 'full']`                   |
+| border        | `string`  |    no    | `none`        | Set the border style. One of `['solid', 'dashed', 'dotted', ...]`                        |
 | shape         | `string`  |    no    | `rounded`     | Set the button shape. One of `['rounded', 'pills', 'circle', 'flat']`                    |
 | disabled      | `boolean` |    no    | `false`       | If true, the `button` is unusable and un-clickable. <br/>Set `aria-disabled` accordingly |
 | outlined      | `boolean` |    no    | `false`       | White background button with the border                                                  |
