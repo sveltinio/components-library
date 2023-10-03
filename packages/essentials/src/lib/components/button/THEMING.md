@@ -17,6 +17,13 @@ The `Button` component is a `button` or a `a` HTML element. If an icon is presen
 
 The CSS variables are defined in the [variables.css](../../styles/components/button/variables.css) file.
 
+| Name | Default Value | Description |
+| :----- | :--------------- | :------------- |
+| min-w | `10ch` | |
+| min-h | `44px` | |
+| px    | `0.75rem` | |
+| py    | `0.25rem` | |
+
 ## Examples
 
 ### Custom Styles with prop
@@ -32,15 +39,15 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
       "border-color": "rgb(236 252 203)",
       "bg-color": "rgb(132 204 22)",
       "bg-hover": "rgb(163 230 53)",
-      "ring-color": "rgb(190 242 100)",
-      "ring-style": "dashed"
+      "outline-color": "rgb(190 242 100)",
+      "outline-style": "dashed"
    }
 </script>
 
 <Button
    label="Custom Success"
    type="success"
-   rounded
+   shape="rounded"
    withFocus
    styles={myStyles}
 />
@@ -57,7 +64,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
   --primary-bg-color: #7e22ce;
   --primary-border-color: #a855f7;
   --primary-bg-color-hover: #c026d3;
-  --primary-ring-color: #d946ef;
+  --primary-outline-color: #d946ef;
 }
 ```
 
@@ -66,7 +73,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
    import { Button } from '@sveltinio/essentials/button';
 </script>
 
-<Button label="My Primary Button" type="primary" rounded class="my-primary-btn" />
+<Button label="My Primary Button" type="primary" shape="rounded" class="my-primary-btn" />
 ```
 
 <!-- Resources -->

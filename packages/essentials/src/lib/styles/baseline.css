@@ -1,8 +1,10 @@
-@import "open-props/colors";
-@import "open-props/borders";
-@import "open-props/fonts";
-@import "open-props/aspects";
 @layer reset, theme, components;
+
+@import url("open-props/colors") layer(theme);
+@import url("open-props/borders") layer(theme);
+@import url("open-props/fonts") layer(theme);
+@import url("open-props/aspects") layer(theme);
+@import url("open-props/sizes") layer(theme);
 
 /* stylelint-disable comment-empty-line-before */
 

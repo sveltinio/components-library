@@ -9,3 +9,5 @@ export type { ListItem };
 
 import type { TabItem } from './components/tabs/types.js';
 export type { TabItem };
+
+export type SvelteKitPrefetch = 'off' | 'hover' | 'tap';
