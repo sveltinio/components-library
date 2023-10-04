@@ -1,7 +1,8 @@
-import { tick } from 'svelte';
 import type { Action } from 'svelte/action';
 import type { ToggleListContext } from './types';
-import { addCssClass, resetFocusClass } from '$lib/utils.js';
+import { getComponentId, isChar } from '$lib/utils.js';
+import { ComponentFocusManager } from '@sveltinio/ts-utils/a11y';
+import { tick } from 'svelte';
 
 interface A11yKeyboardActionOptions {
 	enabled: boolean;
@@ -16,79 +17,42 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	const { isOpen, ctx } = options || {};
 
 	let open = isOpen;
-	let firstMenuItem: HTMLLinkElement;
-	let lastMenuItem: HTMLLinkElement;
-	const listItems: HTMLLIElement[] = [];
+
+	const componentId = getComponentId(node);
+	const focusManager = new ComponentFocusManager(componentId);
+	const _listGroups: Record<string, HTMLElement[]> = {};
+	const _firstChars: Record<string, string[]> = {};
+	const _firstListItem: Record<string, HTMLElement | null> = {};
+	const _lastListItem: Record<string, HTMLElement | null> = {};
+
+	function initialize(cId: string) {
+		_listGroups[cId] = [];
+		_firstChars[componentId] = [];
+		_firstListItem[componentId] = null;
+		_lastListItem[componentId] = null;
+	}
 
 	const toggleExpand = () => {
 		open = !open;
-		ctx?.setValue(open);
+		ctx?.setIsOpen(open);
 	};
 
 	const openMenu = () => {
 		open = true;
-		ctx?.setValue(open);
+		ctx?.setIsOpen(open);
 	};
 
 	const closeMenu = () => {
 		open = false;
-		ctx?.setValue(open);
+		ctx?.setIsOpen(open);
 	};
 
-	const setFocusOnItem = (item: HTMLElement) => {
-		menuItemNodes.forEach(async (itemNode) => {
-			resetFocusClass(listItems);
-			if (itemNode === item) {
-				itemNode.tabIndex = 0;
-				await tick();
-				const parentElement = itemNode.parentElement;
-				if (parentElement) addCssClass(parentElement, 'focus');
-
-				itemNode.focus();
-			} else {
-				itemNode.tabIndex = -1;
-			}
-		});
-	};
-
-	const setFocusOnFirstItem = () => setFocusOnItem(firstMenuItem);
-
-	const setFocusOnLastItem = () => setFocusOnItem(lastMenuItem);
-
-	const setFocusOnPreviousItem = (currentMenuItem: HTMLLinkElement) => {
-		let newMenuitem, index;
-		resetFocusClass(listItems);
-
-		if (currentMenuItem === firstMenuItem) {
-			newMenuitem = firstMenuItem;
-		} else {
-			index = menuItemNodes.indexOf(currentMenuItem);
-			newMenuitem = menuItemNodes[index - 1];
-		}
-
-		setFocusOnItem(newMenuitem);
-		return newMenuitem;
-	};
-
-	const setFocusOnNextItem = (currentMenuItem: HTMLLinkElement) => {
-		let newMenuitem, index;
-		resetFocusClass(listItems);
-
-		if (currentMenuItem === lastMenuItem) {
-			newMenuitem = lastMenuItem;
-		} else {
-			index = menuItemNodes.indexOf(currentMenuItem);
-			newMenuitem = menuItemNodes[index + 1];
-		}
-
-		setFocusOnItem(newMenuitem);
-		return newMenuitem;
-	};
-
+	/** ***************** START - Event Handlers ******************************************** */
 	const onButtonClick = (e: MouseEvent) => {
 		e.stopPropagation();
 		e.preventDefault();
 		toggleExpand();
+		if (open) focusManager.setFocusToFirstItem();
 	};
 
 	const onButtonKeydown = (e: KeyboardEvent) => {
@@ -98,7 +62,7 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 			case 'Space':
 			case 'Enter':
 				toggleExpand();
-				if (open) setFocusOnFirstItem();
+				if (open) focusManager.setFocusToFirstItem();
 				break;
 			case 'Esc':
 			case 'Escape':
@@ -111,71 +75,91 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 		}
 	};
 
-	const onMenuItemKeydown = (e: KeyboardEvent) => {
+	const onItemKeydown = (e: KeyboardEvent) => {
 		e.stopPropagation();
 		e.preventDefault();
 		const target = e.currentTarget as HTMLLinkElement;
-		switch (e.code) {
-			case 'Space':
-			case 'Enter':
-				if (open) {
+
+		if (e.shiftKey) {
+			if (isChar(e.key)) {
+				focusManager.setFocusByFirstChar(target, e.key);
+			}
+		} else {
+			switch (e.code) {
+				case 'Space':
+				case 'Enter':
+					if (open) {
+						closeMenu();
+						toggleBtn.focus();
+					} else {
+						openMenu();
+					}
+					break;
+				case 'Esc':
+				case 'Escape':
 					closeMenu();
 					toggleBtn.focus();
-				} else {
-					openMenu();
-				}
-				break;
-			case 'Esc':
-			case 'Escape':
-				closeMenu();
-				toggleBtn.focus();
-				break;
-			case 'Up':
-			case 'ArrowUp':
-				setFocusOnPreviousItem(target);
-				break;
-			case 'Down':
-			case 'ArrowDown':
-				setFocusOnNextItem(target);
-				break;
-			case 'Home':
-			case 'PageUp':
-				setFocusOnFirstItem();
-				break;
-			case 'End':
-			case 'PageDown':
-				setFocusOnLastItem();
-				break;
+					break;
+				case 'Up':
+				case 'ArrowUp':
+					focusManager.setFocusToPreviousItem(target);
+					break;
+				case 'Down':
+				case 'ArrowDown':
+					focusManager.setFocusToNextItem(target);
+					break;
+				case 'Home':
+				case 'PageUp':
+					focusManager.setFocusToFirstItem();
+					break;
+				case 'End':
+				case 'PageDown':
+					focusManager.setFocusToLastItem();
+					break;
+				default:
+					if (isChar(e.key)) {
+						focusManager.setFocusByFirstChar(target, e.key);
+					}
+					break;
+			}
 		}
 	};
 
-	const onMenuItemMouseOver = (e: MouseEvent) => {
+	const onItemMouseOver = (e: MouseEvent) => {
 		const target = e.currentTarget as HTMLElement;
-		setFocusOnItem(target);
+		target.focus();
 	};
+	/** ***************** END - Event Handlers ******************************************** */
 
-	const toggleBtn = node.querySelector('button.btn') as HTMLButtonElement;
+	initialize(componentId);
+
+	const toggleBtn = node.querySelector('button') as HTMLElement;
 	if (options?.enabled) toggleBtn.addEventListener('click', onButtonClick);
 	if (options?.enabled) toggleBtn.addEventListener('keydown', onButtonKeydown);
 
-	const listItemsNodes = Array.from(document.querySelectorAll('li.list__item')) as HTMLLIElement[];
+	const liNodes = Array.from(node.querySelectorAll('[role="menuitem"]')) as HTMLLinkElement[];
 
-	listItemsNodes.forEach((liItem) => {
-		listItems.push(liItem);
-	});
+	liNodes.forEach((item) => {
+		item.tabIndex = -1;
+		item.addEventListener('keydown', onItemKeydown);
+		item.addEventListener('mouseover', onItemMouseOver);
+		_listGroups[componentId].push(item);
 
-	const menuItemNodes = Array.from(node.querySelectorAll('[role="menuitem"]')) as HTMLLinkElement[];
+		// get the first letter of the item
+		const menuItemContent = item.textContent?.trim().toLowerCase()[0];
+		if (menuItemContent) _firstChars[componentId].push(menuItemContent);
 
-	menuItemNodes.forEach((menuItem) => {
-		menuItem.tabIndex = -1;
-		menuItem.addEventListener('keydown', onMenuItemKeydown);
-		menuItem.addEventListener('mouseover', onMenuItemMouseOver);
-
-		if (!firstMenuItem) {
-			firstMenuItem = menuItem;
+		if (!_firstListItem[componentId]) {
+			_firstListItem[componentId] = item;
 		}
-		lastMenuItem = menuItem;
+		_lastListItem[componentId] = item;
 	});
+
+	focusManager.applyDOMChangesFn = tick;
+	focusManager.items = _listGroups;
+	focusManager.firstChars = _firstChars;
+	focusManager.firstItem = _firstListItem;
+	focusManager.lastItem = _lastListItem;
 
 	return {
 		update(param) {
@@ -186,9 +170,9 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 			toggleBtn.removeEventListener('click', onButtonClick);
 			toggleBtn.removeEventListener('keydown', onButtonKeydown);
 
-			menuItemNodes.forEach((menuItem) => {
-				menuItem.removeEventListener('keydown', onMenuItemKeydown);
-				menuItem.removeEventListener('mouseover', onMenuItemMouseOver);
+			liNodes.forEach((item) => {
+				item.removeEventListener('keydown', onItemKeydown);
+				item.removeEventListener('mouseover', onItemMouseOver);
 			});
 		}
 	};

@@ -3,15 +3,18 @@
 	import { Item } from './index.js';
 	import type { ListItem, ToggleListContext } from '../types.js';
 
-	const ctx: ToggleListContext = getContext('SNE_ToggleList');
-	let value = ctx.value;
-
 	export let items: Array<ListItem>;
-	$: isOpen = $value;
+
+	const ctx: ToggleListContext = getContext('SNE_ToggleList');
+	let _isOpen = ctx.isOpen;
+	let _indicator = ctx.indicator;
+
+	$: isOpen = $_isOpen;
+	$: indicator = $_indicator;
 </script>
 
-<ul id="items-list" class="list" class:hide={!isOpen} data-testid="items_list">
+<ul id="items-list" data-visible={isOpen} data-testid="items_list" role="list">
 	{#each items as item, id}
-		<Item {id} {item} />
+		<Item {id} {item} {indicator} />
 	{/each}
 </ul>

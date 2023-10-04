@@ -1,5 +1,5 @@
-import Item from './Item.svelte';
+import Title from './Title.svelte';
 import List from './List.svelte';
-import ToggleButton from './ToggleButton.svelte';
+import Item from './Item.svelte';
 
-export { Item, List, ToggleButton };
+export { Title, List, Item };

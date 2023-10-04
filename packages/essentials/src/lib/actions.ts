@@ -25,12 +25,12 @@ export const clickOutsideAction: Action<HTMLElement, ClickOutsideActionConfig> =
 	};
 };
 
-export interface ActiveActionOptions {
+export interface ActiveActionConfig {
 	enabled: boolean;
 	className: string;
 }
 
-export const activeAction: Action<HTMLElement, ActiveActionOptions> = (
+export const activeAction: Action<HTMLElement, ActiveActionConfig> = (
 	node,
 	options = { enabled: true, className: 'is-active' }
 ) => {
@@ -44,17 +44,19 @@ export const activeAction: Action<HTMLElement, ActiveActionOptions> = (
 	};
 };
 
-function isActive(href: string): boolean {
+function isCurrentURL(href: string): boolean {
+	/*
 	const { hash, pathname, search } = new URL(location.href);
 	const path = pathname + search + hash;
 	return path.includes(href);
+	*/
+	return href === location.href;
 }
 
 function addActiveClass(node: HTMLElement, className: string): void {
-	const parentElement = node.parentElement;
-	if (isActive(node.getAttribute('href') || '')) {
-		parentElement?.classList.add(className);
+	if (isCurrentURL(node.getAttribute('href') || '')) {
+		node?.classList.add(className);
 	} else {
-		parentElement?.classList.remove(className);
+		node?.classList.remove(className);
 	}
 }

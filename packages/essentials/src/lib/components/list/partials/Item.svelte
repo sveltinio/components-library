@@ -1,48 +1,27 @@
 <script lang="ts">
+	import type { IndicatorType, ListItem } from '../types.js';
+	import type { SvelteKitPrefetch } from '$lib/types.js';
 	import { activeAction } from '$lib/actions.js';
-	import { onMount } from 'svelte';
-	import type { ListItem } from '../types.js';
 
 	export let id: number;
 	export let item: ListItem;
 	export let iconSize = '20px';
+	export let prefetch: SvelteKitPrefetch = 'off';
+	export let indicator: IndicatorType;
 
-	export let prefetch = false;
-	export let noOpener = true;
-	export let noReferrer = true;
-
-	let aElem: HTMLAnchorElement;
-
-	let relOptions = ['external'];
-	if (noOpener) relOptions.push('noopener');
-	if (noReferrer) relOptions.push('noreferrer');
-
-	const prefetchValue: true | '' | 'hover' | 'off' | 'tap' | null | undefined =
-		prefetch && !item.external ? `hover` : `off`;
+	const prefetchValue = !item.external ? prefetch : undefined;
 	const target = item.external ? '_blank' : '_self';
-
-	onMount(() => {
-		if (item.external) {
-			aElem.setAttribute('target', '_blank');
-
-			let relOptions = ['external'];
-			if (noOpener) relOptions.push('noopener');
-			if (noReferrer) relOptions.push('noreferrer');
-			aElem.setAttribute('rel', relOptions.join(' '));
-		}
-	});
 </script>
 
-<li class="list__item" data-testid="list_item_{item}">
+<li class="list__item" data-testid="list_item_{id}">
 	<a
-		bind:this={aElem}
 		href={item.url}
 		{target}
+		data-indicator={indicator}
 		data-sveltekit-preload-data={prefetchValue}
-		class="item__link"
 		role="menuitem"
-		use:activeAction
 		data-testid="item_link_{id}"
+		use:activeAction={{ enabled: true, className: 'is-active' }}
 	>
 		{#if item.icon}
 			<svelte:component this={item.icon} size={iconSize} />
