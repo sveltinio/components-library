@@ -1,6 +1,7 @@
 export { Button } from './components/button/index.js';
 
-export { ButtonGroup, ButtonGroupItem } from './components/button-group/index.js';
+import ButtonGroup from './components/button-group/index.js';
+export { ButtonGroup };
 
 export { ColorViewer } from './components/color/index.js';
 

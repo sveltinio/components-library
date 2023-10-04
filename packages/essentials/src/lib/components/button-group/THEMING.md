@@ -27,7 +27,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
 
 ```html
 <script>
-   import { ButtonGroup, ButtonGroupItem } from '@sveltinio/essentials/button-group';
+   import { ButtonGroup } from '@sveltinio/essentials/button-group';
 
    function handleMessage(event: CustomEvent) {
       console.log(event.detail);
@@ -47,9 +47,9 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
 </script>
 
 <ButtonGroup styles={myBtnGroupStyles}>
-   <ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-   <ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-   <ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+   <ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+   <ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+   <ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 </ButtonGroup>
 ```
 
@@ -74,13 +74,13 @@ The CSS variables are defined in the [variables.css](../../styles/components/but
 
 ```html
 <script>
-   import { ButtonGroup, ButtonGroupItem } from '@sveltinio/essentials/button-group';
+   import { ButtonGroup } from '@sveltinio/essentials/button-group';
 </script>
 
 <ButtonGroup class="my-btngroup">
-   <ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-   <ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-   <ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+   <ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+   <ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+   <ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 </ButtonGroup>
 ```
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ButtonGroup, ButtonGroupItem } from '$lib/index.js';
+	import { ButtonGroup } from '$lib/index.js';
 	import DummyIcon from '../_dummyIcon.svelte';
 	function handleMessage(event: CustomEvent) {
 		console.log(event.detail.eventDetails);
@@ -33,25 +33,25 @@
 		<h4>Default: Rounded</h4>
 		<div class="preview">
 			<ButtonGroup>
-				<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-				<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-				<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 			</ButtonGroup>
 		</div>
 		<h4>Flat</h4>
 		<div class="preview">
 			<ButtonGroup shape="flat">
-				<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-				<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-				<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 			</ButtonGroup>
 		</div>
 		<h4>Pill</h4>
 		<div class="preview">
 			<ButtonGroup shape="pill">
-				<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-				<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-				<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 			</ButtonGroup>
 		</div>
 	</div>
@@ -63,41 +63,41 @@
 		</h3>
 		<div class="preview">
 			<ButtonGroup size="xs">
-				<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-				<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-				<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 			</ButtonGroup>
 		</div>
 
 		<div class="preview">
 			<ButtonGroup size="sm">
-				<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-				<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-				<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 			</ButtonGroup>
 		</div>
 
 		<div class="preview">
 			<ButtonGroup>
-				<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-				<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-				<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 			</ButtonGroup>
 		</div>
 
 		<div class="preview">
 			<ButtonGroup size="lg">
-				<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-				<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-				<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 			</ButtonGroup>
 		</div>
 
 		<div class="preview">
 			<ButtonGroup size="xl">
-				<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-				<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-				<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 			</ButtonGroup>
 		</div>
 	</div>
@@ -106,19 +106,19 @@
 		<h3 id="buttongroup-left-icon">Left Icon</h3>
 		<div class="preview">
 			<ButtonGroup>
-				<ButtonGroupItem
+				<ButtonGroup.Button
 					id="1"
 					label="Button 1"
 					icon={DummyIcon}
 					on:click={handleMessage}
 				/>
-				<ButtonGroupItem
+				<ButtonGroup.Button
 					id="2"
 					label="Button 2"
 					icon={DummyIcon}
 					on:click={handleMessage}
 				/>
-				<ButtonGroupItem
+				<ButtonGroup.Button
 					id="3"
 					label="Button 3"
 					icon={DummyIcon}
@@ -132,21 +132,21 @@
 		<h3 id="buttongroup-right-icon">Right Icon</h3>
 		<div class="preview">
 			<ButtonGroup>
-				<ButtonGroupItem
+				<ButtonGroup.Button
 					id="1"
 					label="Button 1"
 					icon={DummyIcon}
 					position="right"
 					on:click={handleMessage}
 				/>
-				<ButtonGroupItem
+				<ButtonGroup.Button
 					id="2"
 					label="Button 2"
 					icon={DummyIcon}
 					position="right"
 					on:click={handleMessage}
 				/>
-				<ButtonGroupItem
+				<ButtonGroup.Button
 					id="3"
 					label="Button 3"
 					icon={DummyIcon}
@@ -161,9 +161,9 @@
 		<h3 id="buttongroup-theming-with-prop">Custom Styles with styles prop</h3>
 		<div class="preview">
 			<ButtonGroup styles={customStyles}>
-				<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-				<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-				<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 			</ButtonGroup>
 		</div>
 	</div>
@@ -171,9 +171,9 @@
 	<div id="buttongroup-theming-with-css-class-wrapper" class="demo-wrapper">
 		<h3 id="buttongroup-theming-with-css-class">Custom Styles with CSS Class</h3>
 		<ButtonGroup class="my-btngroup">
-			<ButtonGroupItem id="1" label="Button 1" on:click={handleMessage} />
-			<ButtonGroupItem id="2" label="Button 2" on:click={handleMessage} />
-			<ButtonGroupItem id="3" label="Button 3" on:click={handleMessage} />
+			<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+			<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+			<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
 		</ButtonGroup>
 	</div>
 </section>

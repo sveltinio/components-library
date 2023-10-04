@@ -1,2 +1,17 @@
-export { default as ButtonGroupItem } from './ButtonGroupItem.svelte';
-export { default as ButtonGroup } from './ButtonGroup.svelte';
+import BaseButtonGroup from './ButtonGroup.svelte';
+import BaseButton from './ButtonGroupButton.svelte';
+
+export interface ButtonGroupStatic {
+	new (...args: ConstructorParameters<typeof BaseButtonGroup>): BaseButtonGroup;
+	Button: ButtonStatic;
+}
+
+export interface ButtonStatic {
+	new (...args: ConstructorParameters<typeof BaseButton>): BaseButton;
+	Button: ButtonStatic;
+}
+
+const ButtonGroup = BaseButtonGroup as ButtonGroupStatic;
+ButtonGroup.Button = BaseButton as ButtonStatic;
+
+export default ButtonGroup;
