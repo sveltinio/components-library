@@ -1,14 +1,15 @@
 @charset "UTF-8";
 
 /* stylelint-disable declaration-empty-line-before */
+@layer components {
+  .sn-e-c-link {
+    text-decoration: var(--text-decoration, none);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--icon-gap, var(--size-1));
 
-.sn-e-c-link {
-  text-decoration: var(--_text-decoration);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--_icon-gap);
-
-  &:hover {
-    text-decoration: var(--_text-decoration-hover);
+    &:hover {
+      text-decoration: var(--text-decoration-hover, underline);
+    }
   }
 }

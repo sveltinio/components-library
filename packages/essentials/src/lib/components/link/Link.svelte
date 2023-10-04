@@ -1,17 +1,14 @@
 <script lang="ts">
-	import '../../styles/base.css';
-	import '../../styles/components/link/variables.css';
+	import '../../styles/baseline.css';
 	import '../../styles/components/link/styles.css';
-	import { onMount } from 'svelte';
+	import type { SvelteKitPrefetch } from '$lib/types.js';
 	import { isNullish } from '@sveltinio/ts-utils/is';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames } from '$lib/utils';
+	import { retrieveCssClassNames, makeExternalLinkOptions } from '$lib/utils.js';
 	import { ExternalLinkIcon } from './index.js';
 
-	type SvelteKitPrefetch = true | '' | 'hover' | 'off' | 'tap' | null | undefined;
-
 	export let label: string | null | undefined = undefined;
-	export let href: string;
+	export let href: HTMLAnchorElement['href'];
 	export let prefetch: SvelteKitPrefetch = 'off';
 	export let external = false;
 	export let externalIcon = true;
@@ -25,34 +22,22 @@
 		throw new Error(cssStyles.error.message);
 	}
 
-	let aElem: HTMLElement;
-
-	const _prefetchValue: SvelteKitPrefetch = external ? 'off' : prefetch;
+	const target = external ? '_blank' : '_self';
 	const _extIcon = external && externalIcon ? true : false;
 
 	// avoid hacking reserved css class names
-	const reservedNames = ['sn-e-c-link-vars', 'sn-e-c-link'];
+	const reservedNames = ['sn-e-c-link'];
 	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
-
-	onMount(() => {
-		if (external) {
-			aElem.setAttribute('target', '_blank');
-
-			let relOptions = ['external'];
-			if (noOpener) relOptions.push('noopener');
-			if (noReferrer) relOptions.push('noreferrer');
-			aElem.setAttribute('rel', relOptions.join(' '));
-		}
-	});
 </script>
 
 <a
-	bind:this={aElem}
 	{href}
-	data-sveltekit-preload-data={_prefetchValue}
-	class="sn-e-c-link-vars sn-e-c-link {cssClasses}"
+	{target}
+	rel={makeExternalLinkOptions(external, noOpener, noReferrer)}
+	class="sn-e-c-link {cssClasses}"
 	style={cssStyles.value}
 	aria-label={label}
+	data-sveltekit-preload-data={prefetch}
 	data-testid="link"
 	{...$$restProps}
 >

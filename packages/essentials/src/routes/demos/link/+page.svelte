@@ -22,7 +22,7 @@
 	</div>
 
 	<div id="internal-link-icon" class="demo-wrapper">
-		<h3>Internal Link w/ leftIcon</h3>
+		<h3>Internal Link w/ left icon</h3>
 		<div class="preview">
 			<Link href="{base}/contact">
 				<DummyIcon slot="leftIcon" />
