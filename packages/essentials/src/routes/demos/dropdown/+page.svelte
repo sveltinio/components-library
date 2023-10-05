@@ -2,17 +2,19 @@
 	import { navItems } from '../../../../src/data/sample.js';
 	import { Dropdown } from '$lib/index.js';
 
-	/*
-	const myStyles = {
-		'btn-color': '#ecfeff',
-		'btn-bg-color': '#0891b2',
-		'btn-bg-color-hover': '#0e7490',
-		'btn-border-color': '#67e8f9',
-		'content-bg-color': '#ecfeff',
+	const myDropdownButtonStyles = {
+		color: 'var(--lime-1)',
+		'bg-color': 'var(--lime-9)',
+		'bg-color-hover': 'var(--lime-7)',
+		'border-color': 'var(--lime-8)',
+		'ring-color': 'var(--lime-3)'
+	};
+
+	const myDropdownStyles = {
+		'list-bg-color': '#ecfeff',
 		'item-color': '#164e63',
 		'item-bg-color-hover': '#cffafe'
 	};
-	*/
 </script>
 
 <div class="header" role="main">
@@ -43,22 +45,56 @@
 		</div>
 	</div>
 
-	<!-- To avoid a11y errors due to duplicated ids. Uncomment to see other examples.
+	<div class="demo-wrapper">
+		<h3>Dropdown items as buttons</h3>
+		<div class="preview">
+			<Dropdown>
+				<Dropdown.Button label="Posts" />
+				<Dropdown.Items>
+					{#each navItems as item}
+						{#if item.children}
+							{#each item.children as child}
+								<Dropdown.Items.Item label={child.name} />
+							{/each}
+						{/if}
+					{/each}
+				</Dropdown.Items>
+			</Dropdown>
+		</div>
+	</div>
+
+	<div class="demo-wrapper">
+		<h3>Open by default</h3>
+		<div class="preview">
+			<Dropdown open>
+				<Dropdown.Button label="Posts" />
+				<Dropdown.Items>
+					{#each navItems as item}
+						{#if item.children}
+							{#each item.children as child}
+								<Dropdown.Items.Item label={child.name} />
+							{/each}
+						{/if}
+					{/each}
+				</Dropdown.Items>
+			</Dropdown>
+		</div>
+	</div>
 
 	<div class="demo-wrapper">
 		<h3>Dropdown Menu absolute</h3>
 		<div class="preview">
 			<Dropdown>
-				<DropdownButton label="Posts" />
-				<DropdownContent absolute>
+				<Dropdown.Button label="Posts" />
+				<Dropdown.Items absolute>
 					{#each navItems as item}
 						{#if item.children}
 							{#each item.children as child}
-								<DropdownItem label={child.name} href={child.url} />
+								<Dropdown.Items.Item label={child.name} href={child.url} />
 							{/each}
 						{/if}
 					{/each}
-				</DropdownContent>
+				</Dropdown.Items>
 			</Dropdown>
 		</div>
 	</div>
@@ -66,17 +102,17 @@
 	<div class="demo-wrapper">
 		<h3>Custom Styles with props</h3>
 		<div class="preview">
-			<Dropdown styles={myStyles}>
-				<DropdownButton label="Posts" />
-				<DropdownContent absolute>
+			<Dropdown styles={myDropdownStyles}>
+				<Dropdown.Button label="Posts" styles={myDropdownButtonStyles} />
+				<Dropdown.Items>
 					{#each navItems as item}
 						{#if item.children}
 							{#each item.children as child}
-								<DropdownItem label={child.name} href={child.url} />
+								<Dropdown.Items.Item label={child.name} href={child.url} />
 							{/each}
 						{/if}
 					{/each}
-				</DropdownContent>
+				</Dropdown.Items>
 			</Dropdown>
 		</div>
 	</div>
@@ -85,18 +121,17 @@
 		<h3>Custom Styles with CSS class</h3>
 		<div class="preview">
 			<Dropdown class="my-dropdown">
-				<DropdownButton label="Posts" />
-				<DropdownContent absolute>
+				<Dropdown.Button label="Posts" class="my-dropdown-button" />
+				<Dropdown.Items>
 					{#each navItems as item}
 						{#if item.children}
 							{#each item.children as child}
-								<DropdownItem label={child.name} href={child.url} />
+								<Dropdown.Items.Item label={child.name} href={child.url} />
 							{/each}
 						{/if}
 					{/each}
-				</DropdownContent>
+				</Dropdown.Items>
 			</Dropdown>
 		</div>
 	</div>
-	-->
 </section>

@@ -1,10 +1,12 @@
-@layer reset, theme, components;
+@layer reset, theme, components, utilities;
 
 @import url("open-props/colors") layer(theme);
 @import url("open-props/borders") layer(theme);
 @import url("open-props/fonts") layer(theme);
 @import url("open-props/aspects") layer(theme);
 @import url("open-props/sizes") layer(theme);
+@import url("open-props/shadows") layer(theme);
+@import url("open-props/zindex") layer(theme);
 
 /* stylelint-disable comment-empty-line-before */
 
@@ -148,5 +150,27 @@
     --indigo-800: hsl(243.7deg 54.5% 41.4%);
     --indigo-900: hsl(242.2deg 47.4% 34.3%);
     --indigo-950: hsl(244deg 47% 20%);
+  }
+}
+
+@layer utilities {
+  & .rotate0 {
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  & .rotate90 {
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(90deg);
+  }
+
+  .flipY {
+    transition: 0.3s ease-in-out;
+    transform: scaleY(-1);
+  }
+
+  .flip-Y {
+    transition: 0.3s ease-in-out;
+    transform: scaleY(1);
   }
 }

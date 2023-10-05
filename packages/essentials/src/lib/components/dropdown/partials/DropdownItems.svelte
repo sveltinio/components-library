@@ -1,28 +1,21 @@
 <script lang="ts">
-	import { getContext, onDestroy } from 'svelte';
 	import type { DropdownContext } from '../types.js';
+	import { getContext } from 'svelte';
 
 	export let absolute = false;
 
 	const ctx: DropdownContext = getContext('SNE_Dropdown');
+	let _isOpen = ctx.isOpen;
 
-	let value = ctx.value;
-	const unsubscribe = ctx.value.subscribe((_value) => (isOpen = _value));
-
-	$: isOpen = $value;
-	$: visibility = isOpen ? 'show' : 'hide';
-
-	onDestroy(() => {
-		unsubscribe();
-	});
+	$: isOpen = $_isOpen;
 </script>
 
 <ul
-	id="menu-list"
 	class="list"
-	data-visible="false"
+	data-open={isOpen}
 	data-position={absolute ? 'absolute' : 'relative'}
 	role="menu"
+	data-testid="dropdown-list"
 >
 	<slot />
 </ul>

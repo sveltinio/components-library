@@ -9,18 +9,22 @@
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils.js';
 
-	export let isOpen = false;
+	export let open = false;
+	export let keepOpen = false;
+	export let styles: Record<string, string> = {};
 
-	export let styles = {};
 	const cssStyles = mapToCssVars(styles);
 	if (cssStyles.isErr()) {
 		throw new Error(cssStyles.error.message);
 	}
 
-	const initialState = writable(isOpen);
+	const initialOpenState = writable(open);
+	const initialKeepOpenState = writable(keepOpen);
 	const ctx: DropdownContext = {
-		value: initialState,
-		setValue: (_value) => initialState.set(_value)
+		isOpen: initialOpenState,
+		setIsOpen: (_value: boolean) => initialOpenState.set(_value),
+		keepOpen: initialKeepOpenState,
+		setKeepOpen: (_value: boolean) => initialKeepOpenState.set(_value)
 	};
 	setContext('SNE_Dropdown', ctx);
 
@@ -32,14 +36,14 @@
 <div
 	class="sn-e-c-dropdown {cssClasses}"
 	style={cssStyles.value}
-	use:a11yKeyboardAction={{ enabled: true, isOpen, ctx }}
+	use:a11yKeyboardAction={{ enabled: true, isOpen: open, ctx }}
 	use:clickOutsideAction={{
 		enabled: true,
 		cb: () => {
-			ctx.setValue(false);
-			isOpen = false;
+			ctx.setIsOpen(false);
+			open = false;
 		}
 	}}
 >
-	<slot {isOpen} />
+	<slot />
 </div>

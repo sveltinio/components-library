@@ -1,124 +1,69 @@
 @charset "UTF-8";
 
 /* stylelint-disable declaration-empty-line-before */
+@layer components {
+  .sn-e-c-dropdown {
+    position: relative;
 
-.sn-e-c-dropdown {
-  position: relative;
-  font-size: var(--_font-size);
-  font-weight: var(--_font-weight);
-  line-height: var(--_line-height);
-  letter-spacing: var(--_letter-spacing);
+    & ul {
+      list-style: none;
+      max-width: var(--list-max-w, var(--size-14));
+      width: var(--list-w, var(--size-12));
+      margin: var(--list-my, var(--size-2)) var(--list-mx, 0);
+      padding: var(--list-py, 0) var(--list-px, 0);
+      color: var(--list-color, var(--gray-8));
+      background-color: var(--list-bg-color, var(--white));
+      box-shadow: var(--list-shadow, var(--shadow-1));
+      border: var(--border-size-1) solid var(--gray-1);
 
-  & .show {
-    display: block;
-  }
+      &[data-position="relative"] {
+        position: relative;
+      }
 
-  & .hide {
-    display: none;
-  }
+      &[data-position="absolute"] {
+        position: absolute;
+        z-index: var(--layer-5);
+      }
 
-  & .btn {
-    cursor: var(--_btn-cursor);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--_btn-icon-gap);
-    color: var(--_btn-color);
-    font-size: var(--_btn-font-size);
-    font-weight: var(--_btn-font-weight);
-    line-height: var(--_btn-line-height);
-    letter-spacing: var(--_btn-letter-spacing);
-    padding-top: var(--_btn-pt);
-    padding-right: var(--_btn-pr);
-    padding-bottom: var(--_btn-pb);
-    padding-left: var(--_btn-pl);
-    border-color: var(--_btn-border-color);
-    border-style: var(--_btn-border-style);
-    border-width: var(--_btn-border-width);
-    border-radius: var(--_btn-border-radius);
-    background-color: var(--_btn-bg-color);
+      &[data-open="true"] {
+        display: block;
+      }
 
-    &:hover {
-      background-color: var(--_btn-bg-color-hover);
+      &[data-open="false"] {
+        display: none;
+      }
+
+      & li {
+        & a,
+        & button {
+          display: inline-flex;
+          width: 100%;
+          color: var(--item-color, var(--gray-7));
+          text-decoration: var(--item-text-decoration, none);
+          padding: var(--item-py, var(--size-2)) var(--item-px, var(--size-3));
+
+          &:hover,
+          &:focus {
+            color: var(--item-color-hover, var(--gray-8));
+            background-color: var(--item-bg-color-hover, var(--gray-0));
+          }
+
+          &:focus,
+          &:focus-visible {
+            outline-width: var(--item-ring-width, 1px);
+            outline-style: var(--item-ring-style, solid);
+            outline-color: var(--item-ring-color, transparent);
+            outline-offset: var(--item-ring-offset, 1px);
+          }
+        }
+      }
     }
 
-    &:focus {
-      outline-color: var(--_btn-ring-color);
-      outline-width: var(--_btn-ring-width);
-      outline-style: var(--_btn-ring-style);
-      outline-offset: var(--_btn-ring-offset);
-    }
-
-    & .btn__icon {
-      display: flex;
+    & .icon {
       margin: 0;
       padding: 0;
       border: 0;
-      color: var(--_icon-color);
+      color: var(--icon-color, currentcolor);
     }
-  }
-
-  & .list {
-    list-style: none;
-    max-width: var(--_list-max-w);
-    width: var(--_list-width);
-    color: var(--_list-color);
-    margin-top: var(--_list-mt);
-    margin-right: var(--_list-mr);
-    margin-bottom: var(--_list-mb);
-    margin-left: var(--_list-ml);
-    background-color: var(--_list-bg-color);
-    box-shadow:
-      0 0 0 0 hsl(0deg 0% 100%),
-      0 0 0 1px hsl(210deg 40% 96%);
-
-    & .list__item {
-      cursor: var(--_item-cursor);
-
-      &:hover {
-        background-color: var(--_item-bg-color-hover);
-      }
-
-      & a {
-        display: inline-flex;
-        width: 100%;
-        color: var(--_item-color);
-        text-decoration: var(--_item-text-decoration, none);
-
-        padding-top: var(--_item-pt);
-        padding-right: var(--_item-pr);
-        padding-bottom: var(--_item-pb);
-        padding-left: var(--_item-pl);
-
-        &:hover,
-        &:focus {
-          color: var(--_item-color-hover);
-          background-color: var(--_item-bg-color-hover);
-        }
-
-        &:focus {
-          outline-width: var(--_item-ring-width);
-          outline-style: var(--_item-ring-style);
-          outline-color: var(--_item-ring-color);
-          outline-offset: var(--_item-ring-offset);
-        }
-      }
-    }
-  }
-
-  & .list--absolute {
-    position: absolute;
-    transform-origin: top;
-    z-index: var(--_list-z-index);
-  }
-
-  & .rotate0 {
-    transition: transform 0.2s ease-in-out;
-    transform: rotate(0deg);
-  }
-
-  & .rotate180 {
-    transition: transform 0.2s ease-in-out;
-    transform: rotate(-180deg);
   }
 }

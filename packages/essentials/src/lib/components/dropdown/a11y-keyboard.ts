@@ -1,7 +1,9 @@
 import type { Action } from 'svelte/action';
 import type { DropdownContext } from './types';
-import { get } from 'svelte/store';
 import { tick } from 'svelte';
+import { getComponentId, isChar } from '$lib/utils';
+import { isBool } from '@sveltinio/ts-utils/is';
+import { ComponentFocusManager } from '@sveltinio/ts-utils/a11y';
 
 interface A11yKeyboardActionOptions {
 	enabled: boolean;
@@ -13,112 +15,51 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	node,
 	options
 ) => {
-	const { ctx, isOpen } = options || {};
-	let open = isOpen;
+	const { isOpen, ctx } = options || {};
 
-	let firstMenuItem: HTMLLinkElement;
-	let lastMenuItem: HTMLLinkElement;
-	const firstChars: Array<string> = [];
+	let open = isOpen;
+	const keepOpen = ctx?.keepOpen;
+
+	const componentId = getComponentId(node);
+	const focusManager = new ComponentFocusManager(componentId);
+	const _listGroups: Record<string, HTMLElement[]> = {};
+	const _firstChars: Record<string, string[]> = {};
+	const _firstItem: Record<string, HTMLElement | null> = {};
+	const _lastItem: Record<string, HTMLElement | null> = {};
+
+	function initialize(cId: string) {
+		_listGroups[cId] = [];
+		_firstChars[componentId] = [];
+		_firstItem[componentId] = null;
+		_lastItem[componentId] = null;
+	}
+
+	const toggleExpand = () => {
+		open = !open;
+		ctx?.setIsOpen(open);
+		open
+			? dropdownBtn.setAttribute('aria-expanded', 'true')
+			: dropdownBtn.setAttribute('aria-expanded', 'false');
+	};
 
 	const openMenu = () => {
-		ctx?.setValue(true);
-
-		node.setAttribute('aria-expanded', 'true');
+		ctx?.setIsOpen(true);
+		dropdownBtn.setAttribute('aria-expanded', 'true');
 		node.focus();
-
-		const menuBtn = node.querySelector('button');
-		if (menuBtn) {
-			menuBtn.firstElementChild?.classList.remove('rotate0');
-			menuBtn.firstElementChild?.classList.add('rotate180');
-		}
 	};
 
 	const closeMenu = () => {
-		ctx?.setValue(false);
-
-		node.removeAttribute('aria-expanded');
+		ctx?.setIsOpen(false);
+		dropdownBtn.removeAttribute('aria-expanded');
 		node.focus();
-
-		const menuBtn = node.querySelector('button');
-		if (menuBtn) {
-			menuBtn.firstElementChild?.classList.remove('rotate180');
-			menuBtn.firstElementChild?.classList.add('rotate0');
-		}
 	};
 
-	const setFocusOnItem = (item: HTMLElement) => {
-		menuItemNodes.forEach(async (itemNode) => {
-			if (itemNode === item) {
-				itemNode.tabIndex = 0;
-				await tick();
-				itemNode.focus();
-			} else {
-				itemNode.tabIndex = -1;
-			}
-		});
-	};
-
-	const setFocusOnFirstItem = () => {
-		setFocusOnItem(firstMenuItem);
-	};
-
-	const setFocusOnLastItem = () => {
-		setFocusOnItem(lastMenuItem);
-	};
-
-	const setFocusOnPreviousItem = (currentMenuItem: HTMLLinkElement) => {
-		let newMenuitem, index;
-
-		if (currentMenuItem === firstMenuItem) {
-			newMenuitem = firstMenuItem;
-		} else {
-			index = menuItemNodes.indexOf(currentMenuItem);
-			newMenuitem = menuItemNodes[index - 1];
-		}
-
-		setFocusOnItem(newMenuitem);
-		return newMenuitem;
-	};
-
-	const setFocusOnNextItem = (currentMenuItem: HTMLLinkElement) => {
-		let newMenuitem, index;
-
-		if (currentMenuItem === lastMenuItem) {
-			newMenuitem = lastMenuItem;
-		} else {
-			index = menuItemNodes.indexOf(currentMenuItem);
-			newMenuitem = menuItemNodes[index + 1];
-		}
-
-		setFocusOnItem(newMenuitem);
-		return newMenuitem;
-	};
-
-	const setFocusByFirstChar = (currentMenuItem: HTMLLinkElement, c: string) => {
-		let start, index: number;
-
-		if (c.length > 1) return;
-		// Ensure matching the firstChars array when OnMount
-		c = c.toLowerCase();
-		// Start on position of currentItem
-		start = menuItemNodes.indexOf(currentMenuItem) + 1;
-		if (start >= menuItemNodes.length) start = 0;
-		// Check remaining items
-		index = firstChars.indexOf(c, start);
-		// If not in remaining, check from beginning
-		if (index === -1) index = firstChars.indexOf(c, 0);
-		// Found
-		if (index > -1) setFocusOnItem(menuItemNodes[index]);
-	};
-
+	/** ***************** START - Event Handlers ******************************************** */
 	const onButtonClick = (e: MouseEvent) => {
 		e.stopPropagation();
 		e.preventDefault();
-		if (ctx) {
-			ctx.setValue(!open);
-			open = get(ctx.value);
-		}
-		open ? openMenu() : closeMenu();
+		toggleExpand();
+		if (open) focusManager.setFocusToFirstItem();
 	};
 
 	const onButtonKeydown = (e: KeyboardEvent) => {
@@ -130,12 +71,12 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 			case 'Down':
 			case 'ArrowDown':
 				openMenu();
-				setFocusOnFirstItem();
+				focusManager.setFocusToFirstItem();
 				break;
 			case 'Up':
 			case 'ArrowUp':
 				openMenu();
-				setFocusOnLastItem();
+				focusManager.setFocusToLastItem();
 				break;
 			case 'Tab':
 				node.blur();
@@ -145,19 +86,28 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 		}
 	};
 
-	const onMenuItemKeydown = (e: KeyboardEvent) => {
+	const onItemClick = (e: MouseEvent) => {
+		e.stopPropagation();
+		e.preventDefault();
+
+		const isLinkElement = () => {
+			const target = e.target as HTMLElement;
+			return target.tagName === 'A';
+		};
+
+		if (isBool(keepOpen) && !keepOpen && isLinkElement()) {
+			closeMenu();
+		}
+	};
+
+	const onItemKeydown = (e: KeyboardEvent) => {
 		e.stopPropagation();
 		e.preventDefault();
 		const target = e.currentTarget as HTMLLinkElement;
 
-		const isChar = (txt: string): boolean => {
-			const charsRegex = /\S/;
-			return txt.length === 1 && charsRegex.test(txt);
-		};
-
 		if (e.shiftKey) {
 			if (isChar(e.key)) {
-				setFocusByFirstChar(target, e.key);
+				focusManager.setFocusByFirstChar(target, e.key);
 			}
 		} else {
 			switch (e.code) {
@@ -168,50 +118,67 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 				case 'Esc':
 				case 'Escape':
 					closeMenu();
+					dropdownBtn.focus();
 					break;
 				case 'Up':
 				case 'ArrowUp':
-					setFocusOnPreviousItem(target);
+					focusManager.setFocusToPreviousItem(target);
 					break;
 				case 'Down':
 				case 'ArrowDown':
-					setFocusOnNextItem(target);
+					focusManager.setFocusToNextItem(target);
 					break;
 				case 'Home':
 				case 'PageUp':
-					setFocusOnFirstItem();
+					focusManager.setFocusToFirstItem();
 					break;
 				case 'End':
 				case 'PageDown':
-					setFocusOnLastItem();
+					focusManager.setFocusToLastItem();
 					break;
 				default:
 					if (isChar(e.key)) {
-						setFocusByFirstChar(target, e.key);
+						focusManager.setFocusByFirstChar(target, e.key);
 					}
 			}
 		}
 	};
 
-	const onMenuItemMouseOver = (e: MouseEvent) => {
+	const onItemMouseOver = (e: MouseEvent) => {
 		const target = e.currentTarget as HTMLElement;
-		setFocusOnItem(target);
+		target.focus();
 	};
+	/** ***************** END - Event Handlers ******************************************** */
 
+	initialize(componentId);
+
+	const dropdownBtn = node.querySelector('button.sn-e-c-button') as HTMLElement;
 	if (options?.enabled) node.addEventListener('click', onButtonClick);
 	if (options?.enabled) node.addEventListener('keydown', onButtonKeydown);
 
 	const menuItemNodes = Array.from(node.querySelectorAll('[role="menuitem"]')) as HTMLLinkElement[];
 
-	menuItemNodes.forEach((menuItem) => {
-		menuItem.addEventListener('keydown', onMenuItemKeydown);
-		menuItem.addEventListener('mouseover', onMenuItemMouseOver);
+	menuItemNodes.forEach((item) => {
+		item.addEventListener('keydown', onItemKeydown);
+		item.addEventListener('mouseover', onItemMouseOver);
+		item.addEventListener('click', onItemClick);
+		_listGroups[componentId].push(item);
 
-		if (!firstMenuItem) {
-			firstMenuItem = menuItem;
+		// get the first letter of the item
+		const itemContent = item.textContent?.trim().toLowerCase()[0];
+		if (itemContent) _firstChars[componentId].push(itemContent);
+
+		if (!_firstItem[componentId]) {
+			_firstItem[componentId] = item;
 		}
-		lastMenuItem = menuItem;
+		_lastItem[componentId] = item;
 	});
+
+	focusManager.applyDOMChangesFn = tick;
+	focusManager.items = _listGroups;
+	focusManager.firstChars = _firstChars;
+	focusManager.firstItem = _firstItem;
+	focusManager.lastItem = _lastItem;
 
 	return {
 		update(param) {
@@ -222,9 +189,10 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 			node.removeEventListener('click', onButtonClick);
 			node.removeEventListener('keydown', onButtonKeydown);
 
-			menuItemNodes.forEach((menuItem) => {
-				menuItem.removeEventListener('keydown', onMenuItemKeydown);
-				menuItem.removeEventListener('mouseover', onMenuItemMouseOver);
+			menuItemNodes.forEach((item) => {
+				item.removeEventListener('keydown', onItemKeydown);
+				item.removeEventListener('mouseover', onItemMouseOver);
+				item.removeEventListener('click', onItemClick);
 			});
 		}
 	};

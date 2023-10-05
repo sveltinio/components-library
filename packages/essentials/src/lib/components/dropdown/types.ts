@@ -5,6 +5,8 @@ export type DropdownData = {
 };
 
 export interface DropdownContext {
-	value: Writable<boolean>;
-	setValue: (value: boolean) => void;
+	isOpen: Writable<boolean>;
+	setIsOpen: (value: boolean) => void;
+	keepOpen: Writable<boolean>;
+	setKeepOpen: (value: boolean) => void;
 }
