@@ -9,7 +9,7 @@
 	export let prefetch: SvelteKitPrefetch = 'off';
 	export let indicator: IndicatorType;
 
-	const prefetchValue = !item.external ? prefetch : undefined;
+	const prefetchValue = !item.external ? prefetch : 'off';
 	const target = item.external ? '_blank' : '_self';
 </script>
 
