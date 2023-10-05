@@ -38,11 +38,7 @@
 	data-shape={shape}
 	data-testid="btn-{id}"
 	on:click={clickDispatcher}
-	on:change
-	on:keydown
-	on:keyup
-	on:mouseenter
-	on:mouseleave
+	{...$$restProps}
 >
 	{#if icon && position == 'left'}
 		<svelte:component this={icon} />

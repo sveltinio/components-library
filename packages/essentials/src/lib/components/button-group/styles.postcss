@@ -100,6 +100,15 @@
       }
 
       /* * Shapes (component prop "shape")   * */
+      &[data-shape="flat"],
+      &[data-shape="rounded"],
+      &[data-shape="pill"] {
+        &:not(:first-child, :last-child) {
+          border-top-width: 0; /* Prevent double borders */
+          border-bottom-width: 0; /* Prevent double borders */
+        }
+      }
+
       /* - flat - */
       &[data-shape="flat"] {
         border-radius: var(--radius-0);
@@ -128,15 +137,6 @@
         &:last-child {
           border-bottom-left-radius: var(--radius-4);
           border-bottom-right-radius: var(--radius-4);
-        }
-      }
-
-      &[data-shape="flat"],
-      &[data-shape="rounded"],
-      &[data-shape="pill"] {
-        &:not(:first-child, :last-child) {
-          border-top-width: 0; /* Prevent double borders */
-          border-bottom-width: 0; /* Prevent double borders */
         }
       }
     }
