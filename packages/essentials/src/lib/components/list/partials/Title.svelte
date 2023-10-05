@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { ToggleListContext } from '../types.js';
-
 	import { getContext } from 'svelte';
 
 	export let text: string;
@@ -12,7 +11,7 @@
 	$: isOpen = $_isOpen;
 </script>
 
-<button aria-controls="items-list" data-testid="list_toggle_btn">
+<button aria-controls="items-list" aria-haspopup="true" data-testid="list_toggle_btn">
 	{#if $$slots.leftIcon}
 		<slot name="leftIcon" />
 	{/if}

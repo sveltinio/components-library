@@ -35,16 +35,21 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	const toggleExpand = () => {
 		open = !open;
 		ctx?.setIsOpen(open);
+		open
+			? toggleBtn.setAttribute('aria-expanded', 'true')
+			: toggleBtn.setAttribute('aria-expanded', 'false');
 	};
 
 	const openMenu = () => {
 		open = true;
 		ctx?.setIsOpen(open);
+		toggleBtn.setAttribute('aria-expanded', 'true');
 	};
 
 	const closeMenu = () => {
 		open = false;
 		ctx?.setIsOpen(open);
+		toggleBtn.setAttribute('aria-expanded', 'true');
 	};
 
 	/** ***************** START - Event Handlers ******************************************** */
