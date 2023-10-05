@@ -21,32 +21,32 @@ It supports different variants and sizes:
 
 ```html
 <script>
-   import { Tabs, Tab } '@sveltinio/essentials/tabs';
+   import { Tabs } '@sveltinio/essentials/tabs';
    import DummyIcon from './_dummyIcon.svelte';
 </script>
 
 <Tabs>
-   <Tab id="1" label="Tab 1">
+   <Tabs.Tab id="1" label="Tab 1">
       <h3>1 - Heading</h3>
       <p>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
          incididunt ut labore et dolore magna aliqua.
       </p>
-   </Tab>
-   <Tab id="2" label="Tab 2">
+   </Tabs.Tab>
+   <Tabs.Tab id="2" label="Tab 2">
       <h3>2 - Heading</h3>
       <p>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
          incididunt ut labore et dolore magna aliqua.
       </p>
-   </Tab>
-   <Tab id="3" label="Tab 3">
+   </Tabs.Tab>
+   <Tabs.Tab id="3" label="Tab 3">
       <h3>3 - Heading</h3>
       <p>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
          incididunt ut labore et dolore magna aliqua.
       </p>
-   </Tab>
+   </Tabs.Tab>
 </Tabs>
 ```
 

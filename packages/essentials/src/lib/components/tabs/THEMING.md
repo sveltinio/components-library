@@ -42,7 +42,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/tab
 
 ```html
 <script lang="ts">
-    import { Tabs, Tab } from '@sveltinio/essentials/tabs';
+    import { Tabs } from '@sveltinio/essentials/tabs';
 
     const customStyles = {
         'tab-active-border-b-color': '#0084f6'
@@ -50,27 +50,27 @@ The CSS variables are defined in the [variables.css](../../styles/components/tab
 </script>
 
 <Tabs activeTab="1" styles={customStyles}>
-    <Tab id="1" label="Tab 1">
+    <Tabs.Tab id="1" label="Tab 1">
         <h3 style="font-weight: bold;">1 - Heading</h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
         </p>
-    </Tab>
-    <Tab id="2" label="Tab 2">
+    </Tabs.Tab>
+    <Tabs.Tab id="2" label="Tab 2">
         <h3 style="font-weight: bold;">2 - Heading</h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
         </p>
-    </Tab>
-    <Tab id="3" label="Tab 3"
+    </Tabs.Tab>
+    <Tabs.Tab id="3" label="Tab 3"
         ><h3 style="font-weight: bold;">3 - Heading</h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
         </p>
-    </Tab>
+    </Tabs.Tab>
 </Tabs>
 ```
 
@@ -101,27 +101,27 @@ The CSS variables are defined in the [variables.css](../../styles/components/tab
 </script>
 
 <Tabs activeTab="1" class="my-tabs">
-    <Tab id="1" label="Tab 1" icon={DummyIcon}>
+    <Tabs.Tab id="1" label="Tab 1" icon={DummyIcon}>
         <h3 style="color: #0084f6; font-weight: bold;">1 - Heading</h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
         </p>
-    </Tab>
-    <Tab id="2" label="Tab 2" icon={DummyIcon}>
+    </Tabs.Tab>
+    <Tabs.Tab id="2" label="Tab 2" icon={DummyIcon}>
         <h3 style="color: #0084f6; font-weight: bold;">2 - Heading</h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
         </p>
-    </Tab>
-    <Tab id="3" label="Tab 3" icon={DummyIcon}>
+    </Tabs.Tab>
+    <Tabs.Tab id="3" label="Tab 3" icon={DummyIcon}>
         <h3 style="color: #0084f6; font-weight: bold;">3 - Heading</h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
         </p>
-    </Tab>
+    </Tabs.Tab>
 </Tabs>
 ```
 

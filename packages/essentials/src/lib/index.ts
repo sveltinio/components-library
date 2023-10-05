@@ -10,6 +10,7 @@ export { Link, ExternalLinkIcon } from './components/link/index.js';
 import Dropdown from './components/dropdown/index.js';
 export { Dropdown };
 
-export { Tabs, Tab } from './components/tabs/index.js';
+import Tabs from './components/tabs/index.js';
+export { Tabs };
 
 export { ToggleList } from './components/list/index.js';
