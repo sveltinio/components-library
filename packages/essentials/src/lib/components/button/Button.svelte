@@ -3,7 +3,9 @@
 	import '../../styles/components/button/styles.css';
 	import type { SvelteKitPrefetch } from '$lib/types.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames, makeExternalLinkOptions } from '$lib/utils';
+	import { retrieveCssClassNames, makeExternalLinkOptions, prefixObjectKeys } from '$lib/utils';
+	import { isEmpty } from '@sveltinio/ts-utils/is';
+	import { preserveButtonPropsList } from './index.js';
 
 	type ButtonVariant =
 		| 'default'
@@ -48,8 +50,13 @@
 	const className: string | null | undefined = undefined;
 	export { className as class };
 
-	export let styles = {};
-	const cssStyles = mapToCssVars(styles);
+	export let styles: Record<string, string> = {};
+	let computedStyles: typeof styles = {};
+	if (!isEmpty(styles)) {
+		computedStyles = prefixObjectKeys(styles, variant, preserveButtonPropsList);
+	}
+
+	const cssStyles = mapToCssVars(computedStyles);
 	if (cssStyles.isErr()) {
 		throw new Error(cssStyles.error.message);
 	}
@@ -70,7 +77,9 @@
 		target={external ? '_blank' : '_self'}
 		rel={makeExternalLinkOptions(external)}
 		class="sn-e-c-button {cssClasses}"
+		style={cssStyles.value}
 		aria-label={_alt}
+		aria-disabled={disabled}
 		data-variant={outlined ? `${variant}-outlined` : `${variant}`}
 		data-size={size}
 		data-shape={shape}
@@ -78,15 +87,8 @@
 		data-block={block}
 		data-no-focus-ring={noFocusRing}
 		data-sveltekit-preload-data={prefetch}
-		style={cssStyles.value}
-		{...$$restProps}
-		on:click
-		on:change
-		on:keydown
-		on:keyup
-		on:mouseenter
-		on:mouseleave
 		data-testid="btn"
+		{...$$restProps}
 	>
 		{#if $$slots.leftIcon}
 			<span class="button__icon" aria-hidden="true">
@@ -108,7 +110,10 @@
 	</a>
 {:else}
 	<button
-		class="sn-e-c-button {cssClasses}"
+		class="{cssClasses} sn-e-c-button"
+		style={cssStyles.value}
+		aria-label={_alt}
+		aria-disabled={disabled}
 		data-variant={outlined ? `${variant}-outlined` : variant}
 		data-size={size}
 		data-shape={shape}
@@ -116,17 +121,8 @@
 		data-block={block}
 		data-no-focus-ring={noFocusRing}
 		{disabled}
-		style={cssStyles.value}
-		aria-label={_alt}
-		aria-disabled={disabled}
-		{...$$restProps}
-		on:click
-		on:change
-		on:keydown
-		on:keyup
-		on:mouseenter
-		on:mouseleave
 		data-testid="btn"
+		{...$$restProps}
 	>
 		{#if $$slots.leftIcon}
 			<span class="button__icon">

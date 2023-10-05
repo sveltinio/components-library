@@ -112,20 +112,22 @@
 	</div>
 
 	<div id="buttons-theming-with-prop-wrapper" class="demo-wrapper">
-		<h3 id="buttons-theming-with-prop">Custom Styles with prop</h3>
+		<h3 id="buttons-theming-with-prop">
+			Custom Styles with prop (it is the info variant but looks like the success one)
+		</h3>
 		<div class="preview">
 			<Button
 				label="Custom Styles"
-				variant="success"
+				variant="info"
 				shape="rounded"
 				styles={{
-					color: 'rgb(54 83 20)',
-					'border-color': 'rgb(236 252 203)',
-					'bg-color': 'rgb(0 103 39)',
-					'bg-color-hover': 'rgb(163 230 53)',
-					'outline-color': 'rgb(190 242 100)',
-					'outline-width': '3px',
-					'outline-style': 'dashed'
+					color: 'var(--lime-1)',
+					'bg-color': 'var(--lime-9)',
+					'bg-color-hover': 'var(--lime-7)',
+					'border-color': 'var(--lime-8)',
+					'ring-color': 'var(--lime-3)',
+					'ring-width': '3px',
+					'ring-style': 'dashed'
 				}}
 			/>
 		</div>

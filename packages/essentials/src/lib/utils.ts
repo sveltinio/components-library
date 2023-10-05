@@ -113,6 +113,34 @@ export function removeCssClasses(item: HTMLElement | null, names: string[]) {
 }
 
 /**
+ * The function `prefixObjectKeys` takes an object, a prefix string, and a list of keys to preserve,
+ * and returns a new object with the keys prefixed with the given prefix, except for the keys in the
+ * preserve list.
+ * @param obj - An object with string keys and string values.
+ * @param {string} prefix - The `prefix` parameter is a string that will be added as a prefix to
+ * each key in the `obj` object.
+ * @param {string[]} preserveList - The `preserveList` parameter is an array of strings that
+ * specified the keys in the `obj` parameter that should not be prefixed with the `prefix`
+ * parameter. These keys will remain unchanged in the resulting object.
+ * @returns a new object with the keys of the input object `obj` modified by adding a prefix and
+ * preserving the keys specified in the `preserveList` array.
+ */
+export function prefixObjectKeys(
+	obj: Record<string, string>,
+	prefix: string,
+	preserveList: string[]
+) {
+	const entries = Object.keys(obj).map((k) => {
+		if (!preserveList.includes(k)) {
+			const newK = `${prefix}-${k}`;
+			return { [newK]: obj[k] };
+		}
+		return { [k]: obj[k] };
+	});
+	return Object.assign({}, ...entries);
+}
+
+/**
  * Resets the focus on a list of HTML elements by removing the 'focus' CSS class.
  *
  * @param items - An array of HTMLElements that need to have their focus reset (i.e.

@@ -4,6 +4,10 @@
 @layer components {
   a:is(.sn-e-c-button) {
     text-decoration: var(--text-decoration, none);
+
+    @media screen and (-ms-high-contrast: active) {
+      text-decoration: var(--text-decoration, underline);
+    }
   }
 
   button:is(.sn-e-c-button) {
@@ -26,21 +30,17 @@
   .sn-e-c-button {
     --_min-w: var(--min-w, 10ch);
     --_min-h: var(--min-h, var(--size-8));
-    --_px: var(--pr, var(--size-3));
-    --_py: var(--pt, var(--size-1));
+    --_px: var(--px, var(--size-3));
+    --_py: var(--py, var(--size-1));
     --_font-size: var(--font-size, var(--font-size-1));
     --_font-weight: var(--font-weight, var(--font-weight-4));
     --_line-height: var(--line-height, var(--font-lineheight-3));
     --_letter-spacing: var(--letter-spacing, var(--font-letterspacing-1));
     --_text-decoration-line: var(--text-decoration-line, none);
-    --_border-color: var(--border-color, var(--stone-2));
     --_border-width: var(--border-width, var(--border-size-1));
-    --_bg-color: var(--bg-color, var(--stone-1));
-    --_bg-color-hover: var(--bg-color-hover, var(--stone-1));
-    --_outline-width: var(--outline-width, 0.125rem);
-    --_outline-style: var(--outline-style, solid);
-    --_outline-color: var(--outline-color, transparent);
-    --_outline-offset: var(--outline-offset, 0.125rem);
+    --_ring-width: var(--ring-width, 0.125rem);
+    --_ring-style: var(--ring-style, solid);
+    --_ring-offset: var(--ring-offset, 0.125rem);
     --_transition-property: var(--transition-property, background-color);
     --_transition-duration: var(--transition-duration, 300ms);
     --_transition-timing-function: var(--transition-timing-function, cubic-bezier(0.4, 0, 0.2, 1));
@@ -72,10 +72,10 @@
 
     &:focus,
     &:focus-visible {
-      outline-width: var(--_outline-width);
-      outline-style: var(--_outline-style);
-      outline-offset: var(--_outline-offset);
-      outline-color: var(--_outline-color);
+      outline-width: var(--_ring-width);
+      outline-style: var(--_ring-style);
+      outline-offset: var(--_ring-offset);
+      outline-color: var(--_ring-color);
     }
 
     & .button__icon {
@@ -102,241 +102,322 @@
     /* - default & default-outlined - */
     &[data-variant="default"],
     &[data-variant="default-outlined"] {
+      --_default-color: var(--default-color, var(--gray-11));
+      --_default-color-hover: var(--default-color-hover, var(--_default-color));
+      --_default-bg-color: var(--default-bg-color, var(--gray-1));
+      --_default-bg-color-hover: var(--default-bg-color-hover, var(--gray-2));
+      --_default-ring-color: var(--default-ring-color, var(--gray-4));
+      --_default-border-color: var(--default-border-color, transparent);
+      --_default-outlined-color: var(--default-outlined-color, var(--gray-10));
+      --_default-outlined-border-color: var(--default-outlined-border-color, var(--gray-5));
+
       &:focus,
       &:focus-visible {
-        --_outline-color: var(--default-ring-color, var(--gray-4));
+        --_ring-color: var(--_default-ring-color);
       }
 
       &:hover,
       &:hover:enabled {
-        --_color: var(--default-color-hover, var(--gray-11));
-        --_bg-color-hover: var(--default-bg-color-hover, var(--gray-2));
+        --_color: var(--_default-color-hover);
+        --_bg-color-hover: var(--_default-bg-color-hover);
       }
     }
 
     &[data-variant="default"] {
-      --_color: var(--default-color, var(--gray-11));
-      --_bg-color: var(--default-bg-color, var(--gray-1));
-      --_border-color: var(--default-border-color, var(--gray-3));
+      --_color: var(--_default-color);
+      --_bg-color: var(--_default-bg-color);
+      --_border-color: var(--_default-border-color);
     }
 
     &[data-variant="default-outlined"] {
-      --_color: var(--default-outlined-color, var(--gray-9));
-      --_border-color: var(--default-outlined-border-color, var(--gray-5));
+      --_color: var(--_default-outlined-color);
+      --_border-color: var(--_default-outlined-border-color);
     }
 
     /* - primary & primary-outlined - */
     &[data-variant="primary"],
     &[data-variant="primary-outlined"] {
+      --_primary-color: var(--primary-color, var(--gray-0));
+      --_primary-color-hover: var(--primary-color-hover, var(--_primary-color));
+      --_primary-bg-color: var(--primary-bg-color, var(--cyan-9));
+      --_primary-bg-color-hover: var(--primary-bg-color-hover, var(--cyan-8));
+      --_primary-ring-color: var(--_primary-ring-color, var(--cyan-8));
+      --_primary-border-color: var(--primary-border-color, transparent);
+      --_primary-outlined-color: var(--primary-outlined-color, var(--cyan-10));
+      --_primary-outlined-border-color: var(--primary-outlined-border-color, var(--cyan-8));
+
       &:focus,
       &:focus-visible {
-        --_outline-color: var(--primary-ring-color, var(--cyan-8));
+        --_ring-color: var(--_primary-ring-color);
       }
 
       &:hover,
       &:hover:enabled {
-        --_color: var(--primary-color-hover, var(--gray-0));
-        --_bg-color-hover: var(--primary-bg-color-hover, var(--cyan-8));
+        --_color: var(--_primary-color-hover);
+        --_bg-color-hover: var(--_primary-bg-color-hover);
       }
     }
 
     &[data-variant="primary"] {
-      --_color: var(--primary-color, var(--gray-0));
-      --_bg-color: var(--primary-bg-color, var(--cyan-9));
-      --_border-color: var(--primary-border-color, var(--cyan-8));
+      --_color: var(--_primary-color);
+      --_bg-color: var(--_primary-bg-color);
+      --_border-color: var(--_primary-border-color);
     }
 
     &[data-variant="primary-outlined"] {
-      --_color: var(--primary-outlined-color, var(--cyan-10));
-      --_border-color: var(--primary-outlined-border-color, var(--cyan-8));
+      --_color: var(--_primary-outlined-color);
+      --_border-color: var(--_primary-outlined-border-color);
     }
 
     /* - secondary & secondary-outline - */
     &[data-variant="secondary"],
     &[data-variant="secondary-outlined"] {
+      --_secondary-color: var(--secondary-color, var(--gray-0));
+      --_secondary-color-hover: var(--secondary-color-hover, var(--_secondary-color));
+      --_secondary-bg-color: var(--secondary-bg-color, var(--indigo-9));
+      --_secondary-bg-color-hover: var(--secondary-bg-color-hover, var(--indigo-8));
+      --_secondary-ring-color: var(--secondary-ring-color, var(--indigo-8));
+      --_secondary-border-color: var(--secondary-border-color, transparent);
+      --_secondary-outlined-color: var(--secondary-outlined-color, var(--indigo-10));
+      --_secondary-outlined-border-color: var(--secondary-outlined-border-color, var(--indigo-8));
+
       &:focus,
       &:focus-visible {
-        --_outline-color: var(--secondary-ring-color, var(--indigo-8));
+        --_ring-color: var(--_secondary-ring-color);
       }
 
       &:hover,
       &:hover:enabled {
-        --_color: var(--secondary-color-hover, var(--gray-0));
-        --_bg-color-hover: var(--secondary-bg-color-hover, var(--indigo-8));
+        --_color: var(--_secondary-color-hover);
+        --_bg-color-hover: var(--_secondary-bg-color-hover);
       }
     }
 
     &[data-variant="secondary"] {
-      --_color: var(--secondary-color, var(--gray-0));
-      --_bg-color: var(--secondary-bg-color, var(--indigo-9));
-      --_border-color: var(--secondary-border-color, var(--indigo-8));
+      --_color: var(--_secondary-color);
+      --_bg-color: var(--_secondary-bg-color);
+      --_border-color: var(--_secondary-border-color);
     }
 
     &[data-variant="secondary-outlined"] {
-      --_color: var(--secondary-outlined-color, var(--indigo-10));
-      --_border-color: var(--secondary-outlined-border-color, var(--indigo-8));
+      --_color: var(--_secondary-outlined-color);
+      --_border-color: var(--_secondary-outlined-border-color);
     }
 
     /* - success & success-outlined - */
     &[data-variant="success"],
     &[data-variant="success-outlined"] {
+      --_success-color: var(--success-color, var(--gray-0));
+      --_success-color-hover: var(--success-color-hover, var(--_success-color));
+      --_success-bg-color: var(--success-bg-color, var(--green-10));
+      --_success-bg-color-hover: var(--success-bg-color-hover, var(--green-9));
+      --_success-ring-color: var(--success-ring-color, var(--green-8));
+      --_success-border-color: var(--success-border-color, transparent);
+      --_success-outlined-color: var(--success-outlined-color, var(--green-10));
+      --_success-outlined-border-color: var(--success-outlined-border-color, var(--green-8));
+
       &:focus,
       &:focus-visible {
-        --_outline-color: var(--success-ring-color, var(--green-8));
+        --_ring-color: var(--_success-ring-color);
       }
 
       &:hover,
       &:hover:enabled {
-        --_color: var(--success-color-hover, var(--gray-0));
-        --_bg-color-hover: var(--success-bg-color-hover, var(--green-9));
+        --_color: var(--_success-color-hover);
+        --_bg-color-hover: var(--_success-bg-color-hover);
       }
     }
 
     &[data-variant="success"] {
-      --_color: var(--success-color, var(--gray-0));
-      --_bg-color: var(--success-bg-color, var(--green-10));
-      --_border-color: var(--success-border-color, var(--green-8));
+      --_color: var(--_success-color);
+      --_bg-color: var(--_success-bg-color);
+      --_border-color: var(--_success-border-color);
     }
 
     &[data-variant="success-outlined"] {
-      --_color: var(--success-outlined-color, var(--green-10));
-      --_border-color: var(--success-outlined-border-color, var(--green-8));
+      --_color: var(--_success-outlined-color);
+      --_border-color: var(--_success-outlined-border-color);
     }
 
     /* - error & error-outlined - */
     &[data-variant="error"],
     &[data-variant="error-outlined"] {
+      --_error-color: var(--error-color, var(--gray-0));
+      --_error-color-hover: var(--error-color-hover, var(--_error-color));
+      --_error-bg-color: var(--error-bg-color, var(--red-9));
+      --_error-bg-color-hover: var(--error-bg-color-hover, var(--red-8));
+      --_error-ring-color: var(--error-ring-color, var(--red-8));
+      --_error-border-color: var(--error-border-color, transparent);
+      --_error-outlined-color: var(--error-outlined-color, var(--red-10));
+      --_error-outlined-border-color: var(--error-outlined-border-color, var(--red-8));
+
       &:focus,
       &:focus-visible {
-        --_outline-color: var(--error-ring-color, var(--red-8));
+        --_ring-color: var(--_error-ring-color);
       }
 
       &:hover,
       &:hover:enabled {
-        --_color: var(--error-color-hover, var(--gray-0));
-        --_bg-color-hover: var(--error-bg-color-hover, var(--red-8));
+        --_color: var(--_error-color-hover);
+        --_bg-color-hover: var(--_error-bg-color-hover);
       }
     }
 
     &[data-variant="error"] {
-      --_color: var(--error-color, var(--gray-0));
-      --_bg-color: var(--error-bg-color, var(--red-9));
-      --_border-color: var(--error-border-color, var(--red-8));
+      --_color: var(--_error-color);
+      --_bg-color: var(--_error-bg-color);
+      --_border-color: var(--_error-border-color);
     }
 
     &[data-variant="error-outlined"] {
-      --_color: var(--error-outlined-color, var(--red-10));
-      --_border-color: var(--error-outlined-border-color, var(--red-8));
+      --_color: var(--_error-outlined-color);
+      --_border-color: var(--_error-outlined-border-color);
     }
 
     /* - warning & warning-outlined - */
     &[data-variant="warning"],
     &[data-variant="warning-outlined"] {
+      --_warning-color: var(--warning-color, var(--gray-0));
+      --_warning-color-hover: var(--warning-color-hover, var(--_warning-color));
+      --_warning-bg-color: var(--warning-bg-color, var(--orange-10));
+      --_warning-bg-color-hover: var(--warning-bg-color-hover, var(--orange-9));
+      --_warning-ring-color: var(--warning-ring-color, var(--orange-8));
+      --_warning-border-color: var(--warning-border-color, transparent);
+      --_warning-outlined-color: var(--warning-outlined-color, var(--orange-10));
+      --_warning-outlined-border-color: var(--warning-outlined-border-color, var(--orange-8));
+
       &:focus,
       &:focus-visible {
-        --_outline-color: var(--warning-ring-color, var(--orange-8));
+        --_ring-color: var(--_warning-ring-color);
       }
 
       &:hover,
       &:hover:enabled {
-        --_color: var(--warning-color-hover, var(--gray-0));
-        --_bg-color-hover: var(--warning-bg-color-hover, var(--orange-9));
+        --_color: var(--_warning-color-hover);
+        --_bg-color-hover: var(--_warning-bg-color-hover);
       }
     }
 
     &[data-variant="warning"] {
-      --_color: var(--warning-color, var(--gray-0));
-      --_bg-color: var(--warning-bg-color, var(--orange-10));
-      --_border-color: var(--warning-border-color, var(--orange-8));
+      --_color: var(--_warning-color);
+      --_bg-color: var(--_warning-bg-color);
+      --_border-color: var(--_warning-border-color);
     }
 
     &[data-variant="warning-outlined"] {
-      --_color: var(--warning-color, var(--orange-10));
-      --_border-color: var(--warning-outlined-border-color, var(--orange-8));
+      --_color: var(--_warning-outlined-color);
+      --_border-color: var(--_warning-outlined-border-color);
     }
 
     /* - info & info-outlined - */
     &[data-variant="info"],
     &[data-variant="info-outlined"] {
+      --_info-color: var(--info-color, var(--gray-0));
+      --_info-color-hover: var(--info-color-hover, var(--_info-color));
+      --_info-bg-color: var(--info-bg-color, var(--blue-9));
+      --_info-bg-color-hover: var(--info-bg-color-hover, var(--blue-8));
+      --_info-ring-color: var(--info-ring-color, var(--blue-8));
+      --_info-border-color: var(--info-border-color, transparent);
+      --_info-outlined-color: var(--info-outlined-color, var(--blue-10));
+      --_info-outlined-border-color: var(--info-outlined-border-color, var(--blue-8));
+
       &:focus,
       &:focus-visible {
-        --_outline-color: var(--info-ring-color, var(--blue-9));
+        --_ring-color: var(--_info-ring-color);
       }
 
       &:hover,
       &:hover:enabled {
-        --_color: var(--info-color-hover, var(--gray-0));
-        --_bg-color-hover: var(--info-bg-color-hover, var(--blue-9));
+        --_color: var(--_info-color-hover);
+        --_bg-color-hover: var(--_info-bg-color-hover);
       }
     }
 
     &[data-variant="info"] {
-      --_color: var(--info-color, var(--gray-0));
-      --_bg-color: var(--info-bg-color, var(--blue-9));
-      --_border-color: var(--info-border-color, var(--blue-8));
+      --_color: var(--_info-color);
+      --_bg-color: var(--_info-bg-color);
+      --_border-color: var(--_info-border-color);
     }
 
     &[data-variant="info-outlined"] {
-      --_color: var(--info-outlined-color, var(--blue-10));
-      --_border-color: var(--info-outlined-border-color, var(--blue-8));
+      --_color: var(--_info-outlined-color);
+      --_border-color: var(--_info-outlined-border-color);
     }
 
     /* - ghost & ghot-outlined - */
     &[data-variant="ghost"],
     &[data-variant="ghost-outlined"] {
+      --_ghost-color: var(--ghost-color, var(--stone-10));
+      --_ghost-color-hover: var(--ghost-color-hover, var(--_ghost-color));
+      --_ghost-bg-color: var(--ghost-bg-color, transparent);
+      --_ghost-bg-color-hover: var(--ghost-bg-color-hover, var(--stone-1));
+      --_ghost-ring-color: var(--ghost-ring-color, var(--stone-9));
+      --_ghost-border-color: var(--ghost-border-color, transparent);
+      --_ghost-outlined-color: var(--ghost-outlined-color, var(--stone-10));
+      --_ghost-outlined-border-color: var(--ghost-outlined-border-color, var(--stone-2));
+
       &:focus,
       &:focus-visible {
-        --_outline-color: var(--ghost-ring-color, var(--stone-9));
+        --_ring-color: var(--_ghost-ring-color);
       }
 
       &:hover,
       &:hover:hover {
-        --_color: var(--neutral-color-hover, var(--stone-10));
-        --_bg-color-hover: var(--ghost-bg-color-hover, var(--stone-1));
+        --_color: var(--_ghost-color-hover);
+        --_bg-color-hover: var(--_ghost-bg-color-hover);
       }
     }
 
     &[data-variant="ghost"] {
-      --_color: var(--ghost-color, var(--stone-10));
-      --_bg-color: var(--neghostutral-bg-color, var(--stone-0));
-      --_border-color: var(--ghost-border-color, transparent);
+      --_color: var(--_ghost-color);
+      --_bg-color: var(--_ghost-bg-color);
+      --_border-color: var(--_ghost-border-color);
     }
 
     &[data-variant="ghost-outlined"] {
-      --_color: var(--ghost-outlined-color, var(--stone-10));
-      --_border-color: var(--ghost-outlined-border-color, var(--stone-2));
+      --_color: var(--_ghost-outlined-color);
+      --_border-color: var(--_ghost-outlined-border-color);
 
       &:hover,
       &:hover:hover {
-        --_color: var(--neutral-color-hover, var(--stone-10));
-        --_bg-color-hover: var(--ghost-bg-color-hover, var(--stone-1));
+        --_color: var(--_ghost-color-hover);
+        --_bg-color-hover: var(--_ghost-bg-color-hover);
       }
     }
 
     /* - neutral & neutral-outlined - */
     &[data-variant="neutral"],
     &[data-variant="neutral-outlined"] {
+      --_neutral-color: var(--neutral-color, var(--gray-0));
+      --_neutral-color-hover: var(--neutral-color-hover, var(--_neutral-color));
+      --_neutral-bg-color: var(--neutral-bg-color, var(--stone-11));
+      --_neutral-bg-color-hover: var(--neutral-bg-color-hover, var(--stone-10));
+      --_neutral-ring-color: var(--neutral-ring-color, var(--stone-10));
+      --_neutral-border-color: var(--neutral-border-color, transparent);
+      --_neutral-outlined-color: var(--neutral-outlined-color, var(--stone-11));
+      --_neutral-outlined-border-color: var(--neutral-outlined-border-color, var(--stone-9));
+
       &:focus,
       &:focus-visible {
-        --_outline-color: var(--neutral-ring-color, var(--stone-10));
+        --_ring-color: var(--_neutral-ring-color);
       }
 
       &:hover,
       &:hover:hover {
-        --_color: var(--neutral-color-hover, var(--gray-0));
-        --_bg-color-hover: var(--neutral-bg-color-hover, var(--stone-10));
+        --_color: var(--_neutral-color-hover);
+        --_bg-color-hover: var(--_neutral-bg-color-hover);
       }
     }
 
     &[data-variant="neutral"] {
-      --_color: var(--neutral-color, var(--gray-0));
-      --_bg-color: var(--neutral-bg-color, var(--stone-11));
-      --_border-color: var(--neutral-border-color, var(--stone-11));
+      --_color: var(--_neutral-color);
+      --_bg-color: var(--_neutral-bg-color);
+      --_border-color: var(--_neutral-border-color);
     }
 
     &[data-variant="neutral-outlined"] {
-      --_color: var(--neutral-outlined-color, var(--stone-11));
-      --_border-color: var(--neutral-outlined-border-color, var(--stone-9));
+      --_color: var(--_neutral-outlined-color);
+      --_border-color: var(--_neutral-outlined-border-color);
     }
 
     /* * Sizes (component prop "size")     * */
