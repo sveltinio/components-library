@@ -1,6 +1,5 @@
 <script lang="ts">
-	import '../../styles/base.css';
-	import '../../styles/components/dropdown/variables.css';
+	import '../../styles/baseline.css';
 	import '../../styles/components/dropdown/styles.css';
 	import type { DropdownContext } from './types.js';
 	import { setContext } from 'svelte';
@@ -8,7 +7,7 @@
 	import { clickOutsideAction } from '$lib/actions.js';
 	import { a11yKeyboardAction } from './a11y-keyboard.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames } from '$lib/utils';
+	import { retrieveCssClassNames } from '$lib/utils.js';
 
 	export let isOpen = false;
 
@@ -26,12 +25,12 @@
 	setContext('SNE_Dropdown', ctx);
 
 	// avoid hacking reserved css class names
-	const reservedNames = ['sn-e-colors', 'sn-e-c-dropdown-vars', 'sn-e-c-dropdown'];
+	const reservedNames = ['sn-e-c-dropdown'];
 	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 </script>
 
 <div
-	class="sn-e-colors sn-e-c-dropdown-vars sn-e-c-dropdown {cssClasses}"
+	class="sn-e-c-dropdown {cssClasses}"
 	style={cssStyles.value}
 	use:a11yKeyboardAction={{ enabled: true, isOpen, ctx }}
 	use:clickOutsideAction={{

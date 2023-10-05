@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext, onDestroy } from 'svelte';
-	import type { DropdownContext } from './types.js';
+	import type { DropdownContext } from '../types.js';
 
 	export let absolute = false;
 
@@ -17,6 +17,12 @@
 	});
 </script>
 
-<ul id="menu-list" class="list {visibility}" class:list--absolute={absolute}>
+<ul
+	id="menu-list"
+	class="list"
+	data-visible="false"
+	data-position={absolute ? 'absolute' : 'relative'}
+	role="menu"
+>
 	<slot />
 </ul>

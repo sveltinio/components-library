@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { navItems } from '../../../../src/data/sample.js';
-	import { Dropdown, DropdownButton, DropdownContent, DropdownItem } from '$lib/index.js';
+	import { Dropdown } from '$lib/index.js';
 
 	/*
 	const myStyles = {
@@ -29,16 +29,16 @@
 		<h3>Dropdown items as links</h3>
 		<div class="preview">
 			<Dropdown>
-				<DropdownButton label="Posts" />
-				<DropdownContent>
+				<Dropdown.Button label="Posts" />
+				<Dropdown.Items>
 					{#each navItems as item}
 						{#if item.children}
 							{#each item.children as child}
-								<DropdownItem label={child.name} href={child.url} />
+								<Dropdown.Items.Item label={child.name} href={child.url} />
 							{/each}
 						{/if}
 					{/each}
-				</DropdownContent>
+				</Dropdown.Items>
 			</Dropdown>
 		</div>
 	</div>

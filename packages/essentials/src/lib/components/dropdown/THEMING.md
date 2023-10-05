@@ -24,12 +24,12 @@ Below is the DOM Element Structure for the `Dropdown` component.
 
 The DOM Element Structure above can be mapped to the following table going through the structure from top to bottom and from left to right.
 
-| Component       | HTML Elem | CSS Class Name    | CSS Variables Prefix |
-| :-------------- | --------: | ----------------: | -------------------: |
-|                 | `div`     | `sn-e-c-dropdown` |                      |
-| DropdownButton  |           | `btn`             | `btn`                |
-| DropdownContent |           | `list`            | `list`               |
-| DropdownItem    |           | `list__item`      | `item`               |
+| Component           | HTML Elem | CSS Class Name    | CSS Variables Prefix |
+| :------------------ | --------: | ----------------: | -------------------: |
+|                     | `div`     | `sn-e-c-dropdown` |                      |
+| Dropdown.Button     |           | `btn`             | `btn`                |
+| Dropdown.Items      |           | `list`            | `list`               |
+| Dropdown.Items.Item |           | `list__item`      | `item`               |
 
 ## CSS Variables
 
@@ -43,12 +43,7 @@ The CSS variables are defined in the [variables.css](../../styles/components/dro
 
 ```html
 <script>
-   import {
-      Dropdown,
-      DropdownButton,
-      DropdownContent,
-      DropdownItem
-   } from '@sveltinio/essentials/dropdown';
+   import { Dropdown } from '@sveltinio/essentials/dropdown';
 
    const myStyles = {
       'btn-color': '#ecfeff',
@@ -62,12 +57,12 @@ The CSS variables are defined in the [variables.css](../../styles/components/dro
 </script>
 
 <Dropdown styles={myStyles}>
- <DropdownButton label="Menu" />
- <DropdownContent>
-  <DropdownItem label="Item 1" href="#" />
-  <DropdownItem label="Item 2" href="#" />
-  <DropdownItem label="Item 3" href="#" />
- </DropdownContent>
+ <Dropdown.Button label="Menu" />
+ <Dropdown.Items>
+  <Dropdown.Items.Item label="Item 1" href="#" />
+  <Dropdown.Items.Item label="Item 2" href="#" />
+  <Dropdown.Items.Item label="Item 3" href="#" />
+ </Dropdown.Items>
 </Dropdown>
 ```
 
@@ -88,21 +83,16 @@ The CSS variables are defined in the [variables.css](../../styles/components/dro
 
 ```html
 <script>
-   import {
-      Dropdown,
-      DropdownButton,
-      DropdownContent,
-      DropdownItem
-   } from '@sveltinio/essentials/dropdown';
+   import { Dropdown } from '@sveltinio/essentials/dropdown';
 </script>
 
 <Dropdown class="my-dropdown">
- <DropdownButton label="Menu" />
- <DropdownContent>
-  <DropdownItem label="Item 1" href="#" />
-  <DropdownItem label="Item 2" href="#" />
-  <DropdownItem label="Item 3" href="#" />
- </DropdownContent>
+ <Dropdown.Button label="Menu" />
+ <Dropdown.Items>
+  <Dropdown.Items.Item label="Item 1" href="#" />
+  <Dropdown.Items.Item label="Item 2" href="#" />
+  <Dropdown.Items.Item label="Item 3" href="#" />
+ </Dropdown.Items>
 </Dropdown>
 ```
 

@@ -12,21 +12,16 @@ It is made up by combining the `Dropdown`, `DropdownButton`, `DropdownContent`, 
 
 ```html
 <script>
-   import {
-      Dropdown,
-      DropdownButton,
-      DropdownContent
-      DropdownItem
-   } from '@sveltinio/essentials/dropdown';
+   import { Dropdown } from '@sveltinio/essentials/dropdown';
 <script>
 
 <Dropdown>
-   <DropdownButton label="Menu" />
-   <DropdownContent>
-      <DropdownItem label="Item 1" href="#" />
-      <DropdownItem label="Item 2" href="#" />
-      <DropdownItem label="Item 3" href="#" />
-   </DropdownContent>
+   <Dropdown.Button label="Menu" />
+   <Dropdown.Items>
+      <Dropdown.Items.Item label="Item 1" href="#" />
+      <Dropdown.Items.Item label="Item 2" href="#" />
+      <Dropdown.Items.Item label="Item 3" href="#" />
+   </Dropdown.Items>
 </Dropdown>
 ```
 
