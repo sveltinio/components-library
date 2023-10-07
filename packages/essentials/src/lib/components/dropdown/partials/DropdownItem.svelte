@@ -18,12 +18,27 @@
 			{target}
 			data-sveltekit-preload-data={prefetchValue}
 			role="menuitem"
+			on:click
+			on:dblclick
+			on:keydown
+			on:keyup
+			on:mouseenter
+			on:mouseleave
 			{...$$restProps}
 		>
 			{label}
 		</a>
 	{:else}
-		<button role="menuitem" {...$$restProps}>
+		<button
+			role="menuitem"
+			on:click
+			on:dblclick
+			on:keydown
+			on:keyup
+			on:mouseenter
+			on:mouseleave
+			{...$$restProps}
+		>
 			{label}
 		</button>
 	{/if}
