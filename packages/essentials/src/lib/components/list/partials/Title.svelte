@@ -13,7 +13,9 @@
 
 <button aria-controls="items-list" aria-haspopup="true" data-testid="list_toggle_btn">
 	{#if $$slots.leftIcon}
-		<slot name="leftIcon" />
+		<span class="icon">
+			<slot name="leftIcon" />
+		</span>
 	{/if}
 
 	{text}

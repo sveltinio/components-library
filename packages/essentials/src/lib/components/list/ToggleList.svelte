@@ -53,8 +53,9 @@
 			{#if showIcon}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="14px"
-					height="14px"
+					width="20"
+					height="20"
+					class="icon"
 					stroke-width="1.5"
 					viewBox="0 0 24 24"
 					fill="none"

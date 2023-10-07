@@ -20,10 +20,12 @@
 	];
 
 	const myOwnStyles = {
-		'btn-color': '#365314',
-		'btn-color-hover': '#365314',
-		'btn-bg-color': '#bef264',
-		'btn-bg-color-hover': '#a3e635',
+		'title-color': '#365314',
+		'title-color-hover': '#365314',
+		'title-bg-color': '#bef264',
+		'title-bg-color-hover': '#a3e635',
+		'title-px': '6px',
+		'title-py': '2px',
 		'item-border-width': '2px',
 		'item-border-style': 'dashed',
 		'item-border-color': '#bef264',
@@ -60,6 +62,13 @@
 		<h4>Line Indicator</h4>
 		<div class="preview">
 			<ToggleList bind:route title="Socials" items={contentForToggleList} indicator="line" />
+		</div>
+	</div>
+
+	<div class="demo-wrapper">
+		<h3 id="no-right-side-icon">No Right Side icon</h3>
+		<div class="preview">
+			<ToggleList title="My Toggle List" items={contentForToggleList} showIcon={false} />
 		</div>
 	</div>
 

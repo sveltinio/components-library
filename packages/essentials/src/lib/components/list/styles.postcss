@@ -6,14 +6,47 @@
 @layer components {
   .sn-e-c-togglelist {
     & button {
-      display: inline-flex;
+      --_title-py: var(--title-py, 0);
+      --_title-px: var(--title-px, 0);
+      --_title-icon-gap: var(--title-icon-gap, var(--size-1));
+      --_title-color: var(--title-color, var(--gray-12));
+      --_title-color-hover: var(--title-color-hover, var(--_title-color));
+      --_title-bg-color: var(--title-bg-color, transparent);
+      --_title-bg-color-hover: var(--title-bg-color-hover, transparent);
+      --_title-font-size: var(--title-font-size, var(--font-size-1));
+      --_title-font-weight: var(--title-font-weight, var(--font-weight-5));
+      --_title-line-height: var(--title-line-height, var(--font-lineheight-3));
+      --_title-letter-spacing: var(--title-letter-spacing, var(--font-letterspacing-1));
+
+      display: flex;
       align-items: center;
-      gap: var(--title-icon-gap, var(--size-1));
-      color: var(--title-color, var(--gray-12));
-      font-weight: var(--title-font-weight, var(--font-weight-5));
-      font-size: var(--title-font-size, var(--font-size-1));
-      line-height: var(--title-line-height, var(--font-lineheight-3));
-      letter-spacing: var(--title-letter-spacing, 0em);
+      justify-content: center;
+      gap: var(--_title-icon-gap);
+      padding: var(--_title-py) var(--_title-px);
+      color: var(--_title-color);
+      background-color: var(--_title-bg-color);
+      font-weight: var(--_title-font-weight);
+      font-size: var(--_title-font-size);
+      line-height: var(--_title-line-height);
+      letter-spacing: var(--_title-letter-spacing);
+
+      border: none;
+
+      &:hover {
+        color: var(--_title-color-hover);
+        background-color: var(--_title-bg-color-hover);
+      }
+
+      &:has(span) .icon {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--icon-gap, var(--size-2));
+      }
+
+      &:where(:not(:has(.icon))) {
+        text-align: center;
+        min-inline-size: var(--_min-w);
+      }
     }
 
     & ul {
@@ -126,17 +159,6 @@
           }
         }
       }
-    }
-
-    & .icon {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      color: var(--icon-color, currentcolor);
-    }
-
-    & .icon-to-right {
-      margin-left: auto;
     }
 
     /** lg breakpoint */
