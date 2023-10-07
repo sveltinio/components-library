@@ -36,7 +36,7 @@ The `ButtonGroup` is an accessible widget as a container for grouping a set of b
 | shape        | `string`  |    no    | `rounded` | Set the button shape. One of `['rounded', 'pills', 'flat']`                  |
 | responsive   | `boolean` |    no    | `false`   | If true, vertical on small screen and horizontal on medium and large screens |
 
-#### ButtonGroupItem
+#### ButtonGroup.Button
 
 | Property | Type     | Required | Default     | Description                                      |
 | :------- | :------: | :------: | :---------: |:------------------------------------------------ |

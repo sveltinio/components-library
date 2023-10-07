@@ -58,8 +58,7 @@
 
 	<div id="buttongroup-sizes-wrapper" class="demo-wrapper">
 		<h3 id="buttongroup-sizes">
-			Sizes [<i>xs</i>, <i>sm</i>, <i>base</i>, <i>lg</i>, <i>xl</i>]. Default:
-			<i>base</i>
+			Sizes: [xs, sm, base, lg, xl] (Default = <i>base</i>)
 		</h3>
 		<div class="preview">
 			<ButtonGroup size="xs">

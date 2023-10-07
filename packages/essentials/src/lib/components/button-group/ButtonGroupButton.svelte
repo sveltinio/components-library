@@ -38,6 +38,11 @@
 	data-shape={shape}
 	data-testid="btn-{id}"
 	on:click={clickDispatcher}
+	on:click
+	on:keydown
+	on:keyup
+	on:mouseenter
+	on:mouseleave
 	{...$$restProps}
 >
 	{#if icon && position == 'left'}

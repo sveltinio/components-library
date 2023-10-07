@@ -8,7 +8,6 @@ export interface ButtonGroupStatic {
 
 export interface ButtonStatic {
 	new (...args: ConstructorParameters<typeof BaseButton>): BaseButton;
-	Button: ButtonStatic;
 }
 
 const ButtonGroup = BaseButtonGroup as ButtonGroupStatic;
