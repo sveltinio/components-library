@@ -85,6 +85,11 @@ export const navItems: Array<DropdownData> = [
 	}
 ];
 
+export const dropdownContentSample = [
+	{ identifier: 'item_1', name: 'Item 1', url: '/item-1' },
+	{ identifier: 'item_2', name: 'Item 2', url: '/item-2' }
+];
+
 export const contentForToggleList: Array<ListItem> = [
 	{ label: 'First', url: '#first', icon: CloudUploadIcon },
 	{ label: 'Second', url: '#second', icon: BellIcon }

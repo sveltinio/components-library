@@ -37,7 +37,7 @@
 		height="20"
 		class="icon"
 		class:flipY={isOpen}
-		class:flip-Y={!isOpen}
+		class:-flipY={!isOpen}
 		stroke-width="1.5"
 		viewBox="0 0 24 24"
 		fill="none"

@@ -8,7 +8,6 @@ export interface DropdownButtonStatic {
 
 export interface DropdownItemStatic {
 	new (...args: ConstructorParameters<typeof BaseDropdownItem>): BaseDropdownItem;
-	Item: DropdownItemStatic;
 }
 
 export interface DropdownItemsStatic {
