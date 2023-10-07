@@ -136,40 +136,44 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 	};
 	/** ***************** END - Event Handlers ******************************************** */
 
-	initialize(componentId);
-
 	const toggleBtn = node.querySelector('button') as HTMLElement;
-	if (options?.enabled) toggleBtn.addEventListener('click', onButtonClick);
-	if (options?.enabled) toggleBtn.addEventListener('keydown', onButtonKeydown);
-
 	const liNodes = Array.from(node.querySelectorAll('[role="menuitem"]')) as HTMLLinkElement[];
 
-	liNodes.forEach((item) => {
-		item.tabIndex = -1;
-		item.addEventListener('keydown', onItemKeydown);
-		item.addEventListener('mouseover', onItemMouseOver);
-		_listGroups[componentId].push(item);
+	if (options?.enabled) {
+		initialize(componentId);
 
-		// get the first letter of the item
-		const menuItemContent = item.textContent?.trim().toLowerCase()[0];
-		if (menuItemContent) _firstChars[componentId].push(menuItemContent);
+		toggleBtn.addEventListener('click', onButtonClick);
+		toggleBtn.addEventListener('keydown', onButtonKeydown);
 
-		if (!_firstListItem[componentId]) {
-			_firstListItem[componentId] = item;
-		}
-		_lastListItem[componentId] = item;
-	});
+		liNodes.forEach((item) => {
+			item.tabIndex = -1;
+			item.addEventListener('keydown', onItemKeydown);
+			item.addEventListener('mouseover', onItemMouseOver);
+			_listGroups[componentId].push(item);
 
-	focusManager.applyDOMChangesFn = tick;
-	focusManager.items = _listGroups;
-	focusManager.firstChars = _firstChars;
-	focusManager.firstItem = _firstListItem;
-	focusManager.lastItem = _lastListItem;
+			// get the first letter of the item
+			const menuItemContent = item.textContent?.trim().toLowerCase()[0];
+			if (menuItemContent) _firstChars[componentId].push(menuItemContent);
+
+			if (!_firstListItem[componentId]) {
+				_firstListItem[componentId] = item;
+			}
+			_lastListItem[componentId] = item;
+		});
+
+		focusManager.applyDOMChangesFn = tick;
+		focusManager.items = _listGroups;
+		focusManager.firstChars = _firstChars;
+		focusManager.firstItem = _firstListItem;
+		focusManager.lastItem = _lastListItem;
+	}
 
 	return {
 		update(param) {
-			if (param.enabled) toggleBtn.addEventListener('click', onButtonClick);
-			if (param.enabled) toggleBtn.addEventListener('keydown', onButtonKeydown);
+			if (param.enabled) {
+				toggleBtn.addEventListener('click', onButtonClick);
+				toggleBtn.addEventListener('keydown', onButtonKeydown);
+			}
 		},
 		destroy: () => {
 			toggleBtn.removeEventListener('click', onButtonClick);
