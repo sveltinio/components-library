@@ -93,28 +93,41 @@
 	</div>
 
 	<div id="buttons-with-icons-wrapper" class="demo-wrapper">
-		<h3 id="buttons-with-icons">Icon (left & right)</h3>
+		<h3 id="buttons-with-icons">Icons</h3>
 		<div class="preview">
 			<Button>
-				<MailIcon slot="leftIcon" aria-hidden="true" focusable="false" /> Button Label
+				<MailIcon slot="leftIcon" class="icon" aria-hidden="true" focusable="false" />
+				Label
 			</Button>
 
 			<Button>
-				Button Label <MailIcon slot="rightIcon" aria-hidden="true" focusable="false" />
+				Label <MailIcon
+					slot="rightIcon"
+					class="icon"
+					aria-hidden="true"
+					focusable="false"
+				/>
 			</Button>
 
 			<Button>
-				<MailIcon slot="leftIcon" aria-hidden="true" focusable="false" />
-				Button Label
-				<MailIcon slot="rightIcon" aria-hidden="true" focusable="false" />
+				<MailIcon slot="leftIcon" class="icon" aria-hidden="true" focusable="false" />
+				Label
+				<MailIcon slot="rightIcon" class="icon" aria-hidden="true" focusable="false" />
 			</Button>
+
+			<Button href="https://google.com" external>
+				<MailIcon slot="leftIcon" class="icon" aria-hidden="true" focusable="false" />
+				Label
+				<MailIcon slot="rightIcon" class="icon" aria-hidden="true" focusable="false" />
+			</Button>
+
+			<Button shape="circle"><MailIcon aria-hidden="true" focusable="false" /></Button>
 		</div>
 	</div>
 
 	<div id="buttons-theming-with-prop-wrapper" class="demo-wrapper">
-		<h3 id="buttons-theming-with-prop">
-			Custom Styles with prop (it is the info variant but looks like the success one)
-		</h3>
+		<h3 id="buttons-theming-with-prop">Custom Styles with props</h3>
+		<h4>info variant but looks like the success one</h4>
 		<div class="preview">
 			<Button
 				label="Custom Styles"

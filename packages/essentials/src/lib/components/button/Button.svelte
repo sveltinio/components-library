@@ -70,13 +70,11 @@
 
 {#if href && !disabled}
 	<a
-		tabindex="0"
-		role="button"
 		title={_alt}
 		{href}
 		target={external ? '_blank' : '_self'}
 		rel={makeExternalLinkOptions(external)}
-		class="sn-e-c-button {cssClasses}"
+		class="sn-e-c-button link {cssClasses}"
 		style={cssStyles.value}
 		aria-label={_alt}
 		aria-disabled={disabled}
@@ -91,9 +89,7 @@
 		{...$$restProps}
 	>
 		{#if $$slots.leftIcon}
-			<span class="button__icon" aria-hidden="true">
-				<slot name="leftIcon" />
-			</span>
+			<slot name="leftIcon" />
 		{/if}
 
 		{#if label}
@@ -103,14 +99,12 @@
 		{/if}
 
 		{#if $$slots.rightIcon}
-			<span class="button__icon" aria-hidden="true">
-				<slot name="rightIcon" />
-			</span>
+			<slot name="rightIcon" />
 		{/if}
 	</a>
 {:else}
 	<button
-		class="{cssClasses} sn-e-c-button"
+		class="sn-e-c-button {cssClasses}"
 		style={cssStyles.value}
 		aria-label={_alt}
 		aria-disabled={disabled}
@@ -122,12 +116,16 @@
 		data-no-focus-ring={noFocusRing}
 		{disabled}
 		data-testid="btn"
+		on:click
+		on:dblclick
+		on:keydown
+		on:keyup
+		on:mouseenter
+		on:mouseleave
 		{...$$restProps}
 	>
 		{#if $$slots.leftIcon}
-			<span class="button__icon">
-				<slot name="leftIcon" />
-			</span>
+			<slot name="leftIcon" />
 		{/if}
 
 		{#if label}
@@ -137,9 +135,7 @@
 		{/if}
 
 		{#if $$slots.rightIcon}
-			<span class="button__icon">
-				<slot name="rightIcon" />
-			</span>
+			<slot name="rightIcon" />
 		{/if}
 	</button>
 {/if}

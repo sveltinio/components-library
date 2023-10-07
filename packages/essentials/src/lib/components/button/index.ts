@@ -5,6 +5,7 @@ export const preserveButtonPropsList = [
 	'min-h',
 	'px',
 	'py',
+	'font-family',
 	'font-size',
 	'font-weight',
 	'line-height',

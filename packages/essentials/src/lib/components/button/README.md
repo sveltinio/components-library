@@ -84,7 +84,7 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 | Name            |  Type     |
 | :-------------- | :-------: |
 | `on:click`      | forwarded |
-| `on:change`     | forwarded |
+| `on:dblclick`   | forwarded |
 | `on:keyup`      | forwarded |
 | `on:keydown`    | forwarded |
 | `on:mouseenter` | forwarded |
