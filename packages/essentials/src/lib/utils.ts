@@ -163,3 +163,29 @@ export function makeExternalLinkOptions(
 
 	return relString.join(' ');
 }
+
+export async function copyText(text: string) {
+	if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+		await navigator.clipboard.writeText(text);
+	} else {
+		// fallback deprecated way if no clipboard API.
+		const el = document.createElement('input');
+		el.type = 'text';
+		el.disabled = true;
+		el.style.setProperty('position', 'fixed');
+		el.style.setProperty('z-index', '-100');
+		el.style.setProperty('pointer-events', 'none');
+		el.style.setProperty('opacity', '0');
+
+		el.value = text;
+
+		document.body.appendChild(el);
+
+		el.click();
+		el.select();
+		document.execCommand('copy');
+
+		document.body.removeChild(el);
+	}
+	console.log(text);
+}

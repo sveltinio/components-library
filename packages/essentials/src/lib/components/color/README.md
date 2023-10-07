@@ -1,6 +1,8 @@
 # ColorViewer
 
-A widget to render a colorful circle with the label set to the color value.
+A simple component to render a colorful element with the label set to the color value.
+
+By default it allows copy the color value to clipboard.
 
 ## Examples
 
@@ -23,13 +25,15 @@ The `ColorViewer` component exposes a set of properties but it does not prevent 
 
 ### Functionals
 
-| Property   |  Type     | Required | Default | Description                                       |
-| :--------- | :-------: | :------: | :------ | :------------------------------------------------ |
-| value      | `string`  |    no    |         | Sets the emement's background color               |
-| labelColor | `string`  |    no    |         | If false, hide the color value string             |
-| showLabel  | `boolean` |    no    | `true`  | If false, hide the color value string             |
-| size       | `integer` |    no    | `16`    | Size in pixels                                    |
-| border     | `boolean` |    no    | `true`  | If true, sets the element's border                |
+| Property   |  Type         | Required | Default | Description                                    |
+| :--------- | :-----------: | :------: | :------ | :--------------------------------------------- |
+| value      | `string`      |    no    |         | Sets the emement's background color            |
+| labelColor | `string`      |    no    |         | If false, hide the color value string          |
+| showLabel  | `boolean`     |    no    | `true`  | If false, hide the color value string          |
+| size       | `integer`     |    no    | `24`    | Size in pixels                                 |
+| border     | `boolean`     |    no    | `true`  | If true, sets the element's border             |
+| shape      | `ButtonShape` |    no   | `circle` | One of `['circle', 'square', 'flat', 'pill']`  |
+| clipboard  | `boolean`     |    no    | `true`  | If true, copy the value to clipboard on click  |
 
 ### Styles
 
@@ -39,6 +43,17 @@ The `ColorViewer` component exposes a set of properties but it does not prevent 
 | styles   | `object`  |    no    | `{}`    | Used to pass CSS variables to apply custom styles |
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
+
+## Events
+
+| Name            |  Type     |
+| :-------------- | :-------: |
+| `on:click`      | forwarded |
+| `on:dblclick`   | forwarded |
+| `on:keyup`      | forwarded |
+| `on:keydown`    | forwarded |
+| `on:mouseenter` | forwarded |
+| `on:mouseleave` | forwarded |
 
 ## Theming
 

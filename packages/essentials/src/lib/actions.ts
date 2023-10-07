@@ -1,4 +1,5 @@
 import type { Action } from 'svelte/action';
+import { copyText } from './utils';
 
 export interface ClickOutsideActionConfig {
 	enabled: boolean;
@@ -60,3 +61,34 @@ function addActiveClass(node: HTMLElement, className: string): void {
 		node?.classList.remove(className);
 	}
 }
+
+export interface CopyToClipboardConfig {
+	enabled: boolean;
+}
+
+const copyToClipboardAction: Action<HTMLElement, CopyToClipboardConfig> = (
+	node: HTMLElement,
+	options
+) => {
+	const text = node.innerText ? node.innerText : node.querySelector('span.sr-only')?.innerHTML;
+
+	const handleClick = async () => {
+		if (text) {
+			try {
+				await copyText(text);
+			} catch (e) {
+				throw new Error(e);
+			}
+		}
+	};
+
+	if (options.enabled) node.addEventListener('click', handleClick);
+
+	return {
+		destroy() {
+			if (options.enabled) node.removeEventListener('click', handleClick, true);
+		}
+	};
+};
+
+export { copyToClipboardAction as copy };
