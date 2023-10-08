@@ -64,13 +64,10 @@
 
 		Object.entries(Object.fromEntries(colorsProps)).map(([key, val]) => {
 			if (!isEmpty(val) && isHex(val)) {
-				console.log(val);
 				const dataStr = camelToKebab(key).match(
 					(s) => `data-${s}`,
 					(e) => `${e.message}`
 				);
-
-				console.log(dataStr);
 
 				elem.setAttribute(dataStr, String(val));
 			} else {
