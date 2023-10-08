@@ -4,8 +4,8 @@ To simplify custom styles on the component we used the built-in solution for com
 
 The two component properties `styles` and `class` are the ones allowing you to customize the component appearence.
 
-- `styles` is a JS object with the CSS variable name to override (without `--` prefix) as key and the value set to the allowed one for that CSS variable. This approach helps when you wish to tune few styles for the component.
-- `class`: is a global CSS class name where the class content has the CSS variables to override. Using `class` is more suitable when the goal is to create personal versions(themes) for the component, so sevaral props are override;
+- `styles` is a JS object with the CSS variable name to override (**without** `--` as prefix) as key and the value set to the allowed one for that CSS variable. This approach helps when you wish to tune few styles for the component.
+- `class`: is a global CSS class name where the class content has the CSS variables (**with** `--` as prefix) to override. Using `class` is more suitable if the goal is creating personal variants (themes) for the component.
 
 > Refer to the [Design Rules] document to better understand how the component has been designed and how to customize the styles.
 
@@ -20,20 +20,58 @@ Below is the DOM Element Structure for the `ToggleList` component.
 
 ![ToggleList](./assets/images/component_structure.png "ToggleList Component - DOM Element Structure")
 
-## Info Mapping Table
+## DOM - CSS Variables Mapping Table
 
-The DOM Element Structure above can be mapped to the following table going through the structure from top to bottom and from left to right.
+The DOM Element Structure above can be mapped to the following table where each component is mapped to the prefix used to identify the CSS variables afftecting it.
 
-| Component    | HTML Elem | CSS Class Name      | CSS Variables Prefix |
-| :----------- | --------: | ------------------: | -------------------: |
-|              | `div`     | `sn-e-c-togglelist` |                      |
-| ToggleButton |           | `btn`               | `btn`                |
-| List         |           | `list`              | `list`               |
-| Item         |           | `list__item`        | `item`               |
+| Component | CSS Variables Prefix |
+| :-------- | -------------------: |
+| Title     | `title`              |
+| List      | `list`               |
+| Item      | `item`               |
 
-## CSS Variables
+### Title
 
-The CSS variables are defined in the [variables.css](../../styles/components/list/variables.css) file.
+| Name                   | Default     |            |
+| :--------------------- | ----------: | :--------: |
+| `title-py`             | 0           |            |
+| `title-px`             | 0           |            |
+| `title-icon-gap`       | 0.25rem     |            |
+| `title-color`          | #030507     | <div style="background-color:#030507; width:15px; height: 15px" /> |
+| `title-color-hover`    | #030507     | <div style="background-color:#030507; width:15px; height: 15px" /> |
+| `title-bg-color`       | transparent |            |
+| `title-bg-color-hover` | transparent |            |
+| `title-font-size`      | 1rem        |            |
+| `title-font-weight`    | 500         |            |
+| `title-line-height`    | 1.5         |            |
+| `title-letter-spacing` | 0.025em     |            |
+
+### List
+
+| Name                | Default     |            |
+| :------------------ | ----------: | :--------: |
+| `list-mt`           | 0.5rem      |            |
+| `list-mt-lg`        | 1rem        |            |
+| `list-py`           | 0.25rem     |            |
+| `list-px`           | 0           |            |
+| `list-border-width` | 1px         |            |
+| `list-border-style` | solid       |            |
+| `list-border-color` | #dee2e6     | <div style="background-color:#dee2e6; width:15px; height: 15px" /> |
+| `list-bg-color`     | transparent |            |
+
+### Item
+
+| Name                     | Default     |            |
+| :----------------------- | ----------: | :--------: |
+| `item-pl`                | 1rem        |            |
+| `item-color`             | #868e96     | <div style="background-color:#868e96; width:15px; height: 15px" /> |
+| `item-color-hover`       | #495057     | <div style="background-color:#495057; width:15px; height: 15px" /> |
+| `item-font-weight`       | 400         |            |
+| `item-font-size`         | 1rem        |            |
+| `item-line-height`       | 1.5         |            |
+| `item-letter-spacing`    | 0em         |            |
+| `item-icon-gap`          | 0.5rem      |            |
+| `indicator-color-active` | #495057     | <div style="background-color:#495057; width:15px; height: 15px" /> |
 
 ## Examples
 
@@ -54,10 +92,10 @@ The CSS variables are defined in the [variables.css](../../styles/components/lis
    ];
 
    const customStyles = {
-      'btn-color': '#365314',
-      'btn-color-hover': '#365314',
-      'btn-bg-color': '#bef264',
-      'btn-bg-color-hover': '#a3e635',
+      'title-color': '#365314',
+      'title-color-hover': '#365314',
+      'title-bg-color': '#bef264',
+      'title-bg-color-hover': '#a3e635',
       'item-border-width': '2px',
       'item-border-style': 'dashed',
       'item-border-color': '#bef264',
@@ -75,10 +113,10 @@ The CSS variables are defined in the [variables.css](../../styles/components/lis
 ```css
 /* app.css */
 .my-togglelist {
-  --btn-color: #365314;
-  --btn-color-hover: #365314;
-  --btn-bg-color: #bef264;
-  --btn-bg-color-hover: #a3e635;
+  --title-color: #fdf4ff;
+  --title-color-hover: #365314;
+  --title-bg-color: #701a75;
+  --title-bg-color-hover: #a3e635;
   --item-border-width: 2px;
   --item-border-style: dashed;
   --item-border-color: #bef264;
