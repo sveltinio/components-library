@@ -1,5 +1,5 @@
 import type { Action } from 'svelte/action';
-import { copyText } from './utils';
+import { copyText, getErrorMessage } from './utils';
 
 export interface ClickOutsideActionConfig {
 	enabled: boolean;
@@ -31,11 +31,8 @@ export interface ActiveActionConfig {
 	className: string;
 }
 
-export const activeAction: Action<HTMLElement, ActiveActionConfig> = (
-	node,
-	options = { enabled: true, className: 'is-active' }
-) => {
-	addActiveClass(node, options.className);
+export const activeAction: Action<HTMLElement, ActiveActionConfig> = (node, options) => {
+	if (options.enabled) addActiveClass(node, options.className);
 
 	return {
 		update: (params) => {
@@ -46,12 +43,9 @@ export const activeAction: Action<HTMLElement, ActiveActionConfig> = (
 };
 
 function isCurrentURL(href: string): boolean {
-	/*
 	const { hash, pathname, search } = new URL(location.href);
 	const path = pathname + search + hash;
-	return path.includes(href);
-	*/
-	return href === location.href;
+	return href.includes(path);
 }
 
 function addActiveClass(node: HTMLElement, className: string): void {
@@ -77,7 +71,7 @@ const copyToClipboardAction: Action<HTMLElement, CopyToClipboardConfig> = (
 			try {
 				await copyText(text);
 			} catch (e) {
-				throw new Error(e);
+				throw new Error(getErrorMessage(e));
 			}
 		}
 	};

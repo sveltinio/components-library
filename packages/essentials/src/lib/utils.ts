@@ -168,7 +168,7 @@ export async function copyText(text: string) {
 	if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
 		await navigator.clipboard.writeText(text);
 	} else {
-		// fallback deprecated way if no clipboard API.
+		// fallback - deprecated way if no clipboard API.
 		const el = document.createElement('input');
 		el.type = 'text';
 		el.disabled = true;
@@ -188,4 +188,9 @@ export async function copyText(text: string) {
 		document.body.removeChild(el);
 	}
 	console.log(text);
+}
+
+export function getErrorMessage(error: unknown) {
+	if (error instanceof Error) return error.message;
+	return String(error);
 }
