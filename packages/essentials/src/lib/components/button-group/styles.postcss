@@ -24,80 +24,89 @@
       justify-content: center;
       flex-shrink: 0;
       gap: var(--gap, var(--size-1));
+
+      min-height: var(--_min-height);
+      height: var(--_height);
       padding: var(--py, var(--size-2)) var(--px, var(--size-3));
 
       color: var(--color, var(--gray-8));
-      font-family: var(--font-sans);
       text-decoration: var(--text-decoration, none);
-      background-color: var(--bg-color, var(--white));
+      font-family: var(--font-sans);
+      font-size: var(--_font-size);
+      font-weight: var(--_font-weight);
+      line-height: var(--_line-height);
+      letter-spacing: var(--_letter-spacing);
+
+      background-color: var(--bg-color, var(--gray-0));
       border-color: var(--border-color, var(--gray-2));
       border-style: var(--border-style, solid);
-      border-width: var(--border-width, 1px);
+      border-width: var(--border-width, var(--border-size-1));
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
 
       &:hover {
+        color: var(--color-hover, var(--gray-8));
         background-color: var(--bg-color-hover, var(--gray-1));
       }
 
       &:focus {
         outline-width: var(--ring-width, 1px);
         outline-style: var(--ring-style, solid);
-        outline-offset: var(--ring-offset, 0px);
+        outline-offset: var(--ring-offset, 0);
         outline-color: var(--ring-color, var(--gray-2));
       }
 
       /* * Sizes (component prop "size")     */
       /*- xs -*/
       &[data-size="xs"] {
-        min-height: var(--min-height-xs, var(--size-7));
-        height: var(--height-xs, var(--size-7));
-        font-size: var(--font-size-xs, var(--font-size-0));
-        font-weight: var(--font-weight, var(--font-weight-4));
-        line-height: var(--line-height-xs, var(--font-lineheight-00));
-        letter-spacing: var(--letter-spacing-xs, var(--font-letterspacing-0));
+        --_min-height: var(--min-height-xs, var(--size-7));
+        --_height: var(--height-xs, var(--size-7));
+        --_font-size: var(--font-size-xs, var(--font-size-0));
+        --_font-weight: var(--font-weight, var(--font-weight-4));
+        --_line-height: var(--line-height-xs, var(--font-lineheight-00));
+        --_letter-spacing: var(--letter-spacing-xs, var(--font-letterspacing-0));
       }
 
       /*- sm -*/
       &[data-size="sm"] {
-        min-height: var(--min-height-sm, var(--size-7));
-        height: var(--height-sm, var(--size-7));
-        font-size: var(--font-size-sm, calc(var(--font-size-0) + 0.1) rem);
-        font-weight: var(--font-weight, var(--font-weight-4));
-        line-height: var(--line-height-sm, var(--font-lineheight-1));
-        letter-spacing: var(--letter-spacing-sm, var(--font-letterspacing-1));
+        --_min-height: var(--min-height-sm, var(--size-7));
+        --_height: var(--height-sm, var(--size-7));
+        --_font-size: var(--font-size-sm, calc(var(--font-size-0) + 0.1) rem);
+        --_font-weight: var(--font-weight-sm, var(--font-weight-4));
+        --_line-height: var(--line-height-sm, var(--font-lineheight-1));
+        --_letter-spacing: var(--letter-spacing-sm, var(--font-letterspacing-1));
       }
 
       /*- base -*/
       &[data-size="base"] {
-        min-height: var(--min-height-base, var(--size-8));
-        height: var(--height-base, var(--size-8));
-        font-size: var(--font-size-base, var(--font-size-1));
-        font-weight: var(--font-weight, var(--font-weight-4));
-        line-height: var(--line-height-base, var(--font-lineheight-2));
-        letter-spacing: var(--letter-spacing-base, var(--font-letterspacing-1));
+        --_min-height: var(--min-height-base, var(--size-8));
+        --_height: var(--height-base, var(--size-8));
+        --_font-size: var(--font-size-base, var(--font-size-1));
+        --_font-weight: var(--font-weight-base, var(--font-weight-4));
+        --_line-height: var(--line-height-base, var(--font-lineheight-2));
+        --_letter-spacing: var(--letter-spacing-base, var(--font-letterspacing-1));
       }
 
       /*- lg -*/
       &[data-size="lg"] {
-        min-height: var(--min-height-lg, var(--size-8));
-        height: var(--height-lg, var(--size-8));
-        font-size: var(--font-size-lg, var(--font-size-2));
-        font-weight: var(--font-weight, var(--font-weight-5));
-        line-height: var(--line-height-lg, var(--font-lineheight-4));
-        letter-spacing: var(--letter-spacing-lg, var(--_letter-spacing-base));
+        --_min-height: var(--min-height-lg, var(--size-8));
+        --_height: var(--height-lg, var(--size-8));
+        --_font-size: var(--font-size-lg, var(--font-size-2));
+        --_font-weight: var(--font-weight-lg, var(--font-weight-5));
+        --_line-height: var(--line-height-lg, var(--font-lineheight-3));
+        --_letter-spacing: var(--letter-spacing-lg, var(--font-letterspacing-2));
       }
 
       /*- xl -*/
       &[data-size="xl"] {
-        min-height: var(--min-height-xl, var(--size-8));
-        height: var(--height-xl, var(--size-8));
-        font-size: var(--font-size-xl, var(--font-size-3));
-        font-weight: var(--font-weight, var(--font-weight-5));
-        line-height: var(--line-height-xl, var(--font-lineheight-4));
-        letter-spacing: var(--letter-spacing-xl, var(--_letter-spacing-lg));
+        --_min-height: var(--min-height-xl, var(--size-8));
+        --_height: var(--height-xl, var(--size-8));
+        --_font-size: var(--font-size-xl, var(--font-size-3));
+        --_font-weight: var(--font-weight-xl, var(--font-weight-5));
+        --_line-height: var(--line-height-xl, var(--font-lineheight-4));
+        --_letter-spacing: var(--letter-spacing-xl, var(--font-letterspacing-2));
       }
 
       /* * Shapes (component prop "shape")   * */
@@ -143,10 +152,10 @@
     }
 
     & .is-active:where(button) {
-      color: var(--active-color, var(--gray-9));
-      border-color: var(--active-border-color, var(--gray-2));
-      border-style: var(--active-border-style, solid);
-      background-color: var(--active-bg-color, var(--gray-1));
+      color: var(--color-active, var(--gray-9));
+      border-color: var(--border-color-active, var(--gray-2));
+      border-style: var(--border-style-active, solid);
+      background-color: var(--bg-color-active, var(--gray-1));
     }
 
     /** lg breakpoint */

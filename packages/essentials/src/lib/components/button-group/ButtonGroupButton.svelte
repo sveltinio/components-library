@@ -15,7 +15,6 @@
 	ctx.registerButton(id, icon);
 
 	$: active = $_active;
-	$: console.log(active);
 	$: size = $_size;
 	$: shape = $_shape;
 
