@@ -5,7 +5,7 @@
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { clickOutsideAction } from '$lib/actions.js';
-	import { a11yKeyboardAction } from './a11y-keyboard.js';
+	import { a11y } from './a11y-action.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils.js';
 
@@ -36,7 +36,7 @@
 <div
 	class="sn-e-c-dropdown {cssClasses}"
 	style={cssStyles.value}
-	use:a11yKeyboardAction={{ enabled: true, isOpen: open, ctx }}
+	use:a11y={{ enabled: true, isOpen: open, ctx }}
 	use:clickOutsideAction={{
 		enabled: true,
 		cb: () => {
