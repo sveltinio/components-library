@@ -4,16 +4,13 @@ import { getComponentId, isChar } from '$lib/utils.js';
 import { ComponentFocusManager } from '@sveltinio/ts-utils/a11y';
 import { tick } from 'svelte';
 
-interface A11yKeyboardActionOptions {
+interface A11yActionOptions {
 	enabled: boolean;
 	isOpen?: boolean;
 	ctx?: ToggleListContext;
 }
 
-export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> = (
-	node,
-	options
-) => {
+const a11yAction: Action<HTMLElement, A11yActionOptions> = (node, options) => {
 	const { isOpen, ctx } = options || {};
 
 	let open = isOpen;
@@ -186,3 +183,5 @@ export const a11yKeyboardAction: Action<HTMLElement, A11yKeyboardActionOptions> 
 		}
 	};
 };
+
+export { a11yAction as a11y };

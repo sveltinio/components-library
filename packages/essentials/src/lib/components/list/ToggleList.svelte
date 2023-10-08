@@ -5,7 +5,7 @@
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { Title, List } from './partials/index.js';
-	import { a11yKeyboardAction } from './a11y-keyboard.js';
+	import { a11y } from './a11y-action.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
 	import { retrieveCssClassNames } from '$lib/utils';
 
@@ -44,7 +44,7 @@
 	role="group"
 	aria-label="sn-e-c-togglelist_{title}"
 	data-testid="list_wrapper"
-	use:a11yKeyboardAction={{ enabled: true, isOpen: open, ctx }}
+	use:a11y={{ enabled: true, isOpen: open, ctx }}
 >
 	<Title text={title} {full}>
 		<slot name="leftIcon" slot="leftIcon" />
