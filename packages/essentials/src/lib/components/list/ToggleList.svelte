@@ -27,9 +27,9 @@
 
 	const ctx: ToggleListContext = {
 		isOpen: initialOpenState,
-		setIsOpen: (_value) => initialOpenState.set(_value),
+		setIsOpen: (value: boolean) => initialOpenState.set(value),
 		indicator: selectedIndicator,
-		setIndicator: (_value) => selectedIndicator.set(_value)
+		setIndicator: (value: IndicatorType) => selectedIndicator.set(value)
 	};
 	setContext('SNE_ToggleList', ctx);
 

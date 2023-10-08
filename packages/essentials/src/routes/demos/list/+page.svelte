@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { ToggleList } from '$lib/index.js';
-	import { page } from '$app/stores';
 	//Icons
 	import { LongArrowDownRightIcon } from '@indaco/svelte-iconoir/long-arrow-down-right';
 	import { BellIcon } from '@indaco/svelte-iconoir/bell';
@@ -33,8 +32,6 @@
 		'item-color': '#365314',
 		'item-bg-color-hover': '#bef264'
 	};
-
-	$: route = $page.url;
 </script>
 
 <div class="header" role="main">
@@ -51,17 +48,17 @@
 		<h3 id="buttongroup-variants">Variants</h3>
 		<h4>Default: Dot Indicator</h4>
 		<div class="preview">
-			<ToggleList bind:route title="Introduction" items={contentForToggleList} />
+			<ToggleList title="Introduction" items={contentForToggleList} />
 		</div>
 
 		<h4>Square Indicator</h4>
 		<div class="preview">
-			<ToggleList bind:route title="Links" items={contentForToggleList} indicator="square" />
+			<ToggleList title="Links" items={contentForToggleList} indicator="square" />
 		</div>
 
 		<h4>Line Indicator</h4>
 		<div class="preview">
-			<ToggleList bind:route title="Socials" items={contentForToggleList} indicator="line" />
+			<ToggleList title="Socials" items={contentForToggleList} indicator="line" />
 		</div>
 	</div>
 
