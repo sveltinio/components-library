@@ -1,3 +1,3 @@
-# `stylelint-config-custom`
+# `stylelint-config-base`
 
-These are base config files for `stylelint` shared across packages.
+Base config for `stylelint` shared across packages.

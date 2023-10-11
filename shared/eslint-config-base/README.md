@@ -1,3 +1,3 @@
-# `eslint-config-custom`
+# `eslint-config-base`
 
-These are base config files for `eslint` shared across packages.
+Base config for `eslint` shared across packages.
