@@ -13,8 +13,9 @@
 		"postcss-cli": "^10.1.0",
 		"postcss-discard-comments": "^6.0.0",
 		"postcss-import": "^15.1.0",
-		"postcss-load-config": "^4.0.1",
+		"postcss-initial": "^3.0.4",
 		"postcss-jit-props": "^1.0.13",
+		"postcss-load-config": "^4.0.1",
 		"postcss-preset-env": "^9.2.0",
 		"stylelint": "^15.10.3"
 	},

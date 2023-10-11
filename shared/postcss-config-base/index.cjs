@@ -19,6 +19,9 @@ module.exports = {
 				'nesting-rules': true
 			}
 		}),
+		require('postcss-initial')({
+			reset: 'inherited' // reset only inherited rules
+		}),
 		require('postcss-jit-props')(OpenProps),
 		require('postcss-discard-comments')({ removeAll: true }),
 		...(process.env.NODE_ENV === 'production'
