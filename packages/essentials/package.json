@@ -67,6 +67,7 @@
 		"postcss-config-base": "workspace:*",
 		"prettier": "^3.0.3",
 		"prettier-plugin-svelte": "^3.0.3",
+		"prettier-svelte-config-base": "workspace:*",
 		"publint": "^0.2.4",
 		"rimraf": "^5.0.5",
 		"stylelint": "^15.10.3",
