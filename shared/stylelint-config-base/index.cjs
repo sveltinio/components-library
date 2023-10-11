@@ -1,6 +1,6 @@
 module.exports = {
 	extends: ['stylelint-config-standard'],
-	ignoreFiles: ['**/app.postcss'],
+	ignoreFiles: ['**/app.postcss', '**/app.css'],
 	rules: {
 		'alpha-value-notation': [
 			'percentage',

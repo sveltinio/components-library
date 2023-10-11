@@ -3,6 +3,7 @@ import fs from 'fs';
 import { promises as fsp } from 'fs';
 
 import postcss from 'postcss';
+import comments from 'postcss-discard-comments';
 import postcssPresetEnv from 'postcss-preset-env';
 import cssnanoPlugin from 'cssnano';
 import stylelint from 'stylelint';
@@ -81,6 +82,7 @@ export function postcssProcess(input, output, mode) {
 	const dev = !mode ? 'development' : mode === 'development';
 
 	let plugins = [
+		comments({ removeAll: true }),
 		postcssPresetEnv({
 			features: {
 				'custom-media-queries': true,
