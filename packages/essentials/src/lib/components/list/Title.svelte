@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ToggleListContext } from '../types.js';
+	import type { ToggleListContext } from './ToggleList.d.ts';
 	import { getContext } from 'svelte';
 
 	export let text: string;
@@ -31,3 +31,6 @@
 		</span>
 	{/if}
 </button>
+
+<style src="./styles/Title.postcss">
+</style>

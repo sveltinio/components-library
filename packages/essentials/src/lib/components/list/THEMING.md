@@ -1,4 +1,4 @@
-# ToggleList - Theming
+# Theming ToggleList Component
 
 To simplify custom styles on the component we used the built-in solution for component theming using [style-props].
 
@@ -9,69 +9,6 @@ The two component properties `styles` and `class` are the ones allowing you to c
 
 > Refer to the [Design Rules] document to better understand how the component has been designed and how to customize the styles.
 
-## DOM Element Structure
-
-Below is the DOM Element Structure for the `ToggleList` component.
-
-> Legend
->
-> - containers: Svelte components
-> - circles: HTML elements
-
-![ToggleList](./assets/images/component_structure.png "ToggleList Component - DOM Element Structure")
-
-## DOM - CSS Variables Mapping Table
-
-The DOM Element Structure above can be mapped to the following table where each component is mapped to the prefix used to identify the CSS variables afftecting it.
-
-| Component | CSS Variables Prefix |
-| :-------- | -------------------: |
-| Title     | `title`              |
-| List      | `list`               |
-| Item      | `item`               |
-
-### Title
-
-| Name                   | Default     |            |
-| :--------------------- | ----------: | :--------: |
-| `title-py`             | 0           |            |
-| `title-px`             | 0           |            |
-| `title-icon-gap`       | 0.25rem     |            |
-| `title-color`          | #030507     | <div style="background-color:#030507; width:15px; height: 15px" /> |
-| `title-color-hover`    | #030507     | <div style="background-color:#030507; width:15px; height: 15px" /> |
-| `title-bg-color`       | transparent |            |
-| `title-bg-color-hover` | transparent |            |
-| `title-font-size`      | 1rem        |            |
-| `title-font-weight`    | 500         |            |
-| `title-line-height`    | 1.5         |            |
-| `title-letter-spacing` | 0.025em     |            |
-
-### List
-
-| Name                | Default     |            |
-| :------------------ | ----------: | :--------: |
-| `list-mt`           | 0.5rem      |            |
-| `list-mt-lg`        | 1rem        |            |
-| `list-py`           | 0.25rem     |            |
-| `list-px`           | 0           |            |
-| `list-border-width` | 1px         |            |
-| `list-border-style` | solid       |            |
-| `list-border-color` | #dee2e6     | <div style="background-color:#dee2e6; width:15px; height: 15px" /> |
-| `list-bg-color`     | transparent |            |
-
-### Item
-
-| Name                     | Default     |            |
-| :----------------------- | ----------: | :--------: |
-| `item-pl`                | 1rem        |            |
-| `item-color`             | #868e96     | <div style="background-color:#868e96; width:15px; height: 15px" /> |
-| `item-color-hover`       | #495057     | <div style="background-color:#495057; width:15px; height: 15px" /> |
-| `item-font-weight`       | 400         |            |
-| `item-font-size`         | 1rem        |            |
-| `item-line-height`       | 1.5         |            |
-| `item-letter-spacing`    | 0em         |            |
-| `item-icon-gap`          | 0.5rem      |            |
-| `indicator-color-active` | #495057     | <div style="background-color:#495057; width:15px; height: 15px" /> |
 
 ## Examples
 
@@ -138,6 +75,70 @@ The DOM Element Structure above can be mapped to the following table where each 
 
 <ToggleList title="My Toggle List" items={contentForToggleList} class="my-togglelist" full />
 ```
+
+## DOM Element Structure
+
+Below is the DOM Element Structure for the `ToggleList` component.
+
+> Legend
+>
+> - containers: Svelte components
+> - circles: HTML elements
+
+![ToggleList](./assets/images/component_structure.png "ToggleList Component - DOM Element Structure")
+
+## DOM - CSS Variables Mapping Table
+
+The DOM Element Structure above can be mapped to the following table where each component is mapped to the prefix used to identify the CSS variables affecting it.
+
+| Component | CSS Variables Prefix |
+| :-------- | -------------------: |
+| Title     | `title`              |
+| List      | `list`               |
+| Item      | `item`               |
+
+### Title
+
+| Name                   | Default     |            |
+| :--------------------- | ----------: | :--------: |
+| `title-py`             | 0           |            |
+| `title-px`             | 0           |            |
+| `title-icon-gap`       | 0.25rem     |            |
+| `title-color`          | #030507     | <div style="background-color:#030507; width:15px; height: 15px" /> |
+| `title-color-hover`    | #030507     | <div style="background-color:#030507; width:15px; height: 15px" /> |
+| `title-bg-color`       | transparent |            |
+| `title-bg-color-hover` | transparent |            |
+| `title-font-size`      | 1rem        |            |
+| `title-font-weight`    | 500         |            |
+| `title-line-height`    | 1.5         |            |
+| `title-letter-spacing` | 0.025em     |            |
+
+### List
+
+| Name                | Default     |            |
+| :------------------ | ----------: | :--------: |
+| `list-mt`           | 0.5rem      |            |
+| `list-mt-lg`        | 1rem        |            |
+| `list-py`           | 0.25rem     |            |
+| `list-px`           | 0           |            |
+| `list-border-width` | 1px         |            |
+| `list-border-style` | solid       |            |
+| `list-border-color` | #dee2e6     | <div style="background-color:#dee2e6; width:15px; height: 15px" /> |
+| `list-bg-color`     | transparent |            |
+
+### Item
+
+| Name                     | Default     |            |
+| :----------------------- | ----------: | :--------: |
+| `item-pl`                | 1rem        |            |
+| `item-color`             | #868e96     | <div style="background-color:#868e96; width:15px; height: 15px" /> |
+| `item-color-hover`       | #495057     | <div style="background-color:#495057; width:15px; height: 15px" /> |
+| `item-font-weight`       | 400         |            |
+| `item-font-size`         | 1rem        |            |
+| `item-line-height`       | 1.5         |            |
+| `item-letter-spacing`    | 0em         |            |
+| `item-icon-gap`          | 0.5rem      |            |
+| `indicator-color-active` | #495057     | <div style="background-color:#495057; width:15px; height: 15px" /> |
 
 <!-- Resources -->
 [style-props]: https://svelte.dev/docs#template-syntax-component-directives---style-props

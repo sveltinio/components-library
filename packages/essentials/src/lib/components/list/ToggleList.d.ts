@@ -7,7 +7,7 @@ export type ListItem = {
 	external?: boolean;
 };
 
-export type IndicatorType = 'dot' | 'square' | 'line';
+export type IndicatorType = 'dot' | 'square' | 'line' | string;
 
 export interface ToggleListContext {
 	isOpen: Writable<boolean>;

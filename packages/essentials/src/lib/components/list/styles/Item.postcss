@@ -1,0 +1,96 @@
+@layer theme, components, utilities;
+
+/* stylelint-disable declaration-empty-line-before */
+@layer components {
+  .list__item {
+    & a {
+      display: flex;
+      gap: var(--item-icon-gap, var(--size-2));
+      align-items: center;
+      padding-left: var(--item-pl, var(--size-3));
+      color: var(--item-color, var(--gray-6));
+      font-weight: var(--item-font-weight, var(--font-weight-4));
+      font-size: var(--item-font-size, var(--font-size-1));
+      line-height: var(--item-line-height, var(--font-lineheight-3));
+      letter-spacing: var(--item-letter-spacing, 0);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--item-color-hover, var(--gray-7));
+      }
+
+      &[data-indicator="dot"],
+      &[data-indicator="square"],
+      &[data-indicator="line"] {
+        &::before {
+          content: "";
+          position: absolute;
+          display: none;
+          pointer-events: none;
+        }
+
+        &:hover,
+        &:focus {
+          &::before {
+            display: block;
+          }
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &[data-indicator="dot"],
+      &[data-indicator="square"] {
+        &::before {
+          background-color: var(--indicator-color, var(--gray-5));
+          width: var(--size-1);
+          height: var(--size-1);
+          left: -0.13rem;
+        }
+      }
+
+      &[data-indicator="dot"] {
+        &::before {
+          border-radius: var(--radius-round);
+        }
+      }
+
+      &[data-indicator="line"] {
+        &::before {
+          width: var(--size-1);
+          height: var(--size-3);
+          left: -0.075rem;
+          border-left: 1px solid var(--indicator-color, var(--gray-5));
+        }
+      }
+    }
+
+    & a.is-active,
+    & a:active {
+      &[data-indicator="dot"],
+      &[data-indicator="square"],
+      &[data-indicator="line"] {
+        color: var(--item-color-hover, var(--gray-7));
+
+        &::before {
+          display: block;
+        }
+      }
+
+      &[data-indicator="dot"],
+      &[data-indicator="square"] {
+        &::before {
+          background-color: var(--indicator-color-active, var(--gray-7));
+        }
+      }
+
+      &[data-indicator="line"] {
+        &::before {
+          border-left: 1px solid var(--indicator-color-active, var(--gray-7));
+        }
+      }
+    }
+  }
+}

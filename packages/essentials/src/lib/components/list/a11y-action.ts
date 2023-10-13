@@ -1,5 +1,5 @@
 import type { Action } from 'svelte/action';
-import type { ToggleListContext } from './types';
+import type { ToggleListContext } from './ToggleList.d.ts';
 import { getComponentId, isChar } from '$lib/utils.js';
 import { ComponentFocusManager } from '@sveltinio/ts-utils/a11y';
 import { tick } from 'svelte';

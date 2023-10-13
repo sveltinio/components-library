@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { IndicatorType, ListItem } from '../types.js';
+	import type { ListItem } from './ToggleList.d.ts';
 	import type { SvelteKitPrefetch } from '$lib/types.js';
 	import { activeAction } from '$lib/actions.js';
 
@@ -7,7 +7,7 @@
 	export let item: ListItem;
 	export let iconSize = '20px';
 	export let prefetch: SvelteKitPrefetch = 'off';
-	export let indicator: IndicatorType;
+	export let indicator: string;
 
 	const prefetchValue = !item.external ? prefetch : 'off';
 	const target = item.external ? '_blank' : '_self';
@@ -29,3 +29,6 @@
 		{item.label}</a
 	>
 </li>
+
+<style src="./styles/Item.postcss">
+</style>

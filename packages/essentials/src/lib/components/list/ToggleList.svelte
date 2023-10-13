@@ -1,13 +1,13 @@
 <script lang="ts">
-	import '../../styles/baseline.css';
-	import '../../styles/components/list/styles.css';
-	import type { IndicatorType, ListItem, ToggleListContext } from './types';
+	import type { IndicatorType, ListItem, ToggleListContext } from './ToggleList.d.ts';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { Title, List } from './partials/index.js';
+
 	import { a11y } from './a11y-action.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames } from '$lib/utils';
+	import { retrieveCssClassNames } from '$lib/utils.js';
+	import Title from './Title.svelte';
+	import List from './List.svelte';
 
 	export let title: string;
 	export let items: Array<ListItem>;
@@ -19,11 +19,19 @@
 	export let styles = {};
 	const cssStyles = mapToCssVars(styles);
 	if (cssStyles.isErr()) {
+		console.error(`@sveltinio/essentials(ToggleList): ${cssStyles.error.message}`);
 		throw new Error(cssStyles.error.message);
 	}
 
+	const setIndicator = (indicator: IndicatorType) => {
+		if (indicator != 'dot' && indicator != 'square' && indicator != 'line') {
+			return 'custom';
+		}
+		return indicator;
+	};
+
 	const initialOpenState = writable(open);
-	const selectedIndicator = writable(indicator);
+	const selectedIndicator = writable(setIndicator(indicator));
 
 	const ctx: ToggleListContext = {
 		isOpen: initialOpenState,

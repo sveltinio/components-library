@@ -1,7 +1,7 @@
 <script lang="ts">
+	import type { ListItem, ToggleListContext } from './ToggleList.d.ts';
 	import { getContext } from 'svelte';
-	import { Item } from './index.js';
-	import type { ListItem, ToggleListContext } from '../types.js';
+	import Item from './Item.svelte';
 
 	export let items: Array<ListItem>;
 
@@ -13,8 +13,11 @@
 	$: indicator = $_indicator;
 </script>
 
-<ul id="items-list" data-visible={isOpen} data-testid="items_list" role="list">
+<ul data-visible={isOpen} data-indicator={indicator} data-testid="items_list" role="list">
 	{#each items as item, id}
 		<Item {id} {item} {indicator} />
 	{/each}
 </ul>
+
+<style src="./styles/List.postcss">
+</style>

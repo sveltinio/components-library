@@ -1,0 +1,30 @@
+@layer theme, components, utilities;
+
+/* stylelint-disable declaration-empty-line-before */
+@layer components {
+  ul {
+    position: relative;
+    margin-top: var(--list-mt, var(--size-2));
+    padding: var(--list-py, var(--size-1)) var(--list-px, 0);
+    transition: 220ms all ease-in-out;
+    border-left-width: var(--list-border-width, 1px);
+    border-left-style: var(--list-border-style, solid);
+    border-left-color: var(--list-border-color, var(--gray-3));
+    background-color: var(--list-bg-color, transparent);
+
+    &[data-visible="true"] {
+      display: block;
+    }
+
+    &[data-visible="false"] {
+      display: none;
+    }
+
+    /** lg breakpoint */
+    @media (width > 768px) {
+      & {
+        margin-top: var(--list-mt-lg, var(--size-3));
+      }
+    }
+  }
+}
