@@ -1,40 +1,41 @@
+<svelte:options accessors={true} />
+
 <script lang="ts">
-	import '../../styles/baseline.css';
-	import '../../styles/components/link/styles.css';
-	import type { SvelteKitPrefetch } from '$lib/types.js';
+	import type { LinkProps as $$LinkProps } from './Link.d.ts';
 	import { isNullish } from '@sveltinio/ts-utils/is';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames, makeExternalLinkOptions } from '$lib/utils.js';
+	import { makeExternalLinkOptions } from '$lib/utils.js';
 	import { ExternalLinkIcon } from './index.js';
 
-	export let label: string | null | undefined = undefined;
-	export let href: HTMLAnchorElement['href'];
-	export let prefetch: SvelteKitPrefetch = 'off';
-	export let external = false;
-	export let externalIcon = true;
-	export let externalIconSize = 12;
-	export let noOpener = true;
-	export let noReferrer = true;
+	interface $$Props extends $$LinkProps {}
 
-	export let styles = {};
+	export let label: $$Props['label'] = undefined;
+	export let href: $$Props['href'] = undefined;
+	export let prefetch: $$Props['prefetch'] = 'off';
+	export let external: $$Props['external'] = false;
+	export let externalIcon: $$Props['externalIcon'] = true;
+	export let externalIconSize: $$Props['externalIconSize'] = 12;
+	export let noOpener: $$Props['noOpener'] = true;
+	export let noReferrer: $$Props['noReferrer'] = true;
+	export let styles: $$Props['styles'] = {};
+	export let className: $$Props['className'] = undefined;
+	export { className as class };
+
 	const cssStyles = mapToCssVars(styles);
 	if (cssStyles.isErr()) {
+		console.error(`@sveltinio/essentials(Link): ${cssStyles.error.message}`);
 		throw new Error(cssStyles.error.message);
 	}
 
 	const target = external ? '_blank' : '_self';
 	const _extIcon = external && externalIcon ? true : false;
-
-	// avoid hacking reserved css class names
-	const reservedNames = ['sn-e-c-link'];
-	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 </script>
 
 <a
 	{href}
 	{target}
 	rel={makeExternalLinkOptions(external, noOpener, noReferrer)}
-	class="sn-e-c-link {cssClasses}"
+	class={className}
 	style={cssStyles.value}
 	aria-label={label}
 	data-sveltekit-preload-data={prefetch}
@@ -55,3 +56,6 @@
 		</slot>
 	{/if}
 </a>
+
+<style src="./styles/Link.postcss">
+</style>
