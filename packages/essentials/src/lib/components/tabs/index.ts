@@ -8,7 +8,6 @@ export interface TabsStatic {
 
 export interface TabStatic {
 	new (...args: ConstructorParameters<typeof BaseTab>): BaseTab;
-	Tab: TabStatic;
 }
 
 const Tabs = BaseTabs as TabsStatic;

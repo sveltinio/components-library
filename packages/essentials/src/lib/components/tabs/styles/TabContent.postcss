@@ -1,0 +1,49 @@
+@layer theme, components, utilities;
+
+/* stylelint-disable declaration-empty-line-before */
+@layer components {
+  .tab__content {
+    --_content-my: var(--content-mt, 0);
+    --_content-mx: var(--content-mx, 0);
+    --_content-py: var(--content-py, var(--size-6));
+    --_content-px: var(--content-px, var(--size-6));
+    --_content-color: var(--content-color, var(--gray-10));
+    --_content-font-size: var(--content-font-size, var(--size-3));
+    --_content-font-weight: var(--content-font-weight, var(--font-weight-5));
+    --_content-line-height: var(--content-line-height, var(--size-5));
+    --_content-letter-spacing: var(--content-letter-spacing, var(--font-letterspacing-0));
+    --_content-text-align: var(--content-text-align, left);
+    --_content-bg-color: var(--content-bg-color, white);
+    --_content-border-width: var(--content-border-width, var(--border-size-1));
+    --_content-border-style: var(--content-border-style, solid);
+    --_content-border-color: var(--content-border-color, transparent);
+    --_content-border-tl-radius: var(--content-border-tl-radius, 0);
+    --_content-border-tr-radius: var(--content-border-tr-radius, 0);
+    --_content-border-bl-radius: var(--content-border-bl-radius, var(--size-2));
+    --_content-border-br-radius: var(--content-border-br-radius, var(--size-2));
+
+    margin: var(--_content-my) var(--_content-mx);
+    padding: var(--_content-py) var(--_content-px);
+
+    color: var(--_content-color);
+    background-color: var(--_content-bg-color);
+
+    font-size: var(--_content-font-size);
+    font-weight: var(--_content-font-weight);
+    line-height: var(--_content-line-height);
+    letter-spacing: var(--_content-letter-spacing);
+    text-align: var(--_content-text-align);
+    border-color: var(--_content-border-color);
+    border-width: var(--_content-border-width);
+    border-style: var(--_content-border-style);
+    border-top-left-radius: var(--_content-border-tl-radius);
+    border-top-right-radius: var(--_content-border-tr-radius);
+    border-bottom-left-radius: var(--_content-border-bl-radius);
+    border-bottom-right-radius: var(--_content-border-br-radius);
+    border-top: 0;
+
+    &[data-variant="border"] {
+      border-color: var(--gray-2);
+    }
+  }
+}

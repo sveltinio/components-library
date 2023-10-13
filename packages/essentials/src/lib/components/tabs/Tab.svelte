@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { getContext, onDestroy } from 'svelte';
-	import type { TabsContext } from './types.js';
+	import type { TabsContext } from './Tabs.d.ts';
 
 	export let id: string;
 	export let label: string;
 	export let icon: any = undefined;
 
 	const ctx: TabsContext = getContext('SNE_Tabs');
-	let value = ctx.activeTab;
+	let _activeTab = ctx.activeTab;
 
 	ctx.registerTab(id, label, icon);
 
-	$: activeTab = $value;
+	$: activeTab = $_activeTab;
 
 	onDestroy(() => {
 		ctx.unregisterTab(id);

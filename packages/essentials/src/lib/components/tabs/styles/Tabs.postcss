@@ -1,0 +1,255 @@
+@layer theme, components, utilities;
+
+/* stylelint-disable declaration-empty-line-before */
+@layer components {
+  .sn-e-c-tabs {
+    --_width: var(--width, 100%);
+    --_max-w: var(--max-w, 100%);
+
+    position: relative;
+    width: var(--_width);
+    max-width: var(--_max-w);
+
+    /* * Position (component prop "justify")     * */
+    & [data-justify="start"] {
+      justify-content: flex-start;
+    }
+
+    & [data-justify="center"] {
+      justify-content: center;
+    }
+
+    & [data-justify="end"] {
+      justify-content: flex-end;
+    }
+  }
+
+  div[role="tablist"] {
+    --_tabs-group-my: var(--tabs-group-my, 0);
+    --_tabs-group-mx: var(--tabs-group-mx, 0);
+    --_tabs-group-py: var(--tabs-group-py, 0);
+    --_tabs-group-px: var(--tabs-group-px, 0);
+    --_tabs-group-gap: var(--tabs-group-gap, var(--size-1));
+    --_tabs-group-border-t-width: var(--tabs-group-border-t-width, var(--border-size-1));
+    --_tabs-group-border-t-style: var(--tabs-group-border-t-style, none);
+    --_tabs-group-border-t-color: var(--tabs-group-border-t-color, transparent);
+    --_tabs-group-border-r-width: var(--tabs-group-border-r-width, var(--border-size-1));
+    --_tabs-group-border-r-style: var(--tabs-group-border-r-style, none);
+    --_tabs-group-border-r-color: var(--tabs-group-border-r-color, transparent);
+    --_tabs-group-border-b-width: var(--tabs-group-border-b-width, var(--border-size-1));
+    --_tabs-group-border-b-style: var(--tabs-group-border-b-style, solid);
+    --_tabs-group-border-b-color: var(--tabs-group-border-b-color, var(--gray-2));
+    --_tabs-group-border-l-width: var(--tabs-group-border-l-width, var(--border-size-1));
+    --_tabs-group-border-l-style: var(--tabs-group-border-l-style, none);
+    --_tabs-group-border-l-color: var(--tabs-group-border-l-color, transparent);
+    --_tabs-group-border-radius: var(--tabs-group-border-radius, 0);
+
+    position: relative;
+    display: flex;
+    gap: var(--_tabs-group-gap);
+
+    margin: var(--_tabs-group-my) var(--_tabs-group-mx);
+    padding: var(--_tabs-group-py) var(--_tabs-group-px);
+
+    border-top-width: var(--_tabs-group-border-t-width);
+    border-top-style: var(--_tabs-group-border-t-style);
+    border-top-color: var(--_tabs-group-border-t-color);
+
+    border-right-width: var(--_tabs-group-border-r-width);
+    border-right-style: var(--_tabs-group-border-r-style);
+    border-right-color: var(--_tabs-group-border-r-color);
+
+    border-bottom-width: var(--_tabs-group-border-b-width);
+    border-bottom-style: var(--_tabs-group-border-b-style);
+    border-bottom-color: var(--_tabs-group-border-b-color);
+
+    border-left-width: var(--_tabs-group-border-l-width);
+    border-left-style: var(--_tabs-group-border-l-style);
+    border-left-color: var(--_tabs-group-border-l-color);
+
+    border-radius: var(--_tabs-group-border-radius);
+  }
+
+  .tab {
+    --_tab-py: var(--tab-py, var(--size-2));
+    --_tab-px: var(--tab-px, var(--size-3));
+    --_tab-gap: var(--tab-gap, var(--size-2));
+    --_tab-color: var(--tab-color, var(--gray-11));
+    --_tab-color-hover: var(--tab-color-hover, var(--_tab-color));
+    --_tab-font-family: var(--tab-font-family, var(--font-sans));
+    --_tab-font-size: var(--tab-font-size, var(--font-size-0));
+    --_tab-font-weight: var(--tab-font-weight, var(--font-weight-5));
+    --_tab-line-height: var(--tab-line-height, var(--font-lineheight-1));
+    --_tab-letter-spacing: var(--tab-letter-spacing, var(--font-letterspacing-1));
+    --_tab-text-decoration: var(--tab-text-decoration, none);
+    --_tab-bg-color: var(--tab-bg-color, transparent);
+    --_tab-bg-color-hover: var(--tab-bg-color-hover, var(--gray-0));
+    --_tab-border-t-width: var(--tab-border-t-width, var(--border-size-1));
+    --_tab-border-t-style: var(--tab-border-t-style, solid);
+    --_tab-border-t-color: var(--tab-border-t-color, transparent);
+    --_tab-border-r-width: var(--tab-border-r-width, var(--border-size-1));
+    --_tab-border-r-style: var(--tab-border-r-style, solid);
+    --_tab-border-r-color: var(--tab-border-r-color, transparent);
+    --_tab-border-b-width: var(--tab-border-b-width, var(--border-size-1));
+    --_tab-border-b-style: var(--tab-border-b-style, solid);
+    --_tab-border-b-color: var(--tab-border-b-color, transparent);
+    --_tab-border-l-width: var(--tab-border-l-width, var(--border-size-1));
+    --_tab-border-l-style: var(--tab-border-l-style, solid);
+    --_tab-border-l-color: var(--tab-border-l-color, transparent);
+    --_tab-border-tl-radius: var(--tab-border-tl-radius, var(--radius-2));
+    --_tab-border-tr-radius: var(--tab-border-tr-radius, var(--radius-2));
+    --_tab-border-bl-radius: var(--tab-border-bl-radius, var(--radius-1));
+    --_tab-border-br-radius: var(--tab-border-br-radius, var(--radius-1));
+    --_tab-border-t-color-hover: var(--tab-border-t-color-hover, var(--_tab-border-t-color));
+    --_tab-border-r-color-hover: var(--tab-border-r-color-hover, var(--_tab-border-r-color));
+    --_tab-border-b-color-hover: var(--tab-border-b-color-hover, var(--_tab-border-b-color));
+    --_tab-border-l-color-hover: var(--tab-border-l-color-hover, var(--_tab-border-l-color));
+    --_tab-ring-width: var(--tab-ring-width, 1px);
+    --_tab-ring-style: var(--tab-ring-style, solid);
+    --_tab-ring-color: var(--tab-ring-color, var(--gray-1));
+    --_tab-ring-offset: var(--tab-ring-offset, 1px);
+
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--_tab-gap);
+
+    margin-bottom: -1px;
+    padding: var(--_tab-py) var(--_tab-px);
+    list-style: none;
+    text-align: center;
+
+    color: var(--_tab-color);
+    background-color: var(--_tab-bg-color);
+
+    font-family: var(--_tab-font-family);
+    font-size: var(--_tab-font-size);
+    font-weight: var(--_tab-font-weight);
+    line-height: var(--_tab-line-height);
+    letter-spacing: var(--_tab-letter-spacing);
+
+    border-top-width: var(--_tab-border-t-width);
+    border-top-style: var(--_tab-border-t-style);
+    border-top-color: var(--_tab-border-t-color);
+
+    border-right-width: var(--_tab-border-r-width);
+    border-right-style: var(--_tab-border-r-style);
+    border-right-color: var(--_tab-border-r-color);
+
+    border-bottom-width: var(--_tab-border-b-width);
+    border-bottom-style: var(--_tab-border-b-style);
+    border-bottom-color: var(--_tab-border-b-color);
+
+    border-left-width: var(--_tab-border-l-width);
+    border-left-style: var(--_tab-border-l-style);
+    border-left-color: var(--_tab-border-l-color);
+
+    border-top-left-radius: var(--_tab-border-tl-radius);
+    border-top-right-radius: var(--_tab-border-tr-radius);
+    border-bottom-left-radius: var(--_tab-border-bl-radius);
+    border-bottom-right-radius: var(--_tab-border-br-radius);
+
+    &:hover,
+    &:focus {
+      color: var(--_tab-color-hover);
+      background-color: var(--_tab-bg-color-hover);
+
+      border-top-color: var(--_tab-border-t-color-hover);
+      border-right-color: var(--_tab-border-r-color-hover);
+      border-bottom-color: var(--_tab-border-b-color-hover);
+      border-left-color: var(--_tab-border-l-color-hover);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    /* * Variants (component prop "variant")  * */
+    & [data-variant="border"] {
+      --_tab-active-border-r-width: var(--border-size-1);
+      --_tab-active-border-b-width: var(--border-size-1);
+      border-color: transparent;
+
+      &:hover {
+        --_tab-border-t-color-hover: var(--gray-2);
+        --_tab-border-r-color-hover: var(--gray-2);
+        --_tab-border-b-color-hover: transparent;
+        --_tab-border-l-color-hover: var(--gray-2);
+      }
+    }
+  }
+
+  /* * Sizes (component prop "size")     * */
+  .tab[data-size="sm"] {
+    /* - size sm  - */
+    --_tab-font-size: var(--tab-font-size-sm, var(--font-size-0));
+    --_tab-font-weight: var(--tab-font-weight-sm, var(--font-weight-4));
+    --_tab-line-height: var(--tab-line-height-sm, var(--font-lineheight-00));
+    --_tab-letter-spacing: var(--tab-letter-spacing-sm, var(--font-letterspacing-0));
+  }
+
+  .tab[data-size="base"] {
+    /* - size base - */
+    --_tab-font-size: var(--tab-font-size-base, var(--font-size-1));
+    --_tab-font-weight: var(--tab-font-weight-base, var(--font-weight-5));
+    --_tab-line-height: var(--tab-line-height-base, var(--font-lineheight-0));
+    --_tab-letter-spacing: var(--tab-letter-spacing-base, var(--font-letterspacing-1));
+  }
+
+  .tab[data-size="lg"] {
+    /* - size lg - */
+    --_tab-font-size: var(--tab-font-size-lg, var(--font-size-2));
+    --_tab-font-weight: var(--tab-font-weight-lg, var(--font-weight-5));
+    --_tab-line-height: var(--tab-line-height-lg, var(--font-lineheight-1));
+    --_tab-letter-spacing: var(--tab-letter-spacing-lg, var(--font-letterspacing-1));
+  }
+
+  .tab.is-active,
+  .tab.is-active--bordered {
+    --_tab-active-color: var(--tab-active-color, var(--gray-10));
+    --_tab-active-bg-color: var(--tab-active-bg-color, var(--_bg-color));
+    --_tab-active-border-t-width: var(--tab-active-border-t-width, var(--border-size-1));
+    --_tab-active-border-t-style: var(--tab-active-border-t-style, solid);
+    --_tab-active-border-t-color: var(--tab-active-border-t-color, transparent);
+    --_tab-active-border-r-width: var(--tab-active-border-r-width, var(--border-size-1));
+    --_tab-active-border-r-style: var(--tab-active-border-r-style, solid);
+    --_tab-active-border-r-color: var(--tab-active-border-r-color, transparent);
+    --_tab-active-border-b-width: var(--tab-active-border-b-width, var(--border-size-2));
+    --_tab-active-border-b-style: var(--tab-active-border-b-style, solid);
+    --_tab-active-border-b-color: var(--tab-active-border-b-color, var(--gray-6));
+    --_tab-active-border-l-width: var(--tab-active-border-l-width, var(--border-size-1));
+    --_tab-active-border-l-style: var(--tab-active-border-l-style, solid);
+    --_tab-active-border-l-color: var(--tab-active-border-l-color, transparent);
+
+    color: var(--_tab-active-color);
+    background-color: var(--_tab-active-bg-color);
+
+    border-top-width: var(--_tab-active-border-t-width);
+    border-top-style: var(--_tab-active-border-t-style);
+    border-top-color: var(--_tab-active-border-t-color);
+
+    border-right-width: var(--_tab-active-border-r-width);
+    border-right-style: var(--_tab-active-border-r-style);
+    border-right-color: var(--_tab-active-border-r-color);
+
+    border-bottom-width: var(--_tab-active-border-b-width);
+    border-bottom-style: var(--_tab-active-border-b-style);
+    border-bottom-color: var(--_tab-active-border-b-color);
+
+    border-left-width: var(--_tab-active-border-l-width);
+    border-left-style: var(--_tab-active-border-l-style);
+    border-left-color: var(--_tab-active-border-l-color);
+
+    &:hover {
+      background-color: var(--_tab-active-bg-color);
+      border-bottom-color: var(--_tab-active-border-b-color);
+    }
+  }
+
+  .tab.is-active--bordered {
+    --_tab-active-border-t-color: var(--gray-2);
+    --_tab-active-border-r-color: var(--gray-2);
+    --_tab-active-border-b-color: white;
+    --_tab-active-border-l-color: var(--gray-2);
+  }
+}
