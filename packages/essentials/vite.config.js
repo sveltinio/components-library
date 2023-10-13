@@ -22,9 +22,10 @@ const config = {
 	plugins: [sveltekit()],
 	test: {
 		globals: true,
+		environment: 'jsdom',
 		reporters: ['dot'],
 		silent: true,
-		environment: 'jsdom'
+		setupFiles: ['./tests/setup/vitest_setup.ts']
 	},
 	ssr: { noExternal: ['@indaco/svelte-iconoir/**'] }
 };

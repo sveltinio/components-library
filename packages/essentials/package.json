@@ -90,9 +90,8 @@
 		"lint:styles": "stylelint --no-cache \"**/*.postcss\"",
 		"postbuild": "node ../../scripts/post-build.mjs packages/essentials && pnpm exec publint .",
 		"sync": "svelte-kit sync",
-		"test": "pnpm build && vitest run",
-		"test:coverage": "pnpm build && vitest run --coverage",
-		"test:watch": "pnpm build && vitest watch",
+		"test": "NODE_ENV=test vitest run",
+		"test:watch": "vitest watch",
 		"test:a11y": "rimraf a11y-results.json && pa11y-ci"
 	},
 	"svelte": "./dist/index.js",

@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect, beforeAll, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { Dropdown } from '../src/lib';
-import { menu } from '../src/data/sample';
+import Dropdown from '../src/lib/components/dropdown/index.js';
+import { DropdownButtonSlotTest } from './slot';
 
 describe('Dropdown', () => {
 	beforeAll(() => {
@@ -22,11 +22,8 @@ describe('Dropdown', () => {
 	});
 
 	it('should be in the document', async () => {
-		const { container } = render(Dropdown, {
-			props: {
-				title: 'articles',
-				data: menu
-			}
+		const { container } = render(DropdownButtonSlotTest, {
+			props: { Component: Dropdown }
 		});
 		expect(container).toBeInTheDocument();
 	});

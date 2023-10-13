@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { Link } from '../src/lib/';
+import { Link } from '../src/lib/components/link/index.js';
 
 describe('Link', () => {
 	it('should be in the document', async () => {
