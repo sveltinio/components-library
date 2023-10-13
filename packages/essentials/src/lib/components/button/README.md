@@ -6,7 +6,7 @@ It supports different:
 
 - **variants**: `default`, `primary`, `secondary`, `info`, `error`, `success`, `warning`, `ghost` and `neutral`
 - **sizes**: `xs`, `sm`, `base` (default), `lg`, `xl` and `full`
-- **styles**: filled (default), `outlined`
+- **styles**: filled (default), `outline`
 - **shapes**: `rounded` (default), `pills`, `circle` and `flat`
 - **focus**: with or without the focus ring
 - **icons**: to render an Icon either on the left side or the right side.
@@ -30,7 +30,7 @@ It supports different:
 
 <Button variant="primary" on:click="{handleButtonClick}" />
 <Button label="Click Me" variant="secondary" border="dashed" />
-<Button label="Click Me" outlined />
+<Button label="Click Me" outline />
 <Button label="Click Me" variant="success" shape="flat" />
 <Button variant="success"><MailIcon slot="leftIcon" /> Button Text</Button>
 <Button variant="success"><MailIcon slot="rightIcon" /> Button Text</Button>
@@ -56,7 +56,7 @@ The `Button` component exposes a set of properties to allow its configuration.
 | border        | `string`  |    no    | `none`        | Set the border style. One of `['solid', 'dashed', 'dotted', ...]`                        |
 | shape         | `string`  |    no    | `rounded`     | Set the button shape. One of `['rounded', 'pills', 'circle', 'flat']`                    |
 | disabled      | `boolean` |    no    | `false`       | If true, the `button` is unusable and un-clickable. <br/>Set `aria-disabled` accordingly |
-| outlined      | `boolean` |    no    | `false`       | White background button with the border                                                  |
+| outline      | `boolean` |    no    | `false`       | White background button with the border                                                  |
 | block         | `boolean` |    no    | `false`       | Will take the full width of the container                                                |
 | noFocusRing   | `boolean` |    no    | `false`       | If true, no outline ring on focus                                                        |
 | href          | `string`  |    no    |               | If set, the component renders an `a` alement and link's destination                      |

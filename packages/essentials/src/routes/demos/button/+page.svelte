@@ -35,15 +35,15 @@
 	<div id="buttons-outlined-wrapper" class="demo-wrapper">
 		<h3 id="buttons-outlined">Outlined</h3>
 		<div class="preview">
-			<Button outlined>Default</Button>
-			<Button variant="primary" outlined>Primary</Button>
-			<Button variant="secondary" outlined>Secondary</Button>
-			<Button variant="success" outlined>Success</Button>
-			<Button variant="error" outlined>Error</Button>
-			<Button variant="warning" outlined>Warning</Button>
-			<Button variant="info" outlined>Info</Button>
-			<Button variant="ghost" outlined>Ghost</Button>
-			<Button variant="neutral" outlined>Neutral</Button>
+			<Button outline>Default</Button>
+			<Button variant="primary" outline>Primary</Button>
+			<Button variant="secondary" outline>Secondary</Button>
+			<Button variant="success" outline>Success</Button>
+			<Button variant="error" outline>Error</Button>
+			<Button variant="warning" outline>Warning</Button>
+			<Button variant="info" outline>Info</Button>
+			<Button variant="ghost" outline>Ghost</Button>
+			<Button variant="neutral" outline>Neutral</Button>
 		</div>
 	</div>
 
@@ -154,20 +154,6 @@
 				variant="primary"
 				shape="rounded"
 				class="my-primary-btn"
-			/>
-		</div>
-	</div>
-
-	<div id="buttons-theming-with-reserved-css-class-wrapper" class="demo-wrapper">
-		<h3 id="buttons-theming-with-reserved-css-class">
-			Custom Styles not applied due to reserved CSS Class name
-		</h3>
-		<div class="preview">
-			<Button
-				label="My Primary Button"
-				variant="primary"
-				rounded
-				class="my-primary-btn sn-e-c-button"
 			/>
 		</div>
 	</div>

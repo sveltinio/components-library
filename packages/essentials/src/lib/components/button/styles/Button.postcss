@@ -1,8 +1,10 @@
-@charset "UTF-8";
+@layer theme, components, utilities;
 
 /* stylelint-disable declaration-empty-line-before */
+/* stylelint-disable no-duplicate-selectors */
 @layer components {
-  a:is(.sn-e-c-button) {
+  a {
+    all: initial;
     text-decoration: var(--text-decoration, none);
 
     @media screen and (-ms-high-contrast: active) {
@@ -10,13 +12,15 @@
     }
   }
 
-  a:is(.sn-e-c-button.link) {
+  a:is(.link) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  button:is(.sn-e-c-button) {
+  button {
+    all: initial;
+
     &:disabled,
     &[disabled] {
       color: var(--gray-5);
@@ -30,9 +34,11 @@
     }
   }
 
-  :where(a, button):is(.sn-e-c-button) {
+  a,
+  button {
     --_min-h: var(--min-h, var(--size-8));
     --_px: var(--px, var(--size-3));
+    --_py: var(--py, 0);
     --_font-family: var(--font-family, var(--font-sans));
     --_font-size: var(--font-size, var(--font-size-1));
     --_font-weight: var(--font-weight, var(--font-weight-4));
@@ -47,11 +53,11 @@
     --_transition-duration: var(--transition-duration, 300ms);
     --_transition-timing-function: var(--transition-timing-function, cubic-bezier(0.4, 0, 0.2, 1));
 
+    all: initial;
     position: relative;
     min-height: var(--_min-h);
     height: var(--_min-h);
-    padding-left: var(--_px);
-    padding-right: var(--_px);
+    padding: var(--_py) var(--_px);
     color: var(--_color);
     border-width: var(--_border-width);
     border-color: var(--_border-color);
@@ -90,21 +96,21 @@
     }
 
     /* * Variants (component prop "variant")  * */
-    &[data-variant*="outlined"] {
-      --_bg-color: var(--white);
+    &[data-variant*="outline"] {
+      --_bg-color: white;
     }
 
-    /* - default & default-outlined - */
+    /* - default & default-outline - */
     &[data-variant="default"],
-    &[data-variant="default-outlined"] {
+    &[data-variant="default-outline"] {
       --_default-color: var(--default-color, var(--gray-11));
       --_default-color-hover: var(--default-color-hover, var(--_default-color));
       --_default-bg-color: var(--default-bg-color, var(--gray-1));
       --_default-bg-color-hover: var(--default-bg-color-hover, var(--gray-2));
       --_default-ring-color: var(--default-ring-color, var(--gray-4));
       --_default-border-color: var(--default-border-color, transparent);
-      --_default-outlined-color: var(--default-outlined-color, var(--gray-10));
-      --_default-outlined-border-color: var(--default-outlined-border-color, var(--gray-5));
+      --_default-outline-color: var(--default-outline-color, var(--gray-10));
+      --_default-outline-border-color: var(--default-outline-border-color, var(--gray-5));
 
       &:focus,
       &:focus-visible {
@@ -124,22 +130,22 @@
       --_border-color: var(--_default-border-color);
     }
 
-    &[data-variant="default-outlined"] {
-      --_color: var(--_default-outlined-color);
-      --_border-color: var(--_default-outlined-border-color);
+    &[data-variant="default-outline"] {
+      --_color: var(--_default-outline-color);
+      --_border-color: var(--_default-outline-border-color);
     }
 
     /* - primary & primary-outlined - */
     &[data-variant="primary"],
-    &[data-variant="primary-outlined"] {
+    &[data-variant="primary-outline"] {
       --_primary-color: var(--primary-color, var(--gray-0));
       --_primary-color-hover: var(--primary-color-hover, var(--_primary-color));
       --_primary-bg-color: var(--primary-bg-color, var(--cyan-9));
       --_primary-bg-color-hover: var(--primary-bg-color-hover, var(--cyan-8));
       --_primary-ring-color: var(--_primary-ring-color, var(--cyan-8));
       --_primary-border-color: var(--primary-border-color, transparent);
-      --_primary-outlined-color: var(--primary-outlined-color, var(--cyan-10));
-      --_primary-outlined-border-color: var(--primary-outlined-border-color, var(--cyan-8));
+      --_primary-outline-color: var(--primary-outline-color, var(--cyan-10));
+      --_primary-outline-border-color: var(--primary-outline-border-color, var(--cyan-8));
 
       &:focus,
       &:focus-visible {
@@ -159,22 +165,22 @@
       --_border-color: var(--_primary-border-color);
     }
 
-    &[data-variant="primary-outlined"] {
-      --_color: var(--_primary-outlined-color);
-      --_border-color: var(--_primary-outlined-border-color);
+    &[data-variant="primary-outline"] {
+      --_color: var(--_primary-outline-color);
+      --_border-color: var(--_primary-outline-border-color);
     }
 
     /* - secondary & secondary-outline - */
     &[data-variant="secondary"],
-    &[data-variant="secondary-outlined"] {
+    &[data-variant="secondary-outline"] {
       --_secondary-color: var(--secondary-color, var(--gray-0));
       --_secondary-color-hover: var(--secondary-color-hover, var(--_secondary-color));
       --_secondary-bg-color: var(--secondary-bg-color, var(--indigo-9));
       --_secondary-bg-color-hover: var(--secondary-bg-color-hover, var(--indigo-8));
       --_secondary-ring-color: var(--secondary-ring-color, var(--indigo-8));
       --_secondary-border-color: var(--secondary-border-color, transparent);
-      --_secondary-outlined-color: var(--secondary-outlined-color, var(--indigo-10));
-      --_secondary-outlined-border-color: var(--secondary-outlined-border-color, var(--indigo-8));
+      --_secondary-outline-color: var(--secondary-outline-color, var(--indigo-10));
+      --_secondary-outline-border-color: var(--secondary-outline-border-color, var(--indigo-8));
 
       &:focus,
       &:focus-visible {
@@ -194,22 +200,22 @@
       --_border-color: var(--_secondary-border-color);
     }
 
-    &[data-variant="secondary-outlined"] {
-      --_color: var(--_secondary-outlined-color);
-      --_border-color: var(--_secondary-outlined-border-color);
+    &[data-variant="secondary-outline"] {
+      --_color: var(--_secondary-outline-color);
+      --_border-color: var(--_secondary-outline-border-color);
     }
 
-    /* - success & success-outlined - */
+    /* - success & success-outline - */
     &[data-variant="success"],
-    &[data-variant="success-outlined"] {
+    &[data-variant="success-outline"] {
       --_success-color: var(--success-color, var(--gray-0));
       --_success-color-hover: var(--success-color-hover, var(--_success-color));
       --_success-bg-color: var(--success-bg-color, var(--green-10));
       --_success-bg-color-hover: var(--success-bg-color-hover, var(--green-9));
       --_success-ring-color: var(--success-ring-color, var(--green-8));
       --_success-border-color: var(--success-border-color, transparent);
-      --_success-outlined-color: var(--success-outlined-color, var(--green-10));
-      --_success-outlined-border-color: var(--success-outlined-border-color, var(--green-8));
+      --_success-outline-color: var(--success-outline-color, var(--green-10));
+      --_success-outline-border-color: var(--success-outline-border-color, var(--green-8));
 
       &:focus,
       &:focus-visible {
@@ -229,22 +235,22 @@
       --_border-color: var(--_success-border-color);
     }
 
-    &[data-variant="success-outlined"] {
-      --_color: var(--_success-outlined-color);
-      --_border-color: var(--_success-outlined-border-color);
+    &[data-variant="success-outline"] {
+      --_color: var(--_success-outline-color);
+      --_border-color: var(--_success-outline-border-color);
     }
 
-    /* - error & error-outlined - */
+    /* - error & error-outline - */
     &[data-variant="error"],
-    &[data-variant="error-outlined"] {
+    &[data-variant="error-outline"] {
       --_error-color: var(--error-color, var(--gray-0));
       --_error-color-hover: var(--error-color-hover, var(--_error-color));
       --_error-bg-color: var(--error-bg-color, var(--red-9));
       --_error-bg-color-hover: var(--error-bg-color-hover, var(--red-8));
       --_error-ring-color: var(--error-ring-color, var(--red-8));
       --_error-border-color: var(--error-border-color, transparent);
-      --_error-outlined-color: var(--error-outlined-color, var(--red-10));
-      --_error-outlined-border-color: var(--error-outlined-border-color, var(--red-8));
+      --_error-outline-color: var(--error-outline-color, var(--red-10));
+      --_error-outline-border-color: var(--error-outline-border-color, var(--red-8));
 
       &:focus,
       &:focus-visible {
@@ -264,22 +270,22 @@
       --_border-color: var(--_error-border-color);
     }
 
-    &[data-variant="error-outlined"] {
-      --_color: var(--_error-outlined-color);
-      --_border-color: var(--_error-outlined-border-color);
+    &[data-variant="error-outline"] {
+      --_color: var(--_error-outline-color);
+      --_border-color: var(--_error-outline-border-color);
     }
 
-    /* - warning & warning-outlined - */
+    /* - warning & warning-outline - */
     &[data-variant="warning"],
-    &[data-variant="warning-outlined"] {
+    &[data-variant="warning-outline"] {
       --_warning-color: var(--warning-color, var(--gray-0));
       --_warning-color-hover: var(--warning-color-hover, var(--_warning-color));
       --_warning-bg-color: var(--warning-bg-color, var(--orange-10));
       --_warning-bg-color-hover: var(--warning-bg-color-hover, var(--orange-9));
       --_warning-ring-color: var(--warning-ring-color, var(--orange-8));
       --_warning-border-color: var(--warning-border-color, transparent);
-      --_warning-outlined-color: var(--warning-outlined-color, var(--orange-10));
-      --_warning-outlined-border-color: var(--warning-outlined-border-color, var(--orange-8));
+      --_warning-outline-color: var(--warning-outline-color, var(--orange-10));
+      --_warning-outline-border-color: var(--warning-outline-border-color, var(--orange-8));
 
       &:focus,
       &:focus-visible {
@@ -299,22 +305,22 @@
       --_border-color: var(--_warning-border-color);
     }
 
-    &[data-variant="warning-outlined"] {
-      --_color: var(--_warning-outlined-color);
-      --_border-color: var(--_warning-outlined-border-color);
+    &[data-variant="warning-outline"] {
+      --_color: var(--_warning-outline-color);
+      --_border-color: var(--_warning-outline-border-color);
     }
 
-    /* - info & info-outlined - */
+    /* - info & info-outline - */
     &[data-variant="info"],
-    &[data-variant="info-outlined"] {
+    &[data-variant="info-outline"] {
       --_info-color: var(--info-color, var(--gray-0));
       --_info-color-hover: var(--info-color-hover, var(--_info-color));
       --_info-bg-color: var(--info-bg-color, var(--blue-9));
       --_info-bg-color-hover: var(--info-bg-color-hover, var(--blue-8));
       --_info-ring-color: var(--info-ring-color, var(--blue-8));
       --_info-border-color: var(--info-border-color, transparent);
-      --_info-outlined-color: var(--info-outlined-color, var(--blue-10));
-      --_info-outlined-border-color: var(--info-outlined-border-color, var(--blue-8));
+      --_info-outline-color: var(--info-outline-color, var(--blue-10));
+      --_info-outline-border-color: var(--info-outline-border-color, var(--blue-8));
 
       &:focus,
       &:focus-visible {
@@ -334,22 +340,22 @@
       --_border-color: var(--_info-border-color);
     }
 
-    &[data-variant="info-outlined"] {
-      --_color: var(--_info-outlined-color);
-      --_border-color: var(--_info-outlined-border-color);
+    &[data-variant="info-outline"] {
+      --_color: var(--_info-outline-color);
+      --_border-color: var(--_info-outline-border-color);
     }
 
-    /* - ghost & ghot-outlined - */
+    /* - ghost & ghot-outline - */
     &[data-variant="ghost"],
-    &[data-variant="ghost-outlined"] {
+    &[data-variant="ghost-outline"] {
       --_ghost-color: var(--ghost-color, var(--stone-10));
       --_ghost-color-hover: var(--ghost-color-hover, var(--_ghost-color));
       --_ghost-bg-color: var(--ghost-bg-color, transparent);
       --_ghost-bg-color-hover: var(--ghost-bg-color-hover, var(--stone-1));
       --_ghost-ring-color: var(--ghost-ring-color, var(--stone-4));
       --_ghost-border-color: var(--ghost-border-color, transparent);
-      --_ghost-outlined-color: var(--ghost-outlined-color, var(--stone-10));
-      --_ghost-outlined-border-color: var(--ghost-outlined-border-color, var(--stone-2));
+      --_ghost-outline-color: var(--ghost-outline-color, var(--stone-10));
+      --_ghost-outline-border-color: var(--ghost-outline-border-color, var(--stone-2));
 
       &:focus,
       &:focus-visible {
@@ -369,9 +375,9 @@
       --_border-color: var(--_ghost-border-color);
     }
 
-    &[data-variant="ghost-outlined"] {
-      --_color: var(--_ghost-outlined-color);
-      --_border-color: var(--_ghost-outlined-border-color);
+    &[data-variant="ghost-outline"] {
+      --_color: var(--_ghost-outline-color);
+      --_border-color: var(--_ghost-outline-border-color);
 
       &:hover,
       &:hover:hover {
@@ -380,17 +386,17 @@
       }
     }
 
-    /* - neutral & neutral-outlined - */
+    /* - neutral & neutral-outline - */
     &[data-variant="neutral"],
-    &[data-variant="neutral-outlined"] {
+    &[data-variant="neutral-outline"] {
       --_neutral-color: var(--neutral-color, var(--gray-0));
       --_neutral-color-hover: var(--neutral-color-hover, var(--_neutral-color));
       --_neutral-bg-color: var(--neutral-bg-color, var(--stone-11));
       --_neutral-bg-color-hover: var(--neutral-bg-color-hover, var(--stone-10));
       --_neutral-ring-color: var(--neutral-ring-color, var(--stone-10));
       --_neutral-border-color: var(--neutral-border-color, transparent);
-      --_neutral-outlined-color: var(--neutral-outlined-color, var(--stone-11));
-      --_neutral-outlined-border-color: var(--neutral-outlined-border-color, var(--stone-9));
+      --_neutral-outline-color: var(--neutral-outline-color, var(--stone-11));
+      --_neutral-outline-border-color: var(--neutral-outline-border-color, var(--stone-9));
 
       &:focus,
       &:focus-visible {
@@ -410,9 +416,9 @@
       --_border-color: var(--_neutral-border-color);
     }
 
-    &[data-variant="neutral-outlined"] {
-      --_color: var(--_neutral-outlined-color);
-      --_border-color: var(--_neutral-outlined-border-color);
+    &[data-variant="neutral-outline"] {
+      --_color: var(--_neutral-outline-color);
+      --_border-color: var(--_neutral-outline-border-color);
     }
 
     /* * Sizes (component prop "size")     * */
@@ -421,6 +427,7 @@
     &[data-size="xs"] {
       --_min-h: var(--_min-h-xs, var(--size-6));
       --_px: var(--px-xs, var(--size-2));
+      --_py: var(--py-xs, 0);
       --_font-size: var(--font-size-xs, var(--font-size-0));
       --_line-height: var(--line-height-xs, var(--font-lineheight-00));
       --_letter-spacing: var(--letter-spacing-xs, var(--font-letterspacing-0));
@@ -430,6 +437,7 @@
     &[data-size="sm"] {
       --_min-h: var(--_min-h-sm, var(--size-7));
       --_px: var(--px-sm, 0.75rem);
+      --_py: var(--py-sm, 0);
       --_font-size: var(--font-size-sm, var(--font-size-1));
       --_line-height: var(--line-height-sm, var(--font-lineheight-0));
       --_letter-spacing: var(--letter-spacing-sm, var(--font-letterspacing-0));
@@ -438,9 +446,10 @@
     /* - base - */
     &[data-size="base"] {
       --_min-h: var(--_min-h-base, var(--size-8));
+      --_py: var(--py-base, 0);
       --_px: var(--px-base, var(--size-3));
       --_font-size: var(--font-size-base, var(--font-size-2));
-      --_line-height: var(--line-height-base, var(--font-lineheight-2));
+      --_line-height: var(--line-height-base, var(--font-lineheight-1));
       --_letter-spacing: var(--letter-spacing-base, var(--font-letterspacing-1));
     }
 
@@ -448,17 +457,19 @@
     &[data-size="lg"] {
       --_min-h: var(--_min-h-lg, var(--size-9));
       --_px: var(--px-lg, var(--size-5));
+      --_py: var(--py-lg, 0);
       --_font-size: var(--font-size-lg, var(--font-size-3));
-      --_line-height: var(--line-height-lg, var(--font-lineheight-4));
+      --_line-height: var(--line-height-lg, var(--font-lineheight-2));
       --_letter-spacing: var(--letter-spacing-lg, var(--font-letterspacing-2));
     }
 
     /* - xl - */
     &[data-size="xl"] {
-      --_min-h: var(--_min-h-lg, var(--size-10));
-      --_px: var(--px-lg, var(--size-6));
+      --_min-h: var(--_min-h-xl, var(--size-10));
+      --_px: var(--px-xl, var(--size-6));
+      --_py: var(--py-xl, 0);
       --_font-size: var(--font-size-xl, var(--font-size-4));
-      --_line-height: var(--line-height-xl, var(--font-lineheight-4));
+      --_line-height: var(--line-height-xl, var(--font-lineheight-3));
       --_letter-spacing: var(--letter-spacing-xl, var(--font-letterspacing-2));
     }
 
@@ -486,7 +497,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0 0.5em;
+      padding: var(--size-00);
       border-radius: var(--radius-round);
       aspect-ratio: var(--ratio-square);
     }
