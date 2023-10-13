@@ -1,25 +1,24 @@
 <script lang="ts">
-	import '../../styles/baseline.css';
-	import '../../styles/components/button-group/styles.css';
 	import type {
 		ButtonGroupSize,
 		ButtonGroupShape,
 		ButtonGroupItemType,
 		ButtonGroupContext
-	} from './types.js';
+	} from './ButtonGroup.d.ts';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames } from '$lib/utils';
+	import { retrieveCssClassNames } from '$lib/utils.js';
 
 	export let activeButton = '';
 	export let size: ButtonGroupSize = 'base';
 	export let responsive = true;
 	export let shape: ButtonGroupShape = 'rounded';
-
 	export let styles = {};
+
 	const cssStyles = mapToCssVars(styles);
 	if (cssStyles.isErr()) {
+		console.error(`@sveltinio/essentials(ButtonGroup): ${cssStyles.error.message}`);
 		throw new Error(cssStyles.error.message);
 	}
 
@@ -54,9 +53,11 @@
 
 <div
 	class="sn-e-c-btngroup {cssClasses}"
-	class:sn-e-c-btngroup--responsive={responsive}
+	data-responsive={responsive}
 	style={cssStyles.value}
 	role="group"
 >
 	<slot style={cssStyles} />
 </div>
+
+<style src="./styles/ButtonGroup.postcss"></style>

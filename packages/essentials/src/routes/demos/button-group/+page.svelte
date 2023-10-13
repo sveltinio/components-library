@@ -12,9 +12,9 @@
 		'bg-color': '#f0fdfa',
 		'bg-color-hover': '#99f6e4',
 		'border-color': '#5eead4',
-		'active-color': '#134e4a',
-		'active-bg-color': '#2dd4bf',
-		'active-border-color': '#5eead4'
+		'color-active': '#134e4a',
+		'bg-color-active': '#2dd4bf',
+		'border-color-active': '#5eead4'
 	};
 </script>
 
@@ -169,10 +169,12 @@
 
 	<div id="buttongroup-theming-with-css-class-wrapper" class="demo-wrapper">
 		<h3 id="buttongroup-theming-with-css-class">Custom Styles with CSS Class</h3>
-		<ButtonGroup class="my-btngroup">
-			<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
-			<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
-			<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
-		</ButtonGroup>
+		<div class="preview">
+			<ButtonGroup class="my-btngroup">
+				<ButtonGroup.Button id="1" label="Button 1" on:click={handleMessage} />
+				<ButtonGroup.Button id="2" label="Button 2" on:click={handleMessage} />
+				<ButtonGroup.Button id="3" label="Button 3" on:click={handleMessage} />
+			</ButtonGroup>
+		</div>
 	</div>
 </section>

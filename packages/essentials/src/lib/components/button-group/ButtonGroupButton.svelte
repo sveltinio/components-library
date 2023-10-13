@@ -1,11 +1,16 @@
 <script lang="ts">
+	import type {
+		ButtonGroupButtonProps as $$ButtonGroupButtonProps,
+		ButtonGroupContext
+	} from './ButtonGroup.d.ts';
 	import { createEventDispatcher, getContext, onDestroy } from 'svelte';
-	import type { ButtonGroupContext } from './types.js';
 
-	export let id: string;
-	export let label: string;
-	export let icon: any = undefined;
-	export let position = 'left';
+	interface $$Props extends $$ButtonGroupButtonProps {}
+
+	export let id: $$Props['id'];
+	export let label: $$Props['label'];
+	export let icon: $$Props['icon'] = undefined;
+	export let position: $$Props['position'] = 'left';
 
 	const ctx: ButtonGroupContext = getContext('ButtonGroup');
 	let _active = ctx.activeButton;
@@ -24,6 +29,8 @@
 		dispatch('click', { eventDetails: e });
 	};
 
+	const isActive = () => (active === id ? 'active' : undefined);
+
 	onDestroy(() => {
 		ctx.unregisterButton(id);
 	});
@@ -31,11 +38,11 @@
 
 <button
 	id="btn-{label}-{id}"
-	class:is-active={active === id}
 	aria-label={label}
 	data-size={size}
 	data-shape={shape}
 	data-testid="btn-{id}"
+	data-state={isActive()}
 	on:click={clickDispatcher}
 	on:click
 	on:keydown
@@ -52,3 +59,6 @@
 		<svelte:component this={icon} />
 	{/if}
 </button>
+
+<style src="./styles/ButtonGroupButton.postcss">
+</style>

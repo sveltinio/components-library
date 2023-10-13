@@ -1,3 +1,4 @@
+import type { SvelteHTMLElements } from 'svelte/elements';
 import type { Writable } from 'svelte/store';
 
 export type ButtonGroupSize = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'full';
@@ -7,6 +8,17 @@ export type ButtonGroupItemType = {
 	id: string;
 	icon: any;
 };
+
+type ButtonGroupRestProps = SvelteHTMLElements['button'];
+
+interface ButtonGroupButtonPropsInternal extends ButtonGroupRestProps {
+	id: string;
+	label: string;
+	icon?: any;
+	position?: string;
+}
+
+export type ButtonGroupButtonProps = ButtonGroupButtonPropsInternal & ButtonGroupRestProps;
 
 export interface ButtonGroupContext {
 	activeButton: Writable<string>;
