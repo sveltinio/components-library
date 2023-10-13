@@ -8,8 +8,8 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true,
 		"types": ["vitest/globals"]
 	},
+	"include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.svelte"],
 	"exclude": ["tests"]
 }
