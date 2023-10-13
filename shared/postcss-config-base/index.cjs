@@ -22,12 +22,14 @@ var basePlugins = [
 	require('postcss-discard-comments')({ removeAll: true })
 ];
 
-if (process.env.NODE_ENV != 'test') plugins.push(require('postcss-jit-props')(OpenProps));
+if (process.env.NODE_ENV != 'test') basePlugins.push(require('postcss-jit-props')(OpenProps));
 
 if (process.env.NODE_ENV === 'production')
-	require('cssnano')({
-		preset: 'advanced'
-	});
+	basePlugins.push(
+		require('cssnano')({
+			preset: 'advanced'
+		})
+	);
 
 module.exports = {
 	plugins: basePlugins
