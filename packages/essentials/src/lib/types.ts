@@ -1,13 +1,13 @@
-import type { ButtonGroupItemType } from './components/button-group/types.js';
+import type { ButtonGroupItemType } from './components/button-group/ButtonGroup.d.ts';
 export type { ButtonGroupItemType };
 
-import type { DropdownData } from './components/dropdown/types.js';
+import type { DropdownData } from './components/dropdown/Dropdown.d.ts';
 export type { DropdownData };
 
-import type { ListItem } from './components/list/types.js';
+import type { ListItem } from './components/list/ToggleList.d.ts';
 export type { ListItem };
 
-import type { TabItem } from './components/tabs/types.js';
+import type { TabItem } from './components/tabs/Tabs.d.ts';
 export type { TabItem };
 
 export type SvelteKitPrefetch = 'off' | 'hover' | 'tap';

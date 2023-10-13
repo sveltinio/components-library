@@ -1,5 +1,5 @@
-import type { DropdownData } from '$lib/components/dropdown/types.js';
-import type { ListItem } from '$lib/components/list/types.js';
+import type { DropdownData } from '$lib/components/dropdown/Dropdown.d.ts';
+import type { ListItem } from '$lib/components/list/ToggleList.d.ts';
 import { CloudUploadIcon } from '@indaco/svelte-iconoir/cloud-upload';
 import { BellIcon } from '@indaco/svelte-iconoir/bell';
 
