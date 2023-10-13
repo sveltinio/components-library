@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { DropdownContext } from '../types.js';
+	import type { DropdownContext } from './Dropdown.d.ts';
 	import { getContext } from 'svelte';
 
 	export let absolute = false;
@@ -19,3 +19,6 @@
 >
 	<slot />
 </ul>
+
+<style src="./styles/List.postcss">
+</style>

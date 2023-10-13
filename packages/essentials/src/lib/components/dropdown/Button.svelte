@@ -1,13 +1,14 @@
 <script lang="ts">
-	import type { DropdownContext } from '../types.js';
+	import type { DropdownContext } from './Dropdown.js';
 	import { isEmpty } from '@sveltinio/ts-utils/is';
 	import { getContext } from 'svelte';
-	import { Button } from '../../button/index.js';
+	import { Button } from '../button/index.js';
 
 	export let label: string;
 	export let styles = {};
 
 	const defaultStyles: Record<string, string> = {
+		'bg-color': '#ffffff',
 		'border-color': 'var(--gray-2)',
 		'ring-color': 'var(--gray-3)'
 	};
@@ -51,3 +52,6 @@
 		/>
 	</svg>
 </Button>
+
+<style src="./styles/Button.postcss">
+</style>

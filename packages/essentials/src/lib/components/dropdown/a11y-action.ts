@@ -1,5 +1,5 @@
 import type { Action } from 'svelte/action';
-import type { DropdownContext } from './types';
+import type { DropdownContext } from './Dropdown.d.ts';
 import { tick } from 'svelte';
 import { getComponentId, isChar } from '$lib/utils';
 import { isBool } from '@sveltinio/ts-utils/is';
@@ -149,7 +149,7 @@ const a11yAction: Action<HTMLElement, A11yActionOptions> = (node, options) => {
 
 	initialize(componentId);
 
-	const dropdownBtn = node.querySelector('button.sn-e-c-button') as HTMLElement;
+	const dropdownBtn = node.querySelector('button') as HTMLElement;
 	if (options?.enabled) node.addEventListener('click', onButtonClick);
 	if (options?.enabled) node.addEventListener('keydown', onButtonKeydown);
 

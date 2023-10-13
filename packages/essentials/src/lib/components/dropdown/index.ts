@@ -1,9 +1,10 @@
 import BaseDropdown from './Dropdown.svelte';
-import { BaseDropdownButton, BaseDropdownItems, BaseDropdownItem } from './partials/index.js';
+import BaseDropdownButton from './Button.svelte';
+import BaseDropdownList from './List.svelte';
+import BaseDropdownItem from './ListItem.svelte';
 
 export interface DropdownButtonStatic {
 	new (...args: ConstructorParameters<typeof BaseDropdownButton>): BaseDropdownButton;
-	Button: DropdownButtonStatic;
 }
 
 export interface DropdownItemStatic {
@@ -11,7 +12,7 @@ export interface DropdownItemStatic {
 }
 
 export interface DropdownItemsStatic {
-	new (...args: ConstructorParameters<typeof BaseDropdownItems>): BaseDropdownItems;
+	new (...args: ConstructorParameters<typeof BaseDropdownList>): BaseDropdownList;
 	Item: DropdownItemStatic;
 }
 
@@ -23,7 +24,7 @@ export interface DropdownStatic {
 
 const Dropdown = BaseDropdown as DropdownStatic;
 Dropdown.Button = BaseDropdownButton as DropdownButtonStatic;
-Dropdown.Items = BaseDropdownItems as DropdownItemsStatic;
+Dropdown.Items = BaseDropdownList as DropdownItemsStatic;
 Dropdown.Items.Item = BaseDropdownItem as DropdownItemStatic;
 
 export default Dropdown;

@@ -1,20 +1,20 @@
 <script lang="ts">
-	import '../../styles/baseline.css';
-	import '../../styles/components/dropdown/styles.css';
-	import type { DropdownContext } from './types.js';
+	import type { DropdownContext } from './Dropdown.d.ts';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { clickOutsideAction } from '$lib/actions.js';
 	import { a11y } from './a11y-action.js';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames } from '$lib/utils.js';
 
 	export let open = false;
 	export let keepOpen = false;
 	export let styles: Record<string, string> = {};
+	export let className: string | undefined = undefined;
+	export { className as class };
 
 	const cssStyles = mapToCssVars(styles);
 	if (cssStyles.isErr()) {
+		console.error(`@sveltinio/essentials(Dropdown): ${cssStyles.error.message}`);
 		throw new Error(cssStyles.error.message);
 	}
 
@@ -27,14 +27,10 @@
 		setKeepOpen: (_value: boolean) => initialKeepOpenState.set(_value)
 	};
 	setContext('SNE_Dropdown', ctx);
-
-	// avoid hacking reserved css class names
-	const reservedNames = ['sn-e-c-dropdown'];
-	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 </script>
 
 <div
-	class="sn-e-c-dropdown {cssClasses}"
+	class={className}
 	style={cssStyles.value}
 	use:a11y={{ enabled: true, isOpen: open, ctx }}
 	use:clickOutsideAction={{
@@ -47,3 +43,6 @@
 >
 	<slot />
 </div>
+
+<style src="./styles/Dropdown.postcss">
+</style>

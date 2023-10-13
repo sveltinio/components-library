@@ -43,3 +43,6 @@
 		</button>
 	{/if}
 </li>
+
+<style src="./styles/ListItem.postcss">
+</style>

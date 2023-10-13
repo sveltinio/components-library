@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { navItems, dropdownContentSample } from '../../../../src/data/sample.js';
+	import { dropdownContentSample } from '../../../../src/data/sample.js';
 	import { Dropdown } from '$lib/index.js';
 
 	const myDropdownButtonStyles = {
