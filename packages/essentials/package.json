@@ -112,7 +112,7 @@
 			"default": "./dist/components/button/index.js"
 		},
 		"./components/Button.svelte": {
-			"types": "./dist/components/button/Button.svelte.d.ts",
+			"types": "./dist/components/button/Button.d.ts",
 			"svelte": "./dist/components/button/Button.svelte",
 			"default": "./dist/components/button/Button.svelte"
 		},
@@ -121,18 +121,10 @@
 			"svelte": "./dist/components/button-group/index.js",
 			"default": "./dist/components/button-group/index.js"
 		},
-		"./button-group/types": {
-			"types": "./dist/components/button-group/types.d.ts",
-			"default": "./dist/components/button-group/types.js"
-		},
 		"./components/ButtonGroup.svelte": {
+			"types": "./dist/components/button-group/ButtonGroup.d.ts",
 			"svelte": "./dist/components/button-group/ButtonGroup.svelte",
 			"default": "./dist/components/button-group/ButtonGroup.svelte"
-		},
-		"./components/ButtonGroupItem.svelte": {
-			"types": "./dist/components/button-group/ButtonGroupItem.svelte.d.ts",
-			"svelte": "./dist/components/button-group/ButtonGroupItem.svelte",
-			"default": "./dist/components/button-group/ButtonGroupItem.svelte"
 		},
 		"./color": {
 			"types": "./dist/components/color/index.d.ts",
@@ -140,7 +132,7 @@
 			"default": "./dist/components/color/index.js"
 		},
 		"./components/ColorViewer.svelte": {
-			"types": "./dist/components/color/ColorViewer.svelte.d.ts",
+			"types": "./dist/components/color/ColorViewer.d.ts",
 			"svelte": "./dist/components/color/ColorViewer.svelte",
 			"default": "./dist/components/color/ColorViewer.svelte"
 		},
@@ -149,29 +141,10 @@
 			"svelte": "./dist/components/dropdown/index.js",
 			"default": "./dist/components/dropdown/index.js"
 		},
-		"./dropdown/types": {
-			"types": "./dist/components/dropdown/types.d.ts",
-			"default": "./dist/components/dropdown/types.js"
-		},
 		"./components/Dropdown.svelte": {
-			"types": "./dist/components/dropdown/Dropdown.svelte.d.ts",
+			"types": "./dist/components/dropdown/Dropdown.d.ts",
 			"svelte": "./dist/components/dropdown/Dropdown.svelte",
 			"default": "./dist/components/dropdown/Dropdown.svelte"
-		},
-		"./components/DropdownButton.svelte": {
-			"types": "./dist/components/dropdown/DropdownButton.svelte.d.ts",
-			"svelte": "./dist/components/dropdown/DropdownButton.svelte",
-			"default": "./dist/components/dropdown/DropdownButton.svelte"
-		},
-		"./components/DropdownContent.svelte": {
-			"types": "./dist/components/dropdown/DropdownContent.svelte.d.ts",
-			"svelte": "./dist/components/dropdown/DropdownContent.svelte",
-			"default": "./dist/components/dropdown/DropdownContent.svelte"
-		},
-		"./components/DropdownItem.svelte": {
-			"types": "./dist/components/dropdown/DropdownItem.svelte.d.ts",
-			"svelte": "./dist/components/dropdown/DropdownItem.svelte",
-			"default": "./dist/components/dropdown/DropdownItem.svelte"
 		},
 		"./link": {
 			"types": "./dist/components/link/index.d.ts",
@@ -179,7 +152,7 @@
 			"default": "./dist/components/link/index.js"
 		},
 		"./components/Link.svelte": {
-			"types": "./dist/components/link/Link.svelte.d.ts",
+			"types": "./dist/components/link/Link.d.ts",
 			"svelte": "./dist/components/link/Link.svelte",
 			"default": "./dist/components/link/Link.svelte"
 		},
@@ -188,12 +161,8 @@
 			"svelte": "./dist/components/list/index.js",
 			"default": "./dist/components/list/index.js"
 		},
-		"./list/types": {
-			"types": "./dist/components/list/types.d.ts",
-			"default": "./dist/components/list/types.js"
-		},
 		"./components/ToggleList.svelte": {
-			"types": "./dist/components/list/ToggleList.svelte.d.ts",
+			"types": "./dist/components/list/ToggleList.d.ts",
 			"svelte": "./dist/components/list/ToggleList.svelte",
 			"default": "./dist/components/list/ToggleList.svelte"
 		},
@@ -201,15 +170,6 @@
 			"types": "./dist/components/tabs/index.d.ts",
 			"svelte": "./dist/components/tabs/index.js",
 			"default": "./dist/components/tabs/index.js"
-		},
-		"./tabs/types": {
-			"types": "./dist/components/tabs/types.d.ts",
-			"default": "./dist/components/tabs/types.js"
-		},
-		"./components/Tab.svelte": {
-			"types": "./dist/components/tabs/Tab.svelte.d.ts",
-			"svelte": "./dist/components/tabs/Tab.svelte",
-			"default": "./dist/components/tabs/Tab.svelte"
 		},
 		"./components/Tabs.svelte": {
 			"types": "./dist/components/tabs/Tabs.svelte.d.ts",
@@ -220,14 +180,6 @@
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js",
 			"default": "./dist/index.js"
-		},
-		"./actions": {
-			"types": "./dist/actions.d.ts",
-			"default": "./dist/actions.js"
-		},
-		"./types": {
-			"types": "./dist/types.d.ts",
-			"default": "./dist/types.js"
 		}
 	},
 	"typesVersions": {
@@ -236,94 +188,46 @@
 				"./dist/components/button/index.d.ts"
 			],
 			"components/Button.svelte": [
-				"./dist/components/button/Button.svelte.d.ts"
+				"./dist/components/button/Button.d.ts"
 			],
 			"button-group": [
 				"./dist/components/button-group/index.d.ts"
 			],
-			"button-group/types": [
-				"./dist/components/button-group/types.d.ts"
-			],
 			"components/ButtonGroup.svelte": [
-				"./dist/components/button-group/ButtonGroup.svelte.d.ts"
-			],
-			"components/ButtonGroupItem.svelte": [
-				"./dist/components/button-group/ButtonGroupItem.svelte.d.ts"
+				"./dist/components/button-group/ButtonGroup.d.ts"
 			],
 			"color": [
 				"./dist/components/color/index.d.ts"
 			],
 			"components/ColorViewer.svelte": [
-				"./dist/components/color/ColorViewer.svelte.d.ts"
+				"./dist/components/color/ColorViewer.d.ts"
 			],
 			"dropdown": [
 				"./dist/components/dropdown/index.d.ts"
 			],
-			"dropdown/types": [
-				"./dist/components/dropdown/types.d.ts"
-			],
 			"components/Dropdown.svelte": [
-				"./dist/components/dropdown/Dropdown.svelte.d.ts"
-			],
-			"components/DropdownButton.svelte": [
-				"./dist/components/dropdown/DropdownButton.svelte.d.ts"
-			],
-			"components/DropdownContent.svelte": [
-				"./dist/components/dropdown/DropdownContent.svelte.d.ts"
-			],
-			"components/DropdownItem.svelte": [
-				"./dist/components/dropdown/DropdownItem.svelte.d.ts"
+				"./dist/components/dropdown/Dropdown.d.ts"
 			],
 			"link": [
 				"./dist/components/link/index.d.ts"
 			],
 			"components/Link.svelte": [
-				"./dist/components/link/Link.svelte.d.ts"
-			],
-			"components/ExternalLinkIcon.svelte": [
-				"./dist/components/link/ExternalLinkIcon.svelte.d.ts"
-			],
-			"components/Item.svelte": [
-				"./dist/components/list/Item.svelte.d.ts"
+				"./dist/components/link/Link.d.ts"
 			],
 			"list": [
 				"./dist/components/list/index.d.ts"
 			],
-			"list/types": [
-				"./dist/components/list/types.d.ts"
-			],
-			"list/action": [
-				"./dist/components/list/action.d.ts"
-			],
 			"components/ToggleList.svelte": [
-				"./dist/components/list/ToggleList.svelte.d.ts"
+				"./dist/components/list/ToggleList.d.ts"
 			],
 			"tabs": [
 				"./dist/components/tabs/index.d.ts"
 			],
-			"tabs/types": [
-				"./dist/components/tabs/types.d.ts"
-			],
-			"components/Tab.svelte": [
-				"./dist/components/tabs/Tab.svelte.d.ts"
-			],
 			"components/Tabs.svelte": [
-				"./dist/components/tabs/Tabs.svelte.d.ts"
+				"./dist/components/tabs/Tabs.d.ts"
 			],
-			"theme-switch": [
-				"./dist/components/theme-switch/index.d.ts"
-			],
-			"components/ThemeSwith": [
-				"./dist/components/theme-switch/ThemeSwitch.svelte.d.ts"
-			],
-			"index": [
+			".": [
 				"./index.d.ts"
-			],
-			"actions": [
-				"./actions.d.ts"
-			],
-			"types": [
-				"./types.d.ts"
 			]
 		}
 	}
