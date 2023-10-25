@@ -55,7 +55,7 @@
 		"cross-env": "^7.0.3",
 		"cssnano": "^6.0.1",
 		"cssnano-preset-advanced": "^6.0.1",
-		"eslint": "^8.51.0",
+		"eslint": "^8.52.0",
 		"eslint-config-base": "workspace:*",
 		"jsdom": "^22.1.0",
 		"pa11y": "^6.2.3",
@@ -90,7 +90,7 @@
 		"lint:styles": "stylelint --no-cache \"**/*.postcss\"",
 		"postbuild": "node ../../scripts/post-build.mjs packages/essentials && pnpm exec publint .",
 		"sync": "svelte-kit sync",
-		"test": "NODE_ENV=test vitest run",
+		"test": "vitest run",
 		"test:watch": "vitest watch",
 		"test:a11y": "rimraf a11y-results.json && pa11y-ci"
 	},
