@@ -28,7 +28,7 @@
 	},
 	"dependencies": {
 		"@sveltinio/ts-utils": "^0.8.0",
-		"@types/gtag.js": "^0.0.14"
+		"@types/gtag.js": "^0.0.17"
 	},
 	"peerDependencies": {
 		"svelte": "^3.59.2 || ^4.0.0"
