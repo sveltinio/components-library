@@ -46,7 +46,7 @@
 		"@vitest/coverage-v8": "^0.34.6",
 		"eslint": "^8.50.0",
 		"eslint-config-custom": "workspace:*",
-		"jsdom": "^22.1.0",
+		"jsdom": "^23.0.1",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"publint": "^0.2.3",
