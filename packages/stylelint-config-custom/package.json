@@ -6,7 +6,7 @@
 	"type": "module",
 	"license": "MIT",
 	"dependencies": {
-		"stylelint": "^15.10.3",
+		"stylelint": "^16.1.0",
 		"stylelint-config-standard": "^33.0.0"
 	},
 	"main": "index.cjs"
