@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { beforeEach, describe, it, expect } from 'vitest';
-import { render } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte/svelte5';
 import { website } from '../src/data/sample.js';
 import { JsonLdWebSite } from '../src/lib/index.js';
 

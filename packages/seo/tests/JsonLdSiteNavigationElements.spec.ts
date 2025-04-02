@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte/svelte5';
 import { menu, website } from '../src/data/sample.js';
 import { JsonLdSiteNavigationElements } from '../src/lib/index.js';
 

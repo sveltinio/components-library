@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { WebSite, WithContext } from 'schema-dts';
+	import type { WebSite, WithContext, PostalAddress, Person, Organization } from 'schema-dts';
 	import type { SEOWebSite } from '../../../types.js';
 	import { serializeJSONLdSchema, isSEOPerson } from '../../../utils.js';
 
@@ -22,7 +22,7 @@
 	}
 
 	if (data.creator) {
-		let _address: string | any;
+		let _address: string | PostalAddress;
 
 		if (typeof data.creator.address === 'string') {
 			_address = data.creator.address;
@@ -35,7 +35,7 @@
 			};
 		}
 
-		let _creator: any = {
+		let _creator: Person | Organization = {
 			'@type': isSEOPerson(data.creator) ? 'Person' : 'Organization',
 			name: data.creator.name,
 			email: data.creator.email,
@@ -45,7 +45,7 @@
 		};
 
 		if (isSEOPerson(data.creator)) {
-			_creator['jobTitle'] = data.creator.jobTitle;
+			(_creator as Extract<Person, { '@type': 'Person' }>).jobTitle = data.creator.jobTitle;
 		}
 
 		schemaOrgWebSite.creator = _creator;

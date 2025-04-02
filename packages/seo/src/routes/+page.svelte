@@ -20,9 +20,4 @@
 	<h1>@sveltinio/seo</h1>
 	<h2>Demos</h2>
 	<h3>Inspect the head of the webpage</h3>
-	<ul>
-		<li>Google Fonts</li>
-		<li>Google Analytics</li>
-		<li>Umami Analytics</li>
-	</ul>
 </div>

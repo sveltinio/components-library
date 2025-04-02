@@ -26,14 +26,18 @@ export type SEOMenuItem = {
 	children?: Array<SEOMenuItem>;
 };
 
+export type ImageObject = {
+	url: string;
+	alt?: string;
+};
+
 export type SEOWebPage = {
 	url: string;
 	title: string;
 	description?: string;
 	author?: string;
 	keywords?: Array<string>;
-	image?: string;
-	imageAlt?: string;
+	image?: ImageObject;
 	opengraph?: OpenGraph;
 	twitter?: TwitterCard;
 };
@@ -121,10 +125,12 @@ export type OpenGraph = {
 	tvShow?: OpenGraphVideoTVShow;
 };
 
+export type ISODateString = string;
+
 export type OpenGraphArticle = {
-	published_at?: Date;
-	modified_at?: Date;
-	expiration_time?: Date;
+	published_time?: ISODateString;
+	modified_time?: ISODateString;
+	expiration_time?: ISODateString;
 	section?: string;
 	tags?: Array<string>;
 };
@@ -132,7 +138,7 @@ export type OpenGraphArticle = {
 export type OpenGraphBook = {
 	author: string;
 	isbn?: string;
-	release_date?: Date;
+	release_date?: ISODateString;
 	tags?: Array<string>;
 };
 
@@ -173,7 +179,7 @@ export type OpenGraphMusicSong = OpenGraphMusic & {
 export type OpenGraphMusicAlbum = OpenGraphMusic & {
 	songs?: Array<OpenGraphMusicSong>;
 	musicians?: Array<OpenGraphProfile>;
-	release_date?: Date;
+	release_date?: ISODateString;
 };
 
 export type OpenGraphMusicPlaylist = OpenGraphMusic & {
@@ -191,7 +197,7 @@ type OpenGraphVideo = {
 	director?: Array<OpenGraphProfile>;
 	writer?: Array<OpenGraphProfile>;
 	duration?: number;
-	release_date?: Date;
+	release_date?: ISODateString;
 	tags?: Array<string>;
 };
 
@@ -208,7 +214,7 @@ export type OpenGraphVideoEpisode = OpenGraphVideo & {
 /**
  * * EnumTwitterCardType
  *
- * * Enumation with different TwitterCard types:
+ * * Enumeration with different TwitterCard types:
  * * https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
  *
  * - SUMMARY: Title, description, and thumbnail
@@ -234,7 +240,7 @@ export const TwitterCardType: typeof EnumTwitterCardType = {
  * * TwitterCard
  *
  * @param type The card type: summary | summary_large_image | player | app
- * @param site (otional) The Twitter @username the card should be attributed to.
+ * @param site (optional) The Twitter @username the card should be attributed to.
  * @param player (optional) A Card that can display video/audio/media
  * @param app (optional) A Card with a direct download to a mobile app
  */

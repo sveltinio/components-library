@@ -25,7 +25,7 @@
 						url: 'https://open.spotify.com/track/4QbpagjMCqSECj6IimTL2n?si=65e9458fe8454eea'
 					}
 				],
-				release_date: new Date('10-10-1969')
+				release_date: '10-10-1969'
 			}
 		}
 	};

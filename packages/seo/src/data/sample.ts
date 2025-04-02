@@ -51,8 +51,8 @@ const sampleArticle: SEOWebPage = {
 		type: OpenGraphType.Article,
 		article: {
 			tags: ['sveltekit'],
-			published_at: new Date('23-01-2022'),
-			modified_at: new Date('24-01-2022')
+			published_time: '23-01-2022',
+			modified_time: '24-01-2022'
 		}
 	},
 	twitter: {

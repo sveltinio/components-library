@@ -21,8 +21,11 @@
 	<meta property="og:url" content={data.url} />
 	<meta property="og:title" content={data.title} />
 	<meta property="og:description" content={data.description} />
-	{#if data.image}
-		<meta property="og:image" content={data.image} />
+	{#if data.image?.url}
+		<meta property="og:image" content={data.image.url} />
+		{#if data.image.alt}
+			<meta property="og:image:alt" content={data.image.alt} />
+		{/if}
 	{/if}
 
 	{#if data.opengraph.type == OpenGraphType.Article}

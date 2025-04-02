@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { toISODateString } from '$lib/utils.js';
 	import type { SEOWebPage } from '../../../types.js';
-	import { formatDateISO } from '@sveltinio/ts-utils/dates';
 
 	export let data: SEOWebPage;
 </script>
@@ -15,12 +15,12 @@
 
 {#if data.opengraph?.book?.release_date}
 	{@const _release_date = data.opengraph.book.release_date}
-	<meta property="book:release_date" content={formatDateISO(_release_date).unwrapOr('')} />
+	<meta property="book:release_date" content={toISODateString(_release_date)} />
 {/if}
 
 {#if Array.isArray(data.opengraph?.book?.tags) && data.opengraph?.book?.tags}
 	{@const _tags = data.opengraph?.book?.tags}
-	{#each _tags as tag}
+	{#each _tags as tag (tag)}
 		<meta property="book:tag" content={tag} />
 	{/each}
 {/if}

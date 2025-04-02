@@ -14,7 +14,7 @@
 {/if}
 
 {#if Array.isArray(data.opengraph?.song?.album) && data.opengraph?.song?.album}
-	{#each data.opengraph?.song?.album as album}
+	{#each data.opengraph?.song?.album as album (album)}
 		<meta property="music:album" content={album.url} />
 	{/each}
 {/if}
@@ -30,7 +30,7 @@
 {/if}
 
 {#if Array.isArray(data.opengraph?.song?.musician) && data.opengraph?.song?.musician}
-	{#each data.opengraph?.song?.musician as musician}
+	{#each data.opengraph?.song?.musician as musician (musician)}
 		<meta property="music:musician" content={musician.url} />
 	{/each}
 {/if}

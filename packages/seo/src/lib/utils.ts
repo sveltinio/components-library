@@ -13,3 +13,8 @@ export function serializeJSONLdSchema(thing: Schema, dataTestId: string) {
 
 export const isSEOPerson = (contact: SEOContact): contact is SEOPerson =>
 	contact.jobTitle != undefined && contact.jobTitle != '';
+
+export function toISODateString(date: string | Date | undefined | null): string | undefined {
+	if (!date) return undefined;
+	return date instanceof Date ? date.toISOString() : date;
+}

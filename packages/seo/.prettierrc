@@ -4,7 +4,7 @@
 	"trailingComma": "none",
 	"printWidth": 100,
 	"bracketSpacing": true,
-	"plugins": ["prettier-plugin-svelte"],
+	"plugins": ["prettier-plugin-packagejson", "prettier-plugin-svelte"],
 	"overrides": [
 		{
 			"files": ["*.svelte"],

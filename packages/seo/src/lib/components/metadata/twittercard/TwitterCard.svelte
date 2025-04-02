@@ -15,11 +15,11 @@
 		{#if data.description}
 			<meta property="twitter:description" content={data.description} />
 		{/if}
-		{#if data.image}
-			<meta property="twitter:image" content={data.image} />
-		{/if}
-		{#if data.imageAlt}
-			<meta property="twitter:image:alt" content={data.imageAlt} />
+		{#if data.image?.url}
+			<meta property="og:image" content={data.image.url} />
+			{#if data.image.alt}
+				<meta property="og:image:alt" content={data.image.alt} />
+			{/if}
 		{/if}
 
 		{#if data.twitter.type == TwitterCardType.Player}
