@@ -23,6 +23,8 @@
 		"url": "git+https://github.com/sveltinio/components-library.git",
 		"directory": "packages/seo"
 	},
+	"license": "MIT",
+	"type": "module",
 	"exports": {
 		"./package.json": "./package.json",
 		"./metadata": {
