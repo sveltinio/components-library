@@ -1,0 +1,27 @@
+@layer theme, components, utilities;
+
+/* stylelint-disable declaration-empty-line-before */
+@layer components {
+  .sn-e-c-btngroup {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+
+    &::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    &[data-responsive="true"] {
+      flex-direction: column;
+
+      /** lg breakpoint */
+      @media (width > 768px) {
+        &[data-responsive="true"] {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}

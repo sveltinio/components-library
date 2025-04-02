@@ -1,6 +1,8 @@
 # ToggleList
 
-The **ToggleList** is an accessible Svelte component implementint the [WAI-ARIA Disclosure (Show/Hide) Pattern] and used to enables content to be either collapsed (hidden) or expanded (visible).
+The **ToggleList** is an accessible Svelte component implementing the [WAI-ARIA Disclosure (Show/Hide) Pattern] and used to enables content to be either collapsed (hidden) or expanded (visible).
+
+A perfect use case for it is with a sidebar menu.
 
 ## Examples
 
@@ -22,9 +24,7 @@ The **ToggleList** is an accessible Svelte component implementint the [WAI-ARIA 
    ];
 </script>
 
-<h3>Default</h3>
 <ToggleList title="My Toggle List" items={contentForToggleList} />
-
 ```
 
 ## Properties
@@ -37,6 +37,9 @@ The `ToggleList` component exposes a set of properties but it does not prevent y
 | :-------- | :--------------: | :------: | :-----: | :----------------------------------------------------------------------------------- |
 | title     | `string`         | yes      |         | The title for the List                                                               |
 | items     | `Array<ListItem>`| yes      |         | An array of objects with `label`, `url` and `icon` props                             |
+| open      | `boolean`        | no       | `false` | If true, the list is open by default                                                 |
+| showIcon  | `boolean`        | no       | `true`  | If true, shows an icon on the right of the list title                                |
+| indicator | `string`         | no       | `dot`   | The visual indicator used when active and hover. One of `['dot', 'square', 'line']`  |
 | full      | `boolean`        | no       | `false` | If true, the full size of the container is used. The icons will be placed at the end |
 
 **items** is an array of [ListItem] objects:
@@ -44,7 +47,7 @@ The `ToggleList` component exposes a set of properties but it does not prevent y
 ```typescript
 export type ListItem = {
    label: string;
-   url?: string;
+   url: string;
    icon?: any;
    external?: boolean;
 };
@@ -63,8 +66,8 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 | Name            | Default | Fallback |
 | :-------------- | :-----: | :------: |
-| `leftSideIcon`  | ✗       |    ✗     |
-| `rightSideIcon` | ✗       |    ✓     |
+| `leftIcon`  | ✗       |    ✗     |
+| `rightIcon` | ✗       |    ✓     |
 
 ## Keyboard Interaction
 

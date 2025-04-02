@@ -1,121 +1,121 @@
 <script lang="ts">
-	import '../../styles/base.css';
-	import '../../styles/components/button/variables.css';
-	import '../../styles/components/button/styles.css';
-	import { createEventDispatcher } from 'svelte';
+	import type { ButtonProps as $$ButtonProps } from './Button.d.ts';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames } from '$lib/utils';
+	import { makeExternalLinkOptions, prefixObjectKeys } from '$lib/utils.js';
+	import { isEmpty } from '@sveltinio/ts-utils/is';
+	import { preserveButtonPropsList } from './index.js';
 
-	export let label = 'Button Text';
-	export let alt = '';
-	export let type = 'default';
-	export let size = 'base';
-	export let border = 'solid';
-	export let disabled = false;
-	export let outlined = false;
-	export let rounded = false;
-	export let circle = false;
-	export let fullSize = false;
-	export let withFocusRing = false;
-	export let href = '';
-	export let prefetch = false;
-	export let external = false;
+	interface $$Props extends $$ButtonProps {}
 
-	const className: string | undefined = undefined;
+	export let label: $$Props['label'] = undefined;
+	export let alt: $$Props['alt'] = undefined;
+	export let variant: $$Props['variant'] = 'default';
+	export let size: $$Props['size'] = 'base';
+	export let shape: $$Props['shape'] = 'rounded';
+	export let border: $$Props['border'] = 'none';
+	export let disabled: $$Props['disabled'] = false;
+	export let outline: $$Props['outline'] = false;
+	export let block: $$Props['block'] = false;
+	export let noFocusRing: $$Props['noFocusRing'] = false;
+	export let href: $$Props['href'] = undefined;
+	export let prefetch: $$Props['prefetch'] = 'off';
+	export let external: $$Props['external'] = false;
+	export let styles: $$Props['styles'] = {};
+	export let className: $$Props['className'] = undefined;
 	export { className as class };
-	export let styles = {};
 
-	let htmlElem: HTMLElement;
+	let computedStyles: typeof styles = {};
 
-	const cssStyles = mapToCssVars(styles);
+	if (!isEmpty(styles)) {
+		computedStyles = prefixObjectKeys(styles, variant, preserveButtonPropsList);
+	}
+
+	const cssStyles = mapToCssVars(computedStyles);
 	if (cssStyles.isErr()) {
+		console.error(`@sveltinio/essentials(Button): ${cssStyles.error.message}`);
 		throw new Error(cssStyles.error.message);
 	}
-
-	// avoid hacking reserved css class names
-	const reservedNames = ['sn-e-colors', 'sn-e-c-btn-vars', 'sn-e-c-btn'];
-	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
-
-	const dispatch = createEventDispatcher();
-	function clickDispatcher(e: MouseEvent) {
-		dispatch('click', { eventDetails: e });
+	/** Error handling*/
+	if (external && (typeof href !== 'string' || href.length < 1)) {
+		console.error(
+			'@sveltinio/essentials(Button) Cannot be external with href empty or undefined'
+		);
 	}
 
-	function keydownHandler(e: KeyboardEvent) {
-		if (['Enter', 'Space'].includes(e.code)) {
-			e.preventDefault();
-			htmlElem.click();
-		}
-	}
-
-	$: _alt = alt != '' ? alt : label;
-	$: _ariaDisabled = disabled ? true : false;
-	$: outlinedClass = outlined ? `btn--outlined btn--${type}-outlined` : `btn--${type}`;
-	$: focusClass = withFocusRing ? `btn--focus btn--${type}-focus` : '';
+	$: _alt = alt ? alt : label ?? 'alt placeholder';
 </script>
 
-{#if href != '' && !disabled}
+{#if href && !disabled}
 	<a
-		tabindex="0"
-		role="button"
 		title={_alt}
-		bind:this={htmlElem}
-		on:click
-		on:keydown={keydownHandler}
 		{href}
 		target={external ? '_blank' : '_self'}
-		data-sveltekit-preload-data={prefetch ? 'hover' : ''}
-		class="sn-e-colors sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {cssClasses}"
-		class:btn--full={fullSize}
-		class:btn--rounded={rounded}
-		class:btn--circle={circle}
+		rel={makeExternalLinkOptions(external || false)}
+		class="link {className}"
 		style={cssStyles.value}
 		aria-label={_alt}
+		aria-disabled={disabled}
+		data-variant={outline ? `${variant}-outline` : `${variant}`}
+		data-size={size}
+		data-shape={shape}
+		data-border={outline ? 'solid' : border}
+		data-block={block}
+		data-no-focus-ring={noFocusRing}
+		data-sveltekit-preload-data={prefetch}
 		data-testid="btn"
 		{...$$restProps}
 	>
 		{#if $$slots.leftIcon}
-			<span class="btn__icon">
-				<slot name="leftIcon" />
-			</span>
+			<slot name="leftIcon" />
 		{/if}
-		<slot>
+
+		{#if label}
 			{label}
-		</slot>
+		{:else}
+			<slot />
+		{/if}
+
 		{#if $$slots.rightIcon}
-			<span class="btn__icon">
-				<slot name="rightIcon" />
-			</span>
+			<slot name="rightIcon" />
 		{/if}
 	</a>
 {:else}
 	<button
-		bind:this={htmlElem}
-		on:click={clickDispatcher}
-		on:keydown={keydownHandler}
-		class="sn-e-colors sn-e-c-btn-vars sn-e-c-btn btn--{size} btn--border-{border} {outlinedClass} {focusClass} {cssClasses}"
-		class:btn--full={fullSize}
-		class:btn--rounded={rounded}
-		class:btn--circle={circle}
-		{disabled}
-		style={cssStyles.isOk() ? cssStyles.value : ''}
+		class={className}
+		style={cssStyles.value}
 		aria-label={_alt}
-		aria-disabled={_ariaDisabled}
+		aria-disabled={disabled}
+		data-variant={outline ? `${variant}-outline` : variant}
+		data-size={size}
+		data-shape={shape}
+		data-border={outline ? 'solid' : border}
+		data-block={block}
+		data-no-focus-ring={noFocusRing}
+		{disabled}
 		data-testid="btn"
+		on:click
+		on:dblclick
+		on:keydown
+		on:keyup
+		on:mouseenter
+		on:mouseleave
 		{...$$restProps}
 	>
 		{#if $$slots.leftIcon}
-			<span class="btn__icon">
-				<slot name="leftIcon" />
-			</span>
+			<slot name="leftIcon" />
 		{/if}
-		<slot>
+
+		{#if label}
 			{label}
-		</slot>
+		{:else}
+			<slot />
+		{/if}
+
 		{#if $$slots.rightIcon}
-			<span class="btn__icon">
-				<slot name="rightIcon" />
-			</span>
+			<slot name="rightIcon" />
 		{/if}
 	</button>
 {/if}
+
+<style src="./styles/Button.postcss">
+</style>

@@ -12,21 +12,16 @@ It is made up by combining the `Dropdown`, `DropdownButton`, `DropdownContent`, 
 
 ```html
 <script>
-   import {
-      Dropdown,
-      DropdownButton,
-      DropdownContent
-      DropdownItem
-   } from '@sveltinio/essentials/dropdown';
+   import { Dropdown } from '@sveltinio/essentials/dropdown';
 <script>
 
 <Dropdown>
-   <DropdownButton label="Menu" />
-   <DropdownContent>
-      <DropdownItem label="Item 1" href="#" />
-      <DropdownItem label="Item 2" href="#" />
-      <DropdownItem label="Item 3" href="#" />
-   </DropdownContent>
+   <Dropdown.Button label="Menu" />
+   <Dropdown.Items>
+      <Dropdown.Items.Item label="Item 1" href="#" />
+      <Dropdown.Items.Item label="Item 2" href="#" />
+      <Dropdown.Items.Item label="Item 3" href="#" />
+   </Dropdown.Items>
 </Dropdown>
 ```
 
@@ -51,7 +46,7 @@ The `Dropdown` component is the main wrapper component.
 
 Refer to the [Theming](#theming) section to learn how those props work and and how to use them.
 
-### DropdownButton
+### Dropdown.Button
 
 The `DropdownButton` component exposes the following properties:
 
@@ -60,7 +55,18 @@ The `DropdownButton` component exposes the following properties:
 | label    | `string`  | yes      |         | Button text       |
 | iconSize | `number`  | no       | `20`    | Set the icon size |
 
-### DropdownContent
+## Events
+
+| Name            |  Type     |
+| :-------------- | :-------: |
+| `on:click`      | forwarded |
+| `on:dblclick`   | forwarded |
+| `on:keyup`      | forwarded |
+| `on:keydown`    | forwarded |
+| `on:mouseenter` | forwarded |
+| `on:mouseleave` | forwarded |
+
+### Dropdown.Items
 
 The `DropdownContent` component exposes the following properties:
 
@@ -68,7 +74,7 @@ The `DropdownContent` component exposes the following properties:
 | :------- | :-------: | :------: | :-----: |:----------------- |
 | absolute | `boolean` | no       | `false` | Button text       |
 
-### DropdownItem
+### Dropdown.Items.Item
 
 The `DropdownItem` component exposes the following properties:
 

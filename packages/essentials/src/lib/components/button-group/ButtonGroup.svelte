@@ -1,33 +1,43 @@
 <script lang="ts">
-	import '../../styles/base.css';
-	import '../../styles/components/button-group/variables.css';
-	import '../../styles/components/button-group/styles.css';
-	import type { ButtonGroupItemType, ButtonGroupContext } from './types.js';
+	import type {
+		ButtonGroupSize,
+		ButtonGroupShape,
+		ButtonGroupItemType,
+		ButtonGroupContext
+	} from './ButtonGroup.d.ts';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames } from '$lib/utils';
+	import { retrieveCssClassNames } from '$lib/utils.js';
 
 	export let activeButton = '';
-	export let size = 'base';
-	export let responsive = false;
-
+	export let size: ButtonGroupSize = 'base';
+	export let responsive = true;
+	export let shape: ButtonGroupShape = 'rounded';
 	export let styles = {};
+
 	const cssStyles = mapToCssVars(styles);
 	if (cssStyles.isErr()) {
+		console.error(`@sveltinio/essentials(ButtonGroup): ${cssStyles.error.message}`);
 		throw new Error(cssStyles.error.message);
 	}
 
 	let buttons: Array<ButtonGroupItemType> = [];
-	let activeButtonsGroupStore = writable(activeButton);
+	let activeButtonStore = writable(activeButton);
+	let sizeStore = writable(size);
+	let shapeStore = writable(shape);
 
 	// avoid hacking reserved css class names
-	const reservedNames = ['sn-e-colors', 'sn-e-c-btngroup-vars', 'sn-e-c-btngroup'];
+	const reservedNames = ['sn-e-c-btngroup'];
 	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
 
 	const ctx: ButtonGroupContext = {
-		activeButton: activeButtonsGroupStore,
-		setActiveButton: (_value) => activeButtonsGroupStore.set(_value),
+		activeButton: activeButtonStore,
+		setActiveButton: (_value) => activeButtonStore.set(_value),
+		size: sizeStore,
+		setSize: (_value) => sizeStore.set(_value),
+		shape: shapeStore,
+		setShape: (_value) => shapeStore.set(_value),
 		registerButton: (id: string, icon: any) => {
 			buttons.push({ id, icon });
 		},
@@ -42,10 +52,12 @@
 </script>
 
 <div
-	class="sn-e-colors sn-e-c-btngroup-vars sn-e-c-btngroup size--{size} {cssClasses}"
-	class:sn-e-c-btngroup--responsive={responsive}
+	class="sn-e-c-btngroup {cssClasses}"
+	data-responsive={responsive}
 	style={cssStyles.value}
 	role="group"
 >
-	<slot style={cssStyles} setActiveButton={ctx.setActiveButton} />
+	<slot style={cssStyles} />
 </div>
+
+<style src="./styles/ButtonGroup.postcss"></style>

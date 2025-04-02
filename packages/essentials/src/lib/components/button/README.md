@@ -4,10 +4,10 @@ The `Button` is an interactive and accessible Svelte component implementing the 
 
 It supports different:
 
-- **types**: `default`, `primary`, `secondary`, `info`, `error`, `success`, `warning`, `light` and `dark`
-- **sizes**: `xs`, `sm`, `base` (default), `md`, `lg` and `full`
-- **variants**: filled (default), `outlined`
-- **shapes**: rectangular (default), `rounded` or `circular`
+- **variants**: `default`, `primary`, `secondary`, `info`, `error`, `success`, `warning`, `ghost` and `neutral`
+- **sizes**: `xs`, `sm`, `base` (default), `lg`, `xl` and `full`
+- **styles**: filled (default), `outline`
+- **shapes**: `rounded` (default), `pills`, `circle` and `flat`
 - **focus**: with or without the focus ring
 - **icons**: to render an Icon either on the left side or the right side.
 
@@ -28,17 +28,17 @@ It supports different:
    };
 </script>
 
-<Button type="primary" on:click="{handleButtonClick}" />
-<Button label="Click Me" type="secondary" border="dashed" />
-<Button label="Click Me" outlined rounded />
-<Button label="Click Me" type="success" rounded withFocus />
-<Button type="success"><MailIcon slot="leftIcon" /> Button Text</Button>
-<Button type="success"><MailIcon slot="rightIcon" /> Button Text</Button>
-<Button type="primary" size="lg" circular>
+<Button variant="primary" on:click="{handleButtonClick}" />
+<Button label="Click Me" variant="secondary" border="dashed" />
+<Button label="Click Me" outline />
+<Button label="Click Me" variant="success" shape="flat" />
+<Button variant="success"><MailIcon slot="leftIcon" /> Button Text</Button>
+<Button variant="success"><MailIcon slot="rightIcon" /> Button Text</Button>
+<Button variant="primary" size="lg" shape="circular">
    <PlusIcon />
 </Button>
-<Button href="https://sveltin.io" />
-<Button type="secondary" href="#" prefetch />
+<Button href="https://sveltin.io">Link</Button>
+<Button variant="secondary" href="#" prefetch="hover" />
 ```
 
 ## Properties
@@ -49,17 +49,16 @@ The `Button` component exposes a set of properties to allow its configuration.
 
 | Property      |  Type     | Required | Default       | Description                                                                              |
 | :------------ | :-------: | :------: | :-----------: | :--------------------------------------------------------------------------------------- |
-| label         | `string`  |    no    | `Button Text` | Set the label for the button                                                             |
+| label         | `string`  |    no    | `undefined`   | Set the label for the button                                                             |
 | alt           | `string`  |    no    | `label` value | Set the `aria-label` attribute                                                           |
-| type          | `string`  |    no    | `default`     | Button type (primary, secondary, error, success, ...)                                    |
-| size          | `string`  |    no    | `base`        | Set the button size (xs, sm, base, md or lg)                                             |
-| border        | `string`  |    no    | `solid`       | Set the border style (solid, dashaed, dotted, ...)                                       |
+| variant       | `string`  |    no    | `default`     | Button type (primary, secondary, error, success, ...)                                    |
+| size          | `string`  |    no    | `base`        | Set the button size. One of `['xs', 'sm', 'base', 'lg', 'xl', 'full']`                   |
+| border        | `string`  |    no    | `none`        | Set the border style. One of `['solid', 'dashed', 'dotted', ...]`                        |
+| shape         | `string`  |    no    | `rounded`     | Set the button shape. One of `['rounded', 'pills', 'circle', 'flat']`                    |
 | disabled      | `boolean` |    no    | `false`       | If true, the `button` is unusable and un-clickable. <br/>Set `aria-disabled` accordingly |
-| outlined      | `boolean` |    no    | `false`       | White background button with the border                                                  |
-| rounded       | `boolean` |    no    | `false`       | Rounded button                                                                           |
-| circular      | `boolean` |    no    | `false`       | Full circular button                                                                     |
-| fullSize      | `boolean` |    no    | `false`       | Will take the full width of the container                                                |
-| withFocusRing | `boolean` |    no    | `false`       | If true, a ring will be displayed when the button has the focus                          |
+| outline      | `boolean` |    no    | `false`       | White background button with the border                                                  |
+| block         | `boolean` |    no    | `false`       | Will take the full width of the container                                                |
+| noFocusRing   | `boolean` |    no    | `false`       | If true, no outline ring on focus                                                        |
 | href          | `string`  |    no    |               | If set, the component renders an `a` alement and link's destination                      |
 | prefetch      | `boolean` |    no    | `false`       | Enable data-sveltekit-prefetch for the link                                              |
 | external      | `boolean` |    no    | `false`       | If true, opens the linked document in a new window or tab                                |
@@ -82,10 +81,14 @@ Refer to the [Theming](#theming) section to learn how those props work and and h
 
 ## Events
 
-| Name         |  Type      | Element                | Keyboard         | Response          | Description          |
-| :----------- | :--------: | :--------------------: | :--------------: | :---------------- | :------------------- |
-| `on:click`   | dispatched | `<button>`             |                  | `{ event }`       | Activates the button |
-| `on:keydown` | dispatched | `<a>` <br/> `<button>` | `Enter`, `Space` | <br/> `{ event }` | Activates the button |
+| Name            |  Type     |
+| :-------------- | :-------: |
+| `on:click`      | forwarded |
+| `on:dblclick`   | forwarded |
+| `on:keyup`      | forwarded |
+| `on:keydown`    | forwarded |
+| `on:mouseenter` | forwarded |
+| `on:mouseleave` | forwarded |
 
 ## Keyboard Interaction
 

@@ -1,18 +1,24 @@
 <script lang="ts">
-	import { navItems } from '../../../../src/data/sample.js';
-	import { Dropdown, DropdownButton, DropdownContent, DropdownItem } from '$lib/index.js';
+	import { dropdownContentSample } from '../../../../src/data/sample.js';
+	import { Dropdown } from '$lib/index.js';
 
-	/*
-	const myStyles = {
-		'btn-color': '#ecfeff',
-		'btn-bg-color': '#0891b2',
-		'btn-bg-color-hover': '#0e7490',
-		'btn-border-color': '#67e8f9',
-		'content-bg-color': '#ecfeff',
-		'item-color': '#164e63',
-		'item-bg-color-hover': '#cffafe'
+	const myDropdownButtonStyles = {
+		color: 'var(--lime-1)',
+		'font-family': 'var(--font-mono)',
+		'bg-color': 'var(--lime-9)',
+		'bg-color-hover': 'var(--lime-7)',
+		'border-color': 'var(--lime-8)',
+		'ring-color': 'var(--lime-3)'
 	};
-	*/
+
+	const myDropdownStyles = {
+		'item-font-family': 'var(--font-mono)',
+		'item-font-size': 'var(--font-size-0)',
+		'item-color': 'var(--lime-11)',
+		'item-color-hover': 'var(--lime-12)',
+		'item-bg-color': 'var(--lime-0)',
+		'item-bg-color-hover': 'var(--lime-1)'
+	};
 </script>
 
 <div class="header" role="main">
@@ -29,36 +35,54 @@
 		<h3>Dropdown items as links</h3>
 		<div class="preview">
 			<Dropdown>
-				<DropdownButton label="Posts" />
-				<DropdownContent>
-					{#each navItems as item}
-						{#if item.children}
-							{#each item.children as child}
-								<DropdownItem label={child.name} href={child.url} />
-							{/each}
-						{/if}
+				<Dropdown.Button label="Open / Close" />
+				<Dropdown.Items>
+					{#each dropdownContentSample as item}
+						<Dropdown.Items.Item label={item.name} href={item.url} />
 					{/each}
-				</DropdownContent>
+				</Dropdown.Items>
 			</Dropdown>
 		</div>
 	</div>
 
-	<!-- To avoid a11y errors due to duplicated ids. Uncomment to see other examples.
+	<div class="demo-wrapper">
+		<h3>Dropdown items as buttons</h3>
+		<div class="preview">
+			<Dropdown>
+				<Dropdown.Button label="Open / Close" />
+				<Dropdown.Items>
+					{#each dropdownContentSample as item}
+						<Dropdown.Items.Item label={item.name} />
+					{/each}
+				</Dropdown.Items>
+			</Dropdown>
+		</div>
+	</div>
+
+	<div class="demo-wrapper">
+		<h3>Open by default</h3>
+		<div class="preview">
+			<Dropdown open>
+				<Dropdown.Button label="Open / Close" />
+				<Dropdown.Items>
+					{#each dropdownContentSample as item}
+						<Dropdown.Items.Item label={item.name} />
+					{/each}
+				</Dropdown.Items>
+			</Dropdown>
+		</div>
+	</div>
 
 	<div class="demo-wrapper">
 		<h3>Dropdown Menu absolute</h3>
 		<div class="preview">
 			<Dropdown>
-				<DropdownButton label="Posts" />
-				<DropdownContent absolute>
-					{#each navItems as item}
-						{#if item.children}
-							{#each item.children as child}
-								<DropdownItem label={child.name} href={child.url} />
-							{/each}
-						{/if}
+				<Dropdown.Button label="Open / Close" />
+				<Dropdown.Items absolute>
+					{#each dropdownContentSample as item}
+						<Dropdown.Items.Item label={item.name} href={item.url} />
 					{/each}
-				</DropdownContent>
+				</Dropdown.Items>
 			</Dropdown>
 		</div>
 	</div>
@@ -66,17 +90,13 @@
 	<div class="demo-wrapper">
 		<h3>Custom Styles with props</h3>
 		<div class="preview">
-			<Dropdown styles={myStyles}>
-				<DropdownButton label="Posts" />
-				<DropdownContent absolute>
-					{#each navItems as item}
-						{#if item.children}
-							{#each item.children as child}
-								<DropdownItem label={child.name} href={child.url} />
-							{/each}
-						{/if}
+			<Dropdown styles={myDropdownStyles}>
+				<Dropdown.Button label="Open / Close" styles={myDropdownButtonStyles} />
+				<Dropdown.Items>
+					{#each dropdownContentSample as item}
+						<Dropdown.Items.Item label={item.name} href={item.url} />
 					{/each}
-				</DropdownContent>
+				</Dropdown.Items>
 			</Dropdown>
 		</div>
 	</div>
@@ -85,18 +105,13 @@
 		<h3>Custom Styles with CSS class</h3>
 		<div class="preview">
 			<Dropdown class="my-dropdown">
-				<DropdownButton label="Posts" />
-				<DropdownContent absolute>
-					{#each navItems as item}
-						{#if item.children}
-							{#each item.children as child}
-								<DropdownItem label={child.name} href={child.url} />
-							{/each}
-						{/if}
+				<Dropdown.Button label="Open / Close" class="my-dropdown-button" />
+				<Dropdown.Items>
+					{#each dropdownContentSample as item}
+						<Dropdown.Items.Item label={item.name} href={item.url} />
 					{/each}
-				</DropdownContent>
+				</Dropdown.Items>
 			</Dropdown>
 		</div>
 	</div>
-	-->
 </section>

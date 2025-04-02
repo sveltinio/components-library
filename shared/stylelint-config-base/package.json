@@ -1,0 +1,13 @@
+{
+	"name": "stylelint-config-base",
+	"version": "0.0.0",
+	"private": true,
+	"packageManager": "pnpm@8.8.0",
+	"type": "module",
+	"license": "MIT",
+	"dependencies": {
+		"stylelint": "^15.11.0",
+		"stylelint-config-standard": "^34.0.0"
+	},
+	"main": "index.cjs"
+}

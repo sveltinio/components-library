@@ -1,0 +1,27 @@
+@layer theme, components, utilities;
+
+/* stylelint-disable declaration-empty-line-before */
+@layer components {
+  a {
+    --_color: var(--color, var(--gray-12));
+    --_color-hover: var(--color-hover, var(--_color));
+    --_text-decoration: var(--text-decoration, none);
+    --_text-decoration-hover: var(--text-decoration-hover, underline);
+    --_bg-color: var(--bg-color, transparent);
+    --_bg-color-hover: var(--bg-color-hover, var(--_bg-color));
+    --_icon-gap: var(--icon-gap, var(--size-1));
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--_icon-gap);
+    color: var(--_color);
+    text-decoration: var(--_text-decoration);
+    background-color: var(--_bg-color);
+
+    &:hover {
+      color: var(--_color-hover);
+      text-decoration: var(--_text-decoration-hover);
+      background-color: var(--_bg-color-hover);
+    }
+  }
+}

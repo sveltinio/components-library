@@ -38,7 +38,7 @@ describe('Tabs', () => {
 			props: { Component: Tabs }
 		});
 
-		const slot = getByTestId('tab_panel-1');
+		const slot = getByTestId('content-1');
 		expect(slot).not.toBeNull();
 
 		expect(slot.textContent?.trim()).toBe('Sample content for Tab 1');

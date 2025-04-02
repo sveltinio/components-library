@@ -25,6 +25,16 @@
 		</div>
 	</div>
 
+	<div id="colorviewer--shapes-wrapper" class="demo-wrapper">
+		<h3 id="colorviewer--shapes">Shapes</h3>
+		<div class="preview">
+			<ColorViewer value="#86198f" />
+			<ColorViewer value="#86198f" shape="rounded" />
+			<ColorViewer value="#86198f" shape="square" />
+			<ColorViewer value="#86198f" shape="pill" />
+		</div>
+	</div>
+
 	<div id="colorviewer-label-color-wrapper" class="demo-wrapper">
 		<h3 id="colorviewer-label-color-prop">Label color</h3>
 		<div class="preview">

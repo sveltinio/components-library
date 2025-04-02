@@ -1,0 +1,9 @@
+{
+	"name": "prettier-svelte-config-base",
+	"version": "0.0.0",
+	"private": true,
+	"packageManager": "pnpm@8.8.0",
+	"type": "module",
+	"license": "MIT",
+	"main": "index.cjs"
+}

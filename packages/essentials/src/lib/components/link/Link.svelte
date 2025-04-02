@@ -1,58 +1,44 @@
+<svelte:options accessors={true} />
+
 <script lang="ts">
-	import '../../styles/base.css';
-	import '../../styles/components/link/variables.css';
-	import '../../styles/components/link/styles.css';
-	import { onMount } from 'svelte';
+	import type { LinkProps as $$LinkProps } from './Link.d.ts';
 	import { isNullish } from '@sveltinio/ts-utils/is';
 	import { mapToCssVars } from '@sveltinio/ts-utils/objects';
-	import { retrieveCssClassNames } from '$lib/utils';
+	import { makeExternalLinkOptions } from '$lib/utils.js';
 	import { ExternalLinkIcon } from './index.js';
 
-	type SvelteKitPrefetch = true | '' | 'hover' | 'off' | 'tap' | null | undefined;
+	interface $$Props extends $$LinkProps {}
 
-	export let label: string | null | undefined = undefined;
-	export let href: string;
-	export let prefetch: SvelteKitPrefetch = 'off';
-	export let external = false;
-	export let externalIcon = true;
-	export let externalIconSize = 12;
-	export let noOpener = true;
-	export let noReferrer = true;
+	export let label: $$Props['label'] = undefined;
+	export let href: $$Props['href'] = undefined;
+	export let prefetch: $$Props['prefetch'] = 'off';
+	export let external: $$Props['external'] = false;
+	export let externalIcon: $$Props['externalIcon'] = true;
+	export let externalIconSize: $$Props['externalIconSize'] = 12;
+	export let noOpener: $$Props['noOpener'] = true;
+	export let noReferrer: $$Props['noReferrer'] = true;
+	export let styles: $$Props['styles'] = {};
+	export let className: $$Props['className'] = undefined;
+	export { className as class };
 
-	export let styles = {};
 	const cssStyles = mapToCssVars(styles);
 	if (cssStyles.isErr()) {
+		console.error(`@sveltinio/essentials(Link): ${cssStyles.error.message}`);
 		throw new Error(cssStyles.error.message);
 	}
 
-	let aElem: HTMLElement;
-
-	const _prefetchValue: SvelteKitPrefetch = external ? 'off' : prefetch;
+	const target = external ? '_blank' : '_self';
 	const _extIcon = external && externalIcon ? true : false;
-
-	// avoid hacking reserved css class names
-	const reservedNames = ['sn-e-c-link-vars', 'sn-e-c-link'];
-	const cssClasses = retrieveCssClassNames($$props.class, reservedNames);
-
-	onMount(() => {
-		if (external) {
-			aElem.setAttribute('target', '_blank');
-
-			let relOptions = ['external'];
-			if (noOpener) relOptions.push('noopener');
-			if (noReferrer) relOptions.push('noreferrer');
-			aElem.setAttribute('rel', relOptions.join(' '));
-		}
-	});
 </script>
 
 <a
-	bind:this={aElem}
 	{href}
-	data-sveltekit-preload-data={_prefetchValue}
-	class="sn-e-c-link-vars sn-e-c-link {cssClasses}"
+	{target}
+	rel={makeExternalLinkOptions(external, noOpener, noReferrer)}
+	class={className}
 	style={cssStyles.value}
 	aria-label={label}
+	data-sveltekit-preload-data={prefetch}
 	data-testid="link"
 	{...$$restProps}
 >
@@ -70,3 +56,6 @@
 		</slot>
 	{/if}
 </a>
+
+<style src="./styles/Link.postcss">
+</style>

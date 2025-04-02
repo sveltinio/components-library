@@ -1,4 +1,5 @@
 import type { Action } from 'svelte/action';
+import { copyText, getErrorMessage } from './utils';
 
 export interface ClickOutsideActionConfig {
 	enabled: boolean;
@@ -25,16 +26,13 @@ export const clickOutsideAction: Action<HTMLElement, ClickOutsideActionConfig> =
 	};
 };
 
-export interface ActiveActionOptions {
+export interface ActiveActionConfig {
 	enabled: boolean;
 	className: string;
 }
 
-export const activeAction: Action<HTMLElement, ActiveActionOptions> = (
-	node,
-	options = { enabled: true, className: 'is-active' }
-) => {
-	addActiveClass(node, options.className);
+export const activeAction: Action<HTMLElement, ActiveActionConfig> = (node, options) => {
+	if (options.enabled) addActiveClass(node, options.className);
 
 	return {
 		update: (params) => {
@@ -44,17 +42,47 @@ export const activeAction: Action<HTMLElement, ActiveActionOptions> = (
 	};
 };
 
-function isActive(href: string): boolean {
+function isCurrentURL(href: string): boolean {
 	const { hash, pathname, search } = new URL(location.href);
 	const path = pathname + search + hash;
-	return path.includes(href);
+	return href.includes(path);
 }
 
 function addActiveClass(node: HTMLElement, className: string): void {
-	const parentElement = node.parentElement;
-	if (isActive(node.getAttribute('href') || '')) {
-		parentElement?.classList.add(className);
+	if (isCurrentURL(node.getAttribute('href') || '')) {
+		node?.classList.add(className);
 	} else {
-		parentElement?.classList.remove(className);
+		node?.classList.remove(className);
 	}
 }
+
+export interface CopyToClipboardConfig {
+	enabled: boolean;
+}
+
+const copyToClipboardAction: Action<HTMLElement, CopyToClipboardConfig> = (
+	node: HTMLElement,
+	options
+) => {
+	const text = node.innerText ? node.innerText : node.querySelector('span.sr-only')?.innerHTML;
+
+	const handleClick = async () => {
+		if (text) {
+			try {
+				await copyText(text);
+			} catch (e) {
+				throw new Error(getErrorMessage(e));
+			}
+		}
+	};
+
+	if (options.enabled) node.addEventListener('click', handleClick);
+
+	return {
+		destroy() {
+			if (options.enabled) node.removeEventListener('click', handleClick, true);
+		}
+	};
+};
+
+export { copyToClipboardAction as copy };

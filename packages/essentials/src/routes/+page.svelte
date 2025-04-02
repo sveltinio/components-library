@@ -5,7 +5,7 @@
 		{
 			name: 'Button',
 			headline:
-				'Interactive and accessible widget component activated by a user to perform an action.',
+				'Interactive and accessible component activated by a user to perform an action.',
 			url: 'demos/button'
 		},
 		{
@@ -28,7 +28,7 @@
 		{
 			name: 'Link',
 			headline:
-				'A widget component providing an interactive reference to a resource (external or local).',
+				'A component providing an interactive reference to a resource (external or local).',
 			url: 'demos/link'
 		},
 		{

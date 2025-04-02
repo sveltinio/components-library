@@ -1,0 +1,42 @@
+@layer theme, components, utilities;
+
+/* stylelint-disable declaration-empty-line-before */
+@layer components {
+  ul {
+    --_list-max-w: var(--list-max-w, var(--size-14));
+    --_list-w: var(--list-w, var(--size-12));
+    --_list-my: var(--list-my, var(--size-2)) --_list-mx: var(--list-mx, 0);
+    --_list-py: var(--list-py, 0);
+    --_list-px: var(--list-px, 0);
+    --_list-border-width: var(--list-border-width, var(--border-size-1));
+    --_list-border-style: var(--list-border-style, solid);
+    --_list-border-color: var(--list-border-color, var(--gray-1));
+
+    list-style: none;
+    max-width: var(--_list-max-w);
+    width: var(--_list-w);
+    margin: var(--list-my) var(--_list-mx);
+    padding: var(--list-py) var(--_list-px);
+    box-shadow: var(--list-shadow, var(--shadow-1));
+    border-width: var(--_list-border-width);
+    border-style: var(--_list-border-style);
+    border-color: var(--_list-border-color);
+
+    &[data-position="relative"] {
+      position: relative;
+    }
+
+    &[data-position="absolute"] {
+      position: absolute;
+      z-index: var(--layer-5);
+    }
+
+    &[data-open="true"] {
+      display: block;
+    }
+
+    &[data-open="false"] {
+      display: none;
+    }
+  }
+}

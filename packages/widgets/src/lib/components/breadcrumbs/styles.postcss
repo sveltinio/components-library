@@ -3,25 +3,51 @@
 /* stylelint-disable declaration-empty-line-before */
 
 .sn-w-c-breadcrumbs {
-  font-size: var(--_font-size);
-  font-weight: var(--_font-weight);
-  line-height: var(--_line-height);
-  letter-spacing: var(--_letter-spacing);
-
   margin-top: var(--_mt);
   margin-right: var(--_mr);
   margin-bottom: var(--_mb);
   margin-left: var(--_ml);
 
-  & .list {
+  & ol {
     list-style: none;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    min-height: min-content;
 
-    & .item {
-      display: inline-flex;
+    & li {
+      display: flex;
       align-items: center;
-      gap: 0.25rem;
+      font-size: var(--_font-size);
+      font-weight: var(--_font-weight);
+      line-height: var(--_line-height);
+      letter-spacing: var(--_letter-spacing);
+      color: var(--_color);
+
+      & + *:before {
+        content: "";
+        margin-left: 0.5rem;
+        margin-right: 0.75rem;
+        display: block;
+        height: 0.375rem;
+        width: 0.375rem;
+        transform: rotate(45deg) scaleX(1) scaleY(1);
+        opacity: 0.4;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        background-color: transparent;
+      }
 
       & a {
+        display: inline-flex;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          color: var(color-hover);
+          text-decoration: underline;
+        }
+
         &:focus,
         &:focus-visible {
           outline-width: var(--_ring-width);
@@ -32,33 +58,13 @@
       }
     }
 
-    & .is-current {
-      color: var(--_current-color);
-    }
-
-    & .is-parent {
-      color: var(--_parent-color);
-      text-decoration: none;
-
-      &:hover {
-        color: var(--_parent-color-hover);
-      }
-    }
-
     & .icon {
       color: var(--_icon-color);
       display: flex;
-    }
 
-    & .icon__home {
       &:hover {
-        color: var(--_icon-home-color-hover);
+        color: var(--_icon-color-hover);
       }
-    }
-
-    & .icon__divider {
-      margin-left: var(--_divider-gap);
-      margin-right: var(--_divider-gap);
     }
 
     & .sr--only {

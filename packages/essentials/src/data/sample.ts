@@ -1,5 +1,5 @@
-import type { DropdownData } from '$lib/components/dropdown/types.js';
-import type { ListItem } from '$lib/components/list/types.js';
+import type { DropdownData } from '$lib/components/dropdown/Dropdown.d.ts';
+import type { ListItem } from '$lib/components/list/ToggleList.d.ts';
 import { CloudUploadIcon } from '@indaco/svelte-iconoir/cloud-upload';
 import { BellIcon } from '@indaco/svelte-iconoir/bell';
 
@@ -83,6 +83,11 @@ export const navItems: Array<DropdownData> = [
 		url: '/how-to',
 		weight: 3
 	}
+];
+
+export const dropdownContentSample = [
+	{ identifier: 'item_1', name: 'Item 1', url: '/item-1' },
+	{ identifier: 'item_2', name: 'Item 2', url: '/item-2' }
 ];
 
 export const contentForToggleList: Array<ListItem> = [

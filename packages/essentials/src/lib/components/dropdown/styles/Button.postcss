@@ -1,0 +1,15 @@
+@layer theme, components, utilities;
+
+/* stylelint-disable declaration-empty-line-before */
+/* stylelint-disable selector-class-pattern */
+@layer utilities {
+  .flipY {
+    transition: 0.3s ease-in-out;
+    transform: scaleY(-1);
+  }
+
+  .-flipY {
+    transition: 0.3s ease-in-out;
+    transform: scaleY(1);
+  }
+}

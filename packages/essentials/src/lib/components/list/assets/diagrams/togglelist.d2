@@ -1,23 +1,26 @@
 # Layout Engine: Dagre
 DOM: "ToggleList Component Structure" {
-  ToggleButton: {
+  Title: {
     # keys, shapes and labels
     button.shape: circle
-    rightSideIcon: svg
-    rightSideIcon.shape: circle
+    leftIcon: svg
+    leftIcon.shape: circle
+    rightIcon: svg
+    rightIcon.shape: circle
     # connections
-    button -> rightSideIcon
+    button -> leftIcon: slot(leftIcon)
+    button -> rightIcon: slot(rightIcon)
   }
 
   List: {
     list.shape: circle
-    list: "ul"
+    list: ul
   }
 
   Item: {
     # keys, shapes and labels
     li.shape: circle
-    item: "a"
+    item: a
     item.shape: circle
     # connections
     li -> item
@@ -29,6 +32,6 @@ DOM: "ToggleList Component Structure" {
 
   # connections
   div.shape: circle
-  div -> ToggleButton
+  div -> Title
   div -> List
 }

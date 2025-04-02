@@ -1,0 +1,23 @@
+{
+	"name": "postcss-config-base",
+	"version": "0.0.0",
+	"private": true,
+	"packageManager": "pnpm@8.8.0",
+	"type": "module",
+	"license": "MIT",
+	"dependencies": {
+		"cssnano": "^6.0.1",
+		"cssnano-preset-advanced": "^6.0.1",
+		"open-props": "^1.6.5",
+		"postcss": "^8.4.31",
+		"postcss-cli": "^10.1.0",
+		"postcss-discard-comments": "^6.0.0",
+		"postcss-import": "^15.1.0",
+		"postcss-initial": "^3.0.4",
+		"postcss-jit-props": "^1.0.13",
+		"postcss-load-config": "^4.0.1",
+		"postcss-preset-env": "^9.2.0",
+		"stylelint": "^15.10.3"
+	},
+	"main": "index.cjs"
+}

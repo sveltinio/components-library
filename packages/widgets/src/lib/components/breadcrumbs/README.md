@@ -29,8 +29,7 @@ The `Breadcrumbs` component exposes the following properties:
 | Property     | Type      | Required | Default | Description                                         |
 | :----------- | :-------: | :------: | :-----: | :-------------------------------------------------- |
 | url          | `string`  |    yes   |         | An absolute or relative URL string                  |
-| showRootOnly | `boolean` |    no    | `false` | if true, shows the root icon when base url only     |
-| showCurrent  | `boolean` |    no    | `true`  | If false, the current item it not on the bradcrumbs |
+| homeAsIcon   | `boolean` |    no    | `true`  | if `false` Home as text insteaf of the home icon    |
 
 ### Styles
 
@@ -43,8 +42,7 @@ The `Breadcrumbs` component exposes the following properties:
 
 | Name          | Default | Fallback |
 | :------------ | :-----: | :------: |
-| `baseIcon`    | ✗       |    ✓     |
-| `dividerIcon` | ✗       |    ✓     |
+| `homeIcon`    | ✗       |    ✓     |
 
 ## Theming
 
