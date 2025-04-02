@@ -1,5 +1,11 @@
 # @sveltinio/seo
 
+## 0.4.4
+
+### Patch Changes
+
+- add support to svelte 5
+
 ## 0.4.3
 
 ### Patch Changes
